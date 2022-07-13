@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/font_awesome_container"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llHiddenView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:paddingBottom="@dimen/margin_half"
+                    android:paddingTop="@dimen/margin_half"
+                    android:text="@string/txt_undo_1"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUndo"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:padding="@dimen/margin_half"
+                    android:text="@string/txt_undo_2"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReport"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="@dimen/margin_half"
+                android:text="@string/txt_report"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMainView"
+            style="@style/ripple_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_feed_upper" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llMainClick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:orientation="vertical">
+
+                <include layout="@layout/layout_playable_video" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFeedTags"
+                    style="@style/text_style_1"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:paddingTop="@dimen/margin_half"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+<!--            <include layout="@layout/layout_like_share_comment" />-->
+            <include layout="@layout/layout_like_share_comment2" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

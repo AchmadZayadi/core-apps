@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCommon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll1"
+            android:clipToPadding="false"
+            android:descendantFocusability="beforeDescendants"
+            android:divider="#b5b5b5"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="vertical"
+            android:padding="@dimen/item_offset" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

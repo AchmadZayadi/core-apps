@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/tvQuestion"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/llOption"
+            android:layout_toLeftOf="@+id/llOption"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:maxLines="5"
+            android:padding="@dimen/margin_half"
+            tools:text="Q.1 Who is the prime minister of india?Q.1 Who is the prime minister of india?Q.1 Who is the prime minister of india?Q.1 Who is the prime minister of india?Q.1 Who is the prime minister of india?">
+
+        </WebView>
+
+        <LinearLayout
+            android:id="@+id/llOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half">
+
+
+            <RadioButton
+                android:id="@+id/rbAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <CheckBox
+                android:id="@+id/cbAnswer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                tools:visibility="visible"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

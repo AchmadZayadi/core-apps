@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        style="@style/ripple_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCategory"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_toLeftOf="@+id/tvMore"
+            android:layout_toStartOf="@+id/tvMore"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_full"
+            android:text="@string/TXT_VIDEO" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMore"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/rounded_holo_border_black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="6dp"
+            android:text="@string/view_more"
+            android:textSize="@dimen/caption_mini" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCategory"
+            android:clipToPadding="false"
+            android:padding="@dimen/margin_half">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

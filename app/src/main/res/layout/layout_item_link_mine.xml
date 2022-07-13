@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llLink"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivLink"
+        android:layout_width="150sp"
+        android:layout_height="100sp"
+        android:scaleType="fitXY" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="150sp"
+        android:layout_height="100sp"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLinkTitle"
+            style="@style/text_style_1"
+            android:layout_width="150sp"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLinkDesc"
+            style="@style/text_style_2"
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_full"
+            android:ellipsize="end"
+            android:maxLines="2" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

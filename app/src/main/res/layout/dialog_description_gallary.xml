@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Main_style"
+    android:layout_width="@dimen/width_dialog"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/width_dialog"
+        android:layout_height="@dimen/button_height"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="@string/cancel"
+            android:textColor="@color/text_color_light"
+            android:textSize="@dimen/sub_heading" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/edit_description"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:text="@string/save"
+            android:textColor="@color/text_color_light"
+            android:textSize="@dimen/sub_heading" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etBody"
+        style="@style/Edit_text_style"
+        android:layout_width="@dimen/width_dialog"
+        android:layout_height="150sp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:padding="@dimen/margin_full" />
+
+
+</LinearLayout>

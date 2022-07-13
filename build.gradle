@@ -1,0 +1,72 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        kotlin_version = '1.3.72'
+        compileSdkVersion = 30
+        buildToolsVersion = "28.0.3"
+        supportLibVersion = '28.0.0'
+        firebaseLibVersion = '16.0.5'
+        firebaseDBVersion = '16.0.5'
+        gmsAnalyticsVersion = '17.3.4'
+        gmsLibVersion = '16.0.0'
+        firebaseAdsVersion = '16.0.1'
+        glideVersion = '4.12.0'
+
+         // Advanced app configration
+        appVersion = '1.0.0'
+       // appVersionCode = 15
+        appVersionCode = 19
+        SES_FACEBOOK_ID = 'FACEBOOK_API_KEY'
+        SES_FACEBOOK_SCHEME = 'fb_FACEBOOK_API_KEY'
+        SES_PLACES_API_KEY = 'PLACE_API_KEY'
+        SES_PLACES_API_KEY_DEBUG = 'PLACE_API_KEY'
+        SES_APPLICATION_ID = 'com.Matani'
+        SES_API_VERSION = '3.3' // SES API VERSION : sending this value with every api call
+        SES_APP_NAME = 'Matani.ID' // App name : fetch this from App submission document
+        SES_DB_NAME = 'Matanidb'
+        SES_BASE_URL_DEBUG = 'https://Matani.id/'
+        SES_BASE_URL_RELEASE = 'https://Matani.id/'
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+
+    subprojects {
+        project.configurations.all {
+            resolutionStrategy.eachDependency { details ->
+                if (details.requested.group == 'com.android.support'
+                        && !details.requested.name.contains('multidex')) {
+                    details.useVersion supportLibVersion
+                }
+            }
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.0'
+        classpath 'com.google.gms:google-services:4.3.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.firebase:perf-plugin:1.3.4'  // Performance Monitoring plugin
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+        // in the individual module build.gradle files
+     }
+ }
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileimageid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:src="@drawable/dummy_profile"
+            ></de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_below="@+id/profileimageid"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Anuradha sahu"
+            android:textColor="#262626"
+            android:textSize="15sp"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/professionid"
+            android:layout_below="@+id/username"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Co Founder"
+            android:textSize="13sp"
+            android:textColor="#989898"
+            ></TextView>
+
+
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

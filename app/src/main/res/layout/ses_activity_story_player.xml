@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:id="@+id/mainlayout"
+    android:background="#000000"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/storyImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true" />
+
+        <com.sesolutions.ui.customviews.CustomJzVideo_story
+            android:id="@+id/storyVideo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible" >
+
+
+        </com.sesolutions.ui.customviews.CustomJzVideo_story>
+
+        <ProgressBar
+            android:id="@+id/pbImageLoader"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerInParent="true"
+            android:theme="@style/progressBarAlphaGrey"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+
+
+        <!--<com.sesolutions.ui.customviews.CircularProgressBar
+            android:id="@+id/pbImageLoader"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:cpb_background_progressbar_color="#00000000"
+            app:cpb_background_progressbar_width="6dp"
+            app:cpb_progress="89"
+            app:cpb_progressbar_color="#FF2323"
+            app:cpb_progressbar_width="8dp"
+            tools:visibility="visible" />-->
+
+        <!--app:cpb_background_progressbar_color="#66ffffff"-->
+
+
+
+        <LinearLayout
+            android:id="@+id/actions"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlHeader"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/reverse"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3" />
+
+
+            <View
+                android:id="@+id/center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5" />
+
+            <View
+                android:id="@+id/skip"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3" />
+
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_quarter">
+
+            <com.sesolutions.ui.storyview.StoryPlayerProgressView
+                android:id="@+id/progressBarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:gapBetweenProgressBar="2dp"
+                app:progressBarHeight=".8dp"
+                app:progressBarPrimaryColor="#ffffff"
+                app:progressBarSecondaryColor="#3effffff" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileStory"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/progressBarView"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                tools:src="@drawable/dummy_profile" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_below="@+id/progressBarView"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_toEndOf="@+id/ivProfileStory"
+                android:layout_toRightOf="@+id/ivProfileStory"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/storyUserName"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="SES Solutions" />
+
+                <TextView
+                    android:id="@+id/storyTime"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/storyUserName"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption"
+                    tools:text="12:00 PM" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOption"
+                android:layout_width="@dimen/button_height"
+                android:layout_height="@dimen/button_height"
+                android:layout_below="@+id/progressBarView"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:padding="14dp"
+                app:srcCompat="@drawable/vertical_dots" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="64dp"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical">
+
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStoryContent"
+                style="@style/text_style_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:gravity="center"
+                tools:text="#SESSolutions" />
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llBottomLike"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlUpperLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animateLayoutChanges="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivLikeUpper1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="@dimen/margin_full"
+                        android:layout_marginLeft="@dimen/margin_full"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="1dp"
+                        tools:src="@drawable/smiley_line" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivLikeUpper2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="-4dp"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_toEndOf="@+id/ivLikeUpper1"
+                        android:layout_toRightOf="@+id/ivLikeUpper1"
+                        app:civ_border_color="@color/black"
+
+                        app:civ_border_width="1dp"
+                        tools:src="@drawable/smiley_line" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivLikeUpper3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="-4dp"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_toEndOf="@+id/ivLikeUpper2"
+                        android:layout_toRightOf="@+id/ivLikeUpper2"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="1dp"
+                        tools:src="@drawable/smiley_line" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivLikeUpper4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="-4dp"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_toEndOf="@+id/ivLikeUpper3"
+                        android:layout_toRightOf="@+id/ivLikeUpper3"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="1dp"
+                        tools:src="@drawable/smiley_line" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivLikeUpper5"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="-4dp"
+                        android:layout_marginLeft="-4dp"
+                        android:layout_toEndOf="@+id/ivLikeUpper4"
+                        android:layout_toRightOf="@+id/ivLikeUpper4"
+                        app:civ_border_color="@color/black"
+                        app:civ_border_width="1dp"
+                        tools:src="@drawable/smiley_line" />
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLikeUpper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/body_2"
+                    tools:text="Stainley R card And 3 Others" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:gravity="bottom">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReply"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="2dp"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                android:keyboardNavigationCluster="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_reaction_icon" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+    <!--<include layout="@layout/item_story_reply" />-->
+</LinearLayout>

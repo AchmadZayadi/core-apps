@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlMain"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:paddingTop="8dp"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBar"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="#b5b5b5"
+        android:orientation="vertical" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoData"
+        style="@style/text_style_no_data"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/llPostFeed"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_half"
+        android:textSize="@dimen/body_1"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

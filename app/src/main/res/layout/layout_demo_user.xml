@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:paddingBottom="@dimen/margin_half">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDemo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-151dp"
+        android:visibility="visible"
+        app:cardElevation="@dimen/margin_half">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/text_style_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:padding="@dimen/margin_medium"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInner"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHeader"
+                android:gravity="center"
+                android:padding="@dimen/margin_half"
+                android:textSize="11sp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvInner"
+                android:clipToPadding="false"
+                android:padding="@dimen/item_offset" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--<com.sesolutions.ui.customviews.fab.FloatingActionButton
+        android:id="@+id/ivDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_toRightOf="@+id/cvDemo"
+        app:fabSize="mini" />-->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDefault"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_toRightOf="@+id/cvDemo"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDefault"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center" />
+    </androidx.cardview.widget.CardView>
+
+    <!--app:fabIcon="@drawable/add_24dp"
+     app:fabIconPosition=""-->
+
+</androidx.appcompat.widget.LinearLayoutCompat>

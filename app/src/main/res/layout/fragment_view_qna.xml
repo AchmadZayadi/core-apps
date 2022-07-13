@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/height_qa_bottom_sheet">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/rlQnaDetail"
+                        style="@style/Forground_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/margin_full"
+                        android:paddingLeft="@dimen/margin_full"
+                        android:paddingTop="@dimen/margin_half"
+                        android:paddingEnd="@dimen/margin_full"
+                        android:paddingRight="@dimen/margin_full">
+
+                        <include
+                            layout="@layout/layout_qna_vote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half" />
+
+                        <View
+                            style="@style/divider"
+                            android:layout_width="@dimen/divider_length"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/margin_medium"
+                            android:layout_marginRight="@dimen/margin_medium" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llQnaDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_qna_icon"
+                            android:layout_toStartOf="@+id/llReactionUpper"
+                            android:layout_toLeftOf="@+id/llReactionUpper"
+                            android:layout_toEndOf="@+id/llQnaVote"
+                            android:layout_toRightOf="@+id/llQnaVote"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvQTitle"
+                                style="@style/text_style_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvOwner"
+                                style="@style/text_style_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_quarter"
+                                android:textSize="@dimen/body_1" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvStats"
+                                style="@style/text_style_stats"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_quarter"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:textSize="@dimen/caption" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.sesolutions.utils.FlowLayout
+                        android:id="@+id/flTags"
+                        style="@style/Forground_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/margin_medium"
+                        android:paddingBottom="@dimen/margin_quarter" />
+
+                    <View style="@style/divider" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlMedia"
+                        android:layout_width="match_parent"
+                        android:layout_height="200sp"
+                        android:layout_marginStart="@dimen/margin_half"
+                        android:layout_marginLeft="@dimen/margin_half"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:layout_marginEnd="@dimen/margin_half"
+                        android:layout_marginRight="@dimen/margin_half">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivQImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="200sp"
+                            android:layout_centerInParent="true"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/rounded_holo_border_grey_light"
+                            android:padding="@dimen/divider_length" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMediaType"
+                            android:layout_width="36sp"
+                            android:layout_height="36sp"
+                            android:layout_centerInParent="true"
+                            app:srcCompat="@drawable/play" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        style="@style/divider"
+                        android:layout_marginTop="@dimen/margin_half" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llTabOptions"
+                        style="@style/Forground_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:animateLayoutChanges="true"
+                        android:padding="@dimen/margin_half" />
+
+                    <View style="@style/divider" />
+
+                    <View
+                        style="@style/divider"
+                        android:layout_marginTop="@dimen/margin_half" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/margin_medium">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvQDescription"
+                            style="@style/text_style_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rlQnaDetail"
+                            android:layout_marginStart="@dimen/margin_full"
+                            android:layout_marginLeft="@dimen/margin_full"
+                            android:layout_marginTop="@dimen/margin_half"
+                            android:layout_marginEnd="@dimen/margin_full"
+                            android:layout_marginRight="@dimen/margin_full"
+                            android:textSize="@dimen/body_1" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvShowQuestion"
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:layout_marginEnd="@dimen/margin_full"
+                            android:layout_marginRight="@dimen/margin_full"
+                            android:background="@drawable/rounded_holo_border_grey_light"
+                            android:paddingStart="@dimen/margin_half"
+                            android:paddingLeft="@dimen/margin_half"
+                            android:paddingTop="@dimen/margin_half"
+                            android:paddingEnd="@dimen/margin_half"
+                            android:paddingRight="@dimen/margin_half"
+                            android:paddingBottom="@dimen/margin_half"
+                            android:text="@string/show_result"
+                            android:visibility="gone" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <View style="@style/divider" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvOption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_qna_answer" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

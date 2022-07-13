@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain"
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain2"
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain3"
+        style="@style/Card_style"
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain4"
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        style="@style/Card_style"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain6"
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cvMain7"
+        android:layout_width="match_parent"
+        style="@style/Card_style"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginBottom="1dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llMain7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedImage7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:textSize="@dimen/icon_attach_option" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFeedText7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/margin_quarter"
+                android:text="@string/txt_post_something"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

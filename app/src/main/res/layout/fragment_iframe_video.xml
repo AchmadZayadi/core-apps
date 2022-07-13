@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rlNonVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <com.sesolutions.ui.customviews.VideoEnabledWebView
+            android:id="@+id/wbVideo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_video_player"
+            android:background="@color/black" />
+        <!--
+            </android.support.v7.widget.LinearLayoutCompat>
+        -->
+    </RelativeLayout>
+
+    <include layout="@layout/layout_full_video" />
+</RelativeLayout>

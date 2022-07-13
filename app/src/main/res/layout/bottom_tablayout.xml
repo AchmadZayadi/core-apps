@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llTabLayout"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:layout_alignParentBottom="true">
+
+
+    <RelativeLayout
+        android:id="@+id/rlTab1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTab1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:tint="@color/text_color_1"
+            app:srcCompat="@drawable/icon_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabCount1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-8dp"
+            android:layout_marginLeft="-8dp"
+            android:layout_toRightOf="@+id/ivTab1"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:maxLength="2"
+            android:minWidth="14dp"
+            android:padding="1dp"
+            android:text=""
+            android:textColor="@color/text_color_light"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabTitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTab1"
+            android:layout_centerHorizontal="true"
+            android:text="@string/TAB_TITLE_HOME"
+            android:textSize="@dimen/caption_mini" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlTab2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTab2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:tint="@color/text_color_1"
+            app:srcCompat="@drawable/ic_friends" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabCount2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-8dp"
+            android:layout_marginLeft="-8dp"
+            android:layout_toRightOf="@+id/ivTab2"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:maxLength="2"
+            android:minWidth="14dp"
+            android:padding="1dp"
+            android:text=""
+            android:textColor="@color/text_color_light"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTab2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/TAB_TITLE_REQUEST"
+            android:textSize="@dimen/caption_mini" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="52dp"
+        android:layout_height="52dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlTab3"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTab3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:tint="@color/text_color_1"
+            app:srcCompat="@drawable/ic_message" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabCount3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-8dp"
+            android:layout_marginLeft="-8dp"
+            android:layout_toEndOf="@+id/ivTab3"
+            android:layout_toRightOf="@+id/ivTab3"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:maxLength="2"
+            android:minWidth="14dp"
+            android:padding="1dp"
+            android:text=""
+            android:textColor="@color/text_color_light"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabTitle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTab3"
+            android:layout_centerHorizontal="true"
+            android:text="@string/message"
+            android:textSize="@dimen/caption_mini" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlTab4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTab4"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:tint="@color/text_color_1"
+            app:srcCompat="@drawable/ic_notifications" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabCount4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-8dp"
+            android:layout_marginLeft="-8dp"
+            android:layout_toRightOf="@+id/ivTab4"
+            android:background="@drawable/badge_background"
+            android:gravity="center"
+            android:maxLength="2"
+            android:minWidth="14dp"
+            android:padding="1dp"
+            android:text=""
+            android:textColor="@color/text_color_light"
+            android:textSize="8sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTabTitle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivTab4"
+            android:layout_centerHorizontal="true"
+            android:text="@string/TAB_TITLE_NOTIFICATION"
+            android:textSize="@dimen/caption_mini" />
+    </RelativeLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+

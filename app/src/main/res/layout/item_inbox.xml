@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/divider_length"
+    android:minHeight="@dimen/height_row_notification">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingBottom="@dimen/margin_half">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/height_row_notification"
+            android:layout_height="@dimen/height_row_notification"
+            android:scaleType="centerCrop"
+            app:civ_border_width="0dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage1"
+            android:layout_width="@dimen/height_row_notification"
+            android:layout_height="@dimen/height_row_notification"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_full"
+
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_toRightOf="@+id/ivImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMsg"
+                style="@style/text_style_1"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/body_1"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvImage"
+                    style="@style/image_tint"
+                    android:layout_width="12sp"
+                    android:layout_height="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/text_color_2"
+                    app:srcCompat="@drawable/watch_later" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

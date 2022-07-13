@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivProfileImage"
+        android:layout_marginTop="-24sp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/text_style_1"
+                android:gravity="center"
+                android:textSize="@dimen/size_text_feed_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSponsored"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+	     android:gravity="center"
+            android:textSize="@dimen/caption"
+            android:visibility="gone" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFeedDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFeedType"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/caption" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_quarter"
+                android:text="@string/dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+
+                    android:layout_gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_quarter"
+                android:text="@string/dot" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFeedPrivacy"
+                    android:layout_width="12sp"
+                    android:layout_height="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/grey_feed" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOption"
+        style="@style/image_tint"
+        android:layout_width="@dimen/height_small"
+        android:layout_height="@dimen/height_small"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginTop="32sp"
+        android:paddingLeft="@dimen/margin_half"
+        android:src="@drawable/vertical_dots"
+        android:tint="@color/grey_feed" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:visibility="invisible" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfileImageRound"
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:visibility="visible" />
+
+</RelativeLayout>

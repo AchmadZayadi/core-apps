@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    android:gravity="end"
+    android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bCamera"
+        style="@style/button_simple"
+        android:layout_marginRight="2sp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="@string/CANCEL"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bGallary"
+        style="@style/button_simple"
+        android:layout_marginLeft="2sp"
+        android:background="@drawable/rounded_filled"
+        android:gravity="center"
+        android:text="@string/remove"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

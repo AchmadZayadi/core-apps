@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSticker"
+            android:layout_width="74sp"
+            android:layout_height="74sp"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/margin_half" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbAddSticker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:clickable="false" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_toLeftOf="@+id/cbAddSticker"
+            android:layout_toRightOf="@+id/ivSticker"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sub_title"
+            tools:text="title" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            style="@style/text_style_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_toLeftOf="@+id/cbAddSticker"
+            android:layout_toRightOf="@+id/ivSticker"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/body_1"
+            tools:text="title" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

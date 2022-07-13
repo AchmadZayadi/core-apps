@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="250sp"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="2dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sesolutions.ui.customviews.SquareImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/margin_full">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMutual"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMutual">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bAccept"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_friend"
+                    android:layout_below="@+id/tvMutual"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_filled"
+                    android:maxLines="1"
+                    android:text="@string/add_friend"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bIgnore"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height_friend"
+                    android:layout_below="@+id/tvMutual"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_toRightOf="@+id/bAccept"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_holo_border_primary"
+                    android:text="@string/remove"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/body_1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain22"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:id="@+id/rleativedatal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="90sp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            style="@style/ripple_selector"
+            android:layout_width="64sp"
+            android:layout_height="64sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/text_style_1"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_super"
+            android:layout_marginRight="@dimen/margin_super"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_toRightOf="@+id/ivImage"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvJoinedOn"
+            style="@style/text_style_2"
+            android:layout_below="@+id/tvName"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_super"
+            android:layout_marginRight="@dimen/margin_super"
+            android:layout_toLeftOf="@+id/bAdd"
+            android:layout_toRightOf="@+id/ivImage"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/body_1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            style="@style/ripple_selector"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:padding="8dp"
+            android:rotation="90"
+            android:tint="@color/black_54"
+            app:srcCompat="@drawable/vertical_dots" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

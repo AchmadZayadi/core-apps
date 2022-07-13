@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlQuestionItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/margin_half"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginStart="@dimen/margin_half"
+    android:layout_marginTop="@dimen/margin_half"
+    android:background="@drawable/rounded_holo_border_grey_light"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_quarter">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etBody"
+        style="@style/Edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="@string/enter_question"
+        android:maxHeight="80dp"
+        android:paddingBottom="@dimen/margin_half"
+        android:paddingEnd="@dimen/margin_half"
+        android:paddingLeft="36dp"
+        android:paddingRight="@dimen/margin_half"
+        android:paddingStart="36dp"
+        android:paddingTop="@dimen/margin_half" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRemove"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        app:srcCompat="@drawable/cross" />
+
+</RelativeLayout>

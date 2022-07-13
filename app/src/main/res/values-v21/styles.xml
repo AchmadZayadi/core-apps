@@ -1,0 +1,43 @@
+<resources>
+
+    <style name="AppTheme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+
+    </style>
+    <!--
+     <item name="android:statusBarColor">@android:color/transparent</item>
+     <item name="android:windowBackground">@android:color/transparent</item>
+     <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowAllowEnterTransitionOverlap">true</item>
+    <item name="android:windowAllowReturnTransitionOverlap">true</item>
+    <item name="android:windowSharedElementEnterTransition">@anim/no_animation</item>
+    <item name="android:windowSharedElementExitTransition">@anim/no_animation</item>-->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowEnterTransition">@android:transition/no_transition</item>
+        <item name="android:windowExitTransition">@android:transition/no_transition</item>
+        <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
+    </style>
+
+    <!-- <style name="Theme.Lightbox" parent="AppThemeNoActionBar">
+         <item name="android:windowIsTranslucent">true</item>
+         <item name="android:windowBackground">@color/alpha_white</item>
+         <item name="android:windowContentOverlay">@null</item>
+         <item name="android:windowNoTitle">true</item>
+         <item name="android:windowIsFloating">false</item>
+         <item name="android:backgroundDimEnabled">true</item>
+     </style>-->
+
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/dialog_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/cvMain"
+        style="@style/dialog_style"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/height_profile_image_feed"
+            android:layout_height="@dimen/height_profile_image_feed"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llBody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_toEndOf="@+id/ivProfileImage"
+            android:layout_toRightOf="@+id/ivProfileImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etBody"
+                style="@style/Edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@drawable/rounded_shadow_border_white_22"
+                android:hint="@string/txt_enter_here"
+                android:maxLines="4"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingEnd="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_toEndOf="@+id/ivProfileImage"
+                android:layout_toRightOf="@+id/ivProfileImage"
+                android:textSize="@dimen/caption_mini"
+                android:visibility="gone"
+                tools:text="Enter your Donation Amount which you want to donate in this crowdfunding"
+                tools:visibility="visible" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCancel"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llBody"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_full"
+            android:layout_toStartOf="@+id/tvUpdate"
+            android:layout_toLeftOf="@+id/tvUpdate"
+            android:background="@drawable/curved_grey_border_holo"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_half"
+            android:paddingRight="@dimen/margin_half"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/cancel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUpdate"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llBody"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_full"
+            android:background="@drawable/rounded_filled"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_half"
+            android:paddingRight="@dimen/margin_half"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/update" />
+    </RelativeLayout>
+
+
+</LinearLayout>

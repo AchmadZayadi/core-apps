@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/_12ssp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:layout_height="wrap_content">
+
+        <!--    <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSongImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_12ssp"
+            android:layout_marginRight="@dimen/_12ssp"
+            android:layout_marginBottom="@dimen/_22ssp"
+            android:layout_marginTop="@dimen/_20ssp"
+            app:cardCornerRadius="@dimen/_7ssp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/tvSongTitle">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSongImage2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvSongTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@color/transparent_black22"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:padding="@dimen/margin_full"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:fontFamily="@font/helvetica_medium"
+            android:textSize="@dimen/sub_heading" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

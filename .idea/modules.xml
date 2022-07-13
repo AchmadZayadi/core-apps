@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Matani.iml" filepath="$PROJECT_DIR$/.idea/modules/Matani.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/Matani.DynamicForm.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/Matani.DynamicForm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/Matani.HtmlEditor.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/Matani.HtmlEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/Matani.ImageEditEngine.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/Matani.ImageEditEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Matani.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Matani.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/Matani.cfalertdialog.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/Matani.cfalertdialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/Matani.croplib.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/Matani.croplib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/Matani.filepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/Matani.filepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/Matani.jiaozivideoplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/Matani.jiaozivideoplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/Matani.jiaozivideoplayer_story.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/Matani.jiaozivideoplayer_story.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/Matani.tourGuide.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/Matani.tourGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/Matani.trimerlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/Matani.trimerlibrary.iml" />
+    </modules>
+  </component>
+</project>

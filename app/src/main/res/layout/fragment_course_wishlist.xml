@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/optionsbar"
+        layout="@layout/layout_toolbar"/>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_below="@+id/optionsbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUser"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:padding="@dimen/margin_half"
+            android:src="@drawable/request" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llheaderupper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlMiddle"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="36sp"
+            android:layout_marginRight="36sp"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvWishlist"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:hint="wishlist name" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivArtist"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/caption"
+                    tools:text="artist font icon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvArtist"
+                    style="@style/text_style_1"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/body_1"
+                    tools:text="artist name" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="visible">
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                <!--android:id="@+id/ivLocation"-->
+                <!--style="@style/text_style_2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:textSize="@dimen/caption" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption"
+                    tools:text="date" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDescription"
+            android:textSize="@dimen/caption"
+            android:maxLines="5"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/border2"
+        android:layout_below="@id/header"
+        android:background="#ababab" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCourses"
+        android:layout_below="@id/header"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/margin_half"
+        android:gravity="center"
+        style="@style/text_style_1"
+        android:layout_marginStart="@dimen/margin_quarter"
+        android:layout_marginLeft="@dimen/margin_quarter"
+        android:ellipsize="end"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:maxLines="1"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        tools:text="66 courses:" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:id="@+id/border"
+        android:layout_below="@id/tvCourses"
+        android:background="#ababab" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_below="@+id/border">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProducts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:descendantFocusability="beforeDescendants"
+            android:divider="#b5b5b5"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="vertical" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/layout_no_data" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginBottom="1dp"
+    app:cardCornerRadius="12dp">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_contest"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <jp.shts.android.library.TriangleLabelView
+            android:id="@+id/percantageoffdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            app:backgroundColor="@color/DodgerBlue"
+            app:corner="rightTop"
+            app:labelBottomPadding="10dp"
+            app:labelCenterPadding="1dp"
+            app:labelTopPadding="18dp"
+            app:primaryText="$200"
+            app:primaryTextColor="@color/white"
+            app:primaryTextSize="18sp"
+            app:secondaryText="OFF"
+            app:secondaryTextColor="@color/white"
+            app:secondaryTextSize="12sp" />
+
+
+        <View
+            android:id="@+id/vShadow"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_contest"
+            android:background="@color/transparent_black_dark"
+            android:visibility="gone" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDiscount"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_toRightOf="@+id/tvType"
+            android:background="@drawable/rounded_filled_red"
+            android:padding="6dp"
+            android:textSize="@dimen/body_1" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/Dprice"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_above="@id/llStatus"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:fontFamily="@font/sourcesanspro_semibold"
+            android:text="$152"
+            android:layout_marginEnd="@dimen/_3ssp"
+            android:layout_marginStart="@dimen/margin_full"
+            android:textSize="26sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvType"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/Dprice"
+            android:layout_above="@id/llStatus"
+            android:layout_marginLeft="@dimen/_2ssp"
+            android:layout_marginEnd="@dimen/_2ssp"
+            android:text="$200.000"
+            android:textColor="@color/white_54"
+            android:layout_marginBottom="2dp"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/view20"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_toRightOf="@+id/tvType"
+            android:layout_above="@id/llStatus"
+            android:layout_toStartOf="@+id/tvType"
+            android:layout_toEndOf="@+id/tvType"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            >
+        </View>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/above_shadow"
+            android:layout_above="@+id/llStatus"
+            ></View>
+
+        <View
+            style="@style/divider"
+            android:layout_above="@+id/llStatus" />
+
+        <View style="@style/divider" />
+
+        <!--    <View-->
+        <!--        style="@style/divider"-->
+        <!--        android:layout_below="@+id/llStatus" />-->
+
+
+        <RelativeLayout
+            android:id="@+id/llStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivImage"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="36sp"
+            android:layout_marginRight="36sp"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_toRightOf="@+id/ivUser"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/sub_heading"
+                android:textStyle="bold"
+                tools:text="Marcus Rouse" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvArtist"
+                style="@style/text_style_2"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@+id/ivUser"
+                android:layout_toRightOf="@+id/ivUser"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/caption"
+                tools:text="By Marcus Rouse" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCategory"
+                style="@style/text_style_2"
+                android:layout_below="@+id/tvArtist"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@+id/ivUser"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="in Entertainment"
+                android:textSize="@dimen/caption" />
+
+        </RelativeLayout>
+
+    </RelativeLayout><!--
+</android.support.v7.widget.CardView>-->
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llSellMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_half"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginEnd="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etSelling"
+        style="@style/Edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:hint="@string/what_r_u_selling"
+        android:maxLines="1"
+        android:padding="@dimen/margin_half"
+        android:textSize="@dimen/title" />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPrice"
+        style="@style/Edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:hint="@string/price_dollar"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:padding="@dimen/margin_half"
+        android:textSize="@dimen/title" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocation"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/enter_location"
+            android:maxLines="1"
+            android:padding="@dimen/margin_half"
+            android:textSize="@dimen/title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClearLocation"
+            android:layout_width="@dimen/button_height_small"
+            android:layout_height="@dimen/button_height_small"
+            android:padding="@dimen/margin_half"
+            android:tint="@color/grey_feed"
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etDescription"
+        style="@style/Edit_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:gravity="top"
+        android:hint="@string/description_optional"
+        android:inputType="textMultiLine"
+        android:isScrollContainer="true"
+        android:maxHeight="200sp"
+        android:maxLines="5"
+        android:overScrollMode="always"
+        android:padding="@dimen/margin_half"
+        android:scrollbars="vertical"
+        android:textSize="@dimen/title" />
+
+</LinearLayout>

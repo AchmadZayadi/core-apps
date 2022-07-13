@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View style="@style/divider" />
+
+        <include
+            layout="@layout/progress_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_super" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGroupTitle"
+            style="@style/text_style_1"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGroupCategory"
+            style="@style/text_style_2"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:textSize="@dimen/caption"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGroupDesc"
+            style="@style/text_style_1"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOwnerTitle"
+            style="@style/text_style_1"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalView"
+            style="@style/text_style_2"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:textSize="@dimen/caption"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalMember"
+            style="@style/text_style_2"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:textSize="@dimen/caption"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLastUpdated"
+            style="@style/text_style_2"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_full"
+            android:textSize="@dimen/caption" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

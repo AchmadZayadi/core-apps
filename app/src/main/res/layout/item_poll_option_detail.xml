@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:animateLayoutChanges="true"
+        android:gravity="center_vertical"
+        android:minHeight="48dp"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_half">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:text="San Francisco"
+            android:textSize="@dimen/caption" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbProgress"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_toLeftOf="@+id/tvViews"
+                android:layout_toStartOf="@+id/tvViews"
+                android:clickable="false"
+                android:progress="47"
+                android:progressDrawable="@drawable/seekbar_style"
+                android:thumb="@drawable/seekbar_thumb" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvViews"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="76 Views"
+                android:textSize="@dimen/caption" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

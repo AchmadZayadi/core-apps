@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:theme="@style/AppThemeMatrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:theme="@style/AppThemeMatrial"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="false"
+                    app:expandedTitleMarginStart="@dimen/margin_full"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:title=" "
+                    app:titleEnabled="true">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:id="@+id/cardRl"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvImage"
+                                android:layout_width="125dp"
+                                android:layout_height="125sp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/_25ssp"
+                                app:cardCornerRadius="@dimen/margin_half"
+                                app:cardElevation="6sp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    tools:background="@tools:sample/backgrounds/scenic">
+
+                                </androidx.appcompat.widget.AppCompatImageView>
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/resultCard"
+                                android:layout_width="350dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="125dp"
+                                android:alpha="0.9"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="2sp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvProfessional"
+                                        style="@style/text_style_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="120sp"
+                                        android:textSize="@dimen/_16ssp"
+                                        android:textStyle="bold"
+                                        tools:text="Steve Smith">
+
+                                    </androidx.appcompat.widget.AppCompatTextView>
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:id="@+id/llStar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvProfessional"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="@dimen/margin_half"
+                                        android:layout_marginBottom="@dimen/margin_half"
+                                        android:visibility="visible">
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivStar1"
+                                            style="@style/image_star"
+                                            android:layout_width="@dimen/size_star_music"
+                                            android:layout_height="@dimen/size_star_music"
+                                            android:layout_marginLeft="@dimen/margin_star"
+                                            android:layout_marginRight="@dimen/margin_star"
+                                            app:srcCompat="@drawable/star_unfilled"
+                                            app:tint="#ffc107" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivStar2"
+                                            style="@style/image_star"
+                                            android:layout_width="@dimen/size_star_music"
+                                            android:layout_height="@dimen/size_star_music"
+                                            android:layout_marginLeft="@dimen/margin_star"
+                                            android:layout_marginRight="@dimen/margin_star"
+                                            app:srcCompat="@drawable/star_unfilled"
+                                            app:tint="#ffc107" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivStar3"
+                                            style="@style/image_star"
+                                            android:layout_width="@dimen/size_star_music"
+                                            android:layout_height="@dimen/size_star_music"
+                                            android:layout_marginLeft="@dimen/margin_star"
+                                            android:layout_marginRight="@dimen/margin_star"
+                                            app:srcCompat="@drawable/star_unfilled"
+                                            app:tint="#ffc107" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivStar4"
+                                            style="@style/image_star"
+                                            android:layout_width="@dimen/size_star_music"
+                                            android:layout_height="@dimen/size_star_music"
+                                            android:layout_marginLeft="@dimen/margin_star"
+                                            android:layout_marginRight="@dimen/margin_star"
+                                            app:srcCompat="@drawable/star_unfilled"
+                                            app:tint="#ffc107" />
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivStar5"
+                                            style="@style/image_star"
+                                            android:layout_width="@dimen/size_star_music"
+                                            android:layout_height="@dimen/size_star_music"
+                                            android:layout_marginLeft="@dimen/margin_star"
+                                            android:layout_marginRight="@dimen/margin_star"
+                                            app:srcCompat="@drawable/star_unfilled"
+                                            app:tint="#ffc107" />
+
+
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvProfession"
+                                        style="@style/text_style_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/llStar"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="@dimen/margin_half"
+                                        android:textSize="@dimen/_14ssp"
+                                        tools:text="Carpenter">
+
+                                    </androidx.appcompat.widget.AppCompatTextView>
+
+                                    <com.google.android.material.card.MaterialCardView
+                                        android:id="@+id/cvServices"
+                                        android:theme="@style/AppThemeMatrial"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/tvProfession"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="@dimen/margin_half"
+                                        app:cardCornerRadius="@dimen/margin_half"
+                                        app:strokeColor="@color/colorPrimary"
+                                        app:strokeWidth="@dimen/_1ssp">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:padding="@dimen/margin_half"
+                                            android:text="View Services"
+                                            android:textColor="@color/colorPrimary"
+                                            android:textSize="@dimen/_14ssp"
+                                            android:textStyle="bold">
+
+                                        </androidx.appcompat.widget.AppCompatTextView>
+
+
+                                    </com.google.android.material.card.MaterialCardView>
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvLocation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="visible"
+                                        android:layout_below="@+id/cvServices"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_margin="@dimen/margin_half"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="@dimen/_12ssp"
+                                        tools:text="Pavlohrad, Dnipropetrovsk Oblast, Ukraine"
+                                        tools:visibility="visible">
+
+                                    </androidx.appcompat.widget.AppCompatTextView>
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:id="@+id/llLikeFav"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvLocation"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="@dimen/margin_half"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <androidx.appcompat.widget.LinearLayoutCompat
+                                            android:id="@+id/llLike"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/tvLocation"
+                                            android:layout_marginLeft="@dimen/margin_full"
+                                            android:layout_weight="1"
+                                            android:gravity="center">
+
+                                            <androidx.appcompat.widget.AppCompatImageView
+                                                android:id="@+id/ivImageLike"
+                                                android:layout_width="@dimen/height_icon_feed_option_home"
+                                                android:layout_height="@dimen/height_icon_feed_option_home"
+                                                android:layout_marginEnd="@dimen/margin_quarter"
+                                                android:layout_marginRight="@dimen/margin_quarter"
+                                                app:srcCompat="@drawable/ic_like" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/tvLikeCount"
+                                                style="@style/text_style_2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_marginEnd="@dimen/margin_half"
+                                                android:layout_marginRight="@dimen/margin_half"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:textSize="@dimen/sub_title"
+                                                tools:text="2" />
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:id="@+id/tvLike"
+                                                style="@style/text_style_2"
+                                                android:layout_width="wrap_content"
+                                                android:ellipsize="end"
+                                                android:maxLines="1"
+                                                android:text="@string/like"
+                                                android:textSize="@dimen/text_size_feed_lcs"
+                                                android:visibility="gone" />
+
+                                            <androidx.appcompat.widget.LinearLayoutCompat
+                                                android:id="@+id/llFavorite"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/tvLocation"
+                                                android:layout_marginLeft="@dimen/margin_full"
+                                                android:layout_weight="1"
+                                                android:gravity="center">
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/tvImageFavorite"
+                                                    android:layout_width="@dimen/height_icon_feed_option_home"
+                                                    android:layout_height="@dimen/height_icon_feed_option_home"
+                                                    android:layout_marginEnd="@dimen/margin_quarter"
+                                                    android:layout_marginRight="@dimen/margin_quarter"
+                                                    app:srcCompat="@drawable/music_favourite_selected" />
+
+                                                <androidx.appcompat.widget.AppCompatTextView
+                                                    android:id="@+id/tvCommentUpper"
+                                                    style="@style/text_style_2"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_marginEnd="@dimen/margin_full"
+                                                    android:layout_marginRight="@dimen/margin_full"
+                                                    android:ellipsize="end"
+                                                    android:maxLines="1"
+                                                    android:textSize="@dimen/sub_title"
+                                                    tools:text="1" />
+                                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                            <androidx.appcompat.widget.LinearLayoutCompat
+                                                android:id="@+id/llFollow"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/tvLocation"
+                                                android:layout_marginLeft="@dimen/margin_half"
+                                                android:layout_weight="1"
+                                                android:gravity="center">
+
+                                                <androidx.appcompat.widget.AppCompatImageView
+                                                    android:id="@+id/ivFollow"
+                                                    android:layout_width="@dimen/height_icon_feed_option_home"
+                                                    android:layout_height="@dimen/height_icon_feed_option_home"
+                                                    android:layout_marginEnd="@dimen/margin_quarter"
+                                                    android:layout_marginRight="@dimen/margin_quarter"
+                                                    app:srcCompat="@drawable/follow" />
+
+                                                <androidx.appcompat.widget.AppCompatTextView
+                                                    android:id="@+id/tvFollow"
+                                                    style="@style/text_style_2"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_marginEnd="@dimen/margin_full"
+                                                    android:layout_marginRight="@dimen/margin_full"
+                                                    android:ellipsize="end"
+                                                    android:maxLines="1"
+                                                    android:textSize="@dimen/sub_title"
+                                                    tools:text="1" />
+                                            </androidx.appcompat.widget.LinearLayoutCompat>
+                                        </androidx.appcompat.widget.LinearLayoutCompat>
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:id="@+id/llButtons"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/llLikeFav"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="@dimen/margin_half"
+                                        android:orientation="horizontal">
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:id="@+id/cvContact"
+                                            android:theme="@style/AppThemeMatrial"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="@dimen/margin_half"
+                                            app:cardCornerRadius="@dimen/margin_half"
+                                            app:strokeColor="@color/colorPrimary"
+                                            app:strokeWidth="@dimen/_1ssp">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:padding="@dimen/margin_half"
+                                                android:text="Contact"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/_15ssp"
+                                                android:textStyle="bold">
+
+                                            </androidx.appcompat.widget.AppCompatTextView>
+
+
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                        <com.google.android.material.card.MaterialCardView
+                                            android:id="@+id/cvBook"
+                                            android:theme="@style/AppThemeMatrial"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="@dimen/margin_half"
+                                            app:cardCornerRadius="@dimen/margin_half"
+                                            app:strokeColor="@color/colorPrimary"
+                                            app:strokeWidth="@dimen/_1ssp">
+
+                                            <androidx.appcompat.widget.AppCompatTextView
+                                                style="@style/text_style_light"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:background="@drawable/rounded_filled"
+                                                android:padding="@dimen/margin_half"
+                                                android:text="  Book  "
+                                                android:textSize="@dimen/_15ssp"
+                                                android:textStyle="bold">
+
+                                            </androidx.appcompat.widget.AppCompatTextView>
+
+
+                                        </com.google.android.material.card.MaterialCardView>
+
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                    <androidx.appcompat.widget.LinearLayoutCompat
+                                        android:id="@+id/llDescription"
+                                        style="@style/Forground_style"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/llButtons"
+                                        android:layout_marginTop="@dimen/margin_full"
+                                        android:orientation="vertical">
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvInfo"
+                                            style="@style/text_style_1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/margin_super"
+                                            android:textSize="@dimen/_18ssp"
+                                            android:textStyle="bold"
+                                            tools:text="About">
+
+                                        </androidx.appcompat.widget.AppCompatTextView>
+
+
+                                        <androidx.appcompat.widget.AppCompatTextView
+                                            android:id="@+id/tvQDescription"
+                                            style="@style/text_style_2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/rlQnaDetail"
+                                            android:layout_marginStart="@dimen/margin_super"
+                                            android:layout_marginLeft="@dimen/margin_super"
+                                            android:layout_marginTop="@dimen/margin_half"
+                                            android:layout_marginEnd="@dimen/margin_super"
+                                            android:layout_marginRight="@dimen/margin_super"
+                                            android:layout_marginBottom="@dimen/margin_full"
+                                            android:textSize="@dimen/body_1"
+                                            tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum" />
+                                    </androidx.appcompat.widget.LinearLayoutCompat>
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ToolbarTheme" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:theme="@style/AppThemeMatrial"
+                    style="@style/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/white"
+                    android:textAlignment="center"
+                    app:tabGravity="center"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabTextAppearance="@style/myTabTextStyle"
+                    app:tabTextColor="@color/text_color_1" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

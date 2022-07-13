@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--<com.sesolutions.ui.customviews.CustomJzVideo xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/storyVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        tools:visibility="visible" />-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/storyImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_centerInParent="true" />
+
+    <VideoView
+        android:id="@+id/storyVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <View
+        android:id="@+id/v1"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivPlayPause"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/jz_play_normal" />
+
+</RelativeLayout>

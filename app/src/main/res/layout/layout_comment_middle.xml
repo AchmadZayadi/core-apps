@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llReactionUpperComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/margin_half"
+        android:paddingTop="@dimen/margin_half"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:id="@+id/rlUpperLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper1"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginLeft="@dimen/margin_full" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper2"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toRightOf="@+id/ivLikeUpper1" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper3"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toRightOf="@+id/ivLikeUpper2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper4"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toRightOf="@+id/ivLikeUpper3" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper5"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toRightOf="@+id/ivLikeUpper4" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLikeUpperComment"
+            style="@style/text_style_1"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/body_1" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--  <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rvImageAttach"
+        android:descendantFocusability="beforeDescendants"
+        android:orientation="vertical" />
+
+
+    <!--<android.support.v7.widget.RecyclerView
+        android:id="@+id/rvImageAttach"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_recycle_bottom_comment"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="visible" />-->
+    <!--    </RelativeLayout>-->
+
+</LinearLayout>

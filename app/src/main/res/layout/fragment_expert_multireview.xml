@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlMain"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/layout_toolbar"></include>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profilecardview"
+        android:layout_width="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="76dp"
+        app:cardCornerRadius="10dp"
+        android:layout_height="120dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dummy_profile"
+            android:scaleType="centerCrop"
+            ></ImageView>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/expertname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anuradha Signh"
+        android:textColor="#262626"
+        android:textSize="14sp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_below="@+id/profilecardview"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_medium"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/expertname_designation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Co Founder"
+        android:textColor="#989898"
+        android:textSize="13sp"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:layout_below="@+id/expertname"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_medium"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/expertname_desi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Electronics"
+        android:textColor="#084B96"
+        android:textSize="12sp"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:layout_below="@+id/expertname_designation"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_medium"
+        ></TextView>
+
+
+
+    <View
+        android:id="@+id/viewid"
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_below="@+id/expertname_desi"
+        android:background="@color/bg_file_type"
+        ></View>
+
+    <TextView
+        android:id="@+id/reviewid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review"
+        android:layout_below="@+id/viewid"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_half"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/reviewiddes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_half"
+        android:layout_centerHorizontal="true"
+        android:text="It is a long established fact that a reader will be distract
+ed by the readable content of a page when looking at its
+layout. The point of using Lorem Ipsum is that it has a the
+more-or-less normal distribution of letters, as opposeded
+to using 'Content here, content here', making it look likeds
+readable English. Many desktop publishing packages me
+and web page editors now use Lorem Ipsum as their."
+        android:layout_below="@+id/reviewid"
+        android:textColor="#878787"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_half"
+        ></TextView>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:gravity="center"
+        android:layout_below="@+id/reviewiddes"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_height="45dp"
+        android:background="@drawable/button_multistore_transprent"
+        >
+        <TextView
+            android:layout_toRightOf="@+id/likeicond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:text="View Full Profile"
+            android:textColor="@color/buttondddd"
+            android:textSize="15sp"
+            ></TextView>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginBottom="@dimen/margin_half"
+    app:cardCornerRadius="@dimen/margin_full"
+    app:cardElevation="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:scaleType="centerCrop"
+            tools:background="@tools:sample/avatars">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+        <LinearLayout
+            android:id="@+id/llTextBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivImage"
+            android:layout_margin="@dimen/margin_half"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvName"
+                style="@style/text_style_1"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textSize="@dimen/sub_heading"
+                android:textStyle="bold"
+                tools:text="Steve Smith" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvJob"
+                style="@style/text_style_2"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textSize="@dimen/_12ssp"
+                tools:text="Carpenter" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llTextBottom"
+            android:weightSum="2"
+            android:layout_margin="@dimen/margin_half"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvView"
+                style="@style/text_style_1"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/_2ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@drawable/rounded_filled_grey_16"
+                android:padding="@dimen/margin_half"
+                android:text="View">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBook"
+                style="@style/text_style_light"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_2ssp"
+                android:background="@drawable/rounded_filled"
+                android:gravity="center"
+                android:padding="@dimen/margin_half"
+                android:text="Book">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

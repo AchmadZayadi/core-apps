@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:orientation="vertical">
+
+    <View
+        style="@style/divider"
+        android:layout_marginBottom="@dimen/margin_half" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlQnaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full">
+
+        <include
+            layout="@layout/layout_qna_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half" />
+
+        <View
+            style="@style/divider"
+            android:layout_width="@dimen/divider_length"
+            android:layout_height="64dp"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llQnaDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_qna_icon"
+            android:layout_toStartOf="@+id/llReactionUpper"
+            android:layout_toLeftOf="@+id/llReactionUpper"
+            android:layout_toEndOf="@+id/llQnaVote"
+            android:layout_toRightOf="@+id/llQnaVote"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQTitle"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                tools:text="What Does HTTP stands for?"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOwner"
+                style="@style/text_style_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="3"
+                tools:text="By Tom in Computer"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivLocation"
+                    style="@style/text_style_stats"
+                    android:layout_width="@dimen/body_1"
+                    android:layout_height="@dimen/body_1"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLocation"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStats"
+                style="@style/text_style_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="3"
+                tools:text="12 A  23 B  5 C 8 D"
+                android:textSize="@dimen/caption" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/layout_qna_reaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llPoll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_half"
+                android:background="@drawable/filled_rounded_left_corner"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_half"
+                android:paddingRight="@dimen/margin_half"
+                android:paddingBottom="@dimen/margin_quarter">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/contest_vote"
+                    app:tint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/poll"
+                    android:textSize="@dimen/caption_mini" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            style="@style/image_tint"
+            android:layout_width="26dp"
+            android:layout_height="@dimen/height_qna_icons"
+            android:paddingStart="@dimen/padding_qna_icon"
+            android:paddingLeft="@dimen/padding_qna_icon"
+            android:paddingTop="6dp"
+            android:paddingEnd="@dimen/padding_qna_icon"
+            android:paddingRight="@dimen/padding_qna_icon"
+            android:paddingBottom="6dp"
+            android:rotation="90"
+            android:visibility="gone"
+            app:srcCompat="@drawable/vertical_dots" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQDescription"
+        style="@style/text_style_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlQnaDetail"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:ellipsize="end"
+        android:maxLines="4"
+        tools:text="Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum "
+        android:textSize="@dimen/body_1" />
+
+    <com.sesolutions.utils.FlowLayout
+        android:id="@+id/flTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvQDescription"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full">
+
+        <include layout="@layout/layout_rounded_textview" />
+
+        <include layout="@layout/layout_rounded_textview" />
+
+        <include layout="@layout/layout_rounded_textview" />
+
+    </com.sesolutions.utils.FlowLayout>
+
+
+    <View
+        style="@style/divider"
+        android:layout_marginTop="@dimen/margin_medium" />
+
+    <include layout="@layout/layout_qna_stats" />
+
+
+    <View style="@style/divider" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

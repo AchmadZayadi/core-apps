@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/font_awesome_container"
+    android:layout_width="match_parent"
+    style="@style/Card_style"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_feed_upper" />
+
+
+        <include layout="@layout/layout_multiple_image_feed" />
+
+
+<!--        <include layout="@layout/layout_like_share_comment" />-->
+
+        <include layout="@layout/layout_like_share_comment2" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

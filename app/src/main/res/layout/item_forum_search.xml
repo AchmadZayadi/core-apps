@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:foregroundGravity="center_horizontal"
+            android:layout_margin="@dimen/margin_half"
+            tools:src="@drawable/dummy_profile"/>
+
+        <LinearLayout
+            android:layout_toRightOf="@+id/ivImage"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                style="@style/Forground_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llmiddle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/llposttopic"
+                    android:layout_toStartOf="@+id/llposttopic"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/text_style_1"
+                        tools:text="Test Topic"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/sub_heading"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    style="@style/text_style_1"
+                                    android:id="@+id/tvOwnerName"
+                                    android:layout_width="wrap_content"
+                                    android:text=" admin - "
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="@dimen/caption_large"
+                                    android:maxLines="1"
+                                    android:ellipsize="end"
+                                    android:textStyle="italic"
+                                    android:textColor="@color/black"/>
+                                <TextView
+                                    style="@style/text_style_2"
+                                    android:id="@+id/tvDate1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="4 hours ago"
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="@dimen/caption_large"
+                                    />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:src="@drawable/like"/>
+                                <TextView
+                                    style="@style/text_style_2"
+                                    android:id="@+id/tvLikeCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=" 0 likes - "
+                                    android:layout_gravity="center_horizontal"
+                                    android:textSize="@dimen/caption_large"
+                                    android:textStyle="italic"/>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llStar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginStart="@dimen/margin_half"
+                                    android:layout_marginLeft="@dimen/margin_half"
+                                    android:visibility="gone"
+                                    tools:visibility="visible">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivStar1"
+                                        style="@style/image_star"
+                                        android:layout_width="@dimen/size_star_music"
+                                        android:layout_height="@dimen/size_star_music"
+                                        android:layout_margin="@dimen/margin_star"
+                                        app:srcCompat="@drawable/star_unfilled"
+                                        app:tint="@color/colorPrimary" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivStar2"
+                                        style="@style/image_star"
+                                        android:layout_width="@dimen/size_star_music"
+                                        android:layout_height="@dimen/size_star_music"
+                                        android:layout_margin="@dimen/margin_star"
+                                        app:srcCompat="@drawable/star_unfilled"
+                                        app:tint="@color/colorPrimary" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivStar3"
+                                        style="@style/image_star"
+                                        android:layout_width="@dimen/size_star_music"
+                                        android:layout_height="@dimen/size_star_music"
+                                        android:layout_margin="@dimen/margin_star"
+                                        app:srcCompat="@drawable/star_unfilled"
+                                        app:tint="@color/colorPrimary" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivStar4"
+                                        style="@style/image_star"
+                                        android:layout_width="@dimen/size_star_music"
+                                        android:layout_height="@dimen/size_star_music"
+                                        android:layout_margin="@dimen/margin_star"
+                                        app:srcCompat="@drawable/star_unfilled"
+                                        app:tint="@color/colorPrimary" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivStar5"
+                                        style="@style/image_star"
+                                        android:layout_width="@dimen/size_star_music"
+                                        android:layout_height="@dimen/size_star_music"
+                                        android:layout_margin="@dimen/margin_star"
+                                        app:srcCompat="@drawable/star_unfilled"
+                                        app:tint="@color/colorPrimary" />
+
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <LinearLayout
+                    android:id="@+id/llposttopic"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcvPost"
+                        style="@style/Card_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_half"
+                        app:strokeWidth="0.5dp"
+                        app:cardCornerRadius="@dimen/margin_half"
+                        app:strokeColor="@color/black">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_half"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/text_style_1"
+                                android:id="@+id/tvViewCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:layout_gravity="center_horizontal"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                style="@style/text_style_stats"
+                                android:id="@+id/tvViews"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View"
+                                android:textSize="@dimen/caption_large"
+                                />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvTopic"
+                        style="@style/Card_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:strokeWidth="0.5dp"
+                        app:cardCornerRadius="@dimen/margin_half"
+                        android:layout_margin="@dimen/margin_half"
+                        android:layout_alignParentRight="true"
+                        app:strokeColor="@color/black">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/margin_half"
+                            android:orientation="vertical">
+                            <TextView
+                                style="@style/text_style_1"
+                                android:id="@+id/tvReplyCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:layout_gravity="center_horizontal"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+                            <TextView
+                                style="@style/text_style_stats"
+                                android:id="@+id/tvReplies"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/caption_large"
+                                android:text="Reply"
+                                />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/Background_style"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    style="@style/text_style_stats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Last post by "
+                    android:textStyle="italic"
+                    android:gravity="center_horizontal"
+                    android:layout_toLeftOf="@+id/tvUser"
+                    android:textSize="@dimen/caption_large" />
+
+
+                <TextView
+                    style="@style/text_style_1"
+                    android:id="@+id/tvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text=" admin - "
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/caption_large"
+                    android:textStyle="italic" />
+
+                <TextView
+                    style="@style/text_style_stats"
+                    android:id="@+id/tvDate2"
+                    android:layout_toRightOf="@id/tvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="2 hours ago"
+                    android:textSize="@dimen/caption_large" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

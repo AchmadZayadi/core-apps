@@ -1,0 +1,206 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:id="@+id/llBack"
+        android:layout_width="wrap_content"
+        android:elevation="4dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:tint="@color/white"
+            android:rotation="180"
+            app:srcCompat="@drawable/ic_right_arrow"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_style_light"
+            android:text="Kembali"/>
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSkip"
+        android:layout_width="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_half"
+        android:elevation="4dp"
+        android:layout_height="wrap_content"
+        style="@style/text_style_light"
+        android:text="Lewati"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:srcCompat="@color/black"
+        android:scaleType="centerCrop"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_sign"
+        android:elevation="2dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/resultCard"
+        android:layout_width="325dp"
+        android:layout_height="425dp"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8sp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLogin"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:gravity="start"
+                android:paddingStart="@dimen/margin_full"
+                android:text="Masukkan Kode"
+                android:textSize="24sp"
+                android:textStyle="bold">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ti1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvLogin"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:elevation="5dp"
+                app:passwordToggleTint="@color/black"
+                android:theme="@style/TextInputLayoutTheme2">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/otp_view"
+                    style="@style/Edit_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Kode yg dikirim melalui SMS"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:textSize="@dimen/sub_heading" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/rlPass"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ti1"
+                android:layout_marginTop="@dimen/margin_half">
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_below="@+id/rlPass"
+                android:id="@+id/timerlinear"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/alpha_signin"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvProgress"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:gravity="center_vertical"
+                    android:layout_centerInParent="true"
+                    android:text="00:00"
+                    android:textColor="@color/colorPrimarydark"
+                    android:layout_marginStart="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bVerify"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@+id/timerlinear"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="36dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_signin"
+                android:elevation="2dp"
+                android:text="Lanjutkan"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title" />
+            <LinearLayout
+                android:layout_below="@+id/bVerify"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginTop="@dimen/margin_full"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Tidak Menerima OTP? Kirim"
+                    android:textColor="@color/alpha_signin"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bResend"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textSize="@dimen/body_2"
+                    android:layout_height="@dimen/button_height_small"
+                    app:textAllCaps="true"
+                    android:text="@string/resend"
+                    android:textColor="@color/colorPrimarydark" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
+

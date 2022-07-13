@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlMainDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alpha_white"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSongTitleUpperDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_super"
+        android:textColor="@color/text_color_light" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/alpha_white"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSongImageDetail"
+                android:layout_width="36sp"
+                android:layout_height="36sp"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSongTitleDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_weight="1"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvClearDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:text="@string/clear"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivClearDetail"
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_full"
+                android:src="@drawable/share_music" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:id="@+id/rlDetailPlaylist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half">
+
+            <TextView
+                android:id="@+id/tvImagePlaylistDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_full"
+
+                android:layout_toRightOf="@+id/tvImagePlaylistDetail"
+                android:text="@string/add_to_playlist"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_below="@+id/tvImagePlaylistDetail"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half"
+                android:background="@color/text_color_light" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlDetailAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full">
+
+            <TextView
+                android:id="@+id/tvImageAlbumDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageAlbumDetail"
+                android:text="@string/go_to_album"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tvDetailAlbumTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv2"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageAlbumDetail"
+                android:textColor="@color/text_color_light"
+
+                android:textSize="@dimen/body_1" />
+
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_below="@+id/tvDetailAlbumTitle"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half"
+                android:background="@color/text_color_light" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rlDetailSong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full">
+
+            <TextView
+                android:id="@+id/tvImageSongDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageSongDetail"
+                android:text="@string/go_to_song"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tvDetailSongTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv4"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageSongDetail"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.5sp"
+                android:layout_below="@+id/tvDetailSongTitle"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half"
+                android:background="@color/text_color_light" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlDetailArtist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full">
+
+            <TextView
+                android:id="@+id/tvImageArtistDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageArtistDetail"
+                android:text="@string/go_to_artist"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <TextView
+                android:id="@+id/tvDetailArtistTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv5"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_toRightOf="@+id/tvImageArtistDetail"
+                android:textColor="@color/text_color_light"
+                android:textSize="@dimen/body_1" />
+
+            <View
+                style="@style/divider"
+                android:layout_below="@+id/tvDetailArtistTitle"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half"
+                android:background="@color/text_color_light" />
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bCancelDetail"
+            style="@style/button_simple"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_small"
+            android:text="@string/cancel" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

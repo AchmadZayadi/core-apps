@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlFooter"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDrawerHeader_1"
+            style="@style/text_style_1"
+            android:layout_height="@dimen/height_toolbar"
+            android:gravity="center"
+            android:text="@string/guest"
+            android:textSize="@dimen/heading"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlDrawerHeader_2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_header_drawer"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCoverPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/iv_bg_drawer" />
+
+            <RelativeLayout
+                android:id="@+id/rlLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_logo_drawer"
+                    android:layout_width="@dimen/height_icon_top_drawer"
+                    android:layout_height="@dimen/height_icon_top_drawer"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:scaleType="centerCrop"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProfileImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_logo_drawer1"
+                        android:layout_width="@dimen/height_icon_top_drawer"
+                        android:layout_height="@dimen/height_icon_top_drawer"
+                        android:scaleType="centerCrop" />
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_toEndOf="@+id/rlLogo"
+                android:layout_toRightOf="@+id/rlLogo"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_name"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEditProfile"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="Ubah Data Profil Saya"
+                    android:textSize="@dimen/body_1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listview_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutAnimation="@anim/layout_animation"
+            android:divider="@color/transparent_black"
+            android:scrollbars="none" />
+
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/rlFooter"
+        layout="@layout/drawer_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible" />
+
+</RelativeLayout>

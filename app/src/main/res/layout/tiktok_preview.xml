@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?><!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.sesolutions.camerahelper.MessageView
+        android:id="@+id/actualResolution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <!-- <Space
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:layout_weight="1" />-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCancel"
+            style="@style/ripple_selector"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margin_medium"
+            android:background="@drawable/tiktok_button_back"
+            android:elevation="@dimen/margin_half"
+            android:padding="12dp"
+            android:rotation="45"
+            app:srcCompat="@drawable/add_create" />
+
+        <!-- <Space
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:layout_weight="1" />-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSelect"
+            style="@style/ripple_selector"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/margin_medium"
+            android:background="@drawable/tiktok_button_back"
+            android:elevation="@dimen/margin_half"
+            android:padding="12dp"
+            android:tint="@color/white"
+            android:visibility="visible"
+            app:srcCompat="@drawable/follow" />
+
+        <!-- <Space
+             android:layout_width="0dp"
+             android:layout_height="1dp"
+             android:layout_weight="1" />-->
+
+    </LinearLayout>
+    <!--<com.sesolutions.trimer.widget.VideoTrimmerView
+        android:id="@+id/timeline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+   <life.knowledge4.videotrimmer.K4LVideoTrimmer
+        android:id="@+id/timeline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout><!--</ScrollView>-->

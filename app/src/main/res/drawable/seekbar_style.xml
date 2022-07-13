@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape
+            android:shape="rectangle"
+            android:tint="@color/transparent_black_dark">
+            <corners
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="4dp"
+                android:topLeftRadius="4dp"
+                android:topRightRadius="4dp" />
+            <size android:height="24dp" />
+            <solid android:color="@color/transparent_black_dark" />
+        </shape>
+    </item>
+    <item
+        android:id="@android:id/progress"
+        android:gravity="center_vertical|fill_horizontal">
+        <scale android:scaleWidth="100%">
+            <selector>
+                <item
+                    android:drawable="@color/colorPrimary"
+                    android:state_enabled="false" />
+                <item>
+                    <shape
+                        android:shape="rectangle"
+                        android:tint="@color/contest_vote">
+                        <corners
+                            android:bottomLeftRadius="4dp"
+                            android:topLeftRadius="4dp" />
+
+                        <size android:height="24dp" />
+
+                        <solid android:color="@color/contest_vote" />
+                    </shape>
+                </item>
+            </selector>
+        </scale>
+    </item>
+</layer-list>

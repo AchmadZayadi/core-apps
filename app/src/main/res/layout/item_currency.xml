@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llCb"
+    android:layout_width="360dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_above="@+id/tvCb" style="@style/divider" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCb"
+        style="@style/text_style_1"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:gravity="center_vertical"
+        android:text="Choose All Friends"
+        android:layout_margin="@dimen/margin_full"
+        android:textColor="@color/colorFormMasterElementTextTitle"
+        android:textSize="16sp" />
+    <View
+        android:layout_below="@+id/tvCb" style="@style/divider" />
+
+</RelativeLayout>

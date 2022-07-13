@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar_search" />
+
+
+    <!--  <android.support.design.widget.AppBarLayout
+          android:id="@+id/appbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:theme="@style/ActionBarTheme">
+
+          <android.support.v7.widget.Toolbar
+              android:id="@+id/toolbar"
+              android:layout_width="match_parent"
+              android:layout_height="?attr/actionBarSize"
+              android:background="@color/colorPrimary"
+              android:contentInsetEnd="0dp"
+              android:contentInsetLeft="0dp"
+              android:contentInsetRight="0dp"
+              android:contentInsetStart="0dp"
+              android:tag="@string/tag_toolbar"
+              app:contentInsetEnd="0dp"
+              app:contentInsetLeft="0dp"
+              app:contentInsetRight="0dp"
+              app:contentInsetStart="0dp"
+              app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+              &lt;!&ndash;
+                              app:layout_scrollFlags="scroll|enterAlways"
+              &ndash;&gt;
+              <RelativeLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+
+
+                  <android.support.v7.widget.AppCompatImageView
+                      android:id="@+id/ivBack"
+                      style="@style/button_image_toolbar"
+                      android:tint="@color/white"
+                      app:srcCompat="@drawable/arrow_left" />
+
+
+                  <LinearLayout
+                      android:id="@+id/lay_search"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_toRightOf="@+id/ivBack">
+
+                      <RelativeLayout
+                          android:id="@+id/rlCommentEdittext"
+                           style="@style/Edit_text_style"
+                          android:layout_width="wrap_content"
+                          android:layout_height="@dimen/height_search_drawer"
+                          android:layout_gravity="center"
+                          android:layout_weight="1"
+                          android:background="@drawable/rounded_filled">
+
+                          <android.support.v7.widget.AppCompatImageView
+                              android:layout_width="20dp"
+                              android:layout_height="20dp"
+                              android:layout_centerVertical="true"
+                              android:layout_marginLeft="@dimen/margin_quarter"
+                              android:tint="@color/white"
+                              app:srcCompat="@drawable/ses_places_ic_search" />
+
+                          <android.support.v7.widget.AppCompatEditText
+                           style="@style/Edit_text_style"
+                              android:id="@+id/etMusicSearch"
+                              android:layout_width="match_parent"
+                              android:layout_height="@dimen/height_search_drawer"
+                              android:layout_marginLeft="32dp"
+                              android:background="@null"
+                              android:cursorVisible="true"
+                              android:hint="@string/hint_search_song"
+                              android:imeOptions="actionSearch"
+                              android:maxLines="1"
+                              android:singleLine="true"
+                              android:textColor="@color/text_color_light"
+                              android:textColorHint="@color/grey_feed"
+                              android:textCursorDrawable="@drawable/color_cursor"
+                              android:textSize="@dimen/body_1" />
+
+                      </RelativeLayout>
+
+                      <android.support.v7.widget.AppCompatImageView
+                          android:id="@+id/ivFilter"
+                          style="@style/button_image_toolbar"
+                          android:src="@drawable/filter"
+                          app:tint="@color/white" />
+
+
+                  </LinearLayout>
+
+              </RelativeLayout>
+
+          </android.support.v7.widget.Toolbar>
+
+      </android.support.design.widget.AppBarLayout>-->
+
+    <include layout="@layout/fragment_store" />
+
+</LinearLayout>

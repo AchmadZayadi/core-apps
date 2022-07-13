@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginBottom="@dimen/margin_half"
+    app:cardCornerRadius="@dimen/margin_half">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_quarter"
+        android:paddingBottom="@dimen/margin_quarter"
+        android:background="@color/black">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_alignParentStart="true"
+            android:layout_margin="@dimen/margin_half"
+            tools:src="@tools:sample/avatars">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUsername"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_toEndOf="@+id/ivUserImage"
+            android:textSize="@dimen/text_size_feed_lcs"
+            android:textColor="@color/white"
+            tools:text="Vastu Shastra">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUserId"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/tvUsername"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_toEndOf="@+id/ivUserImage"
+            android:textSize="12sp"
+            tools:text="Vastu Shastra">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <LinearLayout
+            android:id="@+id/llFollow"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:background="@drawable/button_tabs"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/addtextid"
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:src="@drawable/ic_add_tic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_toEndOf="@+id/addtextid"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="FOLLOW"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

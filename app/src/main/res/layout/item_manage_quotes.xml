@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivQuoteImage"
+                android:layout_width="@dimen/height_profile_image_feed"
+                android:layout_height="@dimen/height_profile_image_feed"
+                android:layout_marginRight="@dimen/margin_half"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/ivOption"
+                android:layout_toRightOf="@+id/ivQuoteImage"
+                android:ellipsize="end"
+                android:maxLines="1"
+
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                style="@style/text_style_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_toLeftOf="@+id/ivOption"
+                android:layout_toRightOf="@+id/ivQuoteImage"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOption"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:padding="4dp"
+                android:rotation="90"
+                android:tint="@color/grey_feed"
+                app:srcCompat="@drawable/vertical_dots" />
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStats"
+                style="@style/text_style_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/caption" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCategory"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/caption" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

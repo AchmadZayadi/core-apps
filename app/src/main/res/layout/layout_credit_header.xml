@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/curved_grey_border_holo">
+
+    <!-- android:layout_marginStart="@dimen/margin_quarter"
+     android:layout_marginLeft="@dimen/margin_quarter"
+     android:layout_marginEnd="@dimen/margin_quarter"
+     android:layout_marginRight="@dimen/margin_quarter"-->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv1"
+        style="@style/text_style_1"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:fontFamily="@string/medium_bold"
+        android:maxLines="2"
+        android:text="@string/activity_type"
+        android:textSize="@dimen/body_1" />
+
+    <View
+        style="@style/divider"
+        android:layout_width="@dimen/divider_length"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv2"
+            style="@style/text_style_1"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:fontFamily="@string/medium_bold"
+            android:gravity="center"
+            android:maxLines="2"
+            android:padding="@dimen/margin_half"
+            android:text="@string/credit_points"
+            android:textSize="@dimen/body_1" />
+
+        <View style="@style/divider" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv14"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/first_time"
+                android:textSize="@dimen/caption" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="@dimen/divider_length"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv24"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/next_time"
+                android:textSize="@dimen/caption" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="@dimen/divider_length"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv34"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:padding="@dimen/item_offset"
+                android:text="@string/max_points"
+                android:textSize="@dimen/caption" />
+
+
+            <View
+                style="@style/divider"
+                android:layout_width="@dimen/divider_length"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv44"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:gravity="center"
+                android:maxLines="2"
+                android:text="@string/deduction_points"
+                android:textSize="@dimen/caption" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View style="@style/divider" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

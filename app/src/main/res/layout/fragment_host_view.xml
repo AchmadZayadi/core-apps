@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBar"
+        android:padding="@dimen/margin_full"
+        android:visibility="invisible">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUser"
+            android:layout_width="84sp"
+            android:layout_height="84sp"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvUser"
+            style="@style/text_style_1"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:layout_marginStart="@dimen/margin_quarter"
+            android:layout_toEndOf="@+id/ivUser"
+            android:layout_toRightOf="@+id/ivUser"
+            android:textStyle="bold" />
+
+        <com.sesolutions.utils.FlowLayout
+            android:id="@+id/flStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvUser"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_toEndOf="@+id/ivUser"
+            android:layout_toRightOf="@+id/ivUser"
+            android:padding="@dimen/margin_quarter">
+
+
+        </com.sesolutions.utils.FlowLayout>
+
+        <include
+            layout="@layout/layout_image_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/flStats"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_toEndOf="@+id/ivUser"
+            android:layout_toRightOf="@+id/ivUser" />
+
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llSocial"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlMain"
+        android:animateLayoutChanges="true"
+        android:gravity="right|end"
+        android:visibility="gone"
+        android:paddingBottom="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFb"
+            style="@style/ripple_selector"
+            android:layout_width="@dimen/host_social_image_height"
+            android:layout_height="@dimen/host_social_image_height"
+            android:layout_margin="@dimen/margin_quarter"
+            android:background="@drawable/circle_white_background"
+            android:elevation="@dimen/margin_quarter"
+            android:padding="@dimen/margin_quarter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/facebook"
+            app:tint="@color/color_facebook" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivGoogle"
+            style="@style/ripple_selector"
+            android:layout_width="@dimen/host_social_image_height"
+            android:layout_height="@dimen/host_social_image_height"
+            android:layout_margin="@dimen/margin_quarter"
+            android:background="@drawable/circle_white_background"
+            android:elevation="@dimen/margin_quarter"
+            android:padding="@dimen/margin_quarter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/google_plus_line"
+            app:tint="@color/red" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTwitter"
+            style="@style/ripple_selector"
+            android:layout_width="@dimen/host_social_image_height"
+            android:layout_height="@dimen/host_social_image_height"
+            android:layout_margin="@dimen/margin_quarter"
+            android:background="@drawable/circle_white_background"
+            android:elevation="@dimen/margin_quarter"
+            android:padding="@dimen/margin_quarter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/twitter"
+            app:tint="#0084b4" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivWeb"
+            style="@style/ripple_selector"
+            android:layout_width="@dimen/host_social_image_height"
+            android:layout_height="@dimen/host_social_image_height"
+            android:layout_margin="@dimen/margin_quarter"
+            android:background="@drawable/circle_white_background"
+            android:elevation="@dimen/margin_quarter"
+            android:padding="@dimen/margin_quarter"
+            android:visibility="visible"
+            app:srcCompat="@drawable/website_line"
+            app:tint="@color/contest_type" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/v1"
+        style="@style/divider"
+        android:layout_below="@+id/llSocial" />
+
+    <com.sesolutions.ui.customviews.NestedWebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llReaction"
+        android:layout_below="@+id/v1"
+        android:padding="@dimen/margin_full" />
+
+    <include layout="@layout/layout_like_favorite_comment" />
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/margin_quarter">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStats"
+        style="@style/text_style_stats"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/margin_quarter"
+        android:layout_marginRight="@dimen/margin_quarter"
+        android:textSize="@dimen/caption"
+        tools:text="stats"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvText"
+        style="@style/text_style_2"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/caption"
+        tools:text="text"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="200sp"
+    android:layout_margin="2dp"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStoryImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@drawable/dummy_profile" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/vStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#66000000"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_half">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCreatedOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_quarter"
+            android:paddingRight="@dimen/margin_quarter"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption"
+            tools:text="User Name " />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_quarter"
+            android:paddingRight="@dimen/margin_quarter"
+            android:paddingBottom="@dimen/margin_half"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption"
+            android:visibility="gone"
+            tools:text="view 1 likes 4" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/vHighlight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66000000"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.sesolutions.animate.bang.SmallBangView
+        android:id="@+id/sbvHighlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivHighlight"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:tint="#ffb300"
+            tools:srcCompat="@drawable/rating_star_filled" />
+    </com.sesolutions.animate.bang.SmallBangView>
+
+
+</RelativeLayout>

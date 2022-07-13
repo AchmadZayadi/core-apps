@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300sp"
+    android:layout_height="180sp"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_half">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        app:cardBackgroundColor="#55111111"
+        app:cardCornerRadius="@dimen/margin_half"
+        app:cardElevation="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPackageTitle"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64sp"
+                android:layout_marginRight="64sp"
+                android:maxLines="2"
+                android:paddingBottom="@dimen/margin_half"
+                android:paddingEnd="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                android:text="Test Package"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubscribedOn"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tvNextPayment"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_full"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textSize="@dimen/caption"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNextPayment"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/tvDesc"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_full"
+                android:ellipsize="middle"
+                android:singleLine="true"
+                android:textSize="@dimen/caption"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Here comes the description Here comes the description ,so what are you looking for man"
+                android:textSize="@dimen/body_1" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!--<android.support.v7.widget.CardView
+        style="@style/Card_style"
+        android:layout_width="80sp"
+        android:layout_height="80sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_quarter"
+        android:layout_marginRight="@dimen/margin_quarter"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:cardElevation="8dp">-->
+
+    <RelativeLayout
+        android:layout_width="96sp"
+        android:layout_height="72sp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginRight="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:elevation="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ses_price_tag" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPrice"
+                style="@style/text_style_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="middle"
+                android:padding="@dimen/margin_quarter"
+                android:singleLine="true"
+                android:text="$50.00"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMonth"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_quarter"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:text="Monthly"
+                android:textSize="@dimen/caption" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <!-- </android.support.v7.widget.CardView>-->
+
+</RelativeLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlMain"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvJoin"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_super"
+            android:gravity="center"
+            android:text="@string/join_requires_confirmation" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bJoin"
+            style="@style/button_simple"
+            android:text="@string/TXT_JOIN"
+            android:visibility="visible" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

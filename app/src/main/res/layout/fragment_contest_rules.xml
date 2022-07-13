@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.sesolutions.ui.customviews.NestedWebView
+        android:id="@+id/wbRules"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginStart="@dimen/margin_full"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:padding="@dimen/divider_length" />
+
+    <!-- <View
+         style="@style/divider"
+         android:layout_above="@+id/llButton" />-->
+
+
+</RelativeLayout>

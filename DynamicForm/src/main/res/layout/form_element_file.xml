@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMainForm"
+    android:background="@color/colorFormMasterElementBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llSelect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:padding="14dp"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDate"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:visibility="visible"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/camera_st" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivDate"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textColor="@color/colorFormMasterHeaderText"
+            android:textSize="16sp"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/formElementImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivDate"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:gravity="center"
+        android:padding="0.2dp"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/lldocument"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ivDate"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/formElementDocument"
+            android:layout_width="70dp"
+            android:layout_marginLeft="12dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/fileic"
+            android:adjustViewBounds="true"
+            android:gravity="center"
+            android:padding="0.2dp"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/formElementDocumenttext"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="sample.pdf"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:textColor="@color/black"
+            android:padding="0.2dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/videofilepath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivDate"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        android:padding="0.2dp"
+        android:visibility="gone"
+        android:text=""
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        ></TextView>
+</LinearLayout>

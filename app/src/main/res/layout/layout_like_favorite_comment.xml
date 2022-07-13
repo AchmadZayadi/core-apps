@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llReaction"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_height="@dimen/button_height"
+    android:visibility="gone"
+    tools:visibility="visible"
+    app:cardCornerRadius="0dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <!--  <View
+              style="@style/divider"
+              android:layout_marginLeft="@dimen/margin_full"
+              android:layout_marginRight="@dimen/margin_full" />-->
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLike"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:animateLayoutChanges="true"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImageLike"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    app:srcCompat="@drawable/like" />
+
+                <TextView
+                    android:id="@+id/tvLike"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:text="@string/like"
+                    android:textSize="@dimen/text_size_feed_lfc" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:animateLayoutChanges="true"
+                android:gravity="center">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImageFavorite"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    app:srcCompat="@drawable/favorite" />
+
+                <!--   <com.sesolutions.animate.bang.SmallBangView
+                       android:id="@+id/smvFav"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+
+                     >-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFavorite"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/favorite"
+                    android:textSize="@dimen/text_size_feed_lfc" />
+
+                <!--   </com.sesolutions.animate.bang.SmallBangView>-->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llComment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:animateLayoutChanges="true"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvImageComment"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    app:srcCompat="@drawable/comment" />
+
+
+                <TextView
+                    android:id="@+id/tvComment"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:text="@string/comment"
+                    android:textSize="@dimen/text_size_feed_lfc" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

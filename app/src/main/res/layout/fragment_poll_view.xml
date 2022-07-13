@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl"
+    style="@style/Main_style"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llReaction"
+        android:layout_below="@+id/appBar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    style="@style/Forground_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/margin_half"
+                    android:paddingBottom="@dimen/margin_full"
+                    android:paddingLeft="@dimen/margin_full"
+                    android:paddingRight="@dimen/margin_half"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPollTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/title"
+                        android:textColor="#262626"
+                        android:textIsSelectable="true"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/profileviewid"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/profile_st"
+                            ></de.hdodenhof.circleimageview.CircleImageView>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOwner"
+                            style="@style/text_style_stats"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="@dimen/margin_quarter"
+                            android:layout_marginTop="5dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:maxLines="1"
+                            android:textSize="@dimen/body_1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOwner2"
+                            style="@style/text_style_stats"
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="@dimen/margin_quarter"
+                            android:layout_marginTop="5dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:maxLines="1"
+                            android:textSize="@dimen/body_1" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStats"
+                        style="@style/text_style_stats"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:fontFamily="@font/roboto_regular"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDesc"
+                        style="@style/text_style_1"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:textColor="#989898"
+                        android:textSize="@dimen/sub_heading_normal"/>
+
+                </LinearLayout>
+
+                <com.sesolutions.ui.customviews.fab.FloatingActionButton
+                    android:id="@+id/fabQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/rvOption"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="-24dp"
+                    android:src="@drawable/poll_result"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll1"
+                    android:clipToPadding="false"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:paddingLeft="@dimen/margin_half"
+                    android:paddingRight="@dimen/margin_half"
+                    />
+
+                <TextView
+                    android:id="@+id/showresultid"
+                    android:layout_marginTop="@dimen/margin_full"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_below="@+id/rvOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show Result"
+                    android:textColor="#262626"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textSize="@dimen/sub_heading"
+                    ></TextView>
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/layout_like_favorite_comment" />
+
+
+</RelativeLayout>

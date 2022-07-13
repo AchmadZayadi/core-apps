@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/flMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".ui.common.SplashAnimatedActivity">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/iv_splash_screen"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/ses_logo" />
+
+    <!--<com.rd.PageIndicatorView
+        android:id="@+id/pageIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="110sp"
+        android:layout_marginBottom="@dimen/margin_half"
+        app:piv_animationType="drop"
+        app:piv_count="4"
+        app:piv_dynamicCount="true"
+        app:piv_interactiveAnimation="true"
+        app:piv_radius="4dp"
+        app:piv_selectedColor="@color/white"
+        app:piv_unselectedColor="@color/transparent_black_light" />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lavLoader"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="160sp"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:foregroundGravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="splash_loader.json"
+        app:lottie_loop="true"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVersion"
+        style="@style/text_style_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right|end"
+        android:padding="@dimen/margin_half"
+        android:textSize="@dimen/caption_mini"
+        tools:text="v2.4" />
+
+</FrameLayout>

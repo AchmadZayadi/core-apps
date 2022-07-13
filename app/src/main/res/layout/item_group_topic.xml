@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="@dimen/margin_half"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/height_row_reaction_user"
+            android:layout_height="@dimen/height_row_reaction_user"
+            android:layout_margin="@dimen/margin_half"
+            android:foregroundGravity="center_horizontal"
+            tools:src="@drawable/dummy_profile" />
+
+        <LinearLayout
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:weightSum="10">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llmiddle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_1"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sub_heading"
+                    tools:text="Test Topic" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:gravity="bottom"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/tvOwnerName"
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Erna Walker"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/caption_large" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:background="#ababab" />
+
+                    <TextView
+                        android:id="@+id/tvDate1"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:text="4 hours ago"
+                        android:textSize="@dimen/caption_large" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginBottom="@dimen/margin_half">
+
+                    <TextView
+                        style="@style/text_style_stats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_toLeftOf="@+id/tvUser"
+                        android:gravity="center_horizontal"
+                        android:text="Last post by "
+                        android:textSize="@dimen/caption_large" />
+
+                    <TextView
+                        android:id="@+id/tvUser"
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:text=" admin "
+                        android:textSize="@dimen/caption_large"/>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#ababab" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvViewCount"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:padding="@dimen/margin_quarter"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvViews"
+                    style="@style/text_style_stats"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="View"
+                    android:textSize="@dimen/caption_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvReplyCount"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:paddingBottom="@dimen/margin_quarter"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReplies"
+                    style="@style/text_style_stats"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="Reply"
+                    android:textSize="@dimen/caption_large" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

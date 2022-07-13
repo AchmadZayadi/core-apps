@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rlNonVideo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.sesolutions.ui.customviews.VideoEnabledWebView
+            android:id="@+id/wbVideo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_video_player"
+            android:background="@color/black" />
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llReaction"
+            android:layout_below="@+id/wbVideo"
+            android:visibility="invisible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/font_awesome_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    style="@style/Card_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginTop="2dp">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvAlbumTitle"
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:paddingEnd="@dimen/margin_half"
+                            android:paddingLeft="@dimen/margin_full"
+                            android:paddingRight="@dimen/margin_half"
+                            android:paddingStart="@dimen/margin_full"
+                            android:textSize="@dimen/sub_title"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_half"
+                            android:paddingBottom="@dimen/margin_half">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ivUserImage"
+                                android:layout_width="@dimen/height_medium"
+                                android:layout_height="@dimen/height_medium"
+                                android:src="@drawable/dummy_profile"
+                                android:layout_marginLeft="@dimen/margin_full"
+                                android:layout_marginRight="@dimen/margin_half"
+                                />
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvUserTitle"
+                                        style="@style/text_style_2"
+                                        android:layout_width="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:textSize="@dimen/body_1" />
+
+                                    <View
+                                        style="@style/divider"
+                                        android:layout_width="0.5sp"
+                                        android:layout_height="@dimen/body_1"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginLeft="@dimen/margin_half"
+                                        android:layout_marginRight="@dimen/margin_half" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvAlbumDate"
+                                        style="@style/text_style_2"
+                                        android:layout_width="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:textSize="@dimen/body_1" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvVideoDetail"
+                                    style="@style/text_style_stats"
+                                    android:layout_marginTop="@dimen/margin_quarter"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/caption" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+                <!-- <View
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_below="@+id/tvAlbumTitle"
+                     android:background="@color/grey_light" />
+     -->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvNoData"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/llStar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="@dimen/margin_full"
+                    android:paddingTop="@dimen/margin_half"
+                    android:textSize="@dimen/body_1"
+                    android:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/llStar"
+                    android:paddingTop="2dp" />
+
+
+                <ProgressBar
+                    android:id="@+id/pb"
+                    android:layout_width="@dimen/button_height_small"
+                    android:layout_height="@dimen/button_height_small"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:progressTint="@color/color_facebook"
+                    android:visibility="gone" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/height_toolbar"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_full"
+                app:srcCompat="@drawable/arrow_left" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/layout_full_video" />
+
+</RelativeLayout>

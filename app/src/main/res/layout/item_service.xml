@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="12dp"
+    android:theme="@style/AppThemeMatrial"
+    app:cardElevation="4sp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rlMiddle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_contest"
+            android:layout_below="@+id/rlHeader">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:background="@tools:sample/backgrounds/scenic" />
+
+
+            <RelativeLayout
+                android:id="@+id/llStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/margin_full">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            style="@style/divider"
+            android:layout_below="@+id/rlHeader" />
+
+        <View
+            style="@style/divider"
+            android:layout_above="@+id/llTextBottom" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llTextBottom"
+            android:layout_width="275dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlMiddle"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Carpenter Service" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivPro"
+                    android:layout_width="@dimen/_16ssp"
+                    android:layout_height="@dimen/_16ssp"
+                    tools:background="@tools:sample/avatars" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLocation"
+                    style="@style/text_style_1"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="13dp"
+                    android:layout_marginTop="@dimen/_1ssp"
+                    tools:text="Adam Smith" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivCat"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/caption" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    style="@style/text_style_1"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    tools:text="$12/hr"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="@dimen/_12ssp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlMiddle"
+            android:layout_toEndOf="@+id/llTextBottom"
+            android:layout_marginStart="@dimen/margin_half"
+            android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivBook"
+            android:text="Book"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_28ssp"
+            android:layout_marginEnd="@dimen/_3ssp"
+            android:layout_marginStart="@dimen/_3ssp"
+            style="@style/text_style_light"
+            android:background="@drawable/rounded_filled"
+            android:padding="@dimen/_4ssp">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivBook"
+                android:layout_marginTop="@dimen/_16ssp"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStar1"
+                    style="@style/image_star"
+                    android:layout_width="@dimen/size_star_music"
+                    android:layout_height="@dimen/size_star_music"
+                    android:layout_marginLeft="@dimen/margin_star"
+                    android:layout_marginRight="@dimen/margin_star"
+                    app:srcCompat="@drawable/star_filled"
+                    app:tint="#ffc107" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStar2"
+                    style="@style/image_star"
+                    android:layout_width="@dimen/size_star_music"
+                    android:layout_height="@dimen/size_star_music"
+                    android:layout_marginLeft="@dimen/margin_star"
+                    android:layout_marginRight="@dimen/margin_star"
+                    app:srcCompat="@drawable/star_filled"
+                    app:tint="#ffc107" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStar3"
+                    style="@style/image_star"
+                    android:layout_width="@dimen/size_star_music"
+                    android:layout_height="@dimen/size_star_music"
+                    android:layout_marginLeft="@dimen/margin_star"
+                    android:layout_marginRight="@dimen/margin_star"
+                    app:srcCompat="@drawable/star_filled"
+                    app:tint="#ffc107" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStar4"
+                    style="@style/image_star"
+                    android:layout_width="@dimen/size_star_music"
+                    android:layout_height="@dimen/size_star_music"
+                    android:layout_marginLeft="@dimen/margin_star"
+                    android:layout_marginRight="@dimen/margin_star"
+                    app:srcCompat="@drawable/star_unfilled"
+                    app:tint="#ffc107" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStar5"
+                    style="@style/image_star"
+                    android:layout_width="@dimen/size_star_music"
+                    android:layout_height="@dimen/size_star_music"
+                    android:layout_marginLeft="@dimen/margin_star"
+                    android:layout_marginRight="@dimen/margin_star"
+                    app:srcCompat="@drawable/star_unfilled"
+                    app:tint="#ffc107" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </LinearLayout>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+    <include
+        layout="@layout/layout_toolbar_customize">
+    </include>
+
+         <RelativeLayout
+             android:id="@+id/rlmain"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/companyimageid"
+                android:layout_width="80dp"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                ></ImageView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/jobtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_full"
+                android:layout_below="@+id/companyimageid"
+                android:text=""
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:textColor="#084B96"
+                android:textSize="@dimen/sub_heading"
+                android:fontFamily="@font/roboto_medium"
+                ></androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/companyname"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/jobtitle"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:textColor="#828282"
+                android:textSize="@dimen/body_1"
+                android:fontFamily="@font/roboto_medium"
+                ></androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/expriense"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/companyname"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:text=""
+                android:textColor="#828282"
+                android:textSize="@dimen/body_1"
+                android:fontFamily="@font/roboto_medium"
+                ></androidx.appcompat.widget.AppCompatTextView>
+
+
+            <LinearLayout
+                android:id="@+id/llbottomid"
+                android:layout_below="@+id/expriense"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFbShare"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivWhatsAppShare"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/whatsapp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImageShare"
+                    android:layout_width="@dimen/height_icon_feed_option_home"
+                    android:layout_height="@dimen/height_icon_feed_option_home"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/ic_share" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivSaveFeed"
+                        android:layout_width="30dp"
+                        android:layout_height="@dimen/height_icon_feed_option_home"
+                        android:layout_gravity="right|end"
+                        app:srcCompat="@drawable/ic_save" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+             <View
+                android:id="@+id/view21"
+                 android:layout_width="match_parent"
+                 android:layout_height="1sp"
+                 android:background="@color/black_30"
+                 android:layout_marginTop="@dimen/margin_half"
+                 android:layout_below="@+id/llbottomid"
+                 ></View>
+
+
+             <androidx.appcompat.widget.AppCompatTextView
+                 android:id="@+id/aboutcompany"
+                 android:layout_width="wrap_content"
+                 android:layout_below="@+id/view21"
+                 android:layout_marginTop="@dimen/margin_half"
+                 android:layout_height="wrap_content"
+                 android:text="About Compnay"
+                 android:layout_marginStart="@dimen/margin_quarter"
+                 android:textColor="#262626"
+                 android:textSize="@dimen/sub_title"
+                 android:fontFamily="@font/roboto_bold"
+                 ></androidx.appcompat.widget.AppCompatTextView>
+
+
+             <androidx.appcompat.widget.AppCompatTextView
+                 android:id="@+id/aboutcompanydes"
+                 android:layout_width="wrap_content"
+                 android:layout_below="@+id/aboutcompany"
+                 android:layout_marginTop="@dimen/margin_small"
+                 android:layout_height="wrap_content"
+                 android:text=" "
+                 android:layout_marginStart="@dimen/margin_quarter"
+                 android:textColor="#828282"
+                 android:textSize="@dimen/body_1"
+                 android:fontFamily="@font/roboto_regular"
+                 ></androidx.appcompat.widget.AppCompatTextView>
+
+
+        </RelativeLayout>
+
+
+
+</LinearLayout>

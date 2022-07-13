@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ad_mob_id">ca-app-pub-3940256099942544~3347511713</string>
+    <!--These variables will be created dynamically from gradle files,so no need to create app_name here-->
+    <!--<string name="places_api_key"></string>
+    <string name="facebook_app_id">982628535254841</string>
+    <string name="fb_login_protocol_scheme">fb982628535254841</string>-->
+
+    <string name="font_api_key">AIzaSyDmM4QK5i30ZqbB1O__65rTBcowepz7ePE</string>
+    <string name="ad_feed_bottom">ca-app-pub-5329731022935357/9388531677</string>
+    <string name="ad_mob_unit_interstial_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="agora_app_id">e9c5cb6322024e648442b1ee75bf10a6</string>
+
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="slash_u">\u</string>
+    <string name="font_photo">\uf03e</string>
+    <string name="font_video">\uf03d</string>
+    <string name="font_checkin">\uf041</string>
+    <string name="font_file">\uf15b</string>
+    <string name="font_link">\uf0c1</string>
+    <string name="font_sell">\uf02b</string>
+    <string name="font_schedule">\uf017</string>
+    <string name="font_tag">\uf007</string>
+    <string name="font_feeling">\uf118</string>
+    <string name="font_music">\uf001</string>
+    <string name="font_Schedule">\uf017</string>
+    <string name="icon_favorite">\uf004</string>
+    <string name="icon_comment">\uf075</string>
+    <string name="hint">hint</string>
+    <string name="tint_gray">tint_grey</string>
+    <string name="tag_toolbar">toolbar</string>
+    <string name="transition_fab">tran_fab</string>
+
+    <string name="style_button_image_toolbar">button_image_toolbar</string>
+    <string name="style_text_style_toolbar">text_style_toolbar</string>
+    <string name="style_Card_style_toolbar">Card_style_toolbar</string>
+    <string name="style_Edit_text_style">Edit_text_style</string>
+    <string name="Edit_text_style_toolbar">Edit_text_style_toolbar</string>
+    <string name="bg_primary">bg_primary</string>
+
+    <!--TODO change this string and use image instead of this-->
+    <string name="dot">•</string>
+    <string name="medium_bold">sans-serif-medium</string>
+
+</resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <include layout="@layout/layout_toolbar_list_refresh" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_height="@dimen/height_toolbar"
+            android:theme="@style/ToolbarTheme">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentInsetStart="0dp"
+                android:contentInsetLeft="0dp"
+                android:contentInsetEnd="0dp"
+                android:contentInsetRight="0dp"
+                android:tag="@string/tag_toolbar"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+                app:popupTheme="@style/ToolbarTheme">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="48dp"
+                        android:layout_height="?attr/actionBarSize"
+                        android:padding="@dimen/margin_full"
+                        android:tint="@color/white"
+                        app:srcCompat="@drawable/arrow_left" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="48dp"
+                        android:layout_toLeftOf="@+id/llOption"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        tools:text="@string/txt_sign_up"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/title" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llOption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:minWidth="48dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivShare"
+                            android:layout_width="48dp"
+                            android:layout_height="?attr/actionBarSize"
+                            android:padding="@dimen/margin_full"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/share_music"
+                            android:tint="@color/white"
+                            tools:visibility="visible" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivOption"
+                            style="@style/button_image_toolbar"
+                            android:rotation="90"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/vertical_dots"
+                            tools:visibility="visible" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivSearch"
+                            android:layout_width="48dp"
+                            android:layout_height="?attr/actionBarSize"
+                            android:padding="@dimen/margin_full"
+                            android:visibility="gone"
+                            android:tint="@color/white"
+                            app:srcCompat="@drawable/ses_places_ic_search" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layoutAnimation="@anim/anim_fall_down"
+                    android:orientation="vertical" />
+
+                <include layout="@layout/layout_no_data" />
+
+                <ProgressBar
+                    android:id="@+id/pb"
+                    android:layout_width="@dimen/button_height_small"
+                    android:layout_height="@dimen/button_height_small"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+
+    <com.sesolutions.ui.customviews.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/margin_full"
+        android:visibility="gone"
+        app:fabColor="@color/white"
+        app:fabElevation="8dp"
+        app:fabText="@string/done"
+        app:fabTextColor="@color/black"
+        app:fabType="roundedSquare"
+        tools:visibility="visible" />
+
+    <include layout="@layout/bottosheet_archive_setting" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

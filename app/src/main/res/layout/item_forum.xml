@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:foregroundGravity="center_horizontal"
+            android:layout_margin="@dimen/margin_half"
+            android:src="@drawable/comment"/>
+        <View
+            style="@style/divider"
+            android:layout_below="@+id/llmiddle"
+            android:layout_marginTop="@dimen/margin_super"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llmiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:layout_toLeftOf="@+id/llposttopic"
+            android:layout_toStartOf="@+id/llposttopic"
+            android:orientation="vertical"
+            android:layout_marginEnd="@dimen/margin_quarter">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                tools:text="News and Announcement"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/sub_heading"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLastPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/dummy_profile"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/text_style_stats"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Posted by "
+                            android:layout_marginLeft="@dimen/margin_quarter"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/caption_large"
+                            android:textStyle="italic"/>
+                        <TextView
+                            style="@style/text_style_1"
+                            android:id="@+id/tvUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Admin"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/caption_large"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            style="@style/text_style_stats"
+                            android:id="@+id/tvDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_quarter"
+                            android:text="1 hour ago"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/caption_large"
+                            android:textStyle="italic"/>
+                        <TextView
+                            style="@style/text_style_1"
+                            android:id="@+id/tvTopic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Test"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/caption_large"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/llposttopic"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvPost"
+                style="@style/Card_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                app:strokeWidth="0.5dp"
+                app:cardCornerRadius="@dimen/margin_half"
+                app:strokeColor="@color/black">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_half"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/text_style_1"
+                        android:id="@+id/tv_Post_Count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        style="@style/text_style_stats"
+                        android:id="@+id/tvPosts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Post"
+                        android:textSize="@dimen/caption_large"
+                        />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvTopic"
+                style="@style/Card_style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:strokeWidth="0.5dp"
+                app:cardCornerRadius="@dimen/margin_half"
+                android:layout_margin="@dimen/margin_half"
+                app:strokeColor="@color/black">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_half"
+                    android:orientation="vertical">
+                    <TextView
+                        style="@style/text_style_1"
+                        android:id="@+id/tvTopicCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:layout_gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        style="@style/text_style_stats"
+                        android:id="@+id/tvTopics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Topic"
+                        android:textSize="@dimen/caption_large"
+                        />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

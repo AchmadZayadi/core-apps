@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        style="@style/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabTextColor="@color/black_54" />
+
+    <!--
+       <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_holo_border_primary">
+
+            <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvNetworkA"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@color/colorPrimary"
+          android:gravity="center"
+          android:padding="@dimen/margin_full"
+          android:text="@string/available_networks"
+          android:textColor="@color/text_color_light"
+          android:textSize="@dimen/body_1" />
+
+
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvNetworkM"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:padding="@dimen/margin_full"
+          android:text="@string/my_networks"
+          android:textColor="@color/black" />
+
+
+  </android.support.v7.widget.LinearLayoutCompat>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSetting"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="@dimen/margin_full"
+        android:text="@string/no_network_1"
+        android:textColor="@color/black_54"
+        android:textSize="@dimen/body_1"
+        android:visibility="gone" />
+
+</LinearLayout>

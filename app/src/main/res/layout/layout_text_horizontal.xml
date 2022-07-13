@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ripple_selector"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_full"
+    android:layout_marginLeft="@dimen/margin_full"
+    android:layout_marginEnd="@dimen/margin_full"
+    android:layout_marginRight="@dimen/margin_full"
+    android:layout_weight="1"
+    android:paddingTop="4dp"
+    android:paddingBottom="6dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv1"
+        style="@style/text_style_1"
+        android:layout_weight="2"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textSize="@dimen/body_1"
+        tools:text="Created By" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv2"
+        style="@style/text_style_2"
+        android:layout_marginStart="@dimen/margin_half"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textSize="@dimen/body_1"
+        tools:text="your@email.com" />
+
+</LinearLayout>

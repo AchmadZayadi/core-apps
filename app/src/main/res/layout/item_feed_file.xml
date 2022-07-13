@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/font_awesome_container"
+    android:layout_width="match_parent"
+    style="@style/Card_style"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_feed_upper" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_full"
+            android:text="Text body"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llMainFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_half"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_half">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFileType"
+                android:layout_width="@dimen/height_image_file_type_feed"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@color/bg_file_type"
+                android:padding="@dimen/margin_quarter" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/margin_full"
+                android:paddingStart="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:paddingBottom="@dimen/margin_half"
+
+                    android:text="Text body"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFileType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:paddingBottom="@dimen/margin_half"
+
+                    android:text="Text body"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFilePreview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bg_file_type"
+                    android:maxLines="1"
+                    android:padding="@dimen/margin_quarter"
+                    android:paddingEnd="@dimen/margin_full"
+                    android:paddingLeft="@dimen/margin_full"
+                    android:paddingRight="@dimen/margin_full"
+                    android:paddingStart="@dimen/margin_full"
+                    android:text="@string/preview"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/title"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include layout="@layout/layout_multiple_image_feed" />
+
+<!--        <include layout="@layout/layout_like_share_comment" />-->
+        <include layout="@layout/layout_like_share_comment2" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

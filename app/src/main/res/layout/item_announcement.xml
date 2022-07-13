@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_half">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/text_style_1"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:textSize="@dimen/body_1"
+        android:textStyle="bold"
+        tools:text="Sandra Kingsley" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivOption"
+        style="@style/image_tint_2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="4dp"
+        android:rotation="90"
+        android:visibility="gone"
+        app:srcCompat="@drawable/vertical_dots"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ivCalendar"
+            style="@style/text_style_stats"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCalendar"
+            style="@style/text_style_stats"
+            android:textSize="@dimen/caption" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDesc"
+        style="@style/text_style_1"
+        android:layout_below="@+id/llCalendar"
+        android:layout_marginTop="@dimen/margin_half"
+        android:linksClickable="true"
+        android:textSize="@dimen/body_1" />
+
+
+</RelativeLayout>

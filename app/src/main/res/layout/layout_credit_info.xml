@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llCreditTop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_quarter"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:elevation="@dimen/margin_quarter"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_super"
+            android:paddingBottom="@dimen/margin_super">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabel"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:maxLines="2"
+                android:text="@string/credit_points"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValue"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/body_1"
+                tools:text="@string/credit_points" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_holo_border_primary"
+            android:elevation="@dimen/margin_quarter"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_super"
+            android:paddingBottom="@dimen/margin_super">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabel2"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:maxLines="2"
+                android:text="@string/debit_points"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValue2"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/body_1"
+                tools:text="@string/credit_points" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_holo_border_primary"
+            android:elevation="@dimen/margin_quarter"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_super"
+            android:paddingBottom="@dimen/margin_super">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabel3"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:maxLines="2"
+                android:text="@string/remaining_size"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValue3"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/body_1"
+                tools:text="@string/credit_points" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_holo_border_primary"
+            android:elevation="@dimen/margin_quarter"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_super"
+            android:paddingBottom="@dimen/margin_super">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLabel4"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:fontFamily="@string/medium_bold"
+                android:maxLines="2"
+                android:text="@string/validity_date"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValue4"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textSize="@dimen/body_1"
+                tools:text="675" />
+
+        </LinearLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lay_search"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_toolbar"
+    android:animateLayoutChanges="true"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitleMain"
+        style="@style/toolbar_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title"
+        android:visibility="visible" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rlSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginRight="@dimen/margin_half"
+        android:layout_weight="1"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/transparent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_search_drawer"
+            android:orientation="horizontal"
+            android:layout_gravity="end"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivactionmap"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_marginLeft="@dimen/margin_super"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:gravity="center_vertical"
+                android:src="@drawable/ic_action_map"
+                android:tint="@color/white"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivToolbarSearch"
+                style="@style/image_toolbar_style"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:tint="@color/text_color_light"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_marginLeft="@dimen/margin_super"
+                android:layout_marginRight="@dimen/margin_half"
+                android:gravity="center_vertical"
+                android:text="@string/search"
+                android:textColor="#60ffffff"
+                android:visibility="gone"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVideo"
+                style="@style/image_toolbar_style"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:gravity="center_vertical"
+                app:srcCompat="@drawable/message" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ivCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:text="USD"
+                android:textStyle="bold"
+                style="@style/text_style_1"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:gravity="center_vertical" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMessage"
+        style="@style/image_toolbar_style"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/margin_quarter"
+        android:layout_marginStart="@dimen/margin_quarter"
+        android:layout_marginLeft="@dimen/margin_quarter"
+        android:layout_marginRight="@dimen/margin_quarter"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        app:srcCompat="@drawable/video_player" />
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfileToolbar"
+        android:layout_width="@dimen/button_height"
+        android:layout_height="@dimen/button_height"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginRight="@dimen/margin_half"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingBottom="@dimen/margin_half"
+
+        android:src="@drawable/ic_camera" />
+
+</LinearLayout>
+
+

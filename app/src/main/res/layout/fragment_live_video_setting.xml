@@ -1,0 +1,230 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/llLiveVideoSetting"
+    tools:context=".ui.live.LiveVideoSetting">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/privacy"
+        android:textSize="@dimen/caption_large"
+        android:textColor="@color/black"
+        android:layout_margin="@dimen/margin_full"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+            android:background="?android:selectableItemBackground"
+            android:layoutDirection="rtl"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/privacy_everyone"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+            android:background="?android:selectableItemBackground"
+            android:layoutDirection="rtl"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/privacy_network"
+            android:textSize="14sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+            android:background="?android:selectableItemBackground"
+            android:layoutDirection="rtl"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/privacy_friends_only"
+            android:textSize="14sp" />
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:drawableRight="?android:attr/listChoiceIndicatorSingle"
+            android:background="?android:selectableItemBackground"
+            android:layoutDirection="rtl"
+            android:layout_gravity="start"
+            android:textAlignment="textStart"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/privacy_only_me"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/llSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+        <View style="@style/divider"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saving"
+            android:textSize="@dimen/caption_large"
+            android:layout_margin="@dimen/margin_full"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_half"
+                android:maxLines="2"
+                android:padding="@dimen/margin_half"
+                android:textColor="@color/black"
+                android:text="@string/save_gallery" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/scToggleShave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_half"
+                android:checked="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View style="@style/divider"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sharing"
+        android:textSize="@dimen/caption_large"
+        android:layout_margin="@dimen/margin_full"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:textSize="@dimen/caption"
+        android:text="@string/sharing_note"/>
+
+    <RelativeLayout
+        android:id="@+id/rlStory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/margin_half"
+            android:maxLines="1"
+            android:padding="@dimen/margin_half"
+            android:textColor="@color/black"
+            android:text="@string/share_story_label" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/scToggleShareStories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_half"
+            android:checked="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/caption"
+            android:layout_below="@+id/scToggleShareStories"
+            android:text="If selected, users can watch your Live Video from your Story."
+            android:layout_margin="@dimen/margin_full"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/margin_half"
+            android:maxLines="2"
+            android:padding="@dimen/margin_half"
+            android:textColor="@color/black"
+            android:text="@string/share_feed_label"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/scToggleShareFeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_half"
+            android:checked="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/caption"
+            android:text="If selected, users can watch your Live Video from your Feed."
+            android:layout_below="@+id/scToggleShareFeed"
+            android:layout_margin="@dimen/margin_full"/>
+    </RelativeLayout>
+
+</LinearLayout>

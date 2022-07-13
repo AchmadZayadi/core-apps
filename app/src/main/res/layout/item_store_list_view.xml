@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset">
+
+    <RelativeLayout
+        android:id="@+id/layout_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/product_image_on_list_verticle"
+            android:layout_height="@dimen/product_image_on_list_verticle"
+            android:scaleType="centerInside"
+            android:src="@drawable/dummy_profile"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <LinearLayout
+            android:id="@+id/layout_item_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:maxLines="2"
+                    android:text="Men's Wrist Watche\nnvkdfnnmnml kncnmvlknv "
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVerified"
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_toRightOf="@+id/tvTitle"
+                    app:srcCompat="@drawable/page_verified" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/store_item_margin"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:text="By"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvArtist"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/store_item_margin"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Parnella Durepos"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter">
+
+                <ImageView
+                    style="@style/image_tint_2"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/store_item_margin"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:src="@drawable/folder"
+                    android:tint="@color/text_color_2"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvCategoryName"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/store_item_margin"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Mens"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStoreDesc"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="Shop for mens's watches online from the biggest name in the industry"
+                android:textSize="@dimen/body_1"
+                android:layout_marginBottom="@dimen/margin_half"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            android:layout_width="36sp"
+            android:layout_height="36sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_full"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:paddingBottom="10sp"
+            android:rotation="90"
+            app:srcCompat="@drawable/vertical_dots"
+            app:tint="@color/text_color_2" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

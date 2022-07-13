@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:theme="@style/AppThemeMatrial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/layout_toolbar_customize"></include>
+    <RelativeLayout
+        android:id="@+id/rlSearchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search_drawer"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:layout_margin="@dimen/margin_half">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rlCommentEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_toLeftOf="@+id/llOption"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="2dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:padding="7dp"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:tint="@color/text_color_2"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFakeSearch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/transparent"
+                android:cursorVisible="true"
+                android:hint="@string/hint_search_product"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_feed"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/body_1" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llOption"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:animateLayoutChanges="true"
+            android:minWidth="48dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivListView"
+                    android:layout_height="match_parent"
+                    android:layout_width="48dp"
+                    android:padding="8dp"
+                    app:srcCompat="@drawable/menu"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:tint="@color/DodgerBlue"/>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="2dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivGridView"
+                    android:layout_height="match_parent"
+                    android:layout_width="48dp"
+                    android:padding="8dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/gridicon"
+                    tools:visibility="visible"
+                    android:tint="@color/DodgerBlue"/>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefreshLayout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:descendantFocusability="beforeDescendants"
+            android:divider="#b5b5b5"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="vertical" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>
+    <include layout="@layout/layout_no_data" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

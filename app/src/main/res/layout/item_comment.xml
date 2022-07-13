@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="0.5sp"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_quarter">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvComment"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/height_profile_image_feed"
+            android:layout_height="@dimen/height_profile_image_feed"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_toLeftOf="@+id/ivOption"
+            android:layout_toRightOf="@+id/ivProfileImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/text_style_1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBody"
+                style="@style/text_style_2"
+                android:linksClickable="true"
+                android:textColor="@color/black"
+                android:textColorLink="@color/colorPrimary"
+                android:textSize="@dimen/body_1" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSticker"
+                android:layout_width="120sp"
+                android:layout_height="120sp"
+                android:layout_marginTop="@dimen/margin_half"
+                android:adjustViewBounds="true"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCommentAttachment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/llLinkAttachment"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:descendantFocusability="beforeDescendants"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLinkAttachment"
+                android:layout_width="match_parent"
+                android:layout_height="72sp"
+                android:layout_above="@+id/llBottom"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_full"
+                android:background="@drawable/rounded_holo_border_grey_light"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_quarter"
+                android:visibility="gone">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLinkImage"
+                    android:layout_width="72sp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvImageTitle"
+                        style="@style/text_style_1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/margin_half"
+                        android:paddingLeft="@dimen/margin_half"
+                        android:paddingBottom="@dimen/margin_quarter"
+
+                        android:text="Text body"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/body_1"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvImageDescription"
+                        style="@style/text_style_2"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:paddingStart="@dimen/margin_half"
+                        android:paddingLeft="@dimen/margin_half"
+                        android:text="Text body"
+                        android:textColor="@color/grey_feed"
+                        android:textSize="@dimen/body_1" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="4sp"
+                    android:textColor="@color/grey_feed"
+                    android:textSize="@dimen/caption" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLike"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLikeCount"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="4sp"
+                    android:ellipsize="end"
+                    android:maxLines="1" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDelete"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="4sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/delete"
+                    android:textSize="@dimen/body_1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

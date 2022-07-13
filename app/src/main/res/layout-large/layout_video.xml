@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llVideoMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_quarter"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvImageTitle"
+        style="@style/text_style_1"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingStart="@dimen/margin_full"
+        android:textSize="@dimen/sub_heading"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvImageDescription"
+        style="@style/text_style_2"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="3sp"
+        android:maxLines="2"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingStart="@dimen/margin_full"
+        android:textSize="@dimen/sub_heading_normal" />
+
+    <RelativeLayout
+        android:id="@+id/rlVideoImage"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:layout_height="wrap_content">
+
+
+
+        <VideoView
+            android:id="@+id/videoplayerhome123"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="300dp"
+            android:visibility="gone" />
+
+        <com.sesolutions.ui.AGvideo.AGVideo
+            android:id="@+id/ag_player"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:visibility="gone"
+            />
+
+        <cn.jzvd.JzvdStd2
+            android:id="@+id/videoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivVideoImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:maxHeight="480sp"
+            android:minHeight="190sp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivVideoPlaceholder"
+            android:layout_width="@dimen/height_medium"
+            android:layout_height="@dimen/height_medium"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/play" />
+
+    </RelativeLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

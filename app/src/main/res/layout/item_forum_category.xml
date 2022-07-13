@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/cvMain"
+style="@style/Card_style"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginBottom="@dimen/margin_half"
+android:minHeight="@dimen/height_row_notification"
+app:cardCornerRadius="0dp"
+app:cardElevation="0dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@+id/ivImage"
+    android:layout_toRightOf="@+id/ivImage">
+
+    <View
+        android:id="@+id/randomColor"
+        android:layout_width="@dimen/margin_quarter"
+        android:layout_height="match_parent"
+        android:background="@color/Orange" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llmiddle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/title"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            tools:text="Category Name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescription"
+            style="@style/text_style_2"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginStart="@dimen/title"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_full"
+            tools:text="Discussions about all SES Products including Plugins, Themes, Mobile Apps, Widgets, etc."
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/body_1"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llSubCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View style="@style/divider" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvChild"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:descendantFocusability="beforeDescendants"
+                    android:divider="#b5b5b5"
+                    android:layoutAnimation="@anim/anim_fall_down"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/layout_image_text_horizontal"
+                    android:padding="@dimen/item_offset" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>

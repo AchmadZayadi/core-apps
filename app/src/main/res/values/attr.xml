@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="MaxHeightScrollView">
+        <attr name="maxHeight" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="FlowLayout">
+        <attr name="android:gravity" />
+    </declare-styleable>
+    <declare-styleable name="FlowLayout_Layout">
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+
+    <declare-styleable name="IconView">
+        <attr name="reaction" format="enum">
+            <enum name="like" value="0" />
+            <enum name="love" value="1" />
+            <enum name="laugh" value="2" />
+            <enum name="wow" value="3" />
+            <enum name="sad" value="4" />
+            <enum name="angry" value="5" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SmallBangView">
+        <attr name="dots_primary_color" format="color|reference" />
+        <attr name="dots_secondary_color" format="color|reference" />
+        <attr name="circle_start_color" format="color|reference" />
+        <attr name="circle_end_color" format="color|reference" />
+        <attr name="liked" format="boolean" />
+        <attr name="anim_scale_factor" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_TwoWayLayoutManager">
+        <attr name="android:orientation" tools:ignore="ResourceName" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_TwoWayView">
+        <attr name="twowayview_layoutManager" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_GridLayoutManager">
+        <attr name="twowayview_numColumns" format="integer" />
+        <attr name="twowayview_numRows" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_SpacingItemDecoration">
+        <attr name="android:verticalSpacing" tools:ignore="ResourceName" />
+        <attr name="android:horizontalSpacing" tools:ignore="ResourceName" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_DividerItemDecoration">
+        <attr name="android:divider" tools:ignore="ResourceName" />
+        <attr name="twowayview_verticalDivider" format="reference" />
+        <attr name="twowayview_horizontalDivider" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_StaggeredGridViewChild">
+        <attr name="twowayview_span" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="twowayview_SpannableGridViewChild">
+        <attr name="twowayview_colSpan" format="integer" />
+        <attr name="twowayview_rowSpan" format="integer" />
+    </declare-styleable>
+
+
+    <!--styles for custom FAB statrs-->
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fabType" format="enum">
+            <enum name="circle" value="0" />
+            <enum name="square" value="1" />
+            <enum name="roundedSquare" value="2" />
+        </attr>
+        <attr name="fabSizes" format="enum">
+            <enum name="normal" value="10" />
+            <enum name="mini" value="11" />
+        </attr>
+        <attr name="fabText" format="string" />
+        <attr name="fabTextAllCaps" format="boolean" />
+        <attr name="fabTextColor" format="color" />
+        <attr name="fabElevation" format="dimension" />
+        <attr name="fabColor" format="color" />
+        <attr name="fabIcon" format="integer" />
+        <attr name="fabIconColor" format="color" />
+        <attr name="fabIconPosition" format="enum">
+            <enum name="start" value="30" />
+            <enum name="top" value="31" />
+            <enum name="end" value="32" />
+            <enum name="bottom" value="33" />
+        </attr>
+        <attr name="fabMenuStyle" format="enum">
+            <enum name="popUp" value="20" />
+            <enum name="popDown" value="21" />
+            <enum name="popRight" value="22" />
+            <enum name="popLeft" value="23" />
+        </attr>
+        <attr name="fabMenuGravity">
+            <flag name="start" value="0" />
+            <flag name="end" value="1" />
+            <flag name="bottom" value="2" />
+            <flag name="top" value="4" />
+            <flag name="center_horizontal" value="8" />
+            <flag name="center_vertical" value="16" />
+            <flag name="center" value="31" />
+        </attr>
+
+    </declare-styleable>
+    <!--styles for custom FAB ends-->
+
+    <!--styles for CircularProgressbar ends-->
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpb_progress" format="integer" />
+        <attr name="cpb_progressbar_color" format="color" />
+        <attr name="cpb_background_progressbar_color" format="color" />
+        <attr name="cpb_progressbar_width" format="dimension" />
+        <attr name="cpb_background_progressbar_width" format="dimension" />
+    </declare-styleable>
+    <!--styles for CircularProgressbar ends-->
+
+    <declare-styleable name="FlingLayout">
+        <attr name="fl_isDragEnabled" format="boolean" />
+        <attr name="fl_isDismissEnabled" format="boolean" />
+    </declare-styleable>
+
+    <!--styles for Pulse View starts-->
+    <declare-styleable name="Pulsator4Droid">
+        <attr name="pulse_count" format="integer" />
+        <attr name="pulse_duration" format="integer" />
+        <attr name="pulse_color" format="color" />
+        <attr name="pulse_repeat" format="integer" />
+        <attr name="pulse_maxScale" format="float" />
+        <attr name="pulse_startFromScratch" format="boolean" />
+        <attr name="pulse_interpolator" format="enum">
+            <enum name="Linear" value="0" />
+            <enum name="Accelerate" value="1" />
+            <enum name="Decelerate" value="2" />
+            <enum name="AccelerateDecelerate" value="3" />
+        </attr>
+    </declare-styleable>
+    <!--styles for Pulse View ends-->
+    <!--styles for SlideUpPanel starts-->
+    <declare-styleable name="SlidingUpPanelLayout">
+        <attr name="umanoPanelHeight" format="dimension" />
+        <attr name="umanoShadowHeight" format="dimension" />
+        <attr name="umanoParallaxOffset" format="dimension" />
+        <attr name="umanoFadeColor" format="color" />
+        <attr name="umanoFlingVelocity" format="integer" />
+        <attr name="umanoDragView" format="reference" />
+        <attr name="umanoScrollableView" format="reference" />
+        <attr name="umanoOverlay" format="boolean" />
+        <attr name="umanoClipPanel" format="boolean" />
+        <attr name="umanoAnchorPoint" format="float" />
+        <attr name="umanoInitialState" format="enum">
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+        <attr name="umanoScrollInterpolator" format="reference" />
+    </declare-styleable>
+
+    <!--styles for PSlideUpPanel ends-->
+
+    <!--Music Player attributs starts-->
+    <attr name="icon_color" format="color" />
+    <attr name="secondary_bg_color" format="color" />
+    <attr name="theme_icon" format="color" />
+    <!--Music Player attributs ends-->
+
+    <!--Discreate Scrollview attributs starts-->
+    <declare-styleable name="DiscreteScrollView">
+        <attr name="dsv_orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+    </declare-styleable>
+    <!--Discreate Scrollview attributs ends-->
+
+    <!--OTP view attributs starts-->
+    <!--<declare-styleable name="OtpView1">
+        <attr name="android:inputType" />
+        <attr name="android:textColor" />
+        <attr name="text_background_color" format="color" />
+        <attr name="otp" format="string" />
+        <attr name="otp_number" format="integer" />
+    </declare-styleable>-->
+
+
+    <declare-styleable name="OtpViewTheme">
+        <attr name="otpViewStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="OtpView">
+        <attr name="itemCount" format="integer" />
+        <attr name="itemWidth" format="dimension" />
+        <attr name="itemHeight" format="dimension" />
+        <attr name="itemRadius" format="dimension" />
+        <attr name="itemSpacing" format="dimension" />
+        <attr name="lineWidth" format="dimension" />
+        <attr name="lineColor" format="reference|color" />
+        <attr name="viewType" format="enum">
+            <enum name="rectangle" value="0" />
+            <enum name="line" value="1" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="android:cursorVisible" />
+        <attr name="cursorWidth" format="dimension" />
+        <attr name="cursorColor" format="reference|color" />
+        <attr name="android:itemBackground" />
+        <attr name="hideLineWhenFilled" format="boolean" />
+    </declare-styleable>
+    <!--OTP view attributs ends-->
+
+    <!--App Tour attributs Starts-->
+    <attr name="MaterialTapTargetPromptTheme" format="reference" />
+    <attr name="mttp_target" format="reference" />
+    <attr name="mttp_primaryText" format="string" />
+    <attr name="mttp_secondaryText" format="string" />
+    <attr name="mttp_primaryTextColour" format="color" />
+    <attr name="mttp_secondaryTextColour" format="color" />
+    <attr name="mttp_backgroundColour" format="color" />
+    <attr name="mttp_focalColour" format="color" />
+    <attr name="mttp_focalRadius" format="dimension" />
+    <attr name="mttp_primaryTextSize" format="dimension" />
+    <attr name="mttp_secondaryTextSize" format="dimension" />
+    <attr name="mttp_maxTextWidth" format="dimension" />
+    <attr name="mttp_textPadding" format="dimension" />
+    <attr name="mttp_focalToTextPadding" format="dimension" />
+    <attr name="mttp_textSeparation" format="dimension" />
+    <attr name="mttp_autoDismiss" format="boolean" />
+    <attr name="mttp_autoFinish" format="boolean" />
+    <attr name="mttp_captureTouchEventOutsidePrompt" format="boolean" />
+    <attr name="mttp_captureTouchEventOnFocal" format="boolean" />
+    <attr name="mttp_primaryTextFontFamily" format="string" />
+    <attr name="mttp_secondaryTextFontFamily" format="string" />
+    <attr name="mttp_primaryTextStyle" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="bold" value="1" />
+        <enum name="italic" value="2" />
+    </attr>
+    <attr name="mttp_secondaryTextStyle" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="bold" value="1" />
+        <enum name="italic" value="2" />
+    </attr>
+    <attr name="mttp_primaryTextTypeface" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="sans" value="1" />
+        <enum name="serif" value="2" />
+        <enum name="monospace" value="3" />
+    </attr>
+    <attr name="mttp_secondaryTextTypeface" format="enum">
+        <enum name="normal" value="0" />
+        <enum name="sans" value="1" />
+        <enum name="serif" value="2" />
+        <enum name="monospace" value="3" />
+    </attr>
+    <attr name="mttp_iconTint" format="reference" />
+    <attr name="mttp_iconTintMode" format="enum">
+        <enum name="SRC_OVER" value="3" />
+        <enum name="SRC_IN" value="5" />
+        <enum name="SRC_ATOP" value="9" />
+        <enum name="MULTIPLY" value="14" />
+        <enum name="SCREEN" value="15" />
+        <enum name="ADD" value="16" />
+    </attr>
+    <attr name="mttp_iconColourFilter" format="color" />
+    <declare-styleable name="PromptView">
+        <attr name="mttp_target" />
+        <attr name="mttp_primaryText" />
+        <attr name="mttp_secondaryText" />
+        <attr name="mttp_primaryTextColour" />
+        <attr name="mttp_secondaryTextColour" />
+        <attr name="mttp_backgroundColour" />
+        <attr name="mttp_focalColour" />
+        <attr name="mttp_focalRadius" />
+        <attr name="mttp_primaryTextSize" />
+        <attr name="mttp_secondaryTextSize" />
+        <attr name="mttp_maxTextWidth" />
+        <attr name="mttp_textPadding" />
+        <attr name="mttp_focalToTextPadding" />
+        <attr name="mttp_textSeparation" />
+        <attr name="mttp_autoDismiss" />
+        <attr name="mttp_autoFinish" />
+        <attr name="mttp_captureTouchEventOutsidePrompt" />
+        <attr name="mttp_captureTouchEventOnFocal" />
+        <attr name="mttp_primaryTextFontFamily" />
+        <attr name="mttp_secondaryTextFontFamily" />
+        <attr name="mttp_primaryTextStyle" />
+        <attr name="mttp_secondaryTextStyle" />
+        <attr name="mttp_primaryTextTypeface" />
+        <attr name="mttp_secondaryTextTypeface" />
+        <attr name="mttp_iconTint" />
+        <attr name="mttp_iconTintMode" />
+        <attr name="mttp_iconColourFilter" />
+    </declare-styleable>
+    <item name="material_target_prompt_view" type="id" />
+    <!--APp tour attributs ends-->
+
+    <!--StoryView attributs starts-->
+    <declare-styleable name="StoryView">
+        <attr name="storyImageRadius" format="dimension" />
+        <attr name="storyItemIndicatorWidth" format="dimension" />
+        <attr name="spaceBetweenImageAndIndicator" format="dimension" />
+        <attr name="pendingIndicatorColor" format="color" />
+        <attr name="visitedIndicatorColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="StoryCustomView">
+        <attr name="sesstoryImageRadius" format="dimension" />
+        <attr name="sesstoryItemIndicatorWidth" format="dimension" />
+        <attr name="sesspaceBetweenImageAndIndicator" format="dimension" />
+        <attr name="sespendingIndicatorColor" format="color" />
+        <attr name="sesvisitedIndicatorColor" format="color" />
+    </declare-styleable>
+    <declare-styleable name="StoryPlayerProgressView">
+        <attr name="progressBarHeight" format="dimension" />
+        <attr name="gapBetweenProgressBar" format="dimension" />
+        <attr name="progressBarPrimaryColor" format="color" />
+        <attr name="progressBarSecondaryColor" format="color" />
+        <attr name="singleStoryDisplayTime" format="integer" />
+    </declare-styleable>
+
+    <!--StoryViewattributs ends-->
+
+    <declare-styleable name="BlurView">
+        <attr name="blurOverlayColor" format="color"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="IncDecView">
+        <attr name="inc_icon" format="reference"/>
+        <attr name="dec_icon" format="reference"/>
+        <attr name="view_background" format="reference|color"/>
+        <attr name="inc_dec_button_color" format="reference|color"/>
+        <attr name="border_width" format="reference|dimension"/>
+        <attr name="border_color" format="reference|color"/>
+        <attr name="startCounterValue" format="reference|string"/>
+        <attr name="counterValueColor" format="reference|color"/>
+    </declare-styleable>
+
+
+
+</resources>

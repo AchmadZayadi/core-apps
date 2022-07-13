@@ -1,0 +1,2765 @@
+<!--<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">-->
+
+<!--    <string name="welcome_in_app">Socia!</string>-->
+<!--    <string name="txt_login_facebook">Log in with Facebook</string>-->
+<!--    <string name="txt_sign_in">Login</string>-->
+<!--    <string name="txt_sign_up">Sign Up</string>-->
+<!--    <string name="txt_privacy"><![CDATA[ & Privacy]]></string>-->
+<!--    <string name="txt_privacy2"><![CDATA[ Privacy]]></string>-->
+<!--    <string name="txt_skip_login">Skip Login</string>-->
+<!--    <string name="login_required">Please login to access this resource</string>-->
+<!--    <string name="email_id">Email ID</string>-->
+<!--    <string name="forgot_password">Forgot Password ?</string>-->
+<!--    <string name="text_signup_existing_login"><u>Sign up with your solutions account</u></string>-->
+<!--    <string name="password">Password</string>-->
+<!--    <string name="invalid_email_format">Invalid email format</string>-->
+<!--    <string name="invalid_password">Field is empty</string>-->
+<!--    <string name="txt_lost_password">Lost Password</string>-->
+<!--    <string name="txt_submit">Submit</string>-->
+<!--    <string name="txt_terms">Terms  </string>-->
+<!--    <string name="txt_conitnue">Continue</string>-->
+<!--    <string name="text_no_users">No user</string>-->
+<!--    <string name="msg_no_group_created_cat">Nobody has created a group yet in this category.</string>-->
+
+<!--    <string name="turn_on_gps">Turn On GPS</string>-->
+<!--    <string name="on">ON</string>-->
+<!--    <string name="gps_enabled">GPS enabled</string>-->
+<!--    <string name="gps_disabled">GPS disabled</string>-->
+<!--    <string name="unable_to_get_location">Unable to get your location</string>-->
+
+<!--    <string name="txt_choose_photo">Choose Photo</string>-->
+<!--    <string name="txt_upload_choose_photo">Upload Photo</string>-->
+<!--    <string name="txt_add_photo">Add Your Photo</string>-->
+<!--    <string name="txt_save_photo">Save Photo</string>-->
+<!--    <string name="camera">Camera</string>-->
+<!--    <string name="gallary">Gallery</string>-->
+<!--    <string name="MSG_NO_MEMBER_SELECTED">No member selected</string>-->
+<!--    <string name="guest">Guest</string>-->
+<!--    <string name="add_friend">Add Friend</string>-->
+<!--    <string name="ignore">Ignore</string>-->
+<!--    &lt;!&ndash; <string name="txt_no_friend_request">You do not have any pending friend request.</string>&ndash;&gt;-->
+<!--    <string name="refresh">Refresh</string>-->
+<!--    <string name="compose">Compose</string>-->
+<!--    <string name="txt_compose">Compose Message</string>-->
+<!--    <string name="subject">Subject</string>-->
+<!--    <string name="send_to">Send To</string>-->
+<!--    <string name="friend_name">Friend Name</string>-->
+<!--    <string name="points">Points</string>-->
+<!--    <string name="send_in_message">Send in message</string>-->
+<!--    <string name="body">Body</string>-->
+<!--    <string name="image">Image</string>-->
+<!--    <string name="video">Video</string>-->
+<!--    <string name="link">Link</string>-->
+<!--    <string name="attach">Attach</string>-->
+<!--    <string name="remove">Remove</string>-->
+<!--    <string name="txt_post_something">Post Something…</string>-->
+<!--    <string name="txt_whats_new">What\'s happening?</string>-->
+<!--    <string name="txt_share_something">What would you like to share?</string>-->
+<!--    <string name="photo">Photo</string>-->
+<!--    <string name="like">Like</string>-->
+<!--    <string name="comment">Comment</string>-->
+<!--    <string name="share">Share</string>-->
+<!--    <string name="share_now">Share Now</string>-->
+
+<!--    <string name="mark_sold">Mark As Sold</string>-->
+<!--    <string name="sold_out">SOLD OUT</string>-->
+<!--    <string name="sold_bottom_text">Message this seller to ask about the product</string>-->
+<!--    <string name="preview">Preview</string>-->
+<!--    <string name="txt_undo_1">You won’t see this post in Feed.</string>-->
+<!--    <string name="txt_undo_2">Undo</string>-->
+<!--    <string name="txt_report">Report Here</string>-->
+<!--    <string name="txt_enter_here">Write a comment…</string>-->
+<!--    <string name="txt_write_msg">"Write a message…"</string>-->
+<!--    <string name="post">Post</string>-->
+<!--    <string name="create_post">Create Post</string>-->
+<!--    <string name="no_feed_data">Nothing has been posted here yet - be the first!</string>-->
+<!--    <string name="privacy">Privacy</string>-->
+<!--    <string name="privacy_everyone">Everyone</string>-->
+<!--    <string name="privacy_only_me">Only Me</string>-->
+<!--    <string name="privacy_friends_only">Friends Only</string>-->
+<!--    <string name="privacy_network"><![CDATA[Friends & Network]]></string>-->
+<!--    <string name="select_privacy">Select Privacy</string>-->
+<!--    <string name="what_r_u_selling">What are you selling?</string>-->
+<!--    <string name="price_dollar">Price($)</string>-->
+<!--    <string name="description_optional">Description (optional)</string>-->
+<!--    <string name="location_optional">Location (optional)</string>-->
+<!--    <string name="location_text">Location</string>-->
+<!--    <string name="slide_down">Slide down</string>-->
+<!--    <string name="txt_how_feel">How Are You Feeling?</string>-->
+<!--    <string name="feeling">Feelings</string>-->
+<!--    <string name="stickers">Stickers</string>-->
+<!--    <string name="activities">Activities</string>-->
+<!--    <string name="search">Search</string>-->
+<!--    <string name="no_feelings">No feelings found with the given search.</string>-->
+<!--    <string name="txt_tag_people">Tag People</string>-->
+<!--    <string name="no_comment">No Comments Yet.</string>-->
+<!--    <string name="no_">No</string>-->
+<!--    <string name="delete">Delete</string>-->
+<!--    <string name="name">Name</string>-->
+<!--    <string name="email">Email</string>-->
+<!--    <string name="websitest">Website</string>-->
+<!--    <string name="message">Message</string>-->
+<!--    <string name="message_optional">Message (optional)</string>-->
+<!--    <string name="txt_contact_us">Contact Us</string>-->
+<!--    <string name="no_settings">No settings available.</string>-->
+
+<!--    <string name="no_network_1">There are currently no available networks to join.</string>-->
+<!--    <string name="hint_search_song">Search songs</string>-->
+<!--    <string name="hint_search_product">Search for Products</string>-->
+<!--    <string name="hint_search_store">Search for Stores</string>-->
+<!--    <string name="lyrics">\uf0f6 \n Lyrics</string>-->
+<!--    <string name="clear_queue">\uf014 \n Clear Queue</string>-->
+<!--    <string name="playlists">Playlists</string>-->
+<!--    <string name="albums">Albums</string>-->
+<!--    <string name="favorite">Favorite</string>-->
+
+<!--    <string name="artist">Artist</string>-->
+<!--    <string name="category">Category</string>-->
+<!--    <string name="lyrics_">Lyrics</string>-->
+<!--    <string name="description">Description</string>-->
+<!--    <string name="watch_later">Watch Later</string>-->
+<!--    <string name="videos">Videos</string>-->
+<!--    <string name="videos_213">Videos</string>-->
+<!--    <string name="channels">Channels</string>-->
+<!--    <string name="add_to">Add to</string>-->
+<!--    <string name="txt_rating_1">Is This App Working For You</string>-->
+<!--    <string name="txt_rating_2">Rate us on Play Store</string>-->
+<!--    <string name="txt_rating_3">Remind Me Later</string>-->
+<!--    <string name="txt_rated_already">You\'ve already rated this content</string>-->
+<!--    <string name="edit_profile">Edit my Profile</string>-->
+<!--    <string name="cancel">Cancel</string>-->
+<!--    <string name="save">Save</string>-->
+<!--    <string name="edit_description">Edit Description</string>-->
+<!--    <string name="friends">Friends</string>-->
+<!--    <string name="clear">Clear</string>-->
+<!--    <string name="add_to_playlist">Add to Playlist</string>-->
+<!--    <string name="go_to_song">Go To Song</string>-->
+<!--    <string name="go_to_album">Go To Album</string>-->
+<!--    <string name="go_to_artist">Go To Artist</string>-->
+<!--    <string name="txt_mention_people">Mention People</string>-->
+
+<!--    <string name="text_category">"Category "</string>-->
+<!--    <string name="text_sub_category">"Sub Category "</string>-->
+<!--    <string name="text_sub_sub_category">"Sub Sub Category "</string>-->
+<!--    <string name="text_tags">Tags</string>-->
+<!--    <string name="text_Description">Description :</string>-->
+<!--    <string name="loading_video">Loading video…</string>-->
+<!--    <string name="Option">options</string>-->
+
+
+<!--    <string name="MSG_NO_RESULT">No results found</string>-->
+<!--    <string name="MSG_NO_ARTICLE">Nobody has posted an article with this criteria.</string>-->
+<!--    <string name="MSG_NO_CATEGORIES">No categories found</string>-->
+<!--    <string name="MSG_NO_ALBUM_AVAILABLE">No Album photo available</string>-->
+<!--    <string name="MSG_NO_SONG_SEARCH">No song available with given search</string>-->
+<!--    <string name="MSG_NO_ALBUM_MUSIC_SEARCH">No Music Album available with given search</string>-->
+<!--    <string name="TXT_TITLE_LYRICS">Lyrics</string>-->
+<!--    <string name="MSG_NO_LYRICS">Lyrics isn\'t available for this song.</string>-->
+<!--    <string name="CANCEL">Cancel</string>-->
+<!--    <string name="MSG_INVALID_EMAIL">Email is empty or email format is invalid</string>-->
+<!--    <string name="MSG_INVALID_PASSWORD">Password is empty</string>-->
+<!--    <string name="MSG_NO_INTERNET">Not connected to Internet</string>-->
+<!--    <string name="MSG_DELETED">Poll deleted, Going back</string>-->
+<!--    <string name="TXT_SIGNING_IN">"Signing In…"</string>-->
+<!--    <string name="TXT_SUCCESS">Successful</string>-->
+<!--    <string name="TXT_SIGN_IN">Sign In</string>-->
+<!--    <string name="TXT_SAVE_PHOTO">Save Photo</string>-->
+<!--    <string name="MSG_SELECT_IMAGE">Select an image first</string>-->
+<!--    <string name="MSG_SELECT_IMAGE_SOURCE">Select Image Source</string>-->
+<!--    <string name="MSG_SELECT_VIDEO_SOURCE">Select Video Source</string>-->
+<!--    <string name="MSG_BLOG_DELETED">Blog has been successfully deleted.</string>-->
+<!--    <string name="MSG_JOB_DELETED">You have successfully delete the job.</string>-->
+<!--    <string name="MSG_SELECT_ATTACH_SOURCE">Select file source</string>-->
+<!--    <string name="MSG_NO_PENDING_REQUEST">You do not have any pending friend request.</string>-->
+<!--    <string name="MSG_NO_SENT_MSG">Nobody has sent you a message yet.</string>-->
+<!--    <string name="MSG_NO_VIDEO">No Videos Found</string>-->
+<!--    <string name="MSG_NO_PHOTO">No photos available</string>-->
+<!--    <string name="MSG_NO_PHOTO_SELECTED">No photo selected</string>-->
+<!--    <string name="MSG_NO_PHOTO_SELECTED2">Please select at least 1 image to upload.</string>-->
+<!--    <string name="TITLE_SUBSCRIPTION">Subscription</string>-->
+<!--    <string name="MSG_SUBSCRIPTION_FAILED">Subscription failed</string>-->
+<!--    <string name="MSG_SUBSCRIPTION_SUCCESS">Subscription success</string>-->
+<!--    <string name="MSG_PERMISSION_DENIED">If you reject permission,you can not use these services\n\nPlease turn on permissions at [Setting] > [Permission]</string>-->
+<!--    <string name="TXT_OK">OK</string>-->
+<!--    <string name="TXT_CANCEL">Cancel</string>-->
+<!--    <string name="MSG_LOGOUT">Are you sure you want to logout?</string>-->
+<!--    <string name="TXT_VIDEO">Video</string>-->
+<!--    <string name="TXT_VIMEO">Vimeo</string>-->
+<!--    <string name="MSG_CHOOSE_SOURCE">Choose source</string>-->
+<!--    <string name="TXT_ADD">Add</string>-->
+<!--    <string name="MSG_ENTER_VIDEO_URL">Enter Video URL</string>-->
+<!--    <string name="TXT_YOU_TUBE">YouTube</string>-->
+<!--    <string name="MSG_ENTER_LINK">Enter link</string>-->
+<!--    <string name="MSG_USER_CANCEL_FB_LOGIN">You cancelled facebook login.</string>-->
+<!--    <string name="MSG_NO_NOTIFICATION">You do not have any notification.</string>-->
+<!--    <string name="MSG_NO_FOLLOWER">Member does not exist.</string>-->
+<!--    <string name="TAB_TITLE_NOTIFICATION">Notifications</string>-->
+<!--    <string name="TAB_TITLE_MESSAGE">Messages</string>-->
+<!--    <string name="TAB_TITLE_REQUEST">Requests</string>-->
+<!--    <string name="TAB_TITLE_HOME">Home</string>-->
+<!--    <string name="TITLE_UPDATE_STATUS">Create Post</string>-->
+<!--    <string name="PRIVACY_EVERYONE">Everyone</string>-->
+<!--    <string name="PRIVACY_NETWORK">Friends &amp; Network</string>-->
+<!--    <string name="PRIVACY_FRIEND">Friends Only</string>-->
+<!--    <string name="PRIVACY_ME">Only Me</string>-->
+<!--    <string name="MSG_SOLD_MARK">Mark As Sold</string>-->
+<!--    <string name="MSG_SOLD_MESSAGE">Message Seller</string>-->
+<!--    <string name="TITLE_FILE_PREVIEW">File Preview</string>-->
+<!--    <string name="TXT_DISABLE_COMMENT">Disable Comment</string>-->
+<!--    <string name="TXT_ENABLE_COMMENT">Enable Comment</string>-->
+<!--    <string name="TXT_SHARE_FEED">Choose Share Option</string>-->
+<!--    <string name="TXT_SHARE_INSIDE">"Share on "</string>-->
+<!--    <string name="txt_share_on">Share on <b>%1$s</b></string>-->
+<!--    <string name="TXT_SHARE_OUTSIDE">Share Outside</string>-->
+<!--    <string name="TITLE_REPORT_SPAM">Report Spam</string>-->
+<!--    <string name="NO">No</string>-->
+<!--    <string name="YES">Yes</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION">Are you sure that you want to delete this feed?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PHOTO">Are you sure that you want to remove this photo?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_VIDEO">Are you sure that you want to delete this video?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_ARTICLE">Are you sure that you want to delete this article?</string>-->
+
+<!--    <string name="MSG_DELETE_CONFIRMATION_PRE">Are you sure that you want to delete this </string>-->
+<!--    <string name="MSG_PROFILE_IMAGE_DELETE_CONFIRMATION">Are you sure that you want to remove this profile photo? Doing so will set your photo back to the default photo.</string>-->
+<!--    <string name="MSG_COVER_DELETE_CONFIRMATION">Are you sure that you want to remove this cover photo? Doing so will set your photo back to the default photo.</string>-->
+<!--    <string name="MSG_ACCOUNT_DELETE_CONFIRMATION">Are you sure you want to delete this account? This action can not be undone.</string>-->
+<!--    <string name="MSG_DELETE_COMMENT_CONFIRMATION">Are you sure that you want to delete this comment?</string>-->
+<!--    <string name="DISCARD">Discard Post</string>-->
+<!--    <string name="MSG_ABANODONED">Do you want to discard post?</string>-->
+<!--    <string name="MSG_NO_ACTIVITIES">No activities found with the given search.</string>-->
+<!--    <string name="MSG_NO_FEED_DATA">Nothing has been posted here yet - be the first!</string>-->
+<!--    <string name="MSG_NO_FEELINGS">No feelings found with the given search.</string>-->
+<!--    <string name="MSG_NO_USER">No user found with the given search.</string>-->
+<!--    <string name="MSG_NO_STICKERS">No category found with the given search.</string>-->
+<!--    <string name="MSG_NO_STICKERS_EMOJI">No stickers to show.</string>-->
+<!--    <string name="TITLE_COMMENT">Comment</string>-->
+<!--    <string name="TITLE_COMMENTS">Comments</string>-->
+<!--    <string name="TITLE_FOLLOWERS">Followers</string>-->
+<!--    <string name="MSG_NO_COMMENT">No Comments Yet.</string>-->
+<!--    <string name="TXT_LIKE">Like</string>-->
+<!--    <string name="TXT_UNLIKE">Unlike</string>-->
+<!--    <string name="MSG_NAME_MISSING">Please write name.</string>-->
+<!--    <string name="MSG_EMAIL_MISSING">Please write email.</string>-->
+<!--    <string name="MSG_MESSAGE_MISSING">Please write message.</string>-->
+<!--    <string name="MSG_EMAIL_INVALID">Please enter Valid Email</string>-->
+<!--    <string name="TITLE_SETTINGS">Settings</string>-->
+<!--    <string name="TITLE_GENERAL_SETTING">General Settings</string>-->
+<!--    <string name="TITLE_PRIVACY_SETTING">Privacy Settings</string>-->
+<!--    <string name="TITLE_NOTIFICATION_SETTING">Notification Settings</string>-->
+<!--    <string name="TITLE_PASSWORD_SETTING">Change Password</string>-->
+<!--    <string name="TITLE_NETWORK_SETTING">Networks</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_1">Music Albums</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_2">Songs</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_3">Playlists</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_4">Artists</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_5">Lyrics</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_6">My Music</string>-->
+<!--    <string name="TAB_TITLE_MUSIC_ALBUMS_7">Browse Music</string>-->
+<!--    <string name="MSG_NO_SONG_CREATED">Nobody has created a song yet.</string>-->
+<!--    <string name="MSG_NO_VIDEO_CREATED">Nobody has created a video yet.</string>-->
+<!--    <string name="MSG_NO_SEARCH_ITEM">No item found with given search.</string>-->
+<!--    <string name="TITLE_FILTER_SEARCH">Filter Search</string>-->
+<!--    <string name="TITLE_FILTER_STORE">Filter Stores</string>-->
+<!--    <string name="TITLE_FILTER_QA">Filter Questions</string>-->
+<!--    <string name="TITLE_FILTER_PAGE">Filter Page</string>-->
+<!--    <string name="TITLE_FILTER_PAGE_POLL">Filter Poll</string>-->
+<!--    <string name="TITLE_FILTER_VIDEO">Filter Videos</string>-->
+<!--    <string name="TITLE_FILTER_CHANNEL">Filter Channel</string>-->
+<!--    <string name="TITLE_FILTER_PLAYLIST">Filter Playlist</string>-->
+<!--    <string name="TITLE_FILTER_PRODUCT">Filter Products</string>-->
+<!--    <string name="TITLE_EDIT_ALBUM">Edit Album</string>-->
+<!--    <string name="TITLE_EDIT_PLAYLIST">Edit Playlist</string>-->
+<!--    <string name="TITLE_ADD_CHANNEL">Add New Channel</string>-->
+<!--    <string name="TITLE_EDIT_CHANNEL">Edit Channel</string>-->
+<!--    <string name="TITLE_ADD_NEW_VIDEO">Add New Video</string>-->
+<!--    <string name="TITLE_EDIT_SONG">Edit Song</string>-->
+<!--    <string name="TXT_FAVORITE">Favorite</string>-->
+<!--    <string name="TXT_COMMENT">Comment</string>-->
+<!--    <string name="TITLE_EDIT_COVER">Edit Cover Photo</string>-->
+<!--    <string name="TITLE_EDIT_MUSIC_PHOTO">Edit Album Photo</string>-->
+<!--    <string name="TITLE_EDIT_PROFILE_PHOTO">Edit Profile Photo</string>-->
+<!--    <string name="TITLE_ADD_SONG">Add song</string>-->
+<!--    <string name="TITLE_ADD_ALBUM">Add Album To Playlist</string>-->
+<!--    <string name="TITLE_ADD_WISHLIST">Add Product To WishList</string>-->
+<!--    <string name="TITLE_EDIT_WISHLIST">Edit WishList</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_1">Browse Videos</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_2">Browse Channels</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_3">Browse Playlists</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_4">Browse Artists</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_5">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_6">My Videos</string>-->
+<!--    <string name="TAB_TITLE_VIDEO_7">Post New Video</string>-->
+<!--    <string name="TITLE_EDIT_VIDEO">Edit Video</string>-->
+<!--    <string name="TITLE_PHOTOS">Photos</string>-->
+<!--    <string name="TITLE_UPLOAD_PHOTOS">Upload Photos</string>-->
+<!--    <string name="TITLE_UPLOAD_VIDEO">Upload Videos</string>-->
+<!--    <string name="TAB_TITLE_ARTICLE_1">Browse Articles</string>-->
+<!--    <string name="TAB_TITLE_ARTICLE_2">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_ARTICLE_3">My Articles</string>-->
+<!--    <string name="TAB_TITLE_ARTICLE_4">Write New Article</string>-->
+
+<!--    <string name="TXT_SERACH_ARTICLE">Search articles</string>-->
+<!--    <string name="TXT_SERACH_ALBUM">Search Album</string>-->
+
+<!--    <string name="TITLE_EDIT_ARTICLE">Edit Article</string>-->
+<!--    <string name="TAB_TITLE_ALBUM_1">Browse Albums</string>-->
+<!--    <string name="TAB_TITLE_ALBUM_2">Browse Photos</string>-->
+<!--    <string name="TAB_TITLE_ALBUM_3">Browse Categories</string>-->
+<!--    <string name="TITLE_ALBUM_SEARCH">Search Albums</string>-->
+<!--    <string name="TAB_TITLE_ALBUM_4">My Albums</string>-->
+<!--    <string name="TAB_TITLE_ALBUM_5">Add New Album</string>-->
+<!--    <string name="TITLE_EDIT_ALBUM_SETTING">Edit Album Setting</string>-->
+<!--    <string name="TXT_SERACH_PHOTO">Search Photos</string>-->
+<!--    <string name="TXT_SERACH_PLAYLIST">Search Playlists</string>-->
+<!--    <string name="TITLE_MEMBER">Members</string>-->
+<!--    <string name="DELETE_PHOTO">Delete Photo</string>-->
+<!--    <string name="TITLE_ACTIVITY_FEED">Activity Feed</string>-->
+<!--    <string name="TITLE_EDIT_PROFILE">Edit Profile</string>-->
+<!--    <string name="TITLE_VIDEO_SEARCH">Search Videos</string>-->
+<!--    <string name="TITLE_CHANNEl_SEARCH">Search Channels</string>-->
+<!--    <string name="TXT_SEARCH_MUSIC">Search Musics</string>-->
+<!--    <string name="TITLE_FRIENDS">Friends</string>-->
+<!--    <string name="MUTUAL_FRINEDS">Mutual Friends</string>-->
+<!--    <string name="TITLE_INFO">Info</string>-->
+<!--    <string name="TITLE_UP_INFO">UPSELL Info</string>-->
+<!--    <string name="TITLE_UP_LECTURES">Lecture</string>-->
+<!--    <string name="TITLE_TEXTTV">Test</string>-->
+<!--    <string name="TITLE_SEARCH_MEMBER">Search Members</string>-->
+<!--    <string name="INBOX">Inbox</string>-->
+<!--    <string name="OUTBOX">Sent Messages</string>-->
+<!--    <string name="MSG_FACEBOOK_ERROR">Error occurred while logging with facebook. Please try again</string>-->
+<!--    <string name="MSG_SHARE_VIA">Share via</string>-->
+<!--    <string name="ADD_FRIEND">Add Friend</string>-->
+<!--    <string name="CANCEL_FREIND">Cancel Request</string>-->
+<!--    <string name="_FREIND">Cancel Request</string>-->
+<!--    <string name="MSG_EMPTY_POST">Empty post</string>-->
+
+<!--    <string name="MSG_NOT_TAGGED">You have not Tagged anyone.</string>-->
+<!--    <string name="MSG_NOT_LOGGED_IN">Please Log-in first.</string>-->
+<!--    <string name="TITLE_FEED">Feed</string>-->
+<!--    <string name="MSG_PRESS_AGAIN">Press once again to exit</string>-->
+<!--    <string name="TITLE_SEARCH">Search</string>-->
+<!--    <string name="TITLE_SELECT_ALBUM">Select Album</string>-->
+<!--    <string name="TITLE_SELECT_PHOTO">Choose Photo</string>-->
+<!--    <string name="TXT_UPLOADING">Uploading…</string>-->
+<!--    <string name="TXT_UNSAVE_FEED">Unsave Feed</string>-->
+<!--    <string name="TXT_SAVE_FEED">Save Feed</string>-->
+<!--    <string name="TXT_REMOVE">Leave</string>-->
+<!--    <string name="TXT_JOIN">Join</string>-->
+<!--    <string name="MSG_NO_NETWORK">You belong to 0 networks.</string>-->
+<!--    <string name="MSG_NOTHING_TO_JOIN">There are currently no available networks to join.</string>-->
+<!--    <string name="MSG_NO_ALBUMS">No album created by you yet.</string>-->
+<!--    <string name="MSG_NO_VIDEO_BY_YOU">No video created by you yet.</string>-->
+<!--    <string name="MSG_NO_CHANNEL">No channel created by you yet.</string>-->
+<!--    <string name="MSG_NO_PLAYLIST">No playlist created by you yet.</string>-->
+<!--    <string name="MSG_NO_SONG_PLAYLIST">No song created in this Playlist yet.</string>-->
+<!--    <string name="MSG_NO_MEMBER">No Member Available</string>-->
+<!--    <string name="MSG_NO_SONG_ARTIST">No song created in this Artist yet.</string>-->
+<!--    <string name="MSG_NO_SONG_ALBUM">No song created in this Album yet.</string>-->
+<!--    <string name="TXT_REMOVE_COVER">Remove Cover Photo</string>-->
+<!--    <string name="TXT_REMOVE_PHOTO">Remove Profile Photo</string>-->
+<!--    <string name="TXT_BY">"by "</string>-->
+<!--    <string name="_AND_">" and "</string>-->
+<!--    <string name="_OTHERS">" others"</string>-->
+<!--    <string name="_WITH_">" with "</string>-->
+<!--    <string name="_IN_">" in "</string>-->
+
+<!--    <string name="_COMMENT">" Comment"</string>-->
+<!--    <string name="_COMMENTS">" Comments"</string>-->
+<!--    <string name="MSG_NO_ARTICLE_CREATED">Nobody created an article yet.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_THOUGHT">Are you sure that you want to delete this thought?</string>-->
+
+<!--    <string name="TITLE_ADD_VIDEO">Add Video To Playlist</string>-->
+
+<!--    <string name="TITLE_CHOOSE_CATEGORY">Choose Category</string>-->
+<!--    <string name="send">Send</string>-->
+<!--    <string name="join_requires_confirmation">Welcome! A verification message has been sent to your email address with instructions on how to activate your account. Once you have clicked the link provided in the email and we have approved your account, you will be able to sign in.</string>-->
+<!--    <string name="SKIP">Skip</string>-->
+<!--    <string name="logging_in">Logging in…</string>-->
+<!--    <string name="account_created">Account Created Successfully.</string>-->
+<!--    <string name="twitter">TWITTER</string>-->
+<!--    <string name="or_login_via">Login via email</string>-->
+<!--    <string name="facebook">FACEBOOK</string>-->
+<!--    <string name="add_to_your_post">Add to your post</string>-->
+<!--    <string name="be_in_sync_via">Be in sync via…</string>-->
+<!--    <string name="choose_background">Choose a background</string>-->
+<!--    <string name="available_networks">Available Networks</string>-->
+<!--    <string name="my_networks">My Networks</string>-->
+
+<!--    <string name="all_images">All Images</string>-->
+<!--    <string name="done">Done</string>-->
+
+<!--    <string name="permission_filepicker_rationale">Storage permission is needed to access files.</string>-->
+<!--    <string name="no_files_found">No Files Found</string>-->
+<!--    <string name="attachments_title_text" formatted="false">(%d/%d)</string>-->
+<!--    <string name="attachments_num" formatted="false">%d</string>-->
+<!--    <string name="select_photo_text">Select a Media</string>-->
+<!--    <string name="select_doc_text">Select a Document</string>-->
+<!--    <string name="no_camera_exists">No Application exists for camera!</string>-->
+<!--    <string name="pdf_title">PDF</string>-->
+<!--    <string name="ppt_title">PPT</string>-->
+<!--    <string name="word_title">DOC</string>-->
+<!--    <string name="excel_title">XLS</string>-->
+<!--    <string name="txt_title">TXT</string>-->
+<!--    <string name="images">Images</string>-->
+<!--    <string name="all_photos">All Photos</string>-->
+<!--    <string name="all_videos">All Videos</string>-->
+<!--    <string name="all_files">All Files</string>-->
+<!--    <string name="TITLE_TERMS">Terms of Service</string>-->
+<!--    <string name="TITLE_PRIVACY">Privacy</string>-->
+<!--    <string name="TEXT_MORE">More</string>-->
+<!--    <string name="TITLE_ARTICLES">Articles</string>-->
+<!--    <string name="PLEASE_WAIT">Please Wait</string>-->
+<!--    <string name="TITLE_ADD_TAG">Add Tag</string>-->
+<!--    <string name="TITLE_TAGGED_USER">Tagged users</string>-->
+<!--    <string name="TITLE_EDIT_MUSIC_ALBUM">Edit Music Album</string>-->
+<!--    <string name="TITLE_EDIT_MUSIC_PLAYLIST">Edit Music Playlist</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PLAYLIST">Are you sure that you want to delete this playlist?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_ALBUM">Are you sure that you want to delete this album?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_GENERIC">Are you sure that you want to delete this %1$s?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_QUOTE">Are you sure that you want to delete this quote?</string>-->
+<!--    <string name="MSG_NO_ARTICLE_CREATED_YOU">No article created by you yet.</string>-->
+
+<!--    <string name="MSG_NO_QUOTE_CREATED_YOU">No quote created by you yet.</string>-->
+<!--    <string name="MSG_NO_CHANNEL_FOUND">Nobody has created a channel with this criteria.</string>-->
+<!--    <string name="MSG_NO_CHANNEL_CREATED">Nobody has created a channel.</string>-->
+<!--    <string name="MSG_NO_ALBUM_CREATED">Nobody has created a album.</string>-->
+<!--    <string name="MSG_NO_QUOTE_CREATED">Nobody has created a quote.</string>-->
+<!--    <string name="PLEASE_READ_TERMS">Click here to read the terms of service.</string>-->
+<!--    <string name="MSG_NO_ALBUM_FOUND">Nobody has created an album with this criteria.</string>-->
+<!--    <string name="TXT_FAVORITES">Favorites</string>-->
+<!--    <string name="TXT_COMMENTS">Comments</string>-->
+<!--    <string name="IS_">"is "</string>-->
+<!--    <string name="_LIKES">" Likes"</string>-->
+<!--    <string name="_LIKE">" Like"</string>-->
+<!--    <string name="_FAVORITES">" Favorites"</string>-->
+<!--    <string name="_FAVORITE">" Favorite"</string>-->
+<!--    <string name="_VIEWS">" Views"</string>-->
+<!--    <string name="_VIEW">" View"</string>-->
+<!--    <string name="_VOTE">" Vote"</string>-->
+<!--    <string name="_VOTES">" Votes"</string>-->
+
+<!--    <string name="_RATINGS">" Ratings"</string>-->
+<!--    <string name="_RATING">" Rating"</string>-->
+<!--    <string name="GMS_MISCONFIGURED">Google play services is misconfigured. Try to open play store at least once.</string>-->
+<!--    <string name="GMS_NOT_AVAILABLE">Google play services not available on your device</string>-->
+<!--    <string name="MSG_NO_OVERVIEW">"Overview isn't available for this channel."</string>-->
+<!--    <string name="MSG_NO_PHOTO_FOUND">No photo found with this criteria.</string>-->
+<!--    <string name="MSG_NO_PLAYLIST_AVAILABLE">Nobody has created a playlist yet.</string>-->
+<!--    <string name="MSG_NO_PLAYLIST_FOUND">Nobody has created a Playlist with this criteria.</string>-->
+<!--    <string name="FEELING">feeling</string>-->
+<!--    <string name="SEARCH_STICKERS">Search Stickers</string>-->
+<!--    <string name="SEARCH_ACTIVITY">Search Activities</string>-->
+<!--    <string name="TITLE_SELECT">Select</string>-->
+<!--    <string name="DOWNLOADING_IMAGE">Downloading image…</string>-->
+<!--    <string name="TITLE_EDIT_POST">Edit Post</string>-->
+
+<!--    <string name="TITLE_EDIT_ARTICLE_PHOTO">Edit Article Photo</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_MESSAGE">Are you sure you want to delete your conversation(s)?</string>-->
+
+<!--    <string name="MSG_ACCOUNT_DELETED">Your account has deleted from the site.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_ARTIST">Are you sure that you want to delete this artist?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_CHANNEL">Are you sure that you want to delete this channel?</string>-->
+<!--    <string name="TAB_TITLE_QUOTES_1">Browse Quotes</string>-->
+<!--    <string name="TAB_TITLE_QUOTES_2">Manage Quotes</string>-->
+<!--    <string name="TAB_TITLE_QUOTES_3">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_QUOTES_4">Write New Quote</string>-->
+<!--    <string name="follow">Follow</string>-->
+<!--    <string name="follow_friend">Follow Friend</string>-->
+
+<!--    <string name="txt_dont_have_account">"don't have an account?"</string>-->
+
+
+<!--    <string name="txt_sign_in_with">Sign in with a social network</string>-->
+<!--    <string name="see_more">see more</string>-->
+<!--    <string name="title_suggestions">Suggestions</string>-->
+<!--    <string name="contact_us_text_1">Have a question? Need help?</string>-->
+
+<!--    <string name="education_arts"><![CDATA[Education & Arts (7)]]></string>-->
+<!--    <string name="fashion_beauty"><![CDATA[Fashion & Beauty]]></string>-->
+<!--    <string name="network_list">Networks</string>-->
+<!--    <string name="location_page">Address</string>-->
+<!--    <string name="city_page">City</string>-->
+<!--    <string name="state_page">State</string>-->
+<!--    <string name="zipcode">Zipcode</string>-->
+<!--    <string name="country">Country</string>-->
+
+<!--    <string name="groups_liked">Groups liked by this group</string>-->
+<!--    <string name="open_hours">Operating Hours</string>-->
+<!--    <string name="browse_">"Browse "</string>-->
+<!--    <string name="associate_group">Associate Groups</string>-->
+<!--    <string name="select_date">Select Date</string>-->
+<!--    <string name="select_">"Select "</string>-->
+<!--    <string name="enter_location">Enter location</string>-->
+<!--    <string name="related_events">Related Events</string>-->
+<!--    <string name="txt_book_event">Book Event</string>-->
+<!--    <string name="add_to_calendar">Add to Calendar</string>-->
+<!--    <string name="nothing_to_show">Nothing to show</string>-->
+<!--    <string name="terms_and_condition">Terms &amp; Conditions</string>-->
+<!--    <string name="msg_no_overview_available">No overview available</string>-->
+<!--    <string name="msg_no_rules_available">No rules available</string>-->
+<!--    <string name="no_tnc">Terms and Conditions not available</string>-->
+<!--    <string name="txt_replies">Replies</string>-->
+<!--    <string name="save_event">Save event</string>-->
+<!--    <string name="edit_review">Edit Review</string>-->
+<!--    <string name="reviewtext">Page Review</string>-->
+<!--    <string name="your_rsvp">Your RSVP</string>-->
+<!--    <string name="msg_added_to_calendar">This event successfully added to our calendar</string>-->
+<!--    <string name="TXT_SERACH_HOST">Search Hosts</string>-->
+<!--    <string name="TXT_SERACH_LIST">Search Event Lists</string>-->
+
+<!--    <string name="MSG_NO_MUSIC_ALBUM_AVAILABLE">No Music Album available</string>-->
+<!--    <string name="MSG_NO_SONG_AVAILABLE">No Song available</string>-->
+<!--    <string name="MSG_NO_ARTIST_AVAILABLE">No Artist available</string>-->
+
+<!--    <string name="IN_">"in "</string>-->
+<!--    <string name="_followers">" Followers"</string>-->
+<!--    <string name="_follower">" Follower"</string>-->
+<!--    <string name="_entries">" Entries"</string>-->
+<!--    <string name="_entry">" Entry"</string>-->
+<!--    <string name="_members">" Members"</string>-->
+<!--    <string name="_member">" Member"</string>-->
+<!--    <string name="txt_day_left">Day left</string>-->
+<!--    <string name="created_on">Created on</string>-->
+<!--    <string name="created_by">Created by</string>-->
+<!--    <string name="stats">Stats</string>-->
+<!--    <string name="txt_where">Where</string>-->
+<!--    <string name="add_photo_for_your_contest">Add photo for your contest</string>-->
+<!--    <string name="txt_write">Write</string>-->
+<!--    <string name="txt_link_my_video">Link My Video</string>-->
+
+<!--    <string name="msg_no_group_created">Nobody has created a group.</string>-->
+<!--    <string name="tab_title_group_browse">Browse Groups</string>-->
+<!--    <string name="tab_title_group_my">My Groups</string>-->
+<!--    <string name="msg_no_group_found">Nobody has created a group with this criteria.</string>-->
+<!--    <string name="txt_search_group">Search Groups</string>-->
+<!--    <string name="title_edit_group">Edit Group</string>-->
+<!--    <string name="title_create_group">Create Group</string>-->
+<!--    <string name="last_updated">Last Updated</string>-->
+<!--    <string name="join_group">Join Group</string>-->
+<!--    <string name="leave_group">Leave Group</string>-->
+
+<!--    <string name="add_reputation">Add Your Reputation</string>-->
+<!--    <string name="increase">Increase</string>-->
+<!--    <string name="decrease">Decrease</string>-->
+
+<!--    <string name="join_event">Join Event</string>-->
+<!--    <string name="leave_event">Leave Event</string>-->
+
+<!--    <string name="title_send_request">Request Event Membership</string>-->
+<!--    <string name="cancel_request">Cancel Request</string>-->
+<!--    <string name="remove_friend">Remove Friend</string>-->
+<!--    <string name="approve_friend">Approve Request</string>-->
+<!--    <string name="reject_invite">Reject Invitation</string>-->
+<!--    <string name="title_cancel_request">Cancel Invite Request</string>-->
+<!--    <string name="msg_request_membership">Would you like to request membership in this group?</string>-->
+<!--    <string name="msg_request_membership_event">Would you like to request membership in this event?</string>-->
+<!--    <string name="msg_request_cancel_event">Would you like to cancel your request for an invite to this event?</string>-->
+
+<!--    <string name="msg_request_cancel_group">Would you like to cancel your request for an invite to this group?</string>-->
+<!--    <string name="msg_remove_member_event">Are you sure you want to remove this member from the event?</string>-->
+
+<!--    <string name="msg_remove_member_group">Are you sure you want to remove this member from the group?</string>-->
+<!--    <string name="msg_approve_member_event">Would you like to approve this invite request?</string>-->
+<!--    <string name="remove_member">Remove Member</string>-->
+<!--    <string name="approve_member">Approve Member</string>-->
+<!--    <string name="msg_invite_reject_event">Would you like to reject the invitation to this event?</string>-->
+
+<!--    <string name="msg_leave_group">Would you like to leave this group?</string>-->
+<!--    <string name="msg_join_group">Would you like to join this group?</string>-->
+
+<!--    <string name="send_request">Send Request</string>-->
+
+
+<!--    <string name="MSG_DELETE_CONFIRMATION_GROUP">Are you sure that you want to delete this group?</string>-->
+<!--    <string name="TAB_TITLE_POLL_1">Browse Polls</string>-->
+<!--    <string name="TAB_TITLE_POLL_2">My Polls</string>-->
+<!--    <string name="TAB_TITLE_WISH_1">Browse Wish</string>-->
+<!--    <string name="TAB_TITLE_WISH_2">Manage Wish</string>-->
+<!--    <string name="msg_no_wish_created">Nobody has created a wish.</string>-->
+<!--    <string name="msg_no_wish_created_you">No wish created by you yet.</string>-->
+<!--    <string name="msg_no_group_created_you">No group created by you yet.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_WISH">Are you sure that you want to delete this wish?</string>-->
+<!--    <string name="MSG_NO_WISH_CREATED">Nobody has created a wish.</string>-->
+<!--    <string name="MSG_NO_WISH">No wish available for given search</string>-->
+<!--    <string name="TXT_SEARCH_WISH">Search Wishes</string>-->
+<!--    <string name="title_edit_wish">Edit Wish</string>-->
+<!--    <string name="title_create_wish">Create Wish</string>-->
+<!--    <string name="title_create_event">Create Event</string>-->
+<!--    <string name="title_create_poll">Create Poll</string>-->
+<!--    <string name="msg_request_event">Would you like to request membership in this event?</string>-->
+<!--    <string name="msg_leave_event">Are you sure you want to leave this event?</string>-->
+<!--    <string name="msg_join_event">Would you like to join this event?</string>-->
+<!--    <string name="msg_add_reputation">Add your reputation to this user by submitting this form.</string>-->
+
+<!--    <string name="TAB_TITLE_PRAYERS_1">Browse Prayers</string>-->
+<!--    <string name="TAB_TITLE_PRAYERS_2">Manage Prayers</string>-->
+<!--    <string name="TAB_TITLE_PRAYERS_3">Write New Prayer</string>-->
+<!--    <string name="image_profile">image_profile</string>-->
+<!--    <string name="posted_by">Posted by</string>-->
+<!--    <string name="txt_on">on</string>-->
+<!--    <string name="title_edit_classified">Edit Listing</string>-->
+<!--    <string name="title_edit_core_poll">Edit Privacy</string>-->
+<!--    <string name="txt_search_classified">Search Listing</string>-->
+<!--    <string name="tts_say">Try saying something</string>-->
+<!--    <string name="tts_error">"Didn't catch that. Try speaking again."</string>-->
+<!--    <string name="tts_language">English (India)</string>-->
+<!--    <string name="tts_try_again">Try Again</string>-->
+<!--    <string name="TXT_SERACH_EVENT">Search Events</string>-->
+
+<!--    <string name="TXT_SERACH_GROUPS">Search Groups</string>-->
+<!--    <string name="TXT_SEARCH_POLLS">Search Polls</string>-->
+<!--    <string name="TXT_SERACH_POLL">Search Polls</string>-->
+<!--    <string name="MSG_NO_EVENT_FOUND">Nobody has created an event with this criteria.</string>-->
+<!--    <string name="MSG_NO_CONTEST_FOUND">Nobody has created a contest with this criteria.</string>-->
+
+<!--    <string name="MSG_NO_POLL_FOUND">Nobody has created a poll with this criteria.</string>-->
+<!--    <string name="poll_tap">Tap on any option to vote</string>-->
+<!--    <string name="TITLE_POLLS">Polls</string>-->
+<!--    <string name="poll_show_question">Show Question</string>-->
+<!--    <string name="contact_us_text_2">Drop us a message and we\'ll get back.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_POST">Are you sure that you want to delete this post?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_REVIEW">Are you sure that you want to delete this review?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_WISHLIST">Are you sure that you want to delete this wishlist?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_EVENT">Are you sure that you want to delete this event?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_CONTEST">Are you sure that you want to delete this contest?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_ENTRY">Are you sure that you want to delete this entry?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_EVENT_LIST">Are you sure that you want to delete this event list?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_HOST">Are you sure that you want to delete this host?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_POLL">Are you sure that you want to delete this poll?</string>-->
+<!--    <string name="title_edit_event">Edit Event</string>-->
+<!--    <string name="title_edit_poll">Edit Poll</string>-->
+<!--    <string name="select_start_time">Please selcet Start-Time first.</string>-->
+<!--    <string name="event_attend">Attending</string>-->
+<!--    <string name="event_attend_may_be">Maybe Attending</string>-->
+<!--    <string name="event_attend_not">Not Attending</string>-->
+<!--    <string name="view_more">VIEW ALL</string>-->
+<!--    <string name="view_order">View Order</string>-->
+<!--    <string name="add_to_wishlist">Add to Wishlist</string>-->
+<!--    <string name="see_all">See All</string>-->
+<!--    <string name="people_know">People you may know</string>-->
+<!--    <string name="requests">Requests</string>-->
+<!--    <string name="find_friends">Find Friends</string>-->
+
+
+<!--    <string name="vote">VOTE</string>-->
+<!--    <string name="voted">VOTED</string>-->
+<!--    <string name="edit_song">Edit Music</string>-->
+<!--    <string name="add_songs">Add Songs</string>-->
+<!--    <string name="choose_songs">Choose Song(s)</string>-->
+
+<!--    <string name="popular_groups">Popular Groups</string>-->
+<!--    <string name="call">Call</string>-->
+<!--    <string name="open_link">Open Link</string>-->
+<!--    <string name="mail">Mail</string>-->
+<!--    <string name="mapviewid">Location</string>-->
+<!--    <string name="contact">Contact</string>-->
+<!--    <string name="msg_something_wrong">Something went wrong. Please try again.</string>-->
+<!--    <string name="about">About</string>-->
+
+<!--    <string name="added_on_">"Added on "</string>-->
+<!--    <string name="call_to_action">Call to Action</string>-->
+<!--    <string name="basic_info">Basic Info</string>-->
+<!--    <string name="profile_field">Profile Field</string>-->
+<!--    <string name="details">Details</string>-->
+<!--    <string name="contact_info">Contact Information</string>-->
+<!--    <string name="people_followed">People who follow this</string>-->
+<!--    <string name="people_liked">People who liked</string>-->
+<!--    <string name="people_favorite">People who favorited this</string>-->
+
+<!--    <string name="title_create_contest">Create Contest</string>-->
+<!--    <string name="title_edit_contest">Edit Contest</string>-->
+<!--    <string name="EMPTY">""</string>-->
+
+<!--    <string name="invite">Invite Members</string>-->
+<!--    <string name="choose_currency">Choose Currency</string>-->
+<!--    <string name="select_category">Select Category</string>-->
+<!--    <string name="my_device">My Device</string>-->
+<!--    <string name="TITLE_EDIT_QUOTE">Edit Quote</string>-->
+<!--    <string name="TITLE_EDIT_PRAYER">Edit Prayer</string>-->
+<!--    <string name="TITLE_EDIT_THOUGHT">Edit Thought</string>-->
+<!--    <string name="sponsored">Sponsored</string>-->
+<!--    <string name="hot">Hot</string>-->
+<!--    <string name="featured">Featured</string>-->
+<!--    <string name="msg_no_review">No review have been submitted here yet.</string>-->
+<!--    <string name="msg_no_topic">No topics have been posted in this event yet.</string>-->
+<!--    <string name="add_event_list">Add Event To List</string>-->
+<!--    <string name="post_discussion">Post Discussion topic</string>-->
+<!--    <string name="post_topic">Post New Topic</string>-->
+<!--    <string name="post_quote">Quote Post</string>-->
+<!--    <string name="rename_topic">Rename Topic</string>-->
+<!--    <string name="move_topic">Move Topic</string>-->
+<!--    <string name="search_topic">Search Topic</string>-->
+<!--    <string name="discussionid">Discussion</string>-->
+<!--    <string name="search_post">Search Post</string>-->
+<!--    <string name="pros">Pros</string>-->
+<!--    <string name="cons">Cons</string>-->
+<!--    <string name="recommend">Recommend</string>-->
+<!--    <string name="unsave_event">Unsave event</string>-->
+<!--    <string name="reply">Reply</string>-->
+
+<!--    &lt;!&ndash;CORE EVENTS tag starts&ndash;&gt;-->
+<!--    <string name="events_upcoming">Upcoming Events</string>-->
+<!--    <string name="events_past">Past Events</string>-->
+<!--    <string name="events_manage">My Events</string>-->
+<!--    &lt;!&ndash;CORE EVENTS tag ends&ndash;&gt;-->
+<!--    <string name="category_browse">Browse Categories</string>-->
+<!--    &lt;!&ndash; Form Editor tag starts&ndash;&gt;-->
+<!--    <string name="select_image">Select an image</string>-->
+<!--    <string name="select_image_fail">Select an image (failure demo)</string>-->
+<!--    <string name="select_video_fail">Select a video (failure demo)</string>-->
+<!--    <string name="select_image_slow_network">Select an image (slow network demo)</string>-->
+<!--    <string name="add_review">Add Review</string>-->
+<!--    <string name="select_time">Select Time</string>-->
+<!--    <string name="status_not_started">Event not started</string>-->
+<!--    <string name="status_ongoing">Event ongoing</string>-->
+<!--    <string name="status_expire">Event Expired</string>-->
+<!--    <string name="unfollow">Unfollow</string>-->
+<!--    <string name="verified">Verified</string>-->
+<!--    <string name="MSG_NO_ANNOUNCE">No Announcements found</string>-->
+<!--    <string name="MSG_ANNOUNCE_TXT">Announcements</string>-->
+<!--    <string name="TXT_SERACH_ENTRIES">Search Entries</string>-->
+<!--    <string name="TXT_SERACH_WINNERS">Search Winners</string>-->
+<!--    <string name="TXT_SERACH_CONTEST">Search Contests</string>-->
+<!--    <string name="txt_days_left">Days left</string>-->
+<!--    <string name="txt_seconds">" Seconds"</string>-->
+<!--    <string name="txt_minutes">" Minutes "</string>-->
+<!--    <string name="txt_hours">" Hours "</string>-->
+<!--    <string name="unlike">Unlike</string>-->
+<!--    <string name="txt_contest_start_end_date"><![CDATA[Contest Start & End Date]]></string>-->
+<!--    <string name="txt_entry_start_end_date"><![CDATA[Entry Submission Start & End Date]]></string>-->
+<!--    <string name="txt_vote_start_end_date"><![CDATA[Voting Start & End Date]]></string>-->
+<!--    <string name="title_join_contest">Join Contest</string>-->
+<!--    <string name="ses_upload">Upload</string>-->
+<!--    <string name="contest_from_url">From URL</string>-->
+<!--    <string name="contest_link_my_photo">Link My Photo</string>-->
+<!--    <string name="contest_select_photo">Select a photo</string>-->
+<!--    <string name="txt_link_my_blog">Link My Blog</string>-->
+<!--    <string name="txt_upload_video">Upload Video</string>-->
+<!--    <string name="txt_upload_a_video">Upload a video</string>-->
+<!--    <string name="txt_select_a_video">Select a video</string>-->
+<!--    <string name="txt_video_success">Video Posted Successfully.</string>-->
+<!--    <string name="buy_now">Buy Now</string>-->
+<!--    &lt;!&ndash; Form Editor tag end&ndash;&gt;-->
+<!--    <string name="in_content">in <b>%1$s</b></string>-->
+<!--    <string name="donated_by_donor">Donated by <b>%1$s</b></string>-->
+<!--    <string name="received_by_sender">Received by <b>%1$s</b></string>-->
+<!--    <string name="media_type">Media type</string>-->
+<!--    <string name="on_date">on <b>%1$s</b></string>-->
+<!--    <string name="by_owner">by <b>%1$s</b></string>-->
+<!--    <string name="vote_percent_with_count">%1$s %% (%2$d Votes)</string>-->
+<!--    <string name="by_owner_in_category">by <b>%1$s</b> in <b>%2$s</b></string>-->
+<!--    <string name="by_owner_in_category1"><b>%1$s</b></string>-->
+<!--    <string name="by_owner_in_category2"> <b>%1$s</b></string>-->
+<!--    <string name="for_owner_about_time">for <b>%1$s</b> about <b>%2$s</b></string>-->
+<!--    <string name="msg_no_award_available">No Award available</string>-->
+<!--    <string name="post_similar_contest">Post Similar Contest</string>-->
+<!--    <string name="txt_upload_music">Upload Music</string>-->
+<!--    <string name="txt_upload_audio">Upload Audio</string>-->
+<!--    <string name="txt_link_my_audio">Link My Audio</string>-->
+<!--    <string name="change_award">Change Contest Award</string>-->
+<!--    <string name="rules">Rules</string>-->
+<!--    <string name="award">Award</string>-->
+<!--    <string name="information">Information</string>-->
+<!--    <string name="info">Info</string>-->
+<!--    <string name="add_seo">Add SEO</string>-->
+<!--    <string name="change_overview">Change Overview</string>-->
+<!--    <string name="overviewid">Overview</string>-->
+<!--    <string name="update_overview">Update Overview</string>-->
+<!--    <string name="msg_already_voted">You have already voted</string>-->
+<!--    <string name="edit_rule">Change Rule</string>-->
+
+<!--    <string name="select_video">Select a video</string>-->
+<!--    <string name="next">Next</string>-->
+<!--    <string name="select_music">Select a music</string>-->
+<!--    <string name="copy_clipboard">Link copied to your clipboard</string>-->
+<!--    <string name="select_here">Select here</string>-->
+<!--    <string name="people_who_reacted">People who reacted</string>-->
+<!--    <string name="all">All  %1$d</string>-->
+<!--    <string name="invalid_url">Not a valid URL</string>-->
+<!--    <string name="edit_entry">Edit Entry</string>-->
+<!--    <string name="see_more_feed">…See More</string>-->
+<!--    <string name="title_setting_subscription_success">Payment Complete</string>-->
+<!--    <string name="title_setting_subscription_failed">Payment Failed</string>-->
+<!--    <string name="msg_setting_subscription_failed">Our payment processor has notified us that your payment could not be completed successfully. We suggest that you try again with another card or funding source.</string>-->
+<!--    <string name="msg_setting_subscription_success">Thank you! Your payment has completed successfully.</string>-->
+<!--    <string name="MSG_NO_CONTEST_CREATED">Nobody has created a contest.</string>-->
+<!--    <string name="MSG_NO_ENTRY_CREATED">Nobody has created an entry.</string>-->
+<!--    <string name="no_services_found">No Services Found</string>-->
+<!--    <string name="no_participant_availiable">No Participants found</string>-->
+<!--    <string name="no_category_found">No Category Found.</string>-->
+<!--    <string name="group_question">Group Questions</string>-->
+<!--    <string name="enter_question">Write a question</string>-->
+<!--    <string name="add_question">Add a question</string>-->
+<!--    <string name="add_questions">Add Questions</string>-->
+<!--    <string name="ask_question">Ask Pending Members Questions</string>-->
+<!--    <string name="ask_question_desc">Ask pending members some questions. They\'ll have up to 250 characters to answer each one, and only admins and moderators will see the answers.</string>-->
+<!--    <string name="title_request_group_membership">Request Group Membership</string>-->
+
+
+<!--    &lt;!&ndash; forum text starts&ndash;&gt;-->
+
+<!--    <string name="forums">Forums</string>-->
+<!--    <string name="no_forums">No Forums available</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_FORUM_POST">Are you sure that you want to delete this post?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_FORUM_TOPIC">Are you sure that you want to delete this topic?</string>-->
+<!--    &lt;!&ndash; page text starts&ndash;&gt;-->
+<!--    <string name="TXT_SERACH_PAGES">Search Pages</string>-->
+<!--    <string name="TXT_SERACH_PAGESPoll">Search Poll</string>-->
+<!--    <string name="msg_request_cancel_page">Would you like to cancel your request for an invite to this page?</string>-->
+<!--    <string name="msg_remove_member_page">Are you sure you want to remove this member from the page?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PAGE">Are you sure that you want to delete this page?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_SERVICE">Are you sure that you want to delete this service?</string>-->
+<!--    <string name="MSG_DELETE_REENABLE_PRO">You are already a Professional &amp; you have disabled your profile. Are you sure you want to enable your Professional Profile now?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PRO">Are you sure that you want to delete this professional?</string>-->
+<!--    <string name="msg_invite_reject_page">Would you like to reject the invitation to this page?</string>-->
+<!--    <string name="title_create_page">Create Page</string>-->
+<!--    <string name="title_edit_page">Edit Page</string>-->
+<!--    <string name="title_editService">Edit Service</string>-->
+<!--    <string name="related_pages">Related Pages</string>-->
+<!--    <string name="NO_PAGE_AVAILABLE">No page Available</string>-->
+
+<!--    <string name="popular_pages">Popular Pages</string>-->
+<!--    <string name="MSG_NO_PAGE_FOUND">Nobody has created a page with this criteria.</string>-->
+<!--    <string name="MSG_NO_PAGEPOLL_FOUND">Nobody has created Poll.</string>-->
+<!--    <string name="pages_liked">Pages liked by this page</string>-->
+
+<!--    &lt;!&ndash; store text starts&ndash;&gt;-->
+<!--    <string name="TXT_SERACH_STORES">Search Stores</string>-->
+<!--    <string name="TXT_SERACH_PRODUCT">Search Products</string>-->
+<!--    <string name="productid">Product</string>-->
+<!--    <string name="msg_request_cancel_store">Would you like to cancel your request for an invite to this store?</string>-->
+<!--    <string name="msg_remove_member_store">Are you sure you want to remove this member from the store?</string>-->
+<!--    <string name="msg_remove_product_cart">Are you sure you want to remove this product from the cart?</string>-->
+<!--    <string name="msg_empty_cart">Are you sure you want make empty your cart?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_STORE">Are you sure that you want to delete this store?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PRODUCT">Are you sure that you want to delete this product?</string>-->
+<!--    <string name="msg_invite_reject_store">Would you like to reject the invitation to this store?</string>-->
+<!--    <string name="title_create_store">Create Store</string>-->
+<!--    <string name="title_edit_store">Edit Store</string>-->
+<!--    <string name="related_stores">Related Stores</string>-->
+<!--    <string name="related_products">Related Products</string>-->
+<!--    <string name="NO_STORE_AVAILABLE">No Store Available</string>-->
+<!--    <string name="NO_FORUM_AVAILABLE">No Forum Available</string>-->
+<!--    <string name="NO_TOPIC_AVAILABLE">No Topics Available</string>-->
+<!--    <string name="NO_POST_AVAILABLE">No Post Available</string>-->
+<!--    <string name="NO_PRODUCT_AVAILABLE">No Product Available</string>-->
+<!--    <string name="NO_WISHLIST_AVAILABLE">No Wishlist Available</string>-->
+<!--    <string name="popular_stores">Popular Stores</string>-->
+<!--    <string name="title_create_channel">Create Channel</string>-->
+<!--    <string name="title_edit_channel">Edit Channel</string>-->
+<!--    <string name="MSG_STOP_TIKTOK">Are you sure that you want to go back?</string>-->
+<!--    <string name="MSG_NO_STORE_FOUND">Nobody has created a store with this criteria.</string>-->
+<!--    <string name="MSG_NO_PRODUCT_FOUND">Nobody has created a product with this criteria.</string>-->
+<!--    <string name="stores_liked">Stores liked by this store</string>-->
+
+<!--    <string name="msg_join_stores">Would you like to join this Store?</string>-->
+<!--    <string name="msg_leave_stores">Would you like to leave this Store?</string>-->
+<!--    <string name="msg_request_membership_store">Would you like to request membership in this Store?</string>-->
+
+<!--    <string name="join_store">Join Store</string>-->
+<!--    <string name="leave_store">Leave Store</string>-->
+
+<!--    &lt;!&ndash; dialog msgs for page starts&ndash;&gt;-->
+<!--    <string name="msg_join_page">Would you like to join this page?</string>-->
+<!--    <string name="msg_leave_page">Would you like to leave this page?</string>-->
+<!--    <string name="msg_request_membership_page">Would you like to request membership in this page?</string>-->
+<!--    &lt;!&ndash; dialog msgs for page ends&ndash;&gt;-->
+
+<!--    &lt;!&ndash; button texts for page starts&ndash;&gt;-->
+<!--    <string name="join_page">Join Page</string>-->
+<!--    <string name="leave_page">Leave Page</string>-->
+
+<!--    &lt;!&ndash; button texts for page ends&ndash;&gt;-->
+<!--    &lt;!&ndash; page text ends&ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; bussienss text starts&ndash;&gt;-->
+<!--    <string name="NO_BUSINESS_AVAILABLE">No business Available</string>-->
+<!--    <string name="related_businesses">Related Businesses</string>-->
+
+<!--    <string name="TXT_SERACH_BUSSINESSES">Search Businesses</string>-->
+<!--    <string name="msg_request_cancel_business">Would you like to cancel your request for an invite to this business?</string>-->
+<!--    <string name="msg_remove_member_business">Are you sure you want to remove this member from the business?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_BUSINESS">Are you sure that you want to delete this business?</string>-->
+<!--    <string name="msg_invite_reject_business">Would you like to reject the invitation to this business?</string>-->
+<!--    <string name="title_create_business">Create Business</string>-->
+<!--    <string name="title_edit_business">Edit Business</string>-->
+<!--    <string name="related_businesss">Related Businesses</string>-->
+<!--    <string name="popular_businesses">Popular Businesses</string>-->
+<!--    <string name="MSG_NO_BUSINESS_FOUND">Nobody has created a business with this criteria.</string>-->
+<!--    <string name="businesses_liked">Businesses liked by this business</string>-->
+
+<!--    &lt;!&ndash; dialog msgs for business starts&ndash;&gt;-->
+<!--    <string name="msg_join_business">Would you like to join this business?</string>-->
+<!--    <string name="msg_leave_business">Would you like to leave this business?</string>-->
+<!--    <string name="msg_request_membership_business">Would you like to request membership in this business?</string>-->
+<!--    &lt;!&ndash; dialog msgs for business ends&ndash;&gt;-->
+
+<!--    &lt;!&ndash; button texts for business starts&ndash;&gt;-->
+<!--    <string name="join_business">Join Business</string>-->
+<!--    <string name="leave_business">Leave Business</string>-->
+<!--    &lt;!&ndash; bussienss text ends&ndash;&gt;-->
+
+
+<!--    &lt;!&ndash; BLOG TEXTS STARTS&ndash;&gt;-->
+<!--    <string name="TITLE_BLOG">Blogs</string>-->
+<!--    <string name="TITLE_JOBS">Jobs</string>-->
+<!--    <string name="TITLE_EDIT_BLOG">Edit Blog</string>-->
+
+<!--    <string name="MSG_NO_BLOG">Nobody has posted a blog with this criteria.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_BLOG">Are you sure that you want to delete this blog?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_JOB">Are you sure that you want to delete this job?</string>-->
+<!--    <string name="TXT_SERACH_BLOG">Search blogs</string>-->
+<!--    <string name="TXT_SERACH_JOBS">Search jobs</string>-->
+<!--    <string name="MSG_NO_BLOG_CREATED">Nobody created a blog yet.</string>-->
+<!--    <string name="MSG_NO_BLOG_CREATED_YOU">No blog created by you yet.</string>-->
+<!--    <string name="select_blog">Select a blog</string>-->
+<!--    <string name="TAB_TITLE_BLOG_1">Browse Blogs</string>-->
+<!--    <string name="TAB_TITLE_BLOG_2">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_BLOG_3">My Blogs</string>-->
+<!--    <string name="TAB_TITLE_BLOG_4">Write New Blog</string>-->
+<!--    &lt;!&ndash; BLOG TEXT ENDS&ndash;&gt;-->
+<!--    &lt;!&ndash;POLL TEXT STARTS&ndash;&gt;-->
+<!--    <string name="TAB_TITLE_CPOLL_1">Browse Polls</string>-->
+<!--    <string name="TAB_TITLE_CPOLL_2">My Polls</string>-->
+<!--    <string name="TAB_TITLE_CPOLL_3">Write a New Poll</string>-->
+<!--    &lt;!&ndash; NEWS TEXTS STARTS&ndash;&gt;-->
+<!--    <string name="TITLE_NEWS">News</string>-->
+<!--    <string name="TITLE_RSS">RSS</string>-->
+<!--    <string name="TITLE_EDIT_NEWS">Edit News</string>-->
+<!--    <string name="TITLE_EDIT_RSS">Edit RSS</string>-->
+
+<!--    <string name="MSG_NO_NEWS">Nobody has posted a blog with this criteria.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_NEWS">Are you sure that you want to delete this news?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_RSS">Are you sure that you want to delete this rss?</string>-->
+<!--    <string name="TXT_SERACH_NEWS">Search news</string>-->
+<!--    <string name="MSG_NO_NEWS_CREATED">Nobody created a news yet.</string>-->
+<!--    <string name="MSG_NO_NEWS_CREATED_YOU">No news created by you yet.</string>-->
+<!--    <string name="MSG_NO_RSS_CREATED_YOU">No rss created by you yet.</string>-->
+<!--    <string name="select_news">Select a news</string>-->
+<!--    <string name="TAB_TITLE_NEWS_1">Browse News</string>-->
+<!--    <string name="TAB_TITLE_NEWS_2">Browse RSS</string>-->
+<!--    <string name="TAB_TITLE_NEWS_3">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_NEWS_4">My News</string>-->
+<!--    <string name="TAB_TITLE_NEWS_5">Write New News</string>-->
+<!--    <string name="TAB_TITLE_NEWS_6">My RSS</string>-->
+<!--    <string name="TAB_TITLE_NEWS_7">Add New RSS</string>-->
+<!--    &lt;!&ndash; NEWS TEXT ENDS&ndash;&gt;-->
+
+<!--    &lt;!&ndash; RECIPE TEXTS STARTS&ndash;&gt;-->
+<!--    <string name="TITLE_EDIT_RECIPE">Edit Recipe</string>-->
+<!--    <string name="TITLE_RECIPE">Recipes</string>-->
+<!--    <string name="TITLE_EDIT_BLOG_PHOTO">Edit Blog Photo</string>-->
+<!--    <string name="MSG_NO_RECIPE">Nobody has posted a recipe with this criteria.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_RECIPE">Are you sure that you want to delete this recipe?</string>-->
+<!--    <string name="TXT_SERACH_RECIPE">Search Recipes</string>-->
+<!--    <string name="MSG_NO_RECIPE_CREATED">Nobody created a recipe yet.</string>-->
+<!--    <string name="MSG_NO_RECIPE_CREATED_YOU">No recipe created by you yet.</string>-->
+<!--    <string name="select_recipe">Select a recipe</string>-->
+<!--    <string name="TAB_TITLE_RECIPE_1">Browse Recipes</string>-->
+<!--    <string name="TAB_TITLE_RECIPE_2">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_MAPLOCATION">Locaton</string>-->
+
+<!--    <string name="TAB_TITLE_RECIPE_3">My Recipes</string>-->
+<!--    <string name="TAB_TITLE_RECIPE_4">Create New Recipe</string>-->
+<!--    <string name="select_a_package">Select A Package</string>-->
+
+
+<!--    <string name="TAB_TITLE_MuLTISTORE_1">Browse Electronics</string>-->
+
+<!--    <string name="select_a_package_desc">Select a package that suits you most to start creating %1$s.</string>-->
+<!--    <string name="contest">contest</string>-->
+<!--    <string name="page">page</string>-->
+<!--    <string name="group">group</string>-->
+<!--    <string name="business">business</string>-->
+<!--    <string name="my_package">My Packages</string>-->
+<!--    <string name="all_packages">All Packages</string>-->
+<!--    <string name="see_all_transactions">See All Transactions</string>-->
+<!--    <string name="title_transactions">Transactions</string>-->
+<!--    <string name="transaction_detail">Transaction Detail</string>-->
+<!--    <string name="transaction_id">Transaction ID</string>-->
+<!--    <string name="contest_id">Contest ID</string>-->
+<!--    <string name="packaze">Package</string>-->
+<!--    <string name="contest_title">Contest Title</string>-->
+<!--    <string name="gateway">Gateway</string>-->
+<!--    <string name="status">Status</string>-->
+<!--    <string name="amount">Amount</string>-->
+<!--    <string name="date">Date</string>-->
+<!--    &lt;!&ndash; RECIPE TEXT ENDS&ndash;&gt;-->
+
+<!--    <string name="trans_package">Package : <b>%1$s</b></string>-->
+<!--    <string name="trans_id">Transaction ID : <b>%1$s</b></string>-->
+<!--    <string name="trans_contest">Contest : <b>%1$s</b></string>-->
+<!--    &lt;!&ndash;  <string name="trans_subscribed_on">%1$s<b>%2$s</b><br />%3$s<b>%4$s</b></string>&ndash;&gt;-->
+<!--    &lt;!&ndash; <string name="package_cancel_title">Cancel Subscription?</string>&ndash;&gt;-->
+<!--    <string name="package_cancel_desc">Are you sure you want to cancel this subscription plan as this action cannot be undone?</string>-->
+<!--    <string name="no_package_available">You have not subscribed to any package yet!</string>-->
+<!--    <string name="show_result">Show Result</string>-->
+<!--    <string name="add_another_option">Add another option</string>-->
+<!--    <string name="add_options">Add options</string>-->
+<!--    <string name="option">Option</string>-->
+<!--    <string name="WARNING_LESS_OPTIONS_POLL">Poll must have atleast two options</string>-->
+<!--    <string name="invalid_option">Options is invalid or empty</string>-->
+<!--    <string name="select_image_gif">Select Image or GIF</string>-->
+<!--    <string name="MSG_NO_GIF_AVAILABLE">No GIFs found</string>-->
+<!--    <string name="txt_stop">Stop</string>-->
+<!--    <string name="txt_pause">Pause</string>-->
+<!--    <string name="txt_replay">Replay</string>-->
+<!--    <string name="txt_play">Play</string>-->
+<!--    <string name="msg_cannot_vote">You\'ve already voted or You don\'t have permission to vote in this Poll.</string>-->
+<!--    <string name="remember_me">Remember me</string>-->
+<!--    <string name="text_maintenance_1">Sorry! We\'re down for maintenance.</string>-->
+<!--    <string name="text_maintenance_2">Please check back soon.</string>-->
+<!--    <string name="text_maintenance_3">Access Code :</string>-->
+<!--    <string name="lbl_useful_ad_2">Remove from useful</string>-->
+<!--    <string name="lbl_useful_ad_1">This ad is useful</string>-->
+<!--    <string name="voted_user">Members Voted</string>-->
+<!--    <string name="GMAIL">GMAIL</string>-->
+<!--    &lt;!&ndash;QA texts starts&ndash;&gt;-->
+<!--    <string name="question">question</string>-->
+<!--    <string name="add_answer">Add Answer</string>-->
+<!--    <string name="NO_QUESTION_AVAILABLE">No question Available</string>-->
+<!--    <string name="TXT_SERACH_QUESTION">Search Questions</string>-->
+<!--    <string name="MSG_NO_QUESTION_FOUND">Nobody has asked a question with this criteria.</string>-->
+<!--    <string name="title_create_question">Create Question</string>-->
+<!--    <string name="title_edit_question">Edit Question</string>-->
+<!--    <string name="txt_poll_select_multiple_option">Allow members to select multiple options</string>-->
+<!--    <string name="msg_poll_minimum_option_count">Add atleast two options</string>-->
+<!--    <string name="msg_question_edit_successfully">Question edited successfully</string>-->
+<!--    <string name="msg_no_answer">No one has submitted any answer yet. Be the first !</string>-->
+<!--    <string name="text_Answer">Answer</string>-->
+<!--    <string name="edit_answer">Edit Answer</string>-->
+<!--    <string name="create_answer">Add Answer</string>-->
+<!--    <string name="msg_delete_answer">Are you sure that you want to delete this answer? It will not be recoverable after being deleted.</string>-->
+<!--    <string name="loading_song">Loading Song…</string>-->
+<!--    &lt;!&ndash;QA texts ends&ndash;&gt;-->
+
+<!--    <plurals name="views_count">-->
+<!--        <item quantity="one"><b>%d</b> View</item>-->
+<!--        <item quantity="other"><b>%d</b> Views</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="answers_count">-->
+<!--        <item quantity="one"><b>%d</b> Answer</item>-->
+<!--        <item quantity="other"><b>%d</b> Answers</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="rating_count">-->
+<!--        <item quantity="one"><b>%d</b> Rating</item>-->
+<!--        <item quantity="other"><b>%d</b> Ratings</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="hours_ago">-->
+<!--        <item quantity="one"><b>%d</b> hour ago</item>-->
+<!--        <item quantity="other"><b>%d</b> hours ago</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="days_ago">-->
+<!--        <item quantity="one"><b>%d</b> day ago</item>-->
+<!--        <item quantity="other"><b>%d</b> days ago</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="minutes_ago">-->
+<!--        <item quantity="one"><b>%d</b> minute ago</item>-->
+<!--        <item quantity="other"><b>%d</b> minutes ago</item>-->
+<!--    </plurals>-->
+<!--    <string name="few_seconds_ago">few seconds ago</string>-->
+<!--    <string name="poll">Poll</string>-->
+<!--    <string name="verification_code">Validate OTP (One Time Password)</string>-->
+<!--    <string name="verification_code_subtext">Enter the verification code you have received on your registered mobile number .</string>-->
+<!--    <string name="verify">Verify</string>-->
+<!--    <string name="resend">Resend</string>-->
+<!--    <string name="msg_otp_resent">OTP resend successfully.</string>-->
+<!--    <string name="title_reset_password">Reset Password?</string>-->
+<!--    <string name="verification_otp">OTP Verification</string>-->
+<!--    <string name="TXT_SERACH_REVIEW">Search Reviews</string>-->
+<!--    <string name="add_comment">Add a comment</string>-->
+<!--    <string name="msg_no_wallpaper">No Wallpaper available</string>-->
+<!--    <string name="msg_no_font_with_name">No Fonts found with key \' <b>%1$s</b>\'</string>-->
+<!--    <string name="value_with_count"><b>%1$s</b> <b>%2$s</b></string>-->
+<!--    <string name="search_wallpaper">Search Wallpapers</string>-->
+<!--    <string name="fonts">Fonts</string>-->
+<!--    <string name="msg_quote_go_back">All changes will be lost. Are you sure that you want to go back? </string>-->
+
+<!--    <plurals name="answers_count_view_page">-->
+<!--        <item quantity="one">Answer (<b>%d</b>)</item>-->
+<!--        <item quantity="other">Answers (<b>%d</b>)</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="follow_count">-->
+<!--        <item quantity="one"><b>%d</b> Follow</item>-->
+<!--        <item quantity="other"><b>%d</b> Follows</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="vote_count">-->
+<!--        <item quantity="one"><b>%d</b> Vote</item>-->
+<!--        <item quantity="other"><b>%d</b> Votes</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="like_count">-->
+<!--        <item quantity="one"><b>%d</b> Like</item>-->
+<!--        <item quantity="other"><b>%d</b> Likes</item>-->
+<!--    </plurals>-->
+<!--    <plurals name="comment_count">-->
+<!--        <item quantity="one"><b>%d</b> Comment</item>-->
+<!--        <item quantity="other"><b>%d</b> Comments</item>-->
+<!--    </plurals>-->
+<!--    <string name="msg_tts_content_invalid">Something went wrong. Not able to play this content.</string>-->
+<!--    &lt;!&ndash;App intro texts starts&ndash;&gt;-->
+<!--    <string name="profile">Profile</string>-->
+<!--    <string name="profile_d">View or Edit your profile page</string>-->
+<!--    <string name="navigation_item">Naviagtion Items</string>-->
+<!--    <string name="navigation_item_d">Scroll up/down for more options </string>-->
+<!--    &lt;!&ndash;App intro texts Ends&ndash;&gt;-->
+
+<!--    <string name="caption">Add a caption…</string>-->
+<!--    <string name="stories">Stories</string>-->
+<!--    <string name="stories_desc">See fullscreen photos and videos before they disapper</string>-->
+<!--    <string name="see_archives">Archives</string>-->
+<!--    <string name="viewed_by_count">Viewed by %d</string>-->
+<!--    <string name="msg_no_viewers">No one has viewed this story yet !</string>-->
+<!--    <string name="title_story_archive">Your Story Archive</string>-->
+<!--    <string name="msg_archive_description">After photos and videos disappear from your story, you\'ll find them here. You\'ll also see who viewed and reacted to each story.</string>-->
+<!--    <string name="msg_story_delete">Delete this status update? It will also be deleted for everyone who received it.</string>-->
+<!--    <string name="title_story_setting">Story Settings</string>-->
+<!--    <string name="story_highlights">Story highlights</string>-->
+<!--    <string name="just_now">Just now</string>-->
+<!--    <string name="title_replies">Replies</string>-->
+<!--    <string name="hosted_by">Hosted by</string>-->
+<!--    <string name="txt_when">When</string>-->
+<!--    <string name="txt_when_n_where"><![CDATA[When & Where]]></string>-->
+<!--    <string name="replied_to_story">Replied to Story</string>-->
+<!--    <string name="story_you_muted">Stories You Muted</string>-->
+<!--    <string name="review_muted_member">Review people you\'ve previously muted.</string>-->
+<!--    <string name="muted_stories">Muted Stories</string>-->
+<!--    <string name="unmute">Unmute</string>-->
+<!--    <string name="mute">Mute</string>-->
+<!--    <string name="update">Update</string>-->
+
+<!--    <plurals name="view_more_reply_count">-->
+<!--        <item quantity="one">View <b>%d</b> more reply</item>-->
+<!--        <item quantity="other">View <b>%d</b> more replies</item>-->
+<!--    </plurals>-->
+
+<!--    &lt;!&ndash;CROWD FUNDING TEXT STARTS&ndash;&gt;-->
+<!--    <string name="raised">RAISED</string>-->
+<!--    <string name="donor">DONOR</string>-->
+<!--    <string name="goal">GOAL</string>-->
+<!--    <string name="title_create_fund">Create Crowdfunding</string>-->
+<!--    <string name="TXT_SERACH_FUNDS">Search Crowdfundings</string>-->
+<!--    <string name="crowdfinding">Crowdfunding</string>-->
+<!--    <string name="title_edit_fund">Edit Crowdfunding</string>-->
+<!--    <string name="msg_no_donor">No one has donated any fund yet</string>-->
+<!--    <string name="NO_FUND_AVAILABLE">No crowdfunding Available</string>-->
+<!--    <string name="min_donation_amt">Minimum Donation Amount</string>-->
+<!--    <string name="msg_no_reward">No Rewards Available!</string>-->
+<!--    <string name="crowdfunding_announcement">Crowdfunding Announcement</string>-->
+<!--    <string name="story">Story</string>-->
+<!--    <string name="donate">Donate</string>-->
+<!--    <string name="credit_point_type">Credit Point Type</string>-->
+<!--    <string name="credit_points">Credit Points</string>-->
+<!--    <string name="validity_date">Validity Date</string>-->
+<!--    <string name="remaining_size">Remaining Size</string>-->
+<!--    <string name="debit_points">Debit Points</string>-->
+<!--    <string name="msg_no_credit_point">There are no credit points found.</string>-->
+<!--    <string name="msg_no_transaction">There are no transactions found.</string>-->
+<!--    <string name="purchase_points">Purchase Points</string>-->
+<!--    <string name="select_point_type">Select the type of point purchase</string>-->
+<!--    <string name="send_point_friend">Send Point To Friend</string>-->
+<!--    <string name="search_donor">Search Donor</string>-->
+<!--    <string name="NO_FUND_CREATED">No Crowdfunding created by you yet.</string>-->
+<!--    <string name="no_donation_received">You havn\'t received any donations yet.</string>-->
+<!--    <string name="no_donation_sent">You havn\'t sent any donations yet.</string>-->
+<!--    <string name="all_badges">All Badges</string>-->
+<!--    <string name="my_badges">My Badges</string>-->
+<!--    <string name="no_badges_available">No Badges Available!</string>-->
+<!--    <string name="activity_type">Activity Type</string>-->
+<!--    <string name="deduction_points">Deduction\nPoints</string>-->
+<!--    <string name="max_points">Max\nPoints</string>-->
+<!--    <string name="next_time">Next\nTime</string>-->
+<!--    <string name="first_time">First\nTime</string>-->
+<!--    <string name="dummy_name">Not crossed <strike>crossed</strike> </string>-->
+<!--    <string name="add_to_cart">Add to Cart</string>-->
+<!--    <string name="compare">Compare</string>-->
+<!--    <string name="companies_data">Companies</string>-->
+<!--    <string name="quantity">Quantity :</string>-->
+<!--    <string name="POINTS_REQUIRED">Points is mandatory</string>-->
+<!--    <string name="FRIEND_REQUIRED">Select Friend First</string>-->
+
+<!--    &lt;!&ndash;CROWD FUNDING TEXT ENDS&ndash;&gt;-->
+
+<!--    &lt;!&ndash;LIVE STREAMING TEXT&ndash;&gt;-->
+<!--    <string name="stream">Live Video is running</string>-->
+<!--    <string name="join_stream">Connecting to Live Video</string>-->
+<!--    <string name="stream_ended">Live Video has been Ended</string>-->
+<!--    <string name="stream_ending">Finishing Live Video</string>-->
+<!--    <string name="live">Live</string>-->
+<!--    <string name="live_again">Go Live Again</string>-->
+
+<!--    <string name="txt_end">End</string>-->
+<!--    <string name="txt_discard">Discard</string>-->
+<!--    <string name="txt_end_live">End Live Video</string>-->
+<!--    <string name="not_ready">Please Wait for a Minute</string>-->
+<!--    <string name="error_occured">Sorry! An error has occurred</string>-->
+<!--    <string name="saving">Saving</string>-->
+<!--    <string name="save_gallery">Save to Gallery</string>-->
+<!--    <string name="sharing">Sharing</string>-->
+<!--    <string name="share_story_label">Allow sharing to Stories</string>-->
+<!--    <string name="share_feed_label">Allow sharing into Feed</string>-->
+<!--    <string name="discard_stream">Your Live Video will be lost. Are you sure that you want to go back?</string>-->
+<!--    <string name="msg_delete_live">Are you sure that you want to delete your live Video?</string>-->
+<!--    <string name="sharing_note">If you disable both options then you won’t be able to Share your Video</string>-->
+<!--    <string name="sharing_disabled">"You don't have the permission of sharing"</string>-->
+<!--    <string name="create_own">Want to Create Own!!!</string>-->
+<!--    <string name="duration_end">Your time for Live Streaming is completed</string>-->
+<!--    <string name="share_instory">Keep your Live Video for the next 24 hours in Stories</string>-->
+<!--    <string name="share_infeed">Post your Live Video in the Feed</string>-->
+<!--    <string name="live_disabled">Live Streaming is Disabled.</string>-->
+<!--    <string name="live_setup_incomplete">Live Streaming set-up is incomplete.</string>-->
+
+<!--    &lt;!&ndash;Classroom Texts&ndash;&gt;-->
+<!--    <string name="join_classroom">Join Classroom</string>-->
+<!--    <string name="leave_classroom">Leave Classroom</string>-->
+<!--    <string name="related_classrooms">Related Classrooms</string>-->
+<!--    <string name="title_create_classroom">Create Classroom</string>-->
+<!--    <string name="title_edit_classroom">Edit Classroom</string>-->
+<!--    <string name="msg_join_classroom">Would you like to join this classroom?</string>-->
+<!--    <string name="join_Classroom">Join Classroom</string>-->
+<!--    <string name="my_account">My Account</string>-->
+<!--    <string name="NO_CLASSROOM_AVAILABLE">No Classrooms available</string>-->
+<!--    <string name="hint_search_classroom">Search for Classrooms</string>-->
+<!--    <string name="CREATE_CLASSROOM">Create Classroom</string>-->
+<!--    <string name="hot_classrooms">Hot</string>-->
+<!--    <string name="featured_classrooms">Featured</string>-->
+<!--    <string name="TXT_SEARCH_CLASSROOM">Search Classrooms</string>-->
+<!--    <string name="Verified_classrooms">Verified</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_CLASSROOM">Are you sure that you want to delete this Classroom?</string>-->
+
+
+<!--    &lt;!&ndash;Classroom text ends&ndash;&gt;-->
+
+<!--    &lt;!&ndash;COURSES Texts&ndash;&gt;-->
+<!--    <string name="msg_no_description_available">No Description available</string>-->
+<!--    <string name="hint_search_courses">Search for Courses</string>-->
+<!--    <string name="NO_COURSE_AVAILABLE">No Course Available</string>-->
+<!--    <string name="Test_Result">Test Result</string>-->
+<!--    <string name="Test">Test</string>-->
+<!--    <string name="NO_TEST_AVAILABLE">No Test Available</string>-->
+<!--    <string name="NO_COURSE_AVAILABLE_UPSELL">No Upsell Courses Available</string>-->
+<!--    <string name="NO_LECTURES_AVAILABLE">No Lectures Available</string>-->
+<!--    <string name="PRICE">Price:</string>-->
+<!--    <string name="Total_tax">Total Tax:</string>-->
+<!--    <string name="TITLE_ADD_WISHLIST_COURSE">Add Course To Wishlist</string>-->
+<!--    <string name="TXT_SEARCH_COURSE">Search Courses</string>-->
+<!--    <string name="msg_remove_course_cart">Are you sure you want to remove this Course from the cart?</string>-->
+<!--    <string name="CREATE_LECTURE">Create Lecture</string>-->
+<!--    <string name="CREATE_TEST">Create Test</string>-->
+<!--    <string name="EDIT_LECTURE">Edit Lecture</string>-->
+<!--    <string name="txt_add_cart">Add To Cart</string>-->
+<!--    <string name="txt_posted_in">Posted in </string>-->
+<!--    <string name="title_edit_course">Edit Course</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_COURSE">Are you sure that you want to delete this course?</string>-->
+<!--    <string name="CREATE_COURSE">Create Course</string>-->
+<!--    <string name="MSG_NO_COURSE_FOUND">Nobody has created a Course with this criteria.</string>-->
+<!--    <string name="MSG_NO_CLASSROOM_FOUND">Nobody has created a Classroom with this criteria.</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_LECTURE">Are you sure that you want to delete this lecture?</string>-->
+<!--    <string name="Upload_">"Upload "</string>-->
+<!--    <string name="msg_request_membership_classroom">Would you like to request membership in this Classroom?</string>-->
+<!--    <string name="msg_leave_classroom">Would you like to leave this Classroom?</string>-->
+<!--    <string name="msg_request_cancel_classroom">Would you like to cancel your request for an invite to this classroom?</string>-->
+<!--    <string name="msg_request_accept_classroom">Would you like to accept an invite to this classroom?</string>-->
+<!--    <string name="msg_request_reject_classroom">Would you like to reject an invite to this classroom?</string>-->
+<!--    <string name="msg_leave_test">Are you sure you want to leave this test?</string>-->
+
+
+<!--    &lt;!&ndash;COURSES text ends&ndash;&gt;-->
+<!--    &lt;!&ndash;Booking Text starts&ndash;&gt;-->
+<!--    <string name="NO_BOOKING_AVAILABLE">No Bookings available</string>-->
+<!--    <string name="TXT_SEARCH_PROFESSIONAL">Search Professionals</string>-->
+<!--    <string name="TXT_SEARCH_Service">Search Services</string>-->
+<!--    <string name="TXT_SEARCH_Service_txt">Services</string>-->
+<!--    <string name="MSG_NO_PROFESSIONAL_FOUND">No professionals found.</string>-->
+<!--    <string name="MSG_NO_CONTACT_FOUND">No Contact Information.</string>-->
+<!--    <string name="MSG_NO_SERVICE_FOUND">No services found.</string>-->
+<!--    <string name="BECOME_PROFESSIONAL">Become a professional</string>-->
+
+<!--    <string name="connect">Connected</string>-->
+<!--    <string name="disconnect">Disconnected, Please check your internet connection</string>-->
+<!--    <string name="error_connect">Failed to connect</string>-->
+<!--    <string name="gmail">290275007691-jh088cdnvetgniv8hgfmv610c6hs5fp4.apps.googleusercontent.com</string>-->
+
+<!--    <string name="tw_login_hint">Twitter Login</string>-->
+<!--    <string name="tw_logout_hint">Logout</string>-->
+<!--    <string name="twitter_consumer_key">AlqfZ7Rzmn6eMhC4W0PVJK46h</string>-->
+<!--    <string name="twitter_consumer_secret">Fw64iOOgDBPiWNIouB6R3yEaqlcs4Gi0xUdFSz8gyiIo4Z5Xhz</string>-->
+<!--    <string name="twitter_callback_url">http://www.website_sample.com/auth/twitter/callback/</string>-->
+<!--    <string name="welcome">Welcome back %s!</string>-->
+<!--    <string name="already_logged">User already logged into twitter with %s.</string>-->
+<!--    <string name="logged_out">Logout success</string>-->
+<!--    <string name="loading_title">Loading…</string>-->
+<!--    <string name="login_dialog_message">Wait for it…</string>-->
+
+
+<!--    <string name="MSG_DELETE_CONFIRMATION_ACHIVE">Are you sure you want to delete this achievement?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_SKILL">Are you sure you want to delete this skill?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_CURRICULAR">Are you sure you want to delete this curricular?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_EDU">Are you sure you want to delete this education?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_RESUME">Are you sure you want to delete this resume?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_CERT">Are you sure you want to delete this certificate?</string>-->
+
+<!--    <string name="title_create_exprience">Add Experience</string>-->
+<!--    <string name="title_create_education">Add Education</string>-->
+<!--    <string name="title_create_projects">Add Project</string>-->
+<!--    <string name="title_create_reference">Add Reference</string>-->
+<!--    <string name="title_create_reference_edit">Edit Reference</string>-->
+<!--    <string name="title_create_project_edit">Edit Project</string>-->
+<!--    <string name="title_create_certificate_edit">Edit Certificate</string>-->
+<!--    <string name="title_create_certificate_add">Add Certificate</string>-->
+<!--    <string name="title_create_education_edit">Edit Education</string>-->
+<!--    <string name="title_create_experience_edit">Edit Experience</string>-->
+
+<!--    <string name="TAB_TITLE_RESUME_1">Personal Information</string>-->
+<!--    <string name="TAB_TITLE_RESUME_2">Work Experiences</string>-->
+<!--    <string name="TAB_TITLE_RESUME_3">Educations</string>-->
+<!--    <string name="TAB_TITLE_RESUME_4">Projects</string>-->
+<!--    <string name="TAB_TITLE_RESUME_5">Certificates</string>-->
+<!--    <string name="TAB_TITLE_RESUME_6">References</string>-->
+<!--    <string name="TAB_TITLE_RESUME_8">Achievements &amp; Co-Curricular</string>-->
+<!--    <string name="TAB_TITLE_RESUME_7">Career Objective</string>-->
+<!--    <string name="TAB_TITLE_RESUME_9">Skills Interests Strengths</string>-->
+<!--    <string name="carrier_object"><![CDATA[Career Objective, Date & Place & Declaration]]></string>-->
+<!--    <string name="skillstab"><![CDATA[Skills, Interests, Hobbies & Strength]]></string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_PROD">Are you sure you want to delete this project?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_REFR">Are you sure you want to delete this reference?</string>-->
+
+<!--    <string name="MSG_DELETE_CONFIRMATION_EX">Are you sure you want to delete this experience?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_INTERESTS">Are you sure you want to delete this interests?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_STRENGTHS">Are you sure you want to delete this strengths?</string>-->
+<!--    <string name="MSG_DELETE_CONFIRMATION_HOBBIES">Are you sure you want to delete this hobbies?</string>-->
+
+
+<!--    <string name="TAB_GAME1">Games</string>-->
+<!--    <string name="TAB_GAME2">My Game</string>-->
+<!--    <string name="TAB_GAME3">Add new Game</string>-->
+<!--    <string name="TXT_SERACH_GAMES">Search Games</string>-->
+
+<!--    <string name="copy_message">Message copied</string>-->
+
+<!--    <string name="txt_search_blog">Search blogs</string>-->
+<!--    <string name="TXT_LIKES">Likes</string>-->
+
+<!--    &lt;!&ndash; JOb plugin string&ndash;&gt;-->
+<!--    <string name="TAB_TITLE_JOB_1">Browse Job</string>-->
+<!--    <string name="TAB_TITLE_JOB_2">Browse Categories</string>-->
+<!--    <string name="TAB_TITLE_JOB_3">My Jobs</string>-->
+<!--    <string name="TAB_TITLE_JOB_5">Browse Companies</string>-->
+<!--    <string name="TAB_TITLE_JOB_4">Write New Job</string>-->
+
+<!--    <string name="TAB_TITLE_REVIEW_TITLE">Browse Reviews</string>-->
+<!--    <string name="ratingsuccess">Rating Successfully submitted.</string>-->
+<!--    <string name="TAB_TITLE_WISHLIST">Browse Wishlist</string>-->
+<!--    <string name="TAB_TITLE_EXPERT">Browse Expert</string>-->
+<!--    <string name="TAB_TITLE_MYLSITING"> My Listing Page</string>-->
+<!--    <string name="titledesc4"><![CDATA[This screen is very great & gives you the totally realistic feel of watching.]]></string>-->
+<!--    <string name="title_desc5"><![CDATA[This screen is very great & gives you the totally realistic feel of watching.]]></string>-->
+<!--    <string name="nomor_telepon">Phone Number</string>-->
+<!--</resources>-->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+        <string name="welcome_in_app">Socia!</string>
+        <string name="txt_login_facebook">Masuk dengan Facebook</string>
+        <string name="txt_sign_in">Gabung</string>
+        <string name="txt_sign_up">Daftar</string>
+
+
+        <string name="txt_skip_login">Lewati login</string>
+        <string name="login_required">Silahkan masuk untuk mengakses halaman ini.</string>
+        <string name="email_id">ID Email</string>
+        <string name="forgot_password">Tidak ingat kata sandi ?</string>
+
+        <string name="password">Kata sandi</string>
+        <string name="invalid_email_format">format email salah</string>
+        <string name="invalid_password">Lapangan kosong</string>
+        <string name="txt_lost_password">kehilangan Kata sandi</string>
+        <string name="txt_submit">Kirim</string>
+        <string name="txt_terms">Ketentuan</string>
+        <string name="txt_conitnue">Melanjutkan</string>
+        <string name="text_no_users">Tidak ada pengguna</string>
+        <string name="msg_no_group_created_cat">Belum ada yang membuat grup dalam kategori ini.</string>
+        <string name="carrier_object"><![CDATA[Career Objective, Date & Place & Declaration]]></string>
+        <string name="skillstab"><![CDATA[Skills, Interests, Hobbies & Strength]]></string>
+            <plurals name="view_more_reply_count">
+                <item quantity="one">View <b>%d</b> more reply</item>
+                <item quantity="other">View <b>%d</b> more replies</item>
+            </plurals>
+        <string name="turn_on_gps">Nyalakan GPS</string>
+        <string name="on">PADA</string>
+        <string name="gps_enabled">GPS diaktifkan</string>
+        <string name="gps_disabled">GPS dinonaktifkan</string>
+        <string name="unable_to_get_location">Tidak bisa mendapatkan lokasi Anda</string>
+
+        <string name="txt_choose_photo">Pilih foto</string>
+        <string name="txt_upload_choose_photo">Mengunggah foto</string>
+        <string name="txt_add_photo">Tambahkan foto Anda</string>
+        <string name="txt_save_photo">Menyimpan foto</string>
+        <string name="camera">Kamera</string>
+        <string name="gallary">Galeri</string>
+        <string name="MSG_NO_MEMBER_SELECTED">Tidak ada anggota yang dipilih</string>
+        <string name="guest">Tamu</string>
+        <string name="add_friend">Tambah teman</string>
+        <string name="ignore">Mengabaikan</string>
+        <string name="txt_no_friend_request">Anda tidak memiliki permintaan pertemanan yang tertunda.</string>
+        <string name="refresh">Menyegarkan</string>
+        <string name="compose">Menyusun</string>
+        <string name="txt_compose">Menulis pesan</string>
+        <string name="subject">Subjek</string>
+        <string name="send_to">Kirim ke</string>
+        <string name="friend_name">Nama Teman</string>
+        <string name="points">Poin</string>
+        <string name="send_in_message">Kirim pesan</string>
+        <string name="body">Tubuh</string>
+        <string name="image">Gambar</string>
+        <string name="video">Video</string>
+        <string name="link">Tautan</string>
+        <string name="attach">Menempel</string>
+        <string name="remove">Menghapus</string>
+        <string name="txt_post_something">Tulis sesuatu…</string>
+        <string name="txt_whats_new">Apa yang terjadi?</string>
+        <string name="txt_share_something">Apa yang ingin Anda bagikan?</string>
+        <string name="photo">Foto</string>
+        <string name="like">Suka</string>
+        <string name="comment">Komentar</string>
+        <string name="share">Bagikan</string>
+        <string name="share_now">Bagikan sekarang</string>
+        <string name="title_desc5"><![CDATA[This screen is very great & gives you the totally realistic feel of watching.]]></string>
+        <string name="txt_entry_start_end_date"><![CDATA[Entry Submission Start & End Date]]></string>
+        <string name="txt_when_n_where"><![CDATA[When & Where]]></string>
+        <string name="mark_sold">Tandai sebagai dijual</string>
+        <string name="sold_out">TERJUAL HABIS</string>
+        <string name="sold_bottom_text">Pesan penjual ini untuk bertanya tentang produk</string>
+        <string name="preview">Pratinjau</string>
+        <string name="txt_undo_1">Anda tidak akan melihat tulisan ini lagi disini.</string>
+        <string name="txt_undo_2">Membuka</string>
+        <string name="txt_report">Laporan</string>
+        <string name="txt_enter_here">Tulis komen…</string>
+        <string name="txt_write_msg">"Menulis pesan…"</string>
+        <string name="post">Kirim</string>
+        <string name="create_post">Buat Tulisan</string>
+        <string name="no_feed_data">Belum ada yang diposting di sini - jadilah yang pertama!</string>
+        <string name="privacy">Pribadi</string>
+        <string name="privacy_everyone">Setiap orang</string>
+        <string name="privacy_only_me">Hanya saya</string>
+        <string name="privacy_friends_only">Teman saja</string>
+        <string name="txt_privacy2"><![CDATA[ Privacy]]></string>
+        <string name="select_privacy">Pilih Yang Bisa Lihat</string>
+        <string name="what_r_u_selling">Apa yang kamu jual?</string>
+        <string name="price_dollar">Harga ($)</string>
+        <string name="description_optional">Deskripsi (opsional)</string>
+        <string name="location_optional">Lokasi (opsional)</string>
+        <string name="location_text">Lokasi</string>
+        <string name="slide_down">Meluncur ke bawah</string>
+        <string name="txt_how_feel">Bagaimana perasaanmu?</string>
+        <string name="feeling">Perasaan</string>
+        <string name="stickers">Stiker</string>
+        <string name="activities">Kegiatan</string>
+        <string name="search">Mencari</string>
+        <string name="no_feelings">Tidak ada perasaan yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="txt_tag_people">Tandai orang</string>
+        <string name="no_comment">Belum ada komentar.</string>
+        <string name="no_">Tidak</string>
+        <string name="delete">Menghapus</string>
+        <string name="name">Nama</string>
+        <string name="email">Surel</string>
+        <string name="websitest">Situs web</string>
+        <string name="message">Pesan</string>
+        <string name="message_optional">pesan (pilihan)</string>
+        <string name="txt_contact_us">Hubungi kami</string>
+        <string name="no_settings">Tidak ada pengaturan yang tersedia.</string>
+        <string name="value_with_count"><b>%1$s</b> <b>%2$s</b></string>
+        <string name="no_network_1">Saat ini tidak ada jaringan yang tersedia untuk bergabung.</string>
+        <string name="hint_search_song">Cari lagu</string>
+        <string name="hint_search_product">Cari produk</string>
+        <string name="hint_search_store">Cari toko</string>
+        <string name="lyrics">\ uf0f6 \ n lirik</string>
+        <string name="clear_queue">\ uf014 \ n antrian bening</string>
+        <string name="playlists">Daftar putar</string>
+        <string name="albums">Foto Album</string>
+        <string name="txt_vote_start_end_date"><![CDATA[Voting Start & End Date]]></string>
+        <string name="favorite">Favorit</string>
+           <string name="on_date">on <b>%1$s</b></string>
+                <string name="by_owner">by <b>%1$s</b></string>
+            <string name="vote_percent_with_count">%1$s %% (%2$d Votes)</string>
+            <string name="by_owner_in_category">by <b>%1$s</b> in <b>%2$s</b></string>
+            <string name="by_owner_in_category1"><b>%1$s</b></string>
+            <string name="by_owner_in_category2"> <b>%1$s</b></string>
+            <string name="for_owner_about_time">for <b>%1$s</b> about <b>%2$s</b></string>
+        <string name="artist">Artis</string>
+        <string name="category">Kategori</string>
+        <string name="lyrics_">Lirik</string>
+        <string name="txt_contest_start_end_date"><![CDATA[Contest Start & End Date]]></string>
+        <string name="description">Keterangan</string>
+        <string name="watch_later">Lihat nanti</string>
+        <string name="videos">Video</string>
+        <string name="videos_213">Video</string>
+        <string name="channels">Saluran</string>
+        <string name="add_to">Tambahkan</string>
+        <string name="txt_rating_1">Apakah aplikasi ini bermanfaat untuk Anda?</string>
+        <string name="txt_rating_2">Nilai Matani.ID di Google Play</string>
+        <string name="txt_rating_3">Ingatkan Saya Nanti</string>
+        <string name="txt_rated_already">Anda sudah menilai konten ini</string>
+        <string name="edit_profile">Edit profil saya</string>
+        <string name="cancel">Membatalkan</string>
+        <string name="save">Menyimpan</string>
+        <string name="edit_description">Edit deskripsi</string>
+        <string name="friends">Saya Ikuti</string>
+        <string name="clear">Jernih</string>
+        <string name="add_to_playlist">Tambahkan ke Daftar Putar</string>
+        <string name="go_to_song">Pergi ke lagu</string>
+        <string name="go_to_album">Pergi ke album</string>
+        <string name="go_to_artist">Pergi ke artis</string>
+        <string name="txt_mention_people">Sebutkan orang</string>
+
+        <string name="text_category">"Kategori"</string>
+        <string name="text_sub_category">"Sub Kategori"</string>
+        <string name="text_sub_sub_category">"Sub Sub Kategori"</string>
+        <string name="text_tags">Tag</string>
+        <string name="text_Description">Keterangan :</string>
+        <string name="loading_video">Memuat video…</string>
+        <string name="Option">pilihan</string>
+
+        <string name="education_arts"><![CDATA[Education & Arts (7)]]></string>
+         <string name="fashion_beauty"><![CDATA[Fashion & Beauty]]></string>
+        <string name="MSG_NO_RESULT">Tidak ada hasil yang ditemukan</string>
+        <string name="MSG_NO_ARTICLE">Tidak ada yang memposting artikel dengan kriteria ini.</string>
+        <string name="MSG_NO_CATEGORIES">Tidak ada kategori yang ditemukan</string>
+        <string name="MSG_NO_ALBUM_AVAILABLE">Tidak ada foto album yang tersedia</string>
+        <string name="MSG_NO_SONG_SEARCH">Tidak ada lagu yang tersedia dengan pencarian yang diberikan</string>
+        <string name="MSG_NO_ALBUM_MUSIC_SEARCH">Tidak ada album musik yang tersedia dengan pencarian yang diberikan</string>
+        <string name="TXT_TITLE_LYRICS">Lirik</string>
+        <string name="MSG_NO_LYRICS">Lirik tidak tersedia untuk lagu ini.</string>
+        <string name="CANCEL">Membatalkan</string>
+        <string name="MSG_INVALID_EMAIL">Email kosong atau format email tidak valid</string>
+        <string name="MSG_INVALID_PASSWORD">Kata sandi kosong</string>
+        <string name="MSG_NO_INTERNET">Tidak terhubung ke internet</string>
+        <string name="MSG_DELETED">Jajak pendapat dihapus, kembali</string>
+        <string name="TXT_SIGNING_IN">"Masuk…"</string>
+        <string name="TXT_SUCCESS">Sukses</string>
+        <string name="TXT_SIGN_IN">Masuk</string>
+        <string name="TXT_SAVE_PHOTO">Menyimpan foto</string>
+        <string name="MSG_SELECT_IMAGE">Pilih gambar terlebih dahulu</string>
+        <string name="MSG_SELECT_IMAGE_SOURCE">Pilih Sumber Gambar</string>
+        <string name="MSG_SELECT_VIDEO_SOURCE">Pilih sumber video</string>
+        <string name="MSG_BLOG_DELETED">Blog telah berhasil dihapus.</string>
+        <string name="MSG_JOB_DELETED">Anda telah berhasil menghapus pekerjaan.</string>
+        <string name="MSG_SELECT_ATTACH_SOURCE">Pilih Sumber File</string>
+        <string name="MSG_NO_PENDING_REQUEST">Anda tidak memiliki permintaan pertemanan yang tertunda.</string>
+        <string name="MSG_NO_SENT_MSG">Belum ada yang mengirimi Anda pesan.</string>
+        <string name="MSG_NO_VIDEO">Video tidak ditemukan</string>
+        <string name="MSG_NO_PHOTO">Tidak ada foto yang tersedia</string>
+        <string name="MSG_NO_PHOTO_SELECTED">Tidak ada foto yang dipilih</string>
+        <string name="MSG_NO_PHOTO_SELECTED2">Pilih setidaknya 1 gambar untuk diunggah.</string>
+        <string name="TITLE_SUBSCRIPTION">Berlangganan</string>
+        <string name="MSG_SUBSCRIPTION_FAILED">Langganan gagal</string>
+        <string name="MSG_SUBSCRIPTION_SUCCESS">Keberhasilan berlangganan</string>
+        <string name="MSG_PERMISSION_DENIED">Jika Anda menolak izin, Anda tidak dapat menggunakan layanan ini \ n \ nPlease mengaktifkan izin di [pengaturan]</string>
+        <string name="TXT_OK">Oke</string>
+        <string name="TXT_CANCEL">Membatalkan</string>
+        <string name="MSG_LOGOUT">Apakah Anda yakin ingin keluar?</string>
+        <string name="TXT_VIDEO">Video</string>
+        <string name="TXT_VIMEO">Vimeo</string>
+        <string name="MSG_CHOOSE_SOURCE">Pilih Sumber</string>
+        <string name="TXT_ADD">Menambahkan</string>
+        <string name="MSG_ENTER_VIDEO_URL">Masukkan URL Video</string>
+        <string name="TXT_YOU_TUBE">Youtube</string>
+        <string name="MSG_ENTER_LINK">Masukkan tautan</string>
+        <string name="MSG_USER_CANCEL_FB_LOGIN">Anda membatalkan login Facebook.</string>
+        <string name="MSG_NO_NOTIFICATION">Anda tidak memiliki pemberitahuan.</string>
+        <string name="MSG_NO_FOLLOWER">Anggota tidak ada.</string>
+        <string name="TAB_TITLE_NOTIFICATION">Pemberitahuan</string>
+        <string name="TAB_TITLE_MESSAGE">Pesan</string>
+        <string name="TAB_TITLE_REQUEST">Permintaan</string>
+        <string name="TAB_TITLE_HOME">Beranda</string>
+        <string name="TITLE_UPDATE_STATUS">Buat Tulisan</string>
+        <string name="PRIVACY_EVERYONE">Setiap orang</string>
+        <string name="PRIVACY_NETWORK">Teman &amp; Jaringan</string>
+        <string name="PRIVACY_FRIEND">Teman saja</string>
+        <string name="PRIVACY_ME">Hanya saya</string>
+        <string name="MSG_SOLD_MARK">Tandai sebagai dijual</string>
+        <string name="MSG_SOLD_MESSAGE">Penjual pesan</string>
+        <string name="TITLE_FILE_PREVIEW">Pratinjau file</string>
+        <string name="TXT_DISABLE_COMMENT">Nonaktifkan komentar</string>
+        <string name="TXT_ENABLE_COMMENT">Aktifkan komentar</string>
+        <string name="TXT_SHARE_FEED">Pilih Opsi Bagikan</string>
+        <string name="TXT_SHARE_INSIDE">"Bagikan"</string>
+        <string name="txt_share_on">Bagikan</string>
+        <string name="TXT_SHARE_OUTSIDE">Bagikan di luar</string>
+        <string name="TITLE_REPORT_SPAM">Laporkan spam</string>
+        <string name="NO">Tidak</string>
+        <string name="YES">Ya</string>
+        <string name="privacy_network"><![CDATA[Friends & Network]]></string>
+        <string name="MSG_DELETE_CONFIRMATION">Apakah Anda yakin ingin menghapus umpan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_PHOTO">Apakah Anda yakin ingin menghapus foto ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_VIDEO">Apakah Anda yakin ingin menghapus video ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_ARTICLE">Apakah Anda yakin ingin menghapus artikel ini?</string>
+
+        <string name="MSG_DELETE_CONFIRMATION_PRE">Apakah Anda yakin ingin menghapus ini</string>
+        <string name="MSG_PROFILE_IMAGE_DELETE_CONFIRMATION">Apakah Anda yakin ingin menghapus foto profil ini? Melakukannya akan mengatur foto Anda kembali ke foto default.</string>
+        <string name="MSG_COVER_DELETE_CONFIRMATION">Apakah Anda yakin ingin menghapus foto sampul ini? Melakukannya akan mengatur foto Anda kembali ke foto default.</string>
+        <string name="MSG_ACCOUNT_DELETE_CONFIRMATION">Anda yakin ingin menghapus akun ini? Tindakan ini tidak bisa dibatalkan.</string>
+        <string name="MSG_DELETE_COMMENT_CONFIRMATION">Apakah Anda yakin ingin menghapus komentar ini?</string>
+        <string name="DISCARD">Buang posting</string>
+        <string name="MSG_ABANODONED">Apakah Anda ingin batal mengirimkan tulisan ini? </string>
+        <string name="MSG_NO_ACTIVITIES">Tidak ada kegiatan yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="MSG_NO_FEED_DATA">Belum ada yang diposting di sini - jadilah yang pertama!</string>
+        <string name="MSG_NO_FEELINGS">Tidak ada perasaan yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="MSG_NO_USER">Tidak ada pengguna yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="MSG_NO_STICKERS">Tidak ada kategori yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="MSG_NO_STICKERS_EMOJI">Tidak ada stiker untuk ditampilkan.</string>
+        <string name="TITLE_COMMENT">Komentar</string>
+        <string name="TITLE_COMMENTS">Komentar</string>
+        <string name="TITLE_FOLLOWERS">Pengikut</string>
+        <string name="MSG_NO_COMMENT">Belum ada komentar.</string>
+        <string name="TXT_LIKE">Suka</string>
+        <string name="TXT_UNLIKE">Tidak seperti</string>
+        <string name="MSG_NAME_MISSING">Tolong tuliskan nama.</string>
+        <string name="MSG_EMAIL_MISSING">Silakan tulis email.</string>
+        <string name="MSG_MESSAGE_MISSING">Tolong tulis pesan.</string>
+        <string name="MSG_EMAIL_INVALID">Harap masukkan email yang valid</string>
+        <string name="TITLE_SETTINGS">Pengaturan</string>
+        <string name="TITLE_GENERAL_SETTING">Pengaturan Umum</string>
+        <string name="TITLE_PRIVACY_SETTING">Pengaturan Privasi</string>
+        <string name="TITLE_NOTIFICATION_SETTING">Pengaturan pemberitahuan</string>
+        <string name="TITLE_PASSWORD_SETTING">Ganti kata sandi</string>
+        <string name="TITLE_NETWORK_SETTING">Jaringan</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_1">Album musik</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_2">Lagu</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_3">Daftar putar</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_4">Seniman</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_5">Lirik</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_6">Lagu saya</string>
+        <string name="TAB_TITLE_MUSIC_ALBUMS_7">Jelajahi musik</string>
+        <string name="MSG_NO_SONG_CREATED">Belum ada yang membuat lagu.</string>
+        <string name="MSG_NO_VIDEO_CREATED">Belum ada yang membuat video.</string>
+        <string name="MSG_NO_SEARCH_ITEM">Tidak ada item yang ditemukan dengan pencarian yang diberikan.</string>
+        <string name="TITLE_FILTER_SEARCH">Saring Pencarian</string>
+        <string name="TITLE_FILTER_STORE">Toko filter</string>
+        <string name="TITLE_FILTER_QA">Filter pertanyaan</string>
+        <string name="TITLE_FILTER_PAGE">Halaman filter</string>
+        <string name="TITLE_FILTER_PAGE_POLL">Polling Filter</string>
+        <string name="TITLE_FILTER_VIDEO">Filter video</string>
+        <string name="TITLE_FILTER_CHANNEL">Saluran Filter</string>
+        <string name="TITLE_FILTER_PLAYLIST">Daftar Putar Filter</string>
+        <string name="TITLE_FILTER_PRODUCT">Produk filter</string>
+        <string name="TITLE_EDIT_ALBUM">Edit album</string>
+        <string name="TITLE_EDIT_PLAYLIST">Edit Daftar Putar</string>
+        <string name="TITLE_ADD_CHANNEL">Tambahkan saluran baru</string>
+        <string name="TITLE_EDIT_CHANNEL">Edit saluran</string>
+        <string name="TITLE_ADD_NEW_VIDEO">Tambahkan video baru</string>
+        <string name="TITLE_EDIT_SONG">Edit Lagu</string>
+        <string name="TXT_FAVORITE">Favorit</string>
+        <string name="TXT_COMMENT">Komentar</string>
+        <string name="TITLE_EDIT_COVER">Edit foto sampul</string>
+        <string name="TITLE_EDIT_MUSIC_PHOTO">Edit foto album</string>
+        <string name="TITLE_EDIT_PROFILE_PHOTO">Edit foto profil</string>
+        <string name="TITLE_ADD_SONG">Tambahkan lagu</string>
+        <string name="TITLE_ADD_ALBUM">Tambahkan album ke daftar putar</string>
+        <string name="TITLE_ADD_WISHLIST">Tambahkan produk ke wishlist</string>
+        <string name="TITLE_EDIT_WISHLIST">Edit Wishlist</string>
+        <string name="TAB_TITLE_VIDEO_1">Jelajahi video</string>
+        <string name="TAB_TITLE_VIDEO_2">Jelajahi saluran</string>
+        <string name="TAB_TITLE_VIDEO_3">Jelajahi daftar putar</string>
+        <string name="TAB_TITLE_VIDEO_4">Jelajahi seniman</string>
+        <string name="TAB_TITLE_VIDEO_5">Jelajahi kategori</string>
+        <string name="TAB_TITLE_VIDEO_6">Video saya</string>
+        <string name="TAB_TITLE_VIDEO_7">Posting video baru</string>
+        <string name="TITLE_EDIT_VIDEO">Edit Video</string>
+        <string name="TITLE_PHOTOS">Foto</string>
+        <string name="TITLE_UPLOAD_PHOTOS">Unggah Foto</string>
+        <string name="TITLE_UPLOAD_VIDEO">Unggah video</string>
+        <string name="TAB_TITLE_ARTICLE_1">Jelajahi artikel</string>
+        <string name="TAB_TITLE_ARTICLE_2">Jelajahi kategori</string>
+        <string name="TAB_TITLE_ARTICLE_3">Artikel saya</string>
+        <string name="TAB_TITLE_ARTICLE_4">Tulis artikel baru</string>
+
+        <string name="TXT_SERACH_ARTICLE">Artikel pencarian</string>
+        <string name="TXT_SERACH_ALBUM">Album pencarian</string>
+
+        <string name="TITLE_EDIT_ARTICLE">Edit artikel</string>
+        <string name="TAB_TITLE_ALBUM_1">Jelajahi album</string>
+        <string name="TAB_TITLE_ALBUM_2">Jelajahi foto</string>
+        <string name="TAB_TITLE_ALBUM_3">Jelajahi kategori</string>
+        <string name="TITLE_ALBUM_SEARCH">Album pencarian</string>
+        <string name="TAB_TITLE_ALBUM_4">Album saya</string>
+        <string name="TAB_TITLE_ALBUM_5">Tambahkan album baru</string>
+        <string name="TITLE_EDIT_ALBUM_SETTING">Edit Pengaturan Album</string>
+        <string name="TXT_SERACH_PHOTO">Cari foto</string>
+        <string name="TXT_SERACH_PLAYLIST">Cari daftar putar</string>
+        <string name="TITLE_MEMBER">Anggota</string>
+        <string name="DELETE_PHOTO">Menghapus foto</string>
+        <string name="TITLE_ACTIVITY_FEED">Umpan Aktivitas</string>
+        <string name="TITLE_EDIT_PROFILE">Ubah Profil</string>
+        <string name="TITLE_VIDEO_SEARCH">Cari video</string>
+        <string name="TITLE_CHANNEl_SEARCH">Saluran pencarian</string>
+        <string name="TXT_SEARCH_MUSIC">Cari musik</string>
+        <string name="TITLE_FRIENDS">Teman-teman</string>
+        <string name="MUTUAL_FRINEDS">Teman bersama</string>
+        <string name="TITLE_INFO">Info</string>
+        <string name="TITLE_UP_INFO">Info Upsell</string>
+        <string name="TITLE_UP_LECTURES">Kuliah</string>
+        <string name="TITLE_TEXTTV">Uji</string>
+        <string name="TITLE_SEARCH_MEMBER">Anggota pencarian</string>
+        <string name="INBOX">Kotak masuk</string>
+        <string name="OUTBOX">Pesan terkirim</string>
+        <string name="MSG_FACEBOOK_ERROR">Terjadi kesalahan saat mencatat dengan Facebook. Tolong coba lagi</string>
+        <string name="MSG_SHARE_VIA">Berbagi melalui</string>
+        <string name="ADD_FRIEND">Tambah teman</string>
+        <string name="CANCEL_FREIND">Batalkan permintaan</string>
+        <string name="_FREIND">Batalkan permintaan</string>
+        <string name="MSG_EMPTY_POST">Pos kosong</string>
+
+        <string name="MSG_NOT_TAGGED">Anda belum menandai siapa pun.</string>
+        <string name="MSG_NOT_LOGGED_IN">Silahkan masuk terlebih dahulu.</string>
+        <string name="TITLE_FEED">Memberi makan</string>
+        <string name="MSG_PRESS_AGAIN">Tekan sekali lagi untuk keluar</string>
+        <string name="TITLE_SEARCH">Mencari</string>
+        <string name="TITLE_SELECT_ALBUM">Pilih Album</string>
+        <string name="TITLE_SELECT_PHOTO">Pilih foto</string>
+        <string name="TXT_UPLOADING">Mengunggah…</string>
+        <string name="TXT_UNSAVE_FEED">Batal Simpan Tulisan</string>
+        <string name="TXT_SAVE_FEED">Simpan Tulisan</string>
+        <string name="TXT_REMOVE">Meninggalkan</string>
+        <string name="TXT_JOIN">Bergabung</string>
+        <string name="MSG_NO_NETWORK">Anda termasuk dalam 0 jaringan.</string>
+        <string name="MSG_NOTHING_TO_JOIN">Saat ini tidak ada jaringan yang tersedia untuk bergabung.</string>
+        <string name="MSG_NO_ALBUMS">Belum ada album yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_VIDEO_BY_YOU">Belum ada video yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_CHANNEL">Belum ada saluran yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_PLAYLIST">Belum ada daftar putar yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_SONG_PLAYLIST">Belum ada lagu yang dibuat di daftar putar ini.</string>
+        <string name="MSG_NO_MEMBER">Tidak ada anggota yang tersedia</string>
+        <string name="MSG_NO_SONG_ARTIST">Belum ada lagu yang dibuat di artis ini.</string>
+        <string name="MSG_NO_SONG_ALBUM">Belum ada lagu yang dibuat di album ini.</string>
+        <string name="TXT_REMOVE_COVER">Hapus foto penutup</string>
+        <string name="TXT_REMOVE_PHOTO">Hapus foto profil</string>
+        <string name="TXT_BY">"oleh "</string>
+        <string name="_AND_">" dan "</string>
+        <string name="_OTHERS">" yang lain"</string>
+        <string name="_WITH_">" dengan "</string>
+        <string name="_IN_">" di "</string>
+
+        <string name="_COMMENT">" Komentar"</string>
+        <string name="_COMMENTS">"Komentar"</string>
+        <string name="MSG_NO_ARTICLE_CREATED">Belum ada yang membuat artikel.</string>
+        <string name="MSG_DELETE_CONFIRMATION_THOUGHT">Apakah Anda yakin ingin menghapus pemikiran ini?</string>
+
+        <string name="TITLE_ADD_VIDEO">Tambahkan video ke daftar putar</string>
+
+        <string name="TITLE_CHOOSE_CATEGORY">Pilih Kategori</string>
+        <string name="send">Kirim</string>
+        <string name="join_requires_confirmation">Selamat datang! Pesan verifikasi telah dikirim ke alamat email Anda dengan instruksi tentang cara mengaktifkan akun Anda. Setelah Anda mengklik tautan yang disediakan di email dan kami telah menyetujui akun Anda, Anda akan dapat masuk.</string>
+        <string name="SKIP">Melewati</string>
+        <string name="logging_in">Masuk ...</string>
+        <string name="account_created">Akun berhasil dibuat.</string>
+        <string name="twitter">INDONESIA</string>
+        <string name="or_login_via">Masuk melalui email</string>
+        <string name="facebook">Facebook</string>
+        <string name="add_to_your_post">Tambahkan ke Tulisan Anda</string>
+        <string name="be_in_sync_via">Sinkronkan melalui…</string>
+        <string name="choose_background">Pilih latar belakang</string>
+        <string name="available_networks">Jaringan yang tersedia</string>
+        <string name="my_networks">Provinsi saya</string>
+
+        <string name="all_images">Semua gambar</string>
+        <string name="done">Selesai</string>
+
+        <string name="permission_filepicker_rationale">Izin penyimpanan diperlukan untuk mengakses file.</string>
+        <string name="no_files_found">Tidak ada file yang ditemukan</string>
+        <string name="attachments_title_text" formatted="false">(%DD)</string>
+        <string name="attachments_num" formatted="false">%d</string>
+        <string name="select_photo_text">Pilih media</string>
+        <string name="select_doc_text">Pilih dokumen</string>
+        <string name="no_camera_exists">Tidak ada aplikasi untuk kamera!</string>
+        <string name="pdf_title">Pdf</string>
+        <string name="ppt_title">Ppt</string>
+        <string name="word_title">DOKTER</string>
+        <string name="excel_title">Xls</string>
+        <string name="txt_title">txt</string>
+        <string name="images">Gambar-gambar</string>
+        <string name="all_photos">Semua foto</string>
+        <string name="all_videos">Semua video</string>
+        <string name="all_files">Semua data</string>
+        <string name="TITLE_TERMS">Ketentuan Layanan</string>
+        <string name="TITLE_PRIVACY">Pribadi</string>
+        <string name="TEXT_MORE">Lagi</string>
+        <string name="TITLE_ARTICLES">Artikel</string>
+        <string name="PLEASE_WAIT">Harap tunggu</string>
+        <string name="TITLE_ADD_TAG">Tambahkan tag</string>
+        <string name="TITLE_TAGGED_USER">Tagged pengguna</string>
+        <string name="TITLE_EDIT_MUSIC_ALBUM">Edit Album Musik</string>
+        <string name="TITLE_EDIT_MUSIC_PLAYLIST">Edit Daftar Putar Musik</string>
+        <string name="MSG_DELETE_CONFIRMATION_PLAYLIST">Apakah Anda yakin ingin menghapus daftar putar ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_ALBUM">Apakah Anda yakin ingin menghapus album ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_GENERIC">Apakah Anda yakin ingin menghapus %1 $ S ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_QUOTE">Apakah Anda yakin ingin menghapus kutipan ini?</string>
+        <string name="MSG_NO_ARTICLE_CREATED_YOU">Belum ada artikel yang dibuat oleh Anda.</string>
+
+        <string name="MSG_NO_QUOTE_CREATED_YOU">Belum ada kutipan yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_CHANNEL_FOUND">Tidak ada yang membuat saluran dengan kriteria ini.</string>
+        <string name="MSG_NO_CHANNEL_CREATED">Tidak ada yang membuat saluran.</string>
+        <string name="MSG_NO_ALBUM_CREATED">Tidak ada yang membuat album.</string>
+        <string name="MSG_NO_QUOTE_CREATED">Tidak ada yang membuat kutipan.</string>
+        <string name="PLEASE_READ_TERMS">Klik di sini untuk membaca ketentuan layanan.</string>
+        <string name="MSG_NO_ALBUM_FOUND">Tidak ada yang membuat album dengan kriteria ini.</string>
+        <string name="TXT_FAVORITES">Favorit</string>
+        <string name="TXT_COMMENTS">Komentar</string>
+        <string name="IS_">"adalah "</string>
+        <string name="_LIKES">"Suka"</string>
+        <string name="_LIKE">" Menyukai"</string>
+        <string name="_FAVORITES">"Favorit"</string>
+        <string name="_FAVORITE">" Favorit"</string>
+        <string name="_VIEWS">"Tampilan"</string>
+        <string name="_VIEW">" Melihat"</string>
+        <string name="_VOTE">" Pilih"</string>
+        <string name="_VOTES">"Suara"</string>
+
+        <string name="_RATINGS">"Peringkat"</string>
+        <string name="_RATING">"Peringkat"</string>
+        <string name="GMS_MISCONFIGURED">Layanan Google Play salah konfigurasi. Cobalah untuk membuka toko bermain setidaknya sekali.</string>
+        <string name="GMS_NOT_AVAILABLE">Layanan Google Play tidak tersedia di perangkat Anda</string>
+        <string name="MSG_NO_OVERVIEW">"Ikhtisar tidak tersedia untuk saluran ini."</string>
+        <string name="MSG_NO_PHOTO_FOUND">Tidak ada foto yang ditemukan dengan kriteria ini.</string>
+        <string name="MSG_NO_PLAYLIST_AVAILABLE">Belum ada yang membuat daftar putar.</string>
+        <string name="MSG_NO_PLAYLIST_FOUND">Tidak ada yang membuat daftar putar dengan kriteria ini.</string>
+        <string name="FEELING">merasa</string>
+        <string name="SEARCH_STICKERS">Stiker pencarian</string>
+        <string name="SEARCH_ACTIVITY">Kegiatan pencarian</string>
+        <string name="TITLE_SELECT">Pilih</string>
+        <string name="DOWNLOADING_IMAGE">Mengunduh gambar…</string>
+        <string name="TITLE_EDIT_POST">Edit posting</string>
+
+        <string name="TITLE_EDIT_ARTICLE_PHOTO">Edit foto artikel</string>
+        <string name="MSG_DELETE_CONFIRMATION_MESSAGE">Apakah Anda yakin ingin menghapus percakapan Anda?</string>
+
+        <string name="MSG_ACCOUNT_DELETED">Akun Anda telah dihapus dari situs.</string>
+        <string name="MSG_DELETE_CONFIRMATION_ARTIST">Apakah Anda yakin ingin menghapus artis ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_CHANNEL">Apakah Anda yakin ingin menghapus saluran ini?</string>
+        <string name="TAB_TITLE_QUOTES_1">Jelajahi kutipan</string>
+        <string name="TAB_TITLE_QUOTES_2">Kelola kutipan</string>
+        <string name="TAB_TITLE_QUOTES_3">Jelajahi kategori</string>
+        <string name="TAB_TITLE_QUOTES_4">Tulis kutipan baru</string>
+        <string name="follow">Mengikuti</string>
+        <string name="follow_friend">Ikuti teman</string>
+
+        <string name="txt_dont_have_account">"Tidak punya akun?"</string>
+
+
+        <string name="txt_sign_in_with">Masuk dengan jejaring sosial</string>
+        <string name="see_more">Lihat lebih banyak</string>
+        <string name="title_suggestions">Saran</string>
+        <string name="contact_us_text_1">Punya pertanyaan? Butuh bantuan?</string>
+
+
+
+        <string name="network_list">Jaringan</string>
+        <string name="location_page">Alamat</string>
+        <string name="city_page">Kota</string>
+        <string name="state_page">Negara</string>
+        <string name="zipcode">Kode Pos</string>
+        <string name="country">Negara</string>
+
+        <string name="groups_liked">Grup disukai oleh grup ini</string>
+        <string name="open_hours">Jam beroperasi</string>
+        <string name="browse_">"Jelajahi"</string>
+        <string name="associate_group">Kelompok rekanan</string>
+        <string name="select_date">Pilih Tanggal</string>
+        <string name="select_">"Pilih "</string>
+        <string name="enter_location">Masukkan lokasi</string>
+        <string name="related_events">Acara Terkait</string>
+        <string name="txt_book_event">Acara buku</string>
+        <string name="add_to_calendar">Tambahkan ke Kalender</string>
+        <string name="nothing_to_show">Tidak ada yang bisa ditampilkan</string>
+        <string name="terms_and_condition">Ketentuan &amp; Kondisi</string>
+        <string name="msg_no_overview_available">Tidak ada gambaran yang tersedia</string>
+        <string name="msg_no_rules_available">Tidak ada aturan yang tersedia</string>
+        <string name="no_tnc">Syarat dan Ketentuan Tidak Tersedia</string>
+        <string name="txt_replies">Balasan</string>
+        <string name="save_event">Simpan acara</string>
+        <string name="edit_review">Edit ulasan</string>
+        <string name="reviewtext">Ulasan halaman</string>
+        <string name="your_rsvp">RSVP Anda</string>
+        <string name="msg_added_to_calendar">Acara ini berhasil ditambahkan ke kalender kami</string>
+        <string name="TXT_SERACH_HOST">Cari host</string>
+        <string name="TXT_SERACH_LIST">Daftar acara pencarian</string>
+
+        <string name="MSG_NO_MUSIC_ALBUM_AVAILABLE">Tidak ada album musik yang tersedia</string>
+        <string name="MSG_NO_SONG_AVAILABLE">Tidak ada lagu yang tersedia</string>
+        <string name="MSG_NO_ARTIST_AVAILABLE">Tidak ada artis yang tersedia</string>
+
+        <string name="IN_">"di "</string>
+        <string name="_followers">"Pengikut"</string>
+        <string name="_follower">"Pengikut"</string>
+        <string name="_entries">"Entri"</string>
+        <string name="_entry">" Pintu masuk"</string>
+        <string name="_members">"Anggota"</string>
+        <string name="_member">"Anggota"</string>
+        <string name="txt_day_left">Hari tersisa</string>
+        <string name="created_on">Dibuat pada</string>
+        <string name="created_by">Dibuat oleh</string>
+        <string name="stats">Statistik</string>
+        <string name="txt_where">Di mana</string>
+        <string name="add_photo_for_your_contest">Tambahkan foto untuk kontes Anda</string>
+        <string name="txt_write">Menulis</string>
+        <string name="txt_link_my_video">Tautkan video saya</string>
+
+        <string name="msg_no_group_created">Tidak ada yang membuat grup.</string>
+        <string name="tab_title_group_browse">Jelajahi Grup</string>
+        <string name="tab_title_group_my">Grup saya</string>
+        <string name="msg_no_group_found">Tidak ada yang membuat grup dengan kriteria ini.</string>
+        <string name="txt_search_group">Grup pencarian</string>
+        <string name="title_edit_group">Edit grup</string>
+        <string name="title_create_group">Membuat grup</string>
+        <string name="last_updated">Terakhir diperbarui</string>
+        <string name="join_group">Bergabung dengan grup</string>
+        <string name="leave_group">Meninggalkan grup</string>
+
+        <string name="add_reputation">Tambahkan reputasi Anda</string>
+        <string name="increase">Meningkat</string>
+        <string name="decrease">Mengurangi</string>
+
+        <string name="join_event">Bergabunglah dengan acara</string>
+        <string name="leave_event">Tinggalkan acara</string>
+
+        <string name="title_send_request">Meminta keanggotaan acara</string>
+        <string name="cancel_request">Batalkan permintaan</string>
+        <string name="remove_friend">Hapus teman</string>
+        <string name="approve_friend">Menyetujui permintaan</string>
+        <string name="reject_invite">Tolak undangan</string>
+        <string name="title_cancel_request">Batalkan permintaan undangan</string>
+        <string name="msg_request_membership">Apakah Anda ingin meminta keanggotaan dalam grup ini?</string>
+        <string name="msg_request_membership_event">Apakah Anda ingin meminta keanggotaan dalam acara ini?</string>
+        <string name="msg_request_cancel_event">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke acara ini?</string>
+
+        <string name="msg_request_cancel_group">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke grup ini?</string>
+        <string name="msg_remove_member_event">Apakah Anda yakin ingin menghapus anggota ini dari acara tersebut?</string>
+
+        <string name="msg_remove_member_group">Apakah Anda yakin ingin menghapus anggota ini dari grup?</string>
+        <string name="msg_approve_member_event">Apakah Anda ingin menyetujui permintaan undangan ini?</string>
+        <string name="remove_member">Hapus anggota</string>
+        <string name="approve_member">Menyetujui anggota</string>
+        <string name="msg_invite_reject_event">Apakah Anda ingin menolak undangan ke acara ini?</string>
+
+        <string name="msg_leave_group">Apakah Anda ingin meninggalkan grup ini?</string>
+        <string name="msg_join_group">Apakah Anda ingin bergabung dengan grup ini?</string>
+
+        <string name="send_request">Kirim permintaan</string>
+
+
+        <string name="MSG_DELETE_CONFIRMATION_GROUP">Apakah Anda yakin ingin menghapus grup ini?</string>
+        <string name="TAB_TITLE_POLL_1">Jelajahi jajak pendapat</string>
+        <string name="TAB_TITLE_POLL_2">Jajak pendapat saya</string>
+        <string name="TAB_TITLE_WISH_1">Telenggur Keinginan</string>
+        <string name="TAB_TITLE_WISH_2">Kelola Keinginan</string>
+        <string name="msg_no_wish_created">Tidak ada yang menciptakan keinginan.</string>
+        <string name="msg_no_wish_created_you">Belum ada keinginan yang dibuat oleh Anda.</string>
+        <string name="msg_no_group_created_you">Belum ada grup yang dibuat oleh Anda.</string>
+        <string name="MSG_DELETE_CONFIRMATION_WISH">Apakah Anda yakin ingin menghapus keinginan ini?</string>
+        <string name="MSG_NO_WISH_CREATED">Tidak ada yang menciptakan keinginan.</string>
+        <string name="MSG_NO_WISH">Tidak ada keinginan yang tersedia untuk pencarian yang diberikan</string>
+        <string name="TXT_SEARCH_WISH">Keinginan pencarian</string>
+        <string name="title_edit_wish">Edit keinginan</string>
+        <string name="title_create_wish">Buat keinginan</string>
+        <string name="title_create_event">Membuat acara</string>
+        <string name="title_create_poll">Buat jajak pendapat</string>
+        <string name="msg_request_event">Apakah Anda ingin meminta keanggotaan dalam acara ini?</string>
+        <string name="msg_leave_event">Apakah Anda yakin ingin meninggalkan acara ini?</string>
+        <string name="msg_join_event">Apakah Anda ingin bergabung dengan acara ini?</string>
+        <string name="msg_add_reputation">Tambahkan reputasi Anda ke pengguna ini dengan mengirimkan formulir ini.</string>
+
+        <string name="TAB_TITLE_PRAYERS_1">Jelajahi doa</string>
+        <string name="TAB_TITLE_PRAYERS_2">Kelola doa</string>
+        <string name="TAB_TITLE_PRAYERS_3">Tulis doa baru</string>
+        <string name="image_profile">image_profile</string>
+        <string name="posted_by">Diposting oleh</string>
+        <string name="txt_on">pada</string>
+        <string name="title_edit_classified">Edit Daftar</string>
+        <string name="title_edit_core_poll">Edit privasi</string>
+        <string name="txt_search_classified">Daftar pencarian</string>
+        <string name="tts_say">Coba katakan sesuatu</string>
+        <string name="tts_error">"Tidak menangkapnya. Coba bicara lagi."</string>
+        <string name="tts_language">Bahasa Inggris (India)</string>
+        <string name="tts_try_again">Coba lagi</string>
+        <string name="TXT_SERACH_EVENT">Cari Acara</string>
+
+        <string name="TXT_SERACH_GROUPS">Grup pencarian</string>
+        <string name="TXT_SEARCH_POLLS">Jajak pendapat pencarian</string>
+        <string name="TXT_SERACH_POLL">Jajak pendapat pencarian</string>
+        <string name="MSG_NO_EVENT_FOUND">Tidak ada yang membuat acara dengan kriteria ini.</string>
+        <string name="MSG_NO_CONTEST_FOUND">Tidak ada yang membuat kontes dengan kriteria ini.</string>
+
+        <string name="MSG_NO_POLL_FOUND">Tidak ada yang membuat jajak pendapat dengan kriteria ini.</string>
+        <string name="poll_tap">Ketuk opsi apa pun untuk memilih</string>
+        <string name="TITLE_POLLS">Jajak pendapat</string>
+        <string name="poll_show_question">Tampilkan pertanyaan</string>
+        <string name="contact_us_text_2">Kirimi kami pesan dan kami akan kembali.</string>
+        <string name="MSG_DELETE_CONFIRMATION_POST">Apakah Anda yakin ingin menghapus posting ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_REVIEW">Apakah Anda yakin ingin menghapus ulasan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_WISHLIST">Apakah Anda yakin ingin menghapus daftar keinginan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_EVENT">Apakah Anda yakin ingin menghapus acara ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_CONTEST">Apakah Anda yakin ingin menghapus kontes ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_ENTRY">Apakah Anda yakin ingin menghapus entri ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_EVENT_LIST">Apakah Anda yakin ingin menghapus daftar acara ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_HOST">Apakah Anda yakin ingin menghapus host ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_POLL">Apakah Anda yakin ingin menghapus jajak pendapat ini?</string>
+        <string name="title_edit_event">Edit Event</string>
+        <string name="title_edit_poll">Edit jajak pendapat</string>
+        <string name="select_start_time">Silakan selcet start-time dulu.</string>
+        <string name="event_attend">Menghadiri</string>
+        <string name="event_attend_may_be">Mungkin hadir</string>
+        <string name="event_attend_not">Tidak menghadiri</string>
+        <string name="view_more">LIHAT SEMUA</string>
+        <string name="view_order">Tampilan Pemesanan</string>
+        <string name="add_to_wishlist">Tambahkan ke Daftar Keinginan b Indonesia</string>
+        <string name="see_all">Lihat semua</string>
+        <string name="people_know">Orang yang mungkin Anda tahu</string>
+        <string name="requests">Permintaan</string>
+        <string name="find_friends">Mencari teman</string>
+
+
+        <string name="vote">PILIH</string>
+        <string name="voted">Terpilih</string>
+        <string name="edit_song">Edit musik</string>
+        <string name="add_songs">Tambahkan lagu</string>
+        <string name="choose_songs">Pilih Lagu (S)</string>
+
+        <string name="popular_groups">Grup populer</string>
+        <string name="call">Panggilan</string>
+        <string name="open_link">Buka tautan</string>
+        <string name="mail">Surat</string>
+        <string name="mapviewid">Lokasi</string>
+        <string name="contact">Kontak</string>
+        <string name="msg_something_wrong">Ada yang salah. Tolong coba lagi.</string>
+        <string name="about">Tentang</string>
+
+        <string name="added_on_">"Menambahkan "</string>
+        <string name="call_to_action">Panggilan untuk bertindak</string>
+        <string name="basic_info">Info dasar</string>
+        <string name="profile_field">Bidang profil</string>
+        <string name="details">Detail</string>
+        <string name="contact_info">Kontak informasi</string>
+        <string name="people_followed">Orang yang mengikuti ini</string>
+        <string name="people_liked">Orang yang suka</string>
+        <string name="people_favorite">Orang yang menyukai ini</string>
+
+        <string name="title_create_contest">Buat kontes</string>
+        <string name="title_edit_contest">Edit kontes</string>
+        <string name="EMPTY">""</string>
+
+        <string name="invite">Mengundang anggota</string>
+        <string name="choose_currency">Pilih mata uang</string>
+        <string name="select_category">Pilih Kategori</string>
+        <string name="my_device">Perangkat saya</string>
+        <string name="TITLE_EDIT_QUOTE">Edit kutipan</string>
+        <string name="TITLE_EDIT_PRAYER">Edit doa</string>
+        <string name="TITLE_EDIT_THOUGHT">Edit pemikiran</string>
+        <string name="sponsored">Disponsori</string>
+        <string name="hot">Panas</string>
+        <string name="featured">Ditampilkan</string>
+        <string name="msg_no_review">Belum ada ulasan yang dikirimkan di sini.</string>
+        <string name="msg_no_topic">Belum ada topik yang diposting di acara ini.</string>
+        <string name="add_event_list">Tambahkan Acara untuk Daftar</string>
+        <string name="post_discussion">Topik Diskusi Pasca</string>
+        <string name="post_topic">Posting topik baru</string>
+        <string name="post_quote">Posting Kutipan</string>
+        <string name="rename_topic">Ganti nama topik</string>
+        <string name="move_topic">Pindahkan topik</string>
+        <string name="search_topic">Topik pencarian</string>
+        <string name="discussionid">Diskusi</string>
+        <string name="search_post">Posting Pencarian</string>
+        <string name="pros">Pro</string>
+        <string name="cons">Kontra</string>
+        <string name="recommend">Menyarankan</string>
+        <string name="unsave_event">Acara Tidak Hemat</string>
+        <string name="reply">Membalas</string>
+
+
+        <string name="events_upcoming">Acara Mendatang</string>
+        <string name="events_past">Acara masa lalu</string>
+        <string name="events_manage">Acara saya</string>
+
+        <string name="category_browse">Jelajahi kategori</string>
+
+        <string name="select_image">Pilih gambar</string>
+        <string name="select_image_fail">Pilih gambar (Demo Kegagalan)</string>
+        <string name="select_video_fail">Pilih video (Demo Kegagalan)</string>
+        <string name="select_image_slow_network">Pilih gambar (Demo Jaringan Lambat)</string>
+        <string name="add_review">Tambahkan ulasan</string>
+        <string name="select_time">Pilih waktu</string>
+        <string name="status_not_started">Acara tidak dimulai</string>
+        <string name="status_ongoing">Acara sedang berlangsung</string>
+        <string name="status_expire">Acara kedaluwarsa</string>
+        <string name="unfollow">Berhenti mengikuti</string>
+        <string name="verified">Diverifikasi</string>
+        <string name="MSG_NO_ANNOUNCE">Tidak ada pengumuman yang ditemukan</string>
+        <string name="MSG_ANNOUNCE_TXT">Pengumuman</string>
+        <string name="TXT_SERACH_ENTRIES">Entri pencarian</string>
+        <string name="TXT_SERACH_WINNERS">Pemenang pencarian</string>
+        <string name="TXT_SERACH_CONTEST">Kontes pencarian</string>
+        <string name="txt_days_left">Hari tersisa</string>
+        <string name="txt_seconds">"Detik"</string>
+        <string name="txt_minutes">" Menit "</string>
+        <string name="txt_hours">" Jam "</string>
+        <string name="unlike">Tidak seperti</string>
+
+
+
+        <string name="title_join_contest">Bergabunglah dengan kontes</string>
+        <string name="ses_upload">Mengunggah</string>
+        <string name="contest_from_url">Dari url</string>
+        <string name="contest_link_my_photo">Tautkan foto saya</string>
+        <string name="contest_select_photo">Pilih foto</string>
+        <string name="txt_link_my_blog">Tautkan blog saya</string>
+        <string name="txt_upload_video">Mengunggah video</string>
+        <string name="txt_upload_a_video">Unggah video</string>
+        <string name="txt_select_a_video">Pilih video</string>
+        <string name="txt_video_success">Video berhasil diposting.</string>
+        <string name="buy_now">Beli sekarang</string>
+
+        <string name="in_content">di</string>
+        <string name="donated_by_donor">Disumbangkan oleh</string>
+        <string name="received_by_sender">Diterima oleh</string>
+        <string name="media_type">Tipe media</string>
+<!--        <string name="on_date">pada</string>-->
+<!--        <string name="by_owner">oleh</string>-->
+<!--        <string name="vote_percent_with_count">%1$s %% (%2$d Votes)</string>-->
+<!--        <string name="by_owner_in_category">oleh</string>-->
+
+
+<!--        <string name="for_owner_about_time">untuk</string>-->
+        <string name="msg_no_award_available">Tidak ada penghargaan yang tersedia</string>
+        <string name="post_similar_contest">Posting kontes serupa</string>
+        <string name="txt_upload_music">Unggah musik</string>
+        <string name="txt_upload_audio">Unggah audio</string>
+        <string name="txt_link_my_audio">Tautkan audio saya</string>
+        <string name="change_award">Ubah penghargaan kontes</string>
+        <string name="rules">Aturan</string>
+        <string name="award">Menghadiahkan</string>
+        <string name="information">Informasi</string>
+        <string name="info">Info</string>
+        <string name="add_seo">Tambahkan SEO</string>
+        <string name="change_overview">Ubah Gambaran Umum</string>
+        <string name="overviewid">Ringkasan</string>
+        <string name="update_overview">Perbarui Ikhtisar</string>
+        <string name="msg_already_voted">Anda telah memilih</string>
+        <string name="edit_rule">Ubah aturan</string>
+
+        <string name="select_video">Pilih video</string>
+        <string name="next">Lanjut</string>
+        <string name="select_music">Pilih musik</string>
+        <string name="copy_clipboard">Tautan yang disalin ke clipboard Anda</string>
+        <string name="select_here">Pilih di sini</string>
+        <string name="people_who_reacted">Orang yang bereaksi</string>
+        <string name="all">Semua %1 $ D</string>
+        <string name="invalid_url">Bukan url yang valid</string>
+        <string name="edit_entry">Edit entri</string>
+        <string name="see_more_feed">… Lihat lebih banyak</string>
+        <string name="title_setting_subscription_success">Pembayaran lengkap</string>
+        <string name="title_setting_subscription_failed">Pembayaran gagal</string>
+        <string name="msg_setting_subscription_failed">Prosesor pembayaran kami telah memberi tahu kami bahwa pembayaran Anda tidak dapat diselesaikan dengan sukses. Kami menyarankan agar Anda mencoba lagi dengan kartu atau sumber pendanaan lain.</string>
+        <string name="msg_setting_subscription_success">Terima kasih! Pembayaran Anda telah berhasil diselesaikan.</string>
+        <string name="MSG_NO_CONTEST_CREATED">Tidak ada yang membuat kontes.</string>
+        <string name="MSG_NO_ENTRY_CREATED">Tidak ada yang membuat entri.</string>
+        <string name="no_services_found">Tidak ada layanan yang ditemukan</string>
+        <string name="no_participant_availiable">Tidak ada peserta yang ditemukan</string>
+        <string name="no_category_found">Tidak ada kategori yang ditemukan.</string>
+        <string name="group_question">Pertanyaan kelompok</string>
+        <string name="enter_question">Tulis pertanyaan</string>
+        <string name="add_question">Tambahkan pertanyaan</string>
+        <string name="add_questions">Tambahkan pertanyaan</string>
+        <string name="ask_question">Ajukan pertanyaan anggota yang tertunda</string>
+        <string name="ask_question_desc">Ajukan beberapa pertanyaan yang tertunda. Mereka akan memiliki hingga 250 karakter untuk menjawab masing -masing, dan hanya admin dan moderator yang akan melihat jawabannya.</string>
+        <string name="title_request_group_membership">Meminta keanggotaan grup</string>
+
+
+
+
+        <string name="forums">Forum</string>
+        <string name="no_forums">Tidak ada forum yang tersedia</string>
+        <string name="MSG_DELETE_CONFIRMATION_FORUM_POST">Apakah Anda yakin ingin menghapus posting ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_FORUM_TOPIC">Apakah Anda yakin ingin menghapus topik ini?</string>
+
+        <string name="TXT_SERACH_PAGES">Pencarian Halaman</string>
+        <string name="TXT_SERACH_PAGESPoll">Jajak pendapat pencarian</string>
+        <string name="msg_request_cancel_page">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke halaman ini?</string>
+        <string name="msg_remove_member_page">Anda yakin ingin menghapus anggota ini dari halaman?</string>
+        <string name="MSG_DELETE_CONFIRMATION_PAGE">Apakah Anda yakin ingin menghapus halaman ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_SERVICE">Apakah Anda yakin ingin menghapus layanan ini?</string>
+        <string name="MSG_DELETE_REENABLE_PRO">Anda sudah menjadi profesional &amp; Anda telah menonaktifkan profil Anda. Apakah Anda yakin ingin mengaktifkan profil profesional Anda sekarang?</string>
+        <string name="MSG_DELETE_CONFIRMATION_PRO">Apakah Anda yakin ingin menghapus profesional ini?</string>
+        <string name="msg_invite_reject_page">Apakah Anda ingin menolak undangan ke halaman ini?</string>
+        <string name="title_create_page">Membuat halaman</string>
+        <string name="title_edit_page">Edit halaman</string>
+        <string name="title_editService">Layanan Edit</string>
+        <string name="related_pages">Halaman terkait</string>
+        <string name="NO_PAGE_AVAILABLE">Tidak ada halaman yang tersedia</string>
+
+        <string name="popular_pages">Halaman populer</string>
+        <string name="MSG_NO_PAGE_FOUND">Tidak ada yang membuat halaman dengan kriteria ini.</string>
+        <string name="MSG_NO_PAGEPOLL_FOUND">Tidak ada yang membuat jajak pendapat.</string>
+        <string name="pages_liked">Halaman disukai oleh halaman ini</string>
+
+
+        <string name="TXT_SERACH_STORES">Toko pencarian</string>
+        <string name="TXT_SERACH_PRODUCT">Produk pencarian</string>
+        <string name="productid">Produk</string>
+        <string name="msg_request_cancel_store">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke toko ini?</string>
+        <string name="msg_remove_member_store">Apakah Anda yakin ingin menghapus anggota ini dari toko?</string>
+        <string name="msg_remove_product_cart">Anda yakin ingin menghapus produk ini dari keranjang?</string>
+        <string name="msg_empty_cart">Apakah Anda yakin ingin membuat kosong dari gerobak Anda?</string>
+        <string name="MSG_DELETE_CONFIRMATION_STORE">Apakah Anda yakin ingin menghapus toko ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_PRODUCT">Apakah Anda yakin ingin menghapus produk ini?</string>
+        <string name="msg_invite_reject_store">Apakah Anda ingin menolak undangan ke toko ini?</string>
+        <string name="title_create_store">Buat toko</string>
+        <string name="title_edit_store">Edit Toko</string>
+        <string name="related_stores">Toko terkait</string>
+        <string name="related_products">Produk-produk terkait</string>
+        <string name="NO_STORE_AVAILABLE">Tidak ada toko yang tersedia</string>
+        <string name="NO_FORUM_AVAILABLE">Tidak ada forum yang tersedia</string>
+        <string name="NO_TOPIC_AVAILABLE">Tidak ada topik yang tersedia</string>
+        <string name="NO_POST_AVAILABLE">Tidak ada posting yang tersedia</string>
+        <string name="NO_PRODUCT_AVAILABLE">Tidak ada produk yang tersedia</string>
+        <string name="NO_WISHLIST_AVAILABLE">Tidak ada daftar keinginan yang tersedia</string>
+        <string name="popular_stores">Toko populer</string>
+        <string name="title_create_channel">Buat saluran</string>
+        <string name="title_edit_channel">Edit saluran</string>
+        <string name="MSG_STOP_TIKTOK">Apakah Anda yakin ingin kembali?</string>
+        <string name="MSG_NO_STORE_FOUND">Tidak ada yang membuat toko dengan kriteria ini.</string>
+        <string name="MSG_NO_PRODUCT_FOUND">Tidak ada yang membuat produk dengan kriteria ini.</string>
+        <string name="stores_liked">Toko disukai oleh toko ini</string>
+
+        <string name="msg_join_stores">Apakah Anda ingin bergabung dengan toko ini?</string>
+        <string name="msg_leave_stores">Apakah Anda ingin meninggalkan toko ini?</string>
+        <string name="msg_request_membership_store">Apakah Anda ingin meminta keanggotaan di toko ini?</string>
+
+        <string name="join_store">Bergabunglah dengan toko</string>
+        <string name="leave_store">Tinggalkan toko</string>
+
+
+        <string name="msg_join_page">Apakah Anda ingin bergabung dengan halaman ini?</string>
+        <string name="msg_leave_page">Apakah Anda ingin meninggalkan halaman ini?</string>
+        <string name="msg_request_membership_page">Apakah Anda ingin meminta keanggotaan di halaman ini?</string>
+
+        <string name="join_page">Bergabunglah dengan halaman</string>
+        <string name="leave_page">Tinggalkan halaman</string>
+
+        <string name="NO_BUSINESS_AVAILABLE">Tidak ada bisnis yang tersedia</string>
+        <string name="related_businesses">Bisnis terkait</string>
+
+        <string name="TXT_SERACH_BUSSINESSES">Pencarian bisnis</string>
+        <string name="msg_request_cancel_business">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke bisnis ini?</string>
+        <string name="msg_remove_member_business">Apakah Anda yakin ingin menghapus anggota ini dari bisnis?</string>
+        <string name="MSG_DELETE_CONFIRMATION_BUSINESS">Apakah Anda yakin ingin menghapus bisnis ini?</string>
+        <string name="msg_invite_reject_business">Apakah Anda ingin menolak undangan untuk bisnis ini?</string>
+        <string name="title_create_business">Buat bisnis</string>
+        <string name="title_edit_business">Edit bisnis</string>
+        <string name="related_businesss">Bisnis terkait</string>
+        <string name="popular_businesses">Bisnis populer</string>
+        <string name="MSG_NO_BUSINESS_FOUND">Tidak ada yang telah menciptakan bisnis dengan kriteria ini.</string>
+        <string name="businesses_liked">Bisnis yang disukai oleh bisnis ini</string>
+
+
+        <string name="msg_join_business">Apakah Anda ingin bergabung dengan bisnis ini?</string>
+        <string name="msg_leave_business">Apakah Anda ingin meninggalkan bisnis ini?</string>
+        <string name="msg_request_membership_business">Apakah Anda ingin meminta keanggotaan dalam bisnis ini?</string>
+
+
+
+        <string name="join_business">Bergabunglah dengan bisnis</string>
+        <string name="leave_business">Meninggalkan bisnis</string>
+        <string name="titledesc4"><![CDATA[This screen is very great & gives you the totally realistic feel of watching.]]></string>
+
+
+
+
+        <string name="TITLE_BLOG">Blog</string>
+        <string name="TITLE_JOBS">Pekerjaan</string>
+        <string name="TITLE_EDIT_BLOG">Edit Blog</string>
+
+        <string name="MSG_NO_BLOG">Tidak ada yang memposting blog dengan kriteria ini.</string>
+        <string name="MSG_DELETE_CONFIRMATION_BLOG">Apakah Anda yakin ingin menghapus blog ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_JOB">Apakah Anda yakin ingin menghapus pekerjaan ini?</string>
+        <string name="TXT_SERACH_BLOG">Cari blog</string>
+        <string name="TXT_SERACH_JOBS">Mencari pekerjaan</string>
+        <string name="MSG_NO_BLOG_CREATED">Belum ada yang membuat blog.</string>
+        <string name="MSG_NO_BLOG_CREATED_YOU">Belum ada blog yang dibuat oleh Anda.</string>
+        <string name="select_blog">Pilih blog</string>
+        <string name="TAB_TITLE_BLOG_1">Jelajahi blog</string>
+        <string name="TAB_TITLE_BLOG_2">Jelajahi kategori</string>
+        <string name="TAB_TITLE_BLOG_3">Blog saya</string>
+        <string name="TAB_TITLE_BLOG_4">Tulis blog baru</string>
+
+
+        <string name="TAB_TITLE_CPOLL_1">Jelajahi jajak pendapat</string>
+        <string name="TAB_TITLE_CPOLL_2">Jajak pendapat saya</string>
+        <string name="TAB_TITLE_CPOLL_3">Tulis jajak pendapat baru</string>
+
+        <string name="TITLE_NEWS">Berita</string>
+        <string name="TITLE_RSS">RSS</string>
+        <string name="TITLE_EDIT_NEWS">Edit berita</string>
+        <string name="TITLE_EDIT_RSS">Edit RSS</string>
+
+        <string name="MSG_NO_NEWS">Tidak ada yang memposting blog dengan kriteria ini.</string>
+        <string name="MSG_DELETE_CONFIRMATION_NEWS">Apakah Anda yakin ingin menghapus berita ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_RSS">Apakah Anda yakin ingin menghapus RSS ini?</string>
+        <string name="TXT_SERACH_NEWS">Berita pencarian</string>
+        <string name="MSG_NO_NEWS_CREATED">Belum ada yang membuat berita.</string>
+        <string name="MSG_NO_NEWS_CREATED_YOU">Belum ada berita yang dibuat oleh Anda.</string>
+        <string name="MSG_NO_RSS_CREATED_YOU">Belum ada RSS yang dibuat oleh Anda.</string>
+        <string name="select_news">Pilih berita</string>
+        <string name="TAB_TITLE_NEWS_1">Jelajahi berita</string>
+        <string name="TAB_TITLE_NEWS_2">Jelajahi RSS</string>
+        <string name="TAB_TITLE_NEWS_3">Jelajahi kategori</string>
+        <string name="TAB_TITLE_NEWS_4">Berita saya</string>
+        <string name="TAB_TITLE_NEWS_5">Tulis berita baru</string>
+        <string name="TAB_TITLE_NEWS_6">RSS saya</string>
+        <string name="TAB_TITLE_NEWS_7">Tambahkan RSS baru</string>
+
+
+
+        <string name="TITLE_EDIT_RECIPE">Edit resep</string>
+        <string name="TITLE_RECIPE">Resep</string>
+        <string name="TITLE_EDIT_BLOG_PHOTO">Edit foto blog</string>
+        <string name="MSG_NO_RECIPE">Tidak ada yang memposting resep dengan kriteria ini.</string>
+        <string name="MSG_DELETE_CONFIRMATION_RECIPE">Apakah Anda yakin ingin menghapus resep ini?</string>
+        <string name="TXT_SERACH_RECIPE">Resep pencarian</string>
+        <string name="MSG_NO_RECIPE_CREATED">Belum ada yang membuat resep.</string>
+        <string name="MSG_NO_RECIPE_CREATED_YOU">Belum ada resep yang dibuat oleh Anda.</string>
+        <string name="select_recipe">Pilih resep</string>
+        <string name="TAB_TITLE_RECIPE_1">Jelajahi resep</string>
+        <string name="TAB_TITLE_RECIPE_2">Jelajahi kategori</string>
+        <string name="TAB_TITLE_MAPLOCATION">LOCATON</string>
+
+        <string name="TAB_TITLE_RECIPE_3">Resep saya</string>
+        <string name="TAB_TITLE_RECIPE_4">Buat resep baru</string>
+        <string name="select_a_package">Pilih paket</string>
+
+
+        <string name="TAB_TITLE_MuLTISTORE_1">Jelajahi elektronik</string>
+
+        <string name="select_a_package_desc">Pilih paket yang paling cocok untuk Anda untuk mulai membuat %1 $ s.</string>
+        <string name="contest">kontes</string>
+        <string name="page">halaman</string>
+        <string name="group">kelompok</string>
+        <string name="business">bisnis</string>
+        <string name="my_package">Paket saya</string>
+        <string name="all_packages">Semua paket</string>
+        <string name="see_all_transactions">Lihat semua transaksi</string>
+        <string name="title_transactions">Transaksi</string>
+        <string name="transaction_detail">Detail Transaksi</string>
+        <string name="transaction_id">ID transaksi</string>
+        <string name="contest_id">ID kontes</string>
+        <string name="packaze">Kemasan</string>
+        <string name="contest_title">Judul Kontes</string>
+        <string name="gateway">Gerbang</string>
+        <string name="status">Status</string>
+        <string name="amount">Jumlah</string>
+        <string name="date">Tanggal</string>
+
+
+        <string name="trans_package">Kemasan :</string>
+        <string name="trans_id">ID transaksi :</string>
+        <string name="trans_contest">Kontes:</string>
+        <string name="trans_subscribed_on">%1 $ s</string>
+        <string name="package_cancel_title">Batalkan langganan?</string>
+        <string name="package_cancel_desc">Apakah Anda yakin ingin membatalkan paket berlangganan ini karena tindakan ini tidak dapat dibatalkan?</string>
+        <string name="no_package_available">Anda belum berlangganan paket apa pun!</string>
+        <string name="show_result">Tunjukkan hasil</string>
+        <string name="add_another_option">Tambahkan opsi lain</string>
+        <string name="add_options">Tambahkan opsi</string>
+        <string name="option">Pilihan</string>
+        <string name="WARNING_LESS_OPTIONS_POLL">Jajak pendapat harus memiliki setidaknya dua opsi</string>
+        <string name="invalid_option">Opsi tidak valid atau kosong</string>
+        <string name="select_image_gif">Pilih Gambar atau GIF</string>
+        <string name="MSG_NO_GIF_AVAILABLE">Tidak ada gif yang ditemukan</string>
+        <string name="txt_stop">Berhenti</string>
+        <string name="txt_pause">Berhenti sebentar</string>
+        <string name="txt_replay">Memutar ulang</string>
+        <string name="txt_play">Bermain</string>
+        <string name="msg_cannot_vote">Anda sudah memilih atau tidak memiliki izin untuk memilih dalam jajak pendapat ini.</string>
+        <string name="remember_me">Ingat saya</string>
+        <string name="text_maintenance_1">Maaf! Kami turun untuk pemeliharaan.</string>
+        <string name="text_maintenance_2">Silakan periksa kembali segera.</string>
+        <string name="text_maintenance_3">Kode akses :</string>
+        <string name="lbl_useful_ad_2">Hapus dari berguna</string>
+        <string name="lbl_useful_ad_1">Iklan ini berguna</string>
+        <string name="voted_user">Anggota memberikan suara</string>
+        <string name="GMAIL">Gmail</string>
+
+        <string name="question">pertanyaan</string>
+        <string name="add_answer">Tambahkan jawaban</string>
+        <string name="NO_QUESTION_AVAILABLE">Tidak ada pertanyaan yang tersedia</string>
+        <string name="TXT_SERACH_QUESTION">Pertanyaan pencarian</string>
+        <string name="MSG_NO_QUESTION_FOUND">Tidak ada yang mengajukan pertanyaan dengan kriteria ini.</string>
+        <string name="title_create_question">Buat pertanyaan</string>
+        <string name="title_edit_question">Edit pertanyaan</string>
+        <string name="txt_poll_select_multiple_option">Izinkan anggota untuk memilih beberapa opsi</string>
+        <string name="msg_poll_minimum_option_count">Tambahkan setidaknya dua opsi</string>
+        <string name="msg_question_edit_successfully">Pertanyaan diedit dengan sukses</string>
+        <string name="msg_no_answer">Belum ada yang mengirimkan jawaban apa pun. Jadilah yang pertama !</string>
+        <string name="text_Answer">Menjawab</string>
+        <string name="edit_answer">Edit jawaban</string>
+        <string name="create_answer">Tambahkan jawaban</string>
+        <string name="msg_delete_answer">Apakah Anda yakin ingin menghapus jawaban ini? Itu tidak akan dapat dipulihkan setelah dihapus.</string>
+        <string name="loading_song">Lagu Memuat…</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <string name="few_seconds_ago">Beberapa detik yang lalu</string>
+        <string name="poll">Pemilihan</string>
+        <string name="verification_code">Validasi OTP (satu kali sandi)</string>
+        <string name="verification_code_subtext">Masukkan kode verifikasi yang telah Anda terima pada nomor ponsel terdaftar Anda.</string>
+        <string name="verify">Memeriksa</string>
+        <string name="resend">Ulang</string>
+        <string name="msg_otp_resent">OTP berhasil kembali.</string>
+        <string name="title_reset_password">Setel ulang kata sandi?</string>
+        <string name="verification_otp">Verifikasi OTP</string>
+        <string name="TXT_SERACH_REVIEW">Ulasan pencarian</string>
+        <string name="add_comment">Tambahkan komentar</string>
+        <string name="msg_no_wallpaper">Tidak ada wallpaper yang tersedia</string>
+        <string name="msg_no_font_with_name">Tidak ada font yang ditemukan dengan kunci</string>
+
+        <string name="search_wallpaper">Cari Wallpaper</string>
+        <string name="fonts">Font</string>
+        <string name="msg_quote_go_back">Semua perubahan akan hilang. Apakah Anda yakin ingin kembali?</string>
+
+        <plurals name="views_count">
+            <item quantity="one"><b>%d</b> View</item>
+            <item quantity="other"><b>%d</b> Views</item>
+        </plurals>
+        <plurals name="answers_count">
+            <item quantity="one"><b>%d</b> Answer</item>
+            <item quantity="other"><b>%d</b> Answers</item>
+        </plurals>
+        <plurals name="rating_count">
+            <item quantity="one"><b>%d</b> Rating</item>
+            <item quantity="other"><b>%d</b> Ratings</item>
+        </plurals>
+        <plurals name="hours_ago">
+            <item quantity="one"><b>%d</b> jam yang lalu</item>
+            <item quantity="other"><b>%d</b> jam yang lalu</item>
+        </plurals>
+        <plurals name="days_ago">
+            <item quantity="one"><b>%d</b> hari yang lalu</item>
+            <item quantity="other"><b>%d</b> hari yang lalu</item>
+        </plurals>
+        <plurals name="minutes_ago">
+            <item quantity="one"><b>%d</b> menit yang lalu</item>
+            <item quantity="other"><b>%d</b> menit yang lalu</item>
+        </plurals>
+
+        <string name="msg_tts_content_invalid">Ada yang salah. Tidak dapat memainkan konten ini.</string>
+
+        <string name="profile">Profil</string>
+        <string name="profile_d">Lihat atau Edit Halaman Profil Anda</string>
+        <string name="navigation_item">Item Naviagtion</string>
+        <string name="navigation_item_d">Gulir ke atas/ke bawah untuk lebih banyak opsi</string>
+
+
+        <string name="caption">Tambahkan keterangan…</string>
+        <string name="stories">Cerita</string>
+        <string name="stories_desc">Lihat foto dan video layar penuh sebelum mereka tidak setuju</string>
+        <string name="see_archives">Arsip</string>
+        <string name="viewed_by_count">Dilihat oleh %d</string>
+        <string name="msg_no_viewers">Belum ada yang melihat cerita ini!</string>
+        <string name="title_story_archive">Arsip cerita Anda</string>
+        <string name="msg_archive_description">Setelah foto dan video menghilang dari cerita Anda, Anda akan menemukannya di sini. Anda juga akan melihat siapa yang melihat dan bereaksi terhadap setiap cerita.</string>
+        <string name="msg_story_delete">Hapus pembaruan status ini? Ini juga akan dihapus untuk semua orang yang menerimanya.</string>
+        <string name="title_story_setting">Pengaturan cerita</string>
+        <string name="story_highlights">Sorotan cerita</string>
+        <string name="just_now">Baru saja</string>
+        <string name="title_replies">Balasan</string>
+        <string name="hosted_by">Diselenggarakan oleh</string>
+        <string name="txt_when">Kapan</string>
+
+        <string name="replied_to_story">Membalas cerita</string>
+        <string name="story_you_muted">Cerita yang Anda diredam</string>
+        <string name="review_muted_member">Tinjau orang -orang yang sebelumnya telah Anda diredam.</string>
+        <string name="muted_stories">Cerita yang diredam</string>
+        <string name="unmute">Membunyikan</string>
+        <string name="mute">Bisu</string>
+        <string name="update">Memperbarui</string>
+
+
+        <plurals name="answers_count_view_page">
+            <item quantity="one">Answer (<b>%d</b>)</item>
+            <item quantity="other">Answers (<b>%d</b>)</item>
+        </plurals>
+        <plurals name="follow_count">
+            <item quantity="one"><b>%d</b> Follow</item>
+            <item quantity="other"><b>%d</b> Follows</item>
+        </plurals>
+        <plurals name="vote_count">
+            <item quantity="one"><b>%d</b> Vote</item>
+            <item quantity="other"><b>%d</b> Votes</item>
+        </plurals>
+        <plurals name="like_count">
+            <item quantity="one"><b>%d</b> Suka</item>
+            <item quantity="other"><b>%d</b> Menyukai</item>
+        </plurals>
+        <plurals name="comment_count">
+            <item quantity="one"><b>%d</b> Komentar</item>
+            <item quantity="other"><b>%d</b> Komentar</item>
+        </plurals>
+
+
+        <string name="raised">DINAIKKAN</string>
+        <string name="donor">PENYUMBANG</string>
+        <string name="goal">SASARAN</string>
+        <string name="title_create_fund">Buat crowdfunding</string>
+        <string name="TXT_SERACH_FUNDS">Cari crowdfundings</string>
+        <string name="crowdfinding">Crowdfunding</string>
+        <string name="title_edit_fund">Edit crowdfunding</string>
+        <string name="msg_no_donor">Belum ada yang menyumbangkan dana apa pun</string>
+        <string name="NO_FUND_AVAILABLE">Tidak ada crowdfunding yang tersedia</string>
+        <string name="min_donation_amt">Jumlah donasi minimum</string>
+        <string name="msg_no_reward">Tidak ada hadiah yang tersedia!</string>
+        <string name="crowdfunding_announcement">Pengumuman crowdfunding</string>
+        <string name="story">Cerita</string>
+        <string name="donate">Menyumbangkan</string>
+        <string name="credit_point_type">Jenis titik kredit</string>
+        <string name="credit_points">Poin kredit</string>
+        <string name="validity_date">Tanggal masa berlaku</string>
+        <string name="remaining_size">Ukuran yang tersisa</string>
+        <string name="debit_points">Poin debit</string>
+        <string name="msg_no_credit_point">Tidak ada poin kredit yang ditemukan.</string>
+        <string name="msg_no_transaction">Tidak ada transaksi yang ditemukan.</string>
+        <string name="purchase_points">Poin Pembelian</string>
+        <string name="select_point_type">Pilih jenis pembelian titik</string>
+        <string name="send_point_friend">Kirim Titik ke Teman</string>
+        <string name="search_donor">Cari donor</string>
+        <string name="NO_FUND_CREATED">Belum ada crowdfunding yang dibuat oleh Anda.</string>
+        <string name="no_donation_received">Anda belum menerima sumbangan apa pun.</string>
+        <string name="no_donation_sent">Anda belum mengirim sumbangan apa pun.</string>
+        <string name="all_badges">Semua lencana</string>
+        <string name="my_badges">Lencana saya</string>
+        <string name="no_badges_available">Tidak ada lencana yang tersedia!</string>
+        <string name="activity_type">Tipe kegiatan</string>
+        <string name="deduction_points">Deduksi \ nPoints</string>
+        <string name="max_points">Max \ nPoints</string>
+        <string name="next_time">Berikutnya</string>
+        <string name="first_time">Pertama kali</string>
+        <string name="dummy_name">Tidak disilangkan</string>
+        <string name="add_to_cart">Masukkan ke keranjang</string>
+        <string name="compare">Membandingkan</string>
+        <string name="companies_data">Perusahaan</string>
+        <string name="quantity">Kuantitas :</string>
+        <string name="POINTS_REQUIRED">Poin adalah wajib</string>
+        <string name="FRIEND_REQUIRED">Pilih teman terlebih dahulu</string>
+
+
+
+
+        <string name="stream">Video langsung sedang berjalan</string>
+        <string name="join_stream">Menghubungkan ke video langsung</string>
+        <string name="stream_ended">Video langsung telah berakhir</string>
+        <string name="stream_ending">Menyelesaikan video langsung</string>
+        <string name="live">Hidup</string>
+        <string name="live_again">Hidup lagi</string>
+
+        <string name="txt_end">Akhir</string>
+        <string name="txt_discard">Membuang</string>
+        <string name="txt_end_live">Akhiri video langsung</string>
+        <string name="not_ready">Harap tunggu sebentar</string>
+        <string name="error_occured">Maaf! Sebuah kesalahan telah terjadi</string>
+        <string name="saving">Penghematan</string>
+        <string name="save_gallery">Simpan ke galeri</string>
+        <string name="sharing">Membagikan</string>
+        <string name="share_story_label">Izinkan berbagi ke cerita</string>
+        <string name="share_feed_label">Izinkan berbagi ke dalam pakan</string>
+        <string name="discard_stream">Video langsung Anda akan hilang. Apakah Anda yakin ingin kembali?</string>
+        <string name="msg_delete_live">Apakah Anda yakin ingin menghapus video langsung Anda?</string>
+        <string name="sharing_note">Jika Anda menonaktifkan kedua opsi maka Anda tidak akan dapat membagikan video Anda</string>
+        <string name="sharing_disabled">"Anda tidak memiliki izin berbagi"</string>
+        <string name="create_own">Ingin membuat sendiri !!!</string>
+        <string name="duration_end">Waktu Anda untuk streaming langsung selesai</string>
+        <string name="share_instory">Simpan video langsung Anda selama 24 jam ke depan dalam cerita</string>
+        <string name="share_infeed">Posting video langsung Anda di feed</string>
+        <string name="live_disabled">Streaming langsung dinonaktifkan.</string>
+        <string name="live_setup_incomplete">Pengaturan streaming langsung tidak lengkap.</string>
+
+
+        <string name="join_classroom">Bergabunglah dengan kelas</string>
+        <string name="leave_classroom">Tinggalkan ruang kelas</string>
+        <string name="related_classrooms">Ruang kelas terkait</string>
+        <string name="title_create_classroom">Buat ruang kelas</string>
+        <string name="title_edit_classroom">Edit kelas</string>
+        <string name="msg_join_classroom">Apakah Anda ingin bergabung dengan ruang kelas ini?</string>
+        <string name="join_Classroom">Bergabunglah dengan kelas</string>
+        <string name="my_account">Akun saya</string>
+        <string name="NO_CLASSROOM_AVAILABLE">Tidak ada ruang kelas yang tersedia</string>
+        <string name="hint_search_classroom">Cari ruang kelas</string>
+        <string name="CREATE_CLASSROOM">Buat ruang kelas</string>
+        <string name="hot_classrooms">Panas</string>
+        <string name="featured_classrooms">Ditampilkan</string>
+        <string name="TXT_SEARCH_CLASSROOM">Cari ruang kelas</string>
+        <string name="Verified_classrooms">Diverifikasi</string>
+        <string name="MSG_DELETE_CONFIRMATION_CLASSROOM">Apakah Anda yakin ingin menghapus ruang kelas ini?</string>
+
+
+
+
+
+        <string name="msg_no_description_available">Deskripsi tidak tersedia</string>
+        <string name="hint_search_courses">Cari kursus</string>
+        <string name="NO_COURSE_AVAILABLE">Tidak ada kursus yang tersedia</string>
+        <string name="Test_Result">Hasil tes</string>
+        <string name="Test">Uji</string>
+        <string name="NO_TEST_AVAILABLE">Tidak ada tes yang tersedia</string>
+        <string name="NO_COURSE_AVAILABLE_UPSELL">Tidak ada kursus upsell yang tersedia</string>
+        <string name="NO_LECTURES_AVAILABLE">Tidak ada kuliah yang tersedia</string>
+        <string name="PRICE">Harga:</string>
+        <string name="Total_tax">Total Pajak:</string>
+        <string name="TITLE_ADD_WISHLIST_COURSE">Tambahkan kursus ke wishlist</string>
+        <string name="TXT_SEARCH_COURSE">Kursus pencarian</string>
+        <string name="msg_remove_course_cart">Apakah Anda yakin ingin menghapus kursus ini dari kereta?</string>
+        <string name="CREATE_LECTURE">Buat Kuliah</string>
+        <string name="CREATE_TEST">Buat tes</string>
+        <string name="EDIT_LECTURE">Edit Kuliah</string>
+        <string name="txt_add_cart">Masukkan ke keranjang</string>
+        <string name="txt_posted_in">Diposting di</string>
+        <string name="title_edit_course">Edit Kursus</string>
+        <string name="MSG_DELETE_CONFIRMATION_COURSE">Apakah Anda yakin ingin menghapus kursus ini?</string>
+        <string name="CREATE_COURSE">Buat Kursus</string>
+        <string name="MSG_NO_COURSE_FOUND">Tidak ada yang membuat kursus dengan kriteria ini.</string>
+        <string name="MSG_NO_CLASSROOM_FOUND">Tidak ada yang membuat ruang kelas dengan kriteria ini.</string>
+        <string name="MSG_DELETE_CONFIRMATION_LECTURE">Apakah Anda yakin ingin menghapus kuliah ini?</string>
+        <string name="Upload_">"Mengunggah "</string>
+        <string name="msg_request_membership_classroom">Apakah Anda ingin meminta keanggotaan di kelas ini?</string>
+        <string name="msg_leave_classroom">Apakah Anda ingin meninggalkan ruang kelas ini?</string>
+        <string name="msg_request_cancel_classroom">Apakah Anda ingin membatalkan permintaan Anda untuk undangan ke kelas ini?</string>
+        <string name="msg_request_accept_classroom">Apakah Anda ingin menerima undangan ke ruang kelas ini?</string>
+        <string name="msg_request_reject_classroom">Apakah Anda ingin menolak undangan ke ruang kelas ini?</string>
+        <string name="msg_leave_test">Apakah Anda yakin ingin meninggalkan tes ini?</string>
+
+
+
+
+        <string name="NO_BOOKING_AVAILABLE">Tidak ada pemesanan yang tersedia</string>
+        <string name="TXT_SEARCH_PROFESSIONAL">Pencarian profesional</string>
+        <string name="TXT_SEARCH_Service">Layanan Pencarian</string>
+        <string name="TXT_SEARCH_Service_txt">Jasa</string>
+        <string name="MSG_NO_PROFESSIONAL_FOUND">Tidak ada profesional yang ditemukan.</string>
+        <string name="MSG_NO_CONTACT_FOUND">Tidak ada informasi kontak.</string>
+        <string name="MSG_NO_SERVICE_FOUND">Tidak ada layanan yang ditemukan.</string>
+        <string name="BECOME_PROFESSIONAL">Menjadi seorang profesional</string>
+
+        <string name="connect">Terhubung</string>
+        <string name="disconnect">Terputus, silakan periksa koneksi internet Anda</string>
+        <string name="error_connect">Gagal terhubung</string>
+        <string name="gmail">290275007691-JH088CDNVETGNIV8HGFMV610C6HS5FP4.Apps.googleusercontent.com</string>
+
+        <string name="tw_login_hint">Login Twitter</string>
+        <string name="tw_logout_hint">Keluar</string>
+        <string name="twitter_consumer_key">Alqfz7rzmn6emhc4w0pvjk46h</string>
+        <string name="twitter_consumer_secret">FW64IOOGDBPIWNIOUB6R3YEAQLCS4GI0XUDFSZ8GYIIO4Z5XHZ</string>
+        <string name="twitter_callback_url">http://www.website_sample.com/auth/twitter/callback/</string>
+        <string name="welcome">Selamat datang kembali %s!</string>
+        <string name="already_logged">Pengguna sudah masuk ke Twitter dengan %s.</string>
+        <string name="logged_out">Sukses Logout</string>
+        <string name="loading_title">Memuat…</string>
+        <string name="login_dialog_message">Menunggu untuk itu…</string>
+
+
+        <string name="MSG_DELETE_CONFIRMATION_ACHIVE">Apakah Anda yakin ingin menghapus pencapaian ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_SKILL">Apakah Anda yakin ingin menghapus keterampilan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_CURRICULAR">Apakah Anda yakin ingin menghapus kurikuler ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_EDU">Apakah Anda yakin ingin menghapus pendidikan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_RESUME">Apakah Anda yakin ingin menghapus resume ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_CERT">Anda yakin ingin menghapus sertifikat ini?</string>
+
+        <string name="title_create_exprience">Tambahkan pengalaman</string>
+        <string name="title_create_education">Tambahkan pendidikan</string>
+        <string name="title_create_projects">Tambahkan proyek</string>
+        <string name="title_create_reference">Tambahkan referensi</string>
+        <string name="title_create_reference_edit">Edit referensi</string>
+        <string name="title_create_project_edit">Proyek Edit</string>
+        <string name="title_create_certificate_edit">Edit sertifikat</string>
+        <string name="title_create_certificate_add">Tambahkan Sertifikat</string>
+        <string name="title_create_education_edit">Edit Pendidikan</string>
+        <string name="title_create_experience_edit">Edit pengalaman</string>
+
+        <string name="TAB_TITLE_RESUME_1">Informasi pribadi</string>
+        <string name="TAB_TITLE_RESUME_2">Pengalaman kerja</string>
+        <string name="TAB_TITLE_RESUME_3">Pendidikan</string>
+        <string name="TAB_TITLE_RESUME_4">Proyek</string>
+        <string name="TAB_TITLE_RESUME_5">Sertifikat</string>
+        <string name="TAB_TITLE_RESUME_6">Referensi</string>
+        <string name="TAB_TITLE_RESUME_8">Prestasi &amp; Ko-kurikuler</string>
+        <string name="TAB_TITLE_RESUME_7">tujuan karier</string>
+        <string name="TAB_TITLE_RESUME_9">Keterampilan Minat Kekuatan</string>
+
+
+        <string name="MSG_DELETE_CONFIRMATION_PROD">Apakah Anda yakin ingin menghapus proyek ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_REFR">Apakah Anda yakin ingin menghapus referensi ini?</string>
+
+        <string name="MSG_DELETE_CONFIRMATION_EX">Apakah Anda yakin ingin menghapus pengalaman ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_INTERESTS">Apakah Anda yakin ingin menghapus minat ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_STRENGTHS">Apakah Anda yakin ingin menghapus kekuatan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION_HOBBIES">Apakah Anda yakin ingin menghapus hobi ini?</string>
+
+
+        <string name="TAB_GAME1">permainan</string>
+        <string name="TAB_GAME2">Game saya</string>
+        <string name="TAB_GAME3">Tambahkan game baru</string>
+        <string name="TXT_SERACH_GAMES">Cari game</string>
+
+        <string name="copy_message">Pesan disalin</string>
+
+        <string name="txt_search_blog">Cari blog</string>
+        <string name="TXT_LIKES">Suka</string>
+
+
+        <string name="TAB_TITLE_JOB_1">Jelajahi pekerjaan</string>
+        <string name="TAB_TITLE_JOB_2">Jelajahi kategori</string>
+        <string name="TAB_TITLE_JOB_3">Pekerjaan saya</string>
+        <string name="TAB_TITLE_JOB_5">Telenggur Perusahaan</string>
+        <string name="TAB_TITLE_JOB_4">Tulis pekerjaan baru</string>
+
+        <string name="TAB_TITLE_REVIEW_TITLE">Jelajahi ulasan</string>
+        <string name="ratingsuccess">Peringkat berhasil diserahkan.</string>
+        <string name="TAB_TITLE_WISHLIST">Jelajahi Wishlist</string>
+        <string name="TAB_TITLE_EXPERT">Telusuri pakar</string>
+        <string name="TAB_TITLE_MYLSITING">Halaman daftar saya</string>
+
+
+        <string name="nomor_telepon">Nomor telepon</string>
+        <string name="text_masuk">Masuk</string>
+        <string name="text_kembali">Kembali</string>
+        <string name="text_lewati">Lewati</string>
+        <string name="text_daftar">Ya, daftarkan!</string>
+        <string name="text_sub_title_regirster_card">Apakah Anda ingin mendaftarkan Nomor ini untuk menjadi Anggota ?</string>
+        <string name="text_kembali_register">Kembali</string>
+        <string name="text_mendaftarkan">Mendaftarkan</string>
+    <string name="text_nomor_anda_sudah_terdaftar">Nomor Anda Berhasil Terdaftar</string>
+        <string name="text_ya_masuk">Ya, Masuk</string>
+    <string name="text_terms_and_conditions">Kebijakan Privasi</string>
+
+
+</resources>
+

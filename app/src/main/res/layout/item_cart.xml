@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    android:theme="@style/AppThemeMatrial"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset"
+    app:cardCornerRadius="0dp">
+
+    <RelativeLayout
+        android:id="@+id/layout_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/product_image_on_list_cart"
+            android:layout_height="@dimen/product_image_on_list_cart"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_profile"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <LinearLayout
+            android:id="@+id/layout_item_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:baselineAligned="false"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Wedding Gown (Gold) "
+                android:textStyle="bold" />
+
+
+            <com.sesolutions.utils.FlowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice"
+                    style="@style/text_style_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:text="Rs. 8,999"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice2"
+                    style="@style/text_style_2"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:text="Rs. 8,999"
+                    android:textSize="@dimen/caption_mini" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPrice3"
+                    style="@style/text_style_primary"
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:text="save 100 off"
+                    android:textSize="@dimen/caption_mini" />
+            </com.sesolutions.utils.FlowLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/store_item_margin"
+                android:drawableStart="@drawable/filled_circle_12"
+                android:drawableLeft="@drawable/filled_circle_12"
+                android:drawablePadding="@dimen/margin_quarter"
+                android:gravity="center_vertical"
+                android:text="in stock"
+                android:textSize="@dimen/caption" />
+
+
+            <RelativeLayout
+                style="@style/Forground_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:text="Quantity: " />
+
+                <TextView
+                    android:id="@+id/tvQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_toRightOf="@+id/label"
+                    android:text="2" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_price"
+                    style="@style/text_style_primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:text="$ 600.00"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_quarter">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvRemove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:padding="@dimen/store_item_margin_view"
+                    app:cardCornerRadius="@dimen/margin_quarter"
+                    app:strokeColor="@color/text_color_2"
+                    app:strokeWidth="1dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingStart="@dimen/margin_quarter"
+                        android:paddingLeft="@dimen/margin_quarter"
+                        android:paddingTop="@dimen/margin_quarter"
+                        android:paddingEnd="@dimen/margin_quarter"
+                        android:paddingRight="@dimen/margin_quarter"
+                        android:paddingBottom="@dimen/margin_quarter"
+                        android:text="@string/remove" />
+
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quantity"
+                    android:textSize="@dimen/caption" />
+
+
+                <com.sesolutions.ui.customviews.itemcounterview.IncDecView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginEnd="@dimen/margin_medium"
+                    android:layout_marginRight="@dimen/margin_medium" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

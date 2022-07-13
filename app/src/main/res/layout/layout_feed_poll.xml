@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llPoll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPollTitle"
+        style="@style/text_style_1"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPollDesc"
+        style="@style/text_style_2"
+        android:layout_below="@+id/tvPollTitle"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:lineSpacingExtra="3sp"
+        android:maxLines="2"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1" />
+
+    <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+        android:id="@+id/rvPoll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:padding="@dimen/margin_half" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llPollTypeChange"
+        style="@style/ripple_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingBottom="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:tint="@color/text_color_2"
+            app:srcCompat="@drawable/ses_question" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPollResult"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:text="@string/show_result"
+            android:textSize="@dimen/body_2" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

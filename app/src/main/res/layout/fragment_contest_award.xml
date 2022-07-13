@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar_customize"></include>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv1"
+            android:visibility="gone"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    app:srcCompat="@drawable/award_1" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvPost"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:background="@drawable/rounded_holo_border_grey_light" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View style="@style/divider" />
+
+        <!--second award starts-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv2"
+            style="@style/Card_style"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    app:srcCompat="@drawable/award_2" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvPost"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:background="@drawable/rounded_holo_border_grey_light" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View style="@style/divider" />
+        <!--second award ends-->
+
+        <!--third award starts-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv3"
+            android:visibility="gone"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    app:srcCompat="@drawable/award_3" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:background="@drawable/rounded_holo_border_grey_light" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View style="@style/divider" />
+        <!--third award ends-->
+
+        <!--fourth award starts-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv4"
+            android:visibility="gone"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    app:srcCompat="@drawable/award_4" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View style="@style/divider" />
+        <!--fourth award ends-->
+
+        <!--fourth award starts-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv5"
+            android:visibility="gone"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_full">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="48sp"
+                    android:layout_height="48sp"
+                    app:srcCompat="@drawable/award_5" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:background="@drawable/rounded_holo_border_grey_light" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <View style="@style/divider" />
+        <!--fourth award ends-->
+
+        <include layout="@layout/layout_no_data" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.core.widget.NestedScrollView>

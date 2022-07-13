@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/llPostFeed"
+            layout="@layout/layout_post_feed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:visibility="gone" />
+
+        <!--<com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llPostFeed"
+            android:paddingTop="@dimen/margin_quarter"
+            app:shimmer_demo_angle="20"
+            app:shimmer_demo_child_count="3" />-->
+        <include
+            layout="@layout/layout_recycleview_shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llPostFeed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llPostFeed"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_half"
+            android:textColor="@color/black_87"
+            android:textSize="@dimen/body_1"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="@dimen/button_height_small"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <include layout="@layout/layout_hidden_feed_option" />
+
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

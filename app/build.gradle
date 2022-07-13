@@ -1,0 +1,222 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+repositories {
+    mavenCentral()
+}
+android {
+    signingConfigs {
+        Production {
+            storeFile file("KEY_STORE_PATH") //Path to the keystore file
+            keyAlias "KEY_USER_NAME"
+            storePassword "KEY_STORE_PASSWORD"
+            keyPassword "KEY_STORE_PASSWORD"
+        }
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    flavorDimensions "versionCode"
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.SES_APPLICATION_ID
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
+        versionCode rootProject.ext.appVersionCode
+        versionName rootProject.ext.appVersion
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary true
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
+    }
+    configurations {
+        all*.exclude group: 'com.android.volley'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    productFlavors {
+        stagging {
+            applicationIdSuffix ".debug"
+            buildConfigField "String", "BASE_URL", "\"$SES_BASE_URL_DEBUG\""
+            buildConfigField "String", "SES_API_VERSION", "\"$SES_API_VERSION\""
+            buildConfigField "String", "APP_NAME", "\"$SES_APP_NAME\""
+            //creating variables on values->string.xml
+            resValue "string", "app_name", "debug_\"$SES_APP_NAME\""
+            buildConfigField "String", "DB_NAME", "\"$SES_DB_NAME\""
+            resValue "string", "places_api_key", "debug_\"$SES_PLACES_API_KEY_DEBUG\""
+            resValue "string", "facebook_app_id", "\"$SES_FACEBOOK_ID\""
+            resValue "string", "fb_login_protocol_scheme", "\"$SES_FACEBOOK_SCHEME\""
+        }
+        production {
+            signingConfig signingConfigs.Production
+            buildConfigField "String", "SES_API_VERSION", "\"$SES_API_VERSION\""
+            buildConfigField "String", "BASE_URL", "\"$SES_BASE_URL_RELEASE\""
+            buildConfigField "String", "APP_NAME", "\"$SES_APP_NAME\""
+            buildConfigField "String", "DB_NAME", "\"$SES_DB_NAME\""
+            //creating variables on values->string.xml
+            resValue "string", "app_name", "\"$SES_APP_NAME\""
+            resValue "string", "places_api_key", "\"$SES_PLACES_API_KEY\""
+            resValue "string", "facebook_app_id", "\"$SES_FACEBOOK_ID\""
+            resValue "string", "fb_login_protocol_scheme", "\"$SES_FACEBOOK_SCHEME\""
+        }
+    }
+
+    buildTypes {
+        release {
+            applicationVariants.each { variant ->
+                variant.outputs.each { output ->
+                    output.outputFile = file("$project.buildDir/outputs/apk/SeSolutions_v_" + defaultConfig.versionName + ".apk")
+                }
+            }
+
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
+
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation project(':DynamicForm')
+    // implementation project(':filepicker')
+    implementation project(':jiaozivideoplayer')
+    implementation project(':jiaozivideoplayer_story')
+    implementation project(':HtmlEditor')
+    implementation project(':tourGuide')
+    implementation project(':croplib')
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
+    //implementation 'com.sesolutions:material-tap-target-prompt:2.14.0'
+    //implementation project(':statusstories')
+    implementation project(':ImageEditEngine')
+    implementation project(':trimerlibrary')
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+    //implementation project(':nointernet')
+    implementation 'com.otaliastudios:cameraview:1.5.1'
+//    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.jaredrummler:material-spinner:1.3.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    // this dependency is available in library :filePicker
+    //implementation 'gun0912.ted:tedpermission:1.0.3'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation('org.apache.httpcomponents:httpcore:4.2.3') {
+        exclude module: 'httpclient'
+    }
+    //noinspection DuplicatePlatformClasses
+    implementation('org.apache.httpcomponents:httpclient:4.2.3') {
+        exclude module: 'httpclient'
+    }
+
+    implementation "com.google.firebase:firebase-database:$firebaseDBVersion"
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+    implementation 'com.github.florent37:viewtooltip:1.2.2'
+    implementation 'life.knowledge4:k4l-video-trimmer:1.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+
+    implementation 'me.himanshusoni.chatmessageview:chat-message-view:1.0.3'
+    implementation "com.google.firebase:firebase-core:$firebaseLibVersion"
+    implementation "com.google.firebase:firebase-messaging:$gmsAnalyticsVersion"
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+    implementation "com.google.android.gms:play-services-auth:$gmsLibVersion"
+    implementation "com.google.firebase:firebase-ads:$firebaseAdsVersion"
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation 'com.danikula:videocache:2.7.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'com.github.takusemba:multisnaprecyclerview:1.3.3'
+    //for page plugin ,indicator
+    implementation 'com.romandanylyk:pageindicatorview:1.0.1@aar'
+    //chart library
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'org.sufficientlysecure:html-textview:3.6'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //implementation "com.github.bumptech.glide:glide:$glideVersion"
+    //annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation "com.github.bumptech.glide:okhttp3-integration:$glideVersion"
+    // RoomDB
+    implementation 'androidx.room:room-runtime:2.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.preference:preference-ktx:1.1.1'
+    annotationProcessor 'androidx.room:room-compiler:2.2.1'
+    // LiveData dependency
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.1.0'
+    annotationProcessor 'androidx.lifecycle:lifecycle-compiler:2.1.0'
+    implementation 'com.airbnb.android:lottie:2.2.5'
+    implementation 'io.agora.rtc:full-sdk:2.9.1'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    //    implementation 'com.github.nkzawa:socket.io-client:0.6.0'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    /* implementation ('io.socket:socket.io-client:1.0.0') {
+         // excluding org.json which is provided by Android
+         exclude group: 'org.json', module: 'json'
+     }*/
+    implementation('io.socket:socket.io-client:0.8.3') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+    //calender
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'com.github.florent37:SingleDateAndTimePicker:v2.0.4'
+    implementation 'com.github.yalantis:ucrop:2.2.6'
+    //crop player
+    implementation "com.github.koushikcse:LinkedIn:1.2"
+    //calender
+    implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation 'com.google.firebase:firebase-perf'
+    // Add the Firebase Crashlytics SDK.
+    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+    // Recommended: Add the Google Analytics SDK.
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.12.1'
+    implementation 'com.github.shts:TriangleLabelView:1.1.2'
+    implementation 'com.github.rey5137:material:1.3.1'
+    implementation "com.android.support:percent:28.0.0"
+    implementation 'io.gresse.hugo.vumeterlibrary:vumeterlibrary:1.0.17'
+    implementation 'com.ixuea:android-downloader:3.0.0'
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation 'com.balsikandar.android:crashreporter:1.1.0'
+    implementation 'com.gitlab.manimaran:crashreporter:v0.1'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    //  implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'com.facebook.android:facebook-android-sdk:[8,9)'
+    implementation 'com.facebook.android:facebook-login:[8,9)'
+
+
+}
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.firebase.crashlytics'
+

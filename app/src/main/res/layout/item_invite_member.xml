@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llCb"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="12dp"
+        android:clickable="false" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCb"
+        style="@style/text_style_1"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:gravity="center_vertical"
+        android:text="Choose All Friends"
+        android:textColor="@color/colorFormMasterElementTextTitle"
+        android:textSize="@dimen/elementTextTitleSize" />
+
+</LinearLayout>

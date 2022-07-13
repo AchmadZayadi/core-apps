@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:fitsSystemWindows="true">
+
+    <com.sesolutions.ui.customviews.CustomSwipableViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/rlCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_black">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCaption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="70dp"
+            android:layout_marginRight="70dp"
+            android:background="@null"
+            android:hint="@string/caption"
+            android:imeOptions="actionDone"
+            android:maxLines="6"
+            android:padding="@dimen/margin_half"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_40"
+            android:textSize="@dimen/body_2" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvImageAttach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCaption"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:padding="4sp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_comment_attach_image"
+            tools:visibility="visible" />
+    </RelativeLayout>
+
+    <com.sesolutions.ui.customviews.fab.FloatingActionButton
+        android:id="@+id/fabSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rlCaption"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginBottom="-28dp"
+        app:fabCustomSize="56dp"
+        app:fabIcon="@drawable/ses_send"
+        app:fabIconColor="@color/white"
+        app:fabType="circle" />
+
+</RelativeLayout>

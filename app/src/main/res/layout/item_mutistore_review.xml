@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="@dimen/margin_full"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_half"
+            android:text="Must by this screen bcause good to s..."
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:textSize="17sp"
+            android:textColor="@color/black">
+        </TextView>
+        <RatingBar
+                android:id="@+id/ratingBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_gravity="center_vertical"
+                android:stepSize="5"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginRight="5dp"
+                style="@style/ReviewRatingBar2"
+                android:progressTint="@color/contest_type"
+                android:rating="2"
+                />
+        <RelativeLayout
+            android:id="@+id/userrl"
+            android:layout_below="@+id/ratingBar2"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileuser"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/dummy_profile"
+                android:layout_marginLeft="@dimen/margin_half"
+                ></de.hdodenhof.circleimageview.CircleImageView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="vertical"
+                android:layout_toRightOf="@+id/profileuser"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="For SONY Bravia X7002G ULTRA HD"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="By Sandra Kingsley about March 10, 2022"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    ></TextView>
+
+            </LinearLayout>
+         </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_below="@+id/userrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pros:-"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/titledesc2"
+            android:layout_below="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This image is very slim as compared to the other tv."
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/textlight"
+            ></TextView>
+
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_below="@+id/titledesc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cons:-"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/titledesc3"
+            android:layout_below="@+id/title3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No Cons"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/textlight"
+            ></TextView>
+
+
+        <TextView
+            android:id="@+id/title4"
+            android:layout_below="@+id/titledesc3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:-"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/titledesc4"
+            android:layout_below="@+id/title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titledesc4"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/textlight"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/title5"
+            android:layout_below="@+id/titledesc3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description:-"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/titledesc5"
+            android:layout_below="@+id/title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_desc5"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/textlight"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/title6"
+            android:layout_below="@+id/titledesc5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recommend Listing:-"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/black"
+            ></TextView>
+
+        <TextView
+            android:id="@+id/titledesc6"
+            android:layout_below="@+id/title6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good to Please Buy This Product Good."
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="@color/textlight"
+            ></TextView>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_below="@+id/title6"
+            android:layout_marginLeft="2sp"
+            android:layout_marginTop="@dimen/margin_behalf"
+            android:layout_toRightOf="@+id/titledesc6"
+            android:src="@drawable/check_mark"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/continueriding"
+            android:layout_below="@+id/titledesc6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue Reading>>"
+            android:textSize="12sp"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:textColor="#084B96"
+            ></TextView>
+
+        <LinearLayout
+            android:id="@+id/llbottomid"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/continueriding"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_height="40dp">
+          <RelativeLayout
+          android:layout_width="0dp"
+          android:layout_weight="1"
+              android:gravity="center"
+
+          android:layout_height="match_parent"
+          android:background="@drawable/button_tabs_multistore"
+          android:layout_marginLeft="@dimen/margin_full"
+              android:layout_marginRight="@dimen/margin_full"
+              >
+              <ImageView
+                  android:id="@+id/favicon"
+                  android:layout_width="20sp"
+                  android:layout_centerVertical="true"
+                  android:layout_height="20sp"
+                  android:src="@drawable/favorite"
+                  app:tint="@color/white"></ImageView>
+
+              <TextView
+                  android:layout_toRightOf="@+id/favicon"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_marginLeft="@dimen/margin_quarter"
+                  android:text="Favorite"
+                  android:textColor="@color/white"
+                  android:textSize="15sp"
+                  ></TextView>
+
+
+          </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_multistore_transprent"
+                >
+
+                <ImageView
+                    android:id="@+id/likeicond"
+                    android:layout_width="20sp"
+                    android:layout_centerVertical="true"
+                    android:layout_height="20sp"
+                    android:src="@drawable/like"
+                    app:tint="@color/buttondddd"></ImageView>
+
+                <TextView
+                    android:layout_toRightOf="@+id/likeicond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:text="Like"
+                    android:textColor="@color/buttondddd"
+                    android:textSize="15sp"
+                    ></TextView>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_super"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full">
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppThemeMatrial">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:inputType="textAutoComplete|textAutoCorrect"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/margin_full"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sub_title" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.sesolutions.utils.FlowLayout
+                android:id="@+id/flowlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginTop="10dp" />
+
+            <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_full"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/v2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl1"
+            android:layout_marginTop="@dimen/margin_full"
+            android:theme="@style/AppThemeMatrial">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/points"
+                android:inputType="number"
+                android:maxLines="1"
+                android:paddingStart="@dimen/margin_full"
+                android:paddingLeft="@dimen/margin_full"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/v3"
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v2"
+            android:layout_marginTop="@dimen/margin_full"
+            android:theme="@style/AppThemeMatrial">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etBody"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="@string/message_optional"
+                android:paddingLeft="@dimen/margin_full"
+                android:paddingTop="@dimen/margin_medium"
+                android:textColor="@color/black_87"
+                android:textColorHint="@color/black_54"
+                android:textSize="@dimen/sub_title" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTag"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_below="@+id/rl1"
+            android:visibility="gone"
+            app:popupTheme="@style/ToolbarTheme" />
+
+        <Button
+            android:id="@+id/bt_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v3"
+            android:layout_marginTop="@dimen/margin_full"
+            android:background="@drawable/rounded_filled_primary"
+            android:text="Send Point"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+</LinearLayout>

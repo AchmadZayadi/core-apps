@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rltile"
+            android:layout_width="60sp"
+            android:layout_height="55sp"
+            app:cardCornerRadius="5dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginLeft="@dimen/margin_medium"
+            >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSongImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dummy_profile"
+
+            android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llTextBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_toStartOf="@+id/ivOption"
+            android:layout_toLeftOf="@+id/ivOption"
+            android:layout_toEndOf="@+id/rltile"
+            android:layout_toRightOf="@+id/rltile"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!--  <android.support.v7.widget.LinearLayoutCompat  xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/llTextBottom"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/margin_half"
+                  android:orientation="vertical">-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSongTitle"
+                style="@style/text_style_1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/sub_heading"
+                android:textStyle="bold"
+                android:text="Vivo C21Y (Cross Black, 6GB RAM + 128GB ROM)" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ivArtist"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/caption" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvArtist"
+                    style="@style/text_style_2"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Mobile"
+                    android:textSize="@dimen/caption" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStats"
+                style="@style/text_style_2"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_color_2"
+                android:textSize="@dimen/caption"
+                tools:text="0 likes, 2 comments, 3 views"/>
+
+
+            <!--   </android.support.v7.widget.LinearLayoutCompat>-->
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            style="@style/image_tint_2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:rotation="90"
+            app:srcCompat="@drawable/vertical_dots"
+            app:tint="@color/text_color_2" />
+
+        <View
+            style="@style/divider"
+            android:layout_below="@+id/rltile"
+            android:layout_marginTop="@dimen/margin_medium" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

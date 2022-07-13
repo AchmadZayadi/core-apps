@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/llMain"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/rounded_shadow_border_white_22">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etComment"
+        style="@style/Edit_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="@string/txt_enter_here"
+        android:textColorHint="@color/white_40"
+        android:minWidth="200dp"
+        android:padding="@dimen/margin_half"
+        android:textColor="@color/white"
+        android:textSize="@dimen/body_2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingEnd="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_medium"
+        android:text="@string/post"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

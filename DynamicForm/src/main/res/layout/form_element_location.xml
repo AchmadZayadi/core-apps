@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMainForm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorFormMasterElementBackground"
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/formElementTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:text=""
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAsteric"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ses_asterisk" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/formElementValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:ellipsize="end"
+            android:text=""
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:paddingBottom="4dp"
+            android:paddingEnd="65dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="36dp"
+            android:paddingStart="6dp"
+            android:paddingTop="12dp"
+            android:textColor="@color/colorFormMasterElementTextValue"
+            android:textSize="@dimen/elementTextValueSize" />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:orientation="horizontal"
+    >
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivDate"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ses_location"
+        app:tint="@color/colorImage" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCancel"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:rotation="945"
+        android:visibility="visible"
+        app:srcCompat="@drawable/add_24dp"
+        app:tint="@color/red" />
+
+</LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1sp"
+        android:background="@color/black"
+        ></View>
+
+
+</LinearLayout>

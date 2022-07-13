@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'signing'
+archivesBaseName = 'android-crop'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion '30.0.0'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+
+        testApplicationId 'com.soundcloud.android.crop.test'
+        testInstrumentationRunner 'android.test.InstrumentationTestRunner'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+
+}
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/fragment_feeling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llStickerAddBottom" />
+
+
+    <View
+        style="@style/divider"
+        android:layout_above="@+id/llStickerAddBottom"
+        android:background="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llStickerAddBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSearchSticker"
+            style="@style/button_image_toolbar"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/ses_places_ic_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvStickerBottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoData2"
+            style="@style/text_style_2"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/body_1"
+            android:visibility="gone" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAddSticker"
+            style="@style/button_image_toolbar"
+            android:background="@color/colorPrimary"
+            app:srcCompat="@drawable/add_create" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

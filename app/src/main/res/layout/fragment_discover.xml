@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rlSearchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search_drawer"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:visibility="visible"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="12dp"
+        tools:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rlCommentEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:theme="@style/AppThemeMatrial"
+            android:layout_toLeftOf="@+id/llOption"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="#c5c5c5"
+            android:layout_marginBottom="4dp"
+            app:strokeWidth="1dp"
+            app:cardElevation="2dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:padding="7dp"
+                android:tint="@color/gray"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etStoreSearch"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/transparent"
+                android:cursorVisible="true"
+                android:gravity="center_vertical"
+                android:hint="Search"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_feed"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/body_1" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlSearchFilter"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginBottom="@dimen/margin_half">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_half"
+            android:theme="@style/AppThemeMatrial"
+            app:strokeColor="#c5c5c5"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvActivity"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:paddingTop="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="Activity">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:id="@+id/ivActivity"
+                    app:srcCompat="@drawable/circle"
+                    app:tint="@color/colorPrimary"
+                    android:layout_height="20dp">
+
+
+                </androidx.appcompat.widget.AppCompatImageView>
+                </LinearLayout>
+                <View
+                    android:id="@+id/div"
+                    android:layout_width="1dp"
+                    android:layout_gravity="center"
+                    android:layout_height="32dp"
+                    android:background="#c5c5c5" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHashtag"
+                    style="@style/text_style_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingTop="6dp"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:text="Hashtags">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:id="@+id/ivHash"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/circle"
+                    app:tint="@color/colorPrimary"
+                    android:layout_height="20dp">
+
+
+                </androidx.appcompat.widget.AppCompatImageView>
+            </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rltop">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:paddingBottom="@dimen/padding_bottom_dashboard_list" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/layout_no_data" />
+
+    <include layout="@layout/layout_hidden_feed_option" />
+
+</RelativeLayout>

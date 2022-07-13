@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_permission"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_marginHorizontal="10dp"
+    app:cardCornerRadius="10dp"
+
+    android:background="@color/white"
+    app:cardElevation="8sp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_location_gmaps" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_two"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ic_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:gravity="left"
+            android:text="Aplikasi ini membutuhkan izin dari Anda untuk bisa mengakses lokasi dibelakang layar, mohon untuk diberikan izin dalam mengakses lokasi oleh MATANI.id"
+            android:textSize="16sp"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_three"
+            style="@style/text_style_1"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title_two"
+            android:layout_centerHorizontal="true"
+
+            android:layout_marginEnd="@dimen/margin_full"
+            android:text="Akses lokasi kami gunakan untuk bisa melihat lokasi asal dari aktifitas Anda, apakah itu pada saat bertanya, memberikan komentar dan aktifitas-aktifitas lainnya yang dilakukan melalui aplikasi ini."
+            android:textSize="16sp">
+           </androidx.appcompat.widget.AppCompatTextView>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_permission_yes"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/tv_title_three"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/button_signin"
+            android:elevation="2dp"
+            android:text="Tentukan Izin Lokasi"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_permission_no"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:layout_below="@+id/btn_permission_yes"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_signin"
+            android:elevation="2dp"
+            android:text="Tidak, Terima Kasih"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

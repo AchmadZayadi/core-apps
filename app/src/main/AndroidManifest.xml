@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sesolutions">
+
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"-->
+<!--        tools:remove="android:maxSdkVersion"/>-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+<!--    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />-->
+
+    <application
+        android:name=".ui.common.MainApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:requestLegacyExternalStorage="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/SESAppThemeActionBar"
+        android:usesCleartextTraffic="true">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.sesolutions.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!--
+           <activity
+             android:name="com.sesolutions.ui.common.SplashActivity"
+             android:label="@string/app_name"
+             android:screenOrientation="portrait"
+             android:theme="@style/AppThemeNoActionBar">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+          -->
+
+        <service
+            android:name=".firebase.MyFirebaseMessagingService"
+            android:exported="false"
+            android:enabled="true"
+            android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".firebase.MyFirebaseInstanceIdService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".ui.common.SplashAnimatedActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".imageeditengine.ImageEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LibAppTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".imageeditengine.MultipleImageEditActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LibAppTheme"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ui.clickclick.ClickClickPreview"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".ui.clickclick.music.AddMusicActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".ui.clickclick.ActivityClickClick"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+        <activity
+            android:name=".ui.clickclick.ClickClickPreview2"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+        <activity
+            android:name=".ui.clickclick.CreateClickClick"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+        <activity
+            android:name=".ui.clickclick.music.SimillerACtivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+
+        <activity
+            android:name=".ui.storyview.StoryPlayer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".camerahelper.CameraActivity"
+            android:configChanges="orientation|screenLayout|keyboardHidden"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".camerahelper.PicturePreviewActivity"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".ui.common.MaintenanceActivity"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".camerahelper.VideoPreviewActivity"
+            android:theme="@style/AppThemeFullScreen" />
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:configChanges="orientation|screenLayout|keyboardHidden"
+            android:hardwareAccelerated="true"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeFullScreen" />
+
+        <service android:name=".ui.musicplayer.MusicService" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/places_api_key" />
+
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:label=" "
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppThemeNoActionBarWelcome" />
+        <activity
+            android:name=".ui.common.OutsideShareActivity"
+            android:configChanges="keyboardHidden|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.common.CommonActivity"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize"
+            android:excludeFromRecents="true"
+            android:label=" "
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <!-- Allows the link to be opened from a web browser -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Allows the deep link to be used without specifying the app name -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- URI tutsplus://deeplink -->
+
+                <!-- URI http://www.mydeeplink.com -->
+                <data android:scheme="https" android:host="demo4se.socialnetworking.solutions"/>
+
+            </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".ui.dashboard.MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label=" "
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar">
+
+        </activity>
+        <activity
+            android:name=".ui.message.ChatActivity"
+            android:label=" "
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar"
+            android:windowSoftInputMode="adjustResize">
+<!--            <intent-filter android:label="@string/app_name">-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+
+<!--                <data-->
+<!--                    android:scheme="https"-->
+<!--                    android:host="demo4se.socialnetworking.solutions"-->
+<!--                    android:pathPrefix="/messages/view" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".ui.message.MessageActivity"
+            android:label=" "
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity
+            android:name=".ui.video.VideoViewActivity"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize"
+            android:excludeFromRecents="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <activity
+            android:name=".ui.video.VideoViewActivity2"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize"
+            android:excludeFromRecents="true"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <activity
+            android:name=".ui.editor.EditorExampleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Edit Description"
+            android:resizeableActivity="true"
+            android:theme="@style/SESAppThemeActionBar" />
+
+
+        <activity
+            android:name="com.sesolutions.ui.AGvideo.AGVideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".ui.live.LiveVideoActivity"
+            android:autoRemoveFromRecents="true"
+            android:configChanges="keyboardHidden|orientation|smallestScreenSize|screenLayout|screenSize"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+            android:supportsPictureInPicture="true"
+            android:taskAffinity=".live.LiveVideoActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <activity
+            android:name=".ui.live.LiveVideoSetting"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:resizeableActivity="true"
+            android:theme="@style/AppThemeNoActionBar" />
+
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+        <activity
+            android:name=".ui.common.OnBoardingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true"/>
+
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/icon_notification_se" />
+        <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimarywelcome" />
+
+        <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing"
+            android:value="false" />
+
+    </application>
+
+    <queries>
+        <!-- Query Camera Packages -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <!-- Query Open Document -->
+        <intent>
+            <action android:name="android.intent.action.OPEN_DOCUMENT_TREE" />
+        </intent>
+    </queries>
+
+</manifest>

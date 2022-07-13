@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        style="@style/divider"
+        android:layout_marginBottom="@dimen/margin_half" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlQnaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full">
+
+        <include
+            layout="@layout/layout_qna_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half" />
+
+        <View
+            style="@style/divider"
+            android:layout_width="@dimen/divider_length"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llQnaDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_qna_icon"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_toEndOf="@+id/llQnaVote"
+            android:layout_toRightOf="@+id/llQnaVote"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQTitle"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="What Does HTTP stands for?"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStats"
+                style="@style/text_style_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="12 A  23 B  5 C 8 D"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvQDescription"
+                style="@style/text_style_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rlQnaDetail"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum Lorem ipsum is my Lorem Ipsum None of your ipsum "
+                android:textSize="@dimen/body_1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.sesolutions.utils.FlowLayout
+        android:id="@+id/flTags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvQDescription"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full">
+
+        <include layout="@layout/layout_rounded_textview" />
+
+        <include layout="@layout/layout_rounded_textview" />
+
+        <include layout="@layout/layout_rounded_textview" />
+
+    </com.sesolutions.utils.FlowLayout>
+
+
+    <View
+        style="@style/divider"
+        android:layout_marginTop="@dimen/margin_medium" />
+
+    <!-- <include layout="@layout/layout_qna_stats" />-->
+
+
+    <View style="@style/divider" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

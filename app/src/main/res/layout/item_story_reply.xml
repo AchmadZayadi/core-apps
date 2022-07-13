@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llStoryReply"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserImageComment"
+            android:layout_width="@dimen/height_profile_image_feed"
+            android:layout_height="@dimen/height_profile_image_feed"
+            android:layout_below="@+id/cvComment"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_profile"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llCommentEditetext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_toEndOf="@id/ivUserImageComment"
+            android:layout_toRightOf="@id/ivUserImageComment"
+
+            android:gravity="bottom">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReply"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_shadow_border_white_22"
+                android:gravity="center_vertical"
+                android:hint="@string/txt_enter_here"
+                android:maxLines="4"
+                android:minHeight="40dp"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingLeft="@dimen/margin_medium"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStickerIcon"
+                android:layout_width="@dimen/size_icon_edit_comment"
+                android:layout_height="@dimen/size_icon_edit_comment"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_quarter"
+                android:gravity="center"
+                app:srcCompat="@drawable/smiley_line"
+                app:tint="@color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPostIcon"
+                android:layout_width="@dimen/size_icon_edit_comment"
+                android:layout_height="@dimen/size_icon_edit_comment"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:gravity="center"
+                android:tint="@color/white"
+                android:visibility="visible"
+                app:srcCompat="@drawable/ses_send"
+                tools:visibility="visible" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

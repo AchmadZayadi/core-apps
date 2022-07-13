@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:background="#084B96"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                style="@style/button_image_toolbar"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/arrow_left" />
+
+
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/tvForgotPasswordid"
+            android:layout_width="@dimen/_50ssp"
+            android:layout_height="@dimen/_50ssp"
+            android:src="@drawable/contactis_icon"
+            android:layout_marginTop="@dimen/_25ssp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/tvforgottext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvForgotPasswordid"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_20ssp"
+            android:fontFamily="@font/sourcesanspro_semibold"
+            android:text="Memiliki Pertanyaan? Butuh Bantuan? Kirim pesan disini dan akan segera direspon."
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20ssp"/>
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Drop us a message and we'll\nget beck."-->
+<!--            android:textSize="@dimen/_14ssp"-->
+<!--            android:fontFamily="@font/source_sanspro_regular"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginStart="15sp"-->
+<!--            android:layout_marginEnd="15sp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_below="@+id/tvforgottext"-->
+<!--            android:layout_marginTop="@dimen/_3ssp"-->
+<!--            android:textColor="@color/white" />-->
+
+
+
+    </RelativeLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="@dimen/margin_medium"
+            android:hint="Nama"
+            android:layout_marginStart="@dimen/_25ssp"
+            android:layout_marginEnd="@dimen/_25ssp"
+            android:layout_marginTop="@dimen/_15ssp"
+            android:background="@drawable/rounded_holo_border_grey_18"
+            android:singleLine="true" />
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:padding="@dimen/margin_medium"
+            android:hint="Email"
+            android:layout_marginStart="@dimen/_25ssp"
+            android:layout_marginEnd="@dimen/_25ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:background="@drawable/rounded_holo_border_grey_18"
+            android:singleLine="true" />
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top|left|start"
+            android:maxLines="7"
+            android:hint="Pesan"
+            android:layout_marginStart="@dimen/_25ssp"
+            android:layout_marginEnd="@dimen/_25ssp"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:background="@drawable/rounded_holo_border_grey_18"
+            android:padding="@dimen/margin_medium" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_25ssp"
+            android:layout_marginEnd="@dimen/_25ssp"
+            android:gravity="center"
+            android:layout_marginTop="32sp">
+
+            <!-- <android.support.v7.widget.AppCompatButton
+                 android:id="@+id/bSubmit"
+                 style="@style/button_simple"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+
+                 android:text="@string/txt_submit"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/body_1" />
+ -->
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/tvDone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_35ssp"
+                android:gravity="center"
+                android:background="@drawable/button_signin"
+                android:text="@string/txt_submit"
+                android:textColor="@color/white" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

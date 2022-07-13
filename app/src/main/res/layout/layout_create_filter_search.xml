@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlFilter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:gravity="center_vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rlCommentEdittext"
+        style="@style/Card_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search_drawer"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_half"
+        android:layout_weight="1"
+        app:cardCornerRadius="@dimen/margin_quarter"
+        app:cardElevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/image_tint_2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:padding="7dp"
+                android:tint="@color/text_color_2"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llOption"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:animateLayoutChanges="true"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCancel"
+                    style="@style/image_tint_2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="7dp"
+                    android:tint="@color/text_color_2"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/cross" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMic"
+                    style="@style/image_tint_2"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="7dp"
+                    android:tint="@color/text_color_2"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ses_microphone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMusicSearch"
+                style="@style/Edit_text_style"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_marginLeft="32dp"
+                android:layout_toStartOf="@+id/llOption"
+                android:layout_toLeftOf="@+id/llOption"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/text_color_1"
+                android:textColorHint="@color/text_color_2"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/body_1" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSelect"
+        style="@style/Card_style"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_search_drawer"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_marginBottom="@dimen/margin_half">
+
+        <LinearLayout
+            android:id="@+id/llSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDate"
+                style="@style/image_tint_2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:padding="8dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/filter"
+                app:tint="@color/colorImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFilter"
+                style="@style/text_style_2"
+                android:layout_width="120dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:hint="@string/select_here"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:textSize="@dimen/elementTextValueSize"
+                android:visibility="gone" />
+            <!--   </android.support.design.widget.TextInputLayout>-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDown"
+                style="@style/image_tint_2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:padding="8dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ses_down"
+                app:tint="@color/colorImage"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCreate"
+        style="@style/Card_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlFilter"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/margin_half"
+        android:visibility="visible"
+        app:cardCornerRadius="16dp"
+        android:elevation="2sp">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rlCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_search_drawer"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPost"
+                style="@style/image_tint_2"
+                android:layout_width="36dp"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/add_24dp"
+                app:tint="@color/colorImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPost"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_toEndOf="@+id/ivPost"
+                android:layout_toRightOf="@+id/ivPost"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorFormMasterHeaderText"
+                android:textSize="@dimen/elementTextTitleSize"
+                android:visibility="visible"
+                tools:text="Create" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.appcompat.widget.LinearLayoutCompat>

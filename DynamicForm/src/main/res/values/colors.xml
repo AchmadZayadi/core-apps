@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorFormMasterHeaderBackground">#DDDDDD</color>
+    <color name="colorFormMasterHeaderText">#000000</color>
+    <color name="colorFormMasterElementBackground">#FFFFFF</color>
+    <color name="colorFormMasterElementTextTitle">#222222</color>
+    <color name="colorFormMasterElementTextValue">#000000</color>
+    <color name="colorFormMasterDivider">#DDDDDD</color>
+    <color name="tint">#222222</color>
+    <color name="colorImage">#474747</color>
+    <color name="contest_type">#FFC107</color>
+    <color name="red">#D32F2F</color>
+    <color name="black">#000000</color>
+    <color name="Abit_Black">#66000000</color>
+    <color name="colorPrimary">#7B52A5</color>
+    <color name="colorPrimarywelcome">#157EC2</color>
+    <!--<color name="light_primary">#904266B2</color>-->
+    <color name="colorPrimarydark">#095180</color>
+    <color name="colorPrimaryDark">#7B52A5</color>
+    <color name="colorAccent">#7B52A5</color>
+    <color name="gray">#737171</color>
+    <color name="gray2">#D6D3D3</color>
+    <color name="colortext">#484744</color>
+</resources>

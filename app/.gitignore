@@ -1,0 +1,11 @@
+/build
+
+*log
+*iml
+*.idea/
+build/
+.gradle/
+/app/build/outputs/apk/production/debug/app-production-debug.apk
+/app/production/release/app-production-release.aab
+.gradle/6.7.1/executionHistory/executionHistory.bin
+

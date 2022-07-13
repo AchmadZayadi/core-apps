@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset"
+    app:cardCornerRadius="0dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            android:layout_width="36sp"
+            android:layout_height="36sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:paddingBottom="10sp"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:rotation="90"
+            app:srcCompat="@drawable/vertical_dots"
+            app:tint="@color/text_color_2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="76sp"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/llTextBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivUserImage"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_medium">
+
+            <!--  <android.support.v7.widget.LinearLayoutCompat  xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:id="@+id/llTextBottom"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/margin_half"
+                  android:orientation="vertical">-->
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvUserTitle"
+                style="@style/text_style_2"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/caption" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvStats"
+                style="@style/text_style_stats"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/caption" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- <android.support.v7.widget.AppCompatTextView
+             android:id="@+id/tvTitle"
+             style="@style/text_style_1"
+             android:ellipsize="end"
+             android:maxLines="2"
+             android:textSize="@dimen/body_1"
+             android:textStyle="bold" />
+
+         <android.support.v7.widget.AppCompatTextView
+             android:id="@+id/tvUserTitle"
+             style="@style/text_style_2"
+             android:layout_below="@+id/ivUserImage"
+             android:layout_marginLeft="@dimen/margin_quarter"
+             android:layout_marginStart="@dimen/margin_quarter"
+             android:layout_marginTop="@dimen/margin_half"
+             android:ellipsize="end"
+             android:maxLines="1"
+             android:textSize="@dimen/caption" />
+
+         <android.support.v7.widget.AppCompatTextView
+             android:id="@+id/tvStats"
+             style="@style/text_style_stats"
+             android:layout_below="@+id/tvUserTitle"
+             android:layout_marginLeft="@dimen/margin_quarter"
+             android:layout_marginStart="@dimen/margin_quarter"
+             android:layout_marginTop="@dimen/margin_quarter"
+             android:ellipsize="end"
+             android:maxLines="1"
+             android:textSize="@dimen/caption" />-->
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

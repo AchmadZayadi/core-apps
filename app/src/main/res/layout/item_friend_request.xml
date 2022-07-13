@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="84sp"
+            android:layout_height="84sp"
+            android:layout_margin="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            app:civ_border_width="0dp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage1"
+            android:layout_width="84sp"
+            android:layout_height="84sp"
+            android:layout_margin="@dimen/margin_half"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_quarter"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_half">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMutual"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:textSize="@dimen/body_1"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/margin_half"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bAccept"
+                    android:layout_width="@dimen/button_weight_friend"
+                    android:layout_height="@dimen/button_height_friend"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:background="@drawable/rounded_filled"
+                    android:maxLines="1"
+                    android:text="@string/add_friend"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bIgnore"
+                    android:layout_width="@dimen/button_weight_friend"
+                    android:layout_height="@dimen/button_height_friend"
+                    android:background="@drawable/rounded_holo_border_primary"
+                    android:text="@string/ignore"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/body_1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlMain"
+    style="@style/ripple_selector"
+    android:layout_width="@dimen/size_music_child_item_recent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage"
+        android:layout_width="@dimen/size_music_child_item_recent"
+        android:layout_height="@dimen/size_music_child_item_recent"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMediaType"
+        android:layout_width="24sp"
+        android:layout_height="24sp"
+        android:layout_margin="20sp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_play_icon" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvName"
+        style="@style/text_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivImage"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:maxLines="1"
+        android:textSize="@dimen/caption_mini" />
+</RelativeLayout>
+

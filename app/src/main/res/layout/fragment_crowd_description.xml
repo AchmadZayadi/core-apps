@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_full"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCreate"
+            style="@style/Card_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlFilter"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp"
+            tools:visibility="visible">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rlCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPost"
+                    style="@style/image_tint_2"
+                    android:layout_width="36dp"
+                    android:layout_height="@dimen/height_search_drawer"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ab_icon_edit"
+                    app:tint="@color/colorImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPost"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_toEndOf="@+id/ivPost"
+                    android:layout_toRightOf="@+id/ivPost"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorFormMasterHeaderText"
+                    android:textSize="@dimen/elementTextTitleSize"
+                    android:visibility="visible"
+                    tools:text="Create" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <include
+            layout="@layout/progress_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_super" />
+
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cvDetail"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half">
+
+                <!--  <View style="@style/divider" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/description"
+                    android:textStyle="bold" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/nwvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+
+        <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+            android:id="@+id/rvPhotos"
+            android:layout_width="match_parent"
+            android:layout_height="200sp"
+            android:layout_marginTop="@dimen/margin_half"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:msrv_gravity="center"
+            app:msrv_snap_count="1"
+            tools:listitem="@layout/item_image_200"
+            tools:visibility="visible" />
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            style="@style/page_indicator"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-16dp"
+            android:visibility="gone"
+            app:piv_animationType="thinWorm"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_padding="2dp"
+            app:piv_radius="4dp"
+            app:piv_selectedColor="@color/colorPrimary"
+            app:piv_unselectedColor="@color/dividerColor"
+            app:piv_viewPager="@id/rvPhotos"
+            tools:visibility="visible" />
+
+
+        <!--Detail section starts-->
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cvStory"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llStory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half">
+
+                <!--<View style="@style/divider" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/story"
+                    android:textStyle="bold" />
+
+                <com.sesolutions.ui.customviews.NestedWebView
+                    android:id="@+id/nwvStory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!-- <View
+                 style="@style/divider"
+                 android:layout_below="@+id/llAbout" />-->
+        </androidx.cardview.widget.CardView>
+        <!--Detail section ends-->
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

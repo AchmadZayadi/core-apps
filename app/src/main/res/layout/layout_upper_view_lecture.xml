@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llReaction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:orientation="horizontal"
+    android:paddingBottom="8dp"
+    android:visibility="visible">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llLike"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImageLike"
+            android:layout_width="@dimen/size_icon_video_view"
+            android:layout_height="@dimen/size_icon_video_view"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            app:srcCompat="@drawable/like" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/like"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/size_text_video_view" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llFavorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tvImageFavorite"
+            android:layout_width="@dimen/size_icon_video_view"
+            android:layout_height="@dimen/size_icon_video_view"
+            android:layout_gravity="center"
+            android:src="@drawable/favorite" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/favorite"
+            android:textColor="@color/text_color_1"
+            android:textSize="@dimen/size_text_video_view" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tvImageComment"
+            android:layout_width="@dimen/size_icon_video_view"
+            android:layout_height="@dimen/size_icon_video_view"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:src="@drawable/comment" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvComment"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/comment"
+            android:textSize="@dimen/size_text_video_view" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llLater"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tvImageLater"
+            android:layout_width="@dimen/size_icon_video_view"
+            android:layout_height="@dimen/size_icon_video_view"
+            android:layout_gravity="center"
+            android:tint="@color/text_color_2"
+            app:srcCompat="@drawable/watch_later" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLater"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/watch_later"
+            android:textSize="@dimen/size_text_video_view" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llAddTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tvImageAddTo"
+            android:layout_width="@dimen/size_icon_video_view"
+            android:layout_height="@dimen/size_icon_video_view"
+            android:layout_gravity="center"
+            android:tint="@color/text_color_2"
+            app:srcCompat="@drawable/add_to" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddTo"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/add_to"
+            android:textSize="@dimen/size_text_video_view" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

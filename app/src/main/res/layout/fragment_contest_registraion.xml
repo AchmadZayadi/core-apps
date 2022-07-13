@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="#b5b5b5"
+        android:layoutAnimation="@anim/anim_fall_down"
+        android:orientation="vertical"
+        android:paddingBottom="2dp" />
+
+
+    <!--<android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/llButton"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="right|end"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_half">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/bNext"
+            style="@style/button_simple"
+            android:layout_height="36dp"
+            android:text="Next" />
+
+    </android.support.v7.widget.LinearLayoutCompat>-->
+
+</RelativeLayout>

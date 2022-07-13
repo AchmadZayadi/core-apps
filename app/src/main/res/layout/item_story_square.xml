@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:id="@+id/rlMain"
+        android:layout_width="120sp"
+        android:layout_height="170sp"
+        android:orientation="vertical">
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ses_shadow_upward" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivStoryImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/dummy_profile" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfileAdd"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_margin="@dimen/margin_half"
+            android:background="@drawable/circle_white_background"
+            android:elevation="@dimen/margin_quarter"
+            android:padding="7dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/add_24dp"
+            android:tint="@color/colorPrimary"
+            tools:visibility="visible" />
+
+        <include
+            android:id="@+id/cvLive"
+            layout="@layout/item_story_live"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/llAnimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginStart="-10dp"
+            tools:visibility="visible">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/liveAnimation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="false"
+                app:lottie_fileName="live_animation.json"
+                app:lottie_loop="true" />
+        </LinearLayout>
+
+
+        <com.sesolutions.ui.storyview.StoryView
+            android:id="@+id/storyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:pendingIndicatorColor="@color/white"
+            app:spaceBetweenImageAndIndicator=".8dp"
+            app:storyImageRadius="4dp"
+            android:visibility="gone"
+            app:storyItemIndicatorWidth=".8dp"
+            app:visitedIndicatorColor="@color/grey_feed" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/tvStats"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_quarter"
+            android:paddingRight="@dimen/margin_quarter"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption"
+            tools:text="use name " />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStats"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_quarter"
+            android:paddingRight="@dimen/margin_quarter"
+            android:textColor="@color/grey_light"
+            android:textSize="@dimen/caption_mini"
+            tools:text="view 1 likes 4" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

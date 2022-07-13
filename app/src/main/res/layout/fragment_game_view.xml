@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+
+    <include layout="@layout/layout_toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/realtiveid1"
+        android:layout_width="match_parent"
+        android:layout_height="280sp"
+        android:layout_below="@+id/appBar"
+        android:background="@color/white"
+        >
+
+        <ImageView
+            android:id="@+id/coverid"
+            android:layout_width="match_parent"
+            android:layout_height="280sp"
+            android:src="@drawable/placeholder_square"
+            android:scaleType="fitXY"
+            android:alpha="0.50"
+            ></ImageView>
+
+
+        <ImageView
+            android:id="@+id/gameicon"
+            android:layout_width="140sp"
+            android:layout_height="140sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            ></ImageView>
+
+        <Button
+            android:id="@+id/playBtn"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:background="@drawable/button_tabs_games"
+            android:text="PLAY"
+            android:textColor="@color/white"
+            android:layout_below="@+id/gameicon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            ></Button>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/descriptionid"
+        android:padding="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:fontFamily="@font/helvetica_medium"
+        android:layout_below="@+id/realtiveid1"
+        android:textColor="@color/black"
+        ></TextView>
+
+
+
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+    <include layout="@layout/layout_like_favorite_comment" />
+    </RelativeLayout>
+</RelativeLayout>

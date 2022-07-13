@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttachImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttachEdit"
+            android:layout_width="26sp"
+            android:layout_height="26sp"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_toStartOf="@+id/ivAttachCancel"
+            android:layout_toLeftOf="@+id/ivAttachCancel"
+            android:background="@drawable/circle_cross"
+            android:padding="6sp"
+            app:srcCompat="@drawable/ab_icon_edit"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttachCancel"
+            android:layout_width="26sp"
+            android:layout_height="26sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:background="@drawable/circle_cross"
+            android:padding="6sp"
+            android:rotation="45"
+            app:srcCompat="@drawable/add_create"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

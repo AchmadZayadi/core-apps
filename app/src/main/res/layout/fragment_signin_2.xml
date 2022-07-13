@@ -1,0 +1,501 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_black_dark" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_full">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_gravity="center_horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Go"
+                    android:textSize="28sp"
+                    android:textColor="#3ab6ce"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/welcome_in_app"
+                    android:textColor="#C02379"
+                    android:textSize="28sp" />
+            </LinearLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llSocial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:layout_marginBottom="@dimen/margin_full"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/be_in_sync_via"
+                            android:textColor="@color/dividerColor"
+                            android:textSize="@dimen/caption" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llSocial1"
+                            style="@style/ripple_selector"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/button_height_medium"
+                            android:layout_marginTop="@dimen/margin_full"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_border_white"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.facebook.login.widget.LoginButton
+                                android:id="@+id/login_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center_horizontal"
+                                android:visibility="gone" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivSocial1"
+                                android:layout_width="@dimen/width_icon_facebook"
+                                android:layout_height="@dimen/height_icon_facebook"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/margin_full"
+                                android:layout_marginLeft="@dimen/margin_full"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/ic_facebook" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSocial1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:gravity="center"
+                                android:text="@string/facebook"
+                                android:textAllCaps="false"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:visibility="visible" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_quarter">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llSocial2"
+                                style="@style/ripple_selector"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/button_height_medium"
+                                android:layout_marginEnd="2dp"
+                                android:layout_marginRight="2dp"
+
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_border_white"
+                                android:gravity="center"
+
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivSocial2"
+                                    android:layout_width="@dimen/width_icon_facebook"
+                                    android:layout_height="@dimen/height_icon_facebook"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/margin_full"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/ic_gmail" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/tvSocial2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:gravity="center"
+                                    android:text="@string/GMAIL"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:visibility="visible" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llSocial3"
+                                style="@style/ripple_selector"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/button_height_medium"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginLeft="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_border_white"
+                                android:gravity="center"
+
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivSocial3"
+                                    android:layout_width="@dimen/width_icon_facebook"
+                                    android:layout_height="@dimen/height_icon_facebook"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/margin_full"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/ic_twitter" />
+
+                                <TextView
+                                    android:id="@+id/tvSocial3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="8dp"
+                                    android:gravity="center"
+                                    android:text="@string/twitter"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:visibility="visible" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llMore"
+                                style="@style/ripple_selector"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/button_height_medium"
+                                android:layout_marginStart="@dimen/margin_quarter"
+                                android:layout_marginLeft="@dimen/margin_quarter"
+                                android:layout_marginTop="@dimen/margin_quarter"
+                                android:background="@drawable/bg_border_white"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivMore"
+                                    android:layout_width="@dimen/width_icon_facebook"
+                                    android:layout_height="@dimen/height_icon_facebook"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/margin_full"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/signin_more" />
+
+                                <TextView
+                                    android:id="@+id/tvMore"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_marginRight="@dimen/margin_full"
+                                    android:gravity="center"
+                                    android:text="@string/TEXT_MORE"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="13sp"
+                                    android:visibility="visible" />
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_full">
+
+                        <View
+                            style="@style/divider"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tv_center_label"
+                            android:layout_toLeftOf="@id/tv_center_label" />
+
+                        <TextView
+                            android:id="@+id/tv_center_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:text="@string/or_login_via"
+                            android:textColor="@color/dividerColor"
+                            android:textSize="12sp" />
+
+                        <View
+                            style="@style/divider"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/tv_center_label"
+                            android:layout_toRightOf="@id/tv_center_label" />
+
+                    </RelativeLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/ti1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_super"
+                        android:theme="@style/TextInputLayoutTheme">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etEmail"
+                            style="@style/Edit_text_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="@string/email_id"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/margin_quarter"
+                            android:paddingBottom="@dimen/margin_quarter"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/dividerColor"
+                            android:textSize="@dimen/sub_heading" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <View
+                        style="@style/divider"
+                        android:layout_width="match_parent" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_super">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:theme="@style/TextInputLayoutTheme">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/etPassword"
+                                style="@style/Edit_text_style"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="@string/password"
+                                android:inputType="textPassword"
+                                android:maxLines="1"
+                                android:paddingTop="@dimen/margin_quarter"
+                                android:paddingRight="@dimen/margin_super"
+                                android:paddingBottom="@dimen/margin_quarter"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/dividerColor"
+                                android:textSize="@dimen/sub_heading" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivShow"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/margin_half"
+                            android:tint="@color/text_color_light"
+                            app:srcCompat="@drawable/password_hide" />
+                    </RelativeLayout>
+
+                    <View
+                        style="@style/divider"
+                        android:layout_width="match_parent" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_quarter">
+
+                        <androidx.appcompat.widget.AppCompatCheckBox
+                            android:id="@+id/cbRemember"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:buttonTint="@color/white"
+                            android:checked="true"
+                            android:text="@string/remember_me"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvForgotPassword"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/forgot_password"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/bSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/bg_border_curve_white"
+                        android:text="@string/txt_sign_in"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_full"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:text="@string/txt_dont_have_account"
+                            android:textColor="@color/dividerColor"
+                            android:textSize="@dimen/caption" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/tvSignUp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/button_height_small"
+                            android:background="@drawable/bg_border_white"
+                            android:text="@string/txt_sign_up"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height_small"
+
+                        android:gravity="center_horizontal|bottom">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTerms"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toStartOf="@+id/tvPrivacy"
+                            android:layout_toLeftOf="@+id/tvPrivacy"
+                            android:paddingRight="3sp"
+                            android:text="@string/txt_terms"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_1" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPrivacy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_toStartOf="@+id/id1"
+                            android:layout_toLeftOf="@+id/id1"
+                            android:text="@string/txt_privacy2"
+
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_1" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/id1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingStart="@dimen/margin_text_bottom_welcome"
+                            android:paddingLeft="@dimen/margin_text_bottom_welcome"
+                            android:paddingEnd="@dimen/margin_text_bottom_welcome"
+                            android:paddingRight="@dimen/margin_text_bottom_welcome"
+                            android:text="|"
+                            android:textColor="@color/white"
+                            android:visibility="visible" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSkip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_toEndOf="@+id/id1"
+                            android:layout_toRightOf="@+id/id1"
+                            android:text="@string/txt_skip_login"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/body_1"
+                            android:visibility="visible" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvkeyhash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_toEndOf="@+id/id1"
+                            android:layout_toRightOf="@+id/id1"
+                            android:text="key hash"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/body_1"
+                            android:visibility="gone" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+
+                <include
+                    layout="@layout/layout_demo_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- android:layout_marginTop="170sp"-->
+
+</RelativeLayout>
+

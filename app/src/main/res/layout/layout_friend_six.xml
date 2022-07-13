@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llFriend"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <View style="@style/divider" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/margin_half"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingBottom="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:src="@drawable/tab_profile_friends" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleFriend"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:text="@string/friends" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vDot"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:tint="@color/text_color_2"
+            app:srcCompat="@drawable/dot_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTotalFriend"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:textSize="@dimen/body_1" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFindFriends"
+            style="@style/text_style_primary"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="end"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/find_friends"
+            android:textStyle="bold" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llRow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend1"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend2"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend3"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        tools:visibility="visible"
+        android:visibility="gone">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend4"
+                tools:src="@tools:sample/cities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend4"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend5"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llFriend6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_friend"
+            android:layout_marginLeft="@dimen/margin_friend"
+            android:layout_marginEnd="@dimen/margin_friend"
+            android:layout_marginRight="@dimen/margin_friend"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivFriend6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFriend6"
+                style="@style/textview_composer_friends" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View style="@style/divider" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

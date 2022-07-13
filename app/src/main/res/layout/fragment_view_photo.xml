@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="false"
+            android:theme="@style/ToolbarTheme"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCoverPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="200sp"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCoverPhoto1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200sp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llCoverPhoto2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200sp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCoverPhoto2"
+                        android:layout_width="match_parent"
+                        android:layout_height="200sp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCoverPhoto3"
+                        android:layout_width="match_parent"
+                        android:layout_height="200sp"
+                        android:layout_weight="1"
+                        android:scaleType="centerCrop" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_toolbar"
+                    android:background="?attr/colorPrimary"
+                    android:contentInsetEnd="0dp"
+                    android:contentInsetLeft="0dp"
+                    android:contentInsetRight="0dp"
+                    android:contentInsetStart="0dp"
+                    app:contentInsetEnd="0dp"
+                    app:contentInsetLeft="0dp"
+                    app:contentInsetRight="0dp"
+                    app:contentInsetStart="0dp"
+                    app:popupTheme="@style/ToolbarTheme">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivBack"
+                            style="@style/button_image_toolbar"
+                            app:srcCompat="@drawable/arrow_left" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTitle"
+                            style="@style/text_style_toolbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:paddingLeft="96dp"
+                            android:paddingRight="96dp"
+                            android:text="@string/txt_sign_up"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/title" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivShare"
+                                android:layout_width="@dimen/button_height"
+                                android:layout_height="match_parent"
+                                android:padding="@dimen/margin_half"
+                                app:srcCompat="@drawable/share_music" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivOption"
+                                style="@style/button_image_toolbar"
+                                app:srcCompat="@drawable/vertical_dots" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llReaction"
+            android:layout_below="@+id/appBar"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/font_awesome_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCamera"
+                    android:layout_width="36sp"
+                    android:layout_height="36sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="164sp"
+                    android:padding="10sp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ses_camera" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:paddingBottom="@dimen/margin_quarter">
+
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivUserImage"
+                            android:layout_width="56sp"
+                            android:layout_height="56sp"
+
+                            android:paddingBottom="@dimen/margin_half"
+                            android:paddingLeft="@dimen/margin_half"
+                            android:paddingStart="@dimen/margin_half" />
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llAlbumDetail"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ivUserImage"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/margin_full">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAlbumTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/black_87"
+                                android:textSize="@dimen/sub_title"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvUserTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/black_87"
+                                android:textSize="@dimen/sub_heading" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAlbumDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/black_87"
+                                android:textSize="@dimen/body_1" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvAlbumDetail"
+                                style="@style/text_style_stats"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/caption" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <include
+                    layout="@layout/fragment_music_common"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvDetail"
+                    android:layout_marginTop="@dimen/margin_quarter" />
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <include layout="@layout/layout_like_favorite_comment" />
+</RelativeLayout>

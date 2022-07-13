@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_medium">
+        <RelativeLayout
+            android:id="@+id/rl11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardviewid"
+                android:layout_width="85sp"
+                android:layout_height="85sp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
+                app:cardCornerRadius="6dp"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSongImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/llTextBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_full"
+
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_toEndOf="@+id/cardviewid"
+                android:layout_toLeftOf="@+id/ivOption"
+                android:layout_toRightOf="@+id/cardviewid"
+                android:layout_toStartOf="@+id/ivOption"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSongTitle"
+                    style="@style/text_style_1"
+                    android:ellipsize="end"
+                    android:text=""
+                    android:maxLines="2" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ivArtist"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvArtist"
+                        style="@style/text_style_2"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llCreatepage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ivCreatepage"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCreatepage"
+                        style="@style/text_style_2"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption"
+                        android:text="Des 12, 2020" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSongDetail"
+                    style="@style/text_style_stats"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:textSize="@dimen/caption" />
+                <LinearLayout
+                    android:id="@+id/rlleaner"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <RelativeLayout
+                        android:id="@+id/editrlid"
+                        android:layout_width="@dimen/_65ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:gravity="center"
+                        android:background="@drawable/rounded_holo_border_blue"
+                        >
+                        <ImageView
+                            android:id="@+id/imagedit"
+                            android:layout_width="@dimen/_15ssp"
+                            android:layout_height="@dimen/_15ssp"
+                            android:src="@drawable/option_edit"
+                            android:layout_centerVertical="true"
+                            android:padding="2dp"
+                            android:layout_marginLeft="4dp"
+                            app:tint="#376CA9"></ImageView>
+                        <TextView
+                            android:layout_toRightOf="@+id/imagedit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="Edit"
+                            android:textColor="#376CA9"
+                            ></TextView>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/deleterlid"
+                        android:layout_width="@dimen/_65ssp"
+                        android:layout_height="@dimen/_20ssp"
+                        android:background="@drawable/rounded_holo_border_blue"
+                        android:layout_marginLeft="@dimen/_20ssp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imagdelete"
+                            android:layout_width="@dimen/_15ssp"
+                            android:layout_height="@dimen/_15ssp"
+                            android:src="@drawable/setting_delete"
+                            android:layout_centerVertical="true"
+                            android:padding="2dp"
+                            android:layout_marginLeft="4dp"
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_toRightOf="@+id/imagdelete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:textSize="15dp"
+                            android:layout_marginLeft="4dp"
+                            android:text="Delete"
+                            android:textColor="#376CA9"
+
+                            ></TextView>
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOption"
+                android:layout_width="36sp"
+                android:layout_height="36sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:paddingBottom="10sp"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp"
+                android:rotation="90"
+                app:srcCompat="@drawable/vertical_dots"
+                app:tint="@color/text_color_2" />
+        </RelativeLayout>
+        <View
+            style="@style/divider"
+            android:layout_below="@+id/rl11"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

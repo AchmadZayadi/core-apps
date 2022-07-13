@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/layout_toolbar_customize"></include>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/mScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+                    <RelativeLayout
+                        android:id="@+id/appbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:id="@+id/llCoverPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:animateLayoutChanges="true"
+                            app:layout_collapseMode="parallax"
+                            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvMain"
+                                android:layout_width="105dp"
+                                android:layout_height="105dp"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginStart="15dp"
+                                app:cardCornerRadius="16sp"
+                                >
+
+                                <com.sesolutions.ui.customviews.SquareImageView
+                                    android:id="@+id/ivAlbumImage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    app:civ_border_overlay="false"
+                                    app:civ_border_width="10dp"
+                                    app:civ_border_color="@color/black"
+                                    tools:src="@tools:sample/avatars" />
+
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTitledew"
+                                android:layout_toRightOf="@+id/cvMain"
+                                android:textStyle="bold"
+                                android:paddingTop="0dp"
+                                android:textSize="18sp"
+                                android:text="Original sound-John De"
+                                android:layout_marginTop="25dp"
+                                android:gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/kk"
+                                android:layout_below="@+id/tvTitledew"
+                                android:layout_toRightOf="@+id/cvMain"
+                                android:textStyle="bold"
+                                android:paddingTop="0dp"
+                                android:textSize="16sp"
+                                android:text=""
+                                android:layout_marginTop="3dp"
+                                android:gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:textColor="@color/black_54"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/videocount"
+                                android:layout_below="@+id/kk"
+                                android:layout_toRightOf="@+id/cvMain"
+                                android:textStyle="bold"
+                                android:paddingTop="0dp"
+                                android:textSize="15sp"
+                                android:text=""
+                                android:layout_marginTop="1dp"
+                                android:gravity="center"
+                                android:layout_marginStart="20dp"
+                                android:textColor="@color/black_54"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/savevideorl"
+                android:layout_below="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="@dimen/_23ssp"
+                android:background="@drawable/rounded_holo_border_graynew"
+                                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Save Audio"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/helvetica_medium"
+                    android:textSize="12sp"
+                    ></TextView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mainrlid"
+                android:layout_below="@+id/savevideorl"
+                android:layout_width="match_parent"
+                android:layout_height="40sp">
+
+                                <ImageView
+                                    android:id="@+id/playicon"
+                                    android:layout_width="32sp"
+                                    android:layout_height="32sp"
+                                    android:src="@drawable/ic_play_arrow_white"
+                                    android:layout_gravity="center"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/margin_half"
+                                    android:tint="@color/black"
+                                    app:tint="@color/black"
+                                    tools:ignore="UseAppTint"></ImageView>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_toEndOf="@+id/playicon"
+                    android:layout_toStartOf="@+id/musictimeid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false"
+                    android:layout_marginRight="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:max="100"
+                    android:minHeight="50dp"
+                    android:minWidth="200dp"
+                    android:progress="1" />
+
+                <TextView
+                    android:id="@+id/musictimeid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10sp"
+                    android:text="00:00"
+                    android:fontFamily="@font/helvetica_medium"
+                    android:textColor="@color/black_87"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    ></TextView>
+
+
+           <!--     <com.sesolutions.ui.storyview.StoryPlayerProgressView
+                    android:id="@+id/progressBarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginRight="@dimen/_10ssp"
+                    android:layout_marginLeft="4sp"
+                    app:gapBetweenProgressBar="2dp"
+                    app:progressBarHeight=".8dp"
+                    app:progressBarPrimaryColor="#3e000000"
+                    app:progressBarSecondaryColor="#000000" />-->
+
+            </RelativeLayout>
+
+                    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/font_awesome_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/mainrlid"
+                        android:animateLayoutChanges="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                          <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerview"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/llTop"
+                                android:layout_marginTop="@dimen/margin_full"
+                                android:clipToPadding="false"
+                                android:padding="@dimen/item_offset" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvNoData"
+                                style="@style/text_style_2"
+                                android:layout_width="wrap_content"
+                                android:layout_below="@+id/llTop"
+                                android:layout_centerHorizontal="true"
+                                android:padding="@dimen/margin_full"
+                                android:paddingTop="@dimen/margin_half"
+                                android:layout_marginTop="@dimen/_70ssp"
+                                android:text="No Data found"
+                                android:textSize="@dimen/sub_heading" />
+
+                            <include layout="@layout/progress_view" />
+
+                            <ProgressBar
+                                android:id="@+id/pb"
+                                android:layout_width="@dimen/button_height_small"
+                                android:layout_height="@dimen/button_height_small"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:progressTint="@color/color_facebook"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/usethissoundid"
+                        android:layout_width="220dp"
+                        android:layout_height="48dp"
+                        android:gravity="center_horizontal"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/button_signin_music"
+                        android:layout_marginBottom="@dimen/_28ssp"
+                        >
+                        <ImageView
+                            android:id="@+id/imageviewbtn"
+                            android:layout_width="28sp"
+                            android:layout_height="28sp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_videowhite"
+                            ></ImageView>
+                        <TextView
+                            android:id="@+id/textviewid"
+                            android:layout_toRightOf="@+id/imageviewbtn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Use this sound"
+                            android:layout_marginStart="@dimen/_4ssp"
+                            android:textSize="18sp"
+                            android:textColor="@color/white"
+                            ></TextView>
+
+
+
+                    </RelativeLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/containernew"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="0dp" />
+                </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

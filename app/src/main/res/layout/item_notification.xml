@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/divider_length"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_half"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingBottom="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage1"
+            android:layout_width="@dimen/height_image_item_notification"
+            android:layout_height="@dimen/height_image_item_notification"
+            android:scaleType="centerCrop" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cradrviewid"
+            android:layout_width="@dimen/height_image_item_notification"
+            android:layout_height="@dimen/height_image_item_notification"
+            app:cardCornerRadius="8sp"
+            android:elevation="4sp"
+            >
+            <com.droidninja.imageeditengine.views.SquareImageView
+                android:id="@+id/ivImage"
+                android:layout_width="@dimen/height_image_item_notification"
+                android:src="@drawable/dummy_profile"
+                android:layout_height="@dimen/height_image_item_notification"
+                android:scaleType="centerCrop"
+                app:civ_border_width="0dp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvIcon"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:layout_marginStart="32sp"
+            android:layout_marginLeft="32sp"
+            android:layout_marginTop="32sp"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="4dp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvImage"
+                style="@style/text_style_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/body_1" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_toEndOf="@+id/cradrviewid"
+            android:layout_toRightOf="@+id/cradrviewid"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_1"
+                android:textSize="@dimen/body_1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMsg"
+                style="@style/text_style_1"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/body_1"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:layout_gravity="center"
+
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

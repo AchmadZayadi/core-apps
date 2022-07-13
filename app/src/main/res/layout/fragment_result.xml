@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llReaction"
+        android:layout_below="@+id/appBar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:animateLayoutChanges="true"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_full"
+                    android:visibility="visible">
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cardRl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/resultCard"
+                        android:layout_width="325dp"
+                        android:layout_height="325dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="50dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2sp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTitle2"
+                                style="@style/text_style_1"
+                                android:maxLines="2"
+                                android:layout_marginStart="@dimen/margin_full"
+                                android:layout_marginLeft="@dimen/margin_full"
+                                android:layout_marginRight="@dimen/margin_full"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_full"
+                                tools:text="Answered 0 out of 4 correctly">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTotal"
+                                style="@style/text_style_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvTitle2"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_full"
+                                tools:text="Total Questions: 5">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivResult"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_below="@+id/tvTotal"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_full"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ic_unchecked"
+                                app:tint="@color/red"
+                                tools:src="@drawable/ic_unchecked"
+                                tools:tint="@color/red"
+                                tools:visibility="visible">
+
+                            </androidx.appcompat.widget.AppCompatImageView>
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvResult"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/ivResult"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="@dimen/margin_full"
+                                android:textColor="@color/Red"
+                                android:textSize="30dp"
+                                android:textStyle="bold"
+                                tools:text="Failed!">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvResult2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvResult"
+                                android:layout_margin="8dp"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                android:paddingLeft="@dimen/margin_full"
+                                android:paddingRight="@dimen/margin_full"
+                                tools:text="Sorry! You don't have enough score to qualify for this test :(">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvResult3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvResult2"
+                                android:layout_centerHorizontal="true"
+                                android:textColor="@color/black"
+                                android:textSize="24dp"
+                                android:textStyle="bold"
+                                tools:text="You Scored: 5">
+
+                            </androidx.appcompat.widget.AppCompatTextView>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/cardRl"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/margin_half"
+                    tools:listitem="@layout/item_answer" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

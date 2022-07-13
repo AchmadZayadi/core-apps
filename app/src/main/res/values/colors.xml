@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7B52A5</color>
+    <color name="colorPrimarywelcome">#157EC2</color>
+    <!--<color name="light_primary">#904266B2</color>-->
+    <color name="colorPrimarydark">#095180</color>
+    <color name="colorPrimaryDark">#7B52A5</color>
+    <color name="colorAccent">#7B52A5</color>
+    <color name="dividerColor">#BCC2C1</color>
+    <color name="backgroundColor">#EBF0F3</color>
+    <color name="foregroundColor">#ffffff</color>
+    <color name="textColorWhite">#FFFFFF</color>
+    <color name="bluedarkview">#169CD8</color>
+    <color name="cardview_shadow_start_color2">#90000000</color>
+    <color name="cardview_shadow_start_color3">#5C000000</color>
+    <color name="cardview_shadow_start_color4">#FFFFFF</color>
+    <color name="colorBlack80">#CC000000</color>
+    <color name="bulecolor">#004593</color>
+    <color name="colorUserTagBg">#4A90E2</color>
+
+    <color name="grey">#B96B6B6B</color>
+    <color name="buttondddd">#084B96</color>
+    <color name="color_dropdown_text">#838383</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="color_facebook">#3b5998</color>
+    <color name="white">#ffffff</color>
+    <color name="bluedarkviewq">#157EC2</color>
+    <color name="alpha_black">#ee000000</color>
+    <color name="alpha_black_light">#55000000</color>
+    <color name="black">#000</color>
+    <color name="black_81">#4b4b4b</color>
+    <color name="black_87">#484744</color>
+    <color name="black_30">#4D484744</color>
+    <color name="black_transprent">#9C101010</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="black_54">#777777</color>
+    <color name="grey_light">#dfdfdf</color>
+    <color name="grey_dark_4">#cfcfcf</color>
+    <color name="black_40">#66333232</color>
+    <color name="white_40">#99ffffff</color>
+    <color name="white_75">#B9FFFFFF</color>
+    <color name="tint">@color/colorPrimary</color>
+    <color name="red">#D32F2F</color>
+    <color name="chart_red">#E72C30</color>
+    <color name="live_red">#DB4F51</color>
+    <color name="live_scrim">#505B5E5B</color>
+    <color name="white_54">#e5e5e5</color>
+    <color name="alpha_grey">#50ababab</color>
+    <color name="alpha_grey_1">#80ababab</color>
+    <color name="grey_feed">#ababab</color>
+    <color name="bg_file_type">#dbdbdb</color>
+    <color name="green">#4CAF50</color>
+    <color name="sky_blue">#03A9F4</color>
+    <color name="follow_blue">#03A9F4</color>
+    <color name="leaf_green">#99dd99</color>
+    <color name="alpha_white">#dd000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_black_dark">#A6111810</color>
+    <color name="transparent_black_light">#50111810</color>
+    <color name="text_color_2">@color/black_54</color>
+    <color name="text_color_1">@color/black_87</color>
+    <color name="boardercolor_job_plugin">#DBDBDB</color>
+    <color name="text_color_5">@color/black_87</color>
+    <color name="text_color_light">@color/white</color>
+    <color name="textlight">#878787</color>
+
+
+    <color name="notificationcolor">@color/black</color>
+
+    <!-- colors for custom tabs-->
+    <color name="colorFabText">#F5F5F5</color>
+    <color name="colorFabIcon">#F5F5F5</color>
+    <color name="colorShadowStart">#5e5e5e</color>
+    <color name="colorShadowEnd">#c7c7c7</color>
+    <color name="contest_type">#FFC107</color>
+    <color name="contest_vote">#388e3c</color>
+    <color name="transparent_black">#a34b4949</color>
+    <color name="transparent_black22">#4D4B4949</color>
+    <color name="story_progress">#95ff00</color>
+
+    <!-- colors for Sloide data time picker -->
+    <item name="sdtp_gray_holo_dark" type="color">#ff464646</item>
+    <item name="sdtp_gray_holo_light" type="color">#ffd0d0d0</item>
+
+    <!-- chart colors   -->
+    <item name="chart_vote" type="color">#dd2ecc71</item>
+    <item name="chart_like" type="color">#ddf1c40f</item>
+    <item name="chart_comment" type="color">#dde74c3c</item>
+    <item name="chart_favourite" type="color">#dd3498db</item>
+    <item name="chart_view" type="color">#ddc51162</item>
+
+
+    <!--STORY COLORS STARTS-->
+    <color name="ss_progress_startColor">#ffffd300</color>
+    <color name="ss_progress_endColor">#ffffcb00</color>
+    <color name="ss_progress_centerColor">#ffffb600</color>
+
+    <color name="ss_secondaryProgress_startColor">#80ffd300</color>
+    <color name="ss_secondaryProgress_endColor">#a0ffcb00</color>
+    <color name="ss_secondaryProgress_centerColor">#80ffb600</color>
+
+    <color name="ss_background_startColor">#ff9d9e9d</color>
+    <color name="ss_background_endColor">#ff747674</color>
+    <color name="ss_background_centerColor">#ff5a5d5a</color>
+    <!--STORY COLORS ENDS-->
+
+    <color name="alpha_signin">#6f7176</color>
+
+    <!-- video work -->
+    <color name="ThemeColor">#ff5c00</color>
+
+</resources>

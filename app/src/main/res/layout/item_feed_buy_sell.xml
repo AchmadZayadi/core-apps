@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/font_awesome_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_feed_upper" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_full">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuySellTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/margin_half"
+                android:text="Text body"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_title"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuySellPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:paddingTop="@dimen/margin_half"
+                android:text="Text body"
+                android:textColor="@color/leaf_green"
+                android:textSize="@dimen/sub_heading" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/body_1"
+                    android:layout_height="@dimen/body_1"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:tint="@color/grey_feed"
+                    app:srcCompat="@drawable/ic_location" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBuySellLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Text body"
+                    android:textColor="@color/black_87"
+                    android:textSize="@dimen/body_1" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuySellDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingTop="@dimen/margin_half"
+                android:text="Text body"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sub_heading" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuySellSoldOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingTop="@dimen/margin_half"
+                android:text="@string/sold_out"
+                android:textColor="@color/red"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:padding="10sp"/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bSold"
+                style="@style/button_simple"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_half"
+                android:text="@string/mark_sold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                android:id="@+id/tvSoldBottomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="@dimen/margin_half"
+                android:text="@string/sold_bottom_text"
+                android:textColor="@color/black_87"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <include layout="@layout/layout_multiple_image_feed" />
+
+<!--        <include layout="@layout/layout_like_share_comment" />-->
+        <include layout="@layout/layout_like_share_comment2" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

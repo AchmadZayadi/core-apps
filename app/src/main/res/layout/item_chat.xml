@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_quarter"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_duper"
+        android:layout_marginRight="@dimen/margin_duper"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImageOther"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_quarter" />
+
+        <me.himanshusoni.chatmessageview.ChatMessageView
+            android:id="@+id/cmOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cmv_arrowGravity="start"
+            app:cmv_arrowPosition="left"
+            app:cmv_backgroundColor="#E6E6E6"
+            app:cmv_backgroundColorPressed="@color/grey_dark_4"
+            app:cmv_cornerRadius="@dimen/margin_quarter"
+            app:cmv_showArrow="true">
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAttachemntOther"
+                        android:layout_width="300sp"
+                        android:layout_height="200sp"
+                        android:paddingBottom="@dimen/margin_half"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <include layout="@layout/layout_item_video_other" />
+
+                    <include layout="@layout/layout_item_link_other" />
+
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/rl2"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMsgOther"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello"
+                        android:textColor="@color/text_color_1"
+                        android:textSize="@dimen/sub_heading" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUserOther"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="Hello"
+                            android:textColor="@color/text_color_2"
+                            android:textSize="@dimen/caption"
+                            android:visibility="gone"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTimeOther"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="Hello"
+                            android:textColor="@color/text_color_2"
+                            android:textSize="@dimen/caption" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+
+        </me.himanshusoni.chatmessageview.ChatMessageView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llMine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_duper"
+        android:layout_marginLeft="@dimen/margin_duper"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <me.himanshusoni.chatmessageview.ChatMessageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cmMine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cmv_arrowGravity="start"
+            app:cmv_arrowMargin="3dp"
+            app:cmv_arrowPosition="right"
+            app:cmv_backgroundColor="@color/grey_dark_4"
+            app:cmv_backgroundColorPressed="#E6E6E6"
+            app:cmv_cornerRadius="3dp"
+            app:cmv_showArrow="true">
+
+            <RelativeLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAttachemntMine"
+                        android:layout_width="300sp"
+                        android:layout_height="200sp"
+                        android:paddingBottom="@dimen/margin_half"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone" />
+
+                    <include layout="@layout/layout_item_video_mine" />
+
+                    <include layout="@layout/layout_item_link_mine" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl1"
+                    android:layout_gravity="end"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMsgMine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hello"
+                        android:textColor="@color/text_color_1" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvUserMine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hello"
+                            android:textColor="@color/text_color_2"
+                            android:textSize="@dimen/caption"
+                            android:visibility="gone"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvTimeMine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:text="Hello"
+                            android:textSize="@dimen/caption" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </LinearLayout>
+            </RelativeLayout>
+        </me.himanshusoni.chatmessageview.ChatMessageView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

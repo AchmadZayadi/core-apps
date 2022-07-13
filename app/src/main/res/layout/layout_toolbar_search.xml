@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ActionBarTheme"
+    app:elevation="0dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/ToolbarTheme">
+
+
+        <LinearLayout
+            android:id="@+id/lay_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ivBack">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                style="@style/button_image_toolbar"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/arrow_left" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rlCommentEdittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Main_style"
+                android:layout_gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_weight="1"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="18dp">
+
+                <RelativeLayout
+                    android:id="@+id/llsearchbg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_search_drawer">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        style="@style/text_style_1"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/black"
+                        app:srcCompat="@drawable/ses_places_ic_search" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llOption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCancel"
+                            style="@style/image_toolbar_style"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:padding="7dp"
+                            android:tint="@color/red"
+                            tools:visibility="visible"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/cross" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivMic"
+                            style="@style/image_toolbar_style"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:padding="7dp"
+                            android:tint="@color/white"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ses_microphone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/etMusicSearch"
+                        style="@style/text_style_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_search_drawer"
+                        android:layout_marginLeft="32dp"
+                        android:layout_toLeftOf="@+id/llOption"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:enabled="true"
+                        android:hint="@string/hint_search_song"
+                        android:focusableInTouchMode="true"
+                        android:focusable="true"
+                        android:imeOptions="actionSearch"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/body_1" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!-- <android.support.v7.widget.AppCompatImageView
+                 android:id="@+id/ivMic"
+                 style="@style/button_image_toolbar"
+                 android:src="@drawable/ses_microphone"
+                 app:tint="@color/white" />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFilter"
+                style="@style/button_image_toolbar"
+                android:src="@drawable/filter"
+                app:tint="@color/white" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- <android.support.design.widget.TabLayout
+         android:id="@+id/tabs"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@color/white"
+         app:tabGravity="fill"
+         app:tabMode="fixed"
+         app:tabSelectedTextColor="@color/colorPrimary"
+         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+         app:tabTextColor="@color/black_54" />-->
+</com.google.android.material.appbar.AppBarLayout>

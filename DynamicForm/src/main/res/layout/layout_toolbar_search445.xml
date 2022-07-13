@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:id="@+id/mainrl"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rlCommentEdittext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#EEEEF0"
+        android:layout_gravity="center"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="4dp"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="36dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/text_style_1"
+                android:id="@+id/search"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:padding="7dp"
+                android:tint="@color/black"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+
+            <EditText
+                android:id="@+id/edittextid123"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:paddingLeft="5dp"
+                android:hint="Search"
+                android:layout_toRightOf="@+id/search"
+                android:layout_toLeftOf="@+id/llOption"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                ></EditText>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llOption"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCancel"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:padding="7dp"
+                    android:tint="@color/red"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/cross" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

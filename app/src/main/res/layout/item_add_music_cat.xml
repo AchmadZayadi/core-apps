@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMain"
+    android:layout_width="135dp"
+    android:layout_height="24dp"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/margin_half"
+    android:background="@drawable/corner_stroke_black"
+    android:paddingTop="@dimen/margin_quarter"
+    android:paddingBottom="@dimen/margin_quarter">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvText"
+        style="@style/text_style_1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/margin_half"
+        android:layout_marginStart="@dimen/margin_half"
+        android:textSize="13.5sp"
+        android:gravity="center"
+        tools:text="Sonu Nigam" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

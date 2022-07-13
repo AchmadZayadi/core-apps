@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvPost"
+    style="@style/Card_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentEnd="true"
+    android:layout_alignParentRight="true"
+    android:layout_margin="@dimen/item_offset"
+    android:visibility="visible"
+    app:cardCornerRadius="0dp"
+    tools:visibility="visible">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPost"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:padding="6dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/add_comment"
+            app:tint="@color/colorImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPost"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_toEndOf="@+id/ivPost"
+            android:layout_toRightOf="@+id/ivPost"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="@color/colorFormMasterHeaderText"
+            android:textSize="@dimen/elementTextTitleSize"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

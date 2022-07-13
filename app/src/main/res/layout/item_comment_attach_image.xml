@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/width_image_bottom_comment"
+    android:layout_height="@dimen/width_image_bottom_comment"
+    android:layout_margin="4sp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttachImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/dummy_profile" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAttachCancel"
+            android:layout_width="16sp"
+            android:layout_height="16sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/circle_cross"
+            android:padding="4dp"
+            android:rotation="45"
+            app:srcCompat="@drawable/add_24dp"
+            app:tint="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMediaType"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/play"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

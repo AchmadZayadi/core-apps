@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:minHeight="90sp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="84sp"
+            android:layout_height="84sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            app:civ_border_color="@color/dividerColor"
+            app:civ_border_width="@dimen/divider_length"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrice"
+            style="@style/text_style_primary"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/ivImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="$67897978" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/ivImage"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:ellipsize="end"
+            android:fontFamily="@string/medium_bold"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textStyle="bold"
+            tools:text="Sandra Kingley" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvJoinedOn"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/body_1"
+            tools:text="9 Feb" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

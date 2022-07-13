@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent" >
+
+    <include layout="@layout/layout_toolbar_customize"></include>
+
+    <RelativeLayout
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/llSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rlCommentEdittext"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_search_drawer"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_toStartOf="@+id/cvWaiting"
+            android:layout_toLeftOf="@+id/cvWaiting"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:padding="7dp"
+                    android:tint="@color/text_color_2"
+                    app:srcCompat="@drawable/ses_places_ic_search" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llOption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:animateLayoutChanges="true"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCancel"
+                        style="@style/ripple_selector"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:padding="7dp"
+                        android:tint="@color/text_color_2"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/cross" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMic"
+                        style="@style/ripple_selector"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="7dp"
+                        android:tint="@color/text_color_2"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ses_microphone" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMusicSearch"
+                    style="@style/Edit_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_search_drawer"
+                    android:layout_marginLeft="32dp"
+                    android:layout_toStartOf="@+id/llOption"
+                    android:layout_toLeftOf="@+id/llOption"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:hint="@string/search"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/text_color_1"
+                    android:textColorHint="@color/text_color_2"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/body_1" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvWaiting"
+            style="@style/Card_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPost"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:gravity="center_vertical"
+                android:text="@string/TAB_TITLE_ALBUM_5"
+                android:textColor="@color/colorFormMasterHeaderText"
+                android:textSize="@dimen/elementTextTitleSize"
+                android:visibility="visible" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <com.sesolutions.utils.FlowLayout
+        android:id="@+id/llOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llSearch"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:animateLayoutChanges="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <include
+        layout="@layout/progress_view"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/llSearch"
+        android:layout_centerHorizontal="true" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llOptions">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:clipToPadding="false"
+            android:padding="@dimen/item_offset" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <include layout="@layout/layout_no_data" />
+
+    <include layout="@layout/layout_hidden_feed_option" />
+
+</RelativeLayout>
+</LinearLayout>

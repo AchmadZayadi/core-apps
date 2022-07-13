@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_drawer_option"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/iv_icon"
+            android:layout_toLeftOf="@+id/iv_arrow"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:layout_toStartOf="@+id/iv_arrow"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_arrow"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:rotation="180"
+            android:src="@drawable/left_angle"
+            android:tint="@color/grey_feed" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_drawer_heading"
+        style="@style/text_style_2"
+        android:background="@color/grey_light"
+        android:paddingBottom="@dimen/margin_half"
+        android:paddingLeft="@dimen/margin_super"
+        android:paddingStart="@dimen/margin_super"
+        android:paddingTop="@dimen/margin_half"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

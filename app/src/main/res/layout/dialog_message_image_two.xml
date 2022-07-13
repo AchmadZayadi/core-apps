@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlDialogMain"
+    style="@style/dialog_style"
+    android:layout_width="@dimen/width_dialog"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:adjustViewBounds="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvText"
+            style="@style/text_style_1"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_weight="1"
+            android:maxLines="4"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bCamera"
+            style="@style/button_simple"
+            android:layout_marginRight="2sp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_holo_border_primary"
+            android:gravity="center"
+            android:text="@string/CANCEL"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bGallary"
+            style="@style/button_simple"
+            android:layout_marginLeft="2sp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_filled"
+            android:gravity="center"
+            android:text="@string/remove"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/iv_header"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_dialog_header"
+        app:civ_border_width="0sp" />-->
+
+

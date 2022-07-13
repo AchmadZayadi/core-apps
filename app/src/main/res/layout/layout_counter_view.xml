@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/inc_dec_counter_view_background"
+    android:padding="@dimen/inc_dec_counter_view_def_padding">
+
+    <!-- <TextView
+         style="@style/text_style_2"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="@string/quantity" />-->
+
+
+    <ImageButton
+        android:id="@+id/dec_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_white_background"
+        android:src="@drawable/inc_remove" />
+
+    <TextView
+        android:id="@+id/item_counter_value"
+        style="@style/text_style_primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:minWidth="30dp"
+        android:layout_marginTop="2dp"
+        android:text="1"
+        android:textSize="@dimen/sub_heading"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/inc_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@drawable/circle_white_background"
+        android:src="@drawable/inc_add" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

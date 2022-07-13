@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.viewpager.widget.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/llButton"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            style="@style/divider"
+            android:background="#66ffffff" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPrev"
+            style="@style/ripple_selector"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:padding="13dp"
+            android:rotation="180"
+            android:src="@drawable/right_nav"
+            android:tint="@color/white"
+            android:visibility="gone" />
+
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_half"
+            app:piv_animationType="thinWorm"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_padding="3dp"
+            app:piv_radius="4dp"
+            app:piv_selectedColor="#88ffffff"
+            app:piv_unselectedColor="#66A0A0A0" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvNext"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+
+                android:layout_toLeftOf="@+id/ivNext"
+                android:layout_toStartOf="@id/ivNext"
+                android:gravity="center"
+                android:paddingEnd="@dimen/margin_full"
+                android:paddingLeft="@dimen/margin_full"
+                android:paddingRight="@dimen/margin_full"
+                android:paddingStart="@dimen/margin_full"
+                android:text="@string/TXT_SIGN_IN"
+                android:textSize="@dimen/body_1"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNext"
+                style="@style/ripple_selector"
+                android:layout_width="40dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:padding="13dp"
+                android:src="@drawable/right_nav"
+                android:tint="@color/white" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPrev"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/ivPrev"
+            android:layout_toRightOf="@+id/ivPrev"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_medium"
+            android:text="@string/SKIP"
+            android:textSize="@dimen/body_1" />
+
+
+    </RelativeLayout>
+</RelativeLayout>

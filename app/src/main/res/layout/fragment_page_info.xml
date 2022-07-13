@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <include
+        layout="@layout/layout_toolbar_customize"
+        ></include>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_full"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvCreate"
+            style="@style/Card_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlFilter"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp"
+            tools:visibility="visible">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/rlCreate"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_search_drawer"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPost"
+                    style="@style/image_tint_2"
+                    android:layout_width="36dp"
+                    android:layout_height="@dimen/height_search_drawer"
+                    android:layout_gravity="center_vertical"
+                    android:padding="10dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ab_icon_edit"
+                    app:tint="@color/colorImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPost"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_toEndOf="@+id/ivPost"
+                    android:layout_toRightOf="@+id/ivPost"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorFormMasterHeaderText"
+                    android:textSize="@dimen/elementTextTitleSize"
+                    android:visibility="visible"
+                    tools:text="Create" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <include
+            layout="@layout/progress_view"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_super" />
+
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/basicInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <!--  <View style="@style/divider" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/basic_info"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- <View
+             style="@style/divider"
+             android:layout_below="@+id/llAbout" />-->
+
+
+        <!--Open Hours section starts-->
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/openHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <!--<View style="@style/divider" />-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="@dimen/margin_full"
+
+                        android:layout_marginLeft="@dimen/margin_full"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        app:srcCompat="@drawable/watch_later" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOpenHours"
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/margin_half"
+                        android:layout_marginLeft="@dimen/margin_half"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:layout_marginEnd="@dimen/margin_full"
+                        android:layout_marginRight="@dimen/margin_full"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        android:layout_toStartOf="@+id/tvTimezone"
+                        android:layout_toLeftOf="@+id/tvTimezone"
+                        android:layout_toEndOf="@+id/iv1"
+                        android:layout_toRightOf="@+id/iv1"
+                        android:text="@string/open_hours"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTimezone"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:layout_marginEnd="@dimen/margin_full"
+                        android:layout_marginRight="@dimen/margin_full"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        android:textSize="@dimen/body_1"
+                        tools:text="@string/open_hours" />
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <!--<View
+            style="@style/divider"
+            android:layout_below="@+id/llAbout" />-->
+        <!--Open Hours section starts-->
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cvProfile"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View style="@style/divider" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/profile_field"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <!-- <View
+             style="@style/divider"
+             android:layout_below="@+id/llAbout" />-->
+
+
+        <!--Detail section starts-->
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cvDetail"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half">
+
+                <!--<View style="@style/divider" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/details"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDetail"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/details"
+                    android:textSize="@dimen/body_1" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!-- <View
+                 style="@style/divider"
+                 android:layout_below="@+id/llAbout" />-->
+        </androidx.cardview.widget.CardView>
+        <!--Detail section ends-->
+
+
+        <!--Contact information section starts-->
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/Card_style"
+            android:id="@+id/cardstyleviewid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_side_info"
+            android:layout_marginLeft="@dimen/margin_side_info"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_side_info"
+            android:layout_marginRight="@dimen/margin_side_info"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/contactInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llTabOptions"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/margin_half"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <!-- <View style="@style/divider" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvContactInfo"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:text="@string/contact_info"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!-- <View style="@style/divider" />-->
+        </androidx.cardview.widget.CardView>
+        <!--Contact information section ends-->
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

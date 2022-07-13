@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    app:cardCornerRadius="0dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSongImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_event"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHot"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:background="@drawable/filled_red_round_right_corner"
+            android:maxLines="1"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/verified"
+            android:textSize="@dimen/body_1"
+            android:visibility="invisible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFeatured"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tvHot"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:background="@drawable/filled_blue_round_right_corner"
+            android:maxLines="1"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/featured"
+            android:textSize="@dimen/body_1"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSponsored"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/tvFeatured"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:background="@drawable/filled_green_round_right_corner"
+            android:maxLines="1"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="@string/sponsored"
+            android:textSize="@dimen/body_1"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llReactionOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half">
+
+
+            <com.sesolutions.animate.bang.SmallBangView
+                android:id="@+id/sbvLike"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_marginRight="@dimen/margin_quarter">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLike"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/music_like" />
+            </com.sesolutions.animate.bang.SmallBangView>
+
+            <com.sesolutions.animate.bang.SmallBangView
+                android:id="@+id/sbvFavorite"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_marginRight="@dimen/margin_quarter">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFavorite"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/music_favourite" />
+            </com.sesolutions.animate.bang.SmallBangView>
+
+            <com.sesolutions.animate.bang.SmallBangView
+                android:id="@+id/sbvFollow"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_marginRight="@dimen/margin_quarter">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFollow"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/music_add" />
+
+            </com.sesolutions.animate.bang.SmallBangView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivSongImage">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:minHeight="72dp"
+                android:orientation="vertical"
+                android:padding="@dimen/margin_half"
+                android:paddingStart="@dimen/margin_full"
+                android:paddingLeft="@dimen/margin_full"
+                android:paddingTop="@dimen/margin_half"
+                android:paddingEnd="@dimen/margin_full"
+                android:paddingRight="@dimen/margin_full"
+                android:paddingBottom="@dimen/margin_half">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate1"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="28sp"
+                    tools:text="09" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate2"
+                    style="@style/text_style_light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    tools:text="Aug" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/llTextBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_half"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSongTitle"
+                    style="@style/text_style_1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sub_heading"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/rlArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    tools:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ivArtist"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStartTime"
+                        style="@style/text_style_2"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:layout_toEndOf="@+id/ivArtist"
+                        android:layout_toRightOf="@+id/ivArtist"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ivArtist2"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/tvStartTime"
+                        android:layout_marginStart="@dimen/margin_full"
+                        android:layout_marginLeft="@dimen/margin_full"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:textSize="@dimen/caption_mini" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEndTime"
+                        style="@style/text_style_2"
+                        android:layout_below="@+id/tvStartTime"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:layout_toEndOf="@+id/ivArtist2"
+                        android:layout_toRightOf="@+id/ivArtist2"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    tools:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/ivLocation"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:textSize="@dimen/caption" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLocation"
+                        style="@style/text_style_2"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="@dimen/caption" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStats"
+                    style="@style/text_style_stats"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

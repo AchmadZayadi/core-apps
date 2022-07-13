@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#4e4888" />
+    <corners android:radius="8dp" />
+    <padding
+        android:bottom="20sp"
+        android:left="2sp"
+        android:right="2sp"
+        android:top="2sp" />
+    <stroke
+        android:width="2sp"
+        android:color="#c8a415"
+        android:dashWidth="10sp"
+        android:dashGap="4sp" />
+</shape>

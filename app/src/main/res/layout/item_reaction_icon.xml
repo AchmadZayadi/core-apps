@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.sesolutions.animate.bang.SmallBangView
+        android:id="@+id/sbvReaction"
+        android:layout_width="56dp"
+        android:layout_height="56dp">
+
+        <androidx.appcompat.widget.AppCompatImageView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ivReaction"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            tools:src="@drawable/smiley_line"
+            tools:tint="@color/white" />
+
+    </com.sesolutions.animate.bang.SmallBangView>
+
+</LinearLayout>

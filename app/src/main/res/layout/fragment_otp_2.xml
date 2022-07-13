@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="150sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            style="@style/button_image_toolbar"
+            app:srcCompat="@drawable/arrow_left" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/verification_otp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="56dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:padding="16dp"
+            android:text="@string/verification_code"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sub_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:text="@string/verification_code_subtext"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body_1" />
+
+        <!-- <com.sesolutions.otp_view.OtpView
+             android:id="@+id/otp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginStart="8dp"
+             android:layout_marginTop="40dp"
+             android:layout_marginEnd="8dp"
+             android:inputType="text"
+             android:textColor="@color/white"
+             app:otp_number="6"
+             app:text_background_color="@color/colorPrimaryDark" />-->
+
+        <com.sesolutions.otp_view.mukesh.OtpView
+            android:id="@+id/otp_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_super"
+            android:inputType="text"
+            android:itemBackground="@color/colorPrimary"
+            android:textColor="@color/white"
+            app:itemCount="6"
+            app:lineColor="@color/colorPrimary"
+            app:viewType="line" />
+
+        <TextView
+            android:id="@+id/tv_otp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption" />
+
+        <ProgressBar
+            android:id="@+id/pbBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:theme="@style/progressBarWhite"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rlTimer"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:animateLayoutChanges="true"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/vScrim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/dot_icon"
+                android:visibility="visible"
+                app:tint="#66000000" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvProgress"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="00:00"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+
+            <com.sesolutions.ui.customviews.CircularProgressBar
+                android:id="@+id/cpb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                app:cpb_background_progressbar_color="#00ffffff"
+                app:cpb_background_progressbar_width="10sp"
+                app:cpb_progress="0"
+                app:cpb_progressbar_color="@color/green"
+                app:cpb_progressbar_width="10sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bResend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/resend"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bVerify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:text="@string/verify"
+            android:textColor="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

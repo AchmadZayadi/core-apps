@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llVideoMine"
+    android:layout_width="300sp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:visibility="gone">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivVideoMine"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:adjustViewBounds="true" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvVideoTitleMine"
+            style="@style/text_style_1"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingStart="@dimen/margin_half"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvVideoDescriptionMine"
+            style="@style/text_style_2"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_super"
+            android:maxLines="2"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingStart="@dimen/margin_half"
+            android:visibility="gone" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

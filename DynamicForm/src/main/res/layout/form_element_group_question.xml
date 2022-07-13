@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMainForm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorFormMasterElementBackground"
+    android:orientation="vertical"
+    android:paddingEnd="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingStart="16dp">
+
+    <!--  <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/formElementTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingBottom="6dp"
+          android:paddingTop="16dp"
+          android:textColor="@color/colorFormMasterElementTextTitle"
+          android:textSize="@dimen/elementTextTitleSize"
+          android:visibility="visible" />-->
+    <!--<include layout="@layout/layout_title" />-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp"
+        android:paddingStart="8dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDate"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:padding="8dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ses_question"
+            app:tint="@color/colorImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHint"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_toEndOf="@+id/ivDate"
+            android:layout_toRightOf="@+id/ivDate"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorFormMasterHeaderText"
+            android:textSize="@dimen/elementTextTitleSize"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
+
+    <!--<android.support.v7.widget.AppCompatImageView
+        android:id="@+id/formElementImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivDate"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:gravity="center"
+        android:padding="0.2dp"
+        android:visibility="visible" />-->
+</LinearLayout>

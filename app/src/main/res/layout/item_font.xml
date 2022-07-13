@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="64dp"
+    android:layout_height="84dp"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginLeft="@dimen/margin_quarter"
+    android:layout_marginRight="@dimen/margin_quarter"
+    android:animateLayoutChanges="true"
+    android:background="@color/gray"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvFontName"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Aa"
+        android:textColor="@color/white"
+        android:textSize="@dimen/heading" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFontName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|center"
+        android:background="@color/transparent_black"
+        android:ellipsize="start"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="3dp"
+        android:singleLine="true"
+        android:text="None"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlDialogMain"
+    style="@style/dialog_style"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@drawable/rounded_filled_grey_8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_quarter"
+                android:paddingTop="@dimen/margin_half"
+                android:paddingBottom="@dimen/margin_full"
+                android:minWidth="80dp"
+                android:gravity="center"
+                android:text="Select Timer"
+                android:textSize="16sp"/>
+
+            <View style="@style/divider" />
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/threeS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:text="3 Seconds"
+            android:textSize="@dimen/sub_title" />
+
+        <View style="@style/divider" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tenS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:text="10 Seconds"
+            android:textSize="@dimen/sub_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:textColor="@color/red"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:text="Reset"
+            android:textSize="@dimen/sub_title" />
+
+    </LinearLayout>
+
+</LinearLayout>

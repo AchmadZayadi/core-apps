@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    app:cardCornerRadius="6sp"
+    android:elevation="4dp"
+    android:layout_margin="@dimen/_3ssp"
+    android:layout_width="match_parent"
+    android:layout_height="140dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSongImage"
+            tools:src="@tools:sample/avatars"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:id="@+id/ivLike"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="4dp"
+            android:padding="6dp"
+            app:srcCompat="@drawable/ic_heart"
+            app:tint="@color/white">
+        </androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLike"
+            style="@style/text_style_light"
+            android:layout_toEndOf="@+id/ivLike"
+            android:layout_alignParentBottom="true"
+            android:textStyle="bold"
+            tools:text="231"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:id="@+id/ivEdit"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="4dp"
+            android:layout_alignParentEnd="true"
+            android:padding="4dp"
+            app:srcCompat="@drawable/ab_icon_edit"
+            app:tint="@color/white">
+        </androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:id="@+id/ivDelete"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="4dp"
+            android:layout_toLeftOf="@+id/ivEdit"
+            android:padding="6dp"
+            app:srcCompat="@drawable/delete"
+            app:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

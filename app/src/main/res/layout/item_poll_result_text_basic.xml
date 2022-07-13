@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_holo_border_grey_light">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_toStartOf="@+id/rlUpperLike"
+            android:layout_toLeftOf="@+id/rlUpperLike"
+            android:gravity="center_vertical"
+            android:minHeight="48sp"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_half"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_half" />
+
+        <include
+            layout="@layout/layout_bunch_profile_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full" />
+
+        <RelativeLayout
+            android:id="@+id/rlProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half">
+
+            <ProgressBar
+                android:id="@+id/sbProgress"
+                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="30sp"
+                android:progress="48"
+                android:progressDrawable="@drawable/seekbar_style" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPercentage"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingEnd="@dimen/margin_full"
+                android:paddingRight="@dimen/margin_full"
+                android:text="48%"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

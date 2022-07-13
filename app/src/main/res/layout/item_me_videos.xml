@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_margin="3dp"
+    android:layout_width="match_parent"
+    android:layout_height="220dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSongImage"
+            tools:src="@tools:sample/avatars"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <com.sesolutions.animate.bang.SmallBangView
+            android:id="@+id/sbvLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-20dp"
+            android:layout_marginBottom="-20dp"
+            android:layout_alignParentBottom="true"
+            >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:id="@+id/ivLike"
+            android:layout_height="32dp"
+            android:padding="6dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom"
+            app:srcCompat="@drawable/ic_heart"
+            app:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+        </com.sesolutions.animate.bang.SmallBangView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLike"
+            style="@style/text_style_light"
+            android:layout_toEndOf="@+id/sbvLike"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-25dp"
+            android:textStyle="bold"
+            tools:text="231"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:id="@+id/ivEdit"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="4dp"
+            android:layout_alignParentEnd="true"
+            android:padding="2dp"
+            app:srcCompat="@drawable/edit_post"
+            app:tint="@color/white">
+        </androidx.appcompat.widget.AppCompatImageView>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:id="@+id/ivDelete"
+            android:layout_height="24dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_toLeftOf="@+id/ivEdit"
+            android:padding="2dp"
+            app:srcCompat="@drawable/delete"
+            app:tint="@color/white">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

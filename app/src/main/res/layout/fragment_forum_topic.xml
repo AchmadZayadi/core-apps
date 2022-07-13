@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:theme="@style/AppThemeMatrial"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppThemeMatrial"
+        android:theme="@style/ToolbarTheme">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            android:tag="@string/tag_toolbar"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/ToolbarTheme">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    style="@style/button_image_toolbar"
+                    app:srcCompat="@drawable/arrow_left" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="84dp"
+                    android:layout_marginLeft="84dp"
+                    android:layout_toStartOf="@+id/llOption"
+                    android:layout_toLeftOf="@+id/llOption"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title"
+                    tools:text="Too much very long title, see it fits well now don't worry" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivOption"
+                    style="@style/button_image_toolbar"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:rotation="90"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:srcCompat="@drawable/vertical_dots" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcvPostReply"
+                        android:theme="@style/AppThemeMatrial"
+                        style="@style/Card_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_half"
+                        android:layout_marginTop="@dimen/margin_half"
+                        app:cardCornerRadius="4sp"
+                        app:cardElevation="0dp"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_holo_border_primary">
+
+                            <ImageView
+                                android:layout_width="36dp"
+                                android:layout_height="@dimen/height_search_drawer"
+                                android:layout_gravity="center_vertical"
+                                android:padding="10dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/reply"
+                                app:tint="@color/colorImage" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPostReply"
+                                style="@style/text_style_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:layout_toEndOf="@+id/ivSubscribe"
+                                android:layout_toRightOf="@+id/ivSubscribe"
+                                android:gravity="center_vertical"
+                                android:text="Post Reply"
+                                android:textColor="@color/colorFormMasterHeaderText"
+                                android:textSize="@dimen/elementTextTitleSize" />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvSubscribe"
+                        style="@style/Card_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/margin_half"
+                        android:visibility="gone"
+                        app:cardCornerRadius="4sp"
+                        app:cardElevation="0dp"
+                        tools:visibility="visible">
+
+                        <RelativeLayout
+                            android:id="@+id/rlCreate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/height_search_drawer"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/rounded_holo_border_primary"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivSubscribe"
+                                android:layout_width="36dp"
+                                android:layout_height="@dimen/height_search_drawer"
+                                android:layout_gravity="center_vertical"
+                                android:padding="10dp"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/subcribe" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSubscribe"
+                                style="@style/text_style_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:layout_marginEnd="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:layout_toEndOf="@+id/ivSubscribe"
+                                android:layout_toRightOf="@+id/ivSubscribe"
+                                android:gravity="center_vertical"
+                                android:text="Subscribe"
+                                android:textColor="@color/colorFormMasterHeaderText"
+                                android:textSize="@dimen/elementTextTitleSize"
+                                android:visibility="visible" />
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlStats"
+                    style="@style/Forground_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_half"
+                    android:padding="@dimen/margin_quarter"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/llstarlike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_quarter">
+
+                        <LinearLayout
+                            android:id="@+id/llRating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llStar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivStar1"
+                                    style="@style/image_star"
+                                    android:layout_width="@dimen/size_star_music"
+                                    android:layout_height="@dimen/size_star_music"
+                                    android:layout_margin="@dimen/margin_star"
+                                    app:srcCompat="@drawable/star_unfilled"
+                                    app:tint="@color/colorPrimary" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivStar2"
+                                    style="@style/image_star"
+                                    android:layout_width="@dimen/size_star_music"
+                                    android:layout_height="@dimen/size_star_music"
+                                    android:layout_margin="@dimen/margin_star"
+                                    app:srcCompat="@drawable/star_unfilled"
+                                    app:tint="@color/colorPrimary" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivStar3"
+                                    style="@style/image_star"
+                                    android:layout_width="@dimen/size_star_music"
+                                    android:layout_height="@dimen/size_star_music"
+                                    android:layout_margin="@dimen/margin_star"
+                                    app:srcCompat="@drawable/star_unfilled"
+                                    app:tint="@color/colorPrimary" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivStar4"
+                                    style="@style/image_star"
+                                    android:layout_width="@dimen/size_star_music"
+                                    android:layout_height="@dimen/size_star_music"
+                                    android:layout_margin="@dimen/margin_star"
+                                    app:srcCompat="@drawable/star_unfilled"
+                                    app:tint="@color/colorPrimary" />
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/ivStar5"
+                                    style="@style/image_star"
+                                    android:layout_width="@dimen/size_star_music"
+                                    android:layout_height="@dimen/size_star_music"
+                                    android:layout_margin="@dimen/margin_star"
+                                    app:srcCompat="@drawable/star_unfilled"
+                                    app:tint="@color/colorPrimary" />
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <TextView
+                                android:id="@+id/tvRatingCount"
+                                style="@style/text_style_stats"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_quarter"
+                                android:text=" 0 ratings "
+                                android:textSize="@dimen/caption_mini"
+                                android:textStyle="italic" />
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="@dimen/margin_full"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:background="@color/text_color_2" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvLikeCount"
+                                style="@style/text_style_stats"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_quarter"
+                                android:text="0 likes "
+                                android:textSize="@dimen/caption" />
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="@dimen/margin_full"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:background="@color/text_color_2" />
+
+                            <TextView
+                                android:id="@+id/tvReplyCount"
+                                style="@style/text_style_stats"
+                                android:layout_gravity="center_vertical"
+                                android:text="2 replies "
+                                android:textSize="@dimen/caption" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lllikeshare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_quarter"
+                        android:gravity="end">
+
+
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivLike"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/like_quote" />
+
+                        <View
+                            android:id="@+id/likesharesaprater"
+                            android:layout_width="2dp"
+                            android:layout_height="@dimen/margin_full"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half"
+                            android:background="@color/text_color_2" />
+
+                        <ImageView
+                            android:id="@id/ivShare"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/share_music"
+                            android:tint="@color/text_color_2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llTag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_below="@+id/llstarlike">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:descendantFocusability="beforeDescendants"
+                            android:divider="#b5b5b5"
+                            android:layoutAnimation="@anim/anim_fall_down"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/item_tag"
+                            android:padding="@dimen/item_offset" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mcvClose"
+                    style="@style/Card_style"
+                    android:layout_width="match_parent"
+                    android:theme="@style/AppThemeMatrial"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:visibility="gone"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/text_color_2"
+                    app:strokeWidth="0.5dp"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_half"
+                            app:srcCompat="@drawable/ic_lock_black_24dp"
+                            app:tint="@color/red" />
+
+                        <TextView
+                            style="@style/text_style_stats"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="This topic has been closed." />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:descendantFocusability="beforeDescendants"
+                    android:divider="#b5b5b5"
+                    android:layoutAnimation="@anim/anim_fall_down"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvReply"
+                style="@style/Card_style"
+                android:layout_width="wrap_content"
+                android:theme="@style/AppThemeMatrial"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="@dimen/margin_half"
+                android:visibility="gone"
+                app:cardCornerRadius="4sp"
+                app:cardElevation="0dp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_holo_border_primary">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="@dimen/height_search_drawer"
+                        android:layout_gravity="center_vertical"
+                        android:padding="10dp"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/reply"
+                        app:tint="@color/colorImage" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvReply"
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="@dimen/margin_half"
+                        android:layout_marginRight="@dimen/margin_half"
+                        android:layout_toEndOf="@+id/ivSubscribe"
+                        android:layout_toRightOf="@+id/ivSubscribe"
+                        android:gravity="center_vertical"
+                        android:text="Post Reply"
+                        android:textColor="@color/colorFormMasterHeaderText"
+                        android:textSize="@dimen/elementTextTitleSize" />
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include layout="@layout/layout_no_data" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

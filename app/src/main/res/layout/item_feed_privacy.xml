@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_full"
+            android:clickable="false" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_everyone"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sub_heading" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        style="@style/divider"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full" />
+
+
+</androidx.cardview.widget.CardView>

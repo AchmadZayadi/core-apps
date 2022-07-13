@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llStar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="visible">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStar1"
+        style="@style/image_star"
+        android:layout_width="@dimen/size_star_video"
+        android:layout_height="@dimen/size_star_video"
+        android:layout_marginLeft="@dimen/margin_star"
+        android:layout_marginRight="@dimen/margin_star"
+        app:srcCompat="@drawable/star_unfilled"
+        app:tint="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStar2"
+        style="@style/image_star"
+        android:layout_width="@dimen/size_star_video"
+        android:layout_height="@dimen/size_star_video"
+        android:layout_marginLeft="@dimen/margin_star"
+        android:layout_marginRight="@dimen/margin_star"
+
+        app:srcCompat="@drawable/star_unfilled"
+        app:tint="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStar3"
+        style="@style/image_star"
+        android:layout_width="@dimen/size_star_video"
+        android:layout_height="@dimen/size_star_video"
+        android:layout_marginLeft="@dimen/margin_star"
+        android:layout_marginRight="@dimen/margin_star"
+
+        app:srcCompat="@drawable/star_unfilled"
+        app:tint="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStar4"
+        style="@style/image_star"
+        android:layout_width="@dimen/size_star_video"
+        android:layout_height="@dimen/size_star_video"
+        android:layout_marginLeft="@dimen/margin_star"
+        android:layout_marginRight="@dimen/margin_star"
+
+        app:srcCompat="@drawable/star_unfilled"
+        app:tint="@color/colorPrimary" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivStar5"
+        style="@style/image_star"
+        android:layout_width="@dimen/size_star_video"
+        android:layout_height="@dimen/size_star_video"
+        android:layout_marginLeft="@dimen/margin_star"
+        android:layout_marginRight="@dimen/margin_star"
+
+        app:srcCompat="@drawable/star_unfilled"
+        app:tint="@color/colorPrimary" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

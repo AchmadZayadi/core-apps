@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main">
+
+    <com.sesolutions.ui.customviews.fab.FloatingActionButton
+    android:id="@+id/customFAB"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    app:fabColor="#acdace"
+    app:fabElevation="5dp"
+    app:fabIcon="@drawable/attachment"
+    app:fabIconColor="#123098"
+    app:fabIconPosition="start"
+    app:fabSizes="normal"
+    app:fabTextAllCaps="true"
+    app:fabType="circle" />
+
+    <com.sesolutions.ui.customviews.fab.FloatingActionLayout
+        android:id="@+id/customFABL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/customFAB"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        app:fabColor="#dad3ac"
+        app:fabType="circle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/attachment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Hi" />
+
+        </LinearLayout>
+
+    </com.sesolutions.ui.customviews.fab.FloatingActionLayout>
+
+    <com.sesolutions.ui.customviews.fab.FloatingLayout
+        android:id="@+id/floating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:fabMenuGravity="center"
+        app:fabMenuStyle="popDown">
+
+        <com.sesolutions.ui.customviews.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabColor="#acdace"
+            app:fabIcon="@drawable/add_create" />
+
+        <com.sesolutions.ui.customviews.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabColor="#ff9c10"
+            app:fabIcon="@drawable/attachment"
+            app:fabSizes="mini" />
+
+        <com.sesolutions.ui.customviews.fab.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabColor="#0b7bc1"
+            app:fabIcon="@drawable/attachment"
+            app:fabSizes="mini" />
+
+        <com.sesolutions.ui.customviews.fab.FloatingActionButton
+            android:id="@+id/fab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabColor="#ea201c"
+            app:fabIcon="@drawable/attachment"
+            app:fabSizes="mini" />
+
+    </com.sesolutions.ui.customviews.fab.FloatingLayout>
+
+</RelativeLayout>

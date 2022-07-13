@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View style="@style/divider" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180sp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="180sp"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black_light" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerInParent="true"
+            android:elevation="@dimen/margin_medium"
+            app:srcCompat="@drawable/gps" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_half"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_half"
+            android:shadowColor="@color/text_color_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_half"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:text="@string/location_page"
+            android:textSize="@dimen/body_1"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLocation"
+            style="@style/text_style_2"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="@dimen/body_1" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_half"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:gravity="center">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_weight="2"
+                android:text="@string/city_page"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCity"
+                style="@style/text_style_2"
+                android:layout_weight="1"
+                android:ellipsize="end"
+
+                android:maxLines="1"
+                android:textSize="@dimen/body_1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_weight="2"
+                android:text="@string/state_page"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvState"
+                style="@style/text_style_2"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_half"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:gravity="center">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_weight="2"
+                android:text="@string/zipcode"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvZip"
+                style="@style/text_style_2"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/body_1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_weight="2"
+                android:text="@string/country"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCountry"
+                style="@style/text_style_2"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        style="@style/divider"
+        android:layout_marginTop="@dimen/margin_medium" />
+</LinearLayout>

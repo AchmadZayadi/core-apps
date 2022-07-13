@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:fitsSystemWindows="true">
+
+        <com.droidninja.imageeditengine.views.imagezoom.ImageViewTouch
+            android:id="@+id/image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside" />
+
+        <com.droidninja.imageeditengine.views.PhotoEditorView
+            android:id="@+id/photo_editor_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/delete_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_delete"
+            android:padding="15dp"
+            android:src="@drawable/ic_cam_delete"
+            android:visibility="gone"
+            tools:ignore="MissingPrefix" />
+
+        <RelativeLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp">
+
+            <ImageView
+                android:id="@+id/back_iv"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_back" />
+
+
+            <ImageView
+                android:id="@+id/crop_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_toStartOf="@+id/stickers_btn"
+                android:layout_toLeftOf="@+id/stickers_btn"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_crop_rotate" />
+
+            <ImageView
+                android:id="@+id/undo_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_toStartOf="@+id/crop_btn"
+                android:layout_toLeftOf="@+id/crop_btn"
+                android:padding="13dp"
+                android:src="@drawable/undo_arrow"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/stickers_btn"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_toStartOf="@+id/add_text_btn"
+                android:layout_toLeftOf="@+id/add_text_btn"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_sticker" />
+
+            <ImageView
+                android:id="@+id/add_text_btn"
+
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_toStartOf="@+id/paint_btn"
+                android:layout_toLeftOf="@+id/paint_btn"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_text" />
+
+            <ImageView
+                android:id="@+id/paint_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_cam_draw" />
+
+            <com.droidninja.imageeditengine.views.VerticalSlideColorPicker
+                android:id="@+id/color_picker_view"
+                android:layout_width="10dp"
+                android:layout_height="220dp"
+                android:layout_below="@+id/paint_btn"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="25dp"
+                android:visibility="invisible"
+                app:defaultColor="@color/checkbox_color" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/filter_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/filter_list_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-84dp"
+            android:drawableTop="@drawable/ic_arrow_up"
+            android:shadowColor="@color/blackish"
+            android:shadowDx="-1"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:text="@string/filters"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/done_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/done_btn_margin"
+            app:srcCompat="@drawable/ses_send" />
+
+        <RelativeLayout
+            android:id="@+id/filter_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/blackish"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabFilter"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@color/blackish"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/white"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/myTabBoldTextStyle"
+                app:tabTextColor="#777777" />
+
+            <LinearLayout
+                android:id="@+id/llList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tabFilter"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/filter_list_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_filter_layout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWallpaper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_filter_layout" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFont"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_filter_layout" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llBrightness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llList"
+                android:gravity="center"
+                android:padding="@dimen/margin_half">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="@dimen/margin_half"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    app:srcCompat="@drawable/ses_bright"
+                    app:tint="@color/white" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/sbContrast"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progress="78"
+                    android:theme="@style/WhiteSeekBar" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/bottomsheet_font" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

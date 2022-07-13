@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0dp">-->
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half">
+
+
+   <include layout="@layout/layout_suggestion_qa"/>
+
+
+    <!--<View
+        style="@style/divider"
+        android:layout_above="@+id/llStatus" />
+
+    <View style="@style/divider" />-->
+
+    <View
+        style="@style/divider"
+        android:layout_below="@+id/llStatus" />
+
+
+    <RelativeLayout
+        android:id="@+id/llStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llMain"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:layout_marginEnd="36sp"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="36sp"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_half"
+        android:layout_weight="1"
+        android:gravity="center_vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUser"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+
+            app:civ_border_color="@color/white"
+            app:civ_border_width="0dp" />
+
+       <!-- <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_toRightOf="@id/ivUser"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/sub_heading"
+            android:textStyle="bold" />-->
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvArtist"
+            style="@style/text_style_2"
+            android:layout_below="@+id/tvTitle"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_toRightOf="@+id/ivUser"
+            android:layout_toEndOf="@+id/ivUser"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="By Marcus Rouse"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCategory"
+            style="@style/text_style_2"
+            android:layout_below="@+id/tvArtist"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@+id/ivUser"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="in Entertainment"
+            android:textSize="@dimen/caption" />
+
+    </RelativeLayout>
+
+</RelativeLayout><!--
+</android.support.v7.widget.CardView>-->

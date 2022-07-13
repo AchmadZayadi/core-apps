@@ -1,0 +1,206 @@
+package com.sesolutions.ui.storyview;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.os.Build;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.util.AttributeSet;
+import android.util.TypedValue;
+import android.view.View;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+import com.sesolutions.R;
+import com.sesolutions.utils.Constant;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StoryCustomView extends View {
+
+    public static final int STORY_IMAGE_RADIUS_IN_DP = 36;
+    public static final int STORY_INDICATOR_WIDTH_IN_DP = 4;
+    public static final int SPACE_BETWEEN_IMAGE_AND_INDICATOR = 4;
+    public static final int START_ANGLE = 270;
+    public static int ANGEL_OF_GAP = 15;
+    public static final String PENDING_INDICATOR_COLOR = "#009988";
+    public static final String VISITED_INDICATOR_COLOR = "#33009988";
+    private int mStoryImageRadiusInPx;
+    private int mStoryIndicatorWidthInPx;
+    private int mSpaceBetweenImageAndIndicator;
+    private int mPendingIndicatorColor;
+    private int mVisistedIndicatorColor;
+    private int mViewWidth;
+    private int mViewHeight;
+    private int mIndicatoryOffset;
+    private int mIndicatorImageOffset;
+    private Resources resources;
+    private List<StoryContent> storyImageUris;
+    private Paint mIndicatorPaint;
+    private int indicatorCount;
+    private int indicatorSweepAngle;
+    private Bitmap mIndicatorImageBitmap;
+    private Rect mIndicatorImageRect;
+    private Context mContext;
+    private StoryPreference storyPreference;
+    private String imageUrl;
+
+    public StoryCustomView(Context context) {
+        super(context);
+        init(context);
+        setDefaults();
+    }
+
+    public StoryCustomView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.StoryCustomView, 0, 0);
+        try {
+            mStoryImageRadiusInPx = getPxFromDp((int) ta.getDimension(R.styleable.StoryCustomView_sesstoryImageRadius, STORY_IMAGE_RADIUS_IN_DP));
+            mStoryIndicatorWidthInPx = getPxFromDp((int) ta.getDimension(R.styleable.StoryCustomView_sesstoryItemIndicatorWidth, STORY_INDICATOR_WIDTH_IN_DP));
+            mSpaceBetweenImageAndIndicator = getPxFromDp((int) ta.getDimension(R.styleable.StoryCustomView_sesspaceBetweenImageAndIndicator, SPACE_BETWEEN_IMAGE_AND_INDICATOR));
+            //mPendingIndicatorColor = ta.getColor(R.styleable.StoryCustomView_sespendingIndicatorColor, Color.parseColor(PENDING_INDICATOR_COLOR));
+            mPendingIndicatorColor = Color.parseColor(Constant.colorPrimary);
+            mVisistedIndicatorColor = ta.getColor(R.styleable.StoryCustomView_sesvisitedIndicatorColor, Color.parseColor(VISITED_INDICATOR_COLOR));
+        } finally {
+            ta.recycle();
+        }
+        prepareValues();
+    }
+
+    private void init(Context context) {
+        this.mContext = context;
+        storyPreference = new StoryPreference(context);
+        resources = context.getResources();
+        storyImageUris = new ArrayList<>();
+        mIndicatorPaint = new Paint();
+        mIndicatorPaint.setAntiAlias(true);
+        mIndicatorPaint.setStyle(Paint.Style.STROKE);
+        mIndicatorPaint.setStrokeCap(Paint.Cap.ROUND);
+    }
+
+    private void setDefaults() {
+        mStoryImageRadiusInPx = getPxFromDp(STORY_IMAGE_RADIUS_IN_DP);
+        mStoryIndicatorWidthInPx = getPxFromDp(STORY_INDICATOR_WIDTH_IN_DP);
+        mSpaceBetweenImageAndIndicator = getPxFromDp(SPACE_BETWEEN_IMAGE_AND_INDICATOR);
+        mPendingIndicatorColor = Color.parseColor(PENDING_INDICATOR_COLOR);
+        mVisistedIndicatorColor = Color.parseColor(VISITED_INDICATOR_COLOR);
+        prepareValues();
+    }
+
+    private void prepareValues() {
+        mViewHeight = 2 * (mStoryIndicatorWidthInPx + mSpaceBetweenImageAndIndicator + mStoryImageRadiusInPx);
+        //mViewHeight = (int) getContext().getResources().getDimension(R.dimen.size_profile_story);
+        //mViewWidth = (int) getContext().getResources().getDimension(R.dimen.size_profile_story);
+        mViewWidth = mViewHeight;
+        mIndicatoryOffset = mStoryIndicatorWidthInPx / 2;
+        mIndicatorImageOffset = mStoryIndicatorWidthInPx + mSpaceBetweenImageAndIndicator;
+        mIndicatorImageRect = new Rect(mIndicatorImageOffset, mIndicatorImageOffset, mViewWidth - mIndicatorImageOffset, mViewHeight - mIndicatorImageOffset);
+    }
+
+    public void resetStoryVisits() {
+        storyPreference.clearStoryPreferences();
+    }
+
+    public void setImageUris(List<StoryContent> imageUris, String imageUrl) {
+        this.storyImageUris = imageUris;
+        this.imageUrl = imageUrl;
+        this.indicatorCount = imageUris.size();
+        calculateSweepAngle(indicatorCount);
+        invalidate();
+        loadFirstImageBitamp();
+    }
+
+    /*public void setImageAndCount(ArrayList<StoryModel> imageUris) {
+        this.storyImageUris = imageUris;
+        this.indicatorCount = imageUris.size();
+        calculateSweepAngle(indicatorCount);
+        invalidate();
+        loadFirstImageBitamp();
+    }*/
+
+    /*@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            navigateToStoryPlayerPage();
+            return true;
+        }
+        return true;
+    }*/
+
+   /* private void navigateToStoryPlayerPage() {
+        Intent intent = new Intent(mContext, StoryPlayer.class);
+        intent.putParcelableArrayListExtra(StoryPlayer.STORY_IMAGE_KEY, storyImageUris);
+        mContext.startActivity(intent);
+    }*/
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        mIndicatorPaint.setColor(mPendingIndicatorColor);
+        mIndicatorPaint.setStrokeWidth(mStoryIndicatorWidthInPx);
+        int startAngle = START_ANGLE + ANGEL_OF_GAP / 2;
+        for (int i = 0; i < indicatorCount; i++) {
+            mIndicatorPaint.setColor(getIndicatorColor(i));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                canvas.drawArc(mIndicatoryOffset, mIndicatoryOffset, mViewWidth - mIndicatoryOffset, mViewHeight - mIndicatoryOffset, startAngle, indicatorSweepAngle - ANGEL_OF_GAP / 2, false, mIndicatorPaint);
+            } else {
+                canvas.drawArc(new RectF(mIndicatoryOffset, mIndicatoryOffset, mViewWidth - mIndicatoryOffset, mViewHeight - mIndicatoryOffset), startAngle, indicatorSweepAngle - ANGEL_OF_GAP / 2, false, mIndicatorPaint);
+            }
+            startAngle += indicatorSweepAngle + ANGEL_OF_GAP / 2;
+        }
+        if (mIndicatorImageBitmap != null) {
+            canvas.drawBitmap(mIndicatorImageBitmap, null, mIndicatorImageRect, null);
+        }
+    }
+
+    private int getIndicatorColor(int index) {
+        //return storyImageUris.get(index).isViewed() ? mVisistedIndicatorColor : mPendingIndicatorColor;
+        return storyPreference.isStoryVisited(storyImageUris.get(index).getStoryId()) ? mVisistedIndicatorColor : mPendingIndicatorColor;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int width = getPaddingLeft() + getPaddingRight() + mViewWidth;
+        int height = getPaddingTop() + getPaddingBottom() + mViewHeight;
+        int w = resolveSizeAndState(width, widthMeasureSpec, 0);
+        int h = resolveSizeAndState(height, heightMeasureSpec, 0);
+        setMeasuredDimension(w, h);
+    }
+
+    private void loadFirstImageBitamp() {
+        RequestOptions options = new RequestOptions().circleCrop();
+        Glide.with(this)
+                .asBitmap()
+                .apply(options)
+                .load(storyImageUris.get(0).getMediaUrl())
+                .into(new SimpleTarget<Bitmap>() {
+                    @Override
+                    public void onResourceReady(@NonNull Bitmap resource, Transition<? super Bitmap> transition) {
+                        mIndicatorImageBitmap = resource;
+                        invalidate();
+                    }
+                });
+    }
+
+    private void calculateSweepAngle(int itemCounts) {
+        if (itemCounts == 1) {
+            ANGEL_OF_GAP = 0;
+        }
+        this.indicatorSweepAngle = (360 / itemCounts) - ANGEL_OF_GAP / 2;
+    }
+
+    private int getPxFromDp(int dpValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, resources.getDisplayMetrics());
+    }
+}

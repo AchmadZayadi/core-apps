@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cvBgImageGrid"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="@string/choose_background"
+            android:textColor="@color/black_54" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBgOptionCancel"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="12dp"
+            android:rotation="45"
+            android:src="@drawable/add_create"
+            android:tint="@color/black_54" />
+
+        <View
+            style="@style/divider"
+            android:layout_below="@+id/ivBgOptionCancel"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full" />
+
+        <!--<android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/ivBgOptionCancel">-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBgImageGrid"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@+id/ivBgOptionCancel"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/item_offset"
+            android:paddingLeft="@dimen/item_offset"
+            android:paddingTop="@dimen/item_offset"
+            android:paddingEnd="@dimen/item_offset"
+            android:paddingBottom="44dp" />
+
+        <!--android:paddingBottom="@dimen/margin_half"
+        android:paddingLeft="8dp"
+        android:paddingRight="@dimen/margin_half"-->
+        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

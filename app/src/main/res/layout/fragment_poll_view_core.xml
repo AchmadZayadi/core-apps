@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_above="@+id/llReaction"
+        android:layout_below="@+id/appBar">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivImage22"
+                    android:layout_width="56sp"
+                    android:layout_height="56sp"
+                    android:layout_marginStart="@dimen/margin_medium"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_toEndOf="@+id/ivImage22"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_full"
+                    android:visibility="visible">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPollTitle"
+                        style="@style/text_style_1"
+                        android:maxLines="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAuthor"
+                        style="@style/text_style_stats"
+                        android:layout_marginStart="@dimen/margin_quarter"
+                        android:layout_marginLeft="@dimen/margin_quarter"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="14sp" />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvDesc"
+                        style="@style/text_style_1"
+                        android:layout_width="match_parent"
+                        android:maxLines="25"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:layout_marginBottom="@dimen/margin_half" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="18sp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="18sp"
+
+                                android:id="@+id/ses_eye"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/ses_eye" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="30sp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/tv_Views"
+                            android:gravity="center"
+                            android:layout_toRightOf="@+id/ses_eye"/>
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18sp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="48sp"
+                            android:id="@+id/chart"
+                            android:src="@drawable/analytics" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="20sp"
+                            android:id="@+id/tv_votes"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="66sp"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18sp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="86sp"
+                            android:id="@+id/tvpolllikes"
+                            android:src="@drawable/like_poll" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="20sp"
+                            android:id="@+id/tv_like"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="104sp"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18sp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="124sp"
+                            android:id="@+id/tvpollcomments"
+                            android:src="@drawable/comment" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="20sp"
+                            android:id="@+id/tv_comment"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="142sp"/>
+
+             </RelativeLayout>
+                </LinearLayout>
+
+                <com.sesolutions.ui.customviews.fab.FloatingActionButton
+                    android:id="@+id/fabQuestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/rvOption"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="-20dp"
+                    android:src="@drawable/poll_result"
+                    tools:visibility="gone"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvOption"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/ll1"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:padding="@dimen/margin_half" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <include layout="@layout/layout_like_favorite_comment" />
+
+
+</RelativeLayout>

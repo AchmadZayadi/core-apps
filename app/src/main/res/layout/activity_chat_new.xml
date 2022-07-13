@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_viewgroup"
+    style="@style/Background_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_toolbar"
+        android:background="@color/colorPrimary"
+        android:contentInsetEnd="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetStart="0dp"
+        android:tag="@string/tag_toolbar"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:popupTheme="@style/ToolbarTheme">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/above_shadow"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                style="@style/button_image_toolbar"
+                app:srcCompat="@drawable/arrow_left" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="@string/txt_compose"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icSend"
+                    style="@style/button_image_toolbar"
+                    android:layout_width="36dp"
+                    android:padding="9dp"
+                    app:srcCompat="@drawable/delete" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/button_height"
+        android:layout_marginTop="@dimen/height_toolbar" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlAttach"
+            android:layout_width="40dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icAttach"
+                style="@style/ripple_selector"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:padding="9dp"
+                app:srcCompat="@drawable/attachment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBadge"
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/circle_red_background"
+                android:gravity="center"
+                android:padding="1dp"
+                android:text="1+"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etMsg"
+            style="@style/Edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapSentences"
+            android:layout_marginBottom="2px"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:layout_weight="1"
+            android:minHeight="40dp"
+            android:background="@drawable/bg_border_curve_white_22"
+            android:elevation="2dp"
+            android:text=""
+            android:hint="@string/txt_write_msg"
+            android:paddingStart="@dimen/margin_medium"
+            android:paddingLeft="@dimen/margin_medium"
+            android:textSize="@dimen/body_1" />
+
+        <!-- </android.support.v7.widget.LinearLayoutCompat>-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bPost"
+            android:layout_width="48dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:elevation="@dimen/margin_half"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ses_send" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

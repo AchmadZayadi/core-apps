@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:shape="rectangle">
+    <gradient
+        android:centerColor="@color/color_facebook"
+        android:endColor="@color/color_facebook"
+        android:startColor="@color/color_facebook" />
+    <corners android:radius="1dp" />
+    <stroke
+        android:width="2sp"
+        android:color="@color/color_facebook" />
+</shape>

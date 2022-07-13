@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlDialogMain"
+    style="@style/dialog_style"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDialogText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/margin_full"
+        android:text="@string/account_created"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_full"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp" />
+
+        <TextView
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:text="@string/logging_in"
+            android:textSize="@dimen/sub_heading" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bCamera"
+            style="@style/button_simple"
+            android:layout_marginRight="2sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:text="@string/camera"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bGallary"
+            style="@style/button_simple"
+            android:layout_marginLeft="2sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:minWidth="100dp"
+            android:text="@string/gallary"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</LinearLayout>

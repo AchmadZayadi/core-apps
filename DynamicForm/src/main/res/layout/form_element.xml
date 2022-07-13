@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMainForm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorFormMasterElementBackground"
+    android:orientation="vertical">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/formelementTextinput"
+        android:layout_width="match_parent"
+        app:hintTextAppearance="@color/black"
+        android:layout_height="match_parent"
+        app:boxStrokeWidth="1dp"
+        app:hintAnimationEnabled="true"
+        app:boxStrokeColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/formElementValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions"
+            android:textSize="15sp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/Abit_Black"
+            app:passwordToggleTintMode="multiply"
+            android:text=""
+            android:maxLines="1"
+            android:padding="10dp"
+            android:hint="" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

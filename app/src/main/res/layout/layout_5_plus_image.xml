@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMultipleImage5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/backgroundColor"
+            app:cardCornerRadius="@dimen/margin_half"
+            app:cardElevation="0dp">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivImage51"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/backgroundColor"
+            app:cardCornerRadius="@dimen/margin_half"
+            app:cardElevation="0dp">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivImage52"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/backgroundColor"
+            app:cardCornerRadius="@dimen/margin_half"
+            app:cardElevation="0dp">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivImage53"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_small"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/backgroundColor"
+            app:cardCornerRadius="@dimen/margin_half"
+            app:cardElevation="0dp">
+
+            <com.sesolutions.ui.customviews.SquareImageView
+                android:id="@+id/ivImage54"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+
+        <RelativeLayout
+            android:id="@+id/rlLowerlast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginLeft="@dimen/margin_small"
+            android:layout_weight="1">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/backgroundColor"
+                app:cardCornerRadius="@dimen/margin_half"
+                app:cardElevation="0dp">
+
+                <com.sesolutions.ui.customviews.SquareImageView
+                    android:id="@+id/ivImage55"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+                <View
+                    android:id="@+id/vPlusCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/scrim"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_quarter"
+                    android:text="+1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/heading"
+                    android:visibility="gone" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!-- <RelativeLayout
+             android:id="@+id/rlLowerlast"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/margin_quarter"
+             android:layout_marginStart="@dimen/margin_quarter"
+             android:layout_weight="1">
+
+             <android.support.v7.widget.AppCompatImageView
+                 android:id="@+id/ivImage5"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_weight="1"
+                 android:scaleType="centerCrop"
+                 android:visibility="gone" />
+
+             <android.support.v7.widget.AppCompatTextView
+                 android:id="@+id/tvPlus"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:adjustViewBounds="true"
+                 android:background="@drawable/gradient_black"
+                 android:gravity="center"
+                 android:text="+1"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/heading"
+                 android:visibility="gone" />
+         </RelativeLayout>-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.appcompat.widget.LinearLayoutCompat>

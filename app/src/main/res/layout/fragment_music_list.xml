@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ActionBarTheme">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_toolbar"
+                android:background="@color/black"
+                android:contentInsetStart="0dp"
+                android:contentInsetLeft="0dp"
+                android:contentInsetEnd="0dp"
+                android:contentInsetRight="0dp"
+                app:contentInsetEnd="0dp"
+                app:contentInsetLeft="0dp"
+                app:contentInsetRight="0dp"
+                app:contentInsetStart="0dp"
+
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                <!--
+                                app:layout_scrollFlags="scroll|enterAlways"
+                -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivBack"
+                        style="@style/button_image_toolbar"
+                        android:rotation="45"
+                        app:srcCompat="@drawable/add_create" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTitle"
+                        style="@style/text_style_toolbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:freezesText="true"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:paddingLeft="@dimen/button_height"
+                        android:paddingRight="@dimen/button_height"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:text="@string/app_name"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sub_title" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivOption"
+                        style="@style/button_image_toolbar"
+                        android:layout_alignParentRight="true"
+                        app:srcCompat="@drawable/vertical_dots" />
+
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpSong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/backrl"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:alpha="0.25"
+                ></ImageView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="8sp"
+                    android:paddingTop="@dimen/_5ssp"
+                    android:paddingBottom="20dp"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <com.rey.material.widget.Slider
+                        android:id="@+id/seekbar"
+                        style="@style/Material.Widget.Slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:sl_minValue="0"
+                        android:layout_toRightOf="@+id/tvStartTime"
+                        android:layout_toLeftOf="@+id/tvTotalTime"
+                        app:sl_maxValue="100"
+                        app:sl_value="1"
+                        android:layout_marginLeft="@dimen/margin_half"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:sl_trackSize="3dp"
+                        app:sl_primaryColor="@color/white"
+                        app:sl_secondaryColor="@color/grey"
+                        />
+
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:letterSpacing="0.1"
+                        android:fontFamily="@font/sourcesanspro_semibold"
+                        android:layout_marginLeft="30dp"
+                        android:textSize="15sp"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:text="0:0"
+                        android:textColor="@color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="30dp"
+                        android:letterSpacing="0.1"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/sourcesanspro_semibold"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:layout_marginRight="30dp"
+                        android:text="4:00"
+                        android:textColor="@color/white" />
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvClear"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:gravity="center"
+                        android:text="@string/clear_queue"
+                        android:textColor="@color/grey_feed" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLyrics"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:gravity="center"
+                        android:text="@string/lyrics"
+                        android:textColor="@color/grey_feed" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivShuffle"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="25dp"
+                        android:padding="6sp"
+                        app:srcCompat="@drawable/shuffle" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPrev"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="40sp"
+                        android:layout_toLeftOf="@+id/playc"
+                        app:srcCompat="@drawable/back" />
+
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/playc"
+                        android:layout_width="70dp"
+                        android:layout_centerInParent="true"
+                        android:layout_height="70dp"
+                        android:layout_marginTop="25dp"
+                        android:background="@drawable/circle_white_background"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivPlay"
+                            android:layout_width="@dimen/height_icon_controller"
+                            android:layout_height="@dimen/height_icon_controller"
+                            android:layout_centerInParent="true"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/pause" />
+
+                        <ProgressBar
+                            android:id="@+id/pb"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerInParent="true"
+                            android:padding="6sp"
+                            android:visibility="invisible"
+                            app:srcCompat="@drawable/pause"
+                            />
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivNext"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginLeft="40sp"
+                        android:layout_toRightOf="@+id/playc"
+                        app:srcCompat="@drawable/next" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivRepeat"
+                        android:layout_width="40dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:padding="6sp"
+                        app:srcCompat="@drawable/reload" />
+
+                </RelativeLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_detail_song" />
+
+</RelativeLayout>

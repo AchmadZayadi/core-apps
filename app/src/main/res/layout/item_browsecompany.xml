@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:foreground="@drawable/rounded_holo_border_black"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginTop="@dimen/margin_quarter"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:layout_height="wrap_content"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/comanyimageid"
+            android:src="@drawable/dell_company"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:padding="@dimen/margin_half"
+            ></ImageView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/jobtitle"
+            android:layout_toRightOf="@+id/comanyimageid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dell Pvt Ltd"
+            android:layout_marginStart="@dimen/margin_half"
+            android:textColor="#262626"
+            android:textSize="@dimen/sub_title"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_medium"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/companyname"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/comanyimageid"
+            android:layout_below="@+id/jobtitle"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_height="wrap_content"
+            android:text="Science and Technology"
+            android:layout_marginStart="@dimen/margin_half"
+            android:textColor="#828282"
+            android:textSize="@dimen/body_1"
+            android:fontFamily="@font/roboto_medium"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/expriense"
+            android:layout_toRightOf="@+id/comanyimageid"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/companyname"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:text="0.0-1.5 years"
+            android:textColor="#828282"
+            android:textSize="@dimen/body_2"
+            android:fontFamily="@font/roboto_medium"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userlocation"
+            android:layout_toRightOf="@+id/comanyimageid"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/expriense"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_height="wrap_content"
+            android:text="Jaipur"
+            android:visibility="gone"
+            android:textColor="#828282"
+            android:textSize="@dimen/body_1"
+            android:fontFamily="@font/roboto_medium"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/postedbyid"
+            android:layout_toRightOf="@+id/comanyimageid"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/userlocation"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_height="wrap_content"
+            android:text="Posted by 3 days ago"
+            android:textColor="#828282"
+            android:textSize="@dimen/body_1"
+            android:fontFamily="@font/roboto_medium"
+            ></androidx.appcompat.widget.AppCompatTextView>
+
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="right"
+            android:layout_margin="@dimen/margin_half"
+            android:layout_alignParentRight="true"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSaveFeed"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_save" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llbottomid"
+            android:layout_below="@+id/companyname"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="1">
+
+         <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFbShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_facebook" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivWhatsAppShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/whatsapp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImageShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_share" />
+
+
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

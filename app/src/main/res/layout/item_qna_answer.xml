@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:orientation="vertical">
+
+    <View
+        style="@style/divider"
+        android:layout_marginBottom="@dimen/margin_half" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/rlQnaDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full">
+
+        <include
+            layout="@layout/layout_qna_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half" />
+
+        <View
+            style="@style/divider"
+            android:layout_width="@dimen/divider_length"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginRight="@dimen/margin_medium" />
+
+        <com.sesolutions.ui.customviews.NestedWebView
+            android:id="@+id/nwv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_qna_icon"
+            android:layout_toStartOf="@+id/llReactionUpper"
+            android:layout_toLeftOf="@+id/llReactionUpper"
+            android:layout_toEndOf="@+id/llQnaVote"
+            android:layout_toRightOf="@+id/llQnaVote"
+            android:layout_weight="1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            android:layout_width="@dimen/height_qna_icons"
+            android:layout_height="@dimen/height_qna_icons"
+            android:paddingStart="@dimen/padding_qna_icon"
+            android:paddingLeft="@dimen/padding_qna_icon"
+            android:paddingTop="6dp"
+            android:paddingEnd="@dimen/padding_qna_icon"
+            android:paddingRight="@dimen/padding_qna_icon"
+            android:paddingBottom="6dp"
+            android:rotation="90"
+            app:srcCompat="@drawable/vertical_dots"
+            app:tint="@color/text_color_2" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.sesolutions.animate.bang.SmallBangView
+            android:id="@+id/sbvStar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivStar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="@dimen/padding_qna_icon"
+                app:srcCompat="@drawable/star_unfilled" />
+        </com.sesolutions.animate.bang.SmallBangView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddComment"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="@dimen/margin_half"
+            android:background="@drawable/rounded_holo_border_grey_light"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="@dimen/margin_half"
+            android:text="@string/add_comment"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvAddComment"
+            android:layout_marginStart="64dp"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:textSize="@dimen/caption" />
+
+
+        <RelativeLayout
+            android:id="@+id/rlOwnerInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/margin_half"
+            android:gravity="center_vertical"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="18sp"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/v1"
+                android:layout_toLeftOf="@+id/v1"
+                android:background="@drawable/ronded_left_alpha_black" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivOwnerImage"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+
+                android:src="@drawable/dummy_profile"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOwnerTitle"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_toRightOf="@id/ivOwnerImage"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Gene Brooks"
+                android:textSize="@dimen/caption_mini" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_toRightOf="@+id/tvOwnerTitle" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDate"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/rlOwnerInfo"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:text="few Seconds ago"
+            android:textSize="@dimen/caption_mini" />
+    </RelativeLayout>
+
+
+    <View style="@style/divider" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

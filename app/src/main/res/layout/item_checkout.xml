@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_half"
+        android:layout_marginStart="@dimen/margin_half"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvStoreName"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:text="store name"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:descendantFocusability="beforeDescendants"
+            android:divider="#b5b5b5"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="vertical"
+            android:padding="@dimen/item_offset" />
+
+        <RelativeLayout
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_half"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:paddingBottom="@dimen/margin_quarter"
+                android:text="Subtotal:" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTotal"
+                style="@style/text_style_primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_toRightOf="@+id/label"
+                android:text="$ 600.00"
+                android:textSize="@dimen/body_1"
+                android:textStyle="bold" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="142dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:layout_toLeftOf="@+id/mcvRemove"
+                android:padding="@dimen/store_item_margin_view"
+                app:cardCornerRadius="@dimen/margin_quarter"
+                app:strokeColor="@color/text_color_2"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/margin_quarter"
+                    android:paddingLeft="@dimen/margin_quarter"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:paddingEnd="@dimen/margin_quarter"
+                    android:paddingRight="@dimen/margin_quarter"
+                    android:paddingBottom="@dimen/margin_quarter"
+                    android:text="@string/add_to_wishlist" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_quarter"
+                android:padding="@dimen/store_item_margin_view"
+                app:cardCornerRadius="@dimen/margin_quarter"
+                app:strokeColor="@color/text_color_2"
+                app:strokeWidth="1dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingStart="@dimen/margin_quarter"
+                    android:paddingLeft="@dimen/margin_quarter"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:paddingEnd="@dimen/margin_quarter"
+                    android:paddingRight="@dimen/margin_quarter"
+                    android:paddingBottom="@dimen/margin_quarter"
+                    android:text="@string/remove" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

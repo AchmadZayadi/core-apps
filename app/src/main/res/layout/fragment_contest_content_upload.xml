@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_quarter"
+        android:animateLayoutChanges="true"
+        android:gravity="center">
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cvPost"
+            style="@style/Card_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/item_offset"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingStart="8dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPost"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="6dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/add_comment"
+                    app:tint="@color/colorImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_toEndOf="@+id/ivPost"
+                    android:layout_toRightOf="@+id/ivPost"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/colorFormMasterHeaderText"
+                    android:textSize="@dimen/elementTextTitleSize"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cvLink"
+            style="@style/Card_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/item_offset"
+            android:visibility="gone"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="16dp"
+                android:paddingStart="8dp">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLink"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:padding="6dp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ses_link"
+                    app:tint="@color/colorImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_toEndOf="@+id/ivLink"
+                    android:layout_toRightOf="@+id/ivLink"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textColor="@color/colorFormMasterHeaderText"
+                    android:textSize="@dimen/elementTextTitleSize"
+                    android:visibility="visible" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:id="@+id/rlMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llHeader"
+        android:animateLayoutChanges="true"
+        android:visibility="gone">
+
+        <View
+            style="@style/Forground_style"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_margin="@dimen/margin_full" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_margin="@dimen/margin_full"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/rounded_holo_border_grey_light"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/icMedia"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_above="@+id/tvMedia"
+                app:srcCompat="@drawable/camera"
+                app:tint="@color/text_color_2" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMedia"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/margin_medium"
+                android:text="@string/add_photo_for_your_contest" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_margin="@dimen/margin_full"
+            android:padding="@dimen/divider_length"
+            android:scaleType="centerCrop"
+            android:visibility="gone" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMediaType"
+            android:layout_width="32sp"
+            android:layout_height="32sp"
+            android:layout_centerInParent="true"
+            android:elevation="6dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/play" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCancel"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_half"
+            android:background="@drawable/circle_white_background"
+            android:elevation="6dp"
+            android:padding="8dp"
+            android:rotation="45"
+            android:visibility="gone"
+            app:srcCompat="@drawable/add_create"
+            app:tint="@color/red" />
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/cvChip"
+        layout="@layout/layout_chip"
+        android:layout_width="200dp"
+        android:layout_height="32dp"
+        android:layout_below="@+id/llHeader"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/llTextContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llHeader"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWrite"
+            style="@style/text_style_1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:paddingBottom="6dp"
+            android:paddingTop="16dp"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="@dimen/elementTextTitleSize"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvWriteDescription"
+            style="@style/text_style_2"
+            android:layout_below="@+id/tvWrite"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:paddingBottom="6dp"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="@dimen/caption"
+            android:visibility="visible" />
+
+        <com.sesolutions.ui.customviews.NestedWebView
+            android:id="@+id/wbWrite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvWriteDescription"
+            android:layout_margin="@dimen/margin_full"
+            android:background="@drawable/rounded_holo_border_grey_light"
+            android:padding="1dp" />
+
+        <!--  <View
+              android:id="@+id/vWrite"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_below="@+id/tvWriteDescription"
+              android:layout_margin="@dimen/margin_full" />-->
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

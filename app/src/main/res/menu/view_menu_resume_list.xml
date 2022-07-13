@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/editmanue"
+        android:title="Edit Title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/editmanueinfo"
+        android:title="Edit Resume Information"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/deletemanue"
+        android:title="@string/delete"
+        app:showAsAction="always" />
+</menu>

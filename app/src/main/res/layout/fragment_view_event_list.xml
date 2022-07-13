@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            android:visibility="visible">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false"
+                android:theme="@style/ActionBarTheme">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:id="@+id/collapsing_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="false"
+                    app:contentScrim="@color/colorPrimary"
+                    app:expandedTitleMarginStart="@dimen/margin_full"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:title=" "
+                    app:titleEnabled="true">
+
+                    <RelativeLayout
+                        android:id="@+id/rlDetail"
+                        style="@style/Main_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:visibility="visible"
+                        app:layout_collapseMode="none">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCoverPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="180sp"
+                            android:scaleType="centerCrop" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCamera"
+                            style="@style/ripple_selector"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="@dimen/margin_quarter"
+                            android:layout_marginRight="@dimen/margin_quarter"
+                            android:layout_marginTop="150sp"
+                            android:background="@drawable/circle_white_background"
+                            android:elevation="4dp"
+                            android:padding="6dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ses_camera" />
+
+                        <!-- <RelativeLayout
+                             android:id="@+id/rlUpper"
+                             android:layout_width="match_parent"
+                            >
+
+
+
+                         </RelativeLayout>-->
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlPageInfo"
+                            style="@style/Forground_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ivCoverPhoto"
+                            android:gravity="center_vertical">
+
+                            <View style="@style/divider" />
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/ivPageImage"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:layout_marginBottom="@dimen/margin_medium"
+                                android:layout_marginLeft="@dimen/margin_full"
+                                android:layout_marginRight="@dimen/margin_full"
+                                android:layout_marginTop="@dimen/margin_half"
+
+                                />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivCamera2"
+                                style="@style/ripple_selector"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="48dp"
+                                android:layout_marginStart="48dp"
+                                android:layout_marginTop="40dp"
+                                android:background="@drawable/circle_white_background"
+                                android:elevation="4dp"
+                                android:padding="6dp"
+                                android:visibility="gone"
+                                app:srcCompat="@drawable/ses_camera" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvPageTitle"
+                                style="@style/text_style_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/margin_full"
+                                android:layout_marginRight="@dimen/margin_full"
+                                android:layout_marginTop="@dimen/margin_medium"
+                                android:layout_toRightOf="@+id/ivPageImage"
+                                android:ellipsize="end"
+                                android:maxLines="1" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvStats"
+                                style="@style/text_style_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvPageTitle"
+                                android:layout_marginTop="@dimen/margin_quarter"
+                                android:layout_toRightOf="@+id/ivPageImage"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:textSize="@dimen/caption" />
+
+                        </RelativeLayout>
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llTabOptions"
+                            style="@style/Forground_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rlPageInfo"
+                            android:animateLayoutChanges="true"
+                            android:padding="@dimen/margin_half">
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <View
+                            style="@style/divider"
+                            android:layout_below="@+id/llTabOptions" />
+                    </RelativeLayout>
+
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        app:layout_collapseMode="pin"
+                        app:popupTheme="@style/ToolbarTheme" />
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/white"
+                    app:tabGravity="fill"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/colorPrimary"
+                    app:tabTextColor="@color/text_color_1" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <!--  </android.support.v4.widget.NestedScrollView>-->
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_34ssp"
+        android:background="@drawable/below_shadow"
+        ></View>
+
+</RelativeLayout>

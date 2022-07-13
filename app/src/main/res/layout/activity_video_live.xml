@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_video_live"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    tools:context=".ui.live.LiveVideoActivity">
+
+    <LinearLayout
+        android:id="@+id/self_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvLive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:onClick="onShowTimeClicked"
+            app:cardCornerRadius="4sp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:background="@drawable/gradient_live"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/live"
+                    android:layout_gravity="center"
+                    android:paddingLeft="@dimen/margin_quarter"
+                    android:paddingRight="@dimen/margin_quarter"
+                    android:layout_margin="@dimen/margin_quarter"
+                    android:textColor="@color/white"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0:30"
+                    android:gravity="center"
+                    android:textSize="@dimen/caption_large"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:layout_marginBottom="@dimen/margin_quarter"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvUserCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_full"
+            android:layout_toEndOf="@+id/cvLive"
+            android:layout_toRightOf="@+id/cvLive"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/transparent_black_light"
+            app:cardCornerRadius="4sp"
+            app:cardElevation="0dp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/llUserCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:layout_marginBottom="@dimen/margin_quarter"
+                    android:padding="2dp"
+                    android:layout_gravity="center"
+                    android:tint="@color/white"
+                    android:src="@drawable/password_show" />
+
+                <TextView
+                    android:id="@+id/liveUsers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:textSize="@dimen/caption_large"
+                    android:textColor="@color/white"
+                    android:text="1" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_full"
+            android:text="@string/txt_end"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title"
+            android:textStyle="bold"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivPipMode"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="@dimen/margin_duper"
+        android:layout_marginLeft="18dp"
+        android:onClick="onPipModeClicked"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_pip"
+        android:visibility="gone"
+        app:tint="@color/white" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llPrivacy"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_duper"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="To:"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPrivacyImage"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/margin_quarter"
+            android:textColor="@color/grey_feed"
+            android:src="@drawable/privacy_everyone"
+            android:tint="@color/white"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvViewPrivacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/privacy_everyone"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/margin_quarter"
+            android:text="@string/dot"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPostNStory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:text="Post, Story"
+            android:textColor="@color/white"
+            android:textSize="@dimen/caption" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/caption"
+            android:layout_height="@dimen/caption"
+            android:layout_gravity="center"
+            android:padding="2dp"
+            android:src="@drawable/ses_down" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:id="@+id/llPostResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:background="@color/transparent_black_dark"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Your Live Video has Ended"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading"
+            android:layout_margin="@dimen/margin_full"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalUsers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_super"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading"
+            android:textStyle="bold"
+            tools:text="Users" />
+
+        <RelativeLayout
+            android:id="@+id/rlStory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_full">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="@dimen/margin_half"
+                android:maxLines="2"
+                android:padding="@dimen/margin_half"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/scToggleStory"
+                android:text="@string/share_instory"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/scToggleStory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_half"
+                android:padding="@dimen/margin_half"
+                android:checked="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlFeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_super">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_half"
+                android:maxLines="2"
+                android:padding="@dimen/margin_half"
+                android:gravity="start"
+                android:text="@string/share_infeed"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/scTogglePost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_half"
+                android:padding="@dimen/margin_half"
+                android:checked="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_super">
+
+            <LinearLayout
+                android:id="@+id/llSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onSaveVideo"
+                android:layout_margin="@dimen/margin_full"
+                android:layout_toLeftOf="@+id/llDelete"
+                android:background="@drawable/rounded_holo_border_white">
+
+                <ImageView
+                    android:layout_width="18sp"
+                    android:layout_height="18sp"
+                    android:tint="@color/white"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_done_white_24dp"/>
+
+                <TextView
+                    android:id="@+id/tvSave"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dp"
+                    android:paddingRight="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/save"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/caption"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="onDeleteVideo"
+                android:layout_marginTop="@dimen/margin_full"
+                android:layout_toLeftOf="@+id/mcvPost"
+                android:background="@drawable/rounded_holo_border_white">
+
+                <ImageView
+                    android:layout_width="22sp"
+                    android:layout_height="18sp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_cam_delete"/>
+
+                <TextView
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="DELETE"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/caption"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvPost"
+                android:theme="@style/AppThemeMatrial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_full"
+                android:onClick="onPostActionClick"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="4dp">
+
+                <TextView
+                    style="@style/text_style_1"
+                    android:id="@+id/tvShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/share"
+                    android:textSize="@dimen/caption"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llGoOwnLive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_transparent"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_half"
+            android:text="Thanks for Watching!"
+            android:textColor="@color/white"
+            android:textSize="@dimen/heading" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_super"
+            android:text="@string/stream_ended"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_full"
+            android:text="@string/create_own"
+            android:textColor="@color/white" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mcvGoOwnLive"
+            android:layout_width="220dp"
+            android:theme="@style/AppThemeMatrial"
+            android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_full"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/margin_half"
+                android:text="Go Live"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="visible"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivMuteRemote"
+            android:layout_width="44sp"
+            android:layout_height="44sp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:onClick="onRemoteAudioMuteClicked"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/speaker"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rlgolive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="44sp"
+                android:layout_height="44sp"
+                android:layout_marginLeft="@dimen/margin_super"
+                android:onClick="onSwitchCameraClicked"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/rotate" />
+
+            <ImageView
+                android:id="@+id/ivMuteLocal"
+                android:layout_width="44sp"
+                android:layout_height="44sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_super"
+                android:onClick="onLocalAudioMuteClicked"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/voice_off" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcvGoLive"
+                android:layout_width="180dp"
+                android:theme="@style/AppThemeMatrial"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="18dp">
+
+                <TextView
+                    android:id="@+id/tvGoLive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/margin_half"
+                    android:text="Go Live"
+                    android:textColor="@color/black" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/llAudienceAction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvReply"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_reaction_icon" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_gravity="center"
+        android:background="@color/transparent_black_dark"
+        android:textAlignment="center"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/vScrim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivBack"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_margin="@dimen/margin_full"
+        android:padding="4dp"
+        app:srcCompat="@drawable/ic_arrow_back" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSetting"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/margin_full"
+        android:padding="8dp"
+        android:src="@drawable/setting"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="340dp"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title"
+        tools:text="progress" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/msg_list"
+        android:layout_width="240dp"
+        android:layout_height="260dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginBottom="120dp"
+        android:orientation="vertical"
+        tools:listitem="@layout/msg_content" />
+
+    <com.sesolutions.ui.customviews.VideoEnabledWebView
+        android:id="@+id/webView"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_video_player"
+        android:layout_below="@+id/rl1"
+        android:background="@color/black" />
+
+</FrameLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llcheckout"
+        android:layout_below="@+id/appBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layoutAnimation="@anim/anim_fall_down"
+                android:orientation="vertical"
+                android:layout_marginBottom="86dp"
+                android:padding="@dimen/item_offset" />
+
+            <include layout="@layout/layout_no_data_cart" />
+
+            <ProgressBar
+                android:id="@+id/pb"
+                android:layout_width="@dimen/button_height_small"
+                android:layout_height="@dimen/button_height_small"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llTotal"
+        android:layout_above="@id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_medium"
+        android:background="#E0E0E0"
+        android:orientation="horizontal"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:weightSum="2">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llGrand"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="@dimen/store_item_margin_view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/margin_quarter"
+            android:paddingLeft="@dimen/margin_quarter"
+            android:paddingTop="@dimen/margin_quarter"
+            android:paddingEnd="@dimen/margin_quarter"
+            android:paddingRight="@dimen/margin_quarter"
+            android:paddingBottom="@dimen/margin_quarter"
+            android:text="Grand Total:"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llprice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/store_item_margin_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/llprice2"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                tools:visibility="visible"
+                tools:text="$1800"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:paddingBottom="@dimen/margin_quarter"
+                android:textColor="@color/colorPrimary" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llBottom"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_medium"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_clear_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/store_item_margin_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:paddingBottom="@dimen/margin_quarter"
+                android:text="Clear All"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:padding="@dimen/store_item_margin_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                tools:visibility="visible"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:paddingBottom="@dimen/margin_quarter"
+                android:text="Checkout"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>

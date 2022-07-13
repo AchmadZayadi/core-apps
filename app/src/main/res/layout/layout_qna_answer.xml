@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_half"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginEnd="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    app:cardCornerRadius="@dimen/margin_half"
+    app:cardElevation="@dimen/margin_quarter"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <RelativeLayout
+        style="@style/Background_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvBSHeader"
+            style="@style/Card_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            app:cardCornerRadius="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_qa_bottom_sheet">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBSHeader"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_full"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:text="@string/text_Answer"
+                    android:textSize="@dimen/sub_title"
+                    android:textStyle="bold" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/author"
+                    android:layout_width="32dp"
+                    android:layout_height="8dp"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="@color/placeholder_bg"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bBSHeaderAdd"
+                    style="@style/button_simple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:text="@string/add_answer" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/cvBSHeader"
+            android:layoutAnimation="@anim/anim_fall_down" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="@dimen/button_height_small"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <include layout="@layout/layout_no_data" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

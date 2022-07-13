@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlMain"
+    style="@style/ripple_selector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_quarter"
+    android:layout_marginLeft="10dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="@dimen/margin_quarter"
+    android:minWidth="70sp">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cvMain"
+        android:layout_width="36sp"
+        android:layout_height="36sp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/margin_quarter"
+        android:layout_marginTop="@dimen/margin_quarter"
+        app:cardCornerRadius="18sp"
+        app:cardElevation="0dp">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFeedImage"
+            android:layout_width="24sp"
+            android:layout_height="24sp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:src="@drawable/dummy_profile"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <!--<View
+        android:id="@+id/ivForeground"
+        android:layout_width="@dimen/height_feed_filter_type"
+        android:layout_height="@dimen/height_feed_filter_type"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:background="@color/white_40" />-->
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvFeedText"
+        style="@style/text_style_light"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/cvMain"
+        android:layout_centerHorizontal="true"
+        android:maxLines="1"
+        android:padding="@dimen/margin_quarter"
+        android:textSize="@dimen/caption" />
+
+</RelativeLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/progress_view"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            layout="@layout/layout_toolbar_customize"></include>
+     <androidx.cardview.widget.CardView
+        android:id="@+id/cvPost"
+        style="@style/Card_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/margin_half"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_half"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:cardCornerRadius="0dp">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="16dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="16dp"
+            android:paddingStart="8dp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPost"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:padding="6dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/add_comment"
+                app:tint="@color/colorImage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPost"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_toRightOf="@+id/ivPost"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorFormMasterHeaderText"
+                android:textSize="@dimen/elementTextTitleSize"
+                tools:text="post"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/margin_super"
+        android:paddingEnd="@dimen/item_offset"
+        android:paddingLeft="@dimen/item_offset"
+        android:paddingRight="@dimen/item_offset"
+        android:paddingStart="@dimen/item_offset" />
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+    <include layout="@layout/layout_no_data" />
+
+</RelativeLayout>

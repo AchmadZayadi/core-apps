@@ -1,0 +1,87 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'jacoco'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+repositories {
+    jcenter()
+}
+
+android {
+    publishNonDefault true
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+        minSdkVersion 16
+        targetSdkVersion rootProject.ext.compileSdkVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Avoid 'duplicate files during packaging of APK' errors
+    packagingOptions {
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    compile 'org.wordpress:utils:1.6.0'
+}
+
+
+
+
+
+
+// Use these to define which classes to include and exclude from code coverage analysis
+def coverageSourceDirs = [ 'src/main/java' ]
+def coverageExclusions = [ '**/R.class',
+                           '**/R$*.class',
+                           '**/*$ViewInjector*.*',
+                           '**/BuildConfig.*',
+                           '**/Manifest*.*',
+                           '**/Legacy**.class',
+                           '**/legacy/**/*.class' ]
+
+task jacocoTestReport(type: JacocoReport, dependsOn: "testDebug") {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    classDirectories.from = fileTree(
+            dir: 'build/intermediates/classes/debug',
+            excludes: coverageExclusions
+    )
+
+    additionalSourceDirs.from = files(coverageSourceDirs)
+    sourceDirectories.from = files(coverageSourceDirs)
+    executionData.from = files('build/jacoco/testDebug.exec')
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}

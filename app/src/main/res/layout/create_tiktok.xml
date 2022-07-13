@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF444444">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rlVideo"
+        android:layout_height="match_parent">
+        <!-- Camera -->
+        <com.otaliastudios.cameraview.CameraView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/camera"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"
+            app:cameraAudio="on"
+            app:cameraCropOutput="true"
+            app:cameraFacing="back"
+            app:cameraHdr="on"
+            app:cameraFlash="off"
+            app:cameraGestureLongTap="none"
+            app:cameraGesturePinch="zoom"
+            app:cameraGestureScrollHorizontal="none"
+            app:cameraGestureScrollVertical="exposureCorrection"
+            app:cameraGestureTap="focusWithMarker"
+            app:cameraGrid="off"
+            app:cameraJpegQuality="90"
+            app:cameraVideoCodec="h264"
+            app:cameraPlaySounds="true"
+            app:cameraSessionType="video" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCross"
+            android:layout_below="@+id/progressbar"
+            style="@style/ripple_selector"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_width="48dp"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:elevation="@dimen/margin_half"
+            android:padding="7dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_close_24dp"
+            app:tint="@color/white"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMusic"
+            android:layout_toRightOf="@id/ivCross"
+            android:layout_below="@id/progressbar"
+            style="@style/ripple_selector"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="16dp"
+            android:layout_width="40dp"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_height="40dp"
+            android:background="@null"
+            android:elevation="@dimen/margin_half"
+            android:padding="7dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/new_music"
+            app:tint="@color/white"/>
+        <TextView
+            android:id="@+id/tvSongName"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            tools:text="Hello"
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/ivMusic"
+            android:layout_toEndOf="@+id/ivMusic"
+            android:textColor="@color/white"
+            android:layout_below="@+id/progressbar"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tvCountDown"
+            android:visibility="gone"
+            tools:visibility="visible"
+            style="@style/text_style_light"
+            android:textSize="80sp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:text="5">
+
+        </TextView>
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/custom_progress"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/margin_full"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_height="6dp">
+        </ProgressBar>
+        <LinearLayout
+            android:id="@+id/lloptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_duper"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/toggleCamera"
+                style="@style/ripple_selector"
+                android:layout_width="48dp"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:elevation="@dimen/margin_half"
+                android:padding="7dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/new_camera"
+                app:tint="@color/white"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/toggleTimer"
+                style="@style/ripple_selector"
+                android:layout_width="48dp"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:layout_marginTop="@dimen/margin_half"
+                android:elevation="@dimen/margin_half"
+                android:padding="7dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/new_timer"
+                app:tint="@color/white"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/toggleFlash"
+                style="@style/ripple_selector"
+                android:layout_width="48dp"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_height="48dp"
+                android:background="@null"
+                android:layout_marginTop="@dimen/margin_half"
+                android:elevation="@dimen/margin_half"
+                android:padding="7dp"
+                android:visibility="visible"
+                app:srcCompat="@drawable/new_flash"
+                app:tint="@color/white"/>
+
+        </LinearLayout>
+        <!-- Controls -->
+        <LinearLayout
+            android:id="@+id/recControl"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_above="@+id/llTimer"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/edit"
+                    style="@style/ripple_selector"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/tiktok_button_back"
+                    android:elevation="@dimen/margin_half"
+                    android:padding="9dp"
+                    app:srcCompat="@drawable/setting"
+                    android:visibility="gone"/>
+
+                <!-- <Space
+                     android:layout_width="0dp"
+                     android:layout_height="1dp"
+                     android:layout_weight="1" />-->
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/capturePhoto"
+                    style="@style/ripple_selector"
+                    android:visibility="gone"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:background="@drawable/tiktok_button_back"
+                    android:elevation="@dimen/margin_half"
+                    app:srcCompat="@drawable/cam_ic_photo" />
+
+                <ImageView
+                    android:id="@+id/ic_pauseid"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="40dp"
+                    android:src="@drawable/ic_baseline_pause"
+                    android:visibility="gone"
+                    ></ImageView>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/captureVideo"
+                    style="@style/ripple_selector"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/tiktok_button_back"
+                    android:padding="28dp"
+                    android:visibility="visible"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/cam_ic_video" />
+
+
+                <LinearLayout
+                    android:id="@+id/llGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="24dp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivGallery"
+                        style="@style/ripple_selector"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:background="@drawable/button_bg_white"
+                        android:elevation="@dimen/margin_half"
+                        android:padding="@dimen/margin_full"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_photo" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_style_light"
+                        android:textSize="@dimen/margin_full"
+                        android:text="Upload"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp">
+
+                    </androidx.appcompat.widget.AppCompatTextView>
+                </LinearLayout>
+
+
+                <!-- <Space
+                     android:layout_width="0dp"
+                     android:layout_height="1dp"
+                     android:layout_weight="1" />-->
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1">
+
+
+                    <TextView
+                        android:id="@+id/tv60"
+                        style="@style/text_style_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:gravity="start"
+                        android:padding="10dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_alignParentEnd="true"
+                        android:text="60S"
+                        android:textSize="12sp">
+
+                    </TextView>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="wrap_content"
+                    style="@style/text_style_light"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:padding="10dp"
+                    android:text="15S"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/circle_timer"
+                    android:textSize="12sp"
+                    android:textStyle="bold">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <!-- Edit -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="300dp"
+        app:behavior_skipCollapsed="false"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </androidx.core.widget.NestedScrollView>
+    <include layout="@layout/layout_music_player" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

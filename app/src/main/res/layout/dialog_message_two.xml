@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlDialogMain"
+    style="@style/dialog_style"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        style="@style/text_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginTop="@dimen/margin_full"
+        android:textSize="@dimen/size_text_dialog"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDialogText"
+        style="@style/text_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/margin_full"
+        android:textSize="@dimen/size_text_dialog" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_full"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginLeft="@dimen/margin_full"
+        android:layout_marginRight="@dimen/margin_full"
+        android:layout_marginStart="@dimen/margin_full"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bCamera"
+            style="@style/button_simple"
+            android:layout_height="36dp"
+            android:layout_marginRight="2sp"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:text="@string/camera"
+            android:textSize="@dimen/body_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bGallary"
+            style="@style/button_simple"
+            android:layout_height="36dp"
+            android:layout_marginLeft="2sp"
+            android:gravity="center"
+            android:minWidth="80dp"
+            android:text="@string/gallary"
+            android:textSize="@dimen/body_1" />
+
+    </LinearLayout>
+
+</LinearLayout>

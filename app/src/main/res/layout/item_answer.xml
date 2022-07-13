@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_half"
+    app:cardCornerRadius="@dimen/margin_half"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/margin_medium">
+
+        <WebView
+            android:id="@+id/tvQuestion"
+            style="@style/Forground_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:maxLines="3"
+            android:paddingLeft="@dimen/margin_half" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCorrect"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvQuestion"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:maxLines="1"
+            android:paddingLeft="16dp"
+            android:text="correct answers:" />
+
+        <WebView
+            android:id="@+id/tvCorrectAnswer"
+            style="@style/Forground_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCorrect"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            tools:text="a) Modi" />
+
+        <WebView
+            android:id="@+id/tvCorrectAnswer2"
+            style="@style/Forground_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCorrectAnswer"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            tools:text="a) Modi" />
+
+        <WebView
+            android:id="@+id/tvCorrectAnswer3"
+            style="@style/Forground_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCorrectAnswer2"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            tools:text="a) Modi" />
+
+        <WebView
+            android:id="@+id/tvCorrectAnswer4"
+            style="@style/Forground_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvCorrectAnswer3"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            tools:text="a) Modi" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivResult"
+            android:layout_width="20sp"
+            android:layout_height="20sp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            app:srcCompat="@drawable/ic_tick_sign"
+            tools:tint="@color/Green" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

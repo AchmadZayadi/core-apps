@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="2sp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="90sp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="64sp"
+            android:layout_height="64sp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/margin_half"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvName"
+            style="@style/text_style_1"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_toRightOf="@+id/ivImage" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvName"
+            android:layout_marginBottom="8dp"
+            android:layout_toLeftOf="@+id/bAdd"
+            android:layout_toRightOf="@+id/ivImage"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvImageAge"
+                    android:layout_width="16sp"
+                    android:layout_height="16sp"
+                    android:tint="@color/text_color_2"
+                    app:srcCompat="@drawable/birthdate" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAge"
+                    style="@style/text_style_2"
+                    android:layout_gravity="center"
+
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="0dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llMutual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivMutual"
+                    android:layout_width="16sp"
+                    android:layout_height="16sp"
+                    android:tint="@color/text_color_2"
+                    app:srcCompat="@drawable/mutual" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvMutual"
+                    style="@style/text_style_2"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvImageAddress"
+                    android:layout_width="16sp"
+                    android:layout_height="16sp"
+                    android:tint="@color/text_color_2"
+                    app:srcCompat="@drawable/location" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvAddress"
+                    style="@style/text_style_2"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bAdd"
+            style="@style/button_simple"
+            android:layout_width="100sp"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvName"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_full"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/text_color_light"
+            android:textSize="@dimen/caption" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bRemove"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/tvName"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:paddingBottom="@dimen/margin_full"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_half"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_half"
+            android:tint="@color/text_color_1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/cross"
+            app:tint="@color/red" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

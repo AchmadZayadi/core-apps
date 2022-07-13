@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="header_emoji_size">48</integer>
+    <integer name="horizontal_tab_margin_profile">128</integer>
+    <integer name="vertical_tab_margin_profile">36</integer>
+</resources>

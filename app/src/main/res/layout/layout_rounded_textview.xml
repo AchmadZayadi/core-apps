@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/text_style_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_half"
+    android:layout_marginLeft="@dimen/margin_half"
+    android:layout_marginEnd="@dimen/margin_half"
+    android:layout_marginRight="@dimen/margin_half"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:background="@drawable/rounded_filled_grey_8"
+    android:paddingStart="@dimen/margin_half"
+    android:paddingLeft="@dimen/margin_half"
+    android:paddingTop="@dimen/margin_quarter"
+    android:paddingEnd="@dimen/margin_half"
+    android:paddingRight="@dimen/margin_half"
+    android:paddingBottom="@dimen/margin_quarter"
+    android:textSize="@dimen/caption" />
+

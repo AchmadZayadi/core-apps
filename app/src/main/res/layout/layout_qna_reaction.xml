@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llReactionOption"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.sesolutions.animate.bang.SmallBangView
+        android:id="@+id/sbvLike"
+        android:layout_width="@dimen/height_qna_icons"
+        android:layout_height="@dimen/height_qna_icons">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="@dimen/height_qna_icons"
+            android:layout_height="@dimen/height_qna_icons"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding_qna_icon"
+            app:srcCompat="@drawable/music_like_selected" />
+    </com.sesolutions.animate.bang.SmallBangView>
+
+    <com.sesolutions.animate.bang.SmallBangView
+        android:id="@+id/sbvFavorite"
+        android:layout_width="@dimen/height_qna_icons"
+        android:layout_height="@dimen/height_qna_icons">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFavorite"
+            android:layout_width="@dimen/height_qna_icons"
+            android:layout_height="@dimen/height_qna_icons"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding_qna_icon"
+            app:srcCompat="@drawable/music_favourite_selected" />
+    </com.sesolutions.animate.bang.SmallBangView>
+
+    <com.sesolutions.animate.bang.SmallBangView
+        android:id="@+id/sbvFollow"
+        android:layout_width="@dimen/height_qna_icons"
+        android:layout_height="@dimen/height_qna_icons"
+        android:layout_marginEnd="@dimen/margin_quarter"
+        android:layout_marginRight="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFollow"
+            android:layout_width="@dimen/height_qna_icons"
+            android:layout_height="@dimen/height_qna_icons"
+            android:layout_gravity="center"
+            android:padding="@dimen/padding_qna_icon"
+            app:srcCompat="@drawable/follow_artist_selected" />
+    </com.sesolutions.animate.bang.SmallBangView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

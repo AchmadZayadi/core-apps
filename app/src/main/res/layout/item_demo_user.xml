@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--<android.support.v7.widget.AppCompatImageView
+        android:layout_width="@dimen/height_image_demo"
+        android:layout_height="@dimen/height_image_demo"
+        android:layout_margin="@dimen/margin_quarter"
+        android:background="@drawable/circle_white_background"
+        android:elevation="@dimen/margin_half" />-->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_quarter"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="@dimen/margin_half">
+
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

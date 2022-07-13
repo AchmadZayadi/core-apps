@@ -1,0 +1,260 @@
+{
+  "project_info": {
+    "project_number": "290275007692",
+    "firebase_url": "https://matani-d82a25.firebaseio.com",
+    "project_id": "sesolutions-d82a5",
+    "storage_bucket": "sesolutions-d82a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290275007692:android:365b2d60cf45ddfa",
+        "android_client_info": {
+          "package_name": "com.Matani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290275007692-05j9sa3b34eguarm0ql1h7394ind56o37.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matani",
+            "certificate_hash": "3490189fbc08c04f809a68b0f3bc308ef762a0b5"
+          }
+        },
+        {
+          "client_id": "290275007691-5cdtfepm61b0kur1qgmff6ks3ff662j0j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matani",
+            "certificate_hash": "dc0eeb93135d888c49c6ec423f0d0925505a92f0"
+          }
+        },
+        {
+          "client_id": "290275007691-fhkvaqu1cd4gqov2huosdk8iqj3949alm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matani",
+            "certificate_hash": "bd6b6d70e9da77ddf71e135c0279f120ffe63db2"
+          }
+        },
+        {
+          "client_id": "290275007692-q0cqboahehe96oeookm1eb3ho1mihok2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matani",
+            "certificate_hash": "18192a6c001eb6152961082e98149bcb96f1dfb5"
+          }
+        },
+        {
+          "client_id": "290275007691-hq0e9am3j7c7tbg903fgma2o0u0tf824.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzk_2pLshsdHJZS24ETYNmVAIm0oJ95f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290275007691-hkudbm7l59i8431r81mucumi1jnqhhr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290275007691-40guhkt8nto908l0f66l6vbcrclnmg3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SES.SE-Solutions",
+                "app_store_id": "1269496435"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290275007691:android:046ba88861e2ceabd1cf4e",
+        "android_client_info": {
+          "package_name": "com.Matani.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290275007691-hpohfqrpemai08lnrotnarcoo3vfbs6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matani.debug",
+            "certificate_hash": "3490189fbc08c04f809a68b0f3bc308ef762a0b5"
+          }
+        },
+        {
+          "client_id": "290275007691-hq0e9am3j7c7tbg903fgma2o0u0tf824.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzk_2pLshsdHJZS24ETYNmVAIm0oJ95f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290275007691-hkudbm7l59i8431r81mucumi1jnqhhr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290275007691-40guhkt8nto908l0f66l6vbcrclnmg3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SES.SE-Solutions",
+                "app_store_id": "1269496435"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290275007691:android:fb4ce10e2cf4c387",
+        "android_client_info": {
+          "package_name": "com.Matanidebug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290275007691-sefnm85kt96nuovvc8po11u1lnkv2ml4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Matanidebug",
+            "certificate_hash": "1f5f3a575b17aa722d84c9f8cd910b11966c2b51"
+          }
+        },
+        {
+          "client_id": "290275007691-hq0e9am3j7c7tbg903fgma2o0u0tf824.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzk_2pLshsdHJZS24ETYNmVAIm0oJ95f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290275007691-hkudbm7l59i8431r81mucumi1jnqhhr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290275007692-40guhkt8nto908l0f66l6vbcrclnmg3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SES.SE-Solutions",
+                "app_store_id": "1269496435"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290275007692:android:de85698d761dd2e8",
+        "android_client_info": {
+          "package_name": "com.socialenginesolutions.fbclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290275007691-aujhvsv161ac1914oeu4gb8gb2m3a6rr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.socialenginesolutions.fbclone",
+            "certificate_hash": "1f5f3a575b17aa722d84c9f8cd910b11966c2b51"
+          }
+        },
+        {
+          "client_id": "290275007691-hq0e9am3j7c7tbg903fgma2o0u0tf824.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzk_2pLshsdHJZS24ETYNmVAIm0oJ95f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290275007691-hkudbm7l59i8431r81mucumi1jnqhhr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290275007691-40guhkt8nto908l0f66l6vbcrclnmg3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SES.SE-Solutions",
+                "app_store_id": "1269496435"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290275007691:android:28d7d6aeea5109de",
+        "android_client_info": {
+          "package_name": "comet.sesolutions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "290275007691-ebosuv6bqiak7v675vdo939qr59gfv55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "comet.sesolutions",
+            "certificate_hash": "18192a6c001eb6152961082e98149bcb96f1dfb5"
+          }
+        },
+        {
+          "client_id": "290275007691-hq0e9am3j7c7tbg903fgma2o0u0tf824.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzk_2pLshsdHJZS24ETYNmVAIm0oJ95f8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "290275007691-hkudbm7l59i8431r81mucumi1jnqhhr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "290275007692-40guhkt8nto908l0f66l6vbcrclnmg3f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "SES.SE-matani",
+                "app_store_id": "1269496435"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

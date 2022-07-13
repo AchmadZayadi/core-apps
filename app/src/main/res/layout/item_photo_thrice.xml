@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_image_music_album"
+    android:layout_margin="@dimen/margin_half">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSongImage1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_image_music_album"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llReactionOption1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_half">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLike1"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_marginRight="@dimen/margin_half"
+                    app:srcCompat="@drawable/like" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFavorite1"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_marginRight="@dimen/margin_half"
+                    app:srcCompat="@drawable/music_favourite" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivAdd1"
+                    android:layout_width="@dimen/size_like_image_top_item_music"
+                    android:layout_height="@dimen/size_like_image_top_item_music"
+                    android:layout_marginRight="@dimen/margin_half"
+                    app:srcCompat="@drawable/music_add" />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSongDetail1"
+                style="@style/text_style_stats"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/margin_quarter"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:background="@drawable/scrim"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="2dp"
+                android:textSize="@dimen/caption_mini" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSongImage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llReactionOption2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_half">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLike2"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/like" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivFavorite2"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/music_favourite" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAdd2"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/music_add" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSongDetail2"
+                    style="@style/text_style_stats"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/margin_quarter"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:background="@drawable/scrim"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingTop="2dp"
+                    android:textSize="@dimen/caption_mini" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivSongImage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llReactionOption3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/margin_half">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLike3"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/like" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivFavorite3"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/music_favourite" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAdd3"
+                        android:layout_width="@dimen/size_like_image_top_item_music"
+                        android:layout_height="@dimen/size_like_image_top_item_music"
+                        android:layout_marginRight="@dimen/margin_half"
+                        app:srcCompat="@drawable/music_add" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSongDetail3"
+                    style="@style/text_style_stats"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="@dimen/margin_quarter"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:background="@drawable/scrim"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingTop="2dp"
+                    android:textSize="@dimen/caption_mini" />
+            </RelativeLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

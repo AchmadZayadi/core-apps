@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_half"
+    android:paddingEnd="@dimen/margin_full"
+    android:paddingLeft="@dimen/margin_full"
+    android:paddingRight="@dimen/margin_full"
+    android:paddingStart="@dimen/margin_full"
+    android:paddingTop="@dimen/margin_half">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSignIn"
+            android:visibility="gone"
+            style="@style/button_simple"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginRight="@dimen/margin_bottom_button_welcome"
+            android:layout_weight="1"
+            android:text="@string/txt_sign_in"
+            android:textSize="@dimen/sub_heading" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSignUp"
+            android:visibility="gone"
+            style="@style/button_simple"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_small"
+            android:layout_marginLeft="@dimen/margin_bottom_button_welcome"
+            android:layout_weight="1"
+            android:text="@string/txt_sign_up"
+            android:textSize="@dimen/sub_heading" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rlFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_marginTop="@dimen/margin_half"
+        android:background="@drawable/rounded_holo">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/width_icon_facebook"
+            android:layout_height="@dimen/height_icon_facebook"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/margin_full"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_facebook" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/txt_login_facebook"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_marginTop="@dimen/margin_half"
+        android:background="@drawable/rounded_holo">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/width_icon_facebook"
+            android:layout_height="@dimen/height_icon_facebook"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/margin_full"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_facebook" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/text_masuk"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sub_heading" />
+
+    </RelativeLayout>
+</LinearLayout>

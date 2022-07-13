@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvCategory"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_toStartOf="@+id/tvMore"
+            android:layout_toLeftOf="@+id/tvMore"
+            android:padding="@dimen/margin_full"
+            android:textStyle="bold"
+            tools:text="@string/all_badges" />
+
+
+        <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+            android:id="@+id/rvChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="horizontal"
+            android:padding="@dimen/item_offset"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:msrv_gravity="center"
+            app:msrv_snap_count="1"
+            tools:listitem="@layout/item_credit_badge" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNoData"
+            style="@style/text_style_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="@dimen/margin_full"
+            android:text="@string/no_badges_available" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChild2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutAnimation="@anim/anim_fall_down"
+            android:orientation="vertical"
+            android:padding="@dimen/item_offset"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_credit_badge_vertical" />
+
+
+        <!--app:msrv_ms_per_inch="@dimen/normal_speed"-->
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            style="@style/page_indicator"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/margin_half"
+            app:piv_animationType="thinWorm"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_padding="2dp"
+            app:piv_radius="4dp"
+            app:piv_selectedColor="@color/colorPrimary"
+            app:piv_unselectedColor="@color/dividerColor"
+            app:piv_viewPager="@id/viewPager" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

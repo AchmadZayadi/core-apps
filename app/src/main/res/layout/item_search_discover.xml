@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:layout_marginEnd="@dimen/item_offset"
+    android:layout_marginLeft="@dimen/item_offset"
+    android:layout_marginRight="@dimen/item_offset"
+    android:layout_marginStart="@dimen/item_offset"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/margin_full"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="200sp"
+        android:layout_height="300sp">
+
+
+        <!--
+                <com.sesolutions.ui.customviews.SquareImageView
+        -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImageCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scrim" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_light"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:layout_marginTop="@dimen/margin_duper"
+                android:paddingRight="@dimen/margin_quarter"
+                tools:text="@string/fashion_beauty"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/body_1" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:padding="4dp">
+
+                </de.hdodenhof.circleimageview.CircleImageView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/ivUser"
+                    android:text=""
+                    android:textSize="13dp"
+                    style="@style/text_style_light"
+                    android:layout_marginEnd="@dimen/_34ssp"
+                    android:layout_centerVertical="true">
+
+                </androidx.appcompat.widget.AppCompatTextView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_toLeftOf="@+id/tvLike"
+                    app:srcCompat="@drawable/favorite"
+                    app:tint="@color/white"
+                    android:padding="4dp">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    tools:text="5"
+                    android:textSize="13dp"
+                    android:layout_alignParentEnd="true"
+                    style="@style/text_style_light"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

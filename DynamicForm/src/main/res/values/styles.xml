@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="RatingBar" parent="Base.Widget.AppCompat.RatingBar.Indicator">
+        <item name="colorControlNormal">@color/colorFormMasterHeaderBackground</item>
+        <item name="colorControlActivated">#FFC107</item>
+    </style>
+
+    <style name="ReviewRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/review_rating_bar_full</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
+    <style name="ReviewRatingBar2" parent="Widget.AppCompat.RatingBar.Small">
+        <item name="colorControlNormal">@color/colorFormMasterHeaderBackground</item>
+        <item name="colorControlActivated" >@color/contest_type</item>
+    </style>
+
+
+    <style name="MyRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorAccent">#6200ea</item>
+        <item name="colorControlNormal">@color/colorFormMasterHeaderBackground</item>
+        <item name="colorControlActivated" >@color/colorPrimarydark</item>
+    </style>
+
+    <style name="MyRatingBar4" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorFormMasterHeaderBackground</item>
+        <item name="colorControlActivated" >@color/contest_type</item>
+    </style>
+
+
+    <style name="TextInputLayoutTheme2" parent="SESAppThemeActionBar">
+        <item name="colorAccent">@color/black</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
+        <item name="colorControlActivated">@color/black</item>
+        <item name="colorControlHighlight">@color/black</item>
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+
+    <style name="SESAppThemeActionBar" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Edit_text_style">
+        <item name="android:tag">@string/style_Edit_text_style</item>
+    </style>
+
+    <style name="TextInputLayoutWithPrimaryColor" parent="Widget.Design.TextInputLayout">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="Forground_style" parent="ripple_selector">
+        <item name="android:tag">foreground_style</item>
+        <item name="android:background">#ffffff</item>
+    </style>
+
+    <style name="Forground_style2" parent="ripple_selector">
+        <item name="android:tag">foreground_style</item>
+    </style>
+
+    <style name="ripple_selector">
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="text_style_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">0px</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:tag">text_style_1</item>
+        <item name="android:textIsSelectable">false</item>
+        <item name="android:textColor">@color/colortext</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="divider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/divider_length</item>
+        <item name="android:tag">divider</item>
+        <item name="android:background">#ababab</item>
+    </style>
+
+
+</resources>

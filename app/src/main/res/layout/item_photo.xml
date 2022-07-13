@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/item_offset">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_image_music_album">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSongImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_music_album"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/vView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black"
+            android:visibility="gone" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="@dimen/size_like_image_top_item_music"
+            android:layout_height="@dimen/size_like_image_top_item_music"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/margin_half"
+            app:srcCompat="@drawable/like" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSongDetail"
+            style="@style/text_style_stats"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_quarter"
+            android:layout_marginLeft="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:background="@drawable/scrim"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingTop="2dp"
+            android:textSize="@dimen/body_1" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

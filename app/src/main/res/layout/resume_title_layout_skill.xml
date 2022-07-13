@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/titleview"
+            android:padding="16dp"
+            android:gravity="center"
+            android:background="@color/bluedarkview"
+            android:textColor="@color/textColorWhite"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="Create Title Resume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="12sp"
+            android:layout_marginRight="12sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edittitle"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:gravity="left"
+                android:background="@drawable/rounded_holo_border_primary"
+                android:padding="5dp"
+                android:hint="create title"
+                ></EditText>
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12sp"
+            android:text="Overall Rating"
+            android:textSize="18sp"
+            android:fontFamily="@font/helvetica_medium"
+            ></TextView>
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:stepSize="1"
+            android:theme="@style/MyRatingBar4"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="12dp"
+            android:rating="0"
+            />
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:elevation="8dp"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+            <Button
+                 android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/cancel"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="9dp"
+                android:background="@drawable/button_tabs"
+                android:id="@+id/cancelBtn"
+                android:textSize="12sp"
+                android:textColor="@color/black_81"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/updateUserBtn"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="18dp"
+                android:textSize="12sp"
+                android:background="@drawable/button_tabs"
+                android:textColor="@color/white"
+                android:text="Create Title"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

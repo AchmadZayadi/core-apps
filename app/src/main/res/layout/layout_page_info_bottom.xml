@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical">
+
+    <!--People Who like this starts-->
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llItem"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_half">
+
+        <!--<View style="@style/divider" />-->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTitleImage"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginLeft="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginTop="@dimen/margin_half" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemTitle"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginLeft="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_marginStart="@dimen/margin_half"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_toRightOf="@+id/ivTitleImage"
+                android:text="@string/details"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/margin_medium"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_medium">
+
+            <include
+                android:id="@+id/item1"
+                layout="@layout/layout_page_info_bottom_item"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/item2"
+                layout="@layout/layout_page_info_bottom_item"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/item3"
+                layout="@layout/layout_page_info_bottom_item"
+                android:visibility="visible" />
+
+            <include
+                android:id="@+id/item4"
+                layout="@layout/layout_page_info_bottom_item"
+                android:visibility="visible" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <!-- <View style="@style/divider" />-->
+    <!--People Who like this section ends-->
+
+</androidx.cardview.widget.CardView>

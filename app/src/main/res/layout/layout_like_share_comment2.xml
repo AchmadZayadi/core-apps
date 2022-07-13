@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llLikeCommentShare2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <!--    <View-->
+    <!--        style="@style/divider"-->
+    <!--        android:layout_marginLeft="@dimen/margin_full"-->
+    <!--        android:layout_marginRight="@dimen/margin_full" />-->
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_full">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llLike"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImageLike"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_quarter"
+                app:srcCompat="@drawable/ic_like" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLikeCount"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/sub_title"
+                tools:text="24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvLike"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/like"
+                android:textSize="@dimen/text_size_feed_lcs"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llComment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tvImageComment"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginEnd="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_quarter"
+                app:srcCompat="@drawable/ic_comment" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCommentUpper"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="@dimen/sub_title"
+                tools:text="12" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvComment"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/comment"
+                android:textSize="@dimen/text_size_feed_lcs"
+                android:visibility="gone" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llShare"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tvImageShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_quarter"
+                android:layout_marginRight="@dimen/margin_quarter"
+                app:srcCompat="@drawable/ic_share" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvShare"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/share"
+                android:textSize="@dimen/text_size_feed_lcs"
+                android:visibility="gone" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <LinearLayout
+            android:id="@+id/llsocialid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_weight="1">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFbShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_facebook" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivWhatsAppShare"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/whatsapp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSaveFeed"
+                android:layout_width="@dimen/height_icon_feed_option_home"
+                android:layout_height="@dimen/height_icon_feed_option_home"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:layout_marginRight="@dimen/margin_full"
+                android:layout_gravity="end"
+                app:srcCompat="@drawable/ic_save" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llReactionUpper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rlUpperLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper1"
+                android:layout_width="@dimen/sub_title"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginStart="@dimen/margin_full"
+                android:layout_marginLeft="@dimen/margin_full"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@drawable/music_like_selected"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper2"
+                android:layout_width="@dimen/sub_title"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginStart="-4sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toEndOf="@+id/ivLikeUpper1"
+                android:layout_toRightOf="@+id/ivLikeUpper1"
+
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper3"
+                android:layout_width="@dimen/sub_title"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginStart="-4sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toEndOf="@+id/ivLikeUpper2"
+                android:layout_toRightOf="@+id/ivLikeUpper2"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper4"
+                android:layout_width="@dimen/sub_title"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginStart="-4sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toEndOf="@+id/ivLikeUpper3"
+                android:layout_toRightOf="@+id/ivLikeUpper3"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper5"
+                android:layout_width="@dimen/sub_title"
+                android:layout_height="@dimen/sub_title"
+                android:layout_marginStart="-4sp"
+                android:layout_marginLeft="-4sp"
+                android:layout_toEndOf="@+id/ivLikeUpper4"
+                android:layout_toRightOf="@+id/ivLikeUpper4"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLikeUpper"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:layout_gravity="center"
+            android:maxLines="1"
+            tools:text="@string/businesses_liked"
+            android:textSize="@dimen/caption" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llAttribution"
+            style="@style/ripple_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivAttribution"
+                android:layout_width="16sp"
+                android:layout_height="16sp"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="12sp"
+                android:layout_height="12sp"
+                android:layout_marginStart="@dimen/margin_quarter"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_half"
+                android:layout_marginRight="@dimen/margin_half"
+                android:tint="@color/text_color_2"
+                app:srcCompat="@drawable/ses_down" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--Comment layout starts-->
+    <RelativeLayout
+        android:id="@+id/rlCommentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfileImageComment"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_small"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_quarter"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_profile"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvComment"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivProfileImageComment"
+            android:layout_toRightOf="@+id/ivProfileImageComment"
+            app:cardCornerRadius="@dimen/radius_comment"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_half"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvHeaderComment"
+                    style="@style/text_style_1"
+                    android:textSize="@dimen/body_1"
+                    android:textStyle="bold"
+                    app:fontFamily="sans-serif-medium"
+                    tools:text="@string/title" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvBodyComment"
+                    style="@style/text_style_1"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:linksClickable="true"
+                    android:textColorLink="@color/colorPrimary"
+                    android:textSize="@dimen/body_1"
+                    tools:text="this is body" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvImageComment222"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/dummy_profile"
+                    android:layout_marginLeft="10dp"
+                    />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserImageComment"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_small"
+            android:layout_below="@+id/cvComment"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dummy_profile"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvComment"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_toEndOf="@id/ivUserImageComment"
+            android:layout_toRightOf="@id/ivUserImageComment"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="0dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llCommentEditetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:animateLayoutChanges="true"
+                android:gravity="bottom">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFeedComment"
+                    style="@style/Edit_text_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/txt_enter_here"
+                    android:maxLines="4"
+                    android:minHeight="40dp"
+                    android:paddingStart="@dimen/margin_medium"
+                    android:paddingLeft="@dimen/margin_medium"
+                    android:textSize="@dimen/body_1" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tvVideoImage"
+                    style="@style/image_tint"
+                    android:layout_width="@dimen/size_icon_edit_comment"
+                    android:layout_height="@dimen/size_icon_edit_comment"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginEnd="@dimen/margin_quarter"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/camera_line"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivStickerIcon"
+                    android:layout_width="@dimen/size_icon_edit_comment"
+                    android:layout_height="@dimen/size_icon_edit_comment"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_half"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/smiley_line"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPostIcon"
+                    android:layout_width="@dimen/size_icon_edit_comment"
+                    android:layout_height="@dimen/size_icon_edit_comment"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/margin_quarter"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginEnd="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:gravity="center"
+                    android:tint="@color/colorPrimary"
+                    app:srcCompat="@drawable/ses_send"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <!--Comment layout ends-->
+
+    <View style="@style/divider"
+        android:background="@color/backgroundColor"/>
+
+</LinearLayout>

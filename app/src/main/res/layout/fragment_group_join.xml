@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRequestTitle"
+        style="@style/text_style_1"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/margin_full"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvRequestDesc"
+        style="@style/text_style_1"
+        android:layout_width="wrap_content"
+        android:paddingBottom="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full" />
+    <!--
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="#b5b5b5"
+        android:orientation="vertical" />
+
+    <!--</android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v4.widget.NestedScrollView>-->
+</LinearLayout>

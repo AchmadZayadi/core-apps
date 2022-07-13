@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    app:cardCornerRadius="4dp"
+    android:layout_width="match_parent"
+    android:layout_marginTop="7sp"
+    android:layout_height="90dp"
+    android:layout_marginBottom="4sp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardid"
+            android:layout_width="70sp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="75sp"
+            android:layout_centerVertical="true"
+            app:cardCornerRadius="5sp"
+            >
+            <ImageView
+            android:id="@+id/imageid"
+            android:layout_width="match_parent"
+            android:layout_height="75sp"
+            android:src="@drawable/button_tabs"
+            android:scaleType="centerCrop"
+                android:adjustViewBounds="true"
+            ></ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_toEndOf="@+id/cardid"
+            android:id="@+id/lllenar1"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="7sp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/titlest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Software"
+            android:textSize="16sp"
+            android:layout_marginRight="39sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_medium"
+            android:textColor="@color/black_81"
+            ></TextView>
+
+            <RelativeLayout
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certificate ID :"
+                android:textColor="@color/black"
+                android:fontFamily="@font/helviticka_bold"
+                ></TextView>
+            <TextView
+                android:layout_toEndOf="@+id/tvactivity"
+                android:id="@+id/descritpition"
+                android:layout_width="wrap_content"
+                android:text="sports"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="14sp"
+                android:textColor="#323232"
+                ></TextView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/optionmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icblack_dot"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:rotation="90"
+            android:layout_gravity="center_vertical"
+            ></ImageView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

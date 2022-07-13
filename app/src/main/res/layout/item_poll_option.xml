@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_quarter"
+    android:orientation="vertical"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:padding="@dimen/margin_half"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:minHeight="48dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_marginRight="@dimen/margin_half"
+            android:layout_weight="1"
+            android:padding="@dimen/margin_half"
+            android:text="San Francisco" />
+
+        <com.sesolutions.animate.bang.SmallBangView
+            android:id="@+id/sbvVote2"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:layout_centerHorizontal="true"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivVote2"
+                android:layout_width="28sp"
+                android:layout_height="28sp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                app:srcCompat="@drawable/unselecttab" />
+
+        </com.sesolutions.animate.bang.SmallBangView>
+
+        <com.sesolutions.animate.bang.SmallBangView
+            android:id="@+id/sbvVote"
+            android:layout_width="48sp"
+            android:layout_height="48sp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvVote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/contest_vote"
+                app:cardCornerRadius="14sp"
+                app:cardElevation="4dp">
+
+                <!--<android.support.v7.widget.LinearLayoutCompat
+                    android:layout_width="24sp"
+                    android:layout_height="24sp"
+                    android:gravity="center">-->
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivVote"
+                    android:layout_width="28sp"
+                    android:layout_height="28sp"
+                    android:padding="7sp"
+                    app:srcCompat="@drawable/contest_vote" />
+
+                <!-- <android.support.v7.widget.AppCompatTextView
+                     android:id="@+id/tvVote"
+                     style="@style/text_style_light"
+                     android:layout_width="wrap_content"
+                     android:layout_gravity="center_vertical"
+                     android:layout_marginStart="@dimen/margin_half"
+                     android:layout_marginLeft="@dimen/margin_half"
+                     android:ellipsize="end"
+                     android:maxLines="1"
+                     android:text="@string/vote"
+                     android:textSize="@dimen/body_1"
+                     android:textStyle="bold" />
+
+             </android.support.v7.widget.LinearLayoutCompat>-->
+
+            </androidx.cardview.widget.CardView>
+        </com.sesolutions.animate.bang.SmallBangView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

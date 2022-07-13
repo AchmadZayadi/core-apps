@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llMainForm"
+    android:background="@color/colorFormMasterElementBackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+
+    <!-- <View
+         android:layout_width="match_parent"
+         android:layout_height="0.5dp"
+         android:layout_marginLeft="16dp"
+         android:layout_marginRight="16dp"
+         android:background="@color/colorFormMasterDivider" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/item_margin"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/formElementTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/colorFormMasterElementTextTitle"
+            android:textSize="@dimen/elementTextTitleSize" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/formElementNegativeText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingRight="8dp"
+                android:textColor="#000000"
+                tools:text="Ok" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/formElementSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/formElementPositiveText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="8dp"
+                android:textColor="#000000"
+                tools:text="No" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Background_style"
+    android:theme="@style/AppThemeMatrial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ToolbarTheme">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            android:contentInsetEnd="0dp"
+            android:contentInsetRight="0dp"
+            android:tag="@string/tag_toolbar"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/ToolbarTheme">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivBack"
+                    style="@style/button_image_toolbar"
+                    app:srcCompat="@drawable/arrow_left" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="48dp"
+                    android:layout_toStartOf="@+id/llOption"
+                    android:layout_toLeftOf="@+id/llOption"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/title" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar"
+        android:layout_above="@+id/llcheckout">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lldetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:descendantFocusability="beforeDescendants"
+                    android:divider="#b5b5b5"
+                    android:layoutAnimation="@anim/anim_fall_down"
+                    android:orientation="vertical" />
+
+                <RelativeLayout
+                    style="@style/Forground_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_quarter"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcvEmpty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_quarter"
+                        android:layout_marginRight="@dimen/margin_quarter"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        android:padding="@dimen/margin_quarter"
+                        app:cardCornerRadius="@dimen/margin_quarter">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="13dp"
+                            android:padding="@dimen/margin_half"
+                            android:textColor="@color/white"
+                            android:text="Empty cart" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcvUpdateCart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin_quarter"
+                        android:layout_marginRight="@dimen/margin_quarter"
+                        android:layout_toRightOf="@+id/mcvEmpty"
+                        android:padding="@dimen/store_item_margin_view"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="@dimen/margin_quarter">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="13dp"
+                            android:padding="@dimen/margin_half"
+                            android:text="Update Cart" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/mcvContinue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="@dimen/margin_quarter"
+                        android:layout_marginRight="@dimen/margin_quarter"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        android:padding="@dimen/store_item_margin_view"
+                        app:cardCornerRadius="@dimen/margin_quarter">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="13dp"
+                            android:padding="@dimen/margin_half"
+                            android:textColor="@color/white"
+                            android:text="Continue Shopping" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPriceDetail"
+                    style="@style/Forground_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/margin_full"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/text_style_1"
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Price Details" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:descendantFocusability="beforeDescendants"
+                        android:divider="#b5b5b5"
+                        android:layoutAnimation="@anim/anim_fall_down"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:orientation="vertical" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/llcheckout"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="@dimen/button_height_medium"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_add_to_wishlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/store_item_margin_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotal"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/margin_quarter"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:paddingTop="@dimen/margin_quarter"
+                android:paddingEnd="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                android:paddingBottom="@dimen/margin_quarter"
+                android:text="Total Amount"
+                android:textStyle="bold"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/store_item_margin_view">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_proceed"
+                style="@style/text_style_1"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white"
+                android:text="Proceed to Checkout"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_no_data" />
+
+    <ProgressBar
+        android:id="@+id/pb"
+        android:layout_width="@dimen/button_height_small"
+        android:layout_height="@dimen/button_height_small"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:layout_weight="1"
+        android:animateLayoutChanges="true">
+
+
+        <RelativeLayout
+            android:id="@+id/capturepic"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+          android:id="@+id/realtivedammy"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/height_header_drawer"
+            android:layout_height="@dimen/height_header_drawer"
+            android:gravity="center"
+            android:visibility="visible"
+            android:background="@drawable/circle_gray_background"
+            >
+          <ImageView
+                android:id="@+id/dummyimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_add_photo"
+                ></ImageView>
+
+        </RelativeLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/height_header_drawer"
+            android:layout_height="@dimen/height_header_drawer"
+            android:visibility="gone"
+            android:src="@color/white"
+            android:layout_centerHorizontal="true"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="2sp" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vScrim"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/dot_icon"
+            android:visibility="gone"
+            app:tint="#66000000" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvProgress"
+            style="@style/text_style_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="0 %"
+            android:textSize="@dimen/heading_large"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+
+        <com.sesolutions.ui.customviews.CircularProgressBar
+            android:id="@+id/cpb"
+            android:layout_width="296dp"
+            android:layout_height="296dp"
+            android:layout_centerInParent="true"
+            app:cpb_background_progressbar_color="#00ffffff"
+            app:cpb_background_progressbar_width="10sp"
+            app:cpb_progress="45"
+            app:cpb_progressbar_color="#F44336"
+            app:cpb_progressbar_width="8sp"
+            android:visibility="gone"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bChoose25"
+            android:layout_height="@dimen/button_height_medium"
+            android:visibility="gone"
+            android:layout_below="@+id/capturepic"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_28ssp"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_16ssp"
+            android:text="@string/txt_upload_choose_photo" />
+
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSkip"
+            style="@style/button_simple"
+            android:layout_height="@dimen/button_height_medium"
+            android:layout_margin="@dimen/margin_full"
+            android:text="@string/SKIP"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSave"
+            android:visibility="gone"
+             android:layout_width="match_parent"
+            android:background="@drawable/button_login__theam"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_full"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/_42ssp"
+            android:layout_marginEnd="@dimen/_42ssp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_20ssp"
+            android:text="@string/save" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="160dp"
+            android:paddingTop="115dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCamera2"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:elevation="8dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/circle_white_background"
+                android:padding="6dp"
+                app:srcCompat="@drawable/ses_camera" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

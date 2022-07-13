@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llNoData"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone"
+    tools:visibility="visible">
+
+    <!-- <android.support.v7.widget.AppCompatImageView
+         android:id="@+id/ivNoData"
+         android:layout_width="200sp"
+         android:layout_height="200sp"
+         android:layout_centerHorizontal="true"
+         android:alpha=".8"
+         app:srcCompat="@drawable/no_data" />-->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/ivNoData"
+        android:layout_width="180sp"
+        android:layout_height="180sp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="bag_error.json"
+        app:lottie_loop="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoData"
+        style="@style/text_style_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180sp"
+        android:gravity="center"
+        android:padding="@dimen/margin_full"
+        android:text="No data found" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bRefresh"
+        style="@style/button_simple"
+        android:text="@string/refresh"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="false"
+        android:stateListAnimator="@null"
+        android:theme="@style/ToolbarTheme">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginStart="@dimen/margin_full"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:scrimAnimationDuration="@integer/animation_duration"
+            app:title=" "
+            app:titleEnabled="true">
+
+            <RelativeLayout
+                android:id="@+id/rlUpper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/text_color_light"
+                app:layout_collapseMode="none"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCoverPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/profile_cover_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/iv_bg_profile" />
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivCamera"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/profile_camera_cover_top_margin"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@drawable/circle_white_background"
+                    android:padding="@dimen/margin_quarter"
+                    android:src="@drawable/ses_camera"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/llAlbumImage"
+                    android:layout_width="@dimen/profile_main_image"
+                    android:layout_height="@dimen/profile_main_image"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/profile_cover_main_margin">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivAlbumImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:civ_border_color="@color/white"
+                        app:civ_border_overlay="false"
+                        app:civ_border_width="@dimen/margin_quarter"
+                        tools:src="@tools:sample/avatars" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCamera2"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="@dimen/margin_full"
+                        android:background="@drawable/circle_white_background"
+                        android:padding="6dp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ses_camera"
+                        tools:visibility="visible" />
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvUserTitle"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/llAlbumImage"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/margin_half"
+                    android:textSize="@dimen/sub_title"
+                    android:textStyle="bold"
+                    tools:text="@string/dummy_name" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvStatus"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/tvUserTitle"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/margin_full"
+                    android:layout_marginRight="@dimen/margin_full"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textSize="@dimen/body_1"
+                    tools:text="This is my latest status" />
+
+                <View
+                    android:id="@+id/view111"
+                    style="@style/divider"
+                    android:visibility="gone"
+                    android:layout_below="@+id/tvStatus" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llDetailMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvStatus"
+                    android:layout_marginTop="-4dp"
+                    android:animateLayoutChanges="false"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    tools:visibility="visible">
+
+                    <include
+                        layout="@layout/layout_profile_tabbed_menus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <View
+                        android:visibility="gone"
+                        android:id="@+id/view21"
+                        style="@style/divider" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProfileInfo"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_half"
+                        android:clipToPadding="false"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_half"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_profile_info" />
+
+                    <!--<View style="@style/divider" />-->
+
+                    <RelativeLayout
+                        android:id="@+id/rlRecent"
+                        style="@style/Forground_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlPhotos"
+                        android:layout_marginTop="@dimen/margin_quarter"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        android:animateLayoutChanges="true"
+                        android:visibility="gone"
+                        tools:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvRelated"
+                            style="@style/text_style_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_full"
+                            android:layout_marginLeft="@dimen/margin_full"
+                            android:layout_marginTop="@dimen/margin_quarter"
+                            android:text="@string/story_highlights"
+                            android:textStyle="bold" />
+
+                        <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                            android:id="@+id/rvRecent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvRelated"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:padding="8dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:msrv_gravity="center"
+                            app:msrv_snap_count="1"
+                            tools:listitem="@layout/item_story_square" />
+
+
+                        <!--  <android.support.v7.widget.AppCompatTextView
+                              style="@style/text_style_2"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_below="@+id/rvRecent"
+                              android:gravity="center"
+                              android:paddingBottom="@dimen/margin_half"
+                              android:text="@string/see_all" />
+-->
+                    </RelativeLayout>
+
+                    <include
+                        layout="@layout/layout_friend_six"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </RelativeLayout>
+
+
+
+
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ToolbarTheme" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/profiletabs"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:elevation="@dimen/_5ssp"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_tabs_profile"
+            />
+
+  <!--      <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextAppearance="@style/myTabTextStyle"
+            app:tabTextColor="@color/text_color_1" />-->
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+       <!-- <View style="@style/divider" />
+
+
+        <include layout="@layout/progress_view" />-->
+
+       <!-- <FrameLayout
+            android:id="@+id/container_viewprofile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>-->
+        <View style="@style/divider" />
+
+       <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:app="http://schemas.android.com/apk/res-auto"
+         android:id="@+id/mScrollView"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_above="@+id/llReaction"
+         android:visibility="visible"
+         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+     </android.support.v4.widget.NestedScrollView>-->'
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        shimmer:duration="3000">
+
+        <!-- Adding 2 rows of placeholders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_placeholder_profile" />
+
+            <include layout="@layout/item_placeholder_feed" />
+
+            <include layout="@layout/item_placeholder_feed" />
+
+            <include layout="@layout/item_placeholder_feed" />
+
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

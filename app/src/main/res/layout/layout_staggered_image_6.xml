@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llHeaderView"
+    android:layout_height="@dimen/height_staggered_image_merged">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rlImage11_tage"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_staggered"
+        android:layout_marginEnd="@dimen/margin_staggered"
+        android:layout_marginLeft="@dimen/margin_staggered"
+        android:layout_marginRight="@dimen/margin_staggered"
+        android:layout_marginStart="@dimen/margin_staggered"
+        android:layout_marginTop="@dimen/margin_staggered"
+        android:layout_weight="1"
+        app:cardCornerRadius="8dp"
+        android:elevation="5sp"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivImage11_tage"
+        style="@style/ripple_selector"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/margin_staggered"
+        android:layout_marginLeft="@dimen/margin_staggered"
+        android:layout_marginRight="@dimen/margin_staggered"
+        android:layout_marginStart="@dimen/margin_staggered"
+        android:layout_weight="1"
+
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rlImage12_tage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_staggered"
+            android:layout_marginTop="@dimen/margin_staggered"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            android:elevation="5sp"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImage12_tage"
+                style="@style/ripple_selector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rlImage13_tage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_staggered"
+            android:layout_marginTop="@dimen/margin_staggered"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            android:elevation="5sp"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImage13_tage"
+                style="@style/ripple_selector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/rlImage14_tage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_staggered"
+            android:layout_marginTop="@dimen/margin_staggered"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            android:elevation="5sp"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivImage14_tage"
+                style="@style/ripple_selector"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

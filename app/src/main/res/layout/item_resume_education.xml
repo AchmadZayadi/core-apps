@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    app:cardCornerRadius="4dp"
+    android:layout_width="match_parent"
+    android:layout_marginTop="7sp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4sp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:minHeight="90sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lllenar1"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10sp"
+            android:layout_marginTop="5sp"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/titlest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Software"
+            android:textSize="16sp"
+            android:layout_marginRight="39sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:fontFamily="@font/helvetica_medium"
+            android:textColor="@color/black_81"
+            ></TextView>
+
+            <TextView
+                android:id="@+id/companyname"
+                android:layout_width="wrap_content"
+                android:layout_marginRight="17dp"
+                android:text="Ahead Web soft"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black_81"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/experiencetime"
+                android:layout_width="wrap_content"
+                android:text="12 jan 2015 to 12 des 2021"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#323232"
+                ></TextView>
+
+            <TextView
+                android:id="@+id/cityname"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="5sp"
+                android:text="Jaipur"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#323232"
+                ></TextView>
+
+            <RelativeLayout
+                android:id="@+id/rlmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvactivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activities and Societies:"
+                android:textColor="@color/black"
+                android:fontFamily="@font/helviticka_bold"
+                ></TextView>
+            <TextView
+                android:layout_toEndOf="@+id/tvactivity"
+                android:id="@+id/descritpition"
+                android:layout_width="wrap_content"
+                android:text="sports"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="8dp"
+                android:textSize="14sp"
+                android:textColor="#323232"
+                ></TextView>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/optionmenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icblack_dot"
+            android:layout_alignParentRight="true"
+            android:padding="10dp"
+            android:rotation="90"
+            android:layout_gravity="center_vertical"
+            ></ImageView>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

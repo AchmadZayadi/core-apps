@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llAttachHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!--    <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_feed"
+            android:gravity="center"
+            android:padding="@dimen/margin_quarter"
+            android:src="@android:drawable/arrow_down_float"
+            android:visibility="gone" />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAttachOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_light" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

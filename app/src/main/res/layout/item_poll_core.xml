@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlMain"
+    style="@style/Forground_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp">
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="16dp"
+        android:id="@+id/lock"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:src="@drawable/padlock"
+        android:layout_height="15dp"
+        android:layout_below="@id/ivImage"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="2dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivImage"
+        android:layout_width="56sp"
+        android:layout_height="56sp"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scaleType="centerCrop" />
+    <LinearLayout
+        android:id="@+id/llTextBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginBottom="@dimen/margin_quarter"
+        android:layout_toEndOf="@+id/ivImage"
+        android:layout_toRightOf="@+id/ivImage"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitlepoll"
+                style="@style/text_style_1"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:ellipsize="end"
+                android:layout_marginRight="50dp"
+                android:maxLines="2"
+                android:textSize="@dimen/body_2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOwnerpoll"
+                style="@style/text_style_stats"
+                android:layout_width="wrap_content"
+
+                android:layout_below="@+id/tvTitlepoll"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginEnd="90dp"
+                android:layout_marginRight="90dp"
+                android:textSize="@dimen/caption" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDate5"
+                style="@style/text_style_stats"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/tvOwnerpoll"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginEnd="90dp"
+                android:layout_marginRight="90dp"
+                android:textSize="@dimen/caption" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivOption"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/margin_quarter"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:rotation="90"
+                android:visibility="gone"
+                app:srcCompat="@drawable/vertical_dots"
+                app:tint="@color/text_color_2" />
+
+    </RelativeLayout>
+
+    </LinearLayout>
+    <View
+        style="@style/divider"
+
+        android:layout_below="@+id/llTextBottom"
+        android:layout_marginTop="22dp" />
+</RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/width_dialog"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/width_dialog"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDialogText"
+            style="@style/text_style_1"
+            android:padding="@dimen/margin_full"
+            android:text="@string/ask_question" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:paddingBottom="@dimen/margin_full"
+            android:text="@string/ask_question_desc"
+            android:textSize="@dimen/body_1" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llQuestions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/rlAddQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:padding="@dimen/margin_quarter">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/etBody"
+            android:layout_width="@dimen/width_dialog"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="top"
+            android:hint="@string/add_question"
+            android:maxHeight="80dp"
+            android:paddingBottom="@dimen/margin_half"
+            android:paddingEnd="@dimen/margin_half"
+            android:paddingLeft="36dp"
+            android:paddingRight="@dimen/margin_half"
+            android:paddingStart="36dp"
+            android:paddingTop="@dimen/margin_half" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/add_24dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/bSubmit"
+            android:padding="12dp"
+            android:text="@string/CANCEL" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bSubmit"
+            style="@style/button_simple"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="end"
+            android:layout_margin="12dp"
+            android:text="@string/save" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

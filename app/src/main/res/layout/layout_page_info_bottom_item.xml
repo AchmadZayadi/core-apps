@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_quarter"
+    android:layout_marginEnd="@dimen/margin_friend"
+    android:layout_marginLeft="@dimen/margin_friend"
+    android:layout_marginRight="@dimen/margin_friend"
+    android:layout_marginStart="@dimen/margin_friend"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <com.sesolutions.ui.customviews.SquareImageView
+        android:id="@+id/ivItemImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvItemText"
+        style="@style/textview_composer_friends"
+        android:layout_below="@+id/ivItemImage"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="@dimen/caption"
+        android:textStyle="normal" />
+
+    <com.sesolutions.ui.customviews.SquareImageView
+        android:id="@+id/vItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/scrim"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvItemCount"
+        style="@style/text_style_light"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="@dimen/caption"
+        android:gravity="center"
+        android:textSize="@dimen/heading"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</RelativeLayout>

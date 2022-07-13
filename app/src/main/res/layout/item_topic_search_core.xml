@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="6dp"
+    android:minHeight="64dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="1dp">
+
+    <RelativeLayout
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="@dimen/height_row_reaction_user"
+            android:layout_height="@dimen/height_row_reaction_user"
+            android:layout_margin="@dimen/margin_half"
+            android:foregroundGravity="center_horizontal"
+            tools:src="@drawable/dummy_profile" />
+
+        <LinearLayout
+            android:id="@+id/llTopicSearchResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/ivImage"
+            android:layout_toRightOf="@+id/ivImage">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llmiddle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTitle"
+                    style="@style/text_style_1"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sub_heading"
+                    tools:text="Test Topic" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDescription"
+                    style="@style/text_style_2"
+                    android:layout_marginLeft="@dimen/margin_quarter"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:layout_marginRight="@dimen/margin_quarter"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textSize="@dimen/body_1"
+                    tools:text="Discussions about all SES Products including Plugins, Themes, Mobile Apps, Widgets, etc." />
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#ababab" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:id="@+id/views"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvViewCount"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:padding="@dimen/margin_quarter"
+                    android:text="3"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvViews"
+                    style="@style/text_style_stats"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="View"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="64dp"
+                android:layout_weight="0.5"
+                android:id="@+id/replies"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvReplyCount"
+                    style="@style/text_style_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_half"
+                    android:paddingTop="@dimen/margin_quarter"
+                    android:paddingBottom="@dimen/margin_quarter"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvReplies"
+                    style="@style/text_style_stats"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/margin_quarter"
+                    android:text="Reply"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

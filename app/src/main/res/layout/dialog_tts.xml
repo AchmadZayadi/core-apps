@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlDialogMain"
+    style="@style/dialog_style"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDialogText"
+            style="@style/text_style_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_full"
+            android:text="@string/tts_say"
+            android:textSize="@dimen/title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvResult"
+            style="@style/text_style_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_half"
+            android:gravity="center"
+            android:textSize="@dimen/body_1" />
+
+        <com.sesolutions.speech.ui.SpeechProgressView
+            android:id="@+id/progress"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTryAgain"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_full"
+            android:background="@drawable/circle_white_background"
+            android:elevation="8dp"
+            android:padding="24dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ses_microphone"
+            app:tint="@color/grey_feed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLanguage"
+            style="@style/text_style_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_full"
+            android:text="@string/tts_language"
+            android:textSize="@dimen/caption" />
+
+    </LinearLayout>
+
+</RelativeLayout>

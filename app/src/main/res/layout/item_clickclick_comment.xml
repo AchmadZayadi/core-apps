@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:layout_marginBottom="@dimen/divider_length"
+    android:minHeight="@dimen/height_row_notification"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUser"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:layout_marginStart="4dp"
+            tools:src="@tools:sample/avatars"
+            android:layout_width="32dp"
+            android:layout_height="32dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivUser"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:textSize="13sp"
+            tools:text="Prashant Verma"
+            android:id="@+id/tvUsername">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivUser"
+            style="@style/text_style_1"
+            android:layout_marginEnd="52dp"
+            android:layout_below="@+id/tvUsername"
+            android:maxLines="3"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="4dp"
+            tools:text="Kon kon mere se pyaar karta h se pyaar karta h se pyaar karta ha"
+            android:id="@+id/tvBody">
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ivUser"
+            android:layout_marginEnd="@dimen/margin_half"
+            android:layout_below="@+id/tvBody"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginTop="4dp"
+            tools:text="12 may"
+            android:textSize="12dp"
+            android:id="@+id/tvDate">
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvDate"
+            android:layout_marginEnd="24dp"
+            android:layout_below="@+id/tvBody"
+            tools:visibility="gone"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:text="Edit"
+            android:textSize="14dp"
+            android:id="@+id/tvEdit">
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvBody"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_toRightOf="@+id/tvDate"
+            android:text="Report"
+            android:textColor="@color/red"
+            android:textSize="14dp"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/favorite">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="24dp"
+            android:layout_centerVertical="true"
+            android:padding="3dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="28dp"
+            android:tint="@color/red"
+            app:srcCompat="@drawable/ic_trash" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

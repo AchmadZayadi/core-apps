@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_half"
+    android:layout_marginEnd="@dimen/item_offset"
+    android:layout_marginLeft="@dimen/item_offset"
+    android:layout_marginRight="@dimen/item_offset"
+    android:layout_marginStart="@dimen/item_offset"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/margin_full"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="125sp"
+        android:layout_height="125sp">
+
+
+        <!--
+                <com.sesolutions.ui.customviews.SquareImageView
+        -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImageCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scrim" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                style="@style/text_style_light"
+                android:gravity="center"
+                android:paddingLeft="@dimen/margin_quarter"
+                android:paddingRight="@dimen/margin_quarter"
+                tools:text="@string/fashion_beauty"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/body_1" />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

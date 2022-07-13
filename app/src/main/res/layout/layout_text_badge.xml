@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Forground_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/item_offset"
+    android:layout_marginLeft="@dimen/item_offset"
+    android:layout_marginRight="@dimen/item_offset"
+    android:layout_marginStart="@dimen/item_offset"
+    android:animateLayoutChanges="true"
+
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvText"
+        style="@style/text_style_1"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/item_offset"
+        android:layout_marginStart="@dimen/margin_quarter"
+        android:layout_marginTop="@dimen/margin_half"
+        android:background="@drawable/rounded_holo_border_grey_light"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingBottom="6dp"
+        android:paddingEnd="@dimen/margin_half"
+        android:paddingLeft="@dimen/margin_half"
+        android:paddingRight="@dimen/margin_half"
+        android:paddingStart="@dimen/margin_half"
+        android:paddingTop="6dp"
+        android:text="@string/txt_submit"
+        android:textSize="@dimen/caption" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvCount"
+        style="@style/text_style_light"
+        android:layout_width="20sp"
+        android:layout_height="20sp"
+
+
+        android:alpha="0.8"
+        android:background="@drawable/circle_red_background"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="2dp"
+        android:text="193"
+        android:textSize="@dimen/caption" />
+
+
+</RelativeLayout>

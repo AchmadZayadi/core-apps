@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/height_separator">
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFeedImage"
+            android:layout_width="30sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/sub_title"
+            android:layout_marginRight="@dimen/sub_title"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_quarter"
+            android:textSize="@dimen/icon_attach_option" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLiveIcon"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_small"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/title"
+            android:layout_marginRight="@dimen/title"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:srcCompat="@drawable/ic_live_video"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFeedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/margin_quarter"
+            android:text="@string/txt_post_something"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sub_heading" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

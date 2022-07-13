@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvReaction"
+    style="@style/Card_style"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:visibility="gone"
+    app:cardCornerRadius="9dp"
+    tools:cardBackgroundColor="@color/text_color_2"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llReaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlUpperLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper1"
+                android:layout_width="@dimen/size_reaction_comment"
+                android:layout_height="@dimen/size_reaction_comment"
+
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper2"
+                android:layout_width="@dimen/size_reaction_comment"
+                android:layout_height="@dimen/size_reaction_comment"
+                android:layout_marginStart="-4dp"
+                android:layout_marginLeft="-4dp"
+                android:layout_toEndOf="@+id/ivLikeUpper1"
+                android:layout_toRightOf="@+id/ivLikeUpper1"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper3"
+                android:layout_width="@dimen/size_reaction_comment"
+                android:layout_height="@dimen/size_reaction_comment"
+                android:layout_marginStart="-4dp"
+
+                android:layout_marginLeft="-4dp"
+                android:layout_toEndOf="@+id/ivLikeUpper2"
+                android:layout_toRightOf="@+id/ivLikeUpper2"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper4"
+                android:layout_width="@dimen/size_reaction_comment"
+                android:layout_height="@dimen/size_reaction_comment"
+                android:layout_marginStart="-4dp"
+                android:layout_marginLeft="-4dp"
+                android:layout_toEndOf="@+id/ivLikeUpper3"
+                android:layout_toRightOf="@+id/ivLikeUpper3"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLikeUpper5"
+                android:layout_width="@dimen/size_reaction_comment"
+                android:layout_height="@dimen/size_reaction_comment"
+                android:layout_marginStart="-4dp"
+                android:layout_marginLeft="-4dp"
+                android:layout_toEndOf="@+id/ivLikeUpper4"
+                android:layout_toRightOf="@+id/ivLikeUpper4"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                tools:src="@tools:sample/avatars"
+                tools:srcCompat="@tools:sample/avatars" />
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvLikeCount"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginRight="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/caption"
+            tools:text="67" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>

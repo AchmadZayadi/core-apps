@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Main_style"
+    android:id="@+id/main"
+    android:theme="@style/AppThemeMatrial"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/general_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_full"
+                android:src="@drawable/arrow_left"
+                android:tint="@color/black" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@+id/ivBack"
+                android:text="Add Music"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <RelativeLayout
+        android:id="@+id/rlSearchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search_drawer"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:visibility="visible"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="12dp"
+        tools:visibility="visible">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/rlCommentEdittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/llOption"
+            android:theme="@style/AppThemeMatrial"
+            app:cardCornerRadius="12dp"
+            app:strokeColor="#c5c5c5"
+
+            android:layout_marginBottom="4dp"
+            app:strokeWidth="1dp"
+            app:cardElevation="2dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_quarter"
+                android:padding="7dp"
+                android:tint="@color/gray"
+                app:srcCompat="@drawable/ses_places_ic_search" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/etStoreSearch"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/transparent"
+                android:cursorVisible="true"
+                android:gravity="center_vertical"
+                android:hint="Search Music"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_feed"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/body_1" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rltop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlSearchFilter"
+        android:layout_marginStart="@dimen/margin_full"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/margin_full"
+        android:layout_marginBottom="10dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_half"
+            app:strokeColor="#c5c5c5"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                <LinearLayout
+                    android:id="@+id/llDiscoverr"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvActivity"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:textSize="16dp"
+                        android:gravity="center"
+                        android:paddingTop="6dp"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:text="Discover">
+
+                    </androidx.appcompat.widget.AppCompatTextView>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_gravity="center"
+                        android:padding="6dp"
+                        android:id="@+id/ivActivity"
+                        app:srcCompat="@drawable/circle"
+                        app:tint="@color/colorPrimary"
+                        android:layout_height="20dp">
+
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                </LinearLayout>
+                <View
+                    android:id="@+id/div"
+                    android:layout_width="1dp"
+                    android:layout_gravity="center"
+                    android:layout_height="32dp"
+                    android:background="#c5c5c5" />
+                <LinearLayout
+                    android:id="@+id/llFavorite"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvHashtag"
+                        style="@style/text_style_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="6dp"
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:text="Favourites">
+
+                    </androidx.appcompat.widget.AppCompatTextView>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_gravity="center"
+                        android:padding="6dp"
+                        android:id="@+id/ivHash"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/circle"
+                        app:tint="@color/colorPrimary"
+                        android:layout_height="20dp">
+
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <include layout="@layout/layout_music_player" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

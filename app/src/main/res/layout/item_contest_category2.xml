@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginBottom="@dimen/item_end"
+    android:layout_marginEnd="@dimen/item_end"
+    android:layout_marginLeft="@dimen/item_end"
+    android:layout_marginRight="@dimen/item_end"
+    android:layout_marginStart="@dimen/item_end"
+    android:layout_marginTop="@dimen/item_end"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/margin_medium"
+    app:cardElevation="0dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/scrim"
+        android:layout_height="match_parent">
+        <!--
+                <com.sesolutions.ui.customviews.SquareImageView
+        -->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivImageCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/vShadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_black_light"
+            />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_marginEnd="@dimen/margin_full"
+
+                android:textSize="18dp"
+                android:layout_marginStart="@dimen/margin_full"
+                android:text="@string/fashion_beauty"
+                android:textColor="@color/text_color_light"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDesc"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:text="contest"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvTitle"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/body_1" />
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

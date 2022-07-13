@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llVideoMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:id="@+id/rlVideoImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_video_feed">
+
+        <cn.jzvd.JzvdStd2
+            android:id="@+id/videoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <com.sesolutions.utils.FlowLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBodyText"
+            style="@style/text_style_1"
+            android:layout_width="wrap_content"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:paddingTop="@dimen/margin_half"
+            android:paddingEnd="@dimen/margin_full"
+            android:paddingRight="@dimen/margin_full"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSeeMore"
+            style="@style/text_style_2"
+            android:layout_width="wrap_content"
+            android:paddingStart="@dimen/margin_full"
+            android:paddingLeft="@dimen/margin_full"
+            android:text="@string/see_more_feed"
+            android:visibility="gone" />
+    </com.sesolutions.utils.FlowLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvImageTitle"
+        style="@style/text_style_1"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvImageDescription"
+        style="@style/text_style_2"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:lineSpacingExtra="3sp"
+        android:maxLines="2"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

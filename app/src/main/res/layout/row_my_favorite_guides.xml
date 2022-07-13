@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+                android:layout_width="306sp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5sp"
+                android:background="@android:color/transparent"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/cvMainFavGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                     >
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvMainFavGuide2"
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="10sp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="15dp"
+                        >
+
+             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                 android:background="@color/white"
+                >
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:gravity="end|bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvName"
+                                style="@style/text_style_1"
+                                android:layout_below="@+id/ivImage"
+                                android:layout_marginBottom="@dimen/margin_quarter"
+                                android:layout_marginEnd="@dimen/margin_half"
+                                android:layout_marginLeft="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:layout_marginStart="@dimen/margin_half"
+                                android:layout_marginTop="@dimen/margin_half" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    >
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        android:orientation="horizontal">
+
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvName"
+                                android:layout_marginEnd="@dimen/margin_half"
+                                android:layout_marginLeft="@dimen/margin_half"
+                                android:layout_marginRight="@dimen/margin_half"
+                                android:layout_marginStart="@dimen/margin_half"
+                                android:orientation="vertical">
+
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llAge"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/tvImageAge"
+                                        android:layout_width="16sp"
+                                        android:layout_height="16sp"
+                                        android:tint="@color/text_color_2"
+                                        app:srcCompat="@drawable/birthdate" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvAge"
+                                        style="@style/text_style_2"
+                                        android:layout_gravity="center"
+
+                                        android:layout_marginLeft="@dimen/margin_quarter"
+                                        android:layout_marginTop="0dp"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:textSize="@dimen/caption" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llMutual"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_quarter"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ivMutual"
+                                        android:layout_width="16sp"
+                                        android:layout_height="16sp"
+                                        android:tint="@color/text_color_2"
+                                        app:srcCompat="@drawable/mutual" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvMutual"
+                                        style="@style/text_style_2"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_quarter"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:textSize="@dimen/caption" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:id="@+id/llAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_quarter"
+                                    android:orientation="horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/tvImageAddress"
+                                        android:layout_width="16sp"
+                                        android:layout_height="16sp"
+                                        android:tint="@color/text_color_2"
+                                        app:srcCompat="@drawable/location" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/tvAddress"
+                                        style="@style/text_style_2"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/margin_quarter"
+                                        android:ellipsize="end"
+                                        android:maxLines="2"
+                                        android:textSize="@dimen/caption" />
+
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </LinearLayout>
+
+
+
+
+                        <!--   <android.support.v7.widget.LinearLayoutCompat
+                               android:id="@+id/llButton"
+                               android:layout_width="match_parent"
+
+                               android:layout_marginBottom="@dimen/margin_half"
+                               android:layout_marginLeft="@dimen/margin_quarter"
+                               android:layout_marginRight="@dimen/margin_quarter">-->
+
+
+
+                        <!--   </android.support.v7.widget.LinearLayoutCompat>-->
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/bRemove"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_below="@+id/tvName"
+                            android:layout_centerVertical="true"
+                            android:background="@color/transparent"
+                            android:paddingBottom="@dimen/margin_full"
+                            android:paddingEnd="@dimen/margin_full"
+                            android:paddingLeft="@dimen/margin_half"
+                            android:paddingRight="@dimen/margin_full"
+                            android:paddingStart="@dimen/margin_half"
+                            android:tint="@color/text_color_1"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/cross"
+                            app:tint="@color/red" />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="@dimen/_28ssp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        >
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bAdd"
+                            style="@style/button_listsimple"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/bFollow"
+                            android:layout_below="@+id/bAdd"
+                            style="@style/button_listsimple"
+                            android:layout_width="0dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="@dimen/margin_half"
+                            android:layout_marginRight="@dimen/margin_half"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:minHeight="30dp"
+                            android:text="@string/follow"
+                            android:textSize="12sp"  />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+ </androidx.cardview.widget.CardView>
+
+ </RelativeLayout>
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImage"
+            android:layout_width="60sp"
+            android:layout_height="55sp"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="1sp"
+            android:src="@drawable/scatter2"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
+            ></de.hdodenhof.circleimageview.CircleImageView>>
+
+            </RelativeLayout>
+
+</layout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llNoData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Card_style"
+    android:gravity="center"
+    android:visibility="visible"
+    app:cardElevation="@dimen/margin_half">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvNoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_full"
+        android:text="@string/no_feed_data"
+        android:textColor="@color/black_87"
+        android:textSize="@dimen/body_1" />
+
+
+</androidx.cardview.widget.CardView>

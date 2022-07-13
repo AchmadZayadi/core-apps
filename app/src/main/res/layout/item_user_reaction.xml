@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvMain"
+    style="@style/Card_style"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/divider_length"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_half"
+        android:paddingEnd="@dimen/margin_full"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:paddingStart="@dimen/margin_full"
+        android:paddingTop="@dimen/margin_half">
+
+        <RelativeLayout
+            android:id="@+id/rlImage"
+            android:layout_width="@dimen/height_row_reaction_user"
+            android:layout_height="@dimen/height_row_reaction_user">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivImage"
+                android:layout_width="@dimen/height_row_reaction_user"
+                android:layout_height="@dimen/height_row_reaction_user"
+                android:layout_marginBottom="6sp"
+                android:layout_marginEnd="6sp"
+                android:layout_marginRight="6sp"
+                android:scaleType="centerCrop"
+                app:civ_border_width="0dp" />
+
+            <!-- <android.support.v7.widget.CardView
+                 android:id="@+id/cvIcon"
+                 android:layout_width="26sp"
+                 android:layout_height="26sp"
+                 android:layout_marginLeft="37sp"
+                 android:layout_marginStart="37sp"
+                 android:layout_marginTop="37sp"
+                 app:cardCornerRadius="13sp"
+                 app:cardElevation="4dp">-->
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivReaction"
+                android:layout_width="24sp"
+                android:layout_height="24sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="1dp"
+                app:civ_border_width="2dp" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/text_style_1"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_toEndOf="@+id/rlImage"
+            android:layout_toRightOf="@+id/rlImage"
+            android:ellipsize="end"
+            android:maxLines="2" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

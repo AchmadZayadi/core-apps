@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_top_corner"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/author"
+        android:layout_width="32dp"
+        android:layout_height="8dp"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_gravity="center"
+        app:cardBackgroundColor="@color/placeholder_bg"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll1"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivIcon"
+            style="@style/image_tint"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            app:srcCompat="@drawable/add_circle" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvFeedText"
+            style="@style/text_style_1"
+            android:padding="@dimen/margin_full"
+            android:text="Add to Story" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll2"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/image_tint"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            app:srcCompat="@drawable/option_edit" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:padding="@dimen/margin_full"
+            android:text="@string/create_post" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll3"
+        style="@style/Forground_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            style="@style/image_tint"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:tint="@color/black"
+            app:srcCompat="@drawable/ic_live_video" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/text_style_1"
+            android:padding="@dimen/margin_full"
+            android:text="Go Live" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>
+

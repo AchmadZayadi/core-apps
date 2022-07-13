@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Main_style"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/llReaction"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:stateListAnimator="@null"
+            android:theme="@style/ToolbarTheme">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorPrimary"
+                app:expandedTitleMarginStart="@dimen/margin_full"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:scrimAnimationDuration="@integer/animation_duration"
+                app:title=" "
+                app:titleEnabled="true">
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rlUpper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_color_light"
+                    app:layout_collapseMode="parallax"
+                    app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCoverPhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="200sp"
+                        android:scaleType="centerCrop" />
+
+                    <!--android:background="@drawable/gradient_profile_cover"-->
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivCamera"
+                        android:layout_width="18sp"
+                        android:layout_height="18sp"
+                        android:layout_alignParentRight="true"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginRight="4dp"
+                        android:layout_marginTop="182sp"
+                        android:src="@drawable/ses_camera"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:id="@+id/llAlbumImage"
+                        android:layout_width="@dimen/hieght_image_view_page"
+                        android:layout_height="@dimen/hieght_image_view_page"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_top_image_view_page"
+                        android:background="@drawable/rounded_holo_border_white"
+                        android:padding="2dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivAlbumImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivCamera2"
+                            android:layout_width="18sp"
+                            android:layout_height="18sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                        android:layout_margin="4dp"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ses_camera" />
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUserTitle"
+                        style="@style/text_style_1"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/llAlbumImage"
+                        android:layout_centerHorizontal="true"
+                        android:padding="@dimen/margin_half"
+                        android:textSize="@dimen/sub_title"
+                        android:textStyle="bold" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvStatus"
+                        style="@style/text_style_2"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/tvUserTitle"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/margin_half"
+                        android:layout_marginLeft="@dimen/margin_full"
+                        android:layout_marginRight="@dimen/margin_full"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:textSize="@dimen/body_1" />
+
+                    <View
+                        style="@style/divider"
+                        android:layout_below="@+id/tvStatus" />
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ToolbarTheme" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llReaction"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/font_awesome_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/progress_view" />
+
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/rlMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible">
+
+                    <include layout="@layout/layout_profile_tabbed_menus" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProfileInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cvTabbedMenu"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:clipToPadding="false"
+                        android:padding="@dimen/margin_half" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvScroll"
+                        style="@style/Card_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rvProfileInfo"
+                        android:layout_marginTop="0.2sp"
+                        app:cardCornerRadius="0dp"
+                        app:cardElevation="0dp">
+
+                        <View
+                            style="@style/divider"
+                            android:layout_below="@+id/rvProfileInfo" />
+
+                        <!--<android.support.design.widget.TabLayout
+                            android:layout_width="match_parent"
+                            android:layout_height=""></android.support.design.widget.TabLayout>
+                       -->
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:scrollbars="none">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llTabOption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </HorizontalScrollView>
+                    </androidx.cardview.widget.CardView>
+
+                    <include
+                        android:id="@+id/llPostFeed"
+                        layout="@layout/layout_post_feed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/cvScroll"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/llPostFeed"
+                        android:paddingTop="@dimen/margin_quarter" />
+
+                    <!-- <include
+                         layout="@layout/layout_recycleview_shimmer"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:layout_below="@+id/llPostFeed" />-->
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvNoData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llPostFeed"
+                        android:layout_centerHorizontal="true"
+                        android:padding="@dimen/margin_full"
+                        android:paddingTop="@dimen/margin_half"
+                        android:textColor="@color/black_87"
+                        android:textSize="@dimen/body_1"
+                        android:visibility="gone" />
+
+                    <ProgressBar
+                        android:id="@+id/pb"
+                        android:layout_width="@dimen/button_height_small"
+                        android:layout_height="@dimen/button_height_small"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:progressTint="@color/color_facebook"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <include layout="@layout/layout_hidden_feed_option" />
+
+</RelativeLayout>

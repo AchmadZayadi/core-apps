@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:vumeter="http://schemas.android.com/apk/res-auto"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:layout_marginTop="@dimen/_1ssp"
+    android:transitionGroup="true">
+
+    <LinearLayout
+        android:id="@+id/mainlayoutid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:paddingEnd="@dimen/margin_half"
+        android:paddingStart="@dimen/margin_half">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/cover_size_mini"
+            app:cardCornerRadius="6dp"
+            android:layout_height="@dimen/cover_size_mini">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+        <ImageView
+            android:id="@+id/ivSongImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/dummy_profile" />
+
+        <io.gresse.hugo.vumeterlibrary.VuMeterView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:paddingBottom="1dp"
+            android:id="@+id/vumeter"
+            vumeter:vumeter_stopSize="3dp"
+            vumeter:vumeter_speed="4"
+            vumeter:vumeter_blockNumber="6"
+            vumeter:vumeter_blockSpacing="18dp"
+            vumeter:vumeter_backgroundColor="@color/follow_blue"
+            vumeter:vumeter_startOff="false"/>
+
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/inner_padding"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSongTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/tvArtist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textSize="13sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/inner_padding"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/fabPlayLike"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginEnd="@dimen/margin_quarter"
+            android:layout_marginRight="@dimen/margin_quarter"
+            android:src="@drawable/like"
+            android:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            android:layout_width="36sp"
+            android:layout_height="36sp"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="10sp"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:rotation="90"
+            app:srcCompat="@drawable/vertical_dots"
+            app:tint="@color/text_color_2" />
+
+    </LinearLayout>
+
+</FrameLayout>

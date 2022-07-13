@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="325dp"
+    android:layout_height="wrap_content"
+    android:background="#333333">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMain"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/margin_full"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@null"
+        app:cardCornerRadius="@dimen/margin_full"
+        app:cardElevation="@dimen/item_offset">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:background="#333333">
+            <RelativeLayout
+                android:id="@+id/rlVideoImage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_video_feed">
+
+                <cn.jzvd.JzvdStd
+                    android:id="@+id/videoplayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-2dp"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/tvUser"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ivUserImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_half"
+                android:textSize="19dp"
+                android:textStyle="bold"
+                tools:text="Tannu">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@id/tvUserName"
+                style="@style/text_style_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUser"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_half"
+                android:textSize="13dp"
+                tools:text="TannuSharma">
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvFollow"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvUserName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/margin_full"
+                app:cardCornerRadius="@dimen/margin_half">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btFollow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="#ff0099"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="@dimen/sub_heading"
+                    android:padding="@dimen/margin_half"
+                    android:text="Follow">
+
+
+                </androidx.appcompat.widget.AppCompatTextView>
+            </androidx.cardview.widget.CardView>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"
+                android:src="@drawable/shagun_logo_point"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivCross"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/ic_close_24dp"
+                app:tint="@color/white"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/margin_half">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
