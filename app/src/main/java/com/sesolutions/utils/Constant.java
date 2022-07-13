@@ -16,8 +16,8 @@ public class Constant extends URL {
     public static final String KEY_APPDEFAULT_DATA = "DafultAppData";
     public static String MSG_NO_REFERENCE = "You have not added any References yet";
     public static String MSG_NO_RESUME = "No resume has been created yet.";
-    public static int backresume=0;
-    public static int resumeid=0;
+    public static int backresume = 0;
+    public static int resumeid = 0;
     public static final String KEY_STATE_ID = "state";
     public static final String KEY_COUNTRY_ID = "country";
     public static final String KEY_USER_NAME = "user_name";
@@ -30,21 +30,21 @@ public class Constant extends URL {
     public static final String KEY_Curricular_ID = "Curricular_id";
     public static final String KEY_Achievement_ID = "Achievement_id";
     public static String MSG_NO_ALBUM_BY_YOU = "You have not created any album yet.";
-    public static String TITLE_Resume= "Resume";
+    public static String TITLE_Resume = "Resume";
 
     public static String MSG_NO_PROJECT = "You have not added any Project yet";
-    public static  int TASK_DELETE_Add_VIDEO= 145;
+    public static int TASK_DELETE_Add_VIDEO = 145;
     public static String MSG_NO_CERTIFICATE = "You have not added any Certificates yet";
     public static String MSG_NO_EDUCATION = "You have not added any Education yet";
     public static String TITLE_EDIT_CHANNELS_PHOTO = "Edit Channels Photo";
     public static final String KEY_WISH_ID = "wishe_id";
     public static final int EDIT_CHANNEL_ME = 69;
     public static final String KEY_RSVP = "rsvp";
-    public static  int TASK_DELETE_CHANNEL_VIDEO= 144;
+    public static int TASK_DELETE_CHANNEL_VIDEO = 144;
     public static final int GO_TO_HOMEFRAGMENT = 17062;
     public static String MSG_NO_EXPERENCE = "Please click on the \"+\" icon coming on the top right corner for adding work experience.";
-    public static  int TASK_DELETE_Video= 142;
-    public static  int TASK_DELETE_CHANNEL= 143;
+    public static int TASK_DELETE_Video = 142;
+    public static int TASK_DELETE_CHANNEL = 143;
     public static final String KEY_MUSIC_SONG = "musicupload";
     public static final String OWNER_ID = "owner_id";
     public static final String HIDDEN = "Hidden";
@@ -457,7 +457,7 @@ public class Constant extends URL {
     public static final String URL_CHECKURL_OF_RSS = BASE_URL + "sesnews/index/checkurl" + POST_URL;
     //TO DO check this end point for rss
     public static final String URL_EDIT_RSS_PHOTO = BASE_URL + "sesnews/index/edit-photo" + POST_URL;
-    public static final String URL_SIMMILER_MUSIC = BASE_URL + "tickvideo/index/get-music-videos"+ POST_URL;
+    public static final String URL_SIMMILER_MUSIC = BASE_URL + "tickvideo/index/get-music-videos" + POST_URL;
 
     // GAMES API
     public static final String URL_GAME_BROWES = BASE_URL + "egames/index/browse" + POST_URL;
@@ -623,11 +623,10 @@ public class Constant extends URL {
     public static final String KEY_GALLARY_ID = "gallery_id";
     public static final String KEY_RESOURCES_TYPE = "resource_type";
     public static final String KEY_FIELDID = "resource_fieldid";
-    public static final String KEY_FIELDICON= "resource_fieldicon";
+    public static final String KEY_FIELDICON = "resource_fieldicon";
     public static final String VALUE_RESOURCES_TYPE = "sesadvancedactivity_action";
     public static final String VALUE_RESOURCES_TYPE2 = "activity_action";
     public static final String KEY_RESOURCE_ID = "resource_id";
-
 
 
     public static final String SETTING_GENERAL = "user_settings_general";
@@ -1863,9 +1862,9 @@ public class Constant extends URL {
         public static final int FOLLOWFOLLOWING_ACTIVITY = 9866;
         public static final int FOLLOWER_ACTIVITY = 9867;
 
-        public static final int GENRAL_SETTING_USER= 3004;
-        public static final int PROFILE_GRIUP_INFO= 3005;
-        public static final int PROFILE_TAGIMAGE= 3006;
+        public static final int GENRAL_SETTING_USER = 3004;
+        public static final int PROFILE_GRIUP_INFO = 3005;
+        public static final int PROFILE_TAGIMAGE = 3006;
 
         public static final int PROFILE_GROUP_ViIDEO = 3026;
         public static final int PROFILE_GROUP_POLL = 9002;
@@ -1879,7 +1878,6 @@ public class Constant extends URL {
         public static final int CREATE_RESUME_CERTIFICATE = 3016;
         public static final int CREATE_RESUME_REFERENCE = 3017;
         public static final int CREATE_RESUME_Career = 3018;
-
 
 
     }
