@@ -122,25 +122,26 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
     public TextView tvUserTitle;
     public TextView tvStatus;
     public LinearLayoutCompat llTabOption;
-    private ProfileResponse.Result result;
-    private ImageView ivAlbumImage;
-    private List<ProfileInfo> profileList;
-    private AppCompatTextView tvFriend1;
-    private AppCompatTextView tvFriend2;
-    private AppCompatTextView tvFriend3;
-    private AppCompatTextView tvFriend4;
-    private AppCompatTextView tvFriend5;
-    private AppCompatTextView tvFriend6;
-    private SquareImageView ivFriend1;
-    private SquareImageView ivFriend2;
-    private SquareImageView ivFriend3;
-    private SquareImageView ivFriend4;
-    private SquareImageView ivFriend5;
-    private SquareImageView ivFriend6;
-    private int textColor1;
-    private int colorPrimary;
-    private Bundle bundle;
-    private int userId;
+    ProfileResponse.Result result;
+    ImageView ivAlbumImage;
+    ImageView ivVerify;
+    List<ProfileInfo> profileList;
+    AppCompatTextView tvFriend1;
+    AppCompatTextView tvFriend2;
+    AppCompatTextView tvFriend3;
+    AppCompatTextView tvFriend4;
+    AppCompatTextView tvFriend5;
+    AppCompatTextView tvFriend6;
+    SquareImageView ivFriend1;
+    SquareImageView ivFriend2;
+    SquareImageView ivFriend3;
+    SquareImageView ivFriend4;
+    SquareImageView ivFriend5;
+    SquareImageView ivFriend6;
+    int textColor1;
+    int colorPrimary;
+    Bundle bundle;
+    int userId;
     ShimmerFrameLayout mShimmerViewContainer;
 
 
@@ -158,11 +159,11 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
     }
 
 
-    String profile_image="",profile_title="";
+    String profile_image = "", profile_title = "";
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
 
 
     }
@@ -179,18 +180,18 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             init();
             if (bundle != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 try {
-                    profile_title=bundle.getString(Constant.Trans.IMAGE);
-                    profile_image=bundle.getString(Constant.Trans.IMAGE_URL);
+                    profile_title = bundle.getString(Constant.Trans.IMAGE);
+                    profile_image = bundle.getString(Constant.Trans.IMAGE_URL);
                 } catch (Exception e) {
                     CustomLog.e(e);
                 }
             }
-          //  callMusicAlbumApi(1);
+            //  callMusicAlbumApi(1);
         } catch (Exception e) {
             CustomLog.e(e);
         }
 
-        Log.d("hasilnyaa",Constant.GCM_DEVICE_ID + "  yeah" );
+        Log.d("hasilnyaa", Constant.GCM_DEVICE_ID + "  yeah");
         return v;
 
     }
@@ -198,33 +199,35 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
     @Override
     public void onResume() {
         super.onResume();
-            ivAlbumImage.setTransitionName(profile_title);
-            tvUserTitle.setText(profile_title);
-             try {
-                Glide.with(context)
-                        .setDefaultRequestOptions(new RequestOptions().dontAnimate().dontTransform().centerCrop())
-                        .load(profile_image)
-                        .listener(new RequestListener<Drawable>() {
-                            @Override
-                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                startPostponedEnterTransition();
-                                return false;
-                            }
-                            @Override
-                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                startPostponedEnterTransition();
-                                return false;
-                            }
-                        })
-                        .into(ivAlbumImage);
-            } catch (Exception e) {
-                CustomLog.e(e);
-            }
-         callMusicAlbumApi(1);
+        ivAlbumImage.setTransitionName(profile_title);
+        tvUserTitle.setText(profile_title);
+        try {
+            Glide.with(context)
+                    .setDefaultRequestOptions(new RequestOptions().dontAnimate().dontTransform().centerCrop())
+                    .load(profile_image)
+                    .listener(new RequestListener<Drawable>() {
+                        @Override
+                        public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                            startPostponedEnterTransition();
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                            startPostponedEnterTransition();
+                            return false;
+                        }
+                    })
+                    .into(ivAlbumImage);
+        } catch (Exception e) {
+            CustomLog.e(e);
+        }
+        callMusicAlbumApi(1);
     }
 
     private List<StoryContent> highlightList;
     private StoryHighlightAdapter adapterHighlight;
+
     private void initHighlightsList() {
         v.findViewById(R.id.rlRecent).setVisibility(View.GONE);
         RecyclerView rvPhotos = v.findViewById(R.id.rvRecent);
@@ -240,12 +243,14 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             v.findViewById(R.id.rlRecent).setVisibility(View.GONE);
         }*/
     }
+
     private void callHighlightAPI() {
         Map<String, Object> map = new HashMap<>();
         map.put("highlight", 1);
         map.put(Constant.KEY_USER_ID, userId);
         new ApiController(Constant.URL_STORY_BROWSE, map, context, this, REQ_HIGHLIGHT).execute();
     }
+
     private void init() {
         try {
             iconFont = FontManager.getTypeface(context, FontManager.FONTAWESOME);
@@ -255,6 +260,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             tvStatus = v.findViewById(R.id.tvStatus);
             llTabOption = v.findViewById(R.id.llTabOption);
             ivAlbumImage = v.findViewById(R.id.ivAlbumImage);
+            ivVerify = v.findViewById(R.id.iv_verify);
             mShimmerViewContainer = v.findViewById(R.id.shimmer_view_container);
 
             tvUserTitle = v.findViewById(R.id.tvUserTitle);
@@ -288,6 +294,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
     }
 
     CollapsingToolbarLayout collapsingToolbar;
+
     private void initCollapsingToolbar() {
         Toolbar toolbar = v.findViewById(R.id.toolbar);
         activity.setSupportActionBar(toolbar);
@@ -323,6 +330,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             }
         });
     }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.view_menu_option, menu);
@@ -374,6 +382,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             CustomLog.e(e);
         }
     }
+
     private void setFriendImages() {
         try {
             List<Friends> friends = new ArrayList<>();
@@ -433,6 +442,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             CustomLog.e(e);
         }
     }
+
     @Override
     public boolean onItemClicked(Integer clickType, Object value, int postion) {
         switch (clickType) {
@@ -440,7 +450,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 handleTabOptionClicked("" + value, postion);
                 break;
             case Constant.Events.TAB_OPTION_PROFILE:
-               // handleTabOptionClicked("" + value, postion);
+                // handleTabOptionClicked("" + value, postion);
                 callFragment(value);
 
                 break;
@@ -491,20 +501,20 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
     }
 
     private void callFragment(Object value) {
-        Options opt= (Options) value;
-        Intent intent2=null;
-        Log.e("Tag",""+opt.getName());
-        switch (opt.getName()){
+        Options opt = (Options) value;
+        Intent intent2 = null;
+        Log.e("Tag", "" + opt.getName());
+        switch (opt.getName()) {
             case Constant.TabOption.INFO:
 
 
-                    //    goToProfileInfo(userId, false);
+                //    goToProfileInfo(userId, false);
                 intent2 = new Intent(activity, CommonActivity.class);
                 intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO);
                 intent2.putExtra(Constant.KEY_ID, userId);
                 startActivityForResult(intent2, EDIT_CHANNEL_ME);
 
-              //  adapter.addFragment(InfoFragment.newInstance(userId, false), opt.getLabel());
+                //  adapter.addFragment(InfoFragment.newInstance(userId, false), opt.getLabel());
 
                 break;
 
@@ -517,13 +527,13 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                     intent2.putExtra(Constant.KEY_TITLE, "Followers");
                     startActivityForResult(intent2, EDIT_CHANNEL_ME);
                     // if(Integer.parseInt(opt.getTotalCount())<2){
-               //     adapter.addFragment(FollowFollowingUser.newInstance(userId, "Followers"), "Follower");
-                }catch (Exception ex){
+                    //     adapter.addFragment(FollowFollowingUser.newInstance(userId, "Followers"), "Follower");
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-            break;
+                break;
 
-          case Constant.TabOption.RECENTVIEWEDBYME:
+            case Constant.TabOption.RECENTVIEWEDBYME:
                 try {
                     intent2 = new Intent(activity, CommonActivity.class);
                     intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_RECNTVIEW);
@@ -531,12 +541,12 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                     startActivityForResult(intent2, EDIT_CHANNEL_ME);
                     // if(Integer.parseInt(opt.getTotalCount())<2){
                     //     adapter.addFragment(FollowFollowingUser.newInstance(userId, "Followers"), "Follower");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 break;
 
-        case Constant.TabOption.RECENTVIEWEDME:
+            case Constant.TabOption.RECENTVIEWEDME:
                 try {
                     intent2 = new Intent(activity, CommonActivity.class);
                     intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_RECNTVIEWME);
@@ -544,11 +554,10 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                     startActivityForResult(intent2, EDIT_CHANNEL_ME);
                     // if(Integer.parseInt(opt.getTotalCount())<2){
                     //     adapter.addFragment(FollowFollowingUser.newInstance(userId, "Followers"), "Follower");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 break;
-
 
 
             case Constant.TabOption.FOLLOWING_TAG:
@@ -562,7 +571,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
 
                     // if(Integer.parseInt(opt.getTotalCount())<2){
                     //     adapter.addFragment(FollowFollowingUser.newInstance(userId, "Followers"), "Follower");
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 break;
@@ -584,7 +593,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 */
 
             case Constant.TabOption.UPDATES:
-               // adapter.addFragment(FeedFragment.newInstance(userId, Constant.ResourceType.USER), opt.getLabel());
+                // adapter.addFragment(FeedFragment.newInstance(userId, Constant.ResourceType.USER), opt.getLabel());
                 break;
 
             case Constant.TabOption.OVERVIEW:
@@ -595,7 +604,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 break;
 
             case Constant.TabOption.FRIENDS:
-              //  goToMemberFragment(userId, false);
+                //  goToMemberFragment(userId, false);
                 intent2 = new Intent(activity, CommonActivity.class);
                 intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_FRIEND);
                 intent2.putExtra(Constant.KEY_ID, userId);
@@ -626,25 +635,25 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             case Constant.TabOption.EVENT:
                 break;
             case Constant.TabOption.BLOG:
-               // goToSearchBlogFragment(userId);
+                // goToSearchBlogFragment(userId);
                 intent2 = new Intent(activity, CommonActivity.class);
                 intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_BLOCK);
                 intent2.putExtra(Constant.KEY_ID, userId);
                 startActivityForResult(intent2, EDIT_CHANNEL_ME);
 
-              //  adapter.addFragment(SearchBlogFragment.newInstance(userId), opt.getLabel());
+                //  adapter.addFragment(SearchBlogFragment.newInstance(userId), opt.getLabel());
                 break;
             case Constant.TabOption.MUSIC:
-              //  goToSearchMusicFragment(userId);
+                //  goToSearchMusicFragment(userId);
                 intent2 = new Intent(activity, CommonActivity.class);
                 intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_MUSIC);
                 intent2.putExtra(Constant.KEY_ID, userId);
                 startActivityForResult(intent2, EDIT_CHANNEL_ME);
 
-               // adapter.addFragment(SearchMusicAlbumFragment.newInstance(userId), opt.getLabel());
+                // adapter.addFragment(SearchMusicAlbumFragment.newInstance(userId), opt.getLabel());
                 break;
             case Constant.TabOption.VIDEO:
-           //     goToSearchVideoFragment(userId);
+                //     goToSearchVideoFragment(userId);
                 intent2 = new Intent(activity, CommonActivity.class);
                 intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PROFILE_INFO_VIDEO);
                 intent2.putExtra(Constant.KEY_ID, userId);
@@ -667,6 +676,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 break;
         }
     }
+
     private void openMapIntent(int postion) {
         ProfileInfo vo = profileList.get(postion);
         Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -676,6 +686,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
 */
         startActivity(intent);
     }
+
     private void handleTabOptionClicked(String value, int postion) {
         switch (value) {
             case Constant.TabOption.INFO:
@@ -700,6 +711,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 break;
         }
     }
+
     private void handleFriendClick(int pos) {
         List<Friends> friends = null;
         if (null != result.getMutualFriends()) {
@@ -710,6 +722,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
         if (userId != friends.get(pos).getUserId())
             goToProfileFragment(friends.get(pos).getUserId());
     }
+
     private void handleOptionClick(int position) {
         if (position == 3 && !result.isSelf()) {
             /*show popup if menu is more than 3 for other users*/
@@ -741,6 +754,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             CustomLog.e(e);
         }
     }
+
     public void openFbPage(String url) {
         Intent intent;
         Uri uri = Uri.parse(url);
@@ -756,21 +770,24 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
         intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
+
     public void showHideOptionIcon() {
         try {
-            Objects.requireNonNull(getActivity()).findViewById(R.id.option).setVisibility((result.getGutterMenu() != null && result.getGutterMenu().size() > 0) ? View.VISIBLE : View.GONE);
+         //   Objects.requireNonNull(getActivity()).findViewById(R.id.option).setVisibility((result.getGutterMenu() != null && result.getGutterMenu().size() > 0) ? View.VISIBLE : View.GONE);
+            requireActivity().findViewById(R.id.option).setVisibility((result.getGutterMenu() != null && result.getGutterMenu().size() > 0) ? View.VISIBLE : View.GONE);
         } catch (Exception e) {
             CustomLog.e(e);
         }
     }
+
     private void updateUpperLayout() {
         showHideOptionIcon();
         try {
             //  ((TextView) v.findViewById(R.id.tvTitle)).setText(result.getProfile().getDisplayname());
             ((CollapsingToolbarLayout) v.findViewById(R.id.collapsing_toolbar)).setTitle(" ");
-       //     v.findViewById(R.id.tabs).setVisibility(View.VISIBLE);
+            //     v.findViewById(R.id.tabs).setVisibility(View.VISIBLE);
 
-      //      profiletabs
+            //      profiletabs
             setupViewPager();
 
 
@@ -782,21 +799,25 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             }, 200);
 
             tvUserTitle.setText(result.getProfile().getDisplayname());
-         //   collapsingToolbar.setTitle(result.getProfile().getDisplayname());
+            //   collapsingToolbar.setTitle(result.getProfile().getDisplayname());
             if (TextUtils.isEmpty(result.getProfile().getStatus())) {
                 tvStatus.setVisibility(View.GONE);
             } else {
                 tvStatus.setVisibility(View.VISIBLE);
                 try {
                     tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
-                   // tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
+                    // tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
                 } catch (Exception e) {
                     CustomLog.e("Profile", "unable to parse emoji");
-                  //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(result.getProfile().getStatus()));
+                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(result.getProfile().getStatus()));
                     tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
-                  //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
+                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
                 }
             }
+            if (result.getProfile().getLevelId() ==  4){
+                ivVerify.setImageResource(R.drawable.ic_verified);
+            }
+
             Util.showImageWithGlide(ivAlbumImage, result.getProfile().getUserPhoto(), context/*, R.drawable.placeholder_square*/);
 //            if (!TextUtils.isEmpty(result.getCoverPhoto())) {
 //                Util.showImageWithGlide(ivCoverPhoto, result.getCoverPhoto(), context, R.drawable.placeholder_square);
@@ -821,7 +842,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             }
 
             if (result.isSelf() && null != result.getCoverImageOption()) {
-               // v.findViewById(R.id.ivCamera).setVisibility(View.VISIBLE);
+                // v.findViewById(R.id.ivCamera).setVisibility(View.VISIBLE);
                 v.findViewById(R.id.ivCoverPhoto).setOnClickListener(this);
             } else {
                 v.findViewById(R.id.ivCamera).setVisibility(View.GONE);
@@ -856,7 +877,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
         if (result.getProfileTabs() != null) {
             setupViewPager();
             tabLayout.clearOnTabSelectedListeners();
-         //   tabLayout.setupWithViewPager(viewPager, true);
+            //   tabLayout.setupWithViewPager(viewPager, true);
             tabLayout.addOnTabSelectedListener(this);
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -868,7 +889,6 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             tabLayout.setVisibility(View.GONE);
         }
     }
-
 
 
     private void setupViewPager() {
@@ -1051,7 +1071,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                 case R.id.llAlbumImage:
                     if (result.isSelf())
                         showPopup(result.getProfileImageOption(), v.findViewById(R.id.ivCamera2), 100, this);
-                    else{
+                    else {
                         //  goToGalleryFragment(result.getProfile().getPhotoId(), resourceType, result.getProfile().getUserPhoto());
                         fragmentManager.beginTransaction()
                                 .replace(R.id.container
@@ -1186,10 +1206,10 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
         try {
             if (isNetworkAvailable(context)) {
 
-              //  showBaseLoader(false);
+                //  showBaseLoader(false);
                 try {
                     if (req == 1) {
-                      //  showView(v.findViewById(R.id.pbMain));
+                        //  showView(v.findViewById(R.id.pbMain));
 
                     }
                     HttpRequestVO request = new HttpRequestVO(BASE_URL + "profile/" + userId + Constant.POST_URL);
@@ -1214,34 +1234,33 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                                     RecyclerView profiletabs = v.findViewById(R.id.profiletabs);
 
                                     profiletabs.setBackgroundColor(Color.parseColor(Constant.backgroundColor));
-                                    if(result.getProfileTabs()!=null && result.getProfileTabs().size()>0){
+                                    if (result.getProfileTabs() != null && result.getProfileTabs().size() > 0) {
                                         LinearLayoutManager layoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
                                         profiletabs.setLayoutManager(layoutManager);
-                                        List<Options> profillist=new ArrayList<>();
+                                        List<Options> profillist = new ArrayList<>();
                                         try {
-                                            for(int j=0;j<result.getProfileTabs().size();j++){
-                                                if(!result.getProfileTabs().get(j).getName().equalsIgnoreCase("sescontest")){
+                                            for (int j = 0; j < result.getProfileTabs().size(); j++) {
+                                                if (!result.getProfileTabs().get(j).getName().equalsIgnoreCase("sescontest")) {
                                                     profillist.add(result.getProfileTabs().get(j));
                                                 }
                                             }
-                                            ProfileTabsAdapter     adapter1    = new ProfileTabsAdapter(profillist, context, this);
+                                            ProfileTabsAdapter adapter1 = new ProfileTabsAdapter(profillist, context, this);
                                             profiletabs.setAdapter(adapter1);
-                                        }catch (Exception ex){
+                                        } catch (Exception ex) {
                                             ex.printStackTrace();
                                         }
 
 
-
                                         profiletabs.setVisibility(View.VISIBLE);
 
-                                     }else {
+                                    } else {
                                         profiletabs.setVisibility(View.GONE);
                                     }
 
                                     try {
-                                        profile_title=result.getProfile().getDisplayname();
-                                        profile_image=result.getProfile().getUserPhoto();
-                                    }catch (Exception ex){
+                                        profile_title = result.getProfile().getDisplayname();
+                                        profile_image = result.getProfile().getUserPhoto();
+                                    } catch (Exception ex) {
                                         ex.printStackTrace();
                                     }
 
@@ -1422,8 +1441,6 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
         String guid = Constant.ResourceType.USER + "_" + result.getProfile().getUserId();
         fragmentManager.beginTransaction().replace(R.id.container, ReportSpamFragment.newInstance(guid)).addToBackStack(null).commit();
     }
-
-
 
 
     private void callGutterApi(final boolean isTabbed, final String url, int userId, final int position) {
