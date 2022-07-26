@@ -61,6 +61,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
     private DrawerModel drawerModel;
     private ImageView ivLogo;
     private ImageView ivLogo1;
+    ImageView ivVerifyDrawer;
     private TextView tvName;
     private List<DrawerModel.Menus> menus = new ArrayList<>();
     private View v;
@@ -148,6 +149,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
         foregroundColor = Color.parseColor(Constant.foregroundColor);
         ivLogo = v.findViewById(R.id.iv_logo_drawer);
         ivLogo1 = v.findViewById(R.id.iv_logo_drawer1);
+        ivVerifyDrawer = v.findViewById(R.id.iv_verify_drawer);
         ivCoverPhoto = v.findViewById(R.id.ivCoverPhoto);
         tvName = v.findViewById(R.id.tv_name);
         tvDrawerHeader1 = v.findViewById(R.id.tvDrawerHeader_1);
@@ -216,11 +218,17 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                     if (AppConfiguration.memberImageShapeIsRound) {
                         v.findViewById(R.id.cvProfileImage).setVisibility(View.GONE);
                         ivLogo.setVisibility(View.VISIBLE);
+                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
+                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
+                        }
                         Util.showImageWithGlide(ivLogo, SPref.getInstance().getUserMasterDetail(context).getPhotoUrl(), context, R.drawable.placeholder_square);
                     } else {
                         v.findViewById(R.id.cvProfileImage).setVisibility(View.VISIBLE);
                         ivLogo.setVisibility(View.GONE);
                         Util.showImageWithGlide(ivLogo1, SPref.getInstance().getUserMasterDetail(context).getPhotoUrl(), context, R.drawable.placeholder_square);
+                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
+                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
+                        }
                     }
 
                 }

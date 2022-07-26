@@ -191,7 +191,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
             CustomLog.e(e);
         }
 
-        Log.d("hasilnyaa", Constant.GCM_DEVICE_ID + "  yeah");
+
         return v;
 
     }
@@ -814,7 +814,7 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
                     //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
                 }
             }
-            if (result.getProfile().getLevelId() ==  4){
+            if (result.getProfile().getLevelId() == 3){
                 ivVerify.setImageResource(R.drawable.ic_verified);
             }
 

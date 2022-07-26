@@ -122,6 +122,7 @@ import cn.jzvd.JzvdStd;
 import cn.jzvd.JzvdStd2;
 
 import static android.graphics.Typeface.BOLD;
+
 public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public static final int TYPE_FEED = 0;
@@ -145,7 +146,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public final RequestOptions requestOptions;
     public final RequestManager glide;
     //  private final int colorGrey;
-    public final Drawable dLike,like;
+    public final Drawable dLike, like;
     public final Drawable dSave;
     public final Drawable dUnsave;
     // private final int colorText1;
@@ -161,7 +162,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private List<StoryModel> stories;
     boolean islike;
     boolean isSaved;
-    public boolean canPlay2=false;
+    public boolean canPlay2 = false;
 
     public FeedActivityAdapter(List<Activity> list, Context cntxt, OnUserClickedListener<Integer, Object> listener) {
         this.list = list;
@@ -179,8 +180,8 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         this.dMusicPlayer = ContextCompat.getDrawable(context, R.drawable.music_player);
         this.isLoggedIn = SPref.getInstance().isLoggedIn(context);
         this.emojiSize = context.getResources().getInteger(R.integer.header_emoji_size);
-        this.islike=false;
-        this.isSaved=false;
+        this.islike = false;
+        this.isSaved = false;
         this.like = ContextCompat.getDrawable(context, R.drawable.like_active_quote);
         this.dPlay = ContextCompat.getDrawable(context, R.drawable.play);
         this.dSave = ContextCompat.getDrawable(context, R.drawable.ic_save);
@@ -230,12 +231,12 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                 @Override
                 public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                    Log.e("Complete","Completed");
+                    Log.e("Complete", "Completed");
                     return false;
                 }
             }).placeholder(drawable).into(ivUserImage);
 
-           // glide.applyDefaultRequestOptions(requestOptions).load(path)/*.transition(withCrossFade())*//*thumbnail(0.1f).*/.into(ivUserImage);
+            // glide.applyDefaultRequestOptions(requestOptions).load(path)/*.transition(withCrossFade())*//*thumbnail(0.1f).*/.into(ivUserImage);
         } catch (Exception e) {
             CustomLog.e(e);
         }
@@ -284,7 +285,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemViewType(int position) {
         try {
-            Log.e("position",""+position);
+            Log.e("position", "" + position);
             switch (list.get(position).getContentType()) {
                 case Constant.ItemType.GOOGLE_AD:
                     return TYPE_AD;
@@ -480,6 +481,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         params.height = 0;
                         holder11.itemView.setLayoutParams(params);
                     }
+                    if (composerOption.getResult().getLevelId() == 3) {
+                        holder11.ivVerify.setImageResource(R.drawable.ic_verified);
+                    }
+
                     Util.showImageWithGlide(holder11.ivProfileCompose, composerOption.getResult().getUser_image(), context, R.drawable.placeholder_3_2);
                 } catch (Exception e) {
                     CustomLog.e(e);
@@ -616,14 +621,14 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             }
                         }
                         holderParent.tvFeedType.setTypeface(iconFont);
-                        if(vo.getActivityIcon().equalsIgnoreCase("f2f6")){
+                        if (vo.getActivityIcon().equalsIgnoreCase("f2f6")) {
                             holderParent.tvFeedType.setText(Html.fromHtml(slashU + "f090"));
-                        }else {
+                        } else {
                             holderParent.tvFeedType.setText(Html.fromHtml(slashU + vo.getActivityIcon()).toString());
                         }
 
 
-                        Log.e("Activty Icon",""+vo.getActivityIcon());
+                        Log.e("Activty Icon", "" + vo.getActivityIcon());
                         holderParent.tvDate.setText(Util.changeDateFormat(context, vo.getDate()));
 
                         holderParent.llShare.setVisibility(vo.getCanShare() == 0 ? View.GONE : View.VISIBLE);
@@ -645,28 +650,34 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             return false;
                         });
 
-                         islike=vo.isIs_like();
+                        islike = vo.isIs_like();
 
                         holderParent.llLike.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
-                                Log.e("like de",""+islike);
+                                Log.e("like de", "" + islike);
                                 if (islike) {
                                     holderParent.tvLike.setTextColor(colorPrimary);
                                     holderParent.ivImageLike.setImageDrawable(dLike);
                                     listener.onItemClicked(Constant.Events.LIKED2, islike ? "-1" : "0", holderParent.getAdapterPosition());
-                                    islike=!islike;
+                                    islike = !islike;
                                 } else {
                                     holderParent.tvLike.setTextColor(colorText2);
                                     holderParent.ivImageLike.setImageDrawable(like);
                                     listener.onItemClicked(Constant.Events.LIKED2, islike ? "-1" : "0", holderParent.getAdapterPosition());
-                                    islike=!islike;
+                                    islike = !islike;
                                 }
                             }
                         });
 
-                       // holderParent.llLike.setOnClickListener(v ->);
+                        // holderParent.llLike.setOnClickListener(v ->);
+
+
+
+                        if (vo.getItemUser().getLevelId() == 3) {
+                            holderParent.ivVerify.setImageResource(R.drawable.ic_verified);
+                        }
                         holderParent.ivProfileImage.setVisibility(hasToShowRoundImage ? View.INVISIBLE : View.VISIBLE);
                         holderParent.ivProfileImageRound.setVisibility(hasToShowRoundImage ? View.VISIBLE : View.INVISIBLE);
                         showImageWithGlide((hasToShowRoundImage ? holderParent.ivProfileImageRound : holderParent.ivProfileImage), vo.getItemUser().getUser_image(), context, R.drawable.default_user);
@@ -696,7 +707,6 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         isSaved = false;
 
 
-
                         if (null != vo.getOptions()) {
                             for (Options option : vo.getOptions()) {
                                 if (option.getName().equals("save"))
@@ -708,7 +718,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                         holderParent.ivSaveFeed.setOnClickListener(v -> {
 
-                            isSaved=!isSaved;
+                            isSaved = !isSaved;
                             holderParent.ivSaveFeed.setImageDrawable(isSaved ? dSave : dUnsave);
 
                             int savepos = 0;
@@ -725,10 +735,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         try {
                             if (SPref.getInstance().getDefaultInfo(context, Constant.KEY_APPDEFAULT_DATA).getResult().isIs_core_activity()) {
                                 holderParent.llsocialid.setVisibility(View.GONE);
-                            }else {
+                            } else {
                                 holderParent.llsocialid.setVisibility(View.VISIBLE);
                             }
-                        }catch (Exception ex){
+                        } catch (Exception ex) {
                             ex.printStackTrace();
                         }
 
@@ -980,8 +990,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                 holderParent.llMultipleImageMain.setVisibility(View.GONE);
                             }
 
-                        }
-                        else {
+                        } else {
                             holderParent.llMultipleImageMain.setVisibility(View.GONE);
                         }
 
@@ -1052,7 +1061,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                         if (null != vo.getBody()) {
                             // actionId =1 means its a dummy cintent
-                            body =  Util.stripHtml(vo.getBody());
+                            body = Util.stripHtml(vo.getBody());
                             span = new SpannableString(body);
                         }
 
@@ -1070,11 +1079,11 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             if (vo.getFornSize() > 0) {
                                 holderParent.tvBodyText.setTextSize(TypedValue.COMPLEX_UNIT_SP, vo.getFornSize());
                             }
-                            holderParent.tvBodyText.setText(span);
+                            String bdy = span.toString();
+                            holderParent.tvBodyText.setText(Util.getEmojiFromString(bdy));
                             holderParent.tvBodyText.setMovementMethod(LinkMovementMethod.getInstance());
 
-                        }
-                        else {
+                        } else {
                             holderParent.tvBodyText.setVisibility(View.GONE);
                             holderParent.tvSeeMore.setVisibility(View.GONE);
                         }
@@ -1093,55 +1102,55 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                             holderParent.rlCommentView.setOnClickListener(v -> listener.onItemClicked(Constant.Events.COMMENT, holderParent.etFeedComment.getText().toString(), holderParent.getAdapterPosition()));
 
-                            if (!TextUtils.isEmpty(vo.getComment().getGif_url()) && vo.getComment().getGif_url().length()>0) {
+                            if (!TextUtils.isEmpty(vo.getComment().getGif_url()) && vo.getComment().getGif_url().length() > 0) {
                                 holderParent.tvImageComment222.setVisibility(View.VISIBLE);
                                 holderParent.tvBodyComment.setVisibility(View.GONE);
                                 Util.showImageWithGlide(holderParent.tvImageComment222, vo.getComment().getGif_url(), context, R.drawable.placeholder_3_2);
-                            }else {
+                            } else {
                                 holderParent.tvBodyComment.setVisibility(View.VISIBLE);
                                 holderParent.tvImageComment222.setVisibility(View.GONE);
                             }
 
-                              if (!TextUtils.isEmpty(vo.getComment().getBody())) {
+                            if (!TextUtils.isEmpty(vo.getComment().getBody())) {
                                 String body2 = unecodeStr(vo.getComment().getBody());
                                 SpannableString span2 = null;
                                 try {
 
 
-                                List<Mention> mentionList = vo.getComment().getMention();
-                                List<Mention> list2 = new ArrayList<>();
-                                for (Mention men : mentionList) {
-                                    body2 = body2.replace(men.getWord(), men.getTitle());
-                                    int startMention = body2.indexOf(men.getTitle());
-                                    int endMention = men.getTitle().length();
-                                    men.setStartIndex(startMention);
-                                    men.setEndIndex(startMention + endMention);
-                                    list2.add(men);
-                                }
-
-                                span2 = new SpannableString(body2);
-                                for (final Mention men : list2) {
-                                    // body = body.replace(men.getWord(), men.getTitle());
-                                    if (men.getStartIndex() > -1) {
-                                        span2.setSpan(new CustomClickableSpan(listener, Constant.Events.CLICKED_BODY_TAGGED, "" + men.getUserId(), holderParent.getAdapterPosition()), men.getStartIndex(), men.getEndIndex(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                        span2.setSpan(new StyleSpan(BOLD), men.getStartIndex(), men.getEndIndex(), 0);
+                                    List<Mention> mentionList = vo.getComment().getMention();
+                                    List<Mention> list2 = new ArrayList<>();
+                                    for (Mention men : mentionList) {
+                                        body2 = body2.replace(men.getWord(), men.getTitle());
+                                        int startMention = body2.indexOf(men.getTitle());
+                                        int endMention = men.getTitle().length();
+                                        men.setStartIndex(startMention);
+                                        men.setEndIndex(startMention + endMention);
+                                        list2.add(men);
                                     }
-                                }
+
+                                    span2 = new SpannableString(body2);
+                                    for (final Mention men : list2) {
+                                        // body = body.replace(men.getWord(), men.getTitle());
+                                        if (men.getStartIndex() > -1) {
+                                            span2.setSpan(new CustomClickableSpan(listener, Constant.Events.CLICKED_BODY_TAGGED, "" + men.getUserId(), holderParent.getAdapterPosition()), men.getStartIndex(), men.getEndIndex(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                            span2.setSpan(new StyleSpan(BOLD), men.getStartIndex(), men.getEndIndex(), 0);
+                                        }
+                                    }
 
                                     try {
-                                        Log.e("Data details",""+span2);
+                                        Log.e("Data details", "" + span2);
                                         holderParent.tvBodyComment.setText(span2);
                                         holderParent.tvBodyComment.setMovementMethod(LinkMovementMethod.getInstance());
-                                    }catch (Exception ex){
+                                    } catch (Exception ex) {
                                         ex.printStackTrace();
                                     }
 
-                                }catch (Exception ex){
+                                } catch (Exception ex) {
                                     ex.printStackTrace();
                                 }
                             }
 
-                          //  holderParent.etFeedComment.setKeyListener(null);
+                            //  holderParent.etFeedComment.setKeyListener(null);
 
                             holderParent.etFeedComment.setClickable(true);
                             holderParent.etFeedComment.setFocusable(false);
@@ -1155,25 +1164,20 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             });
 
 
-
-
-
                             holderParent.ivPostIcon.setOnClickListener(v -> {
                                 listener.onItemClicked(Constant.Events.FEED_COMMENT,
                                         holderParent.etFeedComment.getText().toString(), holderParent.getAdapterPosition());
                                 holderParent.etFeedComment.setText(Constant.EMPTY);
                             });
 
-                        }
-                        else {
+                        } else {
                             holderParent.rlCommentView.setVisibility(View.GONE);
                         }
 
                         /*show hide in-list comment UI ends*/
                         if (TextUtils.isEmpty(vo.getHashTagString())) {
                             holderParent.tvFeedTags.setVisibility(View.GONE);
-                        }
-                        else {
+                        } else {
                             holderParent.tvFeedTags.setVisibility(View.VISIBLE);
                             holderParent.tvFeedTags.setText(getClickableTags(vo.getActivityTags(), holderParent.getAdapterPosition()));
                             holderParent.tvFeedTags.setMovementMethod(LinkMovementMethod.getInstance());
@@ -1460,10 +1464,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                     holderParent.ivImage.setVisibility(View.GONE);
                                                 }
                                                 holderParent.agPlayer.setVisibility(View.GONE);
-                                              //  holderParent.ivImage.setVisibility(View.GONE);
-                                              //holderParent.jzVideoPlayerStandard.setVisibility(View.GONE);
+                                                //  holderParent.ivImage.setVisibility(View.GONE);
+                                                //holderParent.jzVideoPlayerStandard.setVisibility(View.GONE);
 
-                                                if(vo.getAttachment().is_can_play()){
+                                                if (vo.getAttachment().is_can_play()) {
                                                     holderParent.agPlayer.setVisibility(View.VISIBLE);
                                                     holderParent.ivImage.setVisibility(View.GONE);
                                                     holderParent.ivVideoPlaceholder.setVisibility(View.GONE);
@@ -1473,7 +1477,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                     try {
                                                         holderParent.agPlayer.destroyDrawingCache();
                                                         holderParent.agPlayer.reset();
-                                                    }catch (Exception ex){
+                                                    } catch (Exception ex) {
                                                         ex.printStackTrace();
                                                     }
 
@@ -1481,12 +1485,11 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                             , JzvdStd.SCREEN_NORMAL, MediaExo.class);
                                                     holderParent.agPlayer.startVideo();
                                                     Util.showImageWithGlide(holderParent.agPlayer.posterImageView, vo.getAttachment().getImages().get(0).getMain(), context, R.drawable.placeholder_3_2);
-                                                }
-                                                else {
+                                                } else {
                                                     try {
                                                         holderParent.agPlayer.destroyDrawingCache();
                                                         holderParent.agPlayer.reset();
-                                                    }catch (Exception ex){
+                                                    } catch (Exception ex) {
                                                         ex.printStackTrace();
                                                     }
                                                     holderParent.jzVideoPlayerStandard.setVisibility(View.GONE);
@@ -1507,8 +1510,8 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                 holderParent.jzVideoPlayerStandard.setUp(proxy.getProxyUrl(vo.getAttachment().getVideoUrl())
                                                         , null != vo.getAttachment().getTitle() ? vo.getAttachment().getTitle() : " "
                                                         , JzvdStd2.SCREEN_NORMAL);
-                                              //  holderParent.jzVideoPlayerStandard.startVideo();
-                                                 if (canPlay) {
+                                                //  holderParent.jzVideoPlayerStandard.startVideo();
+                                                if (canPlay) {
                                                     holderParent.jzVideoPlayerStandard.startButton.performClick();
                                                 } else {
                                                     //do nothing here
@@ -1541,16 +1544,15 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                         });
 
 
-                                       holderParent.llVideoMain.setOnClickListener(v ->
-                                             //  listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition())
-                                               {
+                                        holderParent.llVideoMain.setOnClickListener(v ->
+                                                        //  listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition())
+                                                {
 
 
+                                                    Log.e("AttachmentType", "" + vo.getAttachment().getAttachmentType());
+                                                    if (vo.getAttachment().getAttachmentType().equalsIgnoreCase("video")) {
 
-                                                   Log.e("AttachmentType",""+vo.getAttachment().getAttachmentType());
-                                                   if(vo.getAttachment().getAttachmentType().equalsIgnoreCase("video")){
-
-                                                       listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition());
+                                                        listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition());
                                                      /*  JZDataSource mJzDataSource = new JZDataSource(vo.getAttachment().getVideoUrl(), vo.getAttachment().getTitle());
                                                        try {
                                                            holderParent.agPlayer.destroyDrawingCache();
@@ -1565,11 +1567,11 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                        holderParent.ivImage.setVisibility(View.GONE);
                                                        holderParent.rlVideoImage.setVisibility(View.GONE);*/
 
-                                                   }else {
-                                                       listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition());
-                                                   }
-                                               }
-                                       );
+                                                    } else {
+                                                        listener.onItemClicked(Constant.Events.VIDEO, "", holderParent.getAdapterPosition());
+                                                    }
+                                                }
+                                        );
                                     } catch (Exception e) {
                                         CustomLog.e(e);
                                     }
@@ -1580,10 +1582,9 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                             canPlay = false;
                                             canPlay2 = false;
                                             holderParent.ivVideoPlaceholder.setVisibility(View.GONE);
-                                        }else if(canPlay2 && null!=vo.getAttachment().getVideoUrl()){
+                                        } else if (canPlay2 && null != vo.getAttachment().getVideoUrl()) {
                                             holderParent.ivVideoPlaceholder.setVisibility(View.GONE);
-                                        }
-                                        else {
+                                        } else {
                                             canPlay2 = false;
                                             holderParent.ivVideoPlaceholder.setVisibility(View.GONE);
                                             holderParent.ivVideoPlaceholder.setImageDrawable(dPlay);
@@ -1601,8 +1602,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                         break;
 
                                 }
-                            }
-                            else {
+                            } else {
                                 holderParent.llVideoMain.setVisibility(View.GONE);
                                 if (vo.getAttachment() == null && vo.getLocationActivity() != null) {
 
@@ -1630,7 +1630,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                 }
                             }
 
-                            if(vo.getGif_url() != null && vo.getGif_id().equalsIgnoreCase("true")){
+                            if (vo.getGif_url() != null && vo.getGif_id().equalsIgnoreCase("true")) {
                                 holderParent.llVideoMain.setVisibility(View.GONE);
                                 holderParent.llSingleImage.setVisibility(View.VISIBLE);
                                 holderParent.ivStickerImage.setVisibility(View.GONE);
@@ -1749,6 +1749,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public TextView tvImage4;
         public TextView tvNoFeed;
         private ImageView ivProfileCompose;
+        private ImageView ivVerify;
         private AppCompatTextView tvPostSomething;
         private LinearLayoutCompat llComposer;
 
@@ -1760,6 +1761,8 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 v.findViewById(R.id.ivProfile).setVisibility(View.VISIBLE);
                 v.findViewById(R.id.ivProfile1).setVisibility(View.GONE);
                 ivProfileCompose = v.findViewById(R.id.ivProfile);
+                ivVerify = v.findViewById(R.id.iv_verify);
+
 //                } else {
 //                    v.findViewById(R.id.ivProfile).setVisibility(View.GONE);
 //                    v.findViewById(R.id.ivProfile1).setVisibility(View.VISIBLE);
@@ -1790,7 +1793,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 v.findViewById(R.id.llOption1).setOnClickListener(this);
                 v.findViewById(R.id.llOption2).setOnClickListener(this);
                 v.findViewById(R.id.llOption3).setOnClickListener(this);
-                ((ImageView)v.findViewById(R.id.ivPostPhoto)).setColorFilter(Color.parseColor(Constant.text_color_1));
+                ((ImageView) v.findViewById(R.id.ivPostPhoto)).setColorFilter(Color.parseColor(Constant.text_color_1));
                 //  v.findViewById(R.id.llPostFeed).setVisibility(View.VISIBLE);
                 if (composerOption.getResult().getEnableComposer()) {
                     llComposer.setVisibility(View.VISIBLE);
@@ -2211,6 +2214,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         private View ivMarker;
         private LinearLayoutCompat llVideoMain;
         private View llMainView;
+        private ImageView ivVerify;
 
         private LinearLayoutCompat llHiddenView;
         private ImageView ivSingleImage;
@@ -2239,7 +2243,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         private JzvdStd2 jzVideoPlayerStandard;
 
         //comment UI members
-        private ImageView ivProfileImageComment, ivUserImageComment,tvImageComment222;
+        private ImageView ivProfileImageComment, ivUserImageComment, tvImageComment222;
         private TextView tvHeaderComment, tvBodyComment;
         private EditText etFeedComment;
         private CardView cvEditText, cvComment;
@@ -2268,8 +2272,8 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                     listener.onItemClicked(Constant.Events.WEBVIEW, list.get(getAdapterPosition()).getBoostPostUrl(), getAdapterPosition());
                 });
 
-                int   buttoncolor = Color.parseColor(Constant.menuButtonActiveTitleColor);
-                int   buttoncolor2 = Color.parseColor(Constant.menuButtonBackgroundColor);
+                int buttoncolor = Color.parseColor(Constant.menuButtonActiveTitleColor);
+                int buttoncolor2 = Color.parseColor(Constant.menuButtonBackgroundColor);
                 bBoost.setBackgroundTintList(ColorStateList.valueOf(buttoncolor));
                 bBoost.setTextColor(buttoncolor2);
 
@@ -2383,6 +2387,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 ivGIF = itemView.findViewById(R.id.ivGIF);
                 llVideoMain = itemView.findViewById(R.id.llVideoMain);
                 tvBodyText = itemView.findViewById(R.id.tvBodyText);
+                ivVerify = itemView.findViewById(R.id.iv_verify);
                 tvSeeMore = itemView.findViewById(R.id.tvSeeMore);
                 llMainView = itemView.findViewById(R.id.llMainView);
                 llHiddenView = itemView.findViewById(R.id.llHiddenView);
@@ -2474,7 +2479,6 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             }
         }
     };*/
-
 
 
 }

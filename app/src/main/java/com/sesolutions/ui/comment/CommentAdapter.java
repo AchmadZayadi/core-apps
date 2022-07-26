@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -86,6 +87,11 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
             holder.tvHeader.setOnClickListener(v -> listener.onItemClicked(Constant.Events.COMMENT_HEADER_TITLE, "", holder.getAdapterPosition()));
             holder.ivProfileImage.setOnClickListener(v -> listener.onItemClicked(Constant.Events.COMMENT_HEADER_IMAGE, "", holder.getAdapterPosition()));
 
+
+
+            if (vo.getLevelId() == 3){
+                holder.ivVerify.setImageResource(R.drawable.ic_verified);
+            }
             holder.tvLikeCount.setText("" + vo.getLikeCount());
             holder.tvDate.setText(Util.getDateDifference(context, vo.getCreationDate()));
 
@@ -158,8 +164,11 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
                 } catch (Exception e) {
                     CustomLog.e(e);
                 }
+
+                String bdy = span.toString();
                 holder.tvBody.setVisibility(View.VISIBLE);
-                holder.tvBody.setText(span);
+              //  holder.tvBody.setText(span);
+                holder.tvBody.setText(Util.getEmojiFromString(bdy));
                 holder.tvBody.setMovementMethod(LinkMovementMethod.getInstance());
 //                holder.tvBody.setMovementMethod(new TextViewClickMovement(listener, context, holder.getAdapterPosition()));
             } else {
@@ -225,7 +234,9 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
                 holder.tvHeaderChild.setText(unecodeStr(vo.getReplies().get(0).getUserTitle()));
                 Util.showImageWithGlide(holder.ivProfileChild, vo.getReplies().get(0).getUserImage(), context, R.drawable.placeholder_3_2);
                 holder.rlCommentChild.setOnClickListener(v -> listener.onItemClicked(Constant.Events.REPLY, "false", holder.getAdapterPosition()));
-
+                if (vo.getReplies().get(0).getLevelId() == 3){
+                    holder.ivVerifyChild.setImageResource(R.drawable.ic_verified);
+                }
                 if (!TextUtils.isEmpty(vo.getReplies().get(0).getBody())) {
                     String body = unecodeStr(vo.getReplies().get(0).getBody());
                     SpannableString span = null;

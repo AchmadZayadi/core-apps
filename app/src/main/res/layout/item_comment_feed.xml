@@ -30,18 +30,31 @@
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivProfileImage1"
-        android:layout_width="@dimen/height_profile_image_feed"
-        android:layout_height="@dimen/height_profile_image_feed"
+    <RelativeLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="@dimen/margin_full"
         android:layout_marginLeft="@dimen/margin_full"
         android:layout_marginTop="@dimen/margin_half"
         android:layout_marginEnd="@dimen/margin_full"
         android:layout_marginRight="@dimen/margin_full"
-        android:layout_marginBottom="@dimen/margin_half"
-        android:scaleType="centerCrop"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_marginBottom="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfileImage1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/iv_verify_comments"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -259,19 +272,31 @@
                 app:fontFamily="@string/medium_bold"
                 tools:text="View 11 more replies" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivProfileChild"
-                android:layout_width="@dimen/height_child_comment_profile"
-                android:layout_height="@dimen/height_child_comment_profile"
-                android:layout_below="@+id/tvReplyCount"
+            <RelativeLayout
+                android:id="@+id/rl_photo_child"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="@dimen/margin_full"
                 android:layout_marginLeft="@dimen/margin_full"
                 android:layout_marginTop="@dimen/margin_half"
                 android:layout_marginEnd="@dimen/margin_full"
                 android:layout_marginRight="@dimen/margin_full"
                 android:layout_marginBottom="@dimen/margin_half"
-                android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_below="@+id/tvReplyCount">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileChild"
+                    android:layout_width="@dimen/height_child_comment_profile"
+                    android:layout_height="@dimen/height_child_comment_profile"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@tools:sample/avatars" />
+                <ImageView
+                    android:id="@+id/iv_verify_comments_child"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
 
 
             <androidx.cardview.widget.CardView
@@ -279,7 +304,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvReplyCount"
-                android:layout_toRightOf="@+id/ivProfileChild"
+                android:layout_toRightOf="@+id/rl_photo_child"
                 app:cardBackgroundColor="@color/grey_light"
                 app:cardCornerRadius="@dimen/radius_comment"
                 app:cardElevation="0dp">

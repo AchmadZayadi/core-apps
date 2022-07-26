@@ -105,8 +105,9 @@ public class DefaultDataVo {
         }
 
         {
-            is_core_activity=false;
+            is_core_activity = false;
         }
+
         public boolean isIs_core_activity() {
             return is_core_activity;
         }
@@ -147,9 +148,42 @@ public class DefaultDataVo {
         private List<NameValue> themeStyling;
         @SerializedName("video_slideshow")
         private boolean videoSlideshow;
+
+
+
+        @SerializedName("force_update")
+        private boolean forceUpdate;
+        @SerializedName("version_app")
+        private String versionApp;
+        @SerializedName("version_update")
+        private String versionUpdate;
+
+
         private DemoUser demoUser;
         private List<SearchVo> socialLogin;
+        public boolean isForceUpdate() {
+            return forceUpdate;
+        }
 
+        public void setForceUpdate(boolean forceUpdate) {
+            this.forceUpdate = forceUpdate;
+        }
+
+        public String getVersionApp() {
+            return versionApp;
+        }
+
+        public void setVersionApp(String versionApp) {
+            this.versionApp = versionApp;
+        }
+
+        public String getVersionUpdate() {
+            return versionUpdate;
+        }
+
+        public void setVersionUpdate(String versionUpdate) {
+            this.versionUpdate = versionUpdate;
+        }
 
         public List<String> getReaction() {
             return reaction;
@@ -338,9 +372,9 @@ public class DefaultDataVo {
 
                     try {
                         AppConfiguration.titleHeaderType = Integer.parseInt(titleHeaderType);
-                    }catch (Exception ex){
+                    } catch (Exception ex) {
                         ex.printStackTrace();
-                        AppConfiguration.titleHeaderType=0;
+                        AppConfiguration.titleHeaderType = 0;
                     }
 
                     AppConfiguration.SHARE = shareTextForFeed;

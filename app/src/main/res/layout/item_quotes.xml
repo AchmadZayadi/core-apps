@@ -2,6 +2,7 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvMain"
     style="@style/Card_style"
     android:layout_width="match_parent"
@@ -26,16 +27,30 @@
             android:layout_marginTop="@dimen/margin_half">
 
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="@dimen/height_profile_image_feed"
-                android:layout_height="@dimen/height_profile_image_feed"
-                android:layout_marginRight="@dimen/margin_half"
-                android:scaleType="centerCrop" />
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="@dimen/height_profile_image_feed"
+                    android:layout_height="@dimen/height_profile_image_feed"
+                    android:layout_marginRight="@dimen/margin_half"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/iv_verify"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvOwner"
                 style="@style/text_style_1"
+                tools:text="tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/ivLike"
@@ -45,6 +60,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvPostedOn"
                 style="@style/text_style_2"
+                tools:text="tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvOwner"
@@ -95,6 +111,7 @@
             android:layout_toRightOf="@+id/ivProfile"
             android:ellipsize="end"
             android:maxLines="1"
+            tools:text="tittle"
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -105,6 +122,7 @@
             android:layout_marginTop="@dimen/margin_quarter"
             android:ellipsize="end"
             android:maxLines="2"
+            tools:text="tittle"
             android:textSize="@dimen/body_1" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -115,6 +133,7 @@
             android:layout_marginTop="@dimen/margin_half"
             android:ellipsize="end"
             android:maxLines="2"
+            tools:text="tittle"
             android:textSize="@dimen/caption" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -130,6 +149,7 @@
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
+                tools:text="tittle"
                 android:textSize="@dimen/caption" />
 
 
@@ -140,6 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_half"
                 android:ellipsize="end"
+                tools:text="tittle"
                 android:maxLines="2"
                 android:textSize="@dimen/caption" />
 

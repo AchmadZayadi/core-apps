@@ -33,7 +33,7 @@ public class CommentHolder extends RecyclerView.ViewHolder {
     final protected ImageView ivLikeUpper4;
     final protected ImageView ivLikeUpper5;
     final protected View cvReaction;
-
+    final protected ImageView ivVerify,ivVerifyChild;
 
     public CommentHolder(View itemView) {
         super(itemView);
@@ -70,5 +70,7 @@ public class CommentHolder extends RecyclerView.ViewHolder {
         ivLikeUpper5 = itemView.findViewById(R.id.ivLikeUpper5);
 
 
+        ivVerify =itemView.findViewById(R.id.iv_verify_comments);
+        ivVerifyChild = itemView.findViewById(R.id.iv_verify_comments_child);
     }
 }

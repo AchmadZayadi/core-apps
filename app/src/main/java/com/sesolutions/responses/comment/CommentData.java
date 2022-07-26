@@ -55,6 +55,8 @@ public class CommentData {
     }
 
 
+    @SerializedName("level_id")
+    private int levelId = 0;
     @SerializedName("creation_date")
     private String creationDate;
     @SerializedName("like_count")
@@ -95,6 +97,13 @@ public class CommentData {
     private List<ReactionPlugin> reactionData;
 
     private List<CommentData> replies;
+    public int getLevelId() {
+        return levelId;
+    }
+
+    public void setLevelId(int levelId) {
+        this.levelId = levelId;
+    }
 
     public CommentData() {
     }

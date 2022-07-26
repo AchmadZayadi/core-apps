@@ -1,11 +1,13 @@
 package com.sesolutions.ui.common;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -13,12 +15,22 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
+
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.preference.PreferenceManager;
+
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
 import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.danikula.videocache.HttpProxyCacheServer;
@@ -37,6 +49,8 @@ import com.sesolutions.responses.SlideShowImage;
 import com.sesolutions.responses.videos.Result;
 import com.sesolutions.responses.videos.VideoBrowse;
 import com.sesolutions.responses.videos.Videos;
+import com.sesolutions.thememanager.ThemeManager;
+import com.sesolutions.ui.WebViewActivity;
 import com.sesolutions.ui.dashboard.MainActivity;
 import com.sesolutions.ui.intro.IntroActivity;
 import com.sesolutions.ui.signup.UserMaster;
@@ -55,6 +69,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 
 public class SplashAnimatedActivity extends BaseActivity {
 
@@ -434,7 +449,51 @@ public class SplashAnimatedActivity extends BaseActivity {
             }
         }).run();
 
-        callHandler(timer);
+        if (datVo.getResult().isForceUpdate()){
+            showDialog(datVo);
+        }else {
+            callHandler(timer);
+        }
+
+
+
+    }
+
+    private void showDialog(DefaultDataVo da) {
+        try {
+            if (null != progressDialog && progressDialog.isShowing()) {
+                progressDialog.dismiss();
+            }
+
+
+
+            progressDialog = ProgressDialog.show(this, "", "", true);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.setCancelable(false);
+            Objects.requireNonNull(progressDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            progressDialog.setContentView(R.layout.dialog_message_two);
+            new ThemeManager().applyTheme(progressDialog.findViewById(R.id.rlDialogMain), this);
+            TextView tvMsg = progressDialog.findViewById(R.id.tvDialogText);
+
+            tvMsg.setText(da.getResult().getVersionUpdate());
+            tvMsg.setMovementMethod(LinkMovementMethod.getInstance());
+
+            AppCompatButton bOk = progressDialog.findViewById(R.id.bCamera);
+            bOk.setText(R.string.TXT_OK);
+            AppCompatButton bCancel = progressDialog.findViewById(R.id.bGallary);
+            bCancel.setText(R.string.TXT_CANCEL);
+            bCancel.setVisibility(View.GONE);
+            bOk.setText("Update Aplikasi");
+            bOk.setOnClickListener(v -> {
+                progressDialog.dismiss();
+
+
+            });
+
+
+        } catch (Exception e) {
+            CustomLog.e(e);
+        }
     }
 
     private void callCheckLogin() {

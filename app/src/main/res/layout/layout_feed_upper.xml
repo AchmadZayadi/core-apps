@@ -34,19 +34,31 @@
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/ivProfileImageRound"
-                android:layout_width="@dimen/height_profile_image_feed"
-                android:layout_height="@dimen/height_profile_image_feed"
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/margin_full"
                 android:layout_marginLeft="@dimen/margin_full"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="@dimen/margin_full"
                 android:layout_marginRight="@dimen/margin_full"
-                android:layout_marginBottom="@dimen/margin_half"
-                android:scaleType="centerCrop"
-                android:visibility="invisible"
-                tools:src="@tools:sample/avatars" />
+                android:layout_marginBottom="@dimen/margin_half">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfileImageRound"
+                    android:layout_width="@dimen/height_profile_image_feed"
+                    android:layout_height="@dimen/height_profile_image_feed"
+                    android:visibility="invisible"
+                    tools:src="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/iv_verify"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"/>
+            </RelativeLayout>
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"

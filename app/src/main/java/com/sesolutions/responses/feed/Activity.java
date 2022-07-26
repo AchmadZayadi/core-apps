@@ -192,6 +192,18 @@ public class Activity {
     @SerializedName("gif_id")
     private String gif_id;
 
+
+
+    @SerializedName("level_id")
+    private int levelId = 0;
+
+    public int getLevelId() {
+        return levelId;
+    }
+
+    public void setLevelId(int levelId) {
+        this.levelId = levelId;
+    }
     public String getGif_url() {
         return gif_url;
     }

@@ -13,6 +13,8 @@ class Item_user : Serializable {
     var user_image: String? = null
     @SerializedName("user_type")
     val type: String? = null
+    @SerializedName("level_id")
+    var levelId: Int = 0
 
     constructor(user_id: Int, title: String, user_image: String) {
         this.user_id = user_id

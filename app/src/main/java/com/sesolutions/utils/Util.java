@@ -489,6 +489,35 @@ public class Util {
         }
     }
 
+    public static String getEmojiByUnicode(int unicode){
+        return new String(Character.toChars(unicode));
+    }
+    public static String getEmojiFromString(String emojiString) {
+
+        if (!emojiString.contains("\\u")) {
+
+            return emojiString;
+        }
+        String emojiEncodedString = "";
+
+        int position = emojiString.indexOf("\\u");
+
+        while (position != -1) {
+
+            if (position != 0) {
+                emojiEncodedString += emojiString.substring(0, position);
+            }
+
+            String token = emojiString.substring(position + 2, position + 6);
+            emojiString = emojiString.substring(position + 6);
+            emojiEncodedString += (char) Integer.parseInt(token, 16);
+            position = emojiString.indexOf("\\u");
+        }
+        emojiEncodedString += emojiString;
+
+        return emojiEncodedString;
+    }
+
     public static String getDateDifference(Context context, String dateCreated) {
         try {
             @SuppressLint("SimpleDateFormat") SimpleDateFormat sourceFormat = new SimpleDateFormat(Constant.DATE_FROMAT_FEED);

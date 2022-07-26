@@ -40,7 +40,19 @@ public class Result  {
     private int loggedin_user_id;
     @SerializedName("intelligent_notifications")
     private IntelligentNotification intelligentNotifications;
+    private int levelId;
+    @SerializedName("level_id")
 
+
+
+
+    public int getLevelId() {
+        return levelId;
+    }
+
+    public void setLevelId(int levelId) {
+        this.levelId = levelId;
+    }
 
     public String getWelcomeHtml() {
         if (null != intelligentNotifications) {
