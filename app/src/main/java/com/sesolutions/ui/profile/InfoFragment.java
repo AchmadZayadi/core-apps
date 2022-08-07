@@ -12,8 +12,6 @@ import android.os.Message;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.text.TextUtils;
 import android.util.TypedValue;
@@ -31,7 +29,6 @@ import com.sesolutions.responses.CommonResponse;
 import com.sesolutions.responses.ErrorResponse;
 import com.sesolutions.responses.feed.Options;
 import com.sesolutions.ui.common.BaseFragment;
-import com.sesolutions.ui.member.MemberGridMapAdapter;
 import com.sesolutions.utils.Constant;
 import com.sesolutions.utils.CustomLog;
 import com.sesolutions.utils.SPref;
@@ -123,18 +120,18 @@ public class InfoFragment extends BaseFragment implements View.OnClickListener {
                     LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                     View l = vi.inflate(R.layout.infotextlayout, null);
 
-                    TextView leftTextView = (TextView) l.findViewById(R.id.tvTitleName);
-                    leftTextView.setText(tab.getName()+": ");
+                    TextView leftTextView =  l.findViewById(R.id.tvTitleName);
+                    leftTextView.setText(tab.getName()+": " + tab.getValue());
 
-                    TextView textvalue = (TextView) l.findViewById(R.id.titleValue);
-                    textvalue.setText(tab.getValue());
+                    TextView textvalue =  l.findViewById(R.id.titleValue);
+                    //textvalue.setText(tab.getValue());
 
                  //   tv.setText(tab.getName() + " : " + tab.getValue());
 
                     if (tab.getValue().startsWith("http") || tab.getValue().startsWith("www.")) {
                         l.setOnClickListener(v1 -> openWebView(tab.getValue(), "Website"));
-                        textvalue.setTextColor(Color.parseColor("#0000FF"));
-                        textvalue.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+                        leftTextView.setTextColor(Color.parseColor("#0000FF"));
+                        leftTextView.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                     }
 
                     llMain.addView(l);

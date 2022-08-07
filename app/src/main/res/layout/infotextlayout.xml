@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+    android:layout_marginVertical="@dimen/_10ssp">
 
     <TextView
         android:id="@+id/tvTitleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:text="Title:"
+        android:layout_marginStart="@dimen/_10ssp"
         android:fontFamily="@font/helvetica_roman"
         android:textColor="@color/black"
-        android:textSize="13dp"
-        ></TextView>
+        android:textSize="12sp"
+        tools:text="Titlekajnfjkanfkjnskjfnak;jdnqkjnfakjflakndlkandklanskdlnasdlkasdlknlandlkasndlkasndklnnandkasndkjasndkjsandkjansda:" />
 
 
     <TextView
         android:id="@+id/titleValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="5dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
-        android:text="koushal"
         android:fontFamily="@font/helvetica_medium"
         android:textColor="@color/black"
-        android:textSize="15dp"
-        ></TextView>
+        android:textSize="12sp"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_below="@id/tvTitleName"
+        tools:text="kousalkfjaklnfklasnfkjanfkjnfkjanfkjanfkjanfkansfkjnaskfjnaskjfnakjfnaskjfnhal" />
 
-</LinearLayout>
+</RelativeLayout>

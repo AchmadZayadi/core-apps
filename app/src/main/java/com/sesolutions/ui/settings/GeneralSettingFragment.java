@@ -193,7 +193,7 @@ public class GeneralSettingFragment extends BaseFragment implements View.OnClick
                         element.setTag(tag);
                         element.setTitle(vo.getLabel());
                         element.setRequired(vo.isRequired());
-                        formItems.add(element);
+                       // formItems.add(element);
                     } else {
                         FormElementTextSingleLine element = FormElementTextSingleLine.createInstance();
                         String value = vo.getValue();

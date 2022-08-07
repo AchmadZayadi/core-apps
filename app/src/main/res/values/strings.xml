@@ -1591,7 +1591,7 @@
         <string name="NO">Tidak</string>
         <string name="YES">Ya</string>
         <string name="privacy_network"><![CDATA[Friends & Network]]></string>
-        <string name="MSG_DELETE_CONFIRMATION">Apakah Anda yakin ingin menghapus umpan ini?</string>
+        <string name="MSG_DELETE_CONFIRMATION">Apakah Anda yakin ingin menghapus tulisan ini?</string>
         <string name="MSG_DELETE_CONFIRMATION_PHOTO">Apakah Anda yakin ingin menghapus foto ini?</string>
         <string name="MSG_DELETE_CONFIRMATION_VIDEO">Apakah Anda yakin ingin menghapus video ini?</string>
         <string name="MSG_DELETE_CONFIRMATION_ARTICLE">Apakah Anda yakin ingin menghapus artikel ini?</string>
@@ -1690,7 +1690,7 @@
         <string name="TXT_SERACH_PLAYLIST">Cari daftar putar</string>
         <string name="TITLE_MEMBER">Anggota</string>
         <string name="DELETE_PHOTO">Menghapus foto</string>
-        <string name="TITLE_ACTIVITY_FEED">Umpan Aktivitas</string>
+        <string name="TITLE_ACTIVITY_FEED">Tulisan Aktivitas</string>
         <string name="TITLE_EDIT_PROFILE">Ubah Profil</string>
         <string name="TITLE_VIDEO_SEARCH">Cari video</string>
         <string name="TITLE_CHANNEl_SEARCH">Saluran pencarian</string>

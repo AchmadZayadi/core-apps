@@ -39,6 +39,7 @@
                 android:id="@+id/ivFavorite"
                 android:layout_width="@dimen/size_like_image_top_item_music"
                 android:layout_height="@dimen/size_like_image_top_item_music"
+                android:visibility="gone"
                 android:layout_marginRight="@dimen/margin_half"
                 app:srcCompat="@drawable/music_favourite" />
 
@@ -126,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/ivStar1"

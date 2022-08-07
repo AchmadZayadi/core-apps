@@ -17,10 +17,12 @@ buildscript {
          // Advanced app configration
         appVersion = '1.0.2'
        // appVersionCode = 15
-        appVersionCode = 21
+        appVersionCode = 26
         SES_FACEBOOK_ID = 'FACEBOOK_API_KEY'
         SES_FACEBOOK_SCHEME = 'fb_FACEBOOK_API_KEY'
-        SES_PLACES_API_KEY = 'PLACE_API_KEY'
+      //  SES_PLACES_API_KEY = 'PLACE_API_KEY'
+        SES_PLACES_API_KEY = 'AIzaSyDmM4QK5i30ZqbB1O__65rTBcowepz7ePE'
+
         SES_PLACES_API_KEY_DEBUG = 'PLACE_API_KEY'
         SES_APPLICATION_ID = 'com.Matani'
         SES_API_VERSION = '3.3' // SES API VERSION : sending this value with every api call

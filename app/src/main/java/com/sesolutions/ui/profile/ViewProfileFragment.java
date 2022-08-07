@@ -800,20 +800,21 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
 
             tvUserTitle.setText(result.getProfile().getDisplayname());
             //   collapsingToolbar.setTitle(result.getProfile().getDisplayname());
-            if (TextUtils.isEmpty(result.getProfile().getStatus())) {
-                tvStatus.setVisibility(View.GONE);
-            } else {
-                tvStatus.setVisibility(View.VISIBLE);
-                try {
-                    tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
-                    // tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
-                } catch (Exception e) {
-                    CustomLog.e("Profile", "unable to parse emoji");
-                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(result.getProfile().getStatus()));
-                    tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
-                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
-                }
-            }
+//            if (TextUtils.isEmpty(result.getProfile().getStatus())) {
+//                tvStatus.setVisibility(View.GONE);
+//            } else {
+//                tvStatus.setVisibility(View.VISIBLE);
+//                try {
+//                    tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
+//                    CustomLog.d("hasilnyaaprofile",result.getProfile().getStatus());
+//                    // tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
+//                } catch (Exception e) {
+//                    CustomLog.e("Profile", "unable to parse emoji");
+//                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(result.getProfile().getStatus()));
+//                    tvStatus.setText(Util.stripHtml(result.getProfile().getStatus()));
+//                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
+//                }
+//            }
             if (result.getProfile().getLevelId() == 3){
                 ivVerify.setImageResource(R.drawable.ic_verified);
             }

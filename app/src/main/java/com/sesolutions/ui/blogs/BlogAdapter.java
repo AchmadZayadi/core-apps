@@ -107,11 +107,10 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ContactHolder>
             holder.llReactionOption.setVisibility(isUserLoggedIn ? View.VISIBLE : View.INVISIBLE);
 
             holder.ivLike.setVisibility(vo.canLike() ? View.VISIBLE : View.GONE);
-            holder.ivFavorite.setVisibility(vo.canFavourite() ? View.VISIBLE : View.GONE);
+          //  holder.ivFavorite.setVisibility(vo.canFavourite() ? View.VISIBLE : View.GONE);
             holder.ivLike.setImageDrawable(vo.isContentLike() ? dLikeSelected : dLike);
-            holder.ivFavorite.setImageDrawable(vo.isContentFavourite() ? dFavSelected : dFav);
+          //  holder.ivFavorite.setImageDrawable(vo.isContentFavourite() ? dFavSelected : dFav);
             if (SCREEN_TYPE == Constant.FormType.TYPE_MUSIC_ALBUM || SCREEN_TYPE == Constant.FormType.TYPE_CHANNEL) {
-                holder.llStar.setVisibility(View.VISIBLE);
                 holder.ivStar1.setImageDrawable(vo.getIntRating() > 0 ? dStarFilled : dStarUnFilled);
                 holder.ivStar2.setImageDrawable(vo.getIntRating() > 1 ? dStarFilled : dStarUnFilled);
                 holder.ivStar3.setImageDrawable(vo.getIntRating() > 2 ? dStarFilled : dStarUnFilled);
@@ -124,7 +123,7 @@ public class BlogAdapter extends RecyclerView.Adapter<BlogAdapter.ContactHolder>
 
             holder.ivLike.setOnClickListener(v -> listener.onItemClicked(Constant.Events.MUSIC_LIKE, "" + SCREEN_TYPE, holder.getAdapterPosition()));
             holder.ivAdd.setOnClickListener(v -> listener.onItemClicked(Constant.Events.MUSIC_ADD, holder.ivAdd, holder.getAdapterPosition()));
-            holder.ivFavorite.setOnClickListener(v -> listener.onItemClicked(Constant.Events.MUSIC_FAVORITE, "" + SCREEN_TYPE, holder.getAdapterPosition()));
+         //   holder.ivFavorite.setOnClickListener(v -> listener.onItemClicked(Constant.Events.MUSIC_FAVORITE, "" + SCREEN_TYPE, holder.getAdapterPosition()));
 
         } catch (Exception e) {
             CustomLog.e(e);

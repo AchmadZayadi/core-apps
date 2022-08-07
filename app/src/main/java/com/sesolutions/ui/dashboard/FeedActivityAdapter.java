@@ -1023,7 +1023,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                                 }
                                                 //  span = new SpannableString(body);
                                                 for (final Mention men : list2) {
-                                                    // body = body.replace(men.getWord(), men.getTitle());
+                                                     body = body.replace(men.getWord(), men.getTitle());
                                                     if (men.getStartIndex() > -1) {
                                                         span.setSpan(new CustomClickableSpan(listener, Constant.Events.CLICKED_BODY_TAGGED, "" + men.getUserId(), position)
                                                                 , men.getStartIndex(), men.getEndIndex(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -1059,11 +1059,11 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                             }
                         }
 
-                        if (null != vo.getBody()) {
-                            // actionId =1 means its a dummy cintent
-                            body = Util.stripHtml(vo.getBody());
-                            span = new SpannableString(body);
-                        }
+//                        if (null != vo.getBody()) {
+//                            // actionId =1 means its a dummy cintent
+//                            body = Util.stripHtml(vo.getBody());
+//                            span = new SpannableString(body);
+//                        }
 
                         if (!TextUtils.isEmpty(body)) {
                             holderParent.tvBodyText.setVisibility(View.VISIBLE);
@@ -1080,7 +1080,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                                 holderParent.tvBodyText.setTextSize(TypedValue.COMPLEX_UNIT_SP, vo.getFornSize());
                             }
                             String bdy = span.toString();
-                            holderParent.tvBodyText.setText(Util.getEmojiFromString(bdy));
+                           // holderParent.tvBodyText.setText(Util.getEmojiFromString(bdy));
+
+
+                            holderParent.tvBodyText.setText(Util.getEmojiFromString(body));
                             holderParent.tvBodyText.setMovementMethod(LinkMovementMethod.getInstance());
 
                         } else {

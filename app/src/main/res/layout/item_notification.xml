@@ -34,7 +34,7 @@
             app:cardCornerRadius="8sp"
             android:elevation="4sp"
             >
-            <com.droidninja.imageeditengine.views.SquareImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/ivImage"
                 android:layout_width="@dimen/height_image_item_notification"
                 android:src="@drawable/dummy_profile"

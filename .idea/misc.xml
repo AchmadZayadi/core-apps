@@ -61,7 +61,9 @@
         <entry key="app/src/main/res/layout/fragment_view_profile.xml" value="0.3606155395507813" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/fragment_welcome2.xml" value="0.11828774062816616" />
+        <entry key="app/src/main/res/layout/infotextlayout.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/item_attach_option_1.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/item_blog.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_category_video.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_classroom.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_clickclick_comment.xml" value="0.29739583333333336" />
@@ -72,12 +74,14 @@
         <entry key="app/src/main/res/layout/item_course.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_feed_ad.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_feed_all.xml" value="0.18115942028985507" />
+        <entry key="app/src/main/res/layout/item_feed_all_center.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_commnity_ad.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_filter.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_se_ad.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_text.xml" value="0.31249922600345337" />
         <entry key="app/src/main/res/layout/item_lecture.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_mutistore_review.xml" value="0.1109375" />
+        <entry key="app/src/main/res/layout/item_notification.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/item_page.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_people_suggestion.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_product_list_view.xml" value="0.4" />
@@ -88,6 +92,7 @@
         <entry key="app/src/main/res/layout/layout_card_succes_register.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_feed_upper.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_like_favorite_comment.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/layout_like_share_comment2.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/layout_no_data.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_permission.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_post_feed.xml" value="0.24322916666666666" />
