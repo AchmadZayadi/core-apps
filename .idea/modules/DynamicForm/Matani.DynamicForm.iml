@@ -47,6 +47,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/../../../DynamicForm/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
@@ -67,7 +69,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../DynamicForm/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../DynamicForm/build" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 30 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0-beta01" level="project" />
     <orderEntry type="library" name="Gradle: androidx.concurrent:concurrent-futures:1.0.0-alpha02" level="project" />

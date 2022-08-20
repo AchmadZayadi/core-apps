@@ -3,14 +3,12 @@ package com.sesolutions.ui.dashboard;
 
 import android.Manifest;
 import android.animation.Animator;
-import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -19,19 +17,19 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.widget.AppCompatButton;
@@ -41,9 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Looper;
-import android.os.Message;
 import android.text.Editable;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextPaint;
@@ -59,7 +55,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -67,12 +62,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-//import com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker;
-//import com.github.florent37.singledateandtimepicker.dialog.SingleDateAndTimePickerDialog;
-import com.github.dhaval2404.imagepicker.ImagePicker;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
@@ -90,11 +83,9 @@ import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.imageeditengine.ImageEditor;
 import com.sesolutions.listeners.OnUserClickedListener;
 import com.sesolutions.responses.SesResponse;
+import com.sesolutions.responses.location.MyLastLocation;
 import com.sesolutions.ui.WebViewActivity;
 import com.sesolutions.ui.common.BaseActivity;
-import com.sesolutions.ui.common.CommonActivity;
-import com.sesolutions.ui.common.OnBoardingActivity;
-import com.sesolutions.ui.common.SplashAnimatedActivity;
 import com.sesolutions.ui.live.LiveVideoActivity;
 import com.sesolutions.responses.Emotion;
 import com.sesolutions.responses.Feeling;
@@ -157,11 +148,9 @@ import static android.app.Activity.RESULT_OK;
 import static android.graphics.Typeface.BOLD;
 import static android.graphics.Typeface.NORMAL;
 import static com.facebook.FacebookSdk.getApplicationContext;
-import static com.facebook.FacebookSdk.getCacheDir;
-import static com.sesolutions.utils.Constant.EDIT_CHANNEL_ME;
 import static com.sesolutions.utils.Constant.TAG;
 
-public class PostFeedFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, TextWatcher, SlidingUpPanelLayout.PanelSlideListener, SwipeRefreshLayout.OnRefreshListener, OnKeyboardVisibilityListener/*, MyMultiPartEntity.ProgressListener*/ {
+public class PostFeedFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, TextWatcher, SlidingUpPanelLayout.PanelSlideListener, SwipeRefreshLayout.OnRefreshListener, OnKeyboardVisibilityListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener/*, MyMultiPartEntity.ProgressListener*/ {
 
     private AppCompatEditText etBodyBg;
     private View v;
@@ -233,6 +222,11 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     SharedPreferences mPrefs;
     final String dialogPosting = "dialogPosting";
     public int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    private GoogleApiClient mGoogleApiClient;
+    Location mLastLocation;
+    MyLastLocation location = new MyLastLocation();
+    double latitdue = 0;
+    double longtitude = 0;
 
     public static PostFeedFragment newInstance(ComposerOption response, int selectedOption) {
         return newInstance(response, selectedOption, 0, null);
@@ -285,6 +279,16 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             init();
             setData();
             setAttribution();
+
+            //get location
+            if (mGoogleApiClient == null) {
+                mGoogleApiClient = new GoogleApiClient.Builder(context)
+                        .addConnectionCallbacks(this)
+                        .addOnConnectionFailedListener(this)
+                        .addApi(LocationServices.API)
+                        .build();
+            }
+
             mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
             Boolean firstInstall = mPrefs.getBoolean(dialogPosting, false);
             if (!firstInstall) {
@@ -379,13 +383,11 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     }
 
 
-
     private void showDialog() {
         try {
             if (null != progressDialog && progressDialog.isShowing()) {
                 progressDialog.dismiss();
             }
-
 
 
             progressDialog = ProgressDialog.show(context, "", "", true);
@@ -401,11 +403,12 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             ClickableSpan syarat = new ClickableSpan() {
                 @Override
                 public void onClick(View textView) {
-                    Intent intent = new Intent(context,WebViewActivity.class);
+                    Intent intent = new Intent(context, WebViewActivity.class);
                     intent.putExtra("web", "https://matani.id/pages/policy");
                     intent.putExtra("title", "Syarat dan Ketentuan");
                     startActivity(intent);
                 }
+
                 @Override
                 public void updateDrawState(TextPaint ds) {
                     super.updateDrawState(ds);
@@ -417,12 +420,13 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             ClickableSpan kebijakan = new ClickableSpan() {
                 @Override
                 public void onClick(View textView) {
-                    Intent intent = new Intent(context,WebViewActivity.class);
+                    Intent intent = new Intent(context, WebViewActivity.class);
                     intent.putExtra("web", "https://matani.id/pages/tos");
                     intent.putExtra("title", "Kebijakan Privasi");
 
                     startActivity(intent);
                 }
+
                 @Override
                 public void updateDrawState(TextPaint ds) {
                     super.updateDrawState(ds);
@@ -697,7 +701,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         mLayout = v.findViewById(R.id.sliding_layout);
         mLayout.setAnchorPoint(0.5f);
         cvHorizontal.setVisibility(View.GONE);
-      //  mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
+        //  mLayout.setPanelState(SlidingUpPanelLayout.PanelState.ANCHORED);
         mLayout.addPanelSlideListener(this);
         mLayout.setPanelHeight(dpToPx(AppConfiguration.isBgOptionEnabled ? 88 : 44));
         mLayout.setFadeOnClickListener(view -> mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED));
@@ -923,20 +927,27 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     }
 
     @Override
+    public void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
+
+    @Override
     public void onStart() {
         super.onStart();
-        Log.e("ACTIVITY ", "" + activity.taskPerformed);
+
+        mGoogleApiClient.connect();
         if (activity.taskPerformed == Constant.FormType.CREATE_POLL) {
             activity.taskPerformed = 0;
             Constant.TASK_POST = true;
             onBackPressed();
         } else if (activity.taskPerformed == Constant.FormType.CREATE_VIDEO_DATA) {
-            Log.e("Data11", "Dtaa111");
+
             activity.taskPerformed = 0;
             Constant.TASK_POST = true;
             onBackPressed();
         } else if (activity.taskPerformed == Constant.FormType.CREATE_PAGE_VIDEO) {
-            Log.e("Data22", "Dtaa333");
+
             activity.taskPerformed = 0;
             Constant.TASK_POST = true;
             onBackPressed();
@@ -2354,6 +2365,8 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                 }
 
                 params.put("body", body);
+
+
             }
 
             if (isStickerSelected) {
@@ -2478,6 +2491,8 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             }
 
             params.put("privacy", selectedPrivacy.getName());
+            params.put("longtitude", longtitude);
+            params.put("latitide", latitdue);
             feedVo.setPrivacy(selectedPrivacy.getName());
 
             feedVo.setAttachment(attachment);
@@ -2566,4 +2581,40 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     }
 
 
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        try {
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+            if (mLastLocation != null) {
+//                Intent intent = new Intent();
+//                intent.putExtra("Longitude", mLastLocation.getLongitude());
+//                intent.putExtra("Latitude", mLastLocation.getLatitude());
+//                setResult(1,intent);
+//                finish();
+
+
+                longtitude = mLastLocation.getLongitude();
+                latitdue = mLastLocation.getLatitude();
+             //   CustomLog.d("hasilnyaa33",String.valueOf(loca.getLongitude()) + " haadahah");
+             ////   CustomLog.d("hasilnyaa", String.valueOf(location.getLongitude()) + "   asdakndkasn");
+//                CustomLog.d("hasilnyaa", String.valueOf(mLastLocation.getLatitude()) + " haadahah");
+//
+//                CustomLog.d("hasilnyaa22", String.valueOf(mLastLocation.getLongitude()) + " haadahah");
+
+            }
+        } catch (SecurityException e) {
+
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
+    }
 }

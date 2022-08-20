@@ -39,6 +39,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class OTPFragment extends BaseFragment implements OnOtpCompletionListener, OnSmsCatchListener<String>, OnUserClickedListener<Integer, Object>, View.OnClickListener {
     public static final int FROM_FORGOT = 10;
@@ -94,7 +95,7 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
     }
 
 
-   // private CircularProgressBar circularProgressBar;
+    // private CircularProgressBar circularProgressBar;
     private TextView tvProgress;
     private CountDownTimer timer;
 
@@ -104,8 +105,8 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
         //ivImage387837 = v.findViewById(R.id.ivImage387837);
         otpView = v.findViewById(R.id.otp_view);
         llBack = v.findViewById(R.id.llBack);
-  //      otpView.setOtpCompletionListener(this);
-    //    circularProgressBar = (CircularProgressBar) v.findViewById(R.id.cpb);
+        //      otpView.setOtpCompletionListener(this);
+        //    circularProgressBar = (CircularProgressBar) v.findViewById(R.id.cpb);
         tvProgress = v.findViewById(R.id.tvProgress);
         tvProgress.setTextColor(Color.parseColor("#000000"));
         // circularProgressBar.setColor(Color.parseColor(Constant.colorPrimary)); 7023154448
@@ -121,14 +122,14 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
             public void onClick(View v) {
                 try {
                     int count = fragmentManager.getBackStackEntryCount();
-                    Log.e("fragmentCount",""+count);
-                    for(int i = 0; i < count-1; ++i) {
+                    Log.e("fragmentCount", "" + count);
+                    for (int i = 0; i < count - 1; ++i) {
                         fragmentManager.popBackStackImmediate();
                     }
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-              //  fragmentManager.beginTransaction().replace(R.id.container, new SignInFragment2()).commit();
+                //  fragmentManager.beginTransaction().replace(R.id.container, new SignInFragment2()).commit();
             }
         });
 
@@ -149,10 +150,10 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
     public void onBackPressed() {
         try {
             int count = fragmentManager.getBackStackEntryCount();
-            for(int i = 0; i < count-1; ++i) {
+            for (int i = 0; i < count - 1; ++i) {
                 fragmentManager.popBackStackImmediate();
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -161,30 +162,40 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
     @Override
     public void initScreenData() {
         try {
-            v.findViewById(R.id.bVerify).setVisibility(View.VISIBLE);
+
             // circularProgressBar.setBackgroundColor(Color.parseColor(Constant.menuButtonActiveTitleColor.replace("#", "#67")));
             cancelTimer();
-         //   circularProgressBar.setProgressWithAnimation(100, 200); // Default duration = 1500ms
+            //   circularProgressBar.setProgressWithAnimation(100, 200); // Default duration = 1500ms
 
             //smsVerifyCatcher.setPhoneNumberFilter("IM-001122");
 
-            timer = new CountDownTimer(customParams.getOtpsmsDuration() * 1000, 1000) {
+            timer = new CountDownTimer(120000, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    if (millisUntilFinished > 1000) {
-                        tvProgress.setText(Util.milliSecondsToTimer(millisUntilFinished));
-                      //  circularProgressBar.setProgressWithAnimation(Util.getProgressPercentage(millisUntilFinished, customParams.getOtpsmsDuration() * 1000), 1000);
-
-                       // changeProgressColor(millisUntilFinished);
-
-                    } else {
-
-                    }
+                    v.findViewById(R.id.layout_send_again).setVisibility(View.GONE);
+                    tvProgress.setText(String.format(
+                            "%02d : %02d",
+                            TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished),
+                            TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+                                    TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished)
+                            )
+                    ));
+//                    if (millisUntilFinished > 1000) {
+//                        tvProgress.setText(Util.milliSecondsToTimer(millisUntilFinished));
+//                      //  circularProgressBar.setProgressWithAnimation(Util.getProgressPercentage(millisUntilFinished, customParams.getOtpsmsDuration() * 1000), 1000);
+//
+//                       // changeProgressColor(millisUntilFinished);
+//
+//                    } else {
+//
+//                    }
                 }
 
                 @Override
                 public void onFinish() {
-                    v.findViewById(R.id.bVerify).setVisibility(View.GONE);
+                    v.findViewById(R.id.bVerify).setVisibility(View.VISIBLE);
+                    v.findViewById(R.id.layout_send_again).setVisibility(View.VISIBLE);
+
 
                 }
             };
@@ -219,7 +230,7 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
 
 
     private void showLoader() {
-    //    v.findViewById(R.id.pbBar).setVisibility(View.VISIBLE);
+        //    v.findViewById(R.id.pbBar).setVisibility(View.VISIBLE);
         showBaseLoader(false);
     }
 
@@ -272,7 +283,7 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
             case REQ_VERIFY:
                 hideLoaders();
                 if (null != response) {
-                    String rst= (String) response;
+                    String rst = (String) response;
                     JSONObject json = null;
                     try {
                         json = new JSONObject(rst);
@@ -292,7 +303,6 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
 
 
                 }
@@ -525,7 +535,6 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
             SPref.getInstance().updateSharePreferences(context, Constant.KEY_LOGGED_IN_ID, userVo.getUserId());
 
 
-
             goToDashboard();
             CustomLog.d("userVo", new Gson().toJson(userVo));
         }
@@ -538,7 +547,7 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
                 callResendOtpApi();
                 break;
             case R.id.bVerify:
-                if (otpView.getText().toString().length()>0)
+                if (otpView.getText().toString().length() > 0)
                     callVerifyOtpApi(readOtp);
                 else if (!TextUtils.isEmpty(enteredOTP))
                     callVerifyOtpApi(enteredOTP);

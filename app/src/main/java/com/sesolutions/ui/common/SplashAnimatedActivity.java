@@ -15,29 +15,19 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
-
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.preference.PreferenceManager;
-
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.danikula.videocache.HttpProxyCacheServer;
-import com.google.android.exoplayer2.ui.AspectRatioFrameLayout;
 import com.google.android.gms.security.ProviderInstaller;
 import com.google.gson.Gson;
-import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.http.GetGcmId;
 import com.sesolutions.http.HttpRequestHandler;
@@ -50,7 +40,6 @@ import com.sesolutions.responses.videos.Result;
 import com.sesolutions.responses.videos.VideoBrowse;
 import com.sesolutions.responses.videos.Videos;
 import com.sesolutions.thememanager.ThemeManager;
-import com.sesolutions.ui.WebViewActivity;
 import com.sesolutions.ui.dashboard.MainActivity;
 import com.sesolutions.ui.intro.IntroActivity;
 import com.sesolutions.ui.signup.UserMaster;
@@ -60,18 +49,15 @@ import com.sesolutions.utils.Constant;
 import com.sesolutions.utils.CustomLog;
 import com.sesolutions.utils.SPref;
 import com.sesolutions.utils.Util;
-import com.squareup.picasso.Picasso;
-
 import org.apache.http.client.methods.HttpPost;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
 
-public class SplashAnimatedActivity extends BaseActivity {
+public class SplashAnimatedActivity extends BaseActivity{
 
     private AppCompatImageView ivImage;
     private boolean isUserLoggedIn = false;
@@ -84,6 +70,7 @@ public class SplashAnimatedActivity extends BaseActivity {
     SharedPreferences mPrefs;
     final String welcomeScreenShownPref = "welcomeScreenShown";
     AppCompatImageView ivSplash;
+
 
     @SuppressLint("HardwareIds")
     @Override
@@ -106,7 +93,6 @@ public class SplashAnimatedActivity extends BaseActivity {
             // SPref.getInstance().updateSharePreferences(SplashAnimatedActivity.this, Constant.KEY_LOGGED_IN, isUserLoggedIn);
 
             isUserLoggedIn = SPref.getInstance().getBoolean(this, Constant.KEY_LOGGED_IN);
-            Log.e("Login user", "" + isUserLoggedIn);
             mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
             // second argument is the default to use if the preference can't be found
@@ -128,12 +114,13 @@ public class SplashAnimatedActivity extends BaseActivity {
             }*/
             callCheckLogin();
 
+
             new ResourceToConstantTask(this).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             new GetGcmId(null).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, this);
 
             ivImage = findViewById(R.id.ivImage);
             ivSplash = findViewById(R.id.iv_splash);
-         //   setImage();
+            //   setImage();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 Constant.language = Resources.getSystem().getConfiguration().getLocales().get(0).getLanguage();
             } else {
@@ -172,6 +159,15 @@ public class SplashAnimatedActivity extends BaseActivity {
         Glide.with(this).load("").apply(options).into(ivSplash);
     }
 
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
+//       setLanguage();
+    }
 
     private void callHandler(int timer) {
         new Handler().postDelayed(() -> {
@@ -449,12 +445,11 @@ public class SplashAnimatedActivity extends BaseActivity {
             }
         }).run();
 
-        if (datVo.getResult().isForceUpdate()){
+        if (datVo.getResult().isForceUpdate()) {
             showDialog(datVo);
-        }else {
+        } else {
             callHandler(timer);
         }
-
 
 
     }
@@ -464,7 +459,6 @@ public class SplashAnimatedActivity extends BaseActivity {
             if (null != progressDialog && progressDialog.isShowing()) {
                 progressDialog.dismiss();
             }
-
 
 
             progressDialog = ProgressDialog.show(this, "", "", true);

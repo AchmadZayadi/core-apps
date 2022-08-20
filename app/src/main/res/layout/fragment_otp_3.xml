@@ -170,10 +170,12 @@
                 android:textSize="@dimen/title" />
             <LinearLayout
                 android:layout_below="@+id/bVerify"
+                android:id="@+id/layout_send_again"
                 android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+
                 android:layout_marginStart="@dimen/margin_full"
                 android:layout_marginTop="@dimen/margin_full"
                 android:layout_marginEnd="@dimen/margin_full"
