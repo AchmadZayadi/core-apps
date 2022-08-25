@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginHorizontal="@dimen/_20ssp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_kota"
+            style="@style/myTabBoldTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            tools:text="Nama Kota" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_15ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/Theme.AppCompat.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                tools:text="Nama Kota" />
+
+
+            <TextView
+                android:id="@+id/tv_price"
+                style="@style/Theme.AppCompat.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                tools:text="18.000" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

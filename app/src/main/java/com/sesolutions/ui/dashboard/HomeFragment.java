@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,20 +30,22 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
 import com.sesolutions.R;
 import com.sesolutions.http.ApiController;
+import com.sesolutions.http.HttpImageNotificationRequest;
 import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.listeners.OnLoadMoreListener;
 import com.sesolutions.listeners.OnUserClickedListener;
+import com.sesolutions.responses.ErrorResponse;
+import com.sesolutions.responses.SesResponse;
 import com.sesolutions.responses.feed.Activity;
 import com.sesolutions.responses.feed.Options;
 import com.sesolutions.thememanager.ThemeManager;
-import com.sesolutions.ui.AGvideo.AGVideo;
-import com.sesolutions.ui.AGvideo.mediaplayer.MediaExo;
 import com.sesolutions.ui.common.BaseActivity;
 import com.sesolutions.ui.common.BaseResponse;
 import com.sesolutions.ui.common.CommonActivity;
 import com.sesolutions.ui.signup.UserMaster;
 import com.sesolutions.ui.storyview.StoryModel;
+import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.ChildAttachStateChangeListener;
 import com.sesolutions.utils.Constant;
@@ -59,20 +62,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import cn.jzvd.JZDataSource;
-import cn.jzvd.JzvdStd;
-import cn.jzvd.JzvdStd2;
-
-
 /**
  * Created by WarFly on 10/7/2017.
  */
 
 public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener, OnLoadMoreListener {
     RecyclerView recycleViewFeedMain;
+    RecyclerView recyclerViewWeather;
     private ShimmerFrameLayout mShimmerViewContainer;
     public OnUserClickedListener<Integer, Object> parent;
-    int highestnumber=0,previousnumber=0;
+    int highestnumber = 0, previousnumber = 0;
 
     public static HomeFragment newInstance(OnUserClickedListener<Integer, Object> parent) {
         HomeFragment frag = new HomeFragment();
@@ -81,20 +80,19 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
     }
 
 
-    int commentpostion=0;
+    int commentpostion = 0;
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("BaseActvity",""+ BaseActivity.backcoverchange);
-        if(BaseActivity.backcoverchange==Constant.GO_TO_HOMEFRAGMENT){
+        Log.e("BaseActvity", "" + BaseActivity.backcoverchange);
+        if (BaseActivity.backcoverchange == Constant.GO_TO_HOMEFRAGMENT) {
             feedActivityList.get(commentpostion).setCommentCount(BaseActivity.commentcount);
             adapterFeedMain.notifyItemChanged(commentpostion);
-            BaseActivity.backcoverchange=0;
-            BaseActivity.commentcount=0;
+            BaseActivity.backcoverchange = 0;
+            BaseActivity.commentcount = 0;
         }
     }
-
 
 
     @Override
@@ -110,6 +108,8 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             //setting currentfragment as Dashboard so it can handle drawer open/close logic
             ((MainActivity) activity).changeCurrentFragment();
             applyTheme();
+            getApiWeather();
+            getApiPrice();
             // appBarLayout = v.findViewById(R.id.appbar);
             // appBarLayout.addOnOffsetChangedListener(this);
             mShimmerViewContainer = v.findViewById(R.id.shimmer_view_container);
@@ -141,6 +141,9 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             if (null != feedResponse) {
                 setContentLoaded();
                 initMainRecyclerView();
+                initRecycleViewWeather();
+
+
                 feedActivityList.addAll(feedResponse.getResult().getActivity());
                 updateFeedMainRecycleview();
                 onRefresh();
@@ -167,7 +170,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         pb = v.findViewById(R.id.pb);
     }
 
-    int lastpostion=0;
+    int lastpostion = 0;
 
     @Override
     public void initMainRecyclerView() {
@@ -189,7 +192,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                 super.onScrollStateChanged(recyclerView, newState);
                 try {
                     if (newState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
-                        if (recycleViewFeedMain != null){
+                        if (recycleViewFeedMain != null) {
                             LinearLayoutManager layoutManager = ((LinearLayoutManager) recycleViewFeedMain.getLayoutManager());
 
                             final int firstPosition = layoutManager.findFirstVisibleItemPosition();
@@ -198,55 +201,55 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                             Rect rvRect = new Rect();
                             recycleViewFeedMain.getGlobalVisibleRect(rvRect);
 
-                            highestnumber=0;
-                            previousnumber=0;
+                            highestnumber = 0;
+                            previousnumber = 0;
 
                             for (int i = firstPosition; i <= lastPosition; i++) {
                                 Rect rowRect = new Rect();
                                 layoutManager.findViewByPosition(i).getGlobalVisibleRect(rowRect);
 
                                 int percentFirst;
-                                if (rowRect.bottom >= rvRect.bottom){
-                                    int visibleHeightFirst =rvRect.bottom - rowRect.top;
+                                if (rowRect.bottom >= rvRect.bottom) {
+                                    int visibleHeightFirst = rvRect.bottom - rowRect.top;
                                     percentFirst = (visibleHeightFirst * 100) / layoutManager.findViewByPosition(i).getHeight();
-                                }else {
+                                } else {
                                     int visibleHeightFirst = rowRect.bottom - rvRect.top;
                                     percentFirst = (visibleHeightFirst * 100) / layoutManager.findViewByPosition(i).getHeight();
                                 }
 
-                                if (percentFirst>100){
+                                if (percentFirst > 100) {
                                     percentFirst = 100;
                                 }
 
-                                Log.e("percentFirst","-"+percentFirst);
-                                Log.e("highestnumber","-"+highestnumber);
-                                Log.e("postion","-"+i);
+                                Log.e("percentFirst", "-" + percentFirst);
+                                Log.e("highestnumber", "-" + highestnumber);
+                                Log.e("postion", "-" + i);
 
-                                if(percentFirst>highestnumber){
-                                    highestnumber=percentFirst;
-                                    previousnumber=i;
+                                if (percentFirst > highestnumber) {
+                                    highestnumber = percentFirst;
+                                    previousnumber = i;
                                 }
-                                Log.e("PERCENT_FIRST"+i,"-"+percentFirst);
+                                Log.e("PERCENT_FIRST" + i, "-" + percentFirst);
                             }
                         }
                         final View child = layoutManager.findViewByPosition(previousnumber);
                         try {
-                            if (null != child){
-                                if(feedActivityList.get(previousnumber).getAttachment().getAttachmentType().equalsIgnoreCase("video")){
-                                    if(lastpostion!=0){
+                            if (null != child) {
+                                if (feedActivityList.get(previousnumber).getAttachment().getAttachmentType().equalsIgnoreCase("video")) {
+                                    if (lastpostion != 0) {
                                         feedActivityList.get(previousnumber).getAttachment().set_can_play(false);
                                         adapterFeedMain.notifyItemChanged(lastpostion);
                                     }
                                     feedActivityList.get(previousnumber).getAttachment().set_can_play(true);
                                     adapterFeedMain.notifyItemChanged(previousnumber);
-                                    lastpostion=previousnumber;
-                                }else {
+                                    lastpostion = previousnumber;
+                                } else {
                                     feedActivityList.get(previousnumber).getAttachment().set_can_play(false);
                                     adapterFeedMain.notifyItemChanged(lastpostion);
-                                    lastpostion=0;
+                                    lastpostion = 0;
                                 }
                             }
-                        }catch (Exception ex){
+                        } catch (Exception ex) {
                             ex.printStackTrace();
                         }
                     }
@@ -263,6 +266,12 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
     }
 
+    void initRecycleViewWeather(){
+
+        CustomLog.d("hasilnyaa","sukes");
+        recyclerViewWeather = v.findViewById(R.id.recyclerview_weather);
+    }
+
     @Override
     public void updateComposerUI() {
         try {
@@ -272,7 +281,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                 UserMaster vo = SPref.getInstance().getUserMasterDetail(context);
                 vo.setPhotoUrl(composerOption.getResult().getUser_image());
                 SPref.getInstance().saveUserMaster(context, vo, null);
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
@@ -334,7 +343,9 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             }
         }
     }
+
     LinearLayoutManager layoutManager;
+
     void setFeedMainRecycleView() {
         try {
             feedActivityList = new ArrayList<>();
@@ -379,7 +390,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
     public void goToComment(int position) {
         //Activity vo = feedActivityList.get(position);
-        commentpostion=position;
+        commentpostion = position;
         Intent intent = new Intent(activity, CommonActivity.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_COMMENT);
         intent.putExtra(Constant.KEY_ACTION_ID, feedActivityList.get(position).getActionId());
@@ -582,4 +593,80 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             CustomLog.e(e);
         }
     }
+
+
+    private void getApiWeather() {
+        if (isNetworkAvailable(context)) {
+            try {
+                //showBaseLoader(true);
+                HttpRequestVO request = new HttpRequestVO(Constant.URL_WEATHER);
+                request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                //  request.headres.put(Constant.KEY_COOKIE, getCookie());
+
+
+                //  request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                request.requestMethod = HttpPost.METHOD_NAME;
+
+                Handler.Callback callback = msg -> {
+                    hideBaseLoader();
+                    try {
+                        String response = (String) msg.obj;
+                        CustomLog.d("hasilnyaa",response);
+                        if (null != response) {
+
+                        }
+
+                    } catch (Exception e) {
+                        somethingWrongMsg(v);
+                        CustomLog.e(e);
+                    }
+                    return true;
+                };
+                new HttpImageNotificationRequest(activity, new Handler(callback), true).run(request);
+
+            } catch (Exception e) {
+                hideBaseLoader();
+            }
+        } else {
+            notInternetMsg(v);
+        }
+
+    }
+    private void getApiPrice() {
+        if (isNetworkAvailable(context)) {
+            try {
+                //showBaseLoader(true);
+                HttpRequestVO request = new HttpRequestVO(Constant.URL_PRICE);
+                request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                //  request.headres.put(Constant.KEY_COOKIE, getCookie());
+
+
+                //  request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                request.requestMethod = HttpPost.METHOD_NAME;
+
+                Handler.Callback callback = msg -> {
+                    hideBaseLoader();
+                    try {
+                        String response = (String) msg.obj;
+                        if (null != response) {
+
+                        }
+
+                    } catch (Exception e) {
+                        somethingWrongMsg(v);
+                        CustomLog.e(e);
+                    }
+                    return true;
+                };
+                new HttpImageNotificationRequest(activity, new Handler(callback), true).run(request);
+
+            } catch (Exception e) {
+                hideBaseLoader();
+            }
+        } else {
+            notInternetMsg(v);
+        }
+
+    }
+
 }

@@ -362,7 +362,8 @@ public class Constant extends URL {
     public static final String URL_CREATE_PLAYLIST = BASE_URL + "musics/songs/append" + POST_URL;
     public static final String URL_CHANNEL_SEARCH_FORM = BASE_URL + "channels/search-form" + POST_URL;
     public static final String URL_VIDEO_SEARCH_FORM = BASE_URL + "videos/search-form" + POST_URL;
-
+    public static final String URL_WEATHER = "http://integrate.matani.id/home-cuaca.php";
+    public static final String URL_PRICE = "http://integrate.matani.id/home-harga.php";
     public static final String URL_CLASSIFIED_FILTER_FORM = BASE_URL + "classified/search-form" + POST_URL;
     public static final String URL_ARTICLE_FILTER_FORM = BASE_URL + "sesarticle/index/search-form" + POST_URL;
     public static final String URL_PRAYER_FILTER_FORM = BASE_URL + "sesprayer/index/search-form" + POST_URL;

@@ -42,6 +42,7 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.os.StrictMode;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -65,6 +66,7 @@ import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.firebase.AppVersion;
 import com.sesolutions.firebase.FirebaseHelper;
+import com.sesolutions.http.HttpImageNotificationRequest;
 import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.imageeditengine.ImageEditor;
@@ -74,6 +76,7 @@ import com.sesolutions.materialtaptargetprompt.MaterialTapTargetSequence;
 import com.sesolutions.materialtaptargetprompt.extras.focals.RectanglePromptFocal;
 import com.sesolutions.responses.CommonResponse;
 import com.sesolutions.responses.ErrorResponse;
+import com.sesolutions.responses.SesResponse;
 import com.sesolutions.thememanager.ThemeManager;
 import com.sesolutions.ui.clickclick.ActivityClickClick;
 import com.sesolutions.ui.common.BaseFragment;
@@ -88,6 +91,7 @@ import com.sesolutions.ui.member.MemberFragment;
 import com.sesolutions.ui.message.MessageDashboardFragment;
 import com.sesolutions.ui.message.MessageDashboardViewPagerAdapter;
 import com.sesolutions.ui.notification.NotificationFragment;
+import com.sesolutions.ui.price.PriceActivity;
 import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.Constant;
@@ -159,6 +163,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
     public static final int LOCATION_PERMISSION_REQUEST = 8;
     public static AppCompatTextView icCurrrency;
     String first_name;
+    String kecamatan;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
@@ -177,8 +182,6 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             FirebaseHelper.getInstance().getAppVersion(this);
             FirebaseHelper.getInstance().getFirebaseId(this);
             initFab();
-
-
 
 
 //            if(checkLocationPermission()){
@@ -509,6 +512,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
 
             if (isLoggedIn){
                 checkUser();
+
             }
             try {
                 if (SPref.getInstance().isBasicPlugins(getContext(), "seslocation")) {
@@ -637,7 +641,9 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
     private void setupViewPager(ViewPager viewPager) {
         adapter = new MessageDashboardViewPagerAdapter(fragmentManager);
         adapter.showTab(AppConfiguration.enableTabbarTitle);
-        adapter.addFragment(HomeFragment.newInstance(this), getString(tab_title[0]));
+      //  adapter.addFragment(HomeFragment.newInstance(this), getString(tab_title[0]));
+        adapter.addFragment(PriceActivity.newInstance(this), getString(tab_title[0]));
+
         adapter.addFragment(FriendRequestFragment.newInstance(this), getString(tab_title[1]));
         adapter.addFragment(MessageDashboardFragment.newInstance(this), getString(tab_title[2]));
         adapter.addFragment(NotificationFragment.newInstance(this), getString(tab_title[3]));
@@ -879,6 +885,8 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
                           //  CustomLog.e("repsonsezayadi22", "" + obj.getJSONObject(0));
 
                             first_name = obj.getJSONObject(0).getString("value");
+                            kecamatan = obj.getJSONObject(7).getString("value");
+
 
                             if (first_name.equals("")){
                                 showDialog("Lengkapi data diri Anda terlebih dahulu, terima kasih");
@@ -911,6 +919,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             notInternetMsg(v);
         }
     }
+
 
 
     private void callAsynchronousTask() {
@@ -1556,6 +1565,8 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
         }
         return null;
     }
+
+
 
 
 }

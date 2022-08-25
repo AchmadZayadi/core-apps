@@ -51,6 +51,7 @@
         <entry key="app/src/main/res/layout/fragment_post_feed.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_post_feed2.xml" value="0.1934791454370471" />
         <entry key="app/src/main/res/layout/fragment_post_feed_slidable.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/fragment_price.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_signin_2.xml" value="0.1109375" />
@@ -85,6 +86,8 @@
         <entry key="app/src/main/res/layout/item_notification.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/item_page.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/item_people_suggestion.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/item_placeholder_feed.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/item_price_list.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/item_product_list_view.xml" value="0.4" />
         <entry key="app/src/main/res/layout/item_qna_answer.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/item_quotes.xml" value="0.24322916666666666" />

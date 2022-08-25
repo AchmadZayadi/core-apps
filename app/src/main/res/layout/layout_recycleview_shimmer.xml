@@ -37,10 +37,18 @@
     </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_weather"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100ssp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/margin_duper" />
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_feed_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_below="@id/recyclerview_weather"
         android:paddingBottom="@dimen/margin_duper" />
 
 </RelativeLayout>
