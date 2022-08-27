@@ -88,6 +88,8 @@ import com.sesolutions.ui.member.MemberFragment;
 import com.sesolutions.ui.message.MessageDashboardFragment;
 import com.sesolutions.ui.message.MessageDashboardViewPagerAdapter;
 import com.sesolutions.ui.notification.NotificationFragment;
+import com.sesolutions.ui.price.PriceFragment;
+import com.sesolutions.ui.weather.WeatherFragment;
 import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.Constant;

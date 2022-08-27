@@ -1,1 +1,2 @@
 include ':app', ':DynamicForm', ':HtmlEditor', ':filepicker', ':jiaozivideoplayer', ':ImageEditEngine', ':tourGuide', ':jiaozivideoplayer_story',':trimerlibrary',':croplib',':cfalertdialog'
+include ':adapterdelegate'
