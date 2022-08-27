@@ -91,7 +91,12 @@ import com.sesolutions.ui.member.MemberFragment;
 import com.sesolutions.ui.message.MessageDashboardFragment;
 import com.sesolutions.ui.message.MessageDashboardViewPagerAdapter;
 import com.sesolutions.ui.notification.NotificationFragment;
+<<<<<<< HEAD
 import com.sesolutions.ui.price.PriceActivity;
+=======
+import com.sesolutions.ui.price.PriceFragment;
+import com.sesolutions.ui.weather.WeatherFragment;
+>>>>>>> 7724b90d204705ac79e92d923f15a7b69c301836
 import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.Constant;

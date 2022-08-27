@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/DynamicForm" />
             <option value="$PROJECT_DIR$/HtmlEditor" />
             <option value="$PROJECT_DIR$/ImageEditEngine" />
+            <option value="$PROJECT_DIR$/adapterdelegate" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/cfalertdialog" />
             <option value="$PROJECT_DIR$/croplib" />
@@ -24,7 +25,6 @@
             <option value="$PROJECT_DIR$/trimerlibrary" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
