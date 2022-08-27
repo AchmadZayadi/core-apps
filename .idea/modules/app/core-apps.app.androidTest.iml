@@ -20,7 +20,16 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7ff19c13818e70595b6e2b90393da4b3/databinding-runtime-4.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.databinding/databinding-common/4.2.0/3723c4679dde4ea48598eda6a4735df5b130efca/databinding-common-4.2.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/10afd83b1abaa9657469aedfc9d81569/multidex-2.0.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../DynamicForm/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../jiaozivideoplayer/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../jiaozivideoplayer_story/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../HtmlEditor/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../tourGuide/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../croplib/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../adapterdelegate/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d6aec4555793307e5c21ae36432860c/jetified-taptargetview-1.12.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../ImageEditEngine/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
+                <arg>$MODULE_DIR$/../../../trimerlibrary/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8a36a1ffd49fee79ac43292b3e95c648/jetified-android-image-cropper-2.8.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/557acf297d1d563946be276e93d8fbe5/jetified-cameraview-1.5.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/12b492521fef88150045fc8f4800eafc/jetified-crashreporter-1.1.0-api.jar</arg>
@@ -84,6 +93,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/971cba753f4c8b32f7268cabbbdc83f9/jetified-play-services-stats-17.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/083159182d488730ce341fac8ea6406f/legacy-support-core-utils-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/631e330f8c3f488d6ac502e22334e0f9/jetified-play-services-maps-17.0.0-api.jar</arg>
+                <arg>$MODULE_DIR$/../../../filepicker/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/119e33046d1d369bc3b740eb417feb36/jetified-glide-4.12.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9f968b286419798d6681c3027ce4cf81/jetified-fragment-ktx-1.2.4-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/38a79045a801de355f8c23ca8435abe9/jetified-lottie-2.2.5-api.jar</arg>

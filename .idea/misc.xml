@@ -9,13 +9,11 @@
         <entry key="DynamicForm/src/main/res/layout/layout_chip.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/drawable/back_pass.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/back_signinpage.xml" value="0.1795" />
-        <entry key="app/src/main/res/drawable/bg_border_curve_white.xml" value="0.317" />
-        <entry key="app/src/main/res/drawable/bg_white_corn_10dp.xml" value="0.317" />
+        <entry key="app/src/main/res/drawable/bg_weather_1f1f28.xml" value="0.2075" />
         <entry key="app/src/main/res/drawable/button_signin.xml" value="0.1115" />
         <entry key="app/src/main/res/drawable/button_white_grey_selector.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/ic_lock_black_24dp.xml" value="0.164" />
         <entry key="app/src/main/res/drawable/ic_phone_login.xml" value="0.1205" />
-        <entry key="app/src/main/res/drawable/save.xml" value="0.3435" />
         <entry key="app/src/main/res/layout/activity_layout_onboarding.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/activity_webview.xml" value="0.24322916666666666" />
@@ -54,7 +52,6 @@
         <entry key="app/src/main/res/layout/fragment_post_feed.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_post_feed2.xml" value="0.1934791454370471" />
         <entry key="app/src/main/res/layout/fragment_post_feed_slidable.xml" value="0.24322916666666666" />
-        <entry key="app/src/main/res/layout/fragment_price.xml" value="0.37916666666666665" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_signin_2.xml" value="0.1109375" />
@@ -64,7 +61,6 @@
         <entry key="app/src/main/res/layout/fragment_view_blog.xml" value="0.1286231884057971" />
         <entry key="app/src/main/res/layout/fragment_view_professional.xml" value="0.1286231884057971" />
         <entry key="app/src/main/res/layout/fragment_view_profile.xml" value="0.3606155395507813" />
-        <entry key="app/src/main/res/layout/fragment_weather.xml" value="0.37916666666666665" />
         <entry key="app/src/main/res/layout/fragment_welcome.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/fragment_welcome2.xml" value="0.11828774062816616" />
         <entry key="app/src/main/res/layout/infotextlayout.xml" value="0.29739583333333336" />
@@ -95,7 +91,7 @@
         <entry key="app/src/main/res/layout/item_quotes.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_review_page.xml" value="0.29739583333333336" />
         <entry key="app/src/main/res/layout/item_story_parent.xml" value="0.1286231884057971" />
-        <entry key="app/src/main/res/layout/item_weather.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/item_weather.xml" value="0.37916666666666665" />
         <entry key="app/src/main/res/layout/layout_card_succes_register.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_feed_upper.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_like_favorite_comment.xml" value="0.24322916666666666" />
@@ -111,7 +107,6 @@
         <entry key="app/src/main/res/layout/tab_items.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/toolbar_layout.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.24322916666666666" />
-        <entry key="app/src/main/res/menu/bottom_navigation2.xml" value="0.37916666666666665" />
         <entry key="app/src/main/res/menu/view_menu.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/menu/view_menu_music.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/menu/view_menu_music2.xml" value="0.24322916666666666" />

@@ -20,14 +20,20 @@ fun weatherAdapter () = itemDelegate<WeatherDataResponse>(R.layout.item_weather)
         tvTodayMorningDescription.text = "Pagi : "+it.hariini.cuacaPagi
         tvTodayAfternoonDescription.text = "Siang : "+it.hariini.cuacaSiang
         tvTodayNightDescription.text = "Malam : "+it.hariini.cuacaMalam
-        if (it.hariini.deskripsi == "Cerah Berawan" || it.hariini.deskripsi == "Cerah"){
-            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_sunny))
+        if ( it.hariini.deskripsi == "Cerah"){
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah))
+        } else if (it.hariini.deskripsi == "Cerah Berawan"){
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah_berawan))
         } else if (it.hariini.deskripsi == "Berawan"){
-            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_cloudy))
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.berawan))
         } else if (it.hariini.deskripsi == "Hujan Sedang"){
-            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_rainy))
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.hujan))
         } else if (it.hariini.deskripsi == "Hujan Ringan"){
-            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_rainy_light))
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.hujan_ringan))
+        } else if (it.hariini.deskripsi == "Berawan Tebal"){
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.berawan))
+        }else {
+            ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah))
         }
 
         tvTodayTemp.text = it.hariini.suhuMax+" \u2103"
@@ -45,14 +51,20 @@ fun weatherAdapter () = itemDelegate<WeatherDataResponse>(R.layout.item_weather)
         tvAfternoonAfternoonDescription.text = "Siang : "+it.besok.cuacaSiang
         tvAfternoonNightDescription.text = "Malam : "+it.besok.cuacaMalam
 
-        if (it.besok.deskripsi == "Cerah Berawan" || it.besok.deskripsi == "Cerah"){
-            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_sunny))
+        if ( it.besok.deskripsi == "Cerah"){
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah))
+        } else if (it.besok.deskripsi == "Cerah Berawan"){
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah_berawan))
         } else if (it.besok.deskripsi == "Berawan"){
-            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_cloudy))
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.berawan))
         } else if (it.besok.deskripsi == "Hujan Sedang"){
-            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_rainy))
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.hujan))
         } else if (it.besok.deskripsi == "Hujan Ringan"){
-            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.vector_ic_weather_rainy_light))
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.hujan_ringan))
+        } else if (it.besok.deskripsi == "Berawan Tebal"){
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.berawan))
+        }else {
+            ivDescriptionWeatherAfternoon.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah))
         }
 
         tvAfternoonTemp.text = it.besok.suhuMax+" \u2103"

@@ -14,6 +14,8 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
+                <arg>$MODULE_DIR$/../../../ImageEditEngine/build/intermediates/compile_r_class_jar/debug/R.jar</arg>
+                <arg>$MODULE_DIR$/../../../filepicker/build/intermediates/compile_library_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/119e33046d1d369bc3b740eb417feb36/jetified-glide-4.12.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3cc91e9403b20d1f2eab03fa7f889a3c/jetified-gifdecoder-4.12.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8c88293c6ca8a011116fa68c7259802e/material-1.0.0-api.jar</arg>
