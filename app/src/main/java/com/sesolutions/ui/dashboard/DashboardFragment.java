@@ -88,6 +88,7 @@ import com.sesolutions.ui.member.MemberFragment;
 import com.sesolutions.ui.message.MessageDashboardFragment;
 import com.sesolutions.ui.message.MessageDashboardViewPagerAdapter;
 import com.sesolutions.ui.notification.NotificationFragment;
+import com.sesolutions.ui.price.PriceFragment;
 import com.sesolutions.ui.weather.WeatherFragment;
 import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
@@ -638,8 +639,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
     private void setupViewPager(ViewPager viewPager) {
         adapter = new MessageDashboardViewPagerAdapter(fragmentManager);
         adapter.showTab(AppConfiguration.enableTabbarTitle);
-        adapter.addFragment(new WeatherFragment(),getString(tab_title[0]));
-//        adapter.addFragment(HomeFragment.newInstance(this), getString(tab_title[0]));
+        adapter.addFragment(HomeFragment.newInstance(this), getString(tab_title[0]));
         adapter.addFragment(FriendRequestFragment.newInstance(this), getString(tab_title[1]));
         adapter.addFragment(MessageDashboardFragment.newInstance(this), getString(tab_title[2]));
         adapter.addFragment(NotificationFragment.newInstance(this), getString(tab_title[3]));
