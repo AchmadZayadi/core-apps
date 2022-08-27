@@ -2,18 +2,55 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Matani.iml" filepath="$PROJECT_DIR$/.idea/modules/Matani.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/Matani.DynamicForm.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/Matani.DynamicForm.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/Matani.HtmlEditor.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/Matani.HtmlEditor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/Matani.ImageEditEngine.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/Matani.ImageEditEngine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Matani.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Matani.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/Matani.cfalertdialog.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/Matani.cfalertdialog.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/Matani.croplib.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/Matani.croplib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/Matani.filepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/Matani.filepicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/Matani.jiaozivideoplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/Matani.jiaozivideoplayer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/Matani.jiaozivideoplayer_story.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/Matani.jiaozivideoplayer_story.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/Matani.tourGuide.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/Matani.tourGuide.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/Matani.trimerlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/Matani.trimerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-apps.iml" filepath="$PROJECT_DIR$/.idea/modules/core-apps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.main.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/DynamicForm/core-apps.DynamicForm.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/HtmlEditor/core-apps.HtmlEditor.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ImageEditEngine/core-apps.ImageEditEngine.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.iml" filepath="$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.main.iml" filepath="$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/adapterdelegate/core-apps.adapterdelegate.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-apps.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-apps.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-apps.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-apps.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-apps.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-apps.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/core-apps.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/core-apps.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/cfalertdialog/core-apps.cfalertdialog.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/croplib/core-apps.croplib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.main.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/filepicker/core-apps.filepicker.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer/core-apps.jiaozivideoplayer.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.main.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/jiaozivideoplayer_story/core-apps.jiaozivideoplayer_story.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/tourGuide/core-apps.tourGuide.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/trimerlibrary/core-apps.trimerlibrary.unitTest.iml" />
     </modules>
   </component>
 </project>

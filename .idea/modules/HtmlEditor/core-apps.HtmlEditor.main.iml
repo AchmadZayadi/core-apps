@@ -22,11 +22,19 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/aidl_source_output_dir/debug/out" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out" />
+    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out">
+      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
+    </content>
     <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/renderscript_source_output_dir/debug/out" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/resValues/debug" />
+    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/resValues/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/resValues/debug" type="java-resource" />
+    </content>
     <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/rs/debug" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug" />
+    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug">
+      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
+    </content>
     <content url="file://$MODULE_DIR$/../../../HtmlEditor/src/debug" />
     <content url="file://$MODULE_DIR$/../../../HtmlEditor/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/src/main/assets" type="java-resource" />

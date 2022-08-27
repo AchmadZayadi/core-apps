@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.wordpress:utils:1.6.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1731b104eae26210b421b6e9d50b75/jetified-utils-1.6.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1731b104eae26210b421b6e9d50b75/jetified-utils-1.6.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7e1731b104eae26210b421b6e9d50b75/jetified-utils-1.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4c49e5e152790a6dad613abeaad9cebf/jetified-utils-1.6.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4c49e5e152790a6dad613abeaad9cebf/jetified-utils-1.6.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4c49e5e152790a6dad613abeaad9cebf/jetified-utils-1.6.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

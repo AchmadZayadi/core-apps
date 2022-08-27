@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clToday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_cloud_color_corn_10dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitleToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hari Ini : "
+            android:textColor="#303345"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvValueToday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#303345"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitleToday"
+            app:layout_constraintLeft_toRightOf="@id/tvTitleToday"
+            app:layout_constraintTop_toTopOf="@id/tvTitleToday" />
+
+        <TextView
+            android:id="@+id/tvTodayMorningDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagi : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvValueToday" />
+
+        <TextView
+            android:id="@+id/tvTodayAfternoonDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siang : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTodayMorningDescription" />
+
+        <TextView
+            android:id="@+id/tvTodayNightDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Malam : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTodayAfternoonDescription" />
+
+        <ImageView
+            android:id="@+id/ivDescriptionWeatherToday"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="3dp"
+            android:src="@drawable/analytics"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTodayTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#303345"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvTodayTempDescription"
+            app:layout_constraintLeft_toLeftOf="@+id/tvTodayTempDescription"
+            app:layout_constraintRight_toRightOf="@+id/tvTodayTempDescription"
+            app:layout_constraintTop_toTopOf="@id/ivDescriptionWeatherToday" />
+
+        <TextView
+            android:id="@+id/tvTodayTempDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivDescriptionWeatherToday"
+            app:layout_constraintRight_toLeftOf="@id/ivDescriptionWeatherToday"
+            app:layout_constraintTop_toBottomOf="@id/tvTodayTemp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAfternoon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_cloud_color_corn_10dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/clToday">
+
+        <TextView
+            android:id="@+id/tvTitleAfternoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Besok : "
+            android:textColor="#303345"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvValueAfternoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Banjarnegara"
+            android:textColor="#303345"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitleAfternoon"
+            app:layout_constraintLeft_toRightOf="@id/tvTitleAfternoon"
+            app:layout_constraintTop_toTopOf="@id/tvTitleAfternoon" />
+
+        <TextView
+            android:id="@+id/tvAfternoonMorningDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pagi : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvValueAfternoon" />
+
+        <TextView
+            android:id="@+id/tvAfternoonAfternoonDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Siang : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAfternoonMorningDescription" />
+
+        <TextView
+            android:id="@+id/tvAfternoonNightDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Malam : Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAfternoonAfternoonDescription" />
+
+        <ImageView
+            android:id="@+id/ivDescriptionWeatherAfternoon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:elevation="3dp"
+            android:src="@drawable/analytics"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvAfternoonTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24 \u2103"
+            android:textColor="#303345"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvAfternoonTempDescription"
+            app:layout_constraintLeft_toLeftOf="@+id/tvAfternoonTempDescription"
+            app:layout_constraintRight_toRightOf="@+id/tvAfternoonTempDescription"
+            app:layout_constraintTop_toTopOf="@id/ivDescriptionWeatherAfternoon" />
+
+        <TextView
+            android:id="@+id/tvAfternoonTempDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Cerah Berawan"
+            android:textColor="#303345"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/ivDescriptionWeatherAfternoon"
+            app:layout_constraintRight_toLeftOf="@id/ivDescriptionWeatherAfternoon"
+            app:layout_constraintTop_toBottomOf="@id/tvAfternoonTemp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

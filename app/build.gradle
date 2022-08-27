@@ -86,6 +86,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    kotlinOptions { jvmTarget = "1.8" }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -109,6 +110,7 @@ dependencies {
     implementation project(':HtmlEditor')
     implementation project(':tourGuide')
     implementation project(':croplib')
+    implementation project(':adapterdelegate')
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
     //implementation 'com.sesolutions:material-tap-target-prompt:2.14.0'
     //implementation project(':statusstories')
