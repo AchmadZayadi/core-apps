@@ -1,6 +1,7 @@
 package com.sesolutions.ui.price.adapter
 
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dizcoding.adapterdelegate.DelegatesAdapter
@@ -21,5 +22,7 @@ fun priceHolderAdapter() = itemDelegate<PriceItemModel>(R.layout.item_price_hold
         rvItems.layoutManager = LinearLayoutManager(containerView.context)
         rvItems.adapter = adapter
 
+
         adapter.submitList(it.price_items)
     }
+

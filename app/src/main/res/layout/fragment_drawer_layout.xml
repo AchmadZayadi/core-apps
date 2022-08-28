@@ -54,7 +54,7 @@
                     android:scaleType="centerCrop"
                     app:civ_border_color="@color/white"
                     app:civ_border_width="2dp" />
-                7
+
 
                 <RelativeLayout
                     android:layout_width="75dp"

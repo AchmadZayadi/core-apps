@@ -159,6 +159,7 @@ import com.sesolutions.ui.postfeed.StickerChildFragment;
 import com.sesolutions.ui.prayer.PrayerParentFragment;
 import com.sesolutions.ui.prayer.ViewPrayerCategoryFragment;
 import com.sesolutions.ui.prayer.ViewPrayerFragment;
+import com.sesolutions.ui.price.PriceFragment;
 import com.sesolutions.ui.profile.InfoFragment;
 import com.sesolutions.ui.profile.ProfileMapFragment;
 import com.sesolutions.ui.profile.SuggestionViewFragment;
@@ -195,6 +196,7 @@ import com.sesolutions.ui.video.VideoAlbumFragment;
 import com.sesolutions.ui.video.VideoParentFragment;
 import com.sesolutions.ui.video.ViewChannelFragment;
 import com.sesolutions.ui.video.ViewPlaylistVideoFragment;
+import com.sesolutions.ui.weather.WeatherFragment;
 import com.sesolutions.ui.wish.ViewPhotoWishFragment;
 import com.sesolutions.ui.wish.ViewWishCategoryFragment;
 import com.sesolutions.ui.wish.WishParentFragment;
@@ -2160,7 +2162,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void openMemberFragment() {
-        fragmentManager.beginTransaction().replace(R.id.container, new MemberFragment()).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, new WeatherFragment()).addToBackStack(null).commit();
 
     }
 
@@ -2271,7 +2273,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void openArticleFragment() {
-        fragmentManager.beginTransaction().replace(R.id.container, new ArticleParentFragment()).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, new PriceFragment()).addToBackStack(null).commit();
 
     }
 

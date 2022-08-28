@@ -44,9 +44,9 @@
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
-                tools:text="@string/txt_sign_up"
                 android:textColor="@color/white"
-                android:textSize="@dimen/title" />
+                android:textSize="@dimen/title"
+                tools:text="@string/txt_sign_up" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/llOption"

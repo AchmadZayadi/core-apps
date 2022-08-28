@@ -38,11 +38,13 @@ import com.sesolutions.ui.customviews.RelativePopupWindow;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 import java.io.File;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
@@ -889,6 +891,12 @@ public class Util {
     }
 
 
+    public static String formatRupiah(Double number){
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+        return formatRupiah.format(number);
+    }
+
     /**
      * Function to convert milliseconds time to
      * Timer Format
@@ -1021,4 +1029,5 @@ public class Util {
           }
           return highlight;
       }*/
+
 }

@@ -1,5 +1,6 @@
 package com.sesolutions.ui.weather
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.sesolutions.ui.common.BaseFragment
 import com.sesolutions.ui.weather.weather.weatherAdapter
 import com.sesolutions.utils.Constant
 import com.sesolutions.utils.SPref
+import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
 
 class WeatherFragment : BaseFragment() {
@@ -27,13 +29,19 @@ class WeatherFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_weather, container, false)
     }
 
-    private lateinit var adapter : DelegatesAdapter<WeatherDataResponse>
+    private lateinit var adapter: DelegatesAdapter<WeatherDataResponse>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         adapter = DelegatesAdapter(
             weatherAdapter()
         )
+
+        ivBack.setOnClickListener {
+            onBackPressed()
+        }
+        toolbar.setBackgroundColor(Color.parseColor("#084B96"))
+        tvTitle.text = "Cuaca"
         val rvWeather = view.findViewById<RecyclerView>(R.id.rvWeather)
         rvWeather.layoutManager = LinearLayoutManager(requireContext())
         rvWeather.adapter = adapter

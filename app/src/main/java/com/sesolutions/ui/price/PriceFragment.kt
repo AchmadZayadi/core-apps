@@ -1,5 +1,6 @@
 package com.sesolutions.ui.price
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -17,6 +18,7 @@ import com.sesolutions.ui.price.adapter.PriceItemModel
 import com.sesolutions.ui.price.adapter.priceHolderAdapter
 import com.sesolutions.utils.Constant
 import com.sesolutions.utils.SPref
+import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
 
 
@@ -33,6 +35,12 @@ class PriceFragment : BaseFragment() {
     private lateinit var adapter: DelegatesAdapter<PriceItemModel>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        ivBack.setOnClickListener {
+            onBackPressed()
+        }
+        toolbar.setBackgroundColor(Color.parseColor("#084B96"))
+        tvTitle.text = "Harga"
         callPriceApi()
         adapter = DelegatesAdapter(
             priceHolderAdapter()

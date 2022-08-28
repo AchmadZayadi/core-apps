@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":HtmlEditor:main" external.linked.project.path="$MODULE_DIR$/../../../HtmlEditor" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":HtmlEditor" external.linked.project.path="$MODULE_DIR$/../../../HtmlEditor" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="Matani" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="android-gradle" name="Android-Gradle">
+      <configuration>
+        <option name="GRADLE_PROJECT_PATH" value=":HtmlEditor" />
+        <option name="LAST_SUCCESSFUL_SYNC_AGP_VERSION" />
+        <option name="LAST_KNOWN_AGP_VERSION" value="4.2.0" />
+      </configuration>
+    </facet>
     <facet type="android" name="Android">
       <configuration>
         <option name="SELECTED_BUILD_VARIANT" value="debug" />
@@ -19,27 +26,19 @@
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../HtmlEditor/build/intermediates/javac/debug/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../HtmlEditor/build/intermediates/javac/debugUnitTest/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/aidl_source_output_dir/debug/out" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out">
+    <content url="file://$MODULE_DIR$/../../../HtmlEditor">
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/ap_generated_sources/debug/out" isTestSource="false" generated="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/renderscript_source_output_dir/debug/out" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/resValues/debug">
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/resValues/debug" type="java-resource" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/res/rs/debug" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug">
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build/generated/source/buildConfig/debug" isTestSource="false" generated="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/src/debug" />
-    <content url="file://$MODULE_DIR$/../../../HtmlEditor/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/src/main/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../../HtmlEditor/src/main/res" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../HtmlEditor/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../HtmlEditor/build" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
