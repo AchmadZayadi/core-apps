@@ -7,35 +7,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/llPostFeed"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <include
-                layout="@layout/layout_recycleview_shimmer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/llPostFeed"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <ProgressBar
-                android:id="@+id/pb"
-                android:layout_width="@dimen/button_height_small"
-                android:layout_height="@dimen/button_height_small"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:visibility="gone" />
-        </RelativeLayout>
+                <include
+                    layout="@layout/layout_recycleview_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <ProgressBar
+                    android:id="@+id/pb"
+                    android:layout_width="@dimen/button_height_small"
+                    android:layout_height="@dimen/button_height_small"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
-    <include layout="@layout/layout_no_data"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <include layout="@layout/layout_no_data" />
 
     <ImageView
         android:id="@+id/ivPip"
@@ -48,6 +50,6 @@
         android:src="@drawable/ic_pip"
         android:tint="@color/white"
         android:visibility="gone"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
 </RelativeLayout>

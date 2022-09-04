@@ -1,5 +1,6 @@
 package com.sesolutions.ui.weather
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -14,9 +15,14 @@ import com.sesolutions.R
 import com.sesolutions.http.HttpRequestHandler
 import com.sesolutions.http.HttpRequestVO
 import com.sesolutions.ui.common.BaseFragment
+import com.sesolutions.ui.price.ProvinceActivity
 import com.sesolutions.ui.weather.weather.weatherAdapter
 import com.sesolutions.utils.Constant
+import com.sesolutions.utils.CustomLog
 import com.sesolutions.utils.SPref
+import kotlinx.android.synthetic.main.fragment_price.*
+import kotlinx.android.synthetic.main.fragment_weather.*
+import kotlinx.android.synthetic.main.fragment_weather.layout_province
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
 
@@ -25,11 +31,12 @@ class WeatherFragment : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_weather, container, false)
     }
 
     private lateinit var adapter: DelegatesAdapter<WeatherDataResponse>
+    var province: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,15 +52,38 @@ class WeatherFragment : BaseFragment() {
         val rvWeather = view.findViewById<RecyclerView>(R.id.rvWeather)
         rvWeather.layoutManager = LinearLayoutManager(requireContext())
         rvWeather.adapter = adapter
-        callWeatherApi()
+
+        layout_province.setOnClickListener {
+            gotoProvince()
+        }
+
+        province = SPref.getInstance().getKecamatan(context)
+
+        tvProvinceWeather.text = province
+        callWeatherApi(province.replace(" ", "%20").replace(".", ""))
     }
 
-    private fun callWeatherApi() {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 102){
+            province = data?.getStringExtra("kecamatan").toString()
+            tvProvinceWeather.text = province
+            callWeatherApi(province.replace(" ","%20").replace("."," "))
+        }
+    }
+
+    fun gotoProvince(){
+        val intent = Intent(context, ProvinceActivity::class.java)
+        startActivityForResult(intent,102)
+    }
+    private fun callWeatherApi(province: String) {
+
         showBaseLoader(false)
         try {
             if (isNetworkAvailable(requireContext())) {
                 try {
-                    val request = HttpRequestVO("http://integrate.matani.id/home-cuaca.php")
+                    val request = HttpRequestVO(Constant.URL_WEATHER_MENU + province)
                     request.params[Constant.KEY_AUTH_TOKEN] = SPref.getInstance().getToken(context)
                     request.requestMethod = HttpPost.METHOD_NAME
 
@@ -64,7 +94,18 @@ class WeatherFragment : BaseFragment() {
                                 responseString,
                                 WeatherResponse::class.java
                             )
-                            adapter.submitList(responseObject.cuaca)
+
+                            if (responseObject.error.message == null) {
+
+                                rvWeather.visibility = View.VISIBLE
+                                layout_nodata_weather.visibility = View.GONE
+                                adapter.submitList(responseObject.cuaca)
+                            } else {
+                                rvWeather.visibility = View.GONE
+                                layout_nodata_weather.visibility = View.VISIBLE
+
+                            }
+
                         }
                         hideBaseLoader()
                         true

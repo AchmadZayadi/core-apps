@@ -150,6 +150,8 @@ import com.sesolutions.ui.page.PageVideoFragment;
 import com.sesolutions.ui.page.ViewPageAlbumFragment;
 import com.sesolutions.ui.page.ViewPageFragment;
 import com.sesolutions.ui.photo.GallaryFragment;
+import com.sesolutions.ui.point.PointFragment;
+import com.sesolutions.ui.point.PointFragment2;
 import com.sesolutions.ui.poll.PollParentFragment;
 import com.sesolutions.ui.poll.PollViewFragment;
 import com.sesolutions.ui.poll.profile_poll.ProfilePollFragment;
@@ -217,7 +219,6 @@ import java.util.Map;
 
 
 public class CommonActivity extends BaseActivity implements View.OnClickListener, MediaController.MediaPlayerControl, OnUserClickedListener<Integer, Object> {
-
 
     public CardView cvMusicMain;
     private ProgressDialog progressDialog;
@@ -365,9 +366,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                             } else if (urlmethod.toString().contains("https://demo4se.socialnetworking.solutions/albums")) {
                                 Gson g = new Gson();
                                 pmodel = g.fromJson(response, DeeplinkingModel.class);
-                                if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"album")){
+                                if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "album")) {
                                     goToViewAlbumFragment(pmodel.getAlbum_id(), false);
-                                }else {
+                                } else {
                                     goToViewAlbumBasicFragment(pmodel.getAlbum_id(), false);
                                 }
                             } else if (urlmethod.toString().contains("https://demo4se.socialnetworking.solutions/video")) {
@@ -381,9 +382,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                             } else if (urlmethod.toString().contains("https://demo4se.socialnetworking.solutions/blog")) {
                                 Gson g = new Gson();
                                 pmodel = g.fromJson(response, DeeplinkingModel.class);
-                                if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"blog")){
+                                if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "blog")) {
                                     goToViewBlogFragment(pmodel.getBlog_id(), false);
-                                }else {
+                                } else {
                                     goToViewBlogBasicFragment(pmodel.getBlog_id(), false);
                                 }
                             } else if (urlmethod.toString().contains("https://demo4se.socialnetworking.solutions/prayers")) {
@@ -597,8 +598,6 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
 
-
-
     public void playSong(Albums song) {
         int position = musicSrv.updateSongList(song);
         musicSrv.setSong(position - 1);
@@ -611,9 +610,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
 
     public void playSong(List<Albums> song) {
 
-        if(musicSrv!=null){
+        if (musicSrv != null) {
             musicSrv.setList(song);
-        }else {
+        } else {
             initService();
             musicSrv.setList(song);
         }
@@ -682,8 +681,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     fabPlay.setEnabled(true);
                     break;
                 case Constant.Events.MUSIC_COMPLETED:
-                   // pbLoad.setVisibility(View.GONE);
-                   // fabPlay.setEnabled(true);
+                    // pbLoad.setVisibility(View.GONE);
+                    // fabPlay.setEnabled(true);
                     hideMusicLayout();
                     break;
                 case Constant.Events.MUSIC_CHANGED:
@@ -871,7 +870,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
 
                 case Constant.GoTo.PROFILE_INFO_RECNTVIEW:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, MemberRecentviewedFragment.newInstance(bundle.getInt(Constant.KEY_ID), true,1))
+                            .replace(R.id.container, MemberRecentviewedFragment.newInstance(bundle.getInt(Constant.KEY_ID), true, 1))
                             .addToBackStack(null)
                             .commit();
                     break;
@@ -886,11 +885,10 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
 
                 case Constant.GoTo.PROFILE_INFO_RECNTVIEWME:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, MemberRecentviewedFragment.newInstance(bundle.getInt(Constant.KEY_ID), true,2))
+                            .replace(R.id.container, MemberRecentviewedFragment.newInstance(bundle.getInt(Constant.KEY_ID), true, 2))
                             .addToBackStack(null)
                             .commit();
                     break;
-
 
 
                 case Constant.GoTo.PROFILE_INFO_BLOCK:
@@ -957,7 +955,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
 
                 case Constant.GoTo.PROFILE_GROUP_ViIDEO:
                     fragmentManager.beginTransaction()
-                            .replace(R.id.container, PageVideoFragment.newInstance(bundle.getString(Constant.KEY_NAME),Constant.ResourceType.GROUP, bundle.getInt(Constant.KEY_ID), this,true))
+                            .replace(R.id.container, PageVideoFragment.newInstance(bundle.getString(Constant.KEY_NAME), Constant.ResourceType.GROUP, bundle.getInt(Constant.KEY_ID), this, true))
                             .addToBackStack(null)
                             .commit();
                     break;
@@ -1062,18 +1060,18 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                             .addToBackStack(null)
                             .commit();
                     break;
-              case Constant.GoTo.PROFILE_BUSINUSS_MEMBERS:
+                case Constant.GoTo.PROFILE_BUSINUSS_MEMBERS:
                     fragmentManager.beginTransaction()
                             .replace(R.id.container, BusinessMemberFragment.newInstance(bundle.getBundle(Constant.KEY_BUNDEL), true))
                             .addToBackStack(null)
                             .commit();
                     break;
-              case Constant.GoTo.PROFILE_PAGE_ViIDEO:
+                case Constant.GoTo.PROFILE_PAGE_ViIDEO:
                     fragmentManager.beginTransaction()
                             .replace(R.id.container, PageVideoFragment.newInstance(bundle.getString(Constant.KEY_NAME), Constant.ResourceType.PAGE, bundle.getInt(Constant.KEY_ID), this, true))
                             .addToBackStack(null)
                             .commit();
-                break;
+                    break;
                 case Constant.GoTo.PROFILE_BUSINUSS_VIDEOS:
                     fragmentManager.beginTransaction()
                             .replace(R.id.container, PageVideoFragment.newInstance(bundle.getString(Constant.KEY_NAME), Constant.ResourceType.BUSINESS, bundle.getInt(Constant.KEY_ID), this, true))
@@ -1274,7 +1272,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_SETTINGS:
-                    openSettingFragment();
+                    openPointFragment();
+                    //openSettingFragment();
                     break;
                 case Constant.GO_TO_NOTIFICATION:
                     fragmentManager.beginTransaction().replace(R.id.container, new NotificationFragment()).addToBackStack(null).commit();
@@ -1285,9 +1284,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_MUSIC:
-                    if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"music")){
+                    if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "music")) {
                         openMusicFragment(0);
-                    }else {
+                    } else {
                         CMusicUtil.openBrowseFragment(fragmentManager);
                     }
 
@@ -1314,18 +1313,29 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     openVideoFragment(2);
                     break;
                 case Constant.GoTo.ARTICLE:
-                    openArticleFragment();
+                  // openArticleFragment();
+                    openWeatherFragment();
+                    //openPointFragment();
+                    break;
+                case Constant.GoTo.WEATHER:
+                    openWeatherFragment();
+                    break;
+                case Constant.GoTo.PRICE:
+                    openPriceFragment();
+                    break;
+                case Constant.GoTo.POINT:
+                    openPointFragment();
                     break;
                 case Constant.GO_TO_BLOG:
-                    if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"blog")){
+                    if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "blog")) {
                         openBlogFragment();
-                    }else {
+                    } else {
                         openBlogbasicFragment();
                     }
 
                     break;
                 case Constant.GO_TO_JOBS:
-                        openJobFragment();
+                    openJobFragment();
                     break;
                 case Constant.GO_TO_MULTISTORE:
                     openMultistoreFragment();
@@ -1384,7 +1394,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_MEMBER:
-                    openMemberFragment();
+                    openPriceFragment();
+                    //openMemberFragment();
                     break;
 
                 case Constant.GoTo.CORE_SEARCH:
@@ -1449,9 +1460,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_ALBUM:
-                    if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"album")){
+                    if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "album")) {
                         openAlbumFragment();
-                    }else {
+                    } else {
                         openAlbumbasicFragment();
                     }
                     break;
@@ -1460,7 +1471,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
                 case Constant.GoTo.QUOTE:
                     openQuoteFragment();
-                     break;
+                    break;
                 case Constant.GoTo.POLLSNET:
                     openPollFragment();
                     break;
@@ -1636,9 +1647,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
                 case Constant.GoTo.VIEW_BLOG:
 
-                    if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"blog")){
+                    if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "blog")) {
                         goToViewBlogFragment(bundle.getInt(Constant.KEY_ID), bundle.getBoolean(Constant.KEY_COMMENT_ID));
-                    }else {
+                    } else {
                         goToViewBlogBasicFragment(bundle.getInt(Constant.KEY_ID), bundle.getBoolean(Constant.KEY_COMMENT_ID));
                     }
                     break;
@@ -1701,9 +1712,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                 case Constant.GoTo.VIEW_ALBUM:
 
 
-                    if(!SPref.getInstance().isBasicPlugins(getBaseContext(),"album")){
+                    if (!SPref.getInstance().isBasicPlugins(getBaseContext(), "album")) {
                         goToViewAlbumFragment(bundle.getInt(Constant.KEY_ID), bundle.getBoolean(Constant.KEY_COMMENT_ID));
-                    }else {
+                    } else {
                         goToViewAlbumBasicFragment(bundle.getInt(Constant.KEY_ID), bundle.getBoolean(Constant.KEY_COMMENT_ID));
                     }
                     break;
@@ -1815,7 +1826,6 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                                     CreateEditExperienceFragment.newInstance(Constant.FormType.CREATE_RESUME_CARIOROBJECT, map22, Constant.CREDIT_RESUME_ADD_OBJECTIVES, null, true))
                             .commit();
                     break;
-
 
 
                 case Constant.GoTo.GO_TO_REPORT:
@@ -2162,7 +2172,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void openMemberFragment() {
-        fragmentManager.beginTransaction().replace(R.id.container, new WeatherFragment()).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, new MemberFragment()).addToBackStack(null).commit();
 
     }
 
@@ -2172,9 +2182,6 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                 .addToBackStack(null)
                 .commit();
     }
-
-
-
 
 
     private void openCoreSearchFragment() {
@@ -2273,7 +2280,22 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
     private void openArticleFragment() {
+        fragmentManager.beginTransaction().replace(R.id.container, new ArticleParentFragment()).addToBackStack(null).commit();
+
+    }
+
+    private void openWeatherFragment() {
+        fragmentManager.beginTransaction().replace(R.id.container, new WeatherFragment()).addToBackStack(null).commit();
+
+    }
+
+    private void openPriceFragment() {
         fragmentManager.beginTransaction().replace(R.id.container, new PriceFragment()).addToBackStack(null).commit();
+
+    }
+
+    private void openPointFragment() {
+        fragmentManager.beginTransaction().replace(R.id.container, new PointFragment2()).addToBackStack(null).commit();
 
     }
 

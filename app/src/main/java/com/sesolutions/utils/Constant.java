@@ -308,6 +308,9 @@ public class Constant extends URL {
     public static final String URL_PROFILE_MAP = BASE_URL + "user/profile/map" + POST_URL;
     public static final String URL_PROFILE_ADD_LOCATION = BASE_URL + "user/profile/addlocation" + POST_URL;
     public static final String URL_CHANNEL_INFO = BASE_URL + "channels/info" + POST_URL;
+    public static final String URL_POINT_MENU = "http://report.matani.id/poin";
+    public static final String URL_WEATHER_HOME = "http://report.matani.id/beranda";
+
 
     public static final String URL_CHANNEL_VIDEO_LIKE = BASE_URL + "sesvideo/index/like" + POST_URL;
 
@@ -362,6 +365,10 @@ public class Constant extends URL {
     public static final String URL_CREATE_PLAYLIST = BASE_URL + "musics/songs/append" + POST_URL;
     public static final String URL_CHANNEL_SEARCH_FORM = BASE_URL + "channels/search-form" + POST_URL;
     public static final String URL_VIDEO_SEARCH_FORM = BASE_URL + "videos/search-form" + POST_URL;
+    public static final String URL_PRICE_MENU = "http://integrate.matani.id/harga.php?r=";
+    public static final String URL_WEATHER_MENU = "http://integrate.matani.id/cuaca.php?r=";
+    public static final String URL_GET_PROVINCE = "http://integrate.matani.id/propinsi-cuaca.php";
+
 
     public static final String URL_CLASSIFIED_FILTER_FORM = BASE_URL + "classified/search-form" + POST_URL;
     public static final String URL_ARTICLE_FILTER_FORM = BASE_URL + "sesarticle/index/search-form" + POST_URL;
@@ -429,6 +436,7 @@ public class Constant extends URL {
     public final static String DATE_FROMAT_POST_FEED = "MM/dd/yy hh:mm a";
 
     public static final String KEY_AUTH_TOKEN = "auth_token";
+    public static final String KEY_KECAMATAN = "kecamatan";
     public static final String TAG = "HttpRequestHelper";
     public static final String CHAR_SET = "iso-8859-1";
     public static final String KEY_EMAIL = "email";
@@ -764,6 +772,7 @@ public class Constant extends URL {
     }
 
     public static String SESSION_ID;
+    public static String KECAMATAN_KEY;
     public static String path;
     public static String THEME_STYLES_JSON;
     public static boolean TASK_POST = false;
@@ -1715,6 +1724,10 @@ public class Constant extends URL {
         public static final int VIEW_ARTICLE = 115;
 
         public static final int ARTICLE = 116;
+        public static final int WEATHER = 200;
+        public static final int POINT = 201;
+        public static final int PRICE = 202;
+
         public static final int QUOTE = 117;
         public static final int POLLSNET = 847;
         public static final int VIEW_QUOTE = 118;

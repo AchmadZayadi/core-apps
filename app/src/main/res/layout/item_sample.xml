@@ -7,97 +7,156 @@
     android:background="@drawable/bg_cloud_color_corn_10dp"
     android:padding="10dp">
 
-    <RelativeLayout
-        android:id="@+id/layout_pagi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/layout_kota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvValueToday"
+            style="@style/myTabBoldTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Banjanegara" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            >
 
             <TextView
-                android:id="@+id/tvValueToday"
-                style="@style/myTabBoldTextStyle"
+                android:id="@+id/tvSuhuMinimal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#303345"
-                android:textSize="20sp"
-                tools:text="Banjanegara" />
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="14 % - " />
 
             <TextView
-                android:id="@+id/tvDayMorning"
-                style="@style/myTabBoldTextStyle"
+                android:id="@+id/tvSuhuMaximal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Hari Ini"
-                android:textColor="#303345"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tvTodayMorningDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#303345"
-                android:textSize="12sp"
-                tools:text="Pagi : Berawan" />
-
-            <TextView
-                android:id="@+id/tvTodayAfternoonDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#303345"
-                android:textSize="11sp"
-                tools:text="siang : Berawan" />
-
-            <TextView
-                android:id="@+id/tvTodayNightDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#303345"
-                android:textSize="11sp"
-                tools:text="malam : Berawan" />
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                tools:text="14 % " />
         </LinearLayout>
 
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/layout_pagi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10ssp"
+        android:layout_toEndOf="@+id/layout_kota"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTodayMorningDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Berawan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pagi"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
         <ImageView
-            android:id="@+id/ivDescriptionWeatherToday"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/bg_weather_1f1f28"
+            android:id="@+id/ivDescriptionWeatherMorning"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
             android:elevation="3dp" />
 
-        <TextView
-            android:id="@+id/tvTodayTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_10ssp"
-            android:layout_toStartOf="@+id/ivDescriptionWeatherToday"
-            android:textColor="#303345"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:text="29 %" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_siang"
+        android:layout_marginHorizontal="@dimen/_10ssp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/layout_pagi"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvTodayTempDescription"
+            android:id="@+id/tvTodayAfternoonDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tvTodayTemp"
-            android:layout_marginEnd="16dp"
-            android:layout_toStartOf="@+id/ivDescriptionWeatherToday"
-            android:textColor="#303345"
-            android:textSize="12sp"
-            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
             tools:text="Berawan" />
-    </RelativeLayout>
 
-    <RelativeLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Siang"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+        <ImageView
+            android:id="@+id/ivDescriptionWeatherAfternoon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:elevation="3dp" />
+
+    </LinearLayout>
+    <LinearLayout
+
         android:id="@+id/layout_malam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/layout_siang"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTodayNightDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="Berawan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Siang"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+
+        <ImageView
+            android:id="@+id/ivDescriptionWeatherNigh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:elevation="3dp" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/layout_malam_"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/layout_pagi"
+        android:visibility="gone"
         android:layout_marginTop="@dimen/_10ssp">
 
         <LinearLayout
@@ -153,7 +212,6 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/bg_weather_1f1f28"
             android:elevation="3dp" />
 
         <TextView

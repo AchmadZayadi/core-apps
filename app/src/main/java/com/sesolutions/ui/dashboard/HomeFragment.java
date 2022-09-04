@@ -17,14 +17,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
+import com.dizcoding.adapterdelegate.DelegatesAdapter;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
 import com.sesolutions.R;
@@ -33,6 +36,7 @@ import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.listeners.OnLoadMoreListener;
 import com.sesolutions.listeners.OnUserClickedListener;
+import com.sesolutions.responses.ErrorResponse;
 import com.sesolutions.responses.feed.Activity;
 import com.sesolutions.responses.feed.Options;
 import com.sesolutions.thememanager.ThemeManager;
@@ -41,8 +45,16 @@ import com.sesolutions.ui.AGvideo.mediaplayer.MediaExo;
 import com.sesolutions.ui.common.BaseActivity;
 import com.sesolutions.ui.common.BaseResponse;
 import com.sesolutions.ui.common.CommonActivity;
+import com.sesolutions.ui.price.PriceDataResponse;
+import com.sesolutions.ui.price.PriceResponse;
+import com.sesolutions.ui.price.adapter.PriceHolderAdapterKt;
+import com.sesolutions.ui.price.adapter.PriceItemModel;
 import com.sesolutions.ui.signup.UserMaster;
 import com.sesolutions.ui.storyview.StoryModel;
+import com.sesolutions.ui.weather.WeatherDataResponse;
+import com.sesolutions.ui.weather.WeatherResponse;
+import com.sesolutions.ui.weather.weather.WeatherAdapterKt;
+import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.ChildAttachStateChangeListener;
 import com.sesolutions.utils.Constant;
@@ -52,7 +64,10 @@ import com.sesolutions.utils.SPref;
 import com.sesolutions.utils.Util;
 
 import org.apache.http.client.methods.HttpPost;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -70,9 +85,16 @@ import cn.jzvd.JzvdStd2;
 
 public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener, OnLoadMoreListener {
     RecyclerView recycleViewFeedMain;
+    RecyclerView rvWeather;
+    RecyclerView rvPrice;
     private ShimmerFrameLayout mShimmerViewContainer;
     public OnUserClickedListener<Integer, Object> parent;
-    int highestnumber=0,previousnumber=0;
+    int highestnumber = 0, previousnumber = 0;
+    LinearLayoutManager layoutManagerWeather;
+    LinearLayoutManager layoutManagerPrice;
+    private DelegatesAdapter<WeatherDataResponse> adapterWeather;
+    private DelegatesAdapter<PriceItemModel> adapterPrice;
+    WebView webViewWeather;
 
     public static HomeFragment newInstance(OnUserClickedListener<Integer, Object> parent) {
         HomeFragment frag = new HomeFragment();
@@ -81,20 +103,19 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
     }
 
 
-    int commentpostion=0;
+    int commentpostion = 0;
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("BaseActvity",""+ BaseActivity.backcoverchange);
-        if(BaseActivity.backcoverchange==Constant.GO_TO_HOMEFRAGMENT){
+        Log.e("BaseActvity", "" + BaseActivity.backcoverchange);
+        if (BaseActivity.backcoverchange == Constant.GO_TO_HOMEFRAGMENT) {
             feedActivityList.get(commentpostion).setCommentCount(BaseActivity.commentcount);
             adapterFeedMain.notifyItemChanged(commentpostion);
-            BaseActivity.backcoverchange=0;
-            BaseActivity.commentcount=0;
+            BaseActivity.backcoverchange = 0;
+            BaseActivity.commentcount = 0;
         }
     }
-
 
 
     @Override
@@ -113,8 +134,11 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             // appBarLayout = v.findViewById(R.id.appbar);
             // appBarLayout.addOnOffsetChangedListener(this);
             mShimmerViewContainer = v.findViewById(R.id.shimmer_view_container);
+
             mShimmerViewContainer.startShimmerAnimation();
             // new ThemeManager().applyTheme((ViewGroup) v, context);
+           // callApiPrice();
+           // callApiWeather();
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -130,6 +154,15 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         //check if composer options already saved in caceh
         composerOption = SPref.getInstance().getComposerOptions(context);
 
+        //price
+        adapterPrice = new DelegatesAdapter<PriceItemModel>(
+                PriceHolderAdapterKt.priceHolderAdapter()
+        );
+
+        //weather
+        adapterWeather = new DelegatesAdapter<WeatherDataResponse>(
+                WeatherAdapterKt.weatherAdapter()
+        );
         if (null != composerOption) {
             /*if saved then directly fetch feed api  and update composer ui*/
             updateComposerUI();
@@ -167,7 +200,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         pb = v.findViewById(R.id.pb);
     }
 
-    int lastpostion=0;
+    int lastpostion = 0;
 
     @Override
     public void initMainRecyclerView() {
@@ -175,7 +208,36 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         swipeRefreshLayout = v.findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
 
+
         recycleViewFeedMain = v.findViewById(R.id.recycler_view_feed_main);
+
+
+        //webview http://report.matani.id/beranda
+        webViewWeather = v.findViewById(R.id.webView);
+        //  String postData2 = "username=" + URLEncoder.encode(, "UTF-8") + "&password=" + URLEncoder.encode(my_password, "UTF-8");
+        String postData = "auth_token=" + SPref.getInstance().getToken(context);
+
+        webViewWeather.postUrl(Constant.URL_WEATHER_HOME, postData.getBytes());
+
+
+        rvWeather = v.findViewById(R.id.rv_weather);
+        rvPrice = v.findViewById(R.id.rv_price);
+
+
+        //price
+        rvPrice.setHasFixedSize(true);
+        layoutManagerPrice = new LinearLayoutManager(context);
+        rvPrice.setLayoutManager(layoutManagerPrice);
+        rvPrice.setAdapter(adapterPrice);
+
+        //weather
+        rvWeather.setHasFixedSize(true);
+        layoutManagerWeather = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
+
+        rvWeather.setLayoutManager(layoutManagerWeather);
+        rvWeather.setAdapter(adapterWeather);
+
+
         setFeedMainRecycleView();
 
         recycleViewFeedMain.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -189,7 +251,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                 super.onScrollStateChanged(recyclerView, newState);
                 try {
                     if (newState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
-                        if (recycleViewFeedMain != null){
+                        if (recycleViewFeedMain != null) {
                             LinearLayoutManager layoutManager = ((LinearLayoutManager) recycleViewFeedMain.getLayoutManager());
 
                             final int firstPosition = layoutManager.findFirstVisibleItemPosition();
@@ -198,55 +260,55 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                             Rect rvRect = new Rect();
                             recycleViewFeedMain.getGlobalVisibleRect(rvRect);
 
-                            highestnumber=0;
-                            previousnumber=0;
+                            highestnumber = 0;
+                            previousnumber = 0;
 
                             for (int i = firstPosition; i <= lastPosition; i++) {
                                 Rect rowRect = new Rect();
                                 layoutManager.findViewByPosition(i).getGlobalVisibleRect(rowRect);
 
                                 int percentFirst;
-                                if (rowRect.bottom >= rvRect.bottom){
-                                    int visibleHeightFirst =rvRect.bottom - rowRect.top;
+                                if (rowRect.bottom >= rvRect.bottom) {
+                                    int visibleHeightFirst = rvRect.bottom - rowRect.top;
                                     percentFirst = (visibleHeightFirst * 100) / layoutManager.findViewByPosition(i).getHeight();
-                                }else {
+                                } else {
                                     int visibleHeightFirst = rowRect.bottom - rvRect.top;
                                     percentFirst = (visibleHeightFirst * 100) / layoutManager.findViewByPosition(i).getHeight();
                                 }
 
-                                if (percentFirst>100){
+                                if (percentFirst > 100) {
                                     percentFirst = 100;
                                 }
 
-                                Log.e("percentFirst","-"+percentFirst);
-                                Log.e("highestnumber","-"+highestnumber);
-                                Log.e("postion","-"+i);
+                                Log.e("percentFirst", "-" + percentFirst);
+                                Log.e("highestnumber", "-" + highestnumber);
+                                Log.e("postion", "-" + i);
 
-                                if(percentFirst>highestnumber){
-                                    highestnumber=percentFirst;
-                                    previousnumber=i;
+                                if (percentFirst > highestnumber) {
+                                    highestnumber = percentFirst;
+                                    previousnumber = i;
                                 }
-                                Log.e("PERCENT_FIRST"+i,"-"+percentFirst);
+                                Log.e("PERCENT_FIRST" + i, "-" + percentFirst);
                             }
                         }
                         final View child = layoutManager.findViewByPosition(previousnumber);
                         try {
-                            if (null != child){
-                                if(feedActivityList.get(previousnumber).getAttachment().getAttachmentType().equalsIgnoreCase("video")){
-                                    if(lastpostion!=0){
+                            if (null != child) {
+                                if (feedActivityList.get(previousnumber).getAttachment().getAttachmentType().equalsIgnoreCase("video")) {
+                                    if (lastpostion != 0) {
                                         feedActivityList.get(previousnumber).getAttachment().set_can_play(false);
                                         adapterFeedMain.notifyItemChanged(lastpostion);
                                     }
                                     feedActivityList.get(previousnumber).getAttachment().set_can_play(true);
                                     adapterFeedMain.notifyItemChanged(previousnumber);
-                                    lastpostion=previousnumber;
-                                }else {
+                                    lastpostion = previousnumber;
+                                } else {
                                     feedActivityList.get(previousnumber).getAttachment().set_can_play(false);
                                     adapterFeedMain.notifyItemChanged(lastpostion);
-                                    lastpostion=0;
+                                    lastpostion = 0;
                                 }
                             }
-                        }catch (Exception ex){
+                        } catch (Exception ex) {
                             ex.printStackTrace();
                         }
                     }
@@ -272,7 +334,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
                 UserMaster vo = SPref.getInstance().getUserMasterDetail(context);
                 vo.setPhotoUrl(composerOption.getResult().getUser_image());
                 SPref.getInstance().saveUserMaster(context, vo, null);
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
 
@@ -334,7 +396,9 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             }
         }
     }
+
     LinearLayoutManager layoutManager;
+
     void setFeedMainRecycleView() {
         try {
             feedActivityList = new ArrayList<>();
@@ -360,6 +424,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             recycleViewFeedMain.addOnChildAttachStateChangeListener(new ChildAttachStateChangeListener());
             adapterFeedMain.setLoadListener(this);
             adapterFeedMain.setHome(true);
+           // recycleViewFeedMain.setNestedScrollingEnabled(false);
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -379,7 +444,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
     public void goToComment(int position) {
         //Activity vo = feedActivityList.get(position);
-        commentpostion=position;
+        commentpostion = position;
         Intent intent = new Intent(activity, CommonActivity.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_COMMENT);
         intent.putExtra(Constant.KEY_ACTION_ID, feedActivityList.get(position).getActionId());
@@ -530,7 +595,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         try {
             CustomLog.e("feedActivityload", "load");
             if (!isLoading && !feedResponse.getResult().getEndOfFeed()) {
-                pb.setVisibility(View.VISIBLE);
+                pb.setVisibility(View.GONE);
                 callFeedApi(REQ_CODE_LOADING_MORE_FEED);
             }
         } catch (Exception e) {
@@ -580,6 +645,116 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             adapterFeedMain.notifyItemChanged(itemPosition);
         } catch (Exception e) {
             CustomLog.e(e);
+        }
+    }
+
+    void callApiWeather() {
+
+        if (isNetworkAvailable(context)) {
+
+            try {
+
+                HttpRequestVO request = new HttpRequestVO("http://integrate.matani.id/home-cuaca.php");
+
+
+                request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                request.requestMethod = HttpPost.METHOD_NAME;
+                Handler.Callback callback = new Handler.Callback() {
+                    @Override
+                    public boolean handleMessage(Message msg) {
+                        hideBaseLoader();
+                        try {
+                            String response = (String) msg.obj;
+
+
+                            if (response != null) {
+
+
+                                WeatherResponse weatherResponse = new Gson().fromJson(response, WeatherResponse.class);
+
+                                if (weatherResponse.getError().getMessage() == null) {
+                                    adapterWeather.submitList(weatherResponse.getCuaca());
+                                    CustomLog.d("masuksini", "cuaca");
+                                } else {
+                                    rvWeather.setVisibility(View.GONE);
+                                    CustomLog.d("masuksini", "cuaca2");
+                                }
+
+                            } else {
+                                somethingWrongMsg(v);
+                            }
+                        } catch (Exception e) {
+                            hideBaseLoader();
+                            somethingWrongMsg(v);
+                            CustomLog.e(e);
+                        }
+                        return true;
+                    }
+                };
+                new HttpRequestHandler(activity, new Handler(callback)).run(request);
+
+            } catch (Exception e) {
+                hideBaseLoader();
+                CustomLog.e(e);
+            }
+        } else {
+            hideBaseLoader();
+            notInternetMsg(v);
+        }
+    }
+
+    void callApiPrice() {
+
+        if (isNetworkAvailable(context)) {
+
+            try {
+
+                HttpRequestVO request = new HttpRequestVO("http://integrate.matani.id/home-harga.php");
+
+
+                request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
+                request.requestMethod = HttpPost.METHOD_NAME;
+                Handler.Callback callback = new Handler.Callback() {
+                    @Override
+                    public boolean handleMessage(Message msg) {
+                        hideBaseLoader();
+                        try {
+                            hideBaseLoader();
+                            String response = (String) msg.obj;
+
+                            PriceResponse priceItemModel = new Gson().fromJson(response, PriceResponse.class);
+                            if (response != null) {
+
+                                if (priceItemModel.getError().getMessage() == null) {
+                                    // adapterPrice.submitList(priceItemModel.getHarga());
+
+                                    rvPrice.setVisibility(View.VISIBLE);
+                                } else {
+                                    rvPrice.setVisibility(View.GONE);
+                                    CustomLog.d("masuksini", "harga2");
+                                }
+
+
+                            } else {
+                                somethingWrongMsg(v);
+                            }
+                        } catch (Exception e) {
+                            hideBaseLoader();
+                            somethingWrongMsg(v);
+                            CustomLog.e(e);
+                        }
+                        return true;
+                    }
+                };
+                new HttpRequestHandler(activity, new Handler(callback)).run(request);
+
+            } catch (Exception e) {
+                hideBaseLoader();
+                CustomLog.e(e);
+            }
+        } else {
+            hideBaseLoader();
+            notInternetMsg(v);
         }
     }
 }

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.price.PriceFragment">
+
+    <ImageView
+        android:id="@+id/ic_close"
+        android:layout_width="@dimen/_20ssp"
+        android:layout_height="@dimen/_20ssp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_10ssp"
+        android:layout_marginBottom="@dimen/_10ssp"
+        android:src="@drawable/ic_close" />
+
+    <LinearLayout
+        android:layout_below="@id/ic_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih Provinsi"
+            android:layout_marginVertical="@dimen/_10ssp"
+            android:textColor="@color/grey_feed"
+            android:textSize="@dimen/_14ssp"
+            android:gravity="center"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#c0c0c0"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProvince"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

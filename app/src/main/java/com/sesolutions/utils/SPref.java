@@ -48,6 +48,7 @@ public class SPref {
     private final String NAVIGATION_MENU = "navigation_menu";
     private final String COMPOSER_OPTION = "composer_option";
     private final String FEED_ITEMS = "feed_items";
+    private final String KECAMATAN = "kecamatan";
     private final String KEY_ATTRIBUTION = "attribution";
     private final String KEY_ATTRIBUTION_OPTION = "attribution_option";
 
@@ -71,14 +72,14 @@ public class SPref {
         return sPref;
     }
 
-    public  void saveUserInfo(Context context,String key, SignInResponse userInfo) {
+    public void saveUserInfo(Context context, String key, SignInResponse userInfo) {
         Gson gson = new Gson();
         String json = gson.toJson(userInfo);
         context.getSharedPreferences(Constant.PREFRENCE_NAME, MODE_PRIVATE).edit().putString(key, json).apply();
 
     }
 
-    public  SignInResponse getUserInfo(Context context,String key) {
+    public SignInResponse getUserInfo(Context context, String key) {
         Gson gson = new Gson();
         String json = context.getSharedPreferences(Constant.PREFRENCE_NAME, MODE_PRIVATE).getString(key, null);
         Type type = new TypeToken<SignInResponse>() {
@@ -87,14 +88,14 @@ public class SPref {
     }
 
 
-    public  void saveDefaultInfo(Context context,String key, DefaultDataVo userInfo) {
+    public void saveDefaultInfo(Context context, String key, DefaultDataVo userInfo) {
         Gson gson = new Gson();
         String json = gson.toJson(userInfo);
         context.getSharedPreferences(Constant.PREFRENCE_NAME, MODE_PRIVATE).edit().putString(key, json).apply();
 
     }
 
-    public  DefaultDataVo getDefaultInfo(Context context,String key) {
+    public DefaultDataVo getDefaultInfo(Context context, String key) {
         Gson gson = new Gson();
         String json = context.getSharedPreferences(Constant.PREFRENCE_NAME, MODE_PRIVATE).getString(key, null);
         Type type = new TypeToken<DefaultDataVo>() {
@@ -286,6 +287,21 @@ public class SPref {
         return list;
     }
 
+    public void saveKecamatan(Context context, String response) {
+        updateSharePreferences(context, KECAMATAN, response);
+    }
+    public String getKecamatan(Context context) {
+        String kecamatan = null;
+        try {
+
+            SharedPreferences pref = context.getSharedPreferences(Constant.PREFRENCE_NAME, MODE_PRIVATE);
+            kecamatan = pref.getString(KECAMATAN, Constant.EMPTY);
+
+        } catch (JsonSyntaxException e) {
+            CustomLog.e(e);
+        }
+        return kecamatan;
+    }
 
     public void updateSharePreferences(Context context, DefaultDataVo.Result.DemoUser demoUser) {
         try {
@@ -429,12 +445,14 @@ public class SPref {
 
     private static String AUTH_TOKEN = null;
 
+
     public String getToken(Context context) {
         if (TextUtils.isEmpty(AUTH_TOKEN)) {
             AUTH_TOKEN = getInstance().getString(context, Constant.KEY_AUTH_TOKEN);
         }
         return AUTH_TOKEN;
     }
+
 
     public void saveNavigationMenus(Context context, String response) {
         updateSharePreferences(context, NAVIGATION_MENU, response);
@@ -463,6 +481,10 @@ public class SPref {
         }
         return drawerModel;
     }
+
+
+
+
 
     public ComposerOption getComposerOptions(Context context) {
         ComposerOption composerOption = null;
@@ -635,23 +657,24 @@ public class SPref {
     }
 
 
-    public boolean isBasicPlugins(Context context,String pluginname) {
-        boolean isexit=false;
+    public boolean isBasicPlugins(Context context, String pluginname) {
+        boolean isexit = false;
         try {
             try {
-                JsonObject objectdata= SPref.getInstance().getDefaultInfo(context,Constant.KEY_APPDEFAULT_DATA).getResult().getCore_modules_enabled();
+                JsonObject objectdata = SPref.getInstance().getDefaultInfo(context, Constant.KEY_APPDEFAULT_DATA).getResult().getCore_modules_enabled();
                 //  String ojj=objectdata.getString("blog");
                 Map<String, String> mapObj = new Gson().fromJson(
-                        objectdata, new com.google.common.reflect.TypeToken<HashMap<String, String>>() {}.getType()
+                        objectdata, new com.google.common.reflect.TypeToken<HashMap<String, String>>() {
+                        }.getType()
                 );
                 for (Map.Entry<String, String> e : mapObj.entrySet()) {
-                    if(pluginname.equalsIgnoreCase(""+e.getValue())){
-                        isexit=true;
+                    if (pluginname.equalsIgnoreCase("" + e.getValue())) {
+                        isexit = true;
                     }
                 }
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
-                isexit=false;
+                isexit = false;
             }
 
         } catch (JsonSyntaxException e) {

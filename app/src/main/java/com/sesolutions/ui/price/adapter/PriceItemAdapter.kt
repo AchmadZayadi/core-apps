@@ -22,9 +22,9 @@ fun priceItemAdapter() = itemDelegate<PriceItemResponse>(R.layout.item_price_ite
         }
 
         if (isOdd(layoutPosition)) {
-            layout.setBackgroundColor(Color.parseColor("#80e8e3"))
+            layout.setBackgroundColor(Color.parseColor("#FFFFFF"))
         } else {
-            layout.setBackgroundColor(Color.parseColor("#d7e0e0"))
+            layout.setBackgroundColor(Color.parseColor("#EEEEEE"))
         }
     }
 

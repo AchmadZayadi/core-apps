@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="@dimen/_5ssp"
     android:background="@color/white"
     android:elevation="3dp">
 
@@ -12,11 +11,11 @@
         android:id="@+id/tvCityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:textColor="#303345"
-
         android:textSize="18sp"
+        android:layout_marginTop="@dimen/_10ssp"
         android:textStyle="bold"
+        android:layout_marginStart="@dimen/_10ssp"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Banjanegara" />
 

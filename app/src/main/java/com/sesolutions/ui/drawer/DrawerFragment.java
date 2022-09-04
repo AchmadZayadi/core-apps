@@ -493,6 +493,27 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                     startActivity(intent);
                     break;
 
+                case ModuleUtil.ITEM_WEATHER:
+                    intent = new Intent(activity, CommonActivity.class);
+                    intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.WEATHER);
+                    closeDrawer();
+                    startActivity(intent);
+                    break;
+
+                case ModuleUtil.ITEM_PRICE:
+                    intent = new Intent(activity, CommonActivity.class);
+                    intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.PRICE);
+                    closeDrawer();
+                    startActivity(intent);
+                    break;
+
+                case ModuleUtil.ITEM_POINT:
+                    intent = new Intent(activity, CommonActivity.class);
+                    intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.POINT);
+                    closeDrawer();
+                    startActivity(intent);
+                    break;
+
 
                 case ModuleUtil.ITEM_CORE_GROUP:
                     intent = new Intent(activity, CommonActivity.class);

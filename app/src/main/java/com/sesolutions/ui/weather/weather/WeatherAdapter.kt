@@ -20,147 +20,47 @@ fun weatherAdapter() = itemDelegate<WeatherDataResponse>(R.layout.item_weather)
         val tvTodayNightDescription =
             containerView.findViewById<TextView>(R.id.tvTodayNightDescription)
         val ivDescriptionWeatherToday =
-            containerView.findViewById<ImageView>(R.id.ivDescriptionWeatherToday)
-        val tvTodayTemp = containerView.findViewById<TextView>(R.id.tvTodayTemp)
-        val tvTodayTempDescription =
-            containerView.findViewById<TextView>(R.id.tvTodayTempDescription)
-        var url: String? = "https://www.bmkg.go.id/asset/img/weather_icon/ID/"
-        var am: String? = "-am.png"
-        var pm: String? = "-pm.png"
-        var replaceString: String? = it.hariini.deskripsi
+            containerView.findViewById<ImageView>(R.id.ivDescriptionWeatherMorning)
+        val tvSuhuMinimal = containerView.findViewById<TextView>(R.id.tvSuhuMinimal)
+        val tvSuhuMaximal = containerView.findViewById<TextView>(R.id.tvSuhuMaximal)
+        val ivDescriptionWeatherAfternoon =
+            containerView.findViewById<ImageView>(R.id.ivDescriptionWeatherAfternoon)
+
+        val ivDescriptionWeatherNight =
+            containerView.findViewById<ImageView>(R.id.ivDescriptionWeatherNight)
+        val url: String? = "https://www.bmkg.go.id/asset/img/weather_icon/ID/"
+
+
+        val imageMorning = url + it.hariini.cuacaPagi?.replace(" ", "%20") + "-am.png"
+        val imageEvening = url + it.hariini.cuacaSiang?.replace(" ", "%20") + "-am.png"
+        val imageNight = url + it.hariini.cuacaMalam?.replace(" ", "%20") + "-pm.png"
+
 
 
 
         tvValueToday.text = it.kota
-        tvTodayMorningDescription.text = "Pagi : " + it.hariini.cuacaPagi
-        tvTodayAfternoonDescription.text = "Siang : " + it.hariini.cuacaSiang
-        tvTodayNightDescription.text = "Malam : " + it.hariini.cuacaMalam
-        if (it.hariini.deskripsi == "Cerah") {
+        tvTodayMorningDescription.text = it.hariini.cuacaPagi
+        tvTodayAfternoonDescription.text = it.hariini.cuacaSiang
+        tvTodayNightDescription.text = it.hariini.cuacaMalam
+        tvSuhuMinimal.text = it.hariini.suhuMin + " \u2103" + " - "
+        tvSuhuMaximal.text = it.hariini.suhuMax + " \u2103"
+        Util.showImageWithGlide123(
+            ivDescriptionWeatherToday,
+            imageMorning,
+            R.drawable.placeholder_3_2
+        )
+        Util.showImageWithGlide123(
+            ivDescriptionWeatherAfternoon,
+            imageEvening,
+            R.drawable.placeholder_3_2
+        )
+        Util.showImageWithGlide123(
+            ivDescriptionWeatherNight,
+            imageNight,
+            R.drawable.placeholder_3_2
+        )
+
+        // tvTodayTemp.text = it.hariini.suhuMax + " \u2103"
 
 
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-
-
-            //ivDescriptionWeatherToday.setImageDrawable(containerView.context.getDrawable(R.drawable.cerah))
-        } else if (it.hariini.deskripsi == "Cerah Berawan") {
-            replaceString?.replace(" ", "%20")
-
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.hariini.deskripsi == "Berawan") {
-
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.hariini.deskripsi == "Hujan Sedang") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.hariini.deskripsi == "Hujan Ringan") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.hariini.deskripsi == "Berawan Tebal") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        } else {
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherToday,
-                url + it.hariini.deskripsi + am,
-                R.drawable.placeholder_3_2
-            )
-        }
-
-        tvTodayTemp.text = it.hariini.suhuMax + " \u2103"
-        tvTodayTempDescription.text = it.hariini.deskripsi
-
-        val tvValueAfternoon = containerView.findViewById<TextView>(R.id.tvValueAfternoon)
-        val tvAfternoonMorningDescription =
-            containerView.findViewById<TextView>(R.id.tvAfternoonMorningDescription)
-        val tvAfternoonAfternoonDescription =
-            containerView.findViewById<TextView>(R.id.tvAfternoonAfternoonDescription)
-        val tvAfternoonNightDescription =
-            containerView.findViewById<TextView>(R.id.tvAfternoonNightDescription)
-        val ivDescriptionWeatherAfternoon =
-            containerView.findViewById<ImageView>(R.id.ivDescriptionWeatherAfternoon)
-        val tvAfternoonTemp = containerView.findViewById<TextView>(R.id.tvAfternoonTemp)
-        val tvAfternoonTempDescription =
-            containerView.findViewById<TextView>(R.id.tvAfternoonTempDescription)
-        tvValueAfternoon.text = it.kota
-        tvAfternoonMorningDescription.text = "Pagi : " + it.besok.cuacaPagi
-        tvAfternoonAfternoonDescription.text = "Siang : " + it.besok.cuacaSiang
-        tvAfternoonNightDescription.text = "Malam : " + it.besok.cuacaMalam
-
-        if (it.besok.deskripsi == "Cerah") {
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.besok.deskripsi == "Cerah Berawan") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.besok.deskripsi == "Berawan") {
-
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.besok.deskripsi == "Hujan Sedang") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.besok.deskripsi == "Hujan Ringan") {
-            replaceString?.replace(" ", "%20")
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else if (it.besok.deskripsi == "Berawan Tebal") {
-
-
-            CustomLog.d("hasilnyaa", replaceString)
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        } else {
-            Util.showImageWithGlide123(
-                ivDescriptionWeatherAfternoon,
-                url + it.hariini.deskripsi + pm,
-                R.drawable.placeholder_3_2
-            )
-        }
-
-        tvAfternoonTemp.text = it.besok.suhuMax + " \u2103"
-        tvAfternoonTempDescription.text = it.besok.deskripsi
     }

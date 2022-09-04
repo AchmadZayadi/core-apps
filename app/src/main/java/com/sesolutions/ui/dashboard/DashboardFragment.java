@@ -19,13 +19,11 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
 
-import com.bumptech.glide.Glide;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,8 +38,8 @@ import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.widget.AppCompatButton;
 
-import android.os.StrictMode;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -61,7 +59,6 @@ import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
-import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.firebase.AppVersion;
 import com.sesolutions.firebase.FirebaseHelper;
@@ -81,15 +78,11 @@ import com.sesolutions.ui.common.BaseResponse;
 import com.sesolutions.ui.common.CommonActivity;
 import com.sesolutions.ui.currency.CurrencyDialog;
 import com.sesolutions.ui.customviews.CustomSwipableViewPager;
-import com.sesolutions.ui.events.InviteDialogFragment;
 import com.sesolutions.ui.friend.FriendRequestFragment;
 import com.sesolutions.ui.live.LiveVideoActivity;
-import com.sesolutions.ui.member.MemberFragment;
 import com.sesolutions.ui.message.MessageDashboardFragment;
 import com.sesolutions.ui.message.MessageDashboardViewPagerAdapter;
 import com.sesolutions.ui.notification.NotificationFragment;
-import com.sesolutions.ui.price.PriceFragment;
-import com.sesolutions.ui.weather.WeatherFragment;
 import com.sesolutions.ui.welcome.Dummy;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.Constant;
@@ -108,7 +101,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -118,9 +110,18 @@ import java.util.TimerTask;
 
 import cn.jzvd.Jzvd;
 import de.hdodenhof.circleimageview.CircleImageView;
-
-import static com.google.android.gms.location.LocationServices.getFusedLocationProviderClient;
-import static com.sesolutions.utils.Constant.EDIT_CHANNEL_ME;
+import me.riddhimanadib.formmaster.FormBuilder;
+import me.riddhimanadib.formmaster.model.BaseFormElement;
+import me.riddhimanadib.formmaster.model.FormElementButton;
+import me.riddhimanadib.formmaster.model.FormElementCheckbox;
+import me.riddhimanadib.formmaster.model.FormElementLocationSuggest;
+import me.riddhimanadib.formmaster.model.FormElementPickerDate;
+import me.riddhimanadib.formmaster.model.FormElementPickerMulti;
+import me.riddhimanadib.formmaster.model.FormElementPickerSingle;
+import me.riddhimanadib.formmaster.model.FormElementTextEmail;
+import me.riddhimanadib.formmaster.model.FormElementTextMultiLine;
+import me.riddhimanadib.formmaster.model.FormElementTextPassword;
+import me.riddhimanadib.formmaster.model.FormElementTextSingleLine;
 
 
 public class DashboardFragment extends BaseFragment implements View.OnClickListener, Handler.Callback, OnUserClickedListener<Integer, Object>, BottomNavigationView.OnNavigationItemSelectedListener {
@@ -162,6 +163,12 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
     public static AppCompatTextView icCurrrency;
     String first_name;
 
+
+    private List<String> tagList;
+    private List<Dummy.Formfields> formList;
+    private Map<String, Map<String, String>> commonMap;
+    private Map<String, Object> mapHiddenFields;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
         if (v != null) {
@@ -179,8 +186,6 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             FirebaseHelper.getInstance().getAppVersion(this);
             FirebaseHelper.getInstance().getFirebaseId(this);
             initFab();
-
-
 
 
 //            if(checkLocationPermission()){
@@ -509,7 +514,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             ivBack.setOnClickListener(this);
 
 
-            if (isLoggedIn){
+            if (isLoggedIn) {
                 checkUser();
             }
             try {
@@ -874,23 +879,24 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
                         hideBaseLoader();
                         try {
                             String response = (String) msg.obj;
-                           // CustomLog.e("repsonsezayadi", "" + msg.obj);
-
-
                             JSONArray obj = new JSONObject(response).getJSONObject("result").getJSONArray("formFields");
-                          //  CustomLog.e("repsonsezayadi22", "" + obj.getJSONObject(0));
 
                             first_name = obj.getJSONObject(0).getString("value");
+                           // kecamatan = obj.getJSONObject(7).getString("value");
 
-                            if (first_name.equals("")){
+
+
+
+                            if (first_name.equals("")) {
                                 showDialog("Lengkapi data diri Anda terlebih dahulu, terima kasih");
                             }
-                          //  CustomLog.e("repsonsezayadi223", "aselole" + loudScreaming);
+                            //  CustomLog.e("repsonsezayadi223", "aselole" + loudScreaming);
 
                             if (response != null) {
                                 ErrorResponse err = new Gson().fromJson(response, ErrorResponse.class);
                                 if (err.isSuccess()) {
                                     Dummy vo = new Gson().fromJson(response, Dummy.class);
+                                    createFormUi(vo.getResult());
                                 } else {
                                     Util.showSnackbar(v, err.getErrorMessage());
                                 }
@@ -920,6 +926,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
         if (timer != null) {
             timer.cancel();
         }
+
         timer = new Timer();
         TimerTask doAsynchronousTask = new TimerTask() {
             @Override
@@ -1557,6 +1564,33 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void createFormUi(Dummy.Result result) {
+        tagList = new ArrayList<>();
+        commonMap = new HashMap<>();
+        mapHiddenFields = new HashMap<>();
+
+        formList = result.getFormfields();
+
+        List<BaseFormElement> formItems = new ArrayList<>();
+
+        for (Dummy.Formfields vo : formList) {
+
+            tagList.add(vo.getName());
+            int tag = 1010 + tagList.size();
+
+            if (vo.getLabel().equals("Provinsi / Kabupaten")) {
+
+                String data = vo.getValue();
+                String provinsi = vo.getMultiOptions().get(data);
+
+                SPref.getInstance().saveKecamatan(context, provinsi);
+            }
+
+
+        }
+
     }
 
 

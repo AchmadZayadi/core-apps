@@ -1,5 +1,6 @@
 package com.sesolutions.ui.price
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
@@ -17,10 +18,12 @@ import com.sesolutions.ui.common.BaseFragment
 import com.sesolutions.ui.price.adapter.PriceItemModel
 import com.sesolutions.ui.price.adapter.priceHolderAdapter
 import com.sesolutions.utils.Constant
+import com.sesolutions.utils.CustomLog
 import com.sesolutions.utils.SPref
+import kotlinx.android.synthetic.main.fragment_price.*
+import kotlinx.android.synthetic.main.fragment_price.layout_nodata
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
-
 
 class PriceFragment : BaseFragment() {
 
@@ -33,55 +36,110 @@ class PriceFragment : BaseFragment() {
     }
 
     private lateinit var adapter: DelegatesAdapter<PriceItemModel>
+    var kecamatan: String = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ivBack.setOnClickListener {
-            onBackPressed()
-        }
-        toolbar.setBackgroundColor(Color.parseColor("#084B96"))
-        tvTitle.text = "Harga"
-        callPriceApi()
+        init()
+
+        kecamatan = SPref.getInstance().getKecamatan(context)
+        priceState.text = kecamatan
+        callPriceApi(kecamatan.replace(" ","%20").replace(".",""))
+
         adapter = DelegatesAdapter(
             priceHolderAdapter()
         )
         val rvWeather = view.findViewById<RecyclerView>(R.id.rvPrice)
         rvWeather.layoutManager = LinearLayoutManager(requireContext())
         rvWeather.adapter = adapter
+
+        layout_province.setOnClickListener {
+            gotoProvince()
+        }
     }
 
-    private fun callPriceApi() {
+
+
+    fun init(){
+        ivBack.setOnClickListener {
+            onBackPressed()
+        }
+        toolbar.setBackgroundColor(Color.parseColor("#084B96"))
+        tvTitle.text = "Harga"
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 100){
+            kecamatan = data?.getStringExtra("kecamatan").toString()
+            priceState.text = kecamatan
+            callPriceApi(kecamatan.replace(" ","%20").replace("."," "))
+        }
+    }
+
+
+
+    private fun callPriceApi(kecamatan : String) {
         showBaseLoader(false)
         try {
             if (isNetworkAvailable(requireContext())) {
                 try {
-                    val request = HttpRequestVO("http://integrate.matani.id/home-harga.php")
+
+                    kecamatan?.replace(" ", "%20")
+                    var url: String = Constant.URL_PRICE_MENU + kecamatan
+
+
+                    val request = HttpRequestVO(url)
                     request.params[Constant.KEY_AUTH_TOKEN] = SPref.getInstance().getToken(context)
                     request.requestMethod = HttpPost.METHOD_NAME
 
+
                     val callback = Handler.Callback {
                         if (it.obj != null) {
+
+
                             val responseString = it.obj.toString()
                             val responseObject = Gson().fromJson<PriceResponse>(
                                 responseString,
                                 PriceResponse::class.java
                             )
-                            adapter.submitList(remapItem(responseObject.harga))
+                            if (responseObject.error.message == null) {
+
+                                layout_nodata.visibility = View.GONE
+                                rvPrice.visibility = View.VISIBLE
+                                adapter.submitList(remapItem(responseObject.harga))
+
+                            } else {
+
+                                layout_nodata.visibility = View.VISIBLE
+                                rvPrice.visibility = View.GONE
+                            }
+
+
                         }
                         hideBaseLoader()
                         true
                     }
                     HttpRequestHandler(requireContext(), Handler(callback)).run(request)
                 } catch (e: Exception) {
+
                     hideBaseLoader()
                 }
             } else hideBaseLoader()
         } catch (e: Exception) {
+
             hideBaseLoader()
         }
 
     }
 
+
+
+    fun gotoProvince(){
+        val intent = Intent(context,ProvinceActivity::class.java)
+        startActivityForResult(intent,100)
+    }
     private fun remapItem(harga: MutableList<PriceDataResponse>): MutableList<PriceItemModel> {
         val items: MutableList<PriceItemModel> = mutableListOf()
 

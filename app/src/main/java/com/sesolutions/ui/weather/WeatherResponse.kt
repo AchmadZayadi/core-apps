@@ -2,7 +2,10 @@ package com.sesolutions.ui.weather
 
 import com.google.gson.annotations.SerializedName
 
+
 class WeatherResponse {
+    @SerializedName("error")
+    val error: ErrorItemResponse = ErrorItemResponse()
     @SerializedName("cuaca")
     val cuaca : MutableList<WeatherDataResponse> = mutableListOf()
 }
@@ -36,4 +39,10 @@ class TomorrowWeatherResponse {
     @SerializedName("kelembabanMin") val kelembabanMin: String? = null
     @SerializedName("kelembabanMax") val kelembabanMax: String? = null
     @SerializedName("kecepatanAngin") val kecepatanAngin: String? = null
+}
+
+class ErrorItemResponse {
+    @SerializedName("message")
+    val message: String? = null
+
 }

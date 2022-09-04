@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".ui.weather.WeatherFragment">
 
@@ -13,12 +14,80 @@
 
         <include layout="@layout/layout_toolbar" />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/layout_toolbar"
+        android:id="@+id/layout_province"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35ssp"
+        android:paddingHorizontal="@dimen/_10ssp">
 
+        <ImageView
+            android:id="@+id/iv_location"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_search_black" />
+
+        <TextView
+            android:id="@+id/tvProvinceWeather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10ssp"
+            android:layout_toStartOf="@id/iv_right"
+            android:layout_toEndOf="@+id/iv_location"
+            android:text="Pilih Provinsi"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:tint="@color/grey_light" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_right_arrow" />
+    </RelativeLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"
+        android:layout_below="@id/layout_province"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWeather"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/layout_toolbar" />
+        android:layout_below="@+id/line" />
+
+    <LinearLayout
+        android:id="@+id/layout_nodata_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/_100ssp"
+            android:layout_height="@dimen/_100ssp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_clouds" />
+
+        <TextView
+            android:id="@+id/tv_nodata"
+            style="@style/TextView14spbold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Cuaca Dikota Anda Belum Tersedia"
+            android:textColor="@color/grey_light"
+            android:textSize="@dimen/_18ssp" />
+
+
+    </LinearLayout>
 </RelativeLayout>
