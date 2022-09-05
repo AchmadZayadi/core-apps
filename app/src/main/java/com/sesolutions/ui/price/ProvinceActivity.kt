@@ -7,24 +7,28 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dizcoding.adapterdelegate.DelegatesAdapter
-import com.google.gson.Gson
+import com.google.android.youtube.player.internal.p
 import com.sesolutions.R
 import com.sesolutions.http.HttpRequestHandler
 import com.sesolutions.http.HttpRequestVO
 import com.sesolutions.ui.common.BaseActivity
-import com.sesolutions.ui.price.adapter.PriceItemModel
 import com.sesolutions.ui.price.adapter.ProvinceHolderAdapter
 import com.sesolutions.utils.Constant
-import com.sesolutions.utils.CustomLog
 import org.apache.http.client.methods.HttpGet
+
 
 class ProvinceActivity : BaseActivity() {
 
     private lateinit var adapter: DelegatesAdapter<String>
-
+    var value : String =""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_province)
+
+        val intent = getIntent();
+        value = intent.getStringExtra("name").toString()
+
+
 
         adapter = DelegatesAdapter(
             ProvinceHolderAdapter{
@@ -39,13 +43,21 @@ class ProvinceActivity : BaseActivity() {
         val btnClose = findViewById<ImageView>(R.id.ic_close)
 
         btnClose.setOnClickListener {
-            onBackPressed()
+            finish()
         }
 
         rvWeather.layoutManager = LinearLayoutManager(this)
         rvWeather.adapter = adapter
 
         callProvinceApi()
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed();//
+        val intent_return = intent
+        intent_return.putExtra("nameBack", value)
+        setResult(100, intent_return)
+        finish()
     }
 
 

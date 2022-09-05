@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SimpleItemAnimator;
 
+import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,25 +37,22 @@ import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.listeners.OnLoadMoreListener;
 import com.sesolutions.listeners.OnUserClickedListener;
-import com.sesolutions.responses.ErrorResponse;
 import com.sesolutions.responses.feed.Activity;
 import com.sesolutions.responses.feed.Options;
 import com.sesolutions.thememanager.ThemeManager;
-import com.sesolutions.ui.AGvideo.AGVideo;
-import com.sesolutions.ui.AGvideo.mediaplayer.MediaExo;
 import com.sesolutions.ui.common.BaseActivity;
 import com.sesolutions.ui.common.BaseResponse;
 import com.sesolutions.ui.common.CommonActivity;
 import com.sesolutions.ui.price.PriceDataResponse;
+import com.sesolutions.ui.price.PriceItemResponse;
 import com.sesolutions.ui.price.PriceResponse;
-import com.sesolutions.ui.price.adapter.PriceHolderAdapterKt;
+import com.sesolutions.ui.price.adapter.PriceHolderAdapterHomeKt;
 import com.sesolutions.ui.price.adapter.PriceItemModel;
 import com.sesolutions.ui.signup.UserMaster;
 import com.sesolutions.ui.storyview.StoryModel;
 import com.sesolutions.ui.weather.WeatherDataResponse;
 import com.sesolutions.ui.weather.WeatherResponse;
-import com.sesolutions.ui.weather.weather.WeatherAdapterKt;
-import com.sesolutions.ui.welcome.Dummy;
+import com.sesolutions.ui.weather.weather.WeatherAdapterHomeKt;
 import com.sesolutions.utils.AppConfiguration;
 import com.sesolutions.utils.ChildAttachStateChangeListener;
 import com.sesolutions.utils.Constant;
@@ -64,19 +62,12 @@ import com.sesolutions.utils.SPref;
 import com.sesolutions.utils.Util;
 
 import org.apache.http.client.methods.HttpPost;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
-import cn.jzvd.JZDataSource;
-import cn.jzvd.JzvdStd;
-import cn.jzvd.JzvdStd2;
 
 
 /**
@@ -95,6 +86,8 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
     private DelegatesAdapter<WeatherDataResponse> adapterWeather;
     private DelegatesAdapter<PriceItemModel> adapterPrice;
     WebView webViewWeather;
+    private final Handler mHandler = new Handler(Looper.getMainLooper());
+
 
     public static HomeFragment newInstance(OnUserClickedListener<Integer, Object> parent) {
         HomeFragment frag = new HomeFragment();
@@ -137,8 +130,8 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
             mShimmerViewContainer.startShimmerAnimation();
             // new ThemeManager().applyTheme((ViewGroup) v, context);
-           // callApiPrice();
-           // callApiWeather();
+            callApiPrice();
+            callApiWeather();
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -156,12 +149,13 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
         //price
         adapterPrice = new DelegatesAdapter<PriceItemModel>(
-                PriceHolderAdapterKt.priceHolderAdapter()
+                //  PriceHolderAdapterKt.priceHolderAdapter()
+                PriceHolderAdapterHomeKt.priceHolderAdapterHome()
         );
 
         //weather
         adapterWeather = new DelegatesAdapter<WeatherDataResponse>(
-                WeatherAdapterKt.weatherAdapter()
+                WeatherAdapterHomeKt.weatherAdapterHome()
         );
         if (null != composerOption) {
             /*if saved then directly fetch feed api  and update composer ui*/
@@ -226,17 +220,15 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
         //price
         rvPrice.setHasFixedSize(true);
-        layoutManagerPrice = new LinearLayoutManager(context);
+        layoutManagerPrice = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         rvPrice.setLayoutManager(layoutManagerPrice);
         rvPrice.setAdapter(adapterPrice);
 
         //weather
         rvWeather.setHasFixedSize(true);
         layoutManagerWeather = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
-
         rvWeather.setLayoutManager(layoutManagerWeather);
         rvWeather.setAdapter(adapterWeather);
-
 
         setFeedMainRecycleView();
 
@@ -424,7 +416,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             recycleViewFeedMain.addOnChildAttachStateChangeListener(new ChildAttachStateChangeListener());
             adapterFeedMain.setLoadListener(this);
             adapterFeedMain.setHome(true);
-           // recycleViewFeedMain.setNestedScrollingEnabled(false);
+            recycleViewFeedMain.setNestedScrollingEnabled(false);
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -674,10 +666,10 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
                                 if (weatherResponse.getError().getMessage() == null) {
                                     adapterWeather.submitList(weatherResponse.getCuaca());
-                                    CustomLog.d("masuksini", "cuaca");
+
+                                    rvWeather.setVisibility(View.VISIBLE);
                                 } else {
                                     rvWeather.setVisibility(View.GONE);
-                                    CustomLog.d("masuksini", "cuaca2");
                                 }
 
                             } else {
@@ -724,10 +716,41 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
                             PriceResponse priceItemModel = new Gson().fromJson(response, PriceResponse.class);
                             if (response != null) {
-
+                                CustomLog.d("masuksini", "harga24");
                                 if (priceItemModel.getError().getMessage() == null) {
                                     // adapterPrice.submitList(priceItemModel.getHarga());
+                                    ArrayList<PriceItemModel> priceItemModels = new ArrayList<>();
+                                    ArrayList<PriceItemResponse> priceItemResponse = new ArrayList<>();
+                                    String cityName = "";
+                                    for (PriceDataResponse item : priceItemModel.getHarga()) {
 
+                                        if (cityName.equals("")) {
+                                            cityName = item.getCity_name();
+                                            PriceItemResponse itemResponse = new PriceItemResponse();
+                                            itemResponse.setItem_name(item.getPrice_items().getItem_name());
+                                            itemResponse.setItem_price(item.getPrice_items().getItem_price());
+                                            priceItemResponse.add(itemResponse);
+                                        }
+                                        if (cityName.equals(item.getCity_name())) {
+                                            PriceItemResponse itemResponse = new PriceItemResponse();
+                                            itemResponse.setItem_name(item.getPrice_items().getItem_name());
+                                            itemResponse.setItem_price(item.getPrice_items().getItem_price());
+                                            priceItemResponse.add(itemResponse);
+                                        }
+                                        if (!cityName.equals(item.getCity_name())) {
+
+                                            PriceItemModel itemModel = new PriceItemModel();
+                                            itemModel.setCity_name(cityName);
+                                            itemModel.setPrice_items(priceItemResponse);
+                                            priceItemModels.add(itemModel);
+
+                                            priceItemResponse.clear();
+                                            cityName = "";
+                                        }
+                                    }
+
+
+                                    adapterPrice.submitList(priceItemModels);
                                     rvPrice.setVisibility(View.VISIBLE);
                                 } else {
                                     rvPrice.setVisibility(View.GONE);
@@ -737,6 +760,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
                             } else {
                                 somethingWrongMsg(v);
+                                CustomLog.d("masuksini", "harga25");
                             }
                         } catch (Exception e) {
                             hideBaseLoader();

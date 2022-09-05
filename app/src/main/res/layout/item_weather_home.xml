@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_5ssp"
+    android:background="@drawable/bg_cloud_color_corn_10dp"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/layout_kota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvValueToday"
+                style="@style/myTabBoldTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="Banjanegara" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSuhuMinimal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    tools:text="14 % - " />
+
+                <TextView
+                    android:id="@+id/tvSuhuMaximal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    tools:text="14 % " />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_pagi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10ssp"
+            android:layout_toEndOf="@+id/layout_kota"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTodayMorningDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                tools:text="Berawan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Pagi"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+
+            <ImageView
+                android:id="@+id/ivDescriptionWeatherMorning"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:elevation="3dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_siang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10ssp"
+            android:layout_toEndOf="@+id/layout_pagi"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTodayAfternoonDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                tools:text="Berawan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Siang"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+
+            <ImageView
+                android:id="@+id/ivDescriptionWeatherAfternoon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:elevation="3dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/layout_malam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTodayNightDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                tools:text="Berawan" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Siang"
+                android:textColor="@color/black"
+                android:textSize="10sp" />
+
+
+            <ImageView
+                android:id="@+id/ivDescriptionWeatherNight"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:elevation="3dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_malam_"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_pagi"
+            android:layout_marginTop="@dimen/_10ssp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTommorow"
+                    style="@style/myTabBoldTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Besok"
+                    android:textColor="#303345"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvValueAfternoon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#303345"
+                    android:textSize="12sp"
+                    tools:text="Cuaca" />
+
+
+                <TextView
+                    android:id="@+id/tvAfternoonMorningDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#303345"
+                    android:textSize="11sp"
+                    tools:text="Cuaca" />
+
+                <TextView
+                    android:id="@+id/tvAfternoonAfternoonDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#303345"
+                    android:textSize="11sp"
+                    tools:text="Cuaca" />
+
+                <TextView
+                    android:id="@+id/tvAfternoonNightDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#303345"
+                    android:textSize="11sp"
+                    tools:text="Cuaca" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivDescriptionWeatherAfternoon_"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:elevation="3dp" />
+
+            <TextView
+                android:id="@+id/tvAfternoonTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:layout_toStartOf="@+id/ivDescriptionWeatherAfternoon_"
+                android:textColor="#303345"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Cuaca" />
+
+            <TextView
+                android:id="@+id/tvAfternoonTempDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/tvAfternoonTemp"
+                android:layout_marginEnd="@dimen/_10ssp"
+                android:layout_toStartOf="@+id/ivDescriptionWeatherAfternoon_"
+                android:textColor="#303345"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Cuaca" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

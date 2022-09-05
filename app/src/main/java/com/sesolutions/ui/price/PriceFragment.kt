@@ -37,6 +37,7 @@ class PriceFragment : BaseFragment() {
 
     private lateinit var adapter: DelegatesAdapter<PriceItemModel>
     var kecamatan: String = ""
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -44,7 +45,7 @@ class PriceFragment : BaseFragment() {
 
         kecamatan = SPref.getInstance().getKecamatan(context)
         priceState.text = kecamatan
-        callPriceApi(kecamatan.replace(" ","%20").replace(".",""))
+        callPriceApi(kecamatan.replace(" ", "%20"))
 
         adapter = DelegatesAdapter(
             priceHolderAdapter()
@@ -59,8 +60,7 @@ class PriceFragment : BaseFragment() {
     }
 
 
-
-    fun init(){
+    fun init() {
         ivBack.setOnClickListener {
             onBackPressed()
         }
@@ -71,22 +71,23 @@ class PriceFragment : BaseFragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 100){
-            kecamatan = data?.getStringExtra("kecamatan").toString()
-            priceState.text = kecamatan
-            callPriceApi(kecamatan.replace(" ","%20").replace("."," "))
-        }
+
+        kecamatan = data?.getStringExtra("kecamatan").toString()
+        priceState.text = kecamatan
+        callPriceApi(kecamatan.replace(" ", "%20"))
+
+
     }
 
 
+    private fun callPriceApi(kecamatan: String) {
 
-    private fun callPriceApi(kecamatan : String) {
         showBaseLoader(false)
         try {
             if (isNetworkAvailable(requireContext())) {
                 try {
 
-                    kecamatan?.replace(" ", "%20")
+
                     var url: String = Constant.URL_PRICE_MENU + kecamatan
 
 
@@ -135,11 +136,12 @@ class PriceFragment : BaseFragment() {
     }
 
 
-
-    fun gotoProvince(){
-        val intent = Intent(context,ProvinceActivity::class.java)
-        startActivityForResult(intent,100)
+    fun gotoProvince() {
+        val intent = Intent(context, ProvinceActivity::class.java)
+        intent.putExtra("name", kecamatan)
+        startActivityForResult(intent, 100)
     }
+
     private fun remapItem(harga: MutableList<PriceDataResponse>): MutableList<PriceItemModel> {
         val items: MutableList<PriceItemModel> = mutableListOf()
 
