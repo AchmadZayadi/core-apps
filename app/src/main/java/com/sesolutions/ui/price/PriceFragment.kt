@@ -46,6 +46,13 @@ class PriceFragment : BaseFragment() {
 
         kecamatan = SPref.getInstance().getKecamatan(context)
         priceState.text = kecamatan
+
+        if (kecamatan.contains("/")){
+            val splittedKecamatan = kecamatan.split("/")
+            if (splittedKecamatan.isNotEmpty()){
+                kecamatan = splittedKecamatan[0].trim()
+            }
+        }
         callPriceApi(kecamatan.replace(" ", "%20"))
 
         adapter = DelegatesAdapter(
@@ -73,9 +80,11 @@ class PriceFragment : BaseFragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
 
-        kecamatan = data?.getStringExtra("kecamatan").toString()
-        priceState.text = kecamatan
-        callPriceApi(kecamatan.replace(" ", "%20"))
+        kecamatan = data?.getStringExtra("kecamatan")?:""
+        if (kecamatan.isNotEmpty() || kecamatan.isNotBlank()){
+            priceState.text = kecamatan
+            callPriceApi(kecamatan.replace(" ", "%20"))
+        }
 
 
     }
