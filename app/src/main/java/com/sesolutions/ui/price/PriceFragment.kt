@@ -43,6 +43,7 @@ class PriceFragment : BaseFragment() {
 
         init()
 
+
         kecamatan = SPref.getInstance().getKecamatan(context)
         priceState.text = kecamatan
         callPriceApi(kecamatan.replace(" ", "%20"))
