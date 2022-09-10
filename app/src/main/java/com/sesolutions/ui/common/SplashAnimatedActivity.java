@@ -9,25 +9,31 @@ import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
+
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.preference.PreferenceManager;
+
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.danikula.videocache.HttpProxyCacheServer;
 import com.google.android.gms.security.ProviderInstaller;
+import com.google.firebase.perf.internal.SessionManager;
 import com.google.gson.Gson;
+import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.http.GetGcmId;
 import com.sesolutions.http.HttpRequestHandler;
@@ -49,15 +55,17 @@ import com.sesolutions.utils.Constant;
 import com.sesolutions.utils.CustomLog;
 import com.sesolutions.utils.SPref;
 import com.sesolutions.utils.Util;
+
 import org.apache.http.client.methods.HttpPost;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 import java.util.Objects;
 
-public class SplashAnimatedActivity extends BaseActivity{
+public class SplashAnimatedActivity extends BaseActivity {
 
     private AppCompatImageView ivImage;
     private boolean isUserLoggedIn = false;
@@ -158,7 +166,6 @@ public class SplashAnimatedActivity extends BaseActivity{
 
         Glide.with(this).load("").apply(options).into(ivSplash);
     }
-
 
 
     @Override
@@ -445,7 +452,14 @@ public class SplashAnimatedActivity extends BaseActivity{
             }
         }).run();
 
-        if (datVo.getResult().isForceUpdate()) {
+        //  int versionApp = Integer.parseInt(BuildConfig.VERSION_NAME);
+        //  int versionAppApi = Integer.parseInt(datVo.getResult().getVersionApp());
+
+
+        // CustomLog.d("hasilnyaa22",String.valueOf(versionAppApi));
+        //  CustomLog.d("hasilnyaa",String.valueOf(versionApp));
+
+        if (datVo.getResult().getVersionCode() >= BuildConfig.VERSION_CODE) {
             showDialog(datVo);
         } else {
             callHandler(timer);
@@ -479,9 +493,8 @@ public class SplashAnimatedActivity extends BaseActivity{
             bCancel.setVisibility(View.GONE);
             bOk.setText("Update Aplikasi");
             bOk.setOnClickListener(v -> {
+                gotoPlayStore();
                 progressDialog.dismiss();
-
-
             });
 
 
@@ -592,5 +605,17 @@ public class SplashAnimatedActivity extends BaseActivity{
             CustomLog.e(e);
             return "{}";
         }
+    }
+
+    public void gotoPlayStore() {
+        final String appPackageName = BuildConfig.APPLICATION_ID; // getPackageName() from Context or Activity object
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+            //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://appgallery.huawei.com/#/app/C103366529")));
+
+        } catch (android.content.ActivityNotFoundException anfe) {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+        }
+
     }
 }

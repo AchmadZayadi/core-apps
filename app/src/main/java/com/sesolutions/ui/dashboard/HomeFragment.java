@@ -130,8 +130,8 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
             mShimmerViewContainer.startShimmerAnimation();
             // new ThemeManager().applyTheme((ViewGroup) v, context);
-            callApiPrice();
-            callApiWeather();
+          //  callApiPrice();
+           /// callApiWeather();
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -416,7 +416,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             recycleViewFeedMain.addOnChildAttachStateChangeListener(new ChildAttachStateChangeListener());
             adapterFeedMain.setLoadListener(this);
             adapterFeedMain.setHome(true);
-            recycleViewFeedMain.setNestedScrollingEnabled(false);
+           // recycleViewFeedMain.setNestedScrollingEnabled(false);
 
         } catch (Exception e) {
             CustomLog.e(e);

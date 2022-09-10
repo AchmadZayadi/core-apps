@@ -157,7 +157,8 @@ public class DefaultDataVo {
         private String versionApp;
         @SerializedName("version_update")
         private String versionUpdate;
-
+        @SerializedName("version_code")
+        private int versionCode;
 
         private DemoUser demoUser;
         private List<SearchVo> socialLogin;
@@ -183,6 +184,14 @@ public class DefaultDataVo {
 
         public void setVersionUpdate(String versionUpdate) {
             this.versionUpdate = versionUpdate;
+        }
+
+        public int getVersionCode() {
+            return versionCode;
+        }
+
+        public void setVersionCode(int versionCode) {
+            this.versionCode = versionCode;
         }
 
         public List<String> getReaction() {

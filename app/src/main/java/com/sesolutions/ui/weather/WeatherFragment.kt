@@ -14,6 +14,7 @@ import com.google.gson.Gson
 import com.sesolutions.R
 import com.sesolutions.http.HttpRequestHandler
 import com.sesolutions.http.HttpRequestVO
+import com.sesolutions.ui.WebViewActivity
 import com.sesolutions.ui.common.BaseFragment
 import com.sesolutions.ui.price.ProvinceActivity
 import com.sesolutions.ui.weather.weather.weatherAdapter
@@ -25,6 +26,8 @@ import kotlinx.android.synthetic.main.fragment_weather.*
 import kotlinx.android.synthetic.main.fragment_weather.layout_province
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
+import java.text.SimpleDateFormat
+import java.util.*
 
 class WeatherFragment : BaseFragment() {
     override fun onCreateView(
@@ -48,7 +51,22 @@ class WeatherFragment : BaseFragment() {
             onBackPressed()
         }
         toolbar.setBackgroundColor(Color.parseColor("#084B96"))
-        tvTitle.text = "Cuaca"
+        tvTitle.text = "Prakiraan Cuaca"
+
+        val today: Date = Calendar.getInstance().getTime()
+        val df = SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault())
+        val formattedDate: String = df.format(today)
+        tvSumberWeather.text = formattedDate + " - " + "Sumber: "
+        tvLinkWebWeather.setOnClickListener {
+            val intent = Intent(
+                context,
+                WebViewActivity::class.java
+            )
+            intent.putExtra("web", "https://www.bmkg.go.id/")
+            intent.putExtra("title", "Panel Cuaca")
+            startActivity(intent)
+        }
+
         val rvWeather = view.findViewById<RecyclerView>(R.id.rvWeather)
         rvWeather.layoutManager = LinearLayoutManager(requireContext())
         rvWeather.adapter = adapter
@@ -59,24 +77,35 @@ class WeatherFragment : BaseFragment() {
 
         province = SPref.getInstance().getKecamatan(context)
 
-        tvProvinceWeather.text = province
+
+        if (province.contains("/")) {
+            val splittedKecamatan = province.split("/")
+            if (splittedKecamatan.isNotEmpty()) {
+                province = splittedKecamatan[0].trim()
+                tvProvinceWeather.text = splittedKecamatan[0]
+            }
+        } else {
+            tvProvinceWeather.text = province
+        }
         callWeatherApi(province.replace(" ", "%20").replace(".", ""))
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == 102){
-            province = data?.getStringExtra("kecamatan").toString()
+        province = data?.getStringExtra("kecamatan") ?: ""
+        if (province.isNotEmpty() || province.isNotBlank()) {
             tvProvinceWeather.text = province
-            callWeatherApi(province.replace(" ","%20").replace("."," "))
+            callWeatherApi(province.replace(" ", "%20").replace(".", " "))
         }
     }
 
-    fun gotoProvince(){
+    fun gotoProvince() {
         val intent = Intent(context, ProvinceActivity::class.java)
-        startActivityForResult(intent,102)
+        intent.putExtra("name", province)
+        startActivityForResult(intent, 102)
     }
+
     private fun callWeatherApi(province: String) {
 
         showBaseLoader(false)

@@ -59,18 +59,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:layout_toEndOf="@+id/layout_kota"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTodayMorningDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                tools:text="Berawan" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -89,6 +82,15 @@
                 android:layout_marginTop="@dimen/_5ssp"
                 android:elevation="3dp" />
 
+            <TextView
+                android:id="@+id/tvTodayMorningDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_3ssp"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                tools:text="Berawan" />
         </LinearLayout>
 
         <LinearLayout
@@ -96,18 +98,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_10ssp"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:layout_toEndOf="@+id/layout_pagi"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTodayAfternoonDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                tools:text="Berawan" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,6 +121,16 @@
                 android:layout_marginTop="@dimen/_5ssp"
                 android:elevation="3dp" />
 
+            <TextView
+                android:id="@+id/tvTodayAfternoonDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_marginTop="@dimen/_3ssp"
+                tools:text="Berawan" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -133,17 +138,10 @@
             android:id="@+id/layout_malam"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5ssp"
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvTodayNightDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                tools:text="Berawan" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -162,6 +160,15 @@
                 android:layout_marginTop="@dimen/_5ssp"
                 android:elevation="3dp" />
 
+            <TextView
+                android:id="@+id/tvTodayNightDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_marginTop="@dimen/_3ssp"
+                tools:text="Berawan" />
         </LinearLayout>
 
         <RelativeLayout

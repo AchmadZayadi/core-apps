@@ -2491,8 +2491,8 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             }
 
             params.put("privacy", selectedPrivacy.getName());
-            params.put("longtitude", longtitude);
-            params.put("latitide", latitdue);
+            params.put("lng", longtitude);
+            params.put("lat", latitdue);
             feedVo.setPrivacy(selectedPrivacy.getName());
 
             feedVo.setAttachment(attachment);

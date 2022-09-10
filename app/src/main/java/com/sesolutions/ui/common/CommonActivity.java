@@ -1272,8 +1272,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_SETTINGS:
-                    openPointFragment();
-                    //openSettingFragment();
+                   // openPointFragment();
+                    openSettingFragment();
                     break;
                 case Constant.GO_TO_NOTIFICATION:
                     fragmentManager.beginTransaction().replace(R.id.container, new NotificationFragment()).addToBackStack(null).commit();
@@ -1313,9 +1313,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     openVideoFragment(2);
                     break;
                 case Constant.GoTo.ARTICLE:
-                  // openArticleFragment();
-                    openWeatherFragment();
-                    //openPointFragment();
+                  //  openPointFragment();
+                   openArticleFragment();
                     break;
                 case Constant.GoTo.WEATHER:
                     openWeatherFragment();
@@ -1394,8 +1393,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_MEMBER:
-                    openPriceFragment();
-                    //openMemberFragment();
+                   // openPriceFragment();
+                   openMemberFragment();
+                   // openWeatherFragment();
                     break;
 
                 case Constant.GoTo.CORE_SEARCH:

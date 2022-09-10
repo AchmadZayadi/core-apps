@@ -60,7 +60,8 @@
         android:id="@+id/rvWeather"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/line" />
+        android:layout_below="@+id/line"
+        android:layout_above="@id/layout_bottom"/>
 
     <LinearLayout
         android:id="@+id/layout_nodata_weather"
@@ -90,4 +91,34 @@
 
 
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="@dimen/_10ssp">
+        <TextView
+            android:id="@+id/tvSumberWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10ssp"
+            tools:text="Pilih Provinsi"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:tint="@color/grey_light" />
+
+        <TextView
+            android:id="@+id/tvLinkWebWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/tvSumberWeather"
+            android:text="bmkg.go.id"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:tint="@color/grey_light" />
+    </RelativeLayout>
 </RelativeLayout>

@@ -12,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
+        android:layout_above="@id/layout_bottom"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
         <include layout="@layout/layout_toolbar" />
@@ -51,10 +53,12 @@
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_right_arrow" />
         </RelativeLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#c0c0c0"/>
+            android:background="#c0c0c0" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPrice"
             android:layout_width="match_parent"
@@ -93,5 +97,35 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/layout_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="@dimen/_10ssp">
+        <TextView
+            android:id="@+id/tvSumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10ssp"
+            tools:text="Pilih Provinsi"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:tint="@color/grey_light" />
+
+        <TextView
+            android:id="@+id/tvLinkWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/tvSumber"
+            android:text="panelharga.badanpangan.go.id"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:tint="@color/grey_light" />
+    </RelativeLayout>
 
 </RelativeLayout>

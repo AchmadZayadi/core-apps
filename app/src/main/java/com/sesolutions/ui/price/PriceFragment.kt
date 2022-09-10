@@ -14,16 +14,18 @@ import com.google.gson.Gson
 import com.sesolutions.R
 import com.sesolutions.http.HttpRequestHandler
 import com.sesolutions.http.HttpRequestVO
+import com.sesolutions.ui.WebViewActivity
 import com.sesolutions.ui.common.BaseFragment
 import com.sesolutions.ui.price.adapter.PriceItemModel
 import com.sesolutions.ui.price.adapter.priceHolderAdapter
 import com.sesolutions.utils.Constant
-import com.sesolutions.utils.CustomLog
 import com.sesolutions.utils.SPref
 import kotlinx.android.synthetic.main.fragment_price.*
-import kotlinx.android.synthetic.main.fragment_price.layout_nodata
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import org.apache.http.client.methods.HttpPost
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class PriceFragment : BaseFragment() {
 
@@ -45,14 +47,18 @@ class PriceFragment : BaseFragment() {
 
 
         kecamatan = SPref.getInstance().getKecamatan(context)
-        priceState.text = kecamatan
+
 
         if (kecamatan.contains("/")){
             val splittedKecamatan = kecamatan.split("/")
             if (splittedKecamatan.isNotEmpty()){
                 kecamatan = splittedKecamatan[0].trim()
+                priceState.text = kecamatan
             }
+        }else{
+            priceState.text = kecamatan
         }
+
         callPriceApi(kecamatan.replace(" ", "%20"))
 
         adapter = DelegatesAdapter(
@@ -72,8 +78,23 @@ class PriceFragment : BaseFragment() {
         ivBack.setOnClickListener {
             onBackPressed()
         }
+        val today: Date = Calendar.getInstance().getTime()
+        val df = SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault())
+        val formattedDate: String = df.format(today)
+        tvSumber.text = formattedDate + " - " + "Sumber: "
+        tvLinkWeb.setOnClickListener {
+            val intent = Intent(
+                context,
+                WebViewActivity::class.java
+            )
+            intent.putExtra("web", "https://panelharga.badanpangan.go.id/")
+            intent.putExtra("title", "Panel Harga")
+            startActivity(intent)
+        }
+
         toolbar.setBackgroundColor(Color.parseColor("#084B96"))
-        tvTitle.text = "Harga"
+        tvTitle.text = "Harga Produsen"
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

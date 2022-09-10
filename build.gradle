@@ -14,13 +14,13 @@ buildscript {
         firebaseAdsVersion = '16.0.1'
         glideVersion = '4.12.0'
 
-         // Advanced app configration
-        appVersion = '1.0.2'
-       // appVersionCode = 15
-        appVersionCode = 26
+        // Advanced app configration
+        appVersion = '1.0.3'
+        // appVersionCode = 15
+        appVersionCode = 28
         SES_FACEBOOK_ID = 'FACEBOOK_API_KEY'
         SES_FACEBOOK_SCHEME = 'fb_FACEBOOK_API_KEY'
-      //  SES_PLACES_API_KEY = 'PLACE_API_KEY'
+        //  SES_PLACES_API_KEY = 'PLACE_API_KEY'
         SES_PLACES_API_KEY = 'AIzaSyDmM4QK5i30ZqbB1O__65rTBcowepz7ePE'
 
         SES_PLACES_API_KEY_DEBUG = 'PLACE_API_KEY'
@@ -57,8 +57,8 @@ buildscript {
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
         // in the individual module build.gradle files
-     }
- }
+    }
+}
 
 
 allprojects {

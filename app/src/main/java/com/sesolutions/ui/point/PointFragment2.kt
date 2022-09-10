@@ -39,7 +39,7 @@ class PointFragment2 : BaseFragment() {
             onBackPressed()
         }
         toolbar.setBackgroundColor(Color.parseColor("#084B96"))
-        tvTitle.text = "Poin"
+        tvTitle.text = "Poin Anda"
 
         displayContent()
     }
