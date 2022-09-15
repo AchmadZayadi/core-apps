@@ -89,9 +89,10 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
 
 
 
-            if (vo.getLevelId() == 3){
-                holder.ivVerify.setImageResource(R.drawable.ic_verified);
-            }
+            //kondisi ikon verivikasi
+//            if (vo.getLevelId() == 3){
+//                holder.ivVerify.setImageResource(R.drawable.ic_verified);
+//            }
             holder.tvLikeCount.setText("" + vo.getLikeCount());
             holder.tvDate.setText(Util.getDateDifference(context, vo.getCreationDate()));
 
@@ -234,9 +235,11 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
                 holder.tvHeaderChild.setText(unecodeStr(vo.getReplies().get(0).getUserTitle()));
                 Util.showImageWithGlide(holder.ivProfileChild, vo.getReplies().get(0).getUserImage(), context, R.drawable.placeholder_3_2);
                 holder.rlCommentChild.setOnClickListener(v -> listener.onItemClicked(Constant.Events.REPLY, "false", holder.getAdapterPosition()));
-                if (vo.getReplies().get(0).getLevelId() == 3){
-                    holder.ivVerifyChild.setImageResource(R.drawable.ic_verified);
-                }
+
+                //kondisi ikon verivikasi
+//                if (vo.getReplies().get(0).getLevelId() == 3){
+//                    holder.ivVerifyChild.setImageResource(R.drawable.ic_verified);
+//                }
                 if (!TextUtils.isEmpty(vo.getReplies().get(0).getBody())) {
                     String body = unecodeStr(vo.getReplies().get(0).getBody());
                     SpannableString span = null;

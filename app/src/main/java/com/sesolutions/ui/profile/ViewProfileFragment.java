@@ -815,9 +815,11 @@ public class ViewProfileFragment extends CommentLikeHelper implements View.OnCli
 //                    //  tvStatus.setText(StringEscapeUtils.unescapeHtml4(StringEscapeUtils.unescapeJava(result.getProfile().getStatus())));
 //                }
 //            }
-            if (result.getProfile().getLevelId() == 3){
-                ivVerify.setImageResource(R.drawable.ic_verified);
-            }
+
+            //kondisi ikon verivikasi
+//            if (result.getProfile().getLevelId() == 3){
+//                ivVerify.setImageResource(R.drawable.ic_verified);
+//            }
 
             Util.showImageWithGlide(ivAlbumImage, result.getProfile().getUserPhoto(), context/*, R.drawable.placeholder_square*/);
 //            if (!TextUtils.isEmpty(result.getCoverPhoto())) {

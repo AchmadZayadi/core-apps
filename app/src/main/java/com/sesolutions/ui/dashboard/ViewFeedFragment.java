@@ -8,14 +8,18 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -24,6 +28,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import com.sesolutions.R;
 import com.sesolutions.http.HttpImageRequestHandler;
@@ -69,7 +76,7 @@ import java.util.Objects;
  * Created by mrnee on 10/7/2017.
  */
 
-public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener, OnLoadMoreListener {
+public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayout.OnRefreshListener, View.OnClickListener, OnLoadMoreListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private static final int REQ_CODE_FEELING = 1;
     private static final int REQ_LOAD_MORE = 3;
@@ -96,6 +103,10 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
     private CommentAdapter adapter;
     private List<CommentData> commentList;
     private Result result;
+    double latitdue = 0;
+    double longtitude = 0;
+    Location mLastLocation;
+    private GoogleApiClient mGoogleApiClient;
     //private Activity actVo;
 
     public static ViewFeedFragment newInstance(String tag, int actionId, boolean openComment, int resourceId, String resourceType/*, Activity vo*/) {
@@ -130,16 +141,26 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
         v.findViewById(R.id.ivMessage).setVisibility(View.GONE);
         applyTheme(v);
 
+        //getLocation
+        if (mGoogleApiClient == null) {
+            mGoogleApiClient = new GoogleApiClient.Builder(context)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+
         return v;
     }
 
 
     public List<Activity> feedActivityList2;
+
     private void updateOptionText(int actPosition, int position, String name, String value) {
         CustomLog.e("values56565", actPosition + "___" + position + "___");
         feedActivityList.get(actPosition).getOptions().get(position).setValue(value);
         feedActivityList.get(actPosition).getOptions().get(position).setName(name);
-        feedActivityList2=feedActivityList;
+        feedActivityList2 = feedActivityList;
         //    adapterFeedMain.notifyItemChanged(actPosition);
         adapterFeedMain = new FeedActivityAdapter(feedActivityList2, context, this);
         recycleViewFeedMain.setAdapter(adapterFeedMain);
@@ -176,7 +197,6 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
         else {
             v.findViewById(R.id.llBottom).setVisibility(View.GONE);
         }
-
 
 
         v.findViewById(R.id.ivCurrency).setVisibility(View.GONE);
@@ -366,6 +386,7 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
     @Override
     public void onStart() {
         super.onStart();
+        mGoogleApiClient.connect();
         AppConfiguration.truncateBody = false;
         if ((activity).taskPerformed == Constant.TASK_STICKER) {
             hideStickerLayout();
@@ -381,6 +402,7 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
     @Override
     public void onStop() {
         AppConfiguration.truncateBody = true;
+        mGoogleApiClient.disconnect();
         super.onStop();
     }
 
@@ -891,6 +913,8 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
                 }*/
                 request.params.put(Constant.KEY_TYPE, reactionId);
                 request.params.put(Constant.KEY_COMMENT_ID, commentId);
+                request.params.put("longitude", longtitude);
+                request.params.put("latitude", latitdue);
 
                 request.headres.put(Constant.KEY_COOKIE, getCookie());
                 request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
@@ -1038,6 +1062,7 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
 
     private void callCreateCommentApi(Map<String, Object> params) {
 
+        CustomLog.d("hasilnyaa","sukes");
         try {
             if (isNetworkAvailable(context)) {
                 try {
@@ -1049,6 +1074,8 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
                     request.params.putAll(params);
                     request.params.put(Constant.KEY_RESOURCE_ID, actionId);
                     request.params.put(Constant.KEY_ACTIVITY_ID, actionId);
+                    request.params.put("longitude", longtitude);
+                    request.params.put("latitude", latitdue);
                     if (null != type) {
                         request.params.put(Constant.KEY_RESOURCES_TYPE, type);
                     } else {
@@ -1162,6 +1189,43 @@ public class ViewFeedFragment extends FeedApiHelper implements SwipeRefreshLayou
 
     @Override
     public void onConnectionTimeout(int reqCode, String result) {
+
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        try {
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+            if (mLastLocation != null) {
+//                Intent intent = new Intent();
+//                intent.putExtra("Longitude", mLastLocation.getLongitude());
+//                intent.putExtra("Latitude", mLastLocation.getLatitude());
+//                setResult(1,intent);
+//                finish();
+
+
+                longtitude = mLastLocation.getLongitude();
+                latitdue = mLastLocation.getLatitude();
+                //   CustomLog.d("hasilnyaa33",String.valueOf(loca.getLongitude()) + " haadahah");
+                ////   CustomLog.d("hasilnyaa", String.valueOf(location.getLongitude()) + "   asdakndkasn");
+//                CustomLog.d("hasilnyaa", String.valueOf(mLastLocation.getLatitude()) + " haadahah");
+//
+//                CustomLog.d("hasilnyaa22", String.valueOf(mLastLocation.getLongitude()) + " haadahah");
+
+            }
+        } catch (SecurityException e) {
+
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
 

@@ -10,11 +10,13 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.widget.ContentLoadingProgressBar;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
@@ -39,6 +41,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import com.sesolutions.R;
 import com.sesolutions.animate.Techniques;
@@ -62,6 +67,7 @@ import com.sesolutions.responses.comment.Result;
 import com.sesolutions.responses.feed.Item_user;
 import com.sesolutions.responses.feed.Like;
 import com.sesolutions.responses.feed.Options;
+import com.sesolutions.responses.location.MyLastLocation;
 import com.sesolutions.sesdb.SesDB;
 import com.sesolutions.thememanager.ThemeManager;
 import com.sesolutions.ui.AGvideo.AGVideoActivity;
@@ -91,7 +97,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class CommentFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, OnLoadMoreListener {
+public class CommentFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, OnLoadMoreListener,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private static final int REQ_WITH_DATA = 2;
     private static final int REQ_INITIAL = 1;
@@ -147,6 +153,11 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     String userNameSearchKeyword = "",beforeTextChanged = "", onTextChanged = "";
     private long last_text_edit = 0, delay = 1000, endTime = 0;
     private Handler handler = new Handler();
+    double latitdue = 0;
+    double longtitude = 0;
+    private GoogleApiClient mGoogleApiClient;
+    Location mLastLocation;
+    MyLastLocation location = new MyLastLocation();
 
     public static CommentFragment newInstance(int actionId, String resourceType) {
         CommentFragment frag = new CommentFragment();
@@ -174,6 +185,15 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             init();
             setRecyclerView();
             setImageRecyclerView();
+
+            //get location
+            if (mGoogleApiClient == null) {
+                mGoogleApiClient = new GoogleApiClient.Builder(context)
+                        .addConnectionCallbacks(this)
+                        .addOnConnectionFailedListener(this)
+                        .addApi(LocationServices.API)
+                        .build();
+            }
 
 //            showCacheData(page);
             callFeelingApi(REQ_INITIAL);
@@ -230,6 +250,11 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             adapter.notifyDataSetChanged();
         }
 
+    }
+    @Override
+    public void onStop() {
+        mGoogleApiClient.disconnect();
+        super.onStop();
     }
 
 
@@ -554,6 +579,8 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     @Override
     public void onStart() {
         super.onStart();
+
+        mGoogleApiClient.connect();
         try {
             Log.e("task",""+activity.taskPerformed2);
             if (activity.taskPerformed2 == Constant.TASK_STICKER) {
@@ -948,6 +975,8 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                 }
                 request.params.put(Constant.KEY_TYPE, reactionId);
                 request.params.put(Constant.KEY_COMMENT_ID, commentId);
+                request.params.put("longitude", longtitude);
+                request.params.put("latitude", latitdue);
 
                 request.headres.put(Constant.KEY_COOKIE, getCookie());
                 request.params.put(Constant.KEY_AUTH_TOKEN, SPref.getInstance().getToken(context));
@@ -1084,7 +1113,10 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     }
 
     private void callCreateCommentApi(final Map<String, Object> params) {
+        CustomLog.d("hasilnyaa","sukes22");
+        CustomLog.d("jarak",String.valueOf(latitdue));
 
+        CustomLog.d("jarak22",String.valueOf(longtitude));
 
         if (isNetworkAvailable(context)) {
             final boolean[] isDummyCommentAdded = {false};
@@ -1097,7 +1129,8 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                 request.params.put(Constant.KEY_RESOURCE_ID, actionId);
                 request.params.put(Constant.KEY_ACTIVITY_ID, actionId);
                 request.params.put(Constant.KEY_RESOURCES_TYPE, resourceType);
-
+                request.params.put("longitude", longtitude);
+                request.params.put("latitude", latitdue);
                 if (null != guid) {
                     request.params.put(Constant.KEY_GUID, guid);
                 }
@@ -1405,6 +1438,43 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             str.setSpan(new RoundedBackgroundSpan(getContext()), startPositions.get(i), startPositions.get(i) + userNameLengths.get(i), Spannable.SPAN_INTERMEDIATE);
         }
         return str;
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+        try {
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+            if (mLastLocation != null) {
+//                Intent intent = new Intent();
+//                intent.putExtra("Longitude", mLastLocation.getLongitude());
+//                intent.putExtra("Latitude", mLastLocation.getLatitude());
+//                setResult(1,intent);
+//                finish();
+
+
+                longtitude = mLastLocation.getLongitude();
+                latitdue = mLastLocation.getLatitude();
+                //   CustomLog.d("hasilnyaa33",String.valueOf(loca.getLongitude()) + " haadahah");
+                ////   CustomLog.d("hasilnyaa", String.valueOf(location.getLongitude()) + "   asdakndkasn");
+//                CustomLog.d("hasilnyaa", String.valueOf(mLastLocation.getLatitude()) + " haadahah");
+//
+//                CustomLog.d("hasilnyaa22", String.valueOf(mLastLocation.getLongitude()) + " haadahah");
+
+            }
+        } catch (SecurityException e) {
+
+        }
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 
 

@@ -218,17 +218,19 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                     if (AppConfiguration.memberImageShapeIsRound) {
                         v.findViewById(R.id.cvProfileImage).setVisibility(View.GONE);
                         ivLogo.setVisibility(View.VISIBLE);
-                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
-                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
-                        }
+
+                        //kondisi ikon verivikasi
+//                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
+//                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
+//                        }
                         Util.showImageWithGlide(ivLogo, SPref.getInstance().getUserMasterDetail(context).getPhotoUrl(), context, R.drawable.placeholder_square);
                     } else {
                         v.findViewById(R.id.cvProfileImage).setVisibility(View.VISIBLE);
                         ivLogo.setVisibility(View.GONE);
                         Util.showImageWithGlide(ivLogo1, SPref.getInstance().getUserMasterDetail(context).getPhotoUrl(), context, R.drawable.placeholder_square);
-                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
-                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
-                        }
+//                        if (SPref.getInstance().getUserMasterDetail(context).getLevelId() == 3){
+//                            ivVerifyDrawer.setImageResource(R.drawable.ic_verified);
+//                        }
                     }
 
                 }

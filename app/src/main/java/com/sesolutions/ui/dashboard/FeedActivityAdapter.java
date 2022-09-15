@@ -481,9 +481,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         params.height = 0;
                         holder11.itemView.setLayoutParams(params);
                     }
-                    if (composerOption.getResult().getLevelId() == 3) {
-                        holder11.ivVerify.setImageResource(R.drawable.ic_verified);
-                    }
+                    //kondisi ikon verivikasi
+//                    if (composerOption.getResult().getLevelId() == 3) {
+//                        holder11.ivVerify.setImageResource(R.drawable.ic_verified);
+//                    }
 
                     Util.showImageWithGlide(holder11.ivProfileCompose, composerOption.getResult().getUser_image(), context, R.drawable.placeholder_3_2);
                 } catch (Exception e) {
@@ -674,10 +675,10 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         // holderParent.llLike.setOnClickListener(v ->);
 
 
-
-                        if (vo.getItemUser().getLevelId() == 3) {
-                            holderParent.ivVerify.setImageResource(R.drawable.ic_verified);
-                        }
+                        //kondisi ikon verivikasi
+//                        if (vo.getItemUser().getLevelId() == 3) {
+//                            holderParent.ivVerify.setImageResource(R.drawable.ic_verified);
+//                        }
                         holderParent.ivProfileImage.setVisibility(hasToShowRoundImage ? View.INVISIBLE : View.VISIBLE);
                         holderParent.ivProfileImageRound.setVisibility(hasToShowRoundImage ? View.VISIBLE : View.INVISIBLE);
                         showImageWithGlide((hasToShowRoundImage ? holderParent.ivProfileImageRound : holderParent.ivProfileImage), vo.getItemUser().getUser_image(), context, R.drawable.default_user);

@@ -104,10 +104,10 @@ public class CommentReplyAdapter extends RecyclerView.Adapter<CommentHolder> {
             holder.tvReply.setVisibility(canReply ? View.VISIBLE : View.GONE);
             holder.tvReply.setOnClickListener(v -> listener.onItemClicked(Constant.Events.REPLY, vo.getIsLike() ? "-1" : "0", holder.getAdapterPosition()));
 
-
-            if (vo.getLevelId() == 3){
-                holder.ivVerify.setImageResource(R.drawable.ic_verified);
-            }
+            //kondisi ikon verivikasi
+//            if (vo.getLevelId() == 3){
+//                holder.ivVerify.setImageResource(R.drawable.ic_verified);
+//            }
             if (vo.getCanDelete()) {
                 holder.tvDelete.setVisibility(View.VISIBLE);
                 holder.tvDelete.setOnClickListener(v -> listener.onItemClicked(Constant.Events.DELETE_COMMENT, "", holder.getAdapterPosition()));
