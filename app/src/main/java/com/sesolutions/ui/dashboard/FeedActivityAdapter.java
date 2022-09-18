@@ -733,15 +733,16 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         });
 
 
-                        try {
-                            if (SPref.getInstance().getDefaultInfo(context, Constant.KEY_APPDEFAULT_DATA).getResult().isIs_core_activity()) {
-                                holderParent.llsocialid.setVisibility(View.GONE);
-                            } else {
-                                holderParent.llsocialid.setVisibility(View.VISIBLE);
-                            }
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
-                        }
+                        //icon fb di menu
+//                        try {
+//                            if (SPref.getInstance().getDefaultInfo(context, Constant.KEY_APPDEFAULT_DATA).getResult().isIs_core_activity()) {
+//                                holderParent.llsocialid.setVisibility(View.GONE);
+//                            } else {
+//                                holderParent.llsocialid.setVisibility(View.VISIBLE);
+//                            }
+//                        } catch (Exception ex) {
+//                            ex.printStackTrace();
+//                        }
 
 
                         String title = vo.getItemUser().getTitle();
