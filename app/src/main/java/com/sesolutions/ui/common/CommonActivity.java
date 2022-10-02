@@ -37,7 +37,9 @@ import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
 import com.sesolutions.listeners.OnUserClickedListener;
 import com.sesolutions.responses.Emotion;
+import com.sesolutions.responses.MessageInbox;
 import com.sesolutions.responses.contest.ContestItem;
+import com.sesolutions.responses.feed.Activity;
 import com.sesolutions.responses.feed.LocationActivity;
 import com.sesolutions.responses.feed.Share;
 import com.sesolutions.responses.music.Albums;
@@ -239,6 +241,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     private Drawable dPlay;
     private Albums pendingSong;
     private ProgressBar pbLoad;
+    private Activity activity;
     //connect to the service
     private ServiceConnection musicConnection = new ServiceConnection() {
 
@@ -298,6 +301,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
         dPlay = ContextCompat.getDrawable(this, R.drawable.play_rounded_blue);
         init();
 
+
         try {
             Intent in = getIntent();
             Uri data = in.getData();
@@ -310,6 +314,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
     }
 
     DeeplinkingModel pmodel;
+
 
     private void CallUriMethod(String urlmethod) {
         if (isNetworkAvailable(this)) {
@@ -1272,7 +1277,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_SETTINGS:
-                   // openPointFragment();
+                    // openPointFragment();
                     openSettingFragment();
                     break;
                 case Constant.GO_TO_NOTIFICATION:
@@ -1313,8 +1318,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     openVideoFragment(2);
                     break;
                 case Constant.GoTo.ARTICLE:
-                  //  openPointFragment();
-                   openArticleFragment();
+                    //  openPointFragment();
+                    openArticleFragment();
                     break;
                 case Constant.GoTo.WEATHER:
                     openWeatherFragment();
@@ -1393,9 +1398,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_MEMBER:
-                   // openPriceFragment();
-                   openMemberFragment();
-                   // openWeatherFragment();
+                    // openPriceFragment();
+                    openMemberFragment();
+                    // openWeatherFragment();
                     break;
 
                 case Constant.GoTo.CORE_SEARCH:
@@ -1570,9 +1575,12 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     // openPostFeedFragment((ComposerOption) bundle.getSerializable(Constant.KEY_TITLE));
 
                     if (SPref.getInstance().getDefaultInfo(this, Constant.KEY_APPDEFAULT_DATA).getResult().isIs_core_activity()) {
-                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE2, bundle.getString(Constant.KEY_GUID))).addToBackStack(null).commit();
+
+                        activity = (Activity) bundle.getSerializable(Constant.KEY_SEND_PROFILE);
+                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE2, bundle.getString(Constant.KEY_GUID), activity)).addToBackStack(null).commit();
                     } else {
-                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE, bundle.getString(Constant.KEY_GUID))).addToBackStack(null).commit();
+                        activity = (Activity) bundle.getSerializable(Constant.KEY_SEND_PROFILE);
+                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE, bundle.getString(Constant.KEY_GUID), activity)).addToBackStack(null).commit();
                     }
 
 

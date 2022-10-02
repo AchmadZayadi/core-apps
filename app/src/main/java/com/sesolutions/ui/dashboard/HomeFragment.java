@@ -63,6 +63,7 @@ import com.sesolutions.utils.Util;
 
 import org.apache.http.client.methods.HttpPost;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -440,6 +441,9 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         Intent intent = new Intent(activity, CommonActivity.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_COMMENT);
         intent.putExtra(Constant.KEY_ACTION_ID, feedActivityList.get(position).getActionId());
+        intent.putExtra(Constant.KEY_SEND_PROFILE, (Serializable) feedActivityList.get(position).getItemUser());
+       // intent.putExtra(Constant.KEY_SEND_PROFILE,feedActivityList.get(position).getItemUser());
+       // CustomLog.d("masuksiniga",feedActivityList.get(position).getItemUser());
         String guid = feedActivityList.get(position).getAttributionGuid();
         if (null != guid) {
             intent.putExtra(Constant.KEY_GUID, guid);

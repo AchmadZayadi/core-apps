@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Background_style"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,7 +137,19 @@
         layout="@layout/drawer_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_above="@+id/tv_version"
+        />
 
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:color="@color/black_40"
+        android:background="@color/white"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_alignParentBottom="true"
+        tools:text="1.0.0"
+        android:textStyle="bold"/>
 </RelativeLayout>

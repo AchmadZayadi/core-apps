@@ -604,6 +604,7 @@ public class Constant extends URL {
     public static final String ACTIVITY_TYPE_QUOTE_2 = "sesquote_quote_like";
     public static final String KEY_NEXT_ID = "maxid";
     public static final String KEY_ACTION_ID = "action_id";
+    public static final String KEY_SEND_PROFILE = "data_profile";
     public static final String KEY_ACTION_VIDEO_ID = "action_video_id";
     public static final String KEY_ELIVEHOST_ID = "elivehost_id";
     public static final String KEY_SID = "sid";

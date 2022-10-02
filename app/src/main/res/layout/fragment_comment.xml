@@ -9,6 +9,11 @@
 
     <include layout="@layout/layout_toolbar" />
 
+    <include
+        android:id="@+id/layout_feed"
+        android:visibility="gone"
+        layout="@layout/item_feed_content_comment" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/llReactionUpper"
         android:layout_width="match_parent"
@@ -103,10 +108,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvComment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_above="@+id/rvImageAttach"
             android:clipToPadding="false"
             android:layoutAnimation="@anim/anim_fall_down"

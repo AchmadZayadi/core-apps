@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
@@ -73,6 +74,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
     private int foregroundColor;
     private int backgroundColor;
     private int text_color_2;
+    TextView tvVersion;
 
 
     public static DrawerFragment getInstance(DrawerModel drawerModel) {
@@ -161,10 +163,12 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
         ivLogo1.setOnClickListener(this);
         rlDrawerFooter = v.findViewById(R.id.rlFooter);
         v.findViewById(R.id.tvEditProfile).setOnClickListener(this);
+        tvVersion = v.findViewById(R.id.tv_version);
 
         listDrawer = v.findViewById(R.id.listview_drawer);
         listAdapter = new DrawerAdapter(context, R.layout.row_drawer, menus, this);
         listDrawer.setAdapter(listAdapter);
+        tvVersion.setText("Version " + BuildConfig.VERSION_NAME);
 
         setData();
     }

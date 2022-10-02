@@ -64,6 +64,7 @@ import com.sesolutions.responses.Video;
 import com.sesolutions.responses.comment.CommentData;
 import com.sesolutions.responses.comment.CommentResponse;
 import com.sesolutions.responses.comment.Result;
+import com.sesolutions.responses.feed.Activity;
 import com.sesolutions.responses.feed.Item_user;
 import com.sesolutions.responses.feed.Like;
 import com.sesolutions.responses.feed.Options;
@@ -137,6 +138,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     private ImageView ivLikeUpper5;
     private String guid;
 
+    private Activity getUserItem;
     RelativeLayout rlUsersList;
     ProgressBar progress_bar;
     TextView txtMsg;
@@ -163,14 +165,17 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         CommentFragment frag = new CommentFragment();
         frag.actionId = actionId;
         frag.resourceType = resourceType;
+        CustomLog.d("masuksini","sukes");
         return frag;
     }
 
-    public static CommentFragment newInstance(int actionId, String resourceType, String guid) {
+    public static CommentFragment newInstance(int actionId, String resourceType, String guid, Activity getUserItem) {
         CommentFragment frag = new CommentFragment();
         frag.actionId = actionId;
         frag.resourceType = resourceType;
         frag.guid = guid;
+        frag.getUserItem = getUserItem;
+        CustomLog.d("masuksini","sukes22");
         return frag;
     }
 
@@ -186,6 +191,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             setRecyclerView();
             setImageRecyclerView();
 
+            CustomLog.d("getuseritem",getUserItem.getItemUser().getTitle());
             //get location
             if (mGoogleApiClient == null) {
                 mGoogleApiClient = new GoogleApiClient.Builder(context)
@@ -670,6 +676,8 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     }
 
     private void callFeelingApi(final int req) {
+
+        CustomLog.d("hasilnyaaa","sukes");
 
         if (isNetworkAvailable(context)) {
             isLoading = true;
