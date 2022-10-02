@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.sesolutions.BuildConfig;
 import com.sesolutions.R;
 import com.sesolutions.http.HttpRequestHandler;
 import com.sesolutions.http.HttpRequestVO;
@@ -73,6 +74,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
     private int foregroundColor;
     private int backgroundColor;
     private int text_color_2;
+    TextView tvVersion;
 
 
     public static DrawerFragment getInstance(DrawerModel drawerModel) {
@@ -108,14 +110,11 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                         .drawShadow(true)                   // Whether to draw a drop shadow or not
                         .cancelable(true)                  // Whether tapping outside the outer circle dismisses the view
                         .tintTarget(false)                   // Whether to tint the target view's color
-
                         //.icon(Drawable)                     // Specify a custom drawable to draw as the target
                         .targetRadius((int) (ivLogo.getWidth() / (getResources().getDisplayMetrics().density * 2)))
                         .dimColor(R.color.transparent_black_light)
                         .outerCircleColorInt(SesColorUtils.getPrimaryColor(context))
                         .transparentTarget(false)
-
-
                 ,                  // Specify the target radius (in dp)
                 new TapTargetView.Listener() {          // The listener can listen for regular clicks, long clicks or cancels
                     @Override
@@ -161,10 +160,12 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
         ivLogo1.setOnClickListener(this);
         rlDrawerFooter = v.findViewById(R.id.rlFooter);
         v.findViewById(R.id.tvEditProfile).setOnClickListener(this);
+        tvVersion = v.findViewById(R.id.tv_version);
 
         listDrawer = v.findViewById(R.id.listview_drawer);
         listAdapter = new DrawerAdapter(context, R.layout.row_drawer, menus, this);
         listDrawer.setAdapter(listAdapter);
+        tvVersion.setText("Matani Version " + BuildConfig.VERSION_NAME + " Code "  + BuildConfig.VERSION_CODE  );
 
         setData();
     }
@@ -210,7 +211,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                         v.findViewById(R.id.bSignUp).setOnClickListener(this);
                         v.findViewById(R.id.rlFacebook).setOnClickListener(this);
                         //noinspection ConstantConditions
-                       // v.findViewById(R.id.rlFacebook).setVisibility(AppConfiguration.IS_FB_LOGIN_ENABLED ? View.VISIBLE : View.GONE);
+                        // v.findViewById(R.id.rlFacebook).setVisibility(AppConfiguration.IS_FB_LOGIN_ENABLED ? View.VISIBLE : View.GONE);
                     }
                     tvName.setText(SPref.getInstance().getUserMasterDetail(context).getDisplayname());
 
@@ -431,7 +432,7 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                 case ModuleUtil.ITEM_BLOG:
                     intent = new Intent(activity, CommonActivity.class);
                     intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_BLOG);
-                   // intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_JOBS);
+                    // intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_JOBS);
                     closeDrawer();
                     startActivity(intent);
                     break;
@@ -642,17 +643,17 @@ public class DrawerFragment extends BaseFragment implements CustomListAdapterInt
                     break;*/
                 default:
                     closeDrawer();
-                   if(menu.getLabel().equalsIgnoreCase("Jobs")){
-                       intent = new Intent(activity, CommonActivity.class);
-                      // intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_MULTISTORE);
-                       intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_JOBS);
+                    if(menu.getLabel().equalsIgnoreCase("Jobs")){
+                        intent = new Intent(activity, CommonActivity.class);
+                        // intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_MULTISTORE);
+                        intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_JOBS);
                         startActivity(intent);
                     }else {
-                                intent = new Intent(activity, CommonActivity.class);
-                                intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_WEBVIEW);
-                                intent.putExtra(Constant.KEY_URI, menu.getUrl());
-                                intent.putExtra(Constant.KEY_TITLE, menu.getLabel());
-                                startActivity(intent);
+                        intent = new Intent(activity, CommonActivity.class);
+                        intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_WEBVIEW);
+                        intent.putExtra(Constant.KEY_URI, menu.getUrl());
+                        intent.putExtra(Constant.KEY_TITLE, menu.getLabel());
+                        startActivity(intent);
                     }
 
 
