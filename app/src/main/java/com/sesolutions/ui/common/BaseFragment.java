@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -36,9 +37,11 @@ import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -286,7 +289,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void goToReportFragment(String guid) {
-        fragmentManager.beginTransaction().replace(R.id.container, ReportSpamFragment.newInstance(guid,true)).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, ReportSpamFragment.newInstance(guid, true)).addToBackStack(null).commit();
     }
 
     public void goToReport(String guid) {
@@ -534,30 +537,31 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void goToComposeMessageFragment(Share vo) {
-        Intent intent=new Intent(activity,MessageActivity.class);
+        Intent intent = new Intent(activity, MessageActivity.class);
         try {
-            if(vo.getUrl()!=null && vo.getUrl().length()>0 && !vo.getUrl().equalsIgnoreCase("null")){
-                intent.putExtra("DISCRIPTONTAG",""+vo.getUrl());
-            }else {
-                intent.putExtra("DISCRIPTONTAG",""+vo.getDescription());
+            if (vo.getUrl() != null && vo.getUrl().length() > 0 && !vo.getUrl().equalsIgnoreCase("null")) {
+                intent.putExtra("DISCRIPTONTAG", "" + vo.getUrl());
+            } else {
+                intent.putExtra("DISCRIPTONTAG", "" + vo.getDescription());
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-            intent.putExtra("DISCRIPTONTAG",""+vo.getDescription());
+            intent.putExtra("DISCRIPTONTAG", "" + vo.getDescription());
         }
         context.startActivity(intent);
     }
-    public void goToComposeMessageFragment(Share vo,String sharemsg) {
-        Intent intent=new Intent(activity,MessageActivity.class);
+
+    public void goToComposeMessageFragment(Share vo, String sharemsg) {
+        Intent intent = new Intent(activity, MessageActivity.class);
         try {
-            if(sharemsg.length()>0){
-                intent.putExtra("DISCRIPTONTAG",""+sharemsg);
-            }else {
-                intent.putExtra("DISCRIPTONTAG",""+vo.getDescription());
+            if (sharemsg.length() > 0) {
+                intent.putExtra("DISCRIPTONTAG", "" + sharemsg);
+            } else {
+                intent.putExtra("DISCRIPTONTAG", "" + vo.getDescription());
             }
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
-            intent.putExtra("DISCRIPTONTAG",""+vo.getDescription());
+            intent.putExtra("DISCRIPTONTAG", "" + vo.getDescription());
         }
         context.startActivity(intent);
     }
@@ -737,7 +741,7 @@ public abstract class BaseFragment extends Fragment {
         startActivity(intent);
     }
 
-    public void goTo2(int goTo, int videoId, String resourceType,int keytrr) {
+    public void goTo2(int goTo, int videoId, String resourceType, int keytrr) {
         Intent intent = new Intent(activity, VideoViewActivity2.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, goTo);
         intent.putExtra(Constant.KEY_TYPE, resourceType);
@@ -774,6 +778,7 @@ public abstract class BaseFragment extends Fragment {
 
 
     AVLoadingIndicatorView avlodingimage;
+
     public void showBaseLoader(boolean isCancelable) {
         try {
 
@@ -781,15 +786,15 @@ public abstract class BaseFragment extends Fragment {
             progressDialog.setCancelable(isCancelable);
             progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             progressDialog.setContentView(R.layout.dialog_progress);
-            avlodingimage=progressDialog.findViewById(R.id.loadingimage);
+            avlodingimage = progressDialog.findViewById(R.id.loadingimage);
 
             try {
-               // DefaultDataVo responsede=SPref.getInstance().getDefaultInfo(context,Constant.KEY_APPDEFAULT_DATA);
-               // int progresstag=Integer.parseInt(responsede.getResult().getLoadingImage());
-               // List<String> Lines = Arrays.asList(getResources().getStringArray(R.array.customprogressid));
+                // DefaultDataVo responsede=SPref.getInstance().getDefaultInfo(context,Constant.KEY_APPDEFAULT_DATA);
+                // int progresstag=Integer.parseInt(responsede.getResult().getLoadingImage());
+                // List<String> Lines = Arrays.asList(getResources().getStringArray(R.array.customprogressid));
                 avlodingimage.setIndicator("BallClipRotateMultipleIndicator");
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
                 avlodingimage.setIndicator("BallPulseIndicator");
             }
@@ -803,6 +808,7 @@ public abstract class BaseFragment extends Fragment {
             CustomLog.e(e);
         }
     }
+
     public void hideBaseLoader() {
         try {
             if (getActivity() != null && !getActivity().isFinishing() && progressDialog != null && progressDialog.isShowing()) {
@@ -825,7 +831,6 @@ public abstract class BaseFragment extends Fragment {
             CustomLog.e(e);
         }
     }
-
 
 
     public void goToGeneralSettingForm(String url, String title) {
@@ -868,7 +873,7 @@ public abstract class BaseFragment extends Fragment {
     public void goToViewCBlogFragment(int groupId) {
         fragmentManager.beginTransaction()
                 .replace(R.id.container
-                        , ViewBlogFragment.newInstance(groupId,false))
+                        , ViewBlogFragment.newInstance(groupId, false))
                 .addToBackStack(null)
                 .commit();
     }
@@ -876,7 +881,7 @@ public abstract class BaseFragment extends Fragment {
     public void goToViewCBlogbasicFragment(int groupId) {
         fragmentManager.beginTransaction()
                 .replace(R.id.container
-                        , C_ViewBlogFragment.newInstance(groupId,false))
+                        , C_ViewBlogFragment.newInstance(groupId, false))
                 .addToBackStack(null)
                 .commit();
     }
@@ -1052,7 +1057,7 @@ public abstract class BaseFragment extends Fragment {
     public void openPageCreateForm(Dummy.Result result, Map<String, Object> map) {
         fragmentManager.beginTransaction()
                 .replace(R.id.container,
-                        CreateEditPageFragment.newInstance(Constant.FormType.CREATE_PAGE, map, Constant.URL_PAGE_CREATE, result,true))
+                        CreateEditPageFragment.newInstance(Constant.FormType.CREATE_PAGE, map, Constant.URL_PAGE_CREATE, result, true))
                 .addToBackStack(null)
                 .commit();
     }
@@ -1084,11 +1089,11 @@ public abstract class BaseFragment extends Fragment {
     }
 
     public void gotoResumeBuilder(int resumeid, String title, List<resumedashordmodel.ResultBean.DashboardoptionsBean> tabslist) {
-        fragmentManager.beginTransaction().replace(R.id.container, ResumeParentFragment.newInstance(resumeid,title,tabslist)).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, ResumeParentFragment.newInstance(resumeid, title, tabslist)).addToBackStack(null).commit();
     }
 
-    public void gotoPreviewBuilder(int resumeid,String title) {
-        fragmentManager.beginTransaction().replace(R.id.container, MyPreviewList.newInstance(resumeid,title)).addToBackStack(null).commit();
+    public void gotoPreviewBuilder(int resumeid, String title) {
+        fragmentManager.beginTransaction().replace(R.id.container, MyPreviewList.newInstance(resumeid, title)).addToBackStack(null).commit();
     }
 
 
@@ -1154,14 +1159,15 @@ public abstract class BaseFragment extends Fragment {
                 .commit();
     }
 
-    public void goToPostFeed(ComposerOption composerOption, int selectedOption) {
+
+    public void goToTulisSesuatu(ComposerOption composerOption, int selectedOption) {
         if (activity instanceof MainActivity) {
             String compString = "{}";
             if (null != composerOption) {
                 compString = new Gson().toJson(composerOption);
             }
             Intent intent = new Intent(activity, CommonActivity.class);
-            intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_POST_FEED);
+            intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_TULIS_SESUATU);
             intent.putExtra(Constant.KEY_NAME, selectedOption);
             intent.putExtra(Constant.KEY_TITLE, compString);
             startActivity(intent);
@@ -1169,6 +1175,40 @@ public abstract class BaseFragment extends Fragment {
             fragmentManager.beginTransaction().replace(R.id.container, PostFeedFragment.newInstance(composerOption, selectedOption)).addToBackStack(null).commit();
         }
     }
+
+    public void goToUnggahFoto(ComposerOption composerOption, int selectedOption) {
+        if (activity instanceof MainActivity) {
+            String compString = "{}";
+            if (null != composerOption) {
+                compString = new Gson().toJson(composerOption);
+            }
+            Intent intent = new Intent(activity, CommonActivity.class);
+            intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_UNGGAH_FOTO);
+            intent.putExtra(Constant.KEY_NAME, selectedOption);
+            intent.putExtra(Constant.KEY_TITLE, compString);
+            startActivity(intent);
+        } else {
+            fragmentManager.beginTransaction().replace(R.id.container, PostFeedFragment.newInstance(composerOption, selectedOption)).addToBackStack(null).commit();
+        }
+    }
+
+
+    public void goToPostFeed(ComposerOption composerOption, int selectedOption) {
+        if (activity instanceof MainActivity) {
+            String compString = "{}";
+            if (null != composerOption) {
+                compString = new Gson().toJson(composerOption);
+            }
+            Intent intent = new Intent(activity, CommonActivity.class);
+            intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_LAPOR_IRIGASI);
+            intent.putExtra(Constant.KEY_NAME, selectedOption);
+            intent.putExtra(Constant.KEY_TITLE, compString);
+            startActivity(intent);
+        } else {
+            fragmentManager.beginTransaction().replace(R.id.container, PostFeedFragment.newInstance(composerOption, selectedOption)).addToBackStack(null).commit();
+        }
+    }
+
 
 
     //go back if permission denied
@@ -1202,11 +1242,11 @@ public abstract class BaseFragment extends Fragment {
             startActivity(loginIntent);
         } else {
             Intent intent = new Intent(activity, MainActivity.class);
-      //      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-      //      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            //      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            //      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             activity.startActivity(intent);
         }
-       // activity.finish();
+        // activity.finish();
     }
 
     public void goToWelcome(int screen) {
@@ -1366,7 +1406,8 @@ public abstract class BaseFragment extends Fragment {
             CustomLog.e(e);
         }
     }
-    public void showShareDialog(final Share share,String shareurlmsg) {
+
+    public void showShareDialog(final Share share, String shareurlmsg) {
         try {
             if (null != bottomSheetDialog && bottomSheetDialog.isShowing()) {
                 bottomSheetDialog.dismiss();
@@ -1402,14 +1443,13 @@ public abstract class BaseFragment extends Fragment {
 
             view.findViewById(R.id.llSendToMessage).setOnClickListener(v -> {
                 bottomSheetDialog.dismiss();
-                goToComposeMessageFragment(share,shareurlmsg);
+                goToComposeMessageFragment(share, shareurlmsg);
             });
 
             view.findViewById(R.id.llShareMore).setOnClickListener(v -> {
                 bottomSheetDialog.dismiss();
                 shareOutside(share);
             });
-
 
 
             if (!SPref.getInstance().isLoggedIn(context)) {
@@ -1600,7 +1640,7 @@ public abstract class BaseFragment extends Fragment {
 
 
     public void goDoubleback() {
-         fragmentManager.popBackStack(fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount() - 2).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        fragmentManager.popBackStack(fragmentManager.getBackStackEntryAt(fragmentManager.getBackStackEntryCount() - 2).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 
     public void goToSongsView(int songId) {
@@ -1620,7 +1660,7 @@ public abstract class BaseFragment extends Fragment {
 
     public void goToMapView(int userid, List<Notifications> alublist) {
         fragmentManager.beginTransaction()
-                .replace(R.id.container, MapMamberFragment.newInstance(userid,alublist))
+                .replace(R.id.container, MapMamberFragment.newInstance(userid, alublist))
                 .commit();
 
     }
@@ -1702,7 +1742,7 @@ public abstract class BaseFragment extends Fragment {
                 getActivity().startActivity(socialIntent);
             } else {
 
-              askForPermission(new PermissionListener() {
+                askForPermission(new PermissionListener() {
                     @Override
                     public void onPermissionGranted() {
                         showBaseLoader(true);
@@ -1726,11 +1766,11 @@ public abstract class BaseFragment extends Fragment {
 
                                         }
                                     });
-                        }catch (Exception ex)
-                        {
-                          ex.printStackTrace();
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
                         }
                     }
+
                     @Override
                     public void onPermissionDenied(ArrayList<String> deniedPermissions) {
 
@@ -1744,12 +1784,13 @@ public abstract class BaseFragment extends Fragment {
             CustomLog.e(e);
         }
     }
+
     public void sharingToSocialMedia2(Share vo, String applicationId) {
 
         try {
-            Log.e("URLDATA",""+vo.getUrl());
-            Log.e("URLIMAGEDATA",""+vo.getImageUrl());
-            Log.e("URLNAME",""+vo.getName());
+            Log.e("URLDATA", "" + vo.getUrl());
+            Log.e("URLIMAGEDATA", "" + vo.getImageUrl());
+            Log.e("URLNAME", "" + vo.getName());
 
             final Intent socialIntent = new Intent(Intent.ACTION_SEND);
             socialIntent.putExtra(Intent.EXTRA_SUBJECT, vo.getTitle());
@@ -1768,7 +1809,7 @@ public abstract class BaseFragment extends Fragment {
             } else {
                 hideBaseLoader();
                 socialIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                socialIntent.putExtra(Intent.EXTRA_TEXT,vo.getTitle()+"\n"+vo.getImageUrl());
+                socialIntent.putExtra(Intent.EXTRA_TEXT, vo.getTitle() + "\n" + vo.getImageUrl());
                 socialIntent.setType("text/plain");
                 //sharingIntent.setType("image/*");
                 getActivity().startActivity(socialIntent);
@@ -1886,7 +1927,7 @@ public abstract class BaseFragment extends Fragment {
                 e.printStackTrace();
             }*/
 
-            bmpUri=performShareWithImage(bmp,getActivity());
+            bmpUri = performShareWithImage(bmp, getActivity());
         } catch (Exception e) {
             CustomLog.e(e);
         }
@@ -1899,12 +1940,12 @@ public abstract class BaseFragment extends Fragment {
                         R.string.app_name);
         File dir = new File(file_path);
         if (!dir.exists()) dir.mkdirs();
-        File file = new File(dir, "."+"product.jpg");
-      //  Uri uri = Uri.fromFile(file);
+        File file = new File(dir, "." + "product.jpg");
+        //  Uri uri = Uri.fromFile(file);
         Uri photoURI = FileProvider.getUriForFile(context, context.getApplicationContext().getPackageName() + ".provider", file);
 
         boolean isPicSaved = savePic(bmp, file);
-        return  photoURI;
+        return photoURI;
     }
 
 
@@ -1925,7 +1966,6 @@ public abstract class BaseFragment extends Fragment {
         }
         return isFileSaved;
     }
-
 
 
     public void shareInside(Share vo, boolean isCommonActivity) {
@@ -1968,9 +2008,9 @@ public abstract class BaseFragment extends Fragment {
                 .commit();
     }
 
-    public void openViewPollFragment(String selectedModule, int pollId,String shareurl) {
+    public void openViewPollFragment(String selectedModule, int pollId, String shareurl) {
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PollViewFragment.newInstance(selectedModule, pollId,shareurl))
+                .replace(R.id.container, PollViewFragment.newInstance(selectedModule, pollId, shareurl))
                 .addToBackStack(null)
                 .commit();
     }
@@ -2189,8 +2229,6 @@ public abstract class BaseFragment extends Fragment {
     }
 
 
-
-
     public void openGoogleMap(String lat, String lng) {
         Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("http://maps.google.com/maps?daddr=" + lat + "," + lng));
@@ -2217,7 +2255,7 @@ public abstract class BaseFragment extends Fragment {
                 fab.setBackgroundTintList(ColorStateList.valueOf(SesColorUtils.getPrimaryColor(context)));
             }
         } catch (Exception ignore) {
-         ignore.printStackTrace();
+            ignore.printStackTrace();
         }
     }
 

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Main_style"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,10 +17,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:contentInsetEnd="1dp"
-            android:contentInsetLeft="1dp"
-            android:contentInsetRight="1dp"
             android:contentInsetStart="1dp"
+            android:contentInsetLeft="1dp"
+            android:contentInsetEnd="1dp"
+            android:contentInsetRight="1dp"
             android:tag="@string/tag_toolbar"
             app:contentInsetEnd="1dp"
             app:contentInsetLeft="1dp"
@@ -34,8 +33,8 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivBack"
                 style="@style/button_image_toolbar"
-                android:tint="@color/white"
                 android:padding="10dp"
+                android:tint="@color/white"
                 app:srcCompat="@drawable/ic_menu" />
 
             <include layout="@layout/search_bar_fake" />
@@ -67,8 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/adView"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -92,74 +91,97 @@
         android:layout_gravity="bottom|right|end"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="?attr/actionBarSize"
-        android:transitionName="@string/transition_fab"
         android:src="@drawable/add_24dp"
+        android:transitionName="@string/transition_fab"
+        android:visibility="gone"
         app:backgroundTint="@color/colorPrimary"
-        app:fabSize="normal"
-        android:visibility="gone"/>
+        app:fabSize="normal" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="bottom"
         android:layout_marginBottom="?attr/actionBarSize"
-        android:layout_centerHorizontal="true"
         android:visibility="gone"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
 
-<!--    <include layout="@layout/bottom_tablayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="56dp"-->
-<!--        android:layout_gravity="bottom"/>-->
+    <!--    <include layout="@layout/bottom_tablayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="56dp"-->
+    <!--        android:layout_gravity="bottom"/>-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         style="@style/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:background="@color/white"
         app:layout_scrollFlags="scroll|exitUntilCollapsed"
         app:tabGravity="fill"
         app:tabMode="fixed"
-        android:layout_gravity="bottom"
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
         app:tabTextColor="@color/black_54" />
 
-    <include layout="@layout/bottom_tablayout"
-        android:layout_gravity="bottom"
+    <include
+        layout="@layout/bottom_tablayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:visibility="gone"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
 
     <LinearLayout
-        android:id="@+id/llCreatePost"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/gradient_create_btn">
+        android:orientation="vertical">
+        <include
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:tint="@color/white"
-            app:srcCompat="@drawable/add_24dp" />
+            layout="@layout/fab_layout" />
+        <LinearLayout
+            android:id="@+id/llCreatePost"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="4dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatButtonHome"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:fabCustomSize="40dp"
+
+                android:backgroundTint="@color/colorPrimarydark"
+                android:src="@drawable/add_24dp" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/white"
+                android:visibility="gone"
+                app:srcCompat="@drawable/add_24dp" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
-<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
-<!--        android:id="@+id/bottom_navbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        app:menu="@menu/bottom_navigation"/>-->
 
-<!--    <include layout="@layout/bottomsheet_create"/>-->
+    <!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+    <!--        android:id="@+id/bottom_navbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom"-->
+    <!--        app:menu="@menu/bottom_navigation"/>-->
+
+    <!--    <include layout="@layout/bottomsheet_create"/>-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

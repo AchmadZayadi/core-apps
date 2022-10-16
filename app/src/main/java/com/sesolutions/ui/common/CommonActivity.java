@@ -91,12 +91,15 @@ import com.sesolutions.ui.courses.test.TestFragment;
 import com.sesolutions.ui.credit.CreditUtil;
 import com.sesolutions.ui.crowdfunding.CrowdUtil;
 import com.sesolutions.ui.customviews.AnimationAdapter;
+import com.sesolutions.ui.dashboard.LaporIrigasiFragment;
 import com.sesolutions.ui.dashboard.PostEditFragment;
 import com.sesolutions.ui.dashboard.PostFeedFragment;
 import com.sesolutions.ui.dashboard.RateFragment;
 import com.sesolutions.ui.dashboard.ReportSpamFragment;
 import com.sesolutions.ui.dashboard.ShareSEFragment;
 import com.sesolutions.ui.dashboard.TnCFragment;
+import com.sesolutions.ui.dashboard.TulisSesuatuFragment;
+import com.sesolutions.ui.dashboard.UnggahFotoFragment;
 import com.sesolutions.ui.dashboard.ViewFeedFragment;
 import com.sesolutions.ui.dashboard.composervo.ComposerOption;
 import com.sesolutions.ui.event_core.CEventParentFragment;
@@ -1525,6 +1528,39 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     } else {
                         openPostFeedFragment(cmpVo, bundle.getInt(Constant.KEY_NAME));
                     }
+                    break;
+                case Constant.GO_TO_TULIS_SESUATU:
+                    ComposerOption cmp = new Gson().fromJson(bundle.getString(Constant.KEY_TITLE), ComposerOption.class);
+                    fragmentManager.beginTransaction().replace(R.id.container, TulisSesuatuFragment.newInstance(cmp, 1)).addToBackStack("1").commit();
+
+//                    if (bundle.getInt(Constant.KEY_NAME) == 0) {
+//                        fragmentManager.beginTransaction().replace(R.id.container,
+//                                PostFeedFragment.newInstance(cmp, 1, bundle.getStringArrayList("photopath"))).addToBackStack("1").commit();
+//                    } else {
+//                        openPostFeedFragment(cmp, bundle.getInt(Constant.KEY_NAME));
+//                    }
+                    break;
+                case Constant.GO_TO_LAPOR_IRIGASI:
+                    ComposerOption cmpLaporIrigasi = new Gson().fromJson(bundle.getString(Constant.KEY_TITLE), ComposerOption.class);
+                    fragmentManager.beginTransaction().replace(R.id.container, LaporIrigasiFragment.newInstance(cmpLaporIrigasi, 1)).addToBackStack("1").commit();
+
+//                    if (bundle.getInt(Constant.KEY_NAME) == 0) {
+//                        fragmentManager.beginTransaction().replace(R.id.container,
+//                                PostFeedFragment.newInstance(cmp, 1, bundle.getStringArrayList("photopath"))).addToBackStack("1").commit();
+//                    } else {
+//                        openPostFeedFragment(cmp, bundle.getInt(Constant.KEY_NAME));
+//                    }
+                    break;
+                case Constant.GO_TO_UNGGAH_FOTO:
+                    ComposerOption composePhoto = new Gson().fromJson(bundle.getString(Constant.KEY_TITLE), ComposerOption.class);
+                    fragmentManager.beginTransaction().replace(R.id.container, UnggahFotoFragment.newInstance(composePhoto, 1)).addToBackStack("1").commit();
+
+//                    if (bundle.getInt(Constant.KEY_NAME) == 0) {
+//                        fragmentManager.beginTransaction().replace(R.id.container,
+//                                PostFeedFragment.newInstance(cmp, 1, bundle.getStringArrayList("photopath"))).addToBackStack("1").commit();
+//                    } else {
+//                        openPostFeedFragment(cmp, bundle.getInt(Constant.KEY_NAME));
+//                    }
                     break;
                 case Constant.GO_TO_EDIT_FEED:
                     fragmentManager.beginTransaction().replace(R.id.container, PostEditFragment.newInstance(bundle.getString(Constant.KEY_BODY))).addToBackStack(null).commit();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sothree="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sliding_layout"
     android:layout_width="match_parent"
@@ -16,7 +16,7 @@
     <!-- MAIN CONTENT -->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <include
@@ -25,12 +25,47 @@
             android:focusable="false" />
     </FrameLayout>
 
+    <LinearLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/tvPilihKategori"
+            android:background="@color/AliceBlue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Pilih Kategori"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black_40"
+            android:gravity="center"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey" />
+        <TextView
+            android:id="@+id/tvPilihFoto"
+            android:background="@color/AliceBlue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Pilih Foto"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black_40"
+            android:gravity="center"/>
+
+    </LinearLayout>
 
     <!-- SLIDING LAYOUT -->
     <LinearLayout
         android:id="@+id/dragView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:clickable="true"
         android:focusable="false"
         android:orientation="vertical">
@@ -68,4 +103,4 @@
             android:layout_weight="1" />
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

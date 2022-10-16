@@ -1,6 +1,5 @@
 package com.sesolutions.ui.dashboard;
 
-
 import android.Manifest;
 import android.animation.Animator;
 import android.app.Notification;
@@ -9,6 +8,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -26,6 +26,7 @@ import android.os.Handler;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -59,7 +60,9 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.common.ConnectionResult;
@@ -150,7 +153,7 @@ import static android.graphics.Typeface.NORMAL;
 import static com.facebook.FacebookSdk.getApplicationContext;
 import static com.sesolutions.utils.Constant.TAG;
 
-public class PostFeedFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, TextWatcher, SlidingUpPanelLayout.PanelSlideListener, SwipeRefreshLayout.OnRefreshListener, OnKeyboardVisibilityListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener/*, MyMultiPartEntity.ProgressListener*/ {
+public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, TextWatcher, SlidingUpPanelLayout.PanelSlideListener, SwipeRefreshLayout.OnRefreshListener, OnKeyboardVisibilityListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener/*, MyMultiPartEntity.ProgressListener*/ {
 
     private AppCompatEditText etBodyBg;
     private View v;
@@ -227,21 +230,28 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     MyLastLocation location = new MyLastLocation();
     double latitdue = 0;
     double longtitude = 0;
+    LinearLayout layoutDragView;
+    TextView tvPilihKategori,tvPilihFoto,tvKategori;
+    LinearLayout layputKategori;
+    String hastagTitle = "";
+    AlertDialog alertDialog1;
 
-    public static PostFeedFragment newInstance(ComposerOption response, int selectedOption) {
+    CharSequence[] values = {"Infra Struktur Irigasi","Kondisi Air Irigasi"};
+
+    public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption) {
         return newInstance(response, selectedOption, 0, null);
     }
 
-    public static PostFeedFragment newInstance(ComposerOption response, int selectedOption, List<String> photopath) {
-        PostFeedFragment frag = new PostFeedFragment();
+    public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption, List<String> photopath) {
+        LaporIrigasiFragment frag = new LaporIrigasiFragment();
         frag.composerOption = response;
         frag.selectedOption = selectedOption;
         frag.photopath = photopath;
         return frag;
     }
 
-    public static PostFeedFragment newInstance(ComposerOption response, int selectedOption, List<String> photopath, String resType, int resId) {
-        PostFeedFragment frag = new PostFeedFragment();
+    public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption, List<String> photopath, String resType, int resId) {
+        LaporIrigasiFragment frag = new LaporIrigasiFragment();
         frag.composerOption = response;
         frag.selectedOption = selectedOption;
         frag.photopath = photopath;
@@ -250,9 +260,9 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         return frag;
     }
 
-    public static PostFeedFragment newInstance(ComposerOption response, int selectedOption, int resId, String resType) {
+    public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption, int resId, String resType) {
 
-        PostFeedFragment frag = new PostFeedFragment();
+        LaporIrigasiFragment frag = new LaporIrigasiFragment();
         frag.composerOption = response;
         frag.selectedOption = selectedOption;
         frag.resId = resId;
@@ -270,7 +280,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         if (v != null) {
             return v;
         }
-        v = inflater.inflate(R.layout.fragment_post_feed_slidable, container, false);
+        v = inflater.inflate(R.layout.fragment_lapor_irigasi, container, false);
         try {
             // applyTheme(v);
             friendList = new ArrayList<>();
@@ -279,7 +289,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             init();
             setData();
             setAttribution();
-            hideSlide();
+
             //get location
             if (mGoogleApiClient == null) {
                 mGoogleApiClient = new GoogleApiClient.Builder(context)
@@ -503,9 +513,31 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             tvPostSetting = v.findViewById(R.id.tvPostSetting);
             cvHorizontal = v.findViewById(R.id.cvHorizontal);
 
+            tvPilihFoto = v.findViewById(R.id.tvPilihFoto);
+            tvPilihKategori = v.findViewById(R.id.tvPilihKategori);
+            layputKategori = v.findViewById(R.id.layout_bottom);
+            tvKategori = v.findViewById(R.id.tvKategory);
+
+            layputKategori.setVisibility(View.VISIBLE);
+
             v.findViewById(R.id.llPrivacy).setOnClickListener(this);
             v.findViewById(R.id.tvDone).setOnClickListener(this);
             etBody = v.findViewById(R.id.etPost);
+
+            tvPilihKategori.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    showDialogCheckBox();
+                }
+            });
+
+            tvPilihFoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    openImagePicker();
+                }
+            });
+
             etBody.setOnTouchListener(new View.OnTouchListener() {
 
                 public boolean onTouch(View v, MotionEvent event) {
@@ -555,6 +587,8 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
             emojiSize = context.getResources().getInteger(R.integer.header_emoji_size);
 
             selectorShown = false;
+
+            layoutDragView = v.findViewById(R.id.dragView);
 
             try {
 
@@ -705,6 +739,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         mLayout.addPanelSlideListener(this);
         mLayout.setPanelHeight(dpToPx(AppConfiguration.isBgOptionEnabled ? 88 : 44));
         mLayout.setFadeOnClickListener(view -> mLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED));
+        hideSlide();
     }
 
     @Override
@@ -733,7 +768,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
 
                 break;
             case COLLAPSED:
-                cvHorizontal.setVisibility(View.VISIBLE);
+                cvHorizontal.setVisibility(View.GONE);
                 //   rvAttach1.setVisibility(View.GONE);
                 //mLayout.setPanelState(SlidingUpPanelLayout.PanelState.HIDDEN);
                 break;
@@ -1261,7 +1296,16 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                     break;
 
                 case R.id.tvDone:
-                    sendPost();
+
+                    if (hastagTitle.equals("")){
+                        Util.showToast(context, "Anda Belum Memilih Kategori");
+                    }else if(etBody().getText().toString().equals("")){
+                        Util.showToast(context, "Anda Belum Menulis Sesuatu");
+                    }else {
+                        sendPost();
+                    }
+
+
                     break;
                 case R.id.cvBgCollapse:
                     if (cvBgOption.getVisibility() == View.VISIBLE) {
@@ -1561,7 +1605,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         startAnimation(cvBgImageGrid, Techniques.SLIDE_IN_UP, 400, new AnimationAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
-                mLayout.removePanelSlideListener(PostFeedFragment.this);
+                mLayout.removePanelSlideListener(LaporIrigasiFragment.this);
                 rlBgImageOptionHorizontal.setVisibility(View.GONE);
                 // cvBgImageGrid.setVisibility(View.VISIBLE);
                 cvBgImageGrid.setVisibility(AppConfiguration.isBgOptionEnabled ? View.VISIBLE : View.GONE);
@@ -1570,7 +1614,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                mLayout.addPanelSlideListener(PostFeedFragment.this);
+                mLayout.addPanelSlideListener(LaporIrigasiFragment.this);
             }
         });
     }
@@ -1579,7 +1623,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
         startAnimation(cvBgImageGrid, Techniques.SLIDE_OUT_DOWN, 200, new AnimationAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
-                mLayout.removePanelSlideListener(PostFeedFragment.this);
+                mLayout.removePanelSlideListener(LaporIrigasiFragment.this);
 
             }
 
@@ -1588,7 +1632,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                 mLayout.setPanelHeight(dpToPx(AppConfiguration.isBgOptionEnabled ? 88 : 44));
                 rlBgImageOptionHorizontal.setVisibility(AppConfiguration.isBgOptionEnabled ? View.VISIBLE : View.GONE);
                 cvBgImageGrid.setVisibility(View.GONE);
-                mLayout.addPanelSlideListener(PostFeedFragment.this);
+                mLayout.addPanelSlideListener(LaporIrigasiFragment.this);
 
             }
         });
@@ -2240,7 +2284,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                                 }*/
 
                                 Constant.TASK_POST = true;
-                                //PostFeedFragment.super.onBackPressed();
+                                //LaporIrigasiFragment.super.onBackPressed();
                                 onBackPressed();
 
                             } else {
@@ -2351,7 +2395,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
 
             Map<String, Object> params = new HashMap<>();
             String body = etBody().getText().toString().trim();
-
+            String hastag = hastagTitle.replace(" ","");
             if (!TextUtils.isEmpty(body)) {
                 feedVo.setBody(body);
                 //check if user mentioned someone,
@@ -2364,8 +2408,7 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                     CustomLog.e("body", body);
                 }
 
-                params.put("body", body + "\n #InfraStrukturIrigasi" +
-                        "#KondisiAirIrigasi");
+                params.put("body", body  + "\n#"+hastag );
 
 
             }
@@ -2491,9 +2534,13 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
                 params.put("postingType", postingType);
             }
 
+
+
+
             params.put("privacy", selectedPrivacy.getName());
             params.put("longitude", longtitude);
             params.put("latitude", latitdue);
+
             feedVo.setPrivacy(selectedPrivacy.getName());
 
             feedVo.setAttachment(attachment);
@@ -2618,4 +2665,56 @@ public class PostFeedFragment extends ApiHelper implements View.OnClickListener,
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+
+    public void showDialogCheckBox() {
+        // Set up the alert builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Pilih Kategori");
+
+        builder.setSingleChoiceItems(values, -1, new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int item) {
+
+                switch(item)
+                {
+                    case 0:
+                        hastagTitle = "Infra Struktur Irigasi";
+
+                       // Toast.makeText(MainActivity.this, "First Item Clicked", Toast.LENGTH_LONG).show();
+                        break;
+                    case 1:
+                        hastagTitle = "Kondisi Air Irigasi";
+                       // Toast.makeText(MainActivity.this, "Second Item Clicked", Toast.LENGTH_LONG).show();
+                        break;
+
+                }
+
+                tvKategori.setText("Kategori : " + hastagTitle);
+                tvKategori.setVisibility(View.VISIBLE);
+
+                alertDialog1.dismiss();
+            }
+        });
+        alertDialog1 = builder.create();
+        alertDialog1.show();
+//        String[] kategori = {"Infra Struktur Irigasi", "Kondisi Air Irigasi",};
+//        boolean[] checkedItems = new boolean[] {false};
+//        builder.setMultiChoiceItems(kategori, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+//                checkedItems[which] = isChecked;
+//
+//            }
+//        });
+//
+//
+//        builder.setPositiveButton("Pilih", (dialog, which) -> {
+//
+//            dialog.dismiss();
+//
+//        });
+//        AlertDialog dialog = builder.create();
+//        dialog.show();
+    }
+
 }

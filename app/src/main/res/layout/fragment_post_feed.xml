@@ -327,7 +327,15 @@
                         android:textColor="@color/text_color_1"
                         android:textColorHint="@color/text_color_2"
                         emojicon:emojiconSize="28sp" />
-
+                    <TextView
+                        android:id="@+id/tvKategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        android:text="Kategori"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
                     <RelativeLayout
                         android:id="@+id/llPostBg"
                         android:layout_width="match_parent"
@@ -341,6 +349,7 @@
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
                             android:visibility="gone" />
+
 
                         <EditText
                             android:id="@+id/etPostBg"

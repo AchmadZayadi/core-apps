@@ -574,6 +574,9 @@ public class Constant extends URL {
     public static final int GO_TO_VIDEO_VIEW = 23;
     public static final int GO_TO_NEWS = 24;
     public static final int GO_TO_FORUM = 25;
+    public static final int GO_TO_TULIS_SESUATU = 229;
+    public static final int GO_TO_LAPOR_IRIGASI = 231;
+    public static final int GO_TO_UNGGAH_FOTO= 230;
     public static final int GO_TO_CFORUM = 2456;
     public static final int RESUME_BUILDER = 3012;
     public static final int GO_TO_JOBS = 4012;

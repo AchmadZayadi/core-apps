@@ -1801,7 +1801,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 ((ImageView) v.findViewById(R.id.ivPostPhoto)).setColorFilter(Color.parseColor(Constant.text_color_1));
                 //  v.findViewById(R.id.llPostFeed).setVisibility(View.VISIBLE);
                 if (composerOption.getResult().getEnableComposer()) {
-                    llComposer.setVisibility(View.VISIBLE);
+                    llComposer.setVisibility(View.GONE);
                     llComposer.setOnClickListener(this);
                     ivProfileCompose.setOnClickListener(this);
 

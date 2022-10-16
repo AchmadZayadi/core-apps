@@ -2,6 +2,7 @@ package com.sesolutions.ui.dashboard;
 
 
 import android.Manifest;
+import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
@@ -45,9 +46,11 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -168,6 +171,10 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
     private List<Dummy.Formfields> formList;
     private Map<String, Map<String, String>> commonMap;
     private Map<String, Object> mapHiddenFields;
+    private FloatingActionButton buttonFloat;
+    private boolean fabMenuOpen = false;
+    private LinearLayout fabContainer;
+    TextView tvLaporIrigasi, tvUnggahFoto, tvTulisSesuatu;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle saveInstanceState) {
@@ -546,12 +553,18 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             llTabLayout = v.findViewById(R.id.llTabLayout);
             llTabLayout.setBackgroundColor(menuBackgroundColor);
             viewPager = v.findViewById(R.id.viewpager);
+            buttonFloat = v.findViewById(R.id.floatButtonHome);
+            fabContainer = v.findViewById(R.id.fabContainerLayout);
+            tvLaporIrigasi = v.findViewById(R.id.tv_irigasi);
+            tvTulisSesuatu = v.findViewById(R.id.tv_tulis_sesuatu);
+            tvUnggahFoto = v.findViewById(R.id.tv_unggah_foto);
             setupViewPager(viewPager);
             setHeaderLayout();
             if (!AppConfiguration.SHOW_TAB_AT_TOP) {
                 viewPager.setPagingEnabled(false);
                 v.findViewById(R.id.llCreatePost).setVisibility(View.VISIBLE);
-                v.findViewById(R.id.llCreatePost).setOnClickListener(this);
+                //  v.findViewById(R.id.llCreatePost).setOnClickListener(this);
+                buttonFloat.setOnClickListener(this);
                 tabLayout.setVisibility(View.GONE);
                 llTabLayout.setVisibility(View.VISIBLE);
                 initCustomTablayout();
@@ -611,6 +624,87 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
             CustomLog.e(e);
         }
 
+    }
+
+    private void toggleFabMenu() {
+        if (!fabMenuOpen) {
+
+            tvUnggahFoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToUnggahFoto(SPref.getInstance().getComposerOptions(context), -1);
+                }
+            });
+
+            tvTulisSesuatu.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToTulisSesuatu(SPref.getInstance().getComposerOptions(context), -1);
+
+                }
+            });
+
+            tvLaporIrigasi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    goToPostFeed(SPref.getInstance().getComposerOptions(context), -1);
+
+                }
+            });
+            buttonFloat.setImageResource(R.drawable.ic_add);
+            int centerX = fabContainer.getWidth() / 2;
+            int centerY = fabContainer.getHeight() / 2;
+            int startRadius = 5;
+            int endRadius = (int) Math.hypot(fabContainer.getWidth(), fabContainer.getHeight()) / 5;
+
+            fabContainer.setVisibility(View.VISIBLE);
+            ViewAnimationUtils
+                    .createCircularReveal(
+                            fabContainer,
+                            centerX,
+                            centerY,
+                            startRadius,
+                            endRadius
+                    )
+                    .setDuration(400)
+                    .start();
+        } else {
+            buttonFloat.setImageResource(R.drawable.ic_add);
+            int centerX = fabContainer.getWidth() / 2;
+            int centerY = fabContainer.getHeight() / 2;
+            int startRadius = (int) Math.hypot(fabContainer.getWidth(), fabContainer.getHeight()) / 2;
+            int endRadius = 0;
+
+            Animator animator = ViewAnimationUtils
+                    .createCircularReveal(
+                            fabContainer,
+                            centerX,
+                            centerY,
+                            startRadius,
+                            endRadius
+                    );
+            animator.setDuration(300);
+            animator.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    fabContainer.setVisibility(View.GONE);
+                }
+
+                @Override
+                public void onAnimationCancel(Animator animation) {
+                }
+
+                @Override
+                public void onAnimationRepeat(Animator animation) {
+                }
+            });
+            animator.start();
+        }
+        fabMenuOpen = !fabMenuOpen;
     }
 
     private void initCustomTablayout() {
@@ -882,9 +976,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
                             JSONArray obj = new JSONObject(response).getJSONObject("result").getJSONArray("formFields");
 
                             first_name = obj.getJSONObject(0).getString("value");
-                           // kecamatan = obj.getJSONObject(7).getString("value");
-
-
+                            // kecamatan = obj.getJSONObject(7).getString("value");
 
 
                             if (first_name.equals("")) {
@@ -1144,15 +1236,16 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
 
 
                     break;
-                case R.id.llCreatePost:
+                case R.id.floatButtonHome:
 
                     if (isLoggedIn) {
                         //  TictokActivity();
-                        if (AppConfiguration.isStoryEnabled || AppConfiguration.isLiveStreamingEnabled) {
-                            showBottomSheetDialog();
-                        } else {
-                            goToPostFeed(SPref.getInstance().getComposerOptions(context), -1);
-                        }
+                        toggleFabMenu();
+//                        if (AppConfiguration.isStoryEnabled || AppConfiguration.isLiveStreamingEnabled) {
+//                            showBottomSheetDialog();
+//                        } else {
+//                            goToPostFeed(SPref.getInstance().getComposerOptions(context), -1);
+//                        }
                     } else {
                         showLoginDialog();
                     }
