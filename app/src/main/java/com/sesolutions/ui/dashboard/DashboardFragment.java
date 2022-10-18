@@ -651,7 +651,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
 
                 }
             });
-            buttonFloat.setImageResource(R.drawable.ic_add);
+            buttonFloat.setImageResource(R.drawable.ic_close_32px);
             int centerX = fabContainer.getWidth() / 2;
             int centerY = fabContainer.getHeight() / 2;
             int startRadius = 5;
@@ -669,7 +669,7 @@ public class DashboardFragment extends BaseFragment implements View.OnClickListe
                     .setDuration(400)
                     .start();
         } else {
-            buttonFloat.setImageResource(R.drawable.ic_add);
+            buttonFloat.setImageResource(R.drawable.ic_add_64px);
             int centerX = fabContainer.getWidth() / 2;
             int centerY = fabContainer.getHeight() / 2;
             int startRadius = (int) Math.hypot(fabContainer.getWidth(), fabContainer.getHeight()) / 2;
