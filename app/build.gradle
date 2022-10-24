@@ -4,12 +4,22 @@ repositories {
     mavenCentral()
 }
 android {
+
+//    signingConfigs {
+//        ottopay_keystore {
+//            keyAlias 'ottokonek'
+//            keyPassword 'ottokonek2021'
+//            storeFile file('/Users/elifastariwi/Documents/OttoKonek/android-op4/app/all_ottokonek_key')
+//            storePassword 'ottokonek2021'
+//        }
+//    }
+
     signingConfigs {
-        Production {
-            storeFile file("KEY_STORE_PATH") //Path to the keystore file
-            keyAlias "KEY_USER_NAME"
-            storePassword "KEY_STORE_PASSWORD"
-            keyPassword "KEY_STORE_PASSWORD"
+        matani {
+            storeFile file("/Users/achmadzayadi/Documents/Jakarta/matani-keystore.jks") //Path to the keystore file
+            keyAlias "matani"
+            storePassword "matani2022"
+            keyPassword "matani2022"
         }
     }
 
@@ -54,7 +64,7 @@ android {
             resValue "string", "fb_login_protocol_scheme", "\"$SES_FACEBOOK_SCHEME\""
         }
         production {
-            signingConfig signingConfigs.Production
+//            signingConfig signingConfigs.matani
             buildConfigField "String", "SES_API_VERSION", "\"$SES_API_VERSION\""
             buildConfigField "String", "BASE_URL", "\"$SES_BASE_URL_RELEASE\""
             buildConfigField "String", "APP_NAME", "\"$SES_APP_NAME\""
@@ -66,20 +76,30 @@ android {
             resValue "string", "fb_login_protocol_scheme", "\"$SES_FACEBOOK_SCHEME\""
         }
     }
-
     buildTypes {
-        release {
-            applicationVariants.each { variant ->
-                variant.outputs.each { output ->
-                    output.outputFile = file("$project.buildDir/outputs/apk/SeSolutions_v_" + defaultConfig.versionName + ".apk")
-                }
-            }
+        debug {
 
+        }
+        release {
             minifyEnabled false
-            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.matani
         }
     }
+
+//    buildTypes {
+//        release {
+//            applicationVariants.each { variant ->
+//                variant.outputs.each { output ->
+//                    output.outputFile = file("$project.buildDir/outputs/apk/SeSolutions_v_" + defaultConfig.versionName + ".apk")
+//                }
+//            }
+//
+//            minifyEnabled false
+//            shrinkResources false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
