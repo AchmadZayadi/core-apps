@@ -11,7 +11,7 @@ import com.sesolutions.R;
 
 public class CommentHolder extends RecyclerView.ViewHolder {
 
-    final protected TextView tvHeader, tvReplyCount, tvHeaderChild, tvReply;
+    final protected TextView tvHeader, tvReplyCount, tvHeaderChild, tvReply,tvReportComment;
     final protected TextView tvBodyChild;
     final protected TextView tvBody;
     final protected TextView tvLike;
@@ -61,6 +61,7 @@ public class CommentHolder extends RecyclerView.ViewHolder {
         cvCommentChild = itemView.findViewById(R.id.cvCommentChild);
         rlCommentChild = itemView.findViewById(R.id.rlCommentChild);
         tvReply = itemView.findViewById(R.id.tvReply);
+        tvReportComment = itemView.findViewById(R.id.tvReport);
 
         cvReaction = itemView.findViewById(R.id.cvReaction);
         ivLikeUpper1 = itemView.findViewById(R.id.ivLikeUpper1);

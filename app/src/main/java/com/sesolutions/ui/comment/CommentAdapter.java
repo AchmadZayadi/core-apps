@@ -1,6 +1,7 @@
 package com.sesolutions.ui.comment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +21,7 @@ import com.sesolutions.listeners.OnUserClickedListener;
 import com.sesolutions.responses.comment.CommentData;
 import com.sesolutions.responses.feed.Mention;
 import com.sesolutions.thememanager.ThemeManager;
+import com.sesolutions.ui.common.CommonActivity;
 import com.sesolutions.ui.customviews.ExampleCardPopup;
 import com.sesolutions.ui.customviews.RelativePopupWindow;
 import com.sesolutions.utils.Constant;
@@ -99,7 +101,9 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
             holder.tvLike.setOnClickListener(v -> listener.onItemClicked(Constant.Events.LIKE_COMMENT, vo.getIsLike() ? "-1" : "0", holder.getAdapterPosition()));
             holder.tvReply.setVisibility(canReply ? View.VISIBLE : View.GONE);
             holder.tvReply.setOnClickListener(v -> listener.onItemClicked(Constant.Events.REPLY, "true", holder.getAdapterPosition()));
-
+            holder.tvReportComment.setOnClickListener(view -> {
+                listener.onItemClicked(Constant.Events.REPORT,"Comment has been reported.",holder.getAdapterPosition());
+            });
             if (vo.getCanDelete()) {
                 holder.tvDelete.setVisibility(View.VISIBLE);
                 holder.tvDelete.setOnClickListener(v -> listener.onItemClicked(Constant.Events.DELETE_COMMENT, "", holder.getAdapterPosition()));
@@ -230,6 +234,7 @@ public class CommentAdapter<T> extends RecyclerView.Adapter<CommentHolder> {
             if (vo.getReplyCount() > 0) {
                 holder.rlCommentChild.setVisibility(View.VISIBLE);
                 holder.tvReplyCount.setText(context.getResources().getQuantityString(R.plurals.view_more_reply_count, vo.getReplyCount(), vo.getReplyCount()));
+
                 holder.cvCommentChild.setCardBackgroundColor(cBackground);
                 holder.tvBodyChild.setText(unecodeStr(vo.getReplies().get(0).getBody()));
                 holder.tvHeaderChild.setText(unecodeStr(vo.getReplies().get(0).getUserTitle()));

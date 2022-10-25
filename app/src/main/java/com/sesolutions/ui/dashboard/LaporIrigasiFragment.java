@@ -236,7 +236,7 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
     String hastagTitle = "";
     AlertDialog alertDialog1;
 
-    CharSequence[] values = {"Infra Struktur Irigasi","Kondisi Air Irigasi"};
+    CharSequence[] values = {"Infrastruktur Irigasi","Kondisi Air Irigasi"};
 
     public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption) {
         return newInstance(response, selectedOption, 0, null);

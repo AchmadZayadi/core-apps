@@ -252,6 +252,15 @@
                 android:text="@string/reply"
                 android:textSize="@dimen/caption_large" />
 
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvReport"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_margin="4sp"
+                android:text="Laporkan"
+                android:textSize="@dimen/caption_large" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <RelativeLayout
@@ -276,13 +285,13 @@
                 android:id="@+id/rl_photo_child"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_below="@+id/tvReplyCount"
                 android:layout_marginStart="@dimen/margin_full"
                 android:layout_marginLeft="@dimen/margin_full"
                 android:layout_marginTop="@dimen/margin_half"
                 android:layout_marginEnd="@dimen/margin_full"
                 android:layout_marginRight="@dimen/margin_full"
-                android:layout_marginBottom="@dimen/margin_half"
-                android:layout_below="@+id/tvReplyCount">
+                android:layout_marginBottom="@dimen/margin_half">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/ivProfileChild"
@@ -290,12 +299,13 @@
                     android:layout_height="@dimen/height_child_comment_profile"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@tools:sample/avatars" />
+
                 <ImageView
                     android:id="@+id/iv_verify_comments_child"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true" />
             </RelativeLayout>
 
 

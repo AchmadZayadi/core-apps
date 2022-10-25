@@ -73,6 +73,7 @@ import com.sesolutions.thememanager.ThemeManager;
 import com.sesolutions.ui.AGvideo.AGVideoActivity;
 import com.sesolutions.ui.common.BaseActivity;
 import com.sesolutions.ui.common.BaseResponse;
+import com.sesolutions.ui.common.CommonActivity;
 import com.sesolutions.ui.dashboard.ApiHelper;
 import com.sesolutions.ui.photo.GallaryFragment;
 import com.sesolutions.ui.postfeed.GifFragment;
@@ -899,6 +900,14 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                 } else {
                     showDeleteDialog(commentList.get(listPosition).getCommentId(), listPosition);
                 }
+                break;
+
+            case Constant.Events.REPORT:
+                String guid = Constant.ResourceType.COMMENT + "_" + "111";
+                Intent intent2 = new Intent(activity, CommonActivity.class);
+                intent2.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GoTo.REPORT_COMMENT);
+                intent2.putExtra(Constant.KEY_GUID, guid);
+                startActivity(intent2);
                 break;
           /*  case Constant.Events.LIKED:
                 ReactionPlugin reactionVo = SPref.getInstance().getReactionPlugins(context).get(Integer.parseInt("" + value));

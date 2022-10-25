@@ -15,9 +15,9 @@ buildscript {
         glideVersion = '4.12.0'
 
         // Advanced app configration
-        appVersion = '1.0.3'
+        appVersion = '2.0.0'
         // appVersionCode = 15
-        appVersionCode = 30
+        appVersionCode = 31
         SES_FACEBOOK_ID = 'FACEBOOK_API_KEY'
         SES_FACEBOOK_SCHEME = 'fb_FACEBOOK_API_KEY'
         //  SES_PLACES_API_KEY = 'PLACE_API_KEY'
