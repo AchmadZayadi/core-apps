@@ -231,12 +231,12 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
     double latitdue = 0;
     double longtitude = 0;
     LinearLayout layoutDragView;
-    TextView tvPilihKategori,tvPilihFoto,tvKategori;
+    TextView tvPilihKategori, tvPilihFoto, tvKategori;
     LinearLayout layputKategori;
     String hastagTitle = "";
     AlertDialog alertDialog1;
 
-    CharSequence[] values = {"Infrastruktur Irigasi","Kondisi Air Irigasi"};
+    CharSequence[] values = {"Infrastruktur Irigasi", "Kondisi Air Irigasi"};
 
     public static LaporIrigasiFragment newInstance(ComposerOption response, int selectedOption) {
         return newInstance(response, selectedOption, 0, null);
@@ -1297,11 +1297,11 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
 
                 case R.id.tvDone:
 
-                    if (hastagTitle.equals("")){
+                    if (hastagTitle.equals("")) {
                         Util.showToast(context, "Anda Belum Memilih Kategori");
-                    }else if(etBody().getText().toString().equals("")){
+                    } else if (etBody().getText().toString().equals("")) {
                         Util.showToast(context, "Anda Belum Menulis Sesuatu");
-                    }else {
+                    } else {
                         sendPost();
                     }
 
@@ -2395,7 +2395,7 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
 
             Map<String, Object> params = new HashMap<>();
             String body = etBody().getText().toString().trim();
-            String hastag = hastagTitle.replace(" ","");
+            String hastag = hastagTitle.replace(" ", "");
             if (!TextUtils.isEmpty(body)) {
                 feedVo.setBody(body);
                 //check if user mentioned someone,
@@ -2408,7 +2408,7 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
                     CustomLog.e("body", body);
                 }
 
-                params.put("body", body  + "\n#"+hastag );
+                params.put("body", body + "\n#" + hastag);
 
 
             }
@@ -2535,8 +2535,6 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
             }
 
 
-
-
             params.put("privacy", selectedPrivacy.getName());
             params.put("longitude", longtitude);
             params.put("latitude", latitdue);
@@ -2544,7 +2542,16 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
             feedVo.setPrivacy(selectedPrivacy.getName());
 
             feedVo.setAttachment(attachment);
-            callPostSubmitApi(params);
+
+//            CustomLog.d("hasilnyaa",attachment.getImages().toString());
+            if (attachment.getImages().isEmpty()) {
+
+                Util.showToast(context, "Anda Belum Memilih Foto");
+
+            } else {
+                callPostSubmitApi(params);
+            }
+
             new Thread(() ->
             {
                 SesDB.daoInstance(context).updateFeed(feedVo);
@@ -2675,16 +2682,15 @@ public class LaporIrigasiFragment extends ApiHelper implements View.OnClickListe
 
             public void onClick(DialogInterface dialog, int item) {
 
-                switch(item)
-                {
+                switch (item) {
                     case 0:
-                        hastagTitle = "Infra Struktur Irigasi";
+                        hastagTitle = "Infrastruktur Irigasi";
 
-                       // Toast.makeText(MainActivity.this, "First Item Clicked", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(MainActivity.this, "First Item Clicked", Toast.LENGTH_LONG).show();
                         break;
                     case 1:
                         hastagTitle = "Kondisi Air Irigasi";
-                       // Toast.makeText(MainActivity.this, "Second Item Clicked", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(MainActivity.this, "Second Item Clicked", Toast.LENGTH_LONG).show();
                         break;
 
                 }

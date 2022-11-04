@@ -1555,7 +1555,7 @@
     <string name="TITLE_SUBSCRIPTION">Berlangganan</string>
     <string name="MSG_SUBSCRIPTION_FAILED">Langganan gagal</string>
     <string name="MSG_SUBSCRIPTION_SUCCESS">Keberhasilan berlangganan</string>
-    <string name="MSG_PERMISSION_DENIED">Jika Anda menolak izin, Anda tidak dapat menggunakan layanan ini \ n \ nPlease mengaktifkan izin di [pengaturan]</string>
+    <string name="MSG_PERMISSION_DENIED">Jika Anda menolak izin, Anda tidak dapat menggunakan layanan ini Segera mengaktifkan izin di Menu Pengaturan</string>
     <string name="TXT_OK">Oke</string>
     <string name="TXT_CANCEL">Membatalkan</string>
     <string name="MSG_LOGOUT">Apakah Anda yakin ingin keluar?</string>

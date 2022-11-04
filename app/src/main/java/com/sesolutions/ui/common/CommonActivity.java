@@ -95,6 +95,7 @@ import com.sesolutions.ui.dashboard.LaporIrigasiFragment;
 import com.sesolutions.ui.dashboard.PostEditFragment;
 import com.sesolutions.ui.dashboard.PostFeedFragment;
 import com.sesolutions.ui.dashboard.RateFragment;
+import com.sesolutions.ui.dashboard.ReportSpamCommentFragment;
 import com.sesolutions.ui.dashboard.ReportSpamFragment;
 import com.sesolutions.ui.dashboard.ShareSEFragment;
 import com.sesolutions.ui.dashboard.TnCFragment;
@@ -1247,7 +1248,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
                 case Constant.GoTo.REPORT_COMMENT:
                     String guid = bundle.getString(Constant.KEY_GUID);
-                    fragmentManager.beginTransaction().replace(R.id.container, ReportSpamFragment.newInstance(guid, true)).addToBackStack(null).commit();
+                    fragmentManager.beginTransaction().replace(R.id.container, ReportSpamCommentFragment.newInstance(guid, true)).addToBackStack(null).commit();
                     break;
                 case Constant.GoTo.EDIT_CHANNEL:
                     Map<String, Object> map3 = new HashMap<>();

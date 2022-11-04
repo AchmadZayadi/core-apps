@@ -1266,7 +1266,11 @@ public class TulisSesuatuFragment extends ApiHelper implements View.OnClickListe
                     break;
 
                 case R.id.tvDone:
-                    sendPost();
+                    if (etBody().getText().toString().equals("")) {
+                        Util.showToast(context, "Anda Belum Menulis Sesuatu");
+                    } else {
+                        sendPost();
+                    }
                     break;
                 case R.id.cvBgCollapse:
                     if (cvBgOption.getVisibility() == View.VISIBLE) {
