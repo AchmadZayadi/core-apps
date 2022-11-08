@@ -41,6 +41,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -98,7 +99,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-public class CommentFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, OnLoadMoreListener,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class CommentFragment extends ApiHelper implements View.OnClickListener, OnUserClickedListener<Integer, Object>, OnLoadMoreListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private static final int REQ_WITH_DATA = 2;
     private static final int REQ_INITIAL = 1;
@@ -129,7 +130,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     private View llStickerBottom;
     private StickerFragment stickerFragment;
     private boolean isEmojiSelected;
-    private boolean isGIFSelected=false;
+    private boolean isGIFSelected = false;
     private String resourceType;
     private ImageView ivLikeUpper1;
     private ImageView ivLikeUpper2;
@@ -137,6 +138,11 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     private ImageView ivLikeUpper4;
     private ImageView ivLikeUpper5;
     private String guid;
+    private String titleQuote;
+    String nameUser;
+    String photoUser;
+    String datePosting;
+    String imagePosting;
 
     RelativeLayout rlUsersList;
     ProgressBar progress_bar;
@@ -146,12 +152,12 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
 
     private boolean isSearching = false;
     private HttpRequestHandler requestHandler;
-    String finalstring_data="";
+    String finalstring_data = "";
 
     private ArrayList<Integer> startPositions, userNameLengths, userIds;
     private ArrayList<String> userNamesList;
-    private int currentCursorPosition = -1,maxHeight = 0,heightDifference,originalStartPosition = -1,startUserNameSearchKeyword = -1,previousCursorPosition = -1;
-    String userNameSearchKeyword = "",beforeTextChanged = "", onTextChanged = "";
+    private int currentCursorPosition = -1, maxHeight = 0, heightDifference, originalStartPosition = -1, startUserNameSearchKeyword = -1, previousCursorPosition = -1;
+    String userNameSearchKeyword = "", beforeTextChanged = "", onTextChanged = "";
     private long last_text_edit = 0, delay = 1000, endTime = 0;
     private Handler handler = new Handler();
     double latitdue = 0;
@@ -159,19 +165,36 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     private GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     MyLastLocation location = new MyLastLocation();
+    TextView tvQuoteTitle;
+    TextView tvHeader;
+    TextView tvDate;
+    ImageView ivProfileImageRound;
+    ImageView ivQuoteImage;
 
-    public static CommentFragment newInstance(int actionId, String resourceType) {
+
+    public static CommentFragment newInstance(int actionId, String resourceType, String titleQuote, String nameUser, String datePosting, String photoUser, String imagePosting) {
         CommentFragment frag = new CommentFragment();
         frag.actionId = actionId;
         frag.resourceType = resourceType;
+        frag.titleQuote = titleQuote;
+        frag.nameUser = nameUser;
+        frag.datePosting = datePosting;
+        frag.photoUser = photoUser;
+        frag.imagePosting = imagePosting;
         return frag;
+
     }
 
-    public static CommentFragment newInstance(int actionId, String resourceType, String guid) {
+    public static CommentFragment newInstance(int actionId, String resourceType, String guid, String titleQuote, String nameUser, String datePosting, String photoUser, String imagePosting) {
         CommentFragment frag = new CommentFragment();
         frag.actionId = actionId;
         frag.resourceType = resourceType;
         frag.guid = guid;
+        frag.titleQuote = titleQuote;
+        frag.nameUser = nameUser;
+        frag.datePosting = datePosting;
+        frag.photoUser = photoUser;
+        frag.imagePosting = imagePosting;
         return frag;
     }
 
@@ -252,6 +275,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         }
 
     }
+
     @Override
     public void onStop() {
         mGoogleApiClient.disconnect();
@@ -271,6 +295,12 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         tvCameraImage = v.findViewById(R.id.tvCameraImage);
         tvVideoImage = v.findViewById(R.id.tvVideoImage);
         tvStickerImage = v.findViewById(R.id.tvStickerImage);
+        tvQuoteTitle = v.findViewById(R.id.tvQuoteTitle);
+        tvHeader = v.findViewById(R.id.tvHeader);
+        tvDate = v.findViewById(R.id.tvDate);
+        ivProfileImageRound = v.findViewById(R.id.ivProfileImage);
+        ivQuoteImage = v.findViewById(R.id.ivQuoteImage);
+
         startPositions = new ArrayList<>();
         userNameLengths = new ArrayList<>();
         userNamesList = new ArrayList<>();
@@ -281,7 +311,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         tvGifImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BaseActivity.gifimageurl="";
+                BaseActivity.gifimageurl = "";
                 try {
                     fragmentManager.beginTransaction().replace(R.id.container, GifFragment.newInstance(true)).addToBackStack(null).commit();
                 } catch (Exception e) {
@@ -323,7 +353,22 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             }
         });
 
+
 */
+
+        tvQuoteTitle.setText(titleQuote);
+        tvHeader.setText(nameUser);
+        tvDate.setText(Util.changeDateFormat(context, datePosting));
+        Glide.with(context).load(photoUser).circleCrop().into(ivProfileImageRound);
+
+        if (imagePosting.equals("")){
+            ivQuoteImage.setVisibility(View.GONE);
+        }else {
+            Glide.with(context).load(imagePosting).into(ivQuoteImage);
+        }
+
+
+
         etComment.addTextChangedListener(new TextWatcher() {
                                              @Override
                                              public void beforeTextChanged(CharSequence s, int start, int count,
@@ -374,7 +419,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                                                                      userNamesList.remove(i);
                                                                      userIds.remove(i);
                                                                      SpannableStringBuilder str = new SpannableStringBuilder(onTextChanged);
-                                                                     Log.e("STRINGDATAUSER",""+str);
+                                                                     Log.e("STRINGDATAUSER", "" + str);
                                                                      SpannableStringBuilder spannableStringBuilder = getUserTagSpan(str);
                                                                      etComment.setText(spannableStringBuilder);
                                                                      etComment.setSelection(currentCursorPosition);
@@ -412,25 +457,22 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
 
                                                  try {
                                                      handler.removeCallbacks(input_finish_checker);
-                                                 }catch (Exception ex){
+                                                 } catch (Exception ex) {
                                                      ex.printStackTrace();
                                                  }
-                                                 Log.e("userNameSearchKeyword",""+userNameSearchKeyword.length());
-                                                 Log.e("wwwwwwwwwwww",""+startUserNameSearchKeyword);
+                                                 Log.e("userNameSearchKeyword", "" + userNameSearchKeyword.length());
+                                                 Log.e("wwwwwwwwwwww", "" + startUserNameSearchKeyword);
                                                  if (userNameSearchKeyword.length() > 0) {
 
 
                                                      last_text_edit = System.currentTimeMillis();
                                                      handler.postDelayed(input_finish_checker, delay);
-                                                 } else{
+                                                 } else {
                                                      dismissPopup();
                                                  }
                                              }
                                          }
         );
-
-
-
 
 
         llStickerBottom = v.findViewById(R.id.llStickerBottom);
@@ -506,10 +548,10 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     @Override
     public void onBackPressed() {
 
-        BaseActivity.backcoverchange=Constant.GO_TO_HOMEFRAGMENT;
+        BaseActivity.backcoverchange = Constant.GO_TO_HOMEFRAGMENT;
         try {
-            BaseActivity.commentcount=commentList.size();
-        }catch (Exception ex){
+            BaseActivity.commentcount = commentList.size();
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -583,13 +625,13 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
 
         mGoogleApiClient.connect();
         try {
-            Log.e("task",""+activity.taskPerformed2);
+            Log.e("task", "" + activity.taskPerformed2);
             if (activity.taskPerformed2 == Constant.TASK_STICKER) {
                 hideStickerLayout();
                 attachmentList.clear();
                 updateImageAttachAdapter();
                 etComment.setText(Constant.EMPTY);
-                finalstring_data="";
+                finalstring_data = "";
                 userNamesList.clear();
                 isEmojiSelected = true;
                 isGIFSelected = false;
@@ -604,14 +646,14 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("gif",""+BaseActivity.gifimageurl);
-        if(BaseActivity.gifimageurl!=null && BaseActivity.gifimageurl.length()>0){
-            isGIFSelected=true;
+        Log.e("gif", "" + BaseActivity.gifimageurl);
+        if (BaseActivity.gifimageurl != null && BaseActivity.gifimageurl.length() > 0) {
+            isGIFSelected = true;
             isEmojiSelected = false;
             attachmentList.clear();
             updateImageAttachAdapter();
             etComment.setText(Constant.EMPTY);
-            finalstring_data="";
+            finalstring_data = "";
             userNamesList.clear();
             (activity).setTaskPerformed(0);
             submitCommentIfValid();
@@ -623,10 +665,10 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         boolean isValid = false;
         Map<String, Object> params = new HashMap<>();
 
-        finalstring_data=""+etComment.getText().toString();
+        finalstring_data = "" + etComment.getText().toString();
         for (int i = 0; i < startPositions.size(); i++) {
-            finalstring_data=  finalstring_data.replace(""+userNamesList.get(i),"@_user_"+userIds.get(i));
-            finalstring_data=finalstring_data.replaceAll("  "," ");
+            finalstring_data = finalstring_data.replace("" + userNamesList.get(i), "@_user_" + userIds.get(i));
+            finalstring_data = finalstring_data.replaceAll("  ", " ");
         }
         //String body = StringEscapeUtils.escapeHtml4(etBody.getText().toString());
 
@@ -655,7 +697,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
 
         if (isGIFSelected) {
             isValid = true;
-            params.put("image_id", ""+BaseActivity.gifimageurl);
+            params.put("image_id", "" + BaseActivity.gifimageurl);
             isGIFSelected = false;
         }
 
@@ -816,13 +858,13 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         updateScreenTitle(result.getTotal());
         try {
             updateScreenTitle(commentList.size());
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         adapter.setCanReply(result.getReplyComment());
-        if(result.getEnable().getIs_gif().equalsIgnoreCase("true")){
+        if (result.getEnable().getIs_gif().equalsIgnoreCase("true")) {
             tvGifImage.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             tvGifImage.setVisibility(View.GONE);
         }
         adapter.notifyDataSetChanged();
@@ -856,9 +898,9 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             case Constant.Events.CLICKED_BODY_TAGGED:
             case Constant.Events.CLICKED_BODY_HASH_TAGGED:
                 try {
-                    int userid=Integer.parseInt(""+value);
+                    int userid = Integer.parseInt("" + value);
                     performClick(commentList.get(postion).getPosterType(), userid, null, false);
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 break;
@@ -922,13 +964,13 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                 break;
 
             case Constant.Events.ITEM_COMMENT_VIDEO:
-                goTo2(Constant.GoTo.VIDEO, postion,Constant.ACTIVITY_TYPE_VIDEO,102);
+                goTo2(Constant.GoTo.VIDEO, postion, Constant.ACTIVITY_TYPE_VIDEO, 102);
 
                 performClick("" + value, postion, "", false);
                 break;
             case Constant.Events.ITEM_COMMENT:
-                 openLighbox(postion, value.toString());
-                 performClick("" + value, postion, "", false);
+                openLighbox(postion, value.toString());
+                performClick("" + value, postion, "", false);
                 break;
             case Constant.Events.COMMENT_LINK:
                 String href = commentList.get(postion).getLink().getHref();
@@ -947,8 +989,6 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         map.put(Constant.KEY_RESOURCES_TYPE, Constant.ResourceType.ALBUM_PHOTO);
         fragmentManager.beginTransaction().replace(R.id.container, GallaryFragment.newInstance(map))
                 .addToBackStack(null).commit();
-
-
 
 
     }
@@ -1122,10 +1162,10 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     }
 
     private void callCreateCommentApi(final Map<String, Object> params) {
-        CustomLog.d("hasilnyaa","sukes22");
-        CustomLog.d("jarak",String.valueOf(latitdue));
+        CustomLog.d("hasilnyaa", "sukes22");
+        CustomLog.d("jarak", String.valueOf(latitdue));
 
-        CustomLog.d("jarak22",String.valueOf(longtitude));
+        CustomLog.d("jarak22", String.valueOf(longtitude));
 
         if (isNetworkAvailable(context)) {
             final boolean[] isDummyCommentAdded = {false};
@@ -1156,15 +1196,15 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                         isLoading = false;
                         CustomLog.e("repsonse1", "" + response);
 
-                        BaseActivity.gifimageurl="";
+                        BaseActivity.gifimageurl = "";
                         hideBaseLoader();
                         if (params.containsKey("body")) {
                             UserMaster userVo = SPref.getInstance().getUserMasterDetail(context);
 
-                            finalstring_data="";
+                            finalstring_data = "";
                             isDummyCommentAdded[0] = true;
                             commentList.add(0, new CommentData(
-                                    (String)etComment.getText().toString(),
+                                    (String) etComment.getText().toString(),
                                     userVo.getDisplayname(),
                                     userVo.getPhotoUrl(),
                                     Util.getCurrentdate(Constant.DATE_FROMAT_FEED)));
@@ -1192,7 +1232,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                                     updateFeelingAdapter();
                                 } else {
                                     etComment.setText(Constant.EMPTY);
-                                    finalstring_data="";
+                                    finalstring_data = "";
                                     commentList.add(0, vo);
                                     updateFeelingAdapter();
                                     recyclerView.smoothScrollToPosition(0);
@@ -1213,7 +1253,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                                 userNameSearchKeyword = "";
                                 beforeTextChanged = "";
                                 onTextChanged = "";
-                            }catch (Exception ex){
+                            } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
 
@@ -1249,7 +1289,6 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             CustomLog.e(e);
         }
     }
-
 
 
     @Override
@@ -1317,7 +1356,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                                         usersList.addAll(list);
                                         isSearching = false;
                                         showPopup();
-                                    }else {
+                                    } else {
                                         dismissPopup();
                                     }
                                 }
@@ -1342,7 +1381,6 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
             CustomLog.e(e);
         }
     }
-
 
 
     private void showPopup() {
@@ -1398,12 +1436,12 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                         startPositions.add(startText.length());
                         userNameLengths.add(userName.length());
                         userIds.add(usersList.get(position).getId());
-                        userNamesList.add(""+usersList.get(position).getLabel());
+                        userNamesList.add("" + usersList.get(position).getLabel());
                     } else {
                         startPositions.add(positionToChange, startText.length());
                         userNameLengths.add(positionToChange, userName.length());
                         userIds.add(positionToChange, usersList.get(position).getId());
-                        userNamesList.add(positionToChange, ""+usersList.get(position).getLabel());
+                        userNamesList.add(positionToChange, "" + usersList.get(position).getLabel());
                     }
                     startUserNameSearchKeyword = -1;
                     originalStartPosition = -1;
@@ -1415,16 +1453,16 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
                         displayText = startText + userName + "   ";
                     else
                         displayText = startText + userName + "  " + endText;
-                    currentCursorPosition = startText.length() + userName.length() +2;
+                    currentCursorPosition = startText.length() + userName.length() + 2;
 
                     SpannableStringBuilder str = new SpannableStringBuilder(displayText);
                     SpannableStringBuilder spannableStringBuilder = getUserTagSpan(str);
 
-                    Log.e("string data",""+str);
+                    Log.e("string data", "" + str);
                     etComment.setText(spannableStringBuilder);
                     etComment.setSelection(currentCursorPosition);
                     dismissPopup();
-                }catch (Exception ex){
+                } catch (Exception ex) {
                     ex.printStackTrace();
                     dismissPopup();
                 }
@@ -1485,7 +1523,6 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
-
 
 
 }

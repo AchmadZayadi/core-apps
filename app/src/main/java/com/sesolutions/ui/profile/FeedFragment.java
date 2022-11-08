@@ -221,6 +221,11 @@ public class FeedFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         Intent intent = new Intent(activity, CommonActivity.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_COMMENT);
         intent.putExtra(Constant.KEY_ACTION_ID, feedActivityList.get(position).getActionId());
+        intent.putExtra("title",feedActivityList.get(position).getBody());
+        intent.putExtra("nameUser",feedActivityList.get(position).getTitle());
+        intent.putExtra("photoUser",feedActivityList.get(position).getItemUser().getUser_image());
+        intent.putExtra("datePosting",feedActivityList.get(position).getDate());
+
         String guid = feedActivityList.get(position).getAttributionGuid();
         if (null != guid) {
             intent.putExtra(Constant.KEY_GUID, guid);

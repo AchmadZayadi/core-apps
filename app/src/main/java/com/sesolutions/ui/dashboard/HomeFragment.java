@@ -130,8 +130,8 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
 
             mShimmerViewContainer.startShimmerAnimation();
             // new ThemeManager().applyTheme((ViewGroup) v, context);
-          //  callApiPrice();
-           /// callApiWeather();
+            //  callApiPrice();
+            /// callApiWeather();
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -416,7 +416,7 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
             recycleViewFeedMain.addOnChildAttachStateChangeListener(new ChildAttachStateChangeListener());
             adapterFeedMain.setLoadListener(this);
             adapterFeedMain.setHome(true);
-           // recycleViewFeedMain.setNestedScrollingEnabled(false);
+            // recycleViewFeedMain.setNestedScrollingEnabled(false);
 
         } catch (Exception e) {
             CustomLog.e(e);
@@ -440,6 +440,15 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         Intent intent = new Intent(activity, CommonActivity.class);
         intent.putExtra(Constant.DESTINATION_FRAGMENT, Constant.GO_TO_COMMENT);
         intent.putExtra(Constant.KEY_ACTION_ID, feedActivityList.get(position).getActionId());
+        intent.putExtra("title", feedActivityList.get(position).getBody());
+        intent.putExtra("nameUser", feedActivityList.get(position).getTitle());
+        intent.putExtra("photoUser", feedActivityList.get(position).getItemUser().getUser_image());
+        intent.putExtra("datePosting", feedActivityList.get(position).getDate());
+
+
+        intent.putExtra("imagePosting", feedActivityList.get(position).getAttachment().getImages().get(0).getMain());
+
+
         String guid = feedActivityList.get(position).getAttributionGuid();
         if (null != guid) {
             intent.putExtra(Constant.KEY_GUID, guid);

@@ -1276,7 +1276,7 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_SETTINGS:
-                   // openPointFragment();
+                    // openPointFragment();
                     openSettingFragment();
                     break;
                 case Constant.GO_TO_NOTIFICATION:
@@ -1317,8 +1317,8 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     openVideoFragment(2);
                     break;
                 case Constant.GoTo.ARTICLE:
-                  //  openPointFragment();
-                   openArticleFragment();
+                    //  openPointFragment();
+                    openArticleFragment();
                     break;
                 case Constant.GoTo.WEATHER:
                     openWeatherFragment();
@@ -1397,9 +1397,9 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     break;
 
                 case Constant.GO_TO_MEMBER:
-                   // openPriceFragment();
-                   openMemberFragment();
-                   // openWeatherFragment();
+                    // openPriceFragment();
+                    openMemberFragment();
+                    // openWeatherFragment();
                     break;
 
                 case Constant.GoTo.CORE_SEARCH:
@@ -1607,9 +1607,10 @@ public class CommonActivity extends BaseActivity implements View.OnClickListener
                     // openPostFeedFragment((ComposerOption) bundle.getSerializable(Constant.KEY_TITLE));
 
                     if (SPref.getInstance().getDefaultInfo(this, Constant.KEY_APPDEFAULT_DATA).getResult().isIs_core_activity()) {
-                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE2, bundle.getString(Constant.KEY_GUID))).addToBackStack(null).commit();
+
+                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE2, bundle.getString(Constant.KEY_GUID), bundle.getString("title"), bundle.getString("nameUser"),bundle.getString("datePosting"),bundle.getString("photoUser"),bundle.getString("imagePosting"))).addToBackStack(null).commit();
                     } else {
-                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE, bundle.getString(Constant.KEY_GUID))).addToBackStack(null).commit();
+                        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(bundle.getInt(Constant.KEY_ACTION_ID), Constant.VALUE_RESOURCES_TYPE, bundle.getString(Constant.KEY_GUID), bundle.getString("title"), bundle.getString("nameUser"),bundle.getString("datePosting"),bundle.getString("photoUser"),bundle.getString("imagePosting"))).addToBackStack(null).commit();
                     }
 
 

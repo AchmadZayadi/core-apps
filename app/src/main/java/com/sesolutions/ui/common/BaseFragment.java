@@ -1210,7 +1210,6 @@ public abstract class BaseFragment extends Fragment {
     }
 
 
-
     //go back if permission denied
     public void goIfPermissionDenied(String msg) {
         try {
@@ -1689,7 +1688,7 @@ public abstract class BaseFragment extends Fragment {
 
 
     public void goToCommentFragment(int resourceId, String resourceType) {
-        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(resourceId, resourceType)).addToBackStack(null).commit();
+        fragmentManager.beginTransaction().replace(R.id.container, CommentFragment.newInstance(resourceId, resourceType, "title", "nameUser", "datePosting", "photoUser","imagePosting")).addToBackStack(null).commit();
     }
 
     protected String getVideoDetail(ViewVideo vo, boolean isChannel) {

@@ -40,6 +40,7 @@
         <entry key="app/src/main/res/layout/drawer_footer.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fab_layout.xml" value="0.19794784095767423" />
         <entry key="app/src/main/res/layout/fragment_album_view.xml" value="0.1286231884057971" />
+        <entry key="app/src/main/res/layout/fragment_comment.xml" value="0.192481884057971" />
         <entry key="app/src/main/res/layout/fragment_common_feed.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_common_list.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_common_list_group.xml" value="0.1286231884057971" />
@@ -96,6 +97,7 @@
         <entry key="app/src/main/res/layout/item_feed_all.xml" value="0.18115942028985507" />
         <entry key="app/src/main/res/layout/item_feed_all_center.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_commnity_ad.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/item_feed_content_comment.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/item_feed_filter.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_se_ad.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/item_feed_text.xml" value="0.31249922600345337" />

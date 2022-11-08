@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/llQuoteMain"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_half"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rlFeedHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivProfileImage"
+            android:layout_width="@dimen/height_profile_image_feed"
+            android:layout_height="@dimen/height_profile_image_feed"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_full"
+            android:layout_marginLeft="@dimen/margin_full"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:layout_marginBottom="@dimen/margin_half">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfileImageRound"
+                android:layout_width="@dimen/height_profile_image_feed"
+                android:layout_height="@dimen/height_profile_image_feed"
+                android:visibility="invisible"
+                tools:src="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/iv_verify"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toStartOf="@+id/ivOption"
+            android:layout_toLeftOf="@+id/ivOption"
+            android:layout_toEndOf="@+id/ivProfileImage"
+            android:layout_toRightOf="@+id/ivProfileImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHeader"
+                style="@style/text_style_1"
+                android:textSize="@dimen/size_text_feed_title"
+                tools:text="Stainly R. Card" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSponsored"
+                style="@style/text_style_2"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:maxLines="1"
+                android:textSize="@dimen/caption"
+                android:visibility="gone" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llFeedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvFeedType"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/caption" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_quarter"
+                    android:text="@string/dot" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDate"
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:maxLines="1"
+                    android:textSize="@dimen/caption" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/text_style_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="@dimen/margin_quarter"
+                    android:text="@string/dot" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivFeedPrivacy"
+                    android:layout_width="12sp"
+                    android:layout_height="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:tint="@color/grey_feed" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivOption"
+            style="@style/image_tint_2"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_icon_controller"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:paddingStart="@dimen/margin_half"
+            android:paddingLeft="@dimen/margin_half"
+            android:rotation="90"
+            android:visibility="gone"
+            android:src="@drawable/vertical_dots"
+            android:tint="@color/grey_feed" />
+
+        <ProgressBar
+            android:id="@+id/pbProgressCircular"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_small"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="@dimen/margin_half"
+            android:layout_marginLeft="@dimen/margin_half"
+            android:layout_marginTop="@dimen/margin_half"
+            android:layout_marginEnd="@dimen/margin_full"
+            android:layout_marginRight="@dimen/margin_full"
+            android:src="@drawable/vertical_dots"
+            android:tint="@color/grey_feed"
+            android:visibility="gone"
+            tools:visibility="gone" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlQuoteMedia"
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        android:layout_marginTop="@dimen/margin_half">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivQuoteImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivQuoteMediaType"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:srcCompat="@drawable/play" />
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuoteTitle"
+        style="@style/text_style_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_half"
+        android:ellipsize="end"
+        android:maxLines="2"
+        tools:text="lkandlkandklasndklasnd"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuoteDesc"
+        style="@style/text_style_2"
+        tools:text="lkandlkandklasndklasnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvQuoteCategory"
+        style="@style/text_style_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_quarter"
+        android:ellipsize="end"
+        tools:text="lkandlkandklasndklasnd"
+        android:maxLines="2"
+        android:paddingLeft="@dimen/margin_full"
+        android:paddingRight="@dimen/margin_full"
+        android:textSize="@dimen/body_1" />
+
+    <!--  <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/tvQuoteTags"
+          style="@style/text_style_1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/margin_half"
+          android:layout_marginTop="@dimen/margin_quarter"
+          android:textSize="@dimen/body_1" />-->
+
+</androidx.appcompat.widget.LinearLayoutCompat>
