@@ -1183,7 +1183,7 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                         if (TextUtils.isEmpty(vo.getHashTagString())) {
                             holderParent.tvFeedTags.setVisibility(View.GONE);
                         } else {
-                            holderParent.tvFeedTags.setVisibility(View.VISIBLE);
+                            holderParent.tvFeedTags.setVisibility(View.GONE);
                             holderParent.tvFeedTags.setText(getClickableTags(vo.getActivityTags(), holderParent.getAdapterPosition()));
                             holderParent.tvFeedTags.setMovementMethod(LinkMovementMethod.getInstance());
                         }
@@ -1697,6 +1697,8 @@ public class FeedActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 spannableString = fontColor(spannableString, nv.getName(), Color.parseColor(nv.getColor()));
                 break;
             }
+           // hashTags
+                   // hashTagString
         } catch (Exception e) {
             CustomLog.e(e);
         }

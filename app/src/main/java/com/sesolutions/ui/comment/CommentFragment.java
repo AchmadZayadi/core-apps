@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
@@ -170,6 +171,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
     TextView tvDate;
     ImageView ivProfileImageRound;
     ImageView ivQuoteImage;
+    RelativeLayout layoutImage;
 
 
     public static CommentFragment newInstance(int actionId, String resourceType, String titleQuote, String nameUser, String datePosting, String photoUser, String imagePosting) {
@@ -300,6 +302,7 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
         tvDate = v.findViewById(R.id.tvDate);
         ivProfileImageRound = v.findViewById(R.id.ivProfileImage);
         ivQuoteImage = v.findViewById(R.id.ivQuoteImage);
+        layoutImage = v.findViewById(R.id.rlQuoteMedia);
 
         startPositions = new ArrayList<>();
         userNameLengths = new ArrayList<>();
@@ -356,13 +359,15 @@ public class CommentFragment extends ApiHelper implements View.OnClickListener, 
 
 */
 
-        tvQuoteTitle.setText(titleQuote);
+
+        tvQuoteTitle.setText(Util.getEmojiFromString(titleQuote));
         tvHeader.setText(nameUser);
         tvDate.setText(Util.changeDateFormat(context, datePosting));
         Glide.with(context).load(photoUser).circleCrop().into(ivProfileImageRound);
 
-        if (imagePosting.equals("")){
-            ivQuoteImage.setVisibility(View.GONE);
+
+        if (imagePosting.equals("empty")){
+            layoutImage.setVisibility(View.GONE);
         }else {
             Glide.with(context).load(imagePosting).into(ivQuoteImage);
         }

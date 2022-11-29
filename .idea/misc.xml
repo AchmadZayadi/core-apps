@@ -68,6 +68,7 @@
         <entry key="app/src/main/res/layout/fragment_post_feed_slidable.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_price.xml" value="0.30569948186528495" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/fragment_quote_view.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/fragment_rating.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/fragment_signin_2.xml" value="0.1109375" />
         <entry key="app/src/main/res/layout/fragment_signin_3.xml" value="0.165" />
@@ -123,6 +124,7 @@
         <entry key="app/src/main/res/layout/layout_feed_bg_option_grid.xml" value="0.1911073108165883" />
         <entry key="app/src/main/res/layout/layout_feed_content.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/layout_feed_profile.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/layout_feed_quote.xml" value="0.22708333333333333" />
         <entry key="app/src/main/res/layout/layout_feed_upper.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/layout_feed_upper_center.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/layout_like_favorite_comment.xml" value="0.24322916666666666" />

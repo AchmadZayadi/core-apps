@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.koushikcse:LinkedIn:1.2@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9a3c7439209bce99a71e8ab36bcdb167/jetified-LinkedIn-1.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9a3c7439209bce99a71e8ab36bcdb167/jetified-LinkedIn-1.2/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9a3c7439209bce99a71e8ab36bcdb167/jetified-LinkedIn-1.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/973613bcfb61eefb7d546035b3b8e093/jetified-LinkedIn-1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/973613bcfb61eefb7d546035b3b8e093/jetified-LinkedIn-1.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/973613bcfb61eefb7d546035b3b8e093/jetified-LinkedIn-1.2/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

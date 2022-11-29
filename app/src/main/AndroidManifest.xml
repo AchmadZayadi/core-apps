@@ -222,7 +222,7 @@
             android:screenOrientation="portrait"
             android:supportsPictureInPicture="true"
             android:theme="@style/AppThemeNoActionBar"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="stateAlwaysVisible">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <!-- Allows the link to be opened from a web browser -->

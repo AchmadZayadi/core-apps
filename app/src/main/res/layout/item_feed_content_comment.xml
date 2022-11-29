@@ -164,7 +164,7 @@
     <RelativeLayout
         android:id="@+id/rlQuoteMedia"
         android:layout_width="match_parent"
-        android:layout_height="250sp"
+        android:layout_height="200sp"
         android:layout_marginTop="@dimen/margin_half">
 
         <androidx.appcompat.widget.AppCompatImageView

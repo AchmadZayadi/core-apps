@@ -446,7 +446,15 @@ public class HomeFragment extends FeedHelper implements SwipeRefreshLayout.OnRef
         intent.putExtra("datePosting", feedActivityList.get(position).getDate());
 
 
-        intent.putExtra("imagePosting", feedActivityList.get(position).getAttachment().getImages().get(0).getMain());
+        if (feedActivityList.get(position).getAttachment() == null){
+            intent.putExtra("imagePosting", "empty");
+
+        }else {
+            intent.putExtra("imagePosting", feedActivityList.get(position).getAttachment().getImages().get(0).getMain());
+
+        }
+
+
 
 
         String guid = feedActivityList.get(position).getAttributionGuid();
