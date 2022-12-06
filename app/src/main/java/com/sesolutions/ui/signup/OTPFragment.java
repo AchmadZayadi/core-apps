@@ -169,7 +169,7 @@ public class OTPFragment extends BaseFragment implements OnOtpCompletionListener
 
             //smsVerifyCatcher.setPhoneNumberFilter("IM-001122");
 
-            timer = new CountDownTimer(120000, 1000) {
+            timer = new CountDownTimer(300000, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     v.findViewById(R.id.layout_send_again).setVisibility(View.GONE);

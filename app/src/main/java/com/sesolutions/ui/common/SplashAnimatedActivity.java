@@ -459,7 +459,7 @@ public class SplashAnimatedActivity extends BaseActivity {
         // CustomLog.d("hasilnyaa22",String.valueOf(versionAppApi));
         //  CustomLog.d("hasilnyaa",String.valueOf(versionApp));
 
-        if (datVo.getResult().getVersionCode() >= BuildConfig.VERSION_CODE) {
+        if (datVo.getResult().getVersionCode() > BuildConfig.VERSION_CODE) {
             showDialog(datVo);
         } else {
             callHandler(timer);

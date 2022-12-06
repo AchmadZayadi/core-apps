@@ -2,8 +2,10 @@ package com.sesolutions.ui.signup
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageInfo
@@ -732,9 +734,26 @@ class SignInFragment2 : BaseFragment(), View.OnClickListener, OnUserClickedListe
             when (v.id) {
                 R.id.bSignIn -> {
                     closeKeyboard()
-                    if (isValid) {
-                        //  openOtpFragment(OTPFragment.FROM_SIGNIN, "08569004790", "08569004790")
+                    val phone = etEmail?.text?.substring(0, 4)
+                    if (phone.equals("0881") || phone.equals("0882") || phone.equals("0883") || phone.equals(
+                            "0884"
+                        ) || phone.equals("0885") || phone.equals("0886") || phone.equals("0887") || phone.equals(
+                            "0888"
+                        ) || phone.equals("0889")
 
+                    ) {
+                        showDialogNotice()
+                        //Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show()
+                    } else if (phone.equals("0896") || phone.equals("0895") || phone.equals("0897") || phone.equals(
+                            "0898"
+                        )
+                        || phone.equals("0899")
+
+                    ) {
+                        showDialogNotice()
+                        // Toast.makeText(getActivity(), "Success", Toast.LENGTH_SHORT).show()
+                    } else if (isValid) {
+                        //  openOtpFragment(OTPFragment.FROM_SIGNIN, "08569004790", "08569004790")
                         callLoginApi()
                     }
                 }
@@ -1784,5 +1803,19 @@ class SignInFragment2 : BaseFragment(), View.OnClickListener, OnUserClickedListe
         }
     }*/
 
+    fun showDialogNotice() {
+        val dialogBuilder = AlertDialog.Builder(context)
+            dialogBuilder.setMessage("Mohon maaf nomor handphone Anda tidak bisa menerima OTP registrasi untuk sementara ini, mohon gunakan nomor handphone yang lain, terima kasih.")
+            // if the dialog is cancelable
+            .setCancelable(false)
+            .setPositiveButton("Selesai", DialogInterface.OnClickListener { dialog, id ->
+                dialog.dismiss()
+
+            })
+
+        val alert = dialogBuilder.create()
+       // alert.setTitle("Mohon maaf nomor handphone Anda tidak bisa menerima OTP registrasi untuk sementara ini, mohon gunakan nomor handphone yang lain, terima kasih.")
+        alert.show()
+    }
 
 }
