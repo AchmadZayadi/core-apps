@@ -1586,7 +1586,7 @@
     <string name="TXT_SHARE_FEED">Pilih Opsi Bagikan</string>
     <string name="TXT_SHARE_INSIDE">"Bagikan"</string>
     <string name="txt_share_on">Bagikan</string>
-    <string name="TXT_SHARE_OUTSIDE">Bagikan di luar</string>
+    <string name="TXT_SHARE_OUTSIDE">Bagikan di aplikasi lain</string>
     <string name="TITLE_REPORT_SPAM">Laporkan spam</string>
     <string name="NO">Tidak</string>
     <string name="YES">Ya</string>
